@@ -1,12 +1,8 @@
-yaml
 name: BMS Ticket Checker
 
 on:
   schedule:
-    # Every 30 minutes
     - cron: "*/30 * * * *"
-
-  # Allows you to manually run it from GitHub Actions
   workflow_dispatch:
 
 jobs:
@@ -45,7 +41,6 @@ jobs:
           BMS_DATES: ${{ secrets.BMS_DATES }}
           BMS_THEATRE: ${{ secrets.BMS_THEATRE }}
           BMS_TIME: ${{ secrets.BMS_TIME }}
-
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RESEND_TO_EMAIL: ${{ secrets.RESEND_TO_EMAIL }}
           RESEND_FROM_EMAIL: ${{ secrets.RESEND_FROM_EMAIL }}
