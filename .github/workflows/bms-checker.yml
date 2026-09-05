@@ -1,6 +1,6 @@
 name: BMS Ticket Checker
 
-"on":
+on:
 schedule:
 - cron: "*/30 * * * *"
 workflow_dispatch:
