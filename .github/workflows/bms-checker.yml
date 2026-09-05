@@ -1,4 +1,4 @@
-```yaml
+yaml
 name: BMS Ticket Checker
 
 on:
@@ -60,4 +60,3 @@ jobs:
           path: bms_state.json
           retention-days: 7
           overwrite: true
-```
