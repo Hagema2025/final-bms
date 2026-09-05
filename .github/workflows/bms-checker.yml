@@ -29,6 +29,7 @@ jobs:
 
       - name: Run checker
         env:
+        
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RESEND_TO_EMAIL: ${{ secrets.RESEND_TO_EMAIL }}
           RESEND_FROM_EMAIL: ${{ secrets.RESEND_FROM_EMAIL }}
@@ -36,6 +37,8 @@ jobs:
           BMS_DATES: ${{ vars.BMS_DATES }}
           BMS_THEATRE: ${{ vars.BMS_THEATRE }}
           BMS_TIME: ${{ vars.BMS_TIME }}
+          TELEGRAM_BOT_TOKEN:${{vars.TELEGRAM_BOT_TOKEN}}
+          TELEGRAM_CHAT_ID:${{vars.TELEGRAM_CHAT_ID}}
         run: uv run main.py
       - name: Commit updated state
         run: |
