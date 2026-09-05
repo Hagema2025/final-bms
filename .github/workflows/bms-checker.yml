@@ -1,56 +1,44 @@
 name: BMS Ticket Checker
 
 on:
-schedule:
-- cron: "*/30 * * * *"
-workflow_dispatch:
+  schedule:
+    # Every 30 minutes
+    - cron: '*/30 * * * *'
+  workflow_dispatch:  # Manual trigger button
 
 jobs:
-check-bms:
-runs-on: ubuntu-latest
+  check-tickets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
 
-steps:
-  - name: Checkout repository
-    uses: actions/checkout@v4
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
 
-  - name: Set up Python
-    uses: actions/setup-python@v5
-    with:
-      python-version: "3.12"
-      cache: pip
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          python-version: '3.14'
 
-  - name: Install dependencies
-    run: |
-      python -m pip install --upgrade pip
-      pip install -r requirements.txt
+      - name: Install dependencies
+        run: uv sync --frozen
 
-  - name: Install Playwright
-    run: |
-      python -m playwright install --with-deps chromium
+      - name: Run checker
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_TO_EMAIL: ${{ secrets.RESEND_TO_EMAIL }}
+          RESEND_FROM_EMAIL: ${{ secrets.RESEND_FROM_EMAIL }}
+          BMS_URL: ${{ vars.BMS_URL }}
+          BMS_DATES: ${{ vars.BMS_DATES }}
+          BMS_THEATRE: ${{ vars.BMS_THEATRE }}
+          BMS_TIME: ${{ vars.BMS_TIME }}
+        run: uv run main.py
 
-  - name: Restore previous BMS state
-    uses: actions/cache/restore@v4
-    with:
-      path: bms_state.json
-      key: bms-state-${{ github.ref_name }}
-      restore-keys: |
-        bms-state-
-
-  - name: Run BMS checker
-    env:
-      BMS_URL: ${{ secrets.BMS_URL }}
-      BMS_DATES: ${{ secrets.BMS_DATES }}
-      BMS_THEATRE: ${{ secrets.BMS_THEATRE }}
-      BMS_TIME: ${{ secrets.BMS_TIME }}
-      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-      RESEND_TO_EMAIL: ${{ secrets.RESEND_TO_EMAIL }}
-      RESEND_FROM_EMAIL: ${{ secrets.RESEND_FROM_EMAIL }}
-    run: |
-      python main.py
-
-  - name: Save BMS state
-    if: always() && hashFiles('bms_state.json') != ''
-    uses: actions/cache/save@v4
-    with:
-      path: bms_state.json
-      key: bms-state-${{ github.ref_name }}-${{ github.run_id }}
+      - name: Commit updated state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add bms_state.json
+          git diff --cached --quiet || (git commit -m "chore: update bms_state.json [skip ci]" && git push)
