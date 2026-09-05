@@ -2053,6 +2053,7 @@ def run_watch(
 
             # Auto-update watch URL in watches.json maintaining full /movies/{region}/ path
             if len(selected) == 1 and selected[0].event_code:
+             if not any(lang in base_lang for lang in watch["languages"]):
                 target_variant = selected[0]
                 v_code = target_variant.event_code
                 clean_region = region_slug_resolved or region_slug or "chennai"
