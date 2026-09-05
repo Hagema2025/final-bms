@@ -4,6 +4,8 @@ on:
   schedule:
     # Every 30 minutes
     - cron: '*/30 * * * *'
+  repository_dispatch:
+    types: [trigger_bms_check]  # External trigger via cron-job.org or Telegram Bot
   workflow_dispatch:  # Manual trigger button
 
 jobs:
