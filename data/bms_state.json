@@ -1,5 +1,29 @@
 {
   "Immortal": {
+    "shows": {},
+    "dates": {
+      "20260906": "BOOKABLE",
+      "20260907": "NOT_OPEN",
+      "20260908": "NOT_OPEN",
+      "20260909": "NOT_OPEN",
+      "20260910": "NOT_OPEN",
+      "20260911": "NOT_OPEN",
+      "20260912": "NOT_OPEN"
+    }
+  },
+  "Immortal (Tamil EPIQ)": {
+    "shows": {},
+    "dates": {
+      "20260906": "BOOKABLE",
+      "20260907": "NOT_OPEN",
+      "20260908": "NOT_OPEN",
+      "20260909": "NOT_OPEN",
+      "20260910": "NOT_OPEN",
+      "20260911": "NOT_OPEN",
+      "20260912": "NOT_OPEN"
+    }
+  },
+  "Immortal (Tamil 2D)": {
     "shows": {
       "ACON|47115|20260906|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
@@ -116,18 +140,6 @@
       "20260908": "AVAILABLE",
       "20260909": "AVAILABLE",
       "20260910": "AVAILABLE",
-      "20260911": "NOT_OPEN",
-      "20260912": "NOT_OPEN"
-    }
-  },
-  "Immortal (Tamil EPIQ)": {
-    "shows": {},
-    "dates": {
-      "20260906": "BOOKABLE",
-      "20260907": "NOT_OPEN",
-      "20260908": "NOT_OPEN",
-      "20260909": "NOT_OPEN",
-      "20260910": "NOT_OPEN",
       "20260911": "NOT_OPEN",
       "20260912": "NOT_OPEN"
     }
