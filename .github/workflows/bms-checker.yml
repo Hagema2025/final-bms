@@ -1,3 +1,4 @@
+yaml
 name: BMS Ticket Checker
 
 on:
@@ -24,16 +25,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Install Playwright browsers
+      - name: Install Playwright
         run: |
           python -m playwright install --with-deps chromium
 
-      - name: Restore BMS state
-        uses: actions/download-artifact@v4
+      - name: Restore previous BMS state
+        uses: actions/cache/restore@v4
         with:
-          name: bms-state
-          path: .
-        continue-on-error: true
+          path: bms_state.json
+          key: bms-state-${{ github.run_id }}
+          restore-keys: |
+            bms-state-
 
       - name: Run BMS checker
         env:
@@ -48,10 +50,8 @@ jobs:
           python main.py
 
       - name: Save BMS state
-        if: always()
-        uses: actions/upload-artifact@v4
+        if: always() && hashFiles('bms_state.json') != ''
+        uses: actions/cache/save@v4
         with:
-          name: bms-state
           path: bms_state.json
-          retention-days: 7
-          overwrite: true
+          key: bms-state-${{ github.run_id }}
