@@ -80,6 +80,150 @@
       "price": "54.35",
       "status": "0"
     },
+    "PGRA|22358|20260906|PRIME": {
+      "venue": "PVR: Grand Galada, Pallavaram",
+      "time": "10:10 AM",
+      "date": "20260906",
+      "cat": "PRIME",
+      "price": "183.80",
+      "status": "3"
+    },
+    "PGRA|22358|20260906|CLASSIC": {
+      "venue": "PVR: Grand Galada, Pallavaram",
+      "time": "10:10 AM",
+      "date": "20260906",
+      "cat": "CLASSIC",
+      "price": "54.35",
+      "status": "0"
+    },
+    "PGRA|22359|20260906|PRIME": {
+      "venue": "PVR: Grand Galada, Pallavaram",
+      "time": "01:10 PM",
+      "date": "20260906",
+      "cat": "PRIME",
+      "price": "183.80",
+      "status": "2"
+    },
+    "PGRA|22359|20260906|CLASSIC": {
+      "venue": "PVR: Grand Galada, Pallavaram",
+      "time": "01:10 PM",
+      "date": "20260906",
+      "cat": "CLASSIC",
+      "price": "54.35",
+      "status": "0"
+    },
+    "PGRA|22361|20260906|PRIME": {
+      "venue": "PVR: Grand Galada, Pallavaram",
+      "time": "07:25 PM",
+      "date": "20260906",
+      "cat": "PRIME",
+      "price": "183.80",
+      "status": "3"
+    },
+    "PGRA|22361|20260906|CLASSIC": {
+      "venue": "PVR: Grand Galada, Pallavaram",
+      "time": "07:25 PM",
+      "date": "20260906",
+      "cat": "CLASSIC",
+      "price": "54.35",
+      "status": "0"
+    },
+    "PGRA|22406|20260906|PRIME": {
+      "venue": "PVR: Grand Galada, Pallavaram",
+      "time": "10:45 PM",
+      "date": "20260906",
+      "cat": "PRIME",
+      "price": "183.80",
+      "status": "3"
+    },
+    "PGRA|22406|20260906|CLASSIC": {
+      "venue": "PVR: Grand Galada, Pallavaram",
+      "time": "10:45 PM",
+      "date": "20260906",
+      "cat": "CLASSIC",
+      "price": "54.35",
+      "status": "0"
+    },
+    "PVSR|27402|20260906|ELITE": {
+      "venue": "PVR: Sathyam, Royapettah",
+      "time": "09:25 AM",
+      "date": "20260906",
+      "cat": "ELITE",
+      "price": "183.80",
+      "status": "3"
+    },
+    "PVSR|27402|20260906|BUDGET": {
+      "venue": "PVR: Sathyam, Royapettah",
+      "time": "09:25 AM",
+      "date": "20260906",
+      "cat": "BUDGET",
+      "price": "54.35",
+      "status": "0"
+    },
+    "PVSR|27403|20260906|ELITE": {
+      "venue": "PVR: Sathyam, Royapettah",
+      "time": "12:20 PM",
+      "date": "20260906",
+      "cat": "ELITE",
+      "price": "183.80",
+      "status": "2"
+    },
+    "PVSR|27403|20260906|BUDGET": {
+      "venue": "PVR: Sathyam, Royapettah",
+      "time": "12:20 PM",
+      "date": "20260906",
+      "cat": "BUDGET",
+      "price": "54.35",
+      "status": "0"
+    },
+    "PVSR|27458|20260906|ELITE": {
+      "venue": "PVR: Sathyam, Royapettah",
+      "time": "05:05 PM",
+      "date": "20260906",
+      "cat": "ELITE",
+      "price": "183.80",
+      "status": "2"
+    },
+    "PVSR|27458|20260906|BUDGET": {
+      "venue": "PVR: Sathyam, Royapettah",
+      "time": "05:05 PM",
+      "date": "20260906",
+      "cat": "BUDGET",
+      "price": "54.35",
+      "status": "0"
+    },
+    "PVSR|27404|20260906|ELITE": {
+      "venue": "PVR: Sathyam, Royapettah",
+      "time": "07:25 PM",
+      "date": "20260906",
+      "cat": "ELITE",
+      "price": "183.80",
+      "status": "2"
+    },
+    "PVSR|27404|20260906|BUDGET": {
+      "venue": "PVR: Sathyam, Royapettah",
+      "time": "07:25 PM",
+      "date": "20260906",
+      "cat": "BUDGET",
+      "price": "54.35",
+      "status": "0"
+    },
+    "PVSR|27459|20260906|ELITE": {
+      "venue": "PVR: Sathyam, Royapettah",
+      "time": "11:20 PM",
+      "date": "20260906",
+      "cat": "ELITE",
+      "price": "183.80",
+      "status": "3"
+    },
+    "PVSR|27459|20260906|BUDGET": {
+      "venue": "PVR: Sathyam, Royapettah",
+      "time": "11:20 PM",
+      "date": "20260906",
+      "cat": "BUDGET",
+      "price": "54.35",
+      "status": "2"
+    },
     "PVES|33570|20260906|ELITE": {
       "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
       "time": "09:35 AM",
@@ -240,278 +384,6 @@
       "price": "54.35",
       "status": "0"
     },
-    "PVSR|27402|20260906|ELITE": {
-      "venue": "PVR: Sathyam, Royapettah",
-      "time": "09:25 AM",
-      "date": "20260906",
-      "cat": "ELITE",
-      "price": "183.80",
-      "status": "3"
-    },
-    "PVSR|27402|20260906|BUDGET": {
-      "venue": "PVR: Sathyam, Royapettah",
-      "time": "09:25 AM",
-      "date": "20260906",
-      "cat": "BUDGET",
-      "price": "54.35",
-      "status": "0"
-    },
-    "PVSR|27403|20260906|ELITE": {
-      "venue": "PVR: Sathyam, Royapettah",
-      "time": "12:20 PM",
-      "date": "20260906",
-      "cat": "ELITE",
-      "price": "183.80",
-      "status": "2"
-    },
-    "PVSR|27403|20260906|BUDGET": {
-      "venue": "PVR: Sathyam, Royapettah",
-      "time": "12:20 PM",
-      "date": "20260906",
-      "cat": "BUDGET",
-      "price": "54.35",
-      "status": "0"
-    },
-    "PVSR|27458|20260906|ELITE": {
-      "venue": "PVR: Sathyam, Royapettah",
-      "time": "05:05 PM",
-      "date": "20260906",
-      "cat": "ELITE",
-      "price": "183.80",
-      "status": "2"
-    },
-    "PVSR|27458|20260906|BUDGET": {
-      "venue": "PVR: Sathyam, Royapettah",
-      "time": "05:05 PM",
-      "date": "20260906",
-      "cat": "BUDGET",
-      "price": "54.35",
-      "status": "0"
-    },
-    "PVSR|27404|20260906|ELITE": {
-      "venue": "PVR: Sathyam, Royapettah",
-      "time": "07:25 PM",
-      "date": "20260906",
-      "cat": "ELITE",
-      "price": "183.80",
-      "status": "2"
-    },
-    "PVSR|27404|20260906|BUDGET": {
-      "venue": "PVR: Sathyam, Royapettah",
-      "time": "07:25 PM",
-      "date": "20260906",
-      "cat": "BUDGET",
-      "price": "54.35",
-      "status": "0"
-    },
-    "PVSR|27459|20260906|ELITE": {
-      "venue": "PVR: Sathyam, Royapettah",
-      "time": "11:20 PM",
-      "date": "20260906",
-      "cat": "ELITE",
-      "price": "183.80",
-      "status": "3"
-    },
-    "PVSR|27459|20260906|BUDGET": {
-      "venue": "PVR: Sathyam, Royapettah",
-      "time": "11:20 PM",
-      "date": "20260906",
-      "cat": "BUDGET",
-      "price": "54.35",
-      "status": "2"
-    },
-    "PVHC|31814|20260906|PRIME": {
-      "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-      "time": "09:00 AM",
-      "date": "20260906",
-      "cat": "PRIME",
-      "price": "183.80",
-      "status": "3"
-    },
-    "PVHC|31814|20260906|CLASSIC": {
-      "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-      "time": "09:00 AM",
-      "date": "20260906",
-      "cat": "CLASSIC",
-      "price": "54.35",
-      "status": "0"
-    },
-    "PVHC|31816|20260906|PRIME": {
-      "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-      "time": "04:05 PM",
-      "date": "20260906",
-      "cat": "PRIME",
-      "price": "183.80",
-      "status": "2"
-    },
-    "PVHC|31816|20260906|CLASSIC": {
-      "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-      "time": "04:05 PM",
-      "date": "20260906",
-      "cat": "CLASSIC",
-      "price": "54.35",
-      "status": "0"
-    },
-    "PVHC|31818|20260906|PRIME": {
-      "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-      "time": "11:15 PM",
-      "date": "20260906",
-      "cat": "PRIME",
-      "price": "183.80",
-      "status": "3"
-    },
-    "PVHC|31818|20260906|CLASSIC": {
-      "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-      "time": "11:15 PM",
-      "date": "20260906",
-      "cat": "CLASSIC",
-      "price": "54.35",
-      "status": "0"
-    },
-    "PABC|21464|20260906|PRIME": {
-      "venue": "PVR: Aerohub, Chennai",
-      "time": "04:25 PM",
-      "date": "20260906",
-      "cat": "PRIME",
-      "price": "183.80",
-      "status": "2"
-    },
-    "PABC|21464|20260906|CLASSIC": {
-      "venue": "PVR: Aerohub, Chennai",
-      "time": "04:25 PM",
-      "date": "20260906",
-      "cat": "CLASSIC",
-      "price": "54.35",
-      "status": "0"
-    },
-    "PABC|21466|20260906|PRIME": {
-      "venue": "PVR: Aerohub, Chennai",
-      "time": "10:30 PM",
-      "date": "20260906",
-      "cat": "PRIME",
-      "price": "183.80",
-      "status": "3"
-    },
-    "PABC|21466|20260906|CLASSIC": {
-      "venue": "PVR: Aerohub, Chennai",
-      "time": "10:30 PM",
-      "date": "20260906",
-      "cat": "CLASSIC",
-      "price": "54.35",
-      "status": "0"
-    },
-    "PGRA|22358|20260906|PRIME": {
-      "venue": "PVR: Grand Galada, Pallavaram",
-      "time": "10:10 AM",
-      "date": "20260906",
-      "cat": "PRIME",
-      "price": "183.80",
-      "status": "3"
-    },
-    "PGRA|22358|20260906|CLASSIC": {
-      "venue": "PVR: Grand Galada, Pallavaram",
-      "time": "10:10 AM",
-      "date": "20260906",
-      "cat": "CLASSIC",
-      "price": "54.35",
-      "status": "0"
-    },
-    "PGRA|22359|20260906|PRIME": {
-      "venue": "PVR: Grand Galada, Pallavaram",
-      "time": "01:10 PM",
-      "date": "20260906",
-      "cat": "PRIME",
-      "price": "183.80",
-      "status": "2"
-    },
-    "PGRA|22359|20260906|CLASSIC": {
-      "venue": "PVR: Grand Galada, Pallavaram",
-      "time": "01:10 PM",
-      "date": "20260906",
-      "cat": "CLASSIC",
-      "price": "54.35",
-      "status": "0"
-    },
-    "PGRA|22361|20260906|PRIME": {
-      "venue": "PVR: Grand Galada, Pallavaram",
-      "time": "07:25 PM",
-      "date": "20260906",
-      "cat": "PRIME",
-      "price": "183.80",
-      "status": "3"
-    },
-    "PGRA|22361|20260906|CLASSIC": {
-      "venue": "PVR: Grand Galada, Pallavaram",
-      "time": "07:25 PM",
-      "date": "20260906",
-      "cat": "CLASSIC",
-      "price": "54.35",
-      "status": "0"
-    },
-    "PGRA|22406|20260906|PRIME": {
-      "venue": "PVR: Grand Galada, Pallavaram",
-      "time": "10:45 PM",
-      "date": "20260906",
-      "cat": "PRIME",
-      "price": "183.80",
-      "status": "3"
-    },
-    "PGRA|22406|20260906|CLASSIC": {
-      "venue": "PVR: Grand Galada, Pallavaram",
-      "time": "10:45 PM",
-      "date": "20260906",
-      "cat": "CLASSIC",
-      "price": "54.35",
-      "status": "0"
-    },
-    "PBRM|24587|20260906|ELITE": {
-      "venue": "PVR: Perambur, Spectrum Mall",
-      "time": "09:00 AM",
-      "date": "20260906",
-      "cat": "ELITE",
-      "price": "183.80",
-      "status": "3"
-    },
-    "PBRM|24587|20260906|BUDGET": {
-      "venue": "PVR: Perambur, Spectrum Mall",
-      "time": "09:00 AM",
-      "date": "20260906",
-      "cat": "BUDGET",
-      "price": "54.35",
-      "status": "0"
-    },
-    "PBRM|24588|20260906|ELITE": {
-      "venue": "PVR: Perambur, Spectrum Mall",
-      "time": "11:55 AM",
-      "date": "20260906",
-      "cat": "ELITE",
-      "price": "183.80",
-      "status": "3"
-    },
-    "PBRM|24588|20260906|BUDGET": {
-      "venue": "PVR: Perambur, Spectrum Mall",
-      "time": "11:55 AM",
-      "date": "20260906",
-      "cat": "BUDGET",
-      "price": "54.35",
-      "status": "0"
-    },
-    "PBRM|24590|20260906|ELITE": {
-      "venue": "PVR: Perambur, Spectrum Mall",
-      "time": "06:50 PM",
-      "date": "20260906",
-      "cat": "ELITE",
-      "price": "183.80",
-      "status": "3"
-    },
-    "PBRM|24590|20260906|BUDGET": {
-      "venue": "PVR: Perambur, Spectrum Mall",
-      "time": "06:50 PM",
-      "date": "20260906",
-      "cat": "BUDGET",
-      "price": "54.35",
-      "status": "0"
-    },
     "PSKL|23061|20260906|PRIME": {
       "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
       "time": "09:30 AM",
@@ -587,6 +459,86 @@
     "PSKL|23101|20260906|CLASSIC": {
       "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
       "time": "10:05 PM",
+      "date": "20260906",
+      "cat": "CLASSIC",
+      "price": "54.35",
+      "status": "0"
+    },
+    "PVHC|31814|20260906|PRIME": {
+      "venue": "PVR: Ampa Mall, Nelson Manickam Road",
+      "time": "09:00 AM",
+      "date": "20260906",
+      "cat": "PRIME",
+      "price": "183.80",
+      "status": "3"
+    },
+    "PVHC|31814|20260906|CLASSIC": {
+      "venue": "PVR: Ampa Mall, Nelson Manickam Road",
+      "time": "09:00 AM",
+      "date": "20260906",
+      "cat": "CLASSIC",
+      "price": "54.35",
+      "status": "0"
+    },
+    "PVHC|31816|20260906|PRIME": {
+      "venue": "PVR: Ampa Mall, Nelson Manickam Road",
+      "time": "04:05 PM",
+      "date": "20260906",
+      "cat": "PRIME",
+      "price": "183.80",
+      "status": "2"
+    },
+    "PVHC|31816|20260906|CLASSIC": {
+      "venue": "PVR: Ampa Mall, Nelson Manickam Road",
+      "time": "04:05 PM",
+      "date": "20260906",
+      "cat": "CLASSIC",
+      "price": "54.35",
+      "status": "0"
+    },
+    "PVHC|31818|20260906|PRIME": {
+      "venue": "PVR: Ampa Mall, Nelson Manickam Road",
+      "time": "11:15 PM",
+      "date": "20260906",
+      "cat": "PRIME",
+      "price": "183.80",
+      "status": "3"
+    },
+    "PVHC|31818|20260906|CLASSIC": {
+      "venue": "PVR: Ampa Mall, Nelson Manickam Road",
+      "time": "11:15 PM",
+      "date": "20260906",
+      "cat": "CLASSIC",
+      "price": "54.35",
+      "status": "0"
+    },
+    "PABC|21464|20260906|PRIME": {
+      "venue": "PVR: Aerohub, Chennai",
+      "time": "04:25 PM",
+      "date": "20260906",
+      "cat": "PRIME",
+      "price": "183.80",
+      "status": "1"
+    },
+    "PABC|21464|20260906|CLASSIC": {
+      "venue": "PVR: Aerohub, Chennai",
+      "time": "04:25 PM",
+      "date": "20260906",
+      "cat": "CLASSIC",
+      "price": "54.35",
+      "status": "0"
+    },
+    "PABC|21466|20260906|PRIME": {
+      "venue": "PVR: Aerohub, Chennai",
+      "time": "10:30 PM",
+      "date": "20260906",
+      "cat": "PRIME",
+      "price": "183.80",
+      "status": "3"
+    },
+    "PABC|21466|20260906|CLASSIC": {
+      "venue": "PVR: Aerohub, Chennai",
+      "time": "10:30 PM",
       "date": "20260906",
       "cat": "CLASSIC",
       "price": "54.35",
@@ -670,7 +622,55 @@
       "date": "20260906",
       "cat": "BUDGET",
       "price": "54.35",
-      "status": "2"
+      "status": "1"
+    },
+    "PBRM|24587|20260906|ELITE": {
+      "venue": "PVR: Perambur, Spectrum Mall",
+      "time": "09:00 AM",
+      "date": "20260906",
+      "cat": "ELITE",
+      "price": "183.80",
+      "status": "3"
+    },
+    "PBRM|24587|20260906|BUDGET": {
+      "venue": "PVR: Perambur, Spectrum Mall",
+      "time": "09:00 AM",
+      "date": "20260906",
+      "cat": "BUDGET",
+      "price": "54.35",
+      "status": "0"
+    },
+    "PBRM|24588|20260906|ELITE": {
+      "venue": "PVR: Perambur, Spectrum Mall",
+      "time": "11:55 AM",
+      "date": "20260906",
+      "cat": "ELITE",
+      "price": "183.80",
+      "status": "3"
+    },
+    "PBRM|24588|20260906|BUDGET": {
+      "venue": "PVR: Perambur, Spectrum Mall",
+      "time": "11:55 AM",
+      "date": "20260906",
+      "cat": "BUDGET",
+      "price": "54.35",
+      "status": "0"
+    },
+    "PBRM|24590|20260906|ELITE": {
+      "venue": "PVR: Perambur, Spectrum Mall",
+      "time": "06:50 PM",
+      "date": "20260906",
+      "cat": "ELITE",
+      "price": "183.80",
+      "status": "3"
+    },
+    "PBRM|24590|20260906|BUDGET": {
+      "venue": "PVR: Perambur, Spectrum Mall",
+      "time": "06:50 PM",
+      "date": "20260906",
+      "cat": "BUDGET",
+      "price": "54.35",
+      "status": "0"
     },
     "PGMV|21927|20260906|PRIME": {
       "venue": "PVR: Grand Mall, Velachery",
