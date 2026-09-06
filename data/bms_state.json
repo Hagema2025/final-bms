@@ -70,7 +70,7 @@
         "date": "20260906",
         "cat": "SILVER",
         "price": "20.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K M-MAX(PLF)"
       },
       "MLMT|8223|20260906|LOUNGER": {
@@ -99,15 +99,6 @@
         "price": "30.00",
         "status": "0",
         "screen": "RGB ATMOS"
-      },
-      "SSCC|23213|20260906|Elite": {
-        "venue": "Sivasakthi Cinemas RGB 4K Laser: Padi",
-        "time": "06:30 PM",
-        "date": "20260906",
-        "cat": "Elite",
-        "price": "10.00",
-        "status": "0",
-        "screen": "RGB/ATMOS"
       }
     },
     "dates": {
