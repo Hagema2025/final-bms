@@ -1,24 +1,6 @@
 {
   "Gladiators Special Trailer Premiere Tamil20260906||141115": {
     "shows": {
-      "RAKK|3537|20260906|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "07:00 PM",
-        "date": "20260906",
-        "cat": "Premium",
-        "price": "50.00",
-        "status": "0",
-        "screen": "SC 3 DOLBY ATMOS"
-      },
-      "RAKK|3537|20260906|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "07:00 PM",
-        "date": "20260906",
-        "cat": "Elite",
-        "price": "50.00",
-        "status": "1",
-        "screen": "SC 3 DOLBY ATMOS"
-      },
       "MLMT|8223|20260906|GOLD": {
         "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
         "time": "07:00 PM",
@@ -52,7 +34,7 @@
         "date": "20260906",
         "cat": "SILVER",
         "price": "20.00",
-        "status": "1",
+        "status": "0",
         "screen": "4K M-MAX(PLF)"
       },
       "MLMT|8223|20260906|LOUNGER": {
