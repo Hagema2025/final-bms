@@ -43,7 +43,7 @@
         "date": "20260906",
         "cat": "GOLD",
         "price": "20.00",
-        "status": "1",
+        "status": "0",
         "screen": "4K M-MAX(PLF)"
       },
       "MLMT|8223|20260906|PREMIUM": {
@@ -52,7 +52,7 @@
         "date": "20260906",
         "cat": "PREMIUM",
         "price": "20.00",
-        "status": "1",
+        "status": "2",
         "screen": "4K M-MAX(PLF)"
       },
       "MLMT|8223|20260906|EXECUTIVE": {
