@@ -70,7 +70,7 @@
         "date": "20260906",
         "cat": "SILVER",
         "price": "20.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K M-MAX(PLF)"
       },
       "MLMT|8223|20260906|LOUNGER": {
@@ -79,7 +79,7 @@
         "date": "20260906",
         "cat": "LOUNGER",
         "price": "20.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K M-MAX(PLF)"
       },
       "GKCP|3986|20260906|LOUNGE 1": {
@@ -108,42 +108,6 @@
         "price": "10.00",
         "status": "0",
         "screen": "RGB/ATMOS"
-      },
-      "WSTC|4770|20260906|Box": {
-        "venue": "Woodlands Theatre: Chennai",
-        "time": "06:40 PM",
-        "date": "20260906",
-        "cat": "Box",
-        "price": "10.00",
-        "status": "0",
-        "screen": ""
-      },
-      "WSTC|4770|20260906|Balcony": {
-        "venue": "Woodlands Theatre: Chennai",
-        "time": "06:40 PM",
-        "date": "20260906",
-        "cat": "Balcony",
-        "price": "10.00",
-        "status": "0",
-        "screen": ""
-      },
-      "WSTC|4770|20260906|First Class": {
-        "venue": "Woodlands Theatre: Chennai",
-        "time": "06:40 PM",
-        "date": "20260906",
-        "cat": "First Class",
-        "price": "10.00",
-        "status": "0",
-        "screen": ""
-      },
-      "WSTC|4770|20260906|Second Class": {
-        "venue": "Woodlands Theatre: Chennai",
-        "time": "06:40 PM",
-        "date": "20260906",
-        "cat": "Second Class",
-        "price": "10.00",
-        "status": "0",
-        "screen": ""
       }
     },
     "dates": {
