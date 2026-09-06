@@ -60,8 +60,7 @@ from datetime import datetime
 from dataclasses import dataclass, field
 from urllib.parse import urlparse
 
-import requests
-
+from curl_cffi import requests
 
 # ======================================================================
 # CONFIGURATION
@@ -546,6 +545,7 @@ def fetch_bms(
                 API_URL,
                 headers=headers,
                 params=params,
+                impersonate="chrome",
                 timeout=20,
             )
 
