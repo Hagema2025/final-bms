@@ -79,7 +79,7 @@
         "date": "20260906",
         "cat": "LOUNGER",
         "price": "20.00",
-        "status": "1",
+        "status": "2",
         "screen": "4K M-MAX(PLF)"
       },
       "GKCP|3986|20260906|LOUNGE 1": {
@@ -109,6 +109,18 @@
       "20260910": "NOT_OPEN",
       "20260911": "NOT_OPEN",
       "20260912": "NOT_OPEN"
+    }
+  },
+  "Mandaadi Tamil20260906||082258": {
+    "shows": {},
+    "dates": {
+      "20260910": "AVAILABLE",
+      "20260911": "AVAILABLE",
+      "20260912": "AVAILABLE",
+      "20260913": "BOOKABLE",
+      "20260914": "AVAILABLE",
+      "20260915": "NOT_OPEN",
+      "20260916": "NOT_OPEN"
     }
   }
 }
