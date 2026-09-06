@@ -410,6 +410,88 @@ def resolve_region(slug):
 # BMS API
 # ======================================================================
 
+# def fetch_bms(
+#     event_code,
+#     date_code,
+#     region_code,
+#     region_slug,
+#     lat,
+#     lon,
+#     geohash,
+# ):
+
+#     headers = {
+#         "User-Agent": (
+#             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+#             "AppleWebKit/537.36 (KHTML, like Gecko) "
+#             "Chrome/145.0.0.0 Safari/537.36"
+#         ),
+#         "Accept": "application/json, text/plain, */*",
+#         "Accept-Language": "en-US,en;q=0.9",
+
+#         "Referer": (
+#             f"https://in.bookmyshow.com/movies/"
+#             f"{region_slug}/buytickets/{event_code}/"
+#         ),
+
+#         "sec-ch-ua": (
+#             '"Chromium";v="145", '
+#             '"Not:A-Brand";v="99"'
+#         ),
+
+#         "sec-ch-ua-mobile": "?0",
+#         "sec-ch-ua-platform": '"macOS"',
+
+#         "x-app-code": "WEB",
+#         "x-region-code": region_code,
+#         "x-region-slug": region_slug,
+#         "x-geohash": geohash,
+#         "x-latitude": lat,
+#         "x-longitude": lon,
+#         "x-location-selection": "manual",
+#         "x-lsid": "",
+#     }
+
+#     params = {
+#         "eventCode": event_code,
+#         "dateCode": date_code or "",
+#         "isDesktop": "true",
+#         "regionCode": region_code,
+#         "xLocationShared": "false",
+#         "memberId": "",
+#         "lsId": "",
+#         "subCode": "",
+#         "lat": lat,
+#         "lon": lon,
+#     }
+
+#     try:
+
+#         response = requests.get(
+#             API_URL,
+#             headers=headers,
+#             params=params,
+#             timeout=20,
+#         )
+
+#         if response.status_code == 200:
+#             return response.json()
+
+#         print(
+#             f"  ⚠️ BMS HTTP {response.status_code}"
+#         )
+
+#     except requests.RequestException as e:
+
+#         print(
+#             f"  ⚠️ BMS request failed: {e}"
+#         )
+
+#     return None
+
+import time
+import random
+
 def fetch_bms(
     event_code,
     date_code,
@@ -418,30 +500,20 @@ def fetch_bms(
     lat,
     lon,
     geohash,
+    max_retries=3,
 ):
-
     headers = {
         "User-Agent": (
-            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
             "AppleWebKit/537.36 (KHTML, like Gecko) "
-            "Chrome/145.0.0.0 Safari/537.36"
+            "Chrome/128.0.0.0 Safari/537.36"
         ),
         "Accept": "application/json, text/plain, */*",
         "Accept-Language": "en-US,en;q=0.9",
-
-        "Referer": (
-            f"https://in.bookmyshow.com/movies/"
-            f"{region_slug}/buytickets/{event_code}/"
-        ),
-
-        "sec-ch-ua": (
-            '"Chromium";v="145", '
-            '"Not:A-Brand";v="99"'
-        ),
-
+        "Referer": f"https://in.bookmyshow.com/movies/{region_slug}/buytickets/{event_code}/",
+        "sec-ch-ua": '"Chromium";v="128", "Not;A=Brand";v="24"',
         "sec-ch-ua-mobile": "?0",
-        "sec-ch-ua-platform": '"macOS"',
-
+        "sec-ch-ua-platform": '"Windows"',
         "x-app-code": "WEB",
         "x-region-code": region_code,
         "x-region-slug": region_slug,
@@ -465,30 +537,34 @@ def fetch_bms(
         "lon": lon,
     }
 
-    try:
+    # Introduce a polite, random delay before every request to avoid 403 blocks
+    time.sleep(random.uniform(1.5, 3.0))
 
-        response = requests.get(
-            API_URL,
-            headers=headers,
-            params=params,
-            timeout=20,
-        )
+    for attempt in range(1, max_retries + 1):
+        try:
+            response = requests.get(
+                API_URL,
+                headers=headers,
+                params=params,
+                timeout=20,
+            )
 
-        if response.status_code == 200:
-            return response.json()
+            if response.status_code == 200:
+                return response.json()
 
-        print(
-            f"  ⚠️ BMS HTTP {response.status_code}"
-        )
+            print(
+                f"  ⚠️ BMS HTTP {response.status_code} (Attempt {attempt}/{max_retries})"
+            )
 
-    except requests.RequestException as e:
+            if response.status_code == 403:
+                # Exponential backoff on 403 rate limits
+                time.sleep(attempt * 3)
 
-        print(
-            f"  ⚠️ BMS request failed: {e}"
-        )
+        except requests.RequestException as e:
+            print(f"  ⚠️ BMS request failed: {e} (Attempt {attempt}/{max_retries})")
+            time.sleep(2)
 
     return None
-
 
 # ======================================================================
 # MOVIE INFO PARSER
