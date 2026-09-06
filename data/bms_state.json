@@ -34,7 +34,7 @@
         "date": "20260906",
         "cat": "Elite",
         "price": "50.00",
-        "status": "3",
+        "status": "2",
         "screen": "SC 3 DOLBY ATMOS"
       },
       "MLMT|8223|20260906|GOLD": {
@@ -52,7 +52,7 @@
         "date": "20260906",
         "cat": "PREMIUM",
         "price": "20.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K M-MAX(PLF)"
       },
       "MLMT|8223|20260906|EXECUTIVE": {
@@ -61,7 +61,7 @@
         "date": "20260906",
         "cat": "EXECUTIVE",
         "price": "20.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K M-MAX(PLF)"
       },
       "MLMT|8223|20260906|SILVER": {
