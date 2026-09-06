@@ -1026,150 +1026,198 @@ def build_state(
 # CHANGE DETECTION
 # ======================================================================
 
-def detect_changes(
-    old_state,
-    new_state,
-):
+# def detect_changes(
+#     old_state,
+#     new_state,
+# ):
 
+#     changes = []
+
+#     # --------------------------------------------------------------
+#     # New dates
+#     # --------------------------------------------------------------
+
+#     old_dates = old_state.get(
+#         "dates",
+#         {},
+#     )
+
+#     new_dates = new_state.get(
+#         "dates",
+#         {},
+#     )
+
+#     for date_code, status in new_dates.items():
+
+#         old_status = old_dates.get(
+#             date_code
+#         )
+
+#         if (
+#             old_status == "NOT_OPEN"
+#             and status in (
+#                 "BOOKABLE",
+#                 "AVAILABLE",
+#             )
+#         ):
+
+#             changes.append(
+#                 f"📅 NEW DATE OPENED: {date_code}"
+#             )
+
+#     # --------------------------------------------------------------
+#     # Shows
+#     # --------------------------------------------------------------
+
+#     old_shows = old_state.get(
+#         "shows",
+#         {},
+#     )
+
+#     new_shows = new_state.get(
+#         "shows",
+#         {},
+#     )
+
+#     # --------------------------------------------------------------
+#     # New showtimes
+#     # --------------------------------------------------------------
+
+#     for key in (
+#         set(new_shows)
+#         - set(old_shows)
+#     ):
+
+#         show = new_shows[key]
+
+#         changes.append(
+#             f"🆕 NEW: "
+#             f"{show['venue']} "
+#             f"{show['time']} "
+#             f"[{show['date']}] "
+#             f"— {show['cat']} "
+#             f"₹{show['price']}"
+#         )
+
+#     # --------------------------------------------------------------
+#     # Sold out -> available
+#     # --------------------------------------------------------------
+
+#     for key, new_show in new_shows.items():
+
+#         old_show = old_shows.get(key)
+
+#         if not old_show:
+#             continue
+
+#         if (
+#             old_show["status"] == "0"
+#             and new_show["status"] != "0"
+#         ):
+
+#             label, icon = AVAIL_STATUS_MAP.get(
+#                 new_show["status"],
+#                 ("UNKNOWN", "⚪"),
+#             )
+
+#             changes.append(
+#                 f"{icon} BACK: "
+#                 f"{new_show['venue']} "
+#                 f"{new_show['time']} "
+#                 f"[{new_show['date']}] "
+#                 f"— {new_show['cat']} "
+#                 f"→ {label}"
+#             )
+
+#     # --------------------------------------------------------------
+#     # Availability changes
+#     # --------------------------------------------------------------
+
+#     for key, new_show in new_shows.items():
+
+#         old_show = old_shows.get(key)
+
+#         if not old_show:
+#             continue
+
+#         old_status = old_show["status"]
+#         new_status = new_show["status"]
+
+#         if (
+#             old_status != new_status
+#             and old_status != "0"
+#             and new_status != "0"
+#         ):
+
+#             old_label = AVAIL_STATUS_MAP.get(
+#                 old_status,
+#                 ("UNKNOWN", "⚪"),
+#             )[0]
+
+#             new_label, new_icon = AVAIL_STATUS_MAP.get(
+#                 new_status,
+#                 ("UNKNOWN", "⚪"),
+#             )
+
+#             changes.append(
+#                 f"{new_icon} STATUS: "
+#                 f"{new_show['venue']} "
+#                 f"{new_show['time']} "
+#                 f"[{new_show['date']}] "
+#                 f"— {new_show['cat']} "
+#                 f"{old_label} → {new_label}"
+#             )
+
+#     return changes
+
+# ======================================================================
+# CHANGE DETECTION
+# ======================================================================
+
+def detect_changes(old_state, new_state):
     changes = []
 
-    # --------------------------------------------------------------
-    # New dates
-    # --------------------------------------------------------------
+    old_shows = old_state.get("shows", {})
+    new_shows = new_state.get("shows", {})
 
-    old_dates = old_state.get(
-        "dates",
-        {},
-    )
-
-    new_dates = new_state.get(
-        "dates",
-        {},
-    )
-
-    for date_code, status in new_dates.items():
-
-        old_status = old_dates.get(
-            date_code
-        )
-
-        if (
-            old_status == "NOT_OPEN"
-            and status in (
-                "BOOKABLE",
-                "AVAILABLE",
-            )
-        ):
-
-            changes.append(
-                f"📅 NEW DATE OPENED: {date_code}"
-            )
-
-    # --------------------------------------------------------------
-    # Shows
-    # --------------------------------------------------------------
-
-    old_shows = old_state.get(
-        "shows",
-        {},
-    )
-
-    new_shows = new_state.get(
-        "shows",
-        {},
-    )
-
-    # --------------------------------------------------------------
-    # New showtimes
-    # --------------------------------------------------------------
-
-    for key in (
-        set(new_shows)
-        - set(old_shows)
-    ):
-
+    # 1. New showtimes added
+    for key in set(new_shows) - set(old_shows):
         show = new_shows[key]
+        changes.append({
+            "type": "NEW",
+            "icon": "🆕",
+            "venue": show["venue"],
+            "time": show["time"],
+            "date": show["date"],
+            "cat": show["cat"],
+            "price": show["price"],
+            "screen": show.get("screen", ""),
+            "status": category_status_label(show["status"]),
+        })
 
-        changes.append(
-            f"🆕 NEW: "
-            f"{show['venue']} "
-            f"{show['time']} "
-            f"[{show['date']}] "
-            f"— {show['cat']} "
-            f"₹{show['price']}"
-        )
-
-    # --------------------------------------------------------------
-    # Sold out -> available
-    # --------------------------------------------------------------
-
+    # 2. Back in stock (Sold Out -> Available / Filling Fast / Almost Full)
     for key, new_show in new_shows.items():
-
         old_show = old_shows.get(key)
-
         if not old_show:
             continue
 
-        if (
-            old_show["status"] == "0"
-            and new_show["status"] != "0"
-        ):
-
+        if old_show["status"] == "0" and new_show["status"] != "0":
             label, icon = AVAIL_STATUS_MAP.get(
-                new_show["status"],
-                ("UNKNOWN", "⚪"),
+                new_show["status"], ("UNKNOWN", "⚪")
             )
-
-            changes.append(
-                f"{icon} BACK: "
-                f"{new_show['venue']} "
-                f"{new_show['time']} "
-                f"[{new_show['date']}] "
-                f"— {new_show['cat']} "
-                f"→ {label}"
-            )
-
-    # --------------------------------------------------------------
-    # Availability changes
-    # --------------------------------------------------------------
-
-    for key, new_show in new_shows.items():
-
-        old_show = old_shows.get(key)
-
-        if not old_show:
-            continue
-
-        old_status = old_show["status"]
-        new_status = new_show["status"]
-
-        if (
-            old_status != new_status
-            and old_status != "0"
-            and new_status != "0"
-        ):
-
-            old_label = AVAIL_STATUS_MAP.get(
-                old_status,
-                ("UNKNOWN", "⚪"),
-            )[0]
-
-            new_label, new_icon = AVAIL_STATUS_MAP.get(
-                new_status,
-                ("UNKNOWN", "⚪"),
-            )
-
-            changes.append(
-                f"{new_icon} STATUS: "
-                f"{new_show['venue']} "
-                f"{new_show['time']} "
-                f"[{new_show['date']}] "
-                f"— {new_show['cat']} "
-                f"{old_label} → {new_label}"
-            )
+            changes.append({
+                "type": "RESTOCKED",
+                "icon": icon,
+                "venue": new_show["venue"],
+                "time": new_show["time"],
+                "date": new_show["date"],
+                "cat": new_show["cat"],
+                "price": new_show["price"],
+                "screen": new_show.get("screen", ""),
+                "status": label,
+            })
 
     return changes
-
 
 # ======================================================================
 # EMAIL HELPERS
@@ -1187,108 +1235,272 @@ def category_status_label(status):
 # Telegram
 # ======================================================================
 
+# def send_telegram(watch_name, subject, changes, shows, movie_info):
+#     """
+#     Sends a structured, email-like formatted alert via Telegram API.
+#     Handles message splitting automatically if the content exceeds character limits.
+#     """
+#     if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
+#         print(" ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID not configured.")
+#         return
+
+#     now_str = datetime.now().strftime("%d %b %Y, %I:%M %p")
+#     movie_name = movie_info.get("name", watch_name)
+
+#     def escape_md(text: str) -> str:
+#         """Escapes required MarkdownV2 reserve characters."""
+#         special_chars = r"_*[]()~`>#+-=|{}.!"
+#         return "".join(f"\\{char}" if char in special_chars else char for char in str(text))
+
+#     # --------------------------------------------------------------
+#     # Header Section
+#     # --------------------------------------------------------------
+#     lines = [
+#         f"📩 *BMS Alert: {escape_md(movie_name)}*",
+#         f"🏷️ *Watch:* {escape_md(watch_name)}",
+#         f"🕒 _{escape_md(now_str)}_",
+#         "───────────────────────────",
+#     ]
+
+#     # --------------------------------------------------------------
+#     # Changes Section
+#     # --------------------------------------------------------------
+#     if changes:
+#         lines.append("\n⚡ *Changes Detected*")
+#         for change in changes:
+#             lines.append(f"• {escape_md(change)}")
+
+#     # --------------------------------------------------------------
+#     # Current Showtimes Section
+#     # --------------------------------------------------------------
+#     lines.append("\n🎬 *Current Showtimes*")
+
+#     venue_groups = {}
+#     for show in shows:
+#         venue_groups.setdefault(show.venue_name, []).append(show)
+
+#     for venue_name, venue_shows in venue_groups.items():
+#         lines.append(f"\n📍 *{escape_md(venue_name)}*")
+
+#         for show in venue_shows:
+#             categories_str = " \| ".join(
+#                 f"{escape_md(cat.name)} Rs\\.{escape_md(cat.price)} \\({escape_md(category_status_label(cat.status))}\\)"
+#                 for cat in show.categories
+#             )
+
+#             screen = f" \\[{escape_md(show.screen_attr)}\\]" if show.screen_attr else ""
+
+#             lines.append(
+#                 f"`{escape_md(show.time)}`{screen} \\| _{escape_md(show.date_code)}_\n"
+#                 f"└ {categories_str}"
+#             )
+
+#     lines.append("\n───────────────────────────")
+#     lines.append("🤖 _Automated BMS Ticket Notifier_")
+
+#     # --------------------------------------------------------------
+#     # Chunking & Delivery Logic (Limit Protection)
+#     # --------------------------------------------------------------
+#     full_message = "\n".join(lines)
+#     chunks = []
+    
+#     # Telegram max limit is 4096; safe boundary set to 3800
+#     while len(full_message) > 3800:
+#         split_idx = full_message.rfind("\n\n", 0, 3800)
+#         if split_idx == -1:
+#             split_idx = full_message.rfind("\n", 0, 3800)
+        
+#         chunks.append(full_message[:split_idx])
+#         full_message = full_message[split_idx:].lstrip()
+
+#     chunks.append(full_message)
+
+#     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+
+#     for idx, chunk in enumerate(chunks):
+#         try:
+#             response = requests.post(
+#                 url,
+#                 json={
+#                     "chat_id": TELEGRAM_CHAT_ID,
+#                     "text": chunk,
+#                     "parse_mode": "MarkdownV2",
+#                     "disable_web_page_preview": True,
+#                 },
+#                 timeout=20,
+#             )
+
+#             if response.status_code == 200:
+#                 print(f" ✅ Telegram message chunk {idx + 1}/{len(chunks)} sent.")
+#             else:
+#                 print(f" ❌ Telegram API {response.status_code}: {response.text}")
+
+#         except requests.RequestException as e:
+#             print(f" ❌ Telegram notification failed: {e}")
+
+
+# ======================================================================
+# Telegram (Interactive Inline Keyboard Support)
+# ======================================================================
+
 def send_telegram(watch_name, subject, changes, shows, movie_info):
     """
-    Sends a structured, email-like formatted alert via Telegram API.
-    Handles message splitting automatically if the content exceeds character limits.
+    Sends alerts ONLY for new showtimes or restocked tickets.
+    Includes an inline button 'Show All Available Shows' which lets the user
+    pick a theatre to view its current showtime details.
     """
     if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
         print(" ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID not configured.")
         return
 
-    now_str = datetime.now().strftime("%d %b %Y, %I:%M %p")
+    # Exit early if no targeted changes occurred
+    if not changes:
+        return
+
+    now_str = datetime.now().strftime("%d %b, %I:%M %p")
     movie_name = movie_info.get("name", watch_name)
 
-    def escape_md(text: str) -> str:
-        """Escapes required MarkdownV2 reserve characters."""
-        special_chars = r"_*[]()~`>#+-=|{}.!"
-        return "".join(f"\\{char}" if char in special_chars else char for char in str(text))
-
-    # --------------------------------------------------------------
-    # Header Section
-    # --------------------------------------------------------------
+    # 1. Build Alert Header & Affected Show Items
     lines = [
-        f"📩 *BMS Alert: {escape_md(movie_name)}*",
-        f"🏷️ *Watch:* {escape_md(watch_name)}",
-        f"🕒 _{escape_md(now_str)}_",
-        "───────────────────────────",
+        f"🚨 <b>BMS Ticket Alert!</b>",
+        f"🎬 <b>{escape(movie_name)}</b> ({escape(watch_name)})",
+        f"🕒 <i>{escape(now_str)}</i>\n",
     ]
 
-    # --------------------------------------------------------------
-    # Changes Section
-    # --------------------------------------------------------------
-    if changes:
-        lines.append("\n⚡ *Changes Detected*")
-        for change in changes:
-            lines.append(f"• {escape_md(change)}")
-
-    # --------------------------------------------------------------
-    # Current Showtimes Section
-    # --------------------------------------------------------------
-    lines.append("\n🎬 *Current Showtimes*")
-
-    venue_groups = {}
-    for show in shows:
-        venue_groups.setdefault(show.venue_name, []).append(show)
-
-    for venue_name, venue_shows in venue_groups.items():
-        lines.append(f"\n📍 *{escape_md(venue_name)}*")
-
-        for show in venue_shows:
-            categories_str = " \| ".join(
-                f"{escape_md(cat.name)} Rs\\.{escape_md(cat.price)} \\({escape_md(category_status_label(cat.status))}\\)"
-                for cat in show.categories
-            )
-
-            screen = f" \\[{escape_md(show.screen_attr)}\\]" if show.screen_attr else ""
-
-            lines.append(
-                f"`{escape_md(show.time)}`{screen} \\| _{escape_md(show.date_code)}_\n"
-                f"└ {categories_str}"
-            )
-
-    lines.append("\n───────────────────────────")
-    lines.append("🤖 _Automated BMS Ticket Notifier_")
-
-    # --------------------------------------------------------------
-    # Chunking & Delivery Logic (Limit Protection)
-    # --------------------------------------------------------------
-    full_message = "\n".join(lines)
-    chunks = []
-    
-    # Telegram max limit is 4096; safe boundary set to 3800
-    while len(full_message) > 3800:
-        split_idx = full_message.rfind("\n\n", 0, 3800)
-        if split_idx == -1:
-            split_idx = full_message.rfind("\n", 0, 3800)
+    for item in changes:
+        screen_str = f" [{escape(item['screen'])}]" if item.get("screen") else ""
         
-        chunks.append(full_message[:split_idx])
-        full_message = full_message[split_idx:].lstrip()
+        if item["type"] == "NEW":
+            lines.append(
+                f"🆕 <b>NEW SHOW ADDED</b>\n"
+                f"📍 {escape(item['venue'])}\n"
+                f"🕒 <code>{escape(item['time'])}</code>{screen_str} | Date: <code>{escape(item['date'])}</code>\n"
+                f"🎟️ {escape(item['cat'])}: ₹{escape(item['price'])} ({escape(item['status'])})\n"
+            )
+        elif item["type"] == "RESTOCKED":
+            lines.append(
+                f"{item['icon']} <b>BACK IN STOCK</b>\n"
+                f"📍 {escape(item['venue'])}\n"
+                f"🕒 <code>{escape(item['time'])}</code>{screen_str} | Date: <code>{escape(item['date'])}</code>\n"
+                f"🎟️ {escape(item['cat'])}: ₹{escape(item['price'])} → <b>{escape(item['status'])}</b>\n"
+            )
 
-    chunks.append(full_message)
+    full_message = "\n".join(lines)
+
+    # 2. Attach "Show Full Shows Avail" Inline Keyboard Button
+    inline_keyboard = {
+        "inline_keyboard": [
+            [
+                {
+                    "text": "🎬 Show Full Shows Avail",
+                    "callback_data": f"menu_theatres"
+                }
+            ]
+        ]
+    }
 
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
 
-    for idx, chunk in enumerate(chunks):
-        try:
-            response = requests.post(
-                url,
-                json={
-                    "chat_id": TELEGRAM_CHAT_ID,
-                    "text": chunk,
-                    "parse_mode": "MarkdownV2",
-                    "disable_web_page_preview": True,
-                },
-                timeout=20,
-            )
+    try:
+        response = requests.post(
+            url,
+            json={
+                "chat_id": TELEGRAM_CHAT_ID,
+                "text": full_message,
+                "parse_mode": "HTML",
+                "disable_web_page_preview": True,
+                "reply_markup": inline_keyboard,
+            },
+            timeout=20,
+        )
 
-            if response.status_code == 200:
-                print(f" ✅ Telegram message chunk {idx + 1}/{len(chunks)} sent.")
-            else:
-                print(f" ❌ Telegram API {response.status_code}: {response.text}")
+        if response.status_code == 200:
+            print(" ✅ Interactive Telegram change alert sent.")
+        else:
+            print(f" ❌ Telegram API {response.status_code}: {response.text}")
 
-        except requests.RequestException as e:
-            print(f" ❌ Telegram notification failed: {e}")
+    except requests.RequestException as e:
+        print(f" ❌ Telegram notification failed: {e}")
+
+
+# ======================================================================
+# TELEGRAM BOT CALLBACK LISTENER (For Interactive Inline Buttons)
+# ======================================================================
+
+def process_telegram_callback(callback_query, current_shows, movie_name):
+    """
+    Handles button clicks from Telegram inline buttons.
+    Call this from your bot listener or polling thread when an update arrives.
+    """
+    callback_id = callback_query.get("id")
+    chat_id = callback_query["message"]["chat"]["id"]
+    message_id = callback_query["message"]["message_id"]
+    data = callback_query.get("data", "")
+
+    # Group current shows by venue
+    venue_groups = {}
+    for show in current_shows:
+        venue_groups.setdefault(show.venue_name, []).append(show)
+
+    # Helper: Send response to Telegram API
+    def edit_message(text, reply_markup=None):
+        url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/editMessageText"
+        payload = {
+            "chat_id": chat_id,
+            "message_id": message_id,
+            "text": text,
+            "parse_mode": "HTML",
+            "reply_markup": reply_markup or {"inline_keyboard": []}
+        }
+        requests.post(url, json=payload, timeout=10)
+
+    # Helper: Answer callback query to clear button loading state
+    requests.post(
+        f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/answerCallbackQuery",
+        json={"callback_query_id": callback_id},
+        timeout=10
+    )
+
+    # ACTION 1: Show List of Theatres
+    if data == "menu_theatres":
+        buttons = []
+        for idx, venue_name in enumerate(venue_groups.keys()):
+            buttons.append([{
+                "text": f"📍 {venue_name}",
+                "callback_data": f"th_{idx}"
+            }])
+
+        edit_message(
+            f"🍿 <b>Select a Theatre for {escape(movie_name)}:</b>",
+            reply_markup={"inline_keyboard": buttons}
+        )
+
+    # ACTION 2: Show Specific Theatre Details
+    elif data.startswith("th_"):
+        venue_idx = int(data.split("_")[1])
+        venue_list = list(venue_groups.keys())
+
+        if venue_idx < len(venue_list):
+            selected_venue = venue_list[venue_idx]
+            venue_shows = venue_groups[selected_venue]
+
+            lines = [f"📍 <b>{escape(selected_venue)}</b>\n"]
+            for show in venue_shows:
+                cats = [
+                    f"{escape(c.name)}: ₹{escape(c.price)} ({category_status_label(c.status)})"
+                    for c in show.categories
+                ]
+                screen_str = f" [{escape(show.screen_attr)}]" if show.screen_attr else ""
+                lines.append(
+                    f"• <code>{escape(show.time)}</code>{screen_str} ({escape(show.date_code)})\n"
+                    f"  <small>{', '.join(cats)}</small>"
+                )
+
+            # Add a 'Back' button to return to theatre selection
+            back_button = {
+                "inline_keyboard": [[{"text": "⬅️ Back to Theatres", "callback_data": "menu_theatres"}]]
+            }
+            edit_message("\n".join(lines), reply_markup=back_button)
 
 # ======================================================================
 # EMAIL
