@@ -39,6 +39,7 @@ jobs:
           BMS_TIME: ${{ vars.BMS_TIME }}
           TELEGRAM_BOT_TOKEN: ${{ vars.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
+          NOTIFICATION_USERS: ${{ vars.NOTIFICATION_USERS }}
         run: uv run main.py
       - name: Commit updated state
         run: |
