@@ -60,6 +60,7 @@ from datetime import datetime
 from dataclasses import dataclass, field
 from urllib.parse import urlparse
 from collections import defaultdict
+from zoneinfo import ZoneInfo
 from curl_cffi import requests
 
 # ======================================================================
@@ -1267,7 +1268,6 @@ def build_state(
 # ======================================================================
 # CHANGE DETECTION
 # ======================================================================
-
 def detect_changes(old_state, new_state):
     changes = []
 
@@ -1289,12 +1289,13 @@ def detect_changes(old_state, new_state):
             "status": category_status_label(show["status"]),
         })
 
-    # 2. Back in stock (Sold Out -> Available / Filling Fast / Almost Full)
+    # Compare existing shows for status & price changes
     for key, new_show in new_shows.items():
         old_show = old_shows.get(key)
         if not old_show:
             continue
 
+        # 2. Back in stock (Sold Out -> Available / Filling Fast / Almost Full)
         if old_show["status"] == "0" and new_show["status"] != "0":
             label, icon = AVAIL_STATUS_MAP.get(
                 new_show["status"], ("UNKNOWN", "⚪")
@@ -1311,8 +1312,29 @@ def detect_changes(old_state, new_state):
                 "status": label,
             })
 
-    return changes
+        # 3. Price changes (Price Drop / Price Increase)
+        try:
+            old_price = float(old_show.get("price", 0))
+            new_price = float(new_show.get("price", 0))
 
+            if old_price != new_price:
+                price_dropped = new_price < old_price
+                changes.append({
+                    "type": "PRICE_DROP" if price_dropped else "PRICE_INCREASE",
+                    "icon": "📉" if price_dropped else "📈",
+                    "venue": new_show["venue"],
+                    "time": new_show["time"],
+                    "date": new_show["date"],
+                    "cat": new_show["cat"],
+                    "old_price": f"{old_price:.2f}",
+                    "price": f"{new_price:.2f}",
+                    "screen": new_show.get("screen", ""),
+                    "status": category_status_label(new_show["status"]),
+                })
+        except (ValueError, TypeError):
+            pass
+
+    return changes
 # ======================================================================
 # EMAIL HELPERS
 # ======================================================================
@@ -1546,7 +1568,7 @@ def category_status_label(status):
 
 def send_telegram(watch_name, subject, changes, shows, movie_info):
     """
-    Sends alerts for new showtimes or restocked tickets to NOTIFICATION_USERS.
+    Sends alerts for new showtimes, restocked tickets, or price changes to NOTIFICATION_USERS.
     Retries failed attempts (3x) and notifies TELEGRAM_CHAT_ID if delivery permanently fails.
     """
     if not TELEGRAM_BOT_TOKEN:
@@ -1561,7 +1583,7 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
     if not changes:
         return
 
-    now_str = datetime.now().strftime("%d %b, %I:%M %p")
+    now_str = datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%d %b, %I:%M %p")
     movie_name = movie_info.get("name", watch_name)
 
     # 1. Group changes by unique showtime attributes
@@ -1580,7 +1602,7 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
     # 2. Build Alert Header
     lines = [
         f"🚨 <b>BMS Ticket Alert!</b>",
-        f"🎬 <b>{escape(str(movie_name))}</b> ({escape(str(watch_name))})",
+        f"🎬 <b>{escape(str(watch_name.split('_')[0]))}</b> ({escape(str(watch_name))})",
         f"🕒 <i>{escape(now_str)}</i>\n",
     ]
 
@@ -1593,15 +1615,19 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
         for cat in items:
             cat_name = escape(str(cat.get('cat', '')))
             cat_price = escape(str(cat.get('price', '')))
+            old_price = escape(str(cat.get('old_price', '')))
             cat_status = escape(str(cat.get('status', '')))
 
             if change_type == "RESTOCKED":
                 cat_lines.append(f"└ 🎟️ {cat_name}: ₹{cat_price} → <b>{cat_status}</b>")
+            elif change_type in ("PRICE_DROP", "PRICE_INCREASE"):
+                cat_lines.append(f"└ 🎟️ {cat_name}: Was ₹{old_price} ➔ <b>₹{cat_price}</b> ({cat_status})")
             else:
                 cat_lines.append(f"└ 🎟️ {cat_name}: ₹{cat_price} ({cat_status})")
                 
         categories_formatted = "\n".join(cat_lines)
 
+        # 4. Append message section based on change type
         if change_type == "NEW":
             lines.append(
                 f"🆕 <b>NEW SHOW ADDED</b>\n"
@@ -1616,19 +1642,27 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
                 f"🕒 <code>{escape(str(time_val))}</code>{screen_str} | Date: <code>{escape(str(formatted_date))}</code>\n"
                 f"{categories_formatted}\n"
             )
+        elif change_type == "PRICE_DROP":
+            lines.append(
+                f"📉 <b>PRICE DROP ALERT</b>\n"
+                f"📍 {escape(str(venue))}\n"
+                f"🕒 <code>{escape(str(time_val))}</code>{screen_str} | Date: <code>{escape(str(formatted_date))}</code>\n"
+                f"{categories_formatted}\n"
+            )
+        elif change_type == "PRICE_INCREASE":
+            lines.append(
+                f"📈 <b>PRICE INCREASE ALERT</b>\n"
+                f"📍 {escape(str(venue))}\n"
+                f"🕒 <code>{escape(str(time_val))}</code>{screen_str} | Date: <code>{escape(str(formatted_date))}</code>\n"
+                f"{categories_formatted}\n"
+            )
 
     full_message = "\n".join(lines)
-
-    inline_keyboard = {
-        "inline_keyboard": [
-            [{"text": "🎬 Show Full Shows Avail", "callback_data": "menu_theatres"}]
-        ]
-    }
 
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     failed_deliveries = []  # Stores details of permanently failed sends
 
-    # 4. Broadcast to all recipients with Retries
+    # 5. Broadcast to all recipients with Retries
     for chat_id in recipients:
         success = False
         last_error = "Unknown Error"
@@ -1642,7 +1676,6 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
                         "text": full_message,
                         "parse_mode": "HTML",
                         "disable_web_page_preview": True,
-                        "reply_markup": inline_keyboard,
                     },
                     timeout=20,
                 )
@@ -1662,7 +1695,6 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
             time.sleep(attempt * 2)  # Exponential backoff delay (2s, 4s)
 
         if not success:
-            # Fetch user info via Telegram API if missing
             user_info_str = get_telegram_user_info(chat_id)
             failed_deliveries.append({
                 "chat_id": chat_id,
@@ -1670,7 +1702,7 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
                 "error": last_error
             })
 
-    # 5. Report Failures to Admin (TELEGRAM_CHAT_ID)
+    # 6. Report Failures to Admin (TELEGRAM_CHAT_ID)
     if failed_deliveries and TELEGRAM_CHAT_ID:
         report_lines = [
             f"⚠️ <b>Delivery Failure Report</b>",
@@ -1700,7 +1732,6 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
         except Exception as e:
             print(f" ❌ Failed to send failure report to admin: {e}")
 
-
 def get_telegram_user_info(chat_id: int) -> str:
     """Helper to fetch a user's name/username via getChat endpoint."""
     try:
@@ -1722,80 +1753,80 @@ def get_telegram_user_info(chat_id: int) -> str:
 # TELEGRAM BOT CALLBACK LISTENER (For Interactive Inline Buttons)
 # ======================================================================
 
-def process_telegram_callback(callback_query, current_shows, movie_name):
-    """
-    Handles button clicks from Telegram inline buttons.
-    Call this from your bot listener or polling thread when an update arrives.
-    """
-    callback_id = callback_query.get("id")
-    chat_id = callback_query["message"]["chat"]["id"]
-    message_id = callback_query["message"]["message_id"]
-    data = callback_query.get("data", "")
+# def process_telegram_callback(callback_query, current_shows, movie_name):
+#     """
+#     Handles button clicks from Telegram inline buttons.
+#     Call this from your bot listener or polling thread when an update arrives.
+#     """
+#     callback_id = callback_query.get("id")
+#     chat_id = callback_query["message"]["chat"]["id"]
+#     message_id = callback_query["message"]["message_id"]
+#     data = callback_query.get("data", "")
 
-    # Group current shows by venue
-    venue_groups = {}
-    for show in current_shows:
-        venue_groups.setdefault(show.venue_name, []).append(show)
+#     # Group current shows by venue
+#     venue_groups = {}
+#     for show in current_shows:
+#         venue_groups.setdefault(show.venue_name, []).append(show)
 
-    # Helper: Send response to Telegram API
-    def edit_message(text, reply_markup=None):
-        url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/editMessageText"
-        payload = {
-            "chat_id": chat_id,
-            "message_id": message_id,
-            "text": text,
-            "parse_mode": "HTML",
-            "reply_markup": reply_markup or {"inline_keyboard": []}
-        }
-        requests.post(url, json=payload, timeout=10)
+#     # Helper: Send response to Telegram API
+#     def edit_message(text, reply_markup=None):
+#         url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/editMessageText"
+#         payload = {
+#             "chat_id": chat_id,
+#             "message_id": message_id,
+#             "text": text,
+#             "parse_mode": "HTML",
+#             "reply_markup": reply_markup or {"inline_keyboard": []}
+#         }
+#         requests.post(url, json=payload, timeout=10)
 
-    # Helper: Answer callback query to clear button loading state
-    requests.post(
-        f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/answerCallbackQuery",
-        json={"callback_query_id": callback_id},
-        timeout=10
-    )
+#     # Helper: Answer callback query to clear button loading state
+#     requests.post(
+#         f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/answerCallbackQuery",
+#         json={"callback_query_id": callback_id},
+#         timeout=10
+#     )
 
-    # ACTION 1: Show List of Theatres
-    if data == "menu_theatres":
-        buttons = []
-        for idx, venue_name in enumerate(venue_groups.keys()):
-            buttons.append([{
-                "text": f"📍 {venue_name}",
-                "callback_data": f"th_{idx}"
-            }])
+#     # ACTION 1: Show List of Theatres
+#     if data == "menu_theatres":
+#         buttons = []
+#         for idx, venue_name in enumerate(venue_groups.keys()):
+#             buttons.append([{
+#                 "text": f"📍 {venue_name}",
+#                 "callback_data": f"th_{idx}"
+#             }])
 
-        edit_message(
-            f"🍿 <b>Select a Theatre for {escape(movie_name)}:</b>",
-            reply_markup={"inline_keyboard": buttons}
-        )
+#         edit_message(
+#             f"🍿 <b>Select a Theatre for {escape(movie_name)}:</b>",
+#             reply_markup={"inline_keyboard": buttons}
+#         )
 
-    # ACTION 2: Show Specific Theatre Details
-    elif data.startswith("th_"):
-        venue_idx = int(data.split("_")[1])
-        venue_list = list(venue_groups.keys())
+#     # ACTION 2: Show Specific Theatre Details
+#     elif data.startswith("th_"):
+#         venue_idx = int(data.split("_")[1])
+#         venue_list = list(venue_groups.keys())
 
-        if venue_idx < len(venue_list):
-            selected_venue = venue_list[venue_idx]
-            venue_shows = venue_groups[selected_venue]
+#         if venue_idx < len(venue_list):
+#             selected_venue = venue_list[venue_idx]
+#             venue_shows = venue_groups[selected_venue]
 
-            lines = [f"📍 <b>{escape(selected_venue)}</b>\n"]
-            for show in venue_shows:
-                cats = [
-                    f"{escape(c.name)}: ₹{escape(c.price)} ({category_status_label(c.status)})"
-                    for c in show.categories
-                ]
-                screen_str = f" [{escape(show.screen_attr)}]" if show.screen_attr else ""
-                lines.append(
-                    f"• <code>{escape(show.time)}</code>{screen_str} ({escape(show.date_code)})\n"
-                    f"  <small>{', '.join(cats)}</small>"
-                )
+#             lines = [f"📍 <b>{escape(selected_venue)}</b>\n"]
+#             for show in venue_shows:
+#                 cats = [
+#                     f"{escape(c.name)}: ₹{escape(c.price)} ({category_status_label(c.status)})"
+#                     for c in show.categories
+#                 ]
+#                 screen_str = f" [{escape(show.screen_attr)}]" if show.screen_attr else ""
+#                 lines.append(
+#                     f"• <code>{escape(show.time)}</code>{screen_str} ({escape(show.date_code)})\n"
+#                     f"  <small>{', '.join(cats)}</small>"
+#                 )
 
-            # Add a 'Back' button to return to theatre selection
-            back_button = {
-                "inline_keyboard": [[{"text": "⬅️ Back to Theatres", "callback_data": "menu_theatres"}]]
-            }
-            edit_message("\n".join(lines), reply_markup=back_button)
+#             # Add a 'Back' button to return to theatre selection
+#             back_button = {
+#                 "inline_keyboard": [[{"text": "⬅️ Back to Theatres", "callback_data": "menu_theatres"}]]
+#             }
+#             edit_message("\n".join(lines), reply_markup=back_button)
 
 # ======================================================================
 # EMAIL
