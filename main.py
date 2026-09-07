@@ -224,7 +224,13 @@ class VariantInfo:
 # ======================================================================
 # WATCH CONFIGURATION
 # ======================================================================
-
+def format_date(date_str):
+    """Converts '20260912' to '12/09/2026'."""
+    try:
+        return datetime.strptime(str(date_str), "%Y%m%d").strftime("%d/%m/%Y")
+    except (ValueError, TypeError):
+        return date_str
+    
 def _as_list(value):
     """
     Normalize a config value that may be a list, a comma-separated
@@ -1456,6 +1462,7 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
     # 3. Format each show with affected categories on individual lines
     for (venue, date, time, screen, change_type, icon), items in grouped_changes.items():
         screen_str = f" [{escape(screen)}]" if screen else ""
+        formatted_date = format_date(date)  # Converts 20260912 -> 12/09/2026
         
         cat_lines = []
         for cat in items:
@@ -1476,14 +1483,14 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
             lines.append(
                 f"🆕 <b>NEW SHOW ADDED</b>\n"
                 f"📍 {escape(venue)}\n"
-                f"🕒 <code>{escape(time)}</code>{screen_str} | Date: <code>{escape(date)}</code>\n"
+                f"🕒 <code>{escape(time)}</code>{screen_str} | Date: <code>{escape(formatted_date)}</code>\n"
                 f"{categories_formatted}\n"
             )
         elif change_type == "RESTOCKED":
             lines.append(
                 f"{icon} <b>TICKETS RESTOCKED</b>\n"
                 f"📍 {escape(venue)}\n"
-                f"🕒 <code>{escape(time)}</code>{screen_str} | Date: <code>{escape(date)}</code>\n"
+                f"🕒 <code>{escape(time)}</code>{screen_str} | Date: <code>{escape(formatted_date)}</code>\n"
                 f"{categories_formatted}\n"
             )
 
