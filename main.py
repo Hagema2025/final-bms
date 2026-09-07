@@ -59,7 +59,7 @@ from html import escape
 from datetime import datetime
 from dataclasses import dataclass, field
 from urllib.parse import urlparse
-
+from collections import defaultdict
 from curl_cffi import requests
 
 # ======================================================================
@@ -1418,58 +1418,84 @@ def category_status_label(status):
 # ======================================================================
 # Telegram (Interactive Inline Keyboard Support)
 # ======================================================================
-
 def send_telegram(watch_name, subject, changes, shows, movie_info):
     """
-    Sends alerts ONLY for new showtimes or restocked tickets.
-    Includes an inline button 'Show All Available Shows' which lets the user
-    pick a theatre to view its current showtime details.
+    Sends alerts for new showtimes or restocked tickets.
+    Displays individual category updates dynamically for restocked tickets.
     """
     if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
         print(" ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID not configured.")
         return
 
-    # Exit early if no targeted changes occurred
     if not changes:
         return
 
     now_str = datetime.now().strftime("%d %b, %I:%M %p")
     movie_name = movie_info.get("name", watch_name)
 
-    # 1. Build Alert Header & Affected Show Items
+    # 1. Group changes by unique showtime attributes
+    grouped_changes = defaultdict(list)
+    for item in changes:
+        group_key = (
+            item["venue"],
+            item["date"],
+            item["time"],
+            item.get("screen", ""),
+            item["type"],
+            item.get("icon", "🔄")
+        )
+        grouped_changes[group_key].append(item)
+
+    # 2. Build Alert Header
     lines = [
         f"🚨 <b>BMS Ticket Alert!</b>",
         f"🎬 <b>{escape(movie_name)}</b> ({escape(watch_name)})",
         f"🕒 <i>{escape(now_str)}</i>\n",
     ]
 
-    for item in changes:
-        screen_str = f" [{escape(item['screen'])}]" if item.get("screen") else ""
+    # 3. Format each show with affected categories on individual lines
+    for (venue, date, time, screen, change_type, icon), items in grouped_changes.items():
+        screen_str = f" [{escape(screen)}]" if screen else ""
         
-        if item["type"] == "NEW":
+        cat_lines = []
+        for cat in items:
+            if change_type == "RESTOCKED":
+                # Explicit status change for restocks (e.g., Sold Out → Available)
+                cat_lines.append(
+                    f"└ 🎟️ {escape(cat['cat'])}: ₹{escape(cat['price'])} → <b>{escape(cat['status'])}</b>"
+                )
+            else:
+                # Default status display for brand new shows
+                cat_lines.append(
+                    f"└ 🎟️ {escape(cat['cat'])}: ₹{escape(cat['price'])} ({escape(cat['status'])})"
+                )
+                
+        categories_formatted = "\n".join(cat_lines)
+
+        if change_type == "NEW":
             lines.append(
                 f"🆕 <b>NEW SHOW ADDED</b>\n"
-                f"📍 {escape(item['venue'])}\n"
-                f"🕒 <code>{escape(item['time'])}</code>{screen_str} | Date: <code>{escape(item['date'])}</code>\n"
-                f"🎟️ {escape(item['cat'])}: ₹{escape(item['price'])} ({escape(item['status'])})\n"
+                f"📍 {escape(venue)}\n"
+                f"🕒 <code>{escape(time)}</code>{screen_str} | Date: <code>{escape(date)}</code>\n"
+                f"{categories_formatted}\n"
             )
-        elif item["type"] == "RESTOCKED":
+        elif change_type == "RESTOCKED":
             lines.append(
-                f"{item['icon']} <b>BACK IN STOCK</b>\n"
-                f"📍 {escape(item['venue'])}\n"
-                f"🕒 <code>{escape(item['time'])}</code>{screen_str} | Date: <code>{escape(item['date'])}</code>\n"
-                f"🎟️ {escape(item['cat'])}: ₹{escape(item['price'])} → <b>{escape(item['status'])}</b>\n"
+                f"{icon} <b>TICKETS RESTOCKED</b>\n"
+                f"📍 {escape(venue)}\n"
+                f"🕒 <code>{escape(time)}</code>{screen_str} | Date: <code>{escape(date)}</code>\n"
+                f"{categories_formatted}\n"
             )
 
     full_message = "\n".join(lines)
 
-    # 2. Attach "Show Full Shows Avail" Inline Keyboard Button
+    # 4. Attach Inline Keyboard
     inline_keyboard = {
         "inline_keyboard": [
             [
                 {
                     "text": "🎬 Show Full Shows Avail",
-                    "callback_data": f"menu_theatres"
+                    "callback_data": "menu_theatres"
                 }
             ]
         ]
@@ -1497,7 +1523,6 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
 
     except requests.RequestException as e:
         print(f" ❌ Telegram notification failed: {e}")
-
 
 # ======================================================================
 # TELEGRAM BOT CALLBACK LISTENER (For Interactive Inline Buttons)
