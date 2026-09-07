@@ -79,6 +79,18 @@ STATE_FILE = "data/bms_state.json"
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip()
 
+
+def get_notification_recipients() -> set[int]:
+    raw_env = os.getenv("NOTIFICATION_USERS", "")
+    recipients = {int(x.strip()) for x in raw_env.split(",") if x.strip().isdigit()}
+    
+    # Optional fallback for backward compatibility
+    fallback_id = os.getenv("TELEGRAM_CHAT_ID")
+    if not recipients and fallback_id and fallback_id.isdigit():
+        recipients.add(int(fallback_id))
+        
+    return recipients
+
 # ======================================================================
 # CONSTANTS
 # ======================================================================
@@ -1424,13 +1436,126 @@ def category_status_label(status):
 # ======================================================================
 # Telegram (Interactive Inline Keyboard Support)
 # ======================================================================
+# def send_telegram(watch_name, subject, changes, shows, movie_info):
+#     """
+#     Sends alerts for new showtimes or restocked tickets.
+#     Displays individual category updates dynamically for restocked tickets.
+#     """
+#     if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
+#         print(" ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID not configured.")
+#         return
+
+#     if not changes:
+#         return
+
+#     now_str = datetime.now().strftime("%d %b, %I:%M %p")
+#     movie_name = movie_info.get("name", watch_name)
+
+#     # 1. Group changes by unique showtime attributes
+#     grouped_changes = defaultdict(list)
+#     for item in changes:
+#         group_key = (
+#             item["venue"],
+#             item["date"],
+#             item["time"],
+#             item.get("screen", ""),
+#             item["type"],
+#             item.get("icon", "🔄")
+#         )
+#         grouped_changes[group_key].append(item)
+
+#     # 2. Build Alert Header
+#     lines = [
+#         f"🚨 <b>BMS Ticket Alert!</b>",
+#         f"🎬 <b>{escape(movie_name)}</b> ({escape(watch_name)})",
+#         f"🕒 <i>{escape(now_str)}</i>\n",
+#     ]
+
+#     # 3. Format each show with affected categories on individual lines
+#     for (venue, date, time, screen, change_type, icon), items in grouped_changes.items():
+#         screen_str = f" [{escape(screen)}]" if screen else ""
+#         formatted_date = format_date(date)  # Converts 20260912 -> 12/09/2026
+        
+#         cat_lines = []
+#         for cat in items:
+#             if change_type == "RESTOCKED":
+#                 # Explicit status change for restocks (e.g., Sold Out → Available)
+#                 cat_lines.append(
+#                     f"└ 🎟️ {escape(cat['cat'])}: ₹{escape(cat['price'])} → <b>{escape(cat['status'])}</b>"
+#                 )
+#             else:
+#                 # Default status display for brand new shows
+#                 cat_lines.append(
+#                     f"└ 🎟️ {escape(cat['cat'])}: ₹{escape(cat['price'])} ({escape(cat['status'])})"
+#                 )
+                
+#         categories_formatted = "\n".join(cat_lines)
+
+#         if change_type == "NEW":
+#             lines.append(
+#                 f"🆕 <b>NEW SHOW ADDED</b>\n"
+#                 f"📍 {escape(venue)}\n"
+#                 f"🕒 <code>{escape(time)}</code>{screen_str} | Date: <code>{escape(formatted_date)}</code>\n"
+#                 f"{categories_formatted}\n"
+#             )
+#         elif change_type == "RESTOCKED":
+#             lines.append(
+#                 f"{icon} <b>TICKETS RESTOCKED</b>\n"
+#                 f"📍 {escape(venue)}\n"
+#                 f"🕒 <code>{escape(time)}</code>{screen_str} | Date: <code>{escape(formatted_date)}</code>\n"
+#                 f"{categories_formatted}\n"
+#             )
+
+#     full_message = "\n".join(lines)
+
+#     # 4. Attach Inline Keyboard
+#     inline_keyboard = {
+#         "inline_keyboard": [
+#             [
+#                 {
+#                     "text": "🎬 Show Full Shows Avail",
+#                     "callback_data": "menu_theatres"
+#                 }
+#             ]
+#         ]
+#     }
+
+#     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+
+#     try:
+#         response = requests.post(
+#             url,
+#             json={
+#                 "chat_id": TELEGRAM_CHAT_ID,
+#                 "text": full_message,
+#                 "parse_mode": "HTML",
+#                 "disable_web_page_preview": True,
+#                 "reply_markup": inline_keyboard,
+#             },
+#             timeout=20,
+#         )
+
+#         if response.status_code == 200:
+#             print(" ✅ Interactive Telegram change alert sent.")
+#         else:
+#             print(f" ❌ Telegram API {response.status_code}: {response.text}")
+
+#     except requests.RequestException as e:
+#         print(f" ❌ Telegram notification failed: {e}")
+
+
 def send_telegram(watch_name, subject, changes, shows, movie_info):
     """
-    Sends alerts for new showtimes or restocked tickets.
-    Displays individual category updates dynamically for restocked tickets.
+    Sends alerts for new showtimes or restocked tickets to NOTIFICATION_USERS.
+    Retries failed attempts (3x) and notifies TELEGRAM_CHAT_ID if delivery permanently fails.
     """
-    if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
-        print(" ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID not configured.")
+    if not TELEGRAM_BOT_TOKEN:
+        print(" ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN not configured.")
+        return
+
+    recipients = get_notification_recipients()
+    if not recipients:
+        print(" ⚠️ Telegram skipped — No NOTIFICATION_USERS configured.")
         return
 
     if not changes:
@@ -1455,81 +1580,143 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
     # 2. Build Alert Header
     lines = [
         f"🚨 <b>BMS Ticket Alert!</b>",
-        f"🎬 <b>{escape(movie_name)}</b> ({escape(watch_name)})",
+        f"🎬 <b>{escape(str(movie_name))}</b> ({escape(str(watch_name))})",
         f"🕒 <i>{escape(now_str)}</i>\n",
     ]
 
-    # 3. Format each show with affected categories on individual lines
-    for (venue, date, time, screen, change_type, icon), items in grouped_changes.items():
-        screen_str = f" [{escape(screen)}]" if screen else ""
-        formatted_date = format_date(date)  # Converts 20260912 -> 12/09/2026
+    # 3. Format each show with affected categories
+    for (venue, date, time_val, screen, change_type, icon), items in grouped_changes.items():
+        screen_str = f" [{escape(str(screen))}]" if screen else ""
+        formatted_date = format_date(date)
         
         cat_lines = []
         for cat in items:
+            cat_name = escape(str(cat.get('cat', '')))
+            cat_price = escape(str(cat.get('price', '')))
+            cat_status = escape(str(cat.get('status', '')))
+
             if change_type == "RESTOCKED":
-                # Explicit status change for restocks (e.g., Sold Out → Available)
-                cat_lines.append(
-                    f"└ 🎟️ {escape(cat['cat'])}: ₹{escape(cat['price'])} → <b>{escape(cat['status'])}</b>"
-                )
+                cat_lines.append(f"└ 🎟️ {cat_name}: ₹{cat_price} → <b>{cat_status}</b>")
             else:
-                # Default status display for brand new shows
-                cat_lines.append(
-                    f"└ 🎟️ {escape(cat['cat'])}: ₹{escape(cat['price'])} ({escape(cat['status'])})"
-                )
+                cat_lines.append(f"└ 🎟️ {cat_name}: ₹{cat_price} ({cat_status})")
                 
         categories_formatted = "\n".join(cat_lines)
 
         if change_type == "NEW":
             lines.append(
                 f"🆕 <b>NEW SHOW ADDED</b>\n"
-                f"📍 {escape(venue)}\n"
-                f"🕒 <code>{escape(time)}</code>{screen_str} | Date: <code>{escape(formatted_date)}</code>\n"
+                f"📍 {escape(str(venue))}\n"
+                f"🕒 <code>{escape(str(time_val))}</code>{screen_str} | Date: <code>{escape(str(formatted_date))}</code>\n"
                 f"{categories_formatted}\n"
             )
         elif change_type == "RESTOCKED":
             lines.append(
                 f"{icon} <b>TICKETS RESTOCKED</b>\n"
-                f"📍 {escape(venue)}\n"
-                f"🕒 <code>{escape(time)}</code>{screen_str} | Date: <code>{escape(formatted_date)}</code>\n"
+                f"📍 {escape(str(venue))}\n"
+                f"🕒 <code>{escape(str(time_val))}</code>{screen_str} | Date: <code>{escape(str(formatted_date))}</code>\n"
                 f"{categories_formatted}\n"
             )
 
     full_message = "\n".join(lines)
 
-    # 4. Attach Inline Keyboard
     inline_keyboard = {
         "inline_keyboard": [
-            [
-                {
-                    "text": "🎬 Show Full Shows Avail",
-                    "callback_data": "menu_theatres"
-                }
-            ]
+            [{"text": "🎬 Show Full Shows Avail", "callback_data": "menu_theatres"}]
         ]
     }
 
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+    failed_deliveries = []  # Stores details of permanently failed sends
 
+    # 4. Broadcast to all recipients with Retries
+    for chat_id in recipients:
+        success = False
+        last_error = "Unknown Error"
+
+        for attempt in range(1, 4):  # Retry up to 3 times
+            try:
+                response = requests.post(
+                    url,
+                    json={
+                        "chat_id": chat_id,
+                        "text": full_message,
+                        "parse_mode": "HTML",
+                        "disable_web_page_preview": True,
+                        "reply_markup": inline_keyboard,
+                    },
+                    timeout=20,
+                )
+
+                if response.status_code == 200:
+                    print(f" ✅ Alert sent to user ID {chat_id}.")
+                    success = True
+                    break  # Success — exit retry loop
+                else:
+                    last_error = f"HTTP {response.status_code}: {response.text}"
+                    print(f" ⚠️ Attempt {attempt} failed for {chat_id}: {last_error}")
+
+            except requests.RequestException as e:
+                last_error = str(e)
+                print(f" ⚠️ Attempt {attempt} network error for {chat_id}: {last_error}")
+
+            time.sleep(attempt * 2)  # Exponential backoff delay (2s, 4s)
+
+        if not success:
+            # Fetch user info via Telegram API if missing
+            user_info_str = get_telegram_user_info(chat_id)
+            failed_deliveries.append({
+                "chat_id": chat_id,
+                "user_info": user_info_str,
+                "error": last_error
+            })
+
+    # 5. Report Failures to Admin (TELEGRAM_CHAT_ID)
+    if failed_deliveries and TELEGRAM_CHAT_ID:
+        report_lines = [
+            f"⚠️ <b>Delivery Failure Report</b>",
+            f"Failed to deliver alert for <b>{escape(str(movie_name))}</b> to {len(failed_deliveries)} recipient(s):\n"
+        ]
+
+        for item in failed_deliveries:
+            report_lines.append(
+                f"👤 <b>User:</b> {escape(item['user_info'])}\n"
+                f"🆔 <b>ID:</b> <code>{item['chat_id']}</code>\n"
+                f"❌ <b>Reason:</b> <code>{escape(item['error'])}</code>\n"
+            )
+
+        report_lines.append("<b>Original Message Snippet:</b>")
+        report_lines.append(f"<i>{escape(full_message[:300])}...</i>")
+
+        try:
+            requests.post(
+                url,
+                json={
+                    "chat_id": TELEGRAM_CHAT_ID,
+                    "text": "\n".join(report_lines),
+                    "parse_mode": "HTML"
+                },
+                timeout=10,
+            )
+        except Exception as e:
+            print(f" ❌ Failed to send failure report to admin: {e}")
+
+
+def get_telegram_user_info(chat_id: int) -> str:
+    """Helper to fetch a user's name/username via getChat endpoint."""
     try:
-        response = requests.post(
-            url,
-            json={
-                "chat_id": TELEGRAM_CHAT_ID,
-                "text": full_message,
-                "parse_mode": "HTML",
-                "disable_web_page_preview": True,
-                "reply_markup": inline_keyboard,
-            },
-            timeout=20,
-        )
+        url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/getChat"
+        res = requests.post(url, json={"chat_id": chat_id}, timeout=5).json()
+        if res.get("ok"):
+            chat = res.get("result", {})
+            first_name = chat.get("first_name", "")
+            last_name = chat.get("last_name", "")
+            full_name = f"{first_name} {last_name}".strip() or "Unknown"
+            username = f" (@{chat['username']})" if chat.get("username") else ""
+            return f"{full_name}{username}"
+    except Exception:
+        pass
+    return "Unknown User"
 
-        if response.status_code == 200:
-            print(" ✅ Interactive Telegram change alert sent.")
-        else:
-            print(f" ❌ Telegram API {response.status_code}: {response.text}")
-
-    except requests.RequestException as e:
-        print(f" ❌ Telegram notification failed: {e}")
 
 # ======================================================================
 # TELEGRAM BOT CALLBACK LISTENER (For Interactive Inline Buttons)
