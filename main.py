@@ -1868,7 +1868,7 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
 
     section_headers = {
         "NEW": "===========================\n🆕 <b>NEW SHOW ADDED</b>\n==============================",
-        "RESTOCKED": "============================\n🔄 <b>TICKETS STATUS CHANGE</b>\n===========================",
+        "RESTOCKED": "============================\n🔄 <b>TICKETS STATUS CHANGE</b>\n===============================",
         "PRICE_DROP": "==============================\n📉 <b>PRICE DROP ALERT</b>\n==============================",
         "PRICE_INCREASE": "============================\n📈 <b>PRICE INCREASE ALERT</b>\n============================"
     }
