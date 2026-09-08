@@ -1864,10 +1864,10 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
     ]
 
     section_headers = {
-        "NEW": "===========================================================\n🆕 <b>NEW SHOW ADDED</b>\n===========================================================",
-        "RESTOCKED": "===========================================================\n🔄 <b>TICKETS RESTOCKED</b>\n===========================================================",
-        "PRICE_DROP": "===========================================================\n📉 <b>PRICE DROP ALERT</b>\n===========================================================",
-        "PRICE_INCREASE": "===========================================================\n📈 <b>PRICE INCREASE ALERT</b>\n==========================================================="
+        "NEW": "=============================\n🆕 <b>NEW SHOW ADDED</b>\n=============================",
+        "RESTOCKED": "=============================\n🔄 <b>TICKETS RESTOCKED</b>\n=============================",
+        "PRICE_DROP": "=============================\n📉 <b>PRICE DROP ALERT</b>\n=============================",
+        "PRICE_INCREASE": "=============================\n📈 <b>PRICE INCREASE ALERT</b>\n============================="
     }
 
     # 4. RENDER Output
@@ -1911,7 +1911,7 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
                     f"{categories_formatted}\n"
                 )
 
-        lines.append("************************************************************************\n")
+        lines.append("***************\n")
 
     message_chunks = split_message_chunks(lines)
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
