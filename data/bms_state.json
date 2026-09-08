@@ -271,96 +271,6 @@
         "status": "3",
         "screen": "Atmos"
       },
-      "ACON|47234|20260913|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "10:25 AM",
-        "date": "20260913",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "3",
-        "screen": "4K DOLBY 7.1"
-      },
-      "ACON|47234|20260913|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "10:25 AM",
-        "date": "20260913",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1"
-      },
-      "ACON|47237|20260913|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "01:40 PM",
-        "date": "20260913",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "3",
-        "screen": "4K DOLBY ATMOS"
-      },
-      "ACON|47237|20260913|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "01:40 PM",
-        "date": "20260913",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY ATMOS"
-      },
-      "ACON|47235|20260913|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "04:55 PM",
-        "date": "20260913",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "3",
-        "screen": "4K DOLBY 7.1"
-      },
-      "ACON|47235|20260913|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "04:55 PM",
-        "date": "20260913",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1"
-      },
-      "ACON|47238|20260913|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "08:15 PM",
-        "date": "20260913",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "3",
-        "screen": "4K DOLBY ATMOS"
-      },
-      "ACON|47238|20260913|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "08:15 PM",
-        "date": "20260913",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY ATMOS"
-      },
-      "ACON|47236|20260913|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "11:35 PM",
-        "date": "20260913",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "3",
-        "screen": "4K DOLBY 7.1"
-      },
-      "ACON|47236|20260913|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "11:35 PM",
-        "date": "20260913",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1"
-      },
       "INTO|90187|20260913|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "09:00 AM",
@@ -540,6 +450,96 @@
         "price": "54.35",
         "status": "1",
         "screen": "Atmos"
+      },
+      "ACON|47234|20260913|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:25 AM",
+        "date": "20260913",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1"
+      },
+      "ACON|47234|20260913|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:25 AM",
+        "date": "20260913",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1"
+      },
+      "ACON|47237|20260913|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "01:40 PM",
+        "date": "20260913",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY ATMOS"
+      },
+      "ACON|47237|20260913|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "01:40 PM",
+        "date": "20260913",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY ATMOS"
+      },
+      "ACON|47235|20260913|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "04:55 PM",
+        "date": "20260913",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1"
+      },
+      "ACON|47235|20260913|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "04:55 PM",
+        "date": "20260913",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1"
+      },
+      "ACON|47238|20260913|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "08:15 PM",
+        "date": "20260913",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY ATMOS"
+      },
+      "ACON|47238|20260913|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "08:15 PM",
+        "date": "20260913",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY ATMOS"
+      },
+      "ACON|47236|20260913|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "11:35 PM",
+        "date": "20260913",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1"
+      },
+      "ACON|47236|20260913|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "11:35 PM",
+        "date": "20260913",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1"
       }
     },
     "dates": {
@@ -1449,7 +1449,7 @@
         "date": "20260912",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "3",
+        "status": "2",
         "screen": "PXL"
       },
       "PCAN|44758|20260912|PRIME": {
@@ -2268,7 +2268,7 @@
         "date": "20260912",
         "cat": "First Class",
         "price": "120.00",
-        "status": "3",
+        "status": "1",
         "screen": ""
       },
       "WSTC|4781|20260912|Second Class": {
@@ -2277,7 +2277,7 @@
         "date": "20260912",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": ""
       },
       "WSTC|4782|20260912|Box": {
@@ -2286,7 +2286,7 @@
         "date": "20260912",
         "cat": "Box",
         "price": "180.00",
-        "status": "3",
+        "status": "0",
         "screen": ""
       },
       "WSTC|4782|20260912|Balcony": {
@@ -2295,7 +2295,7 @@
         "date": "20260912",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "3",
+        "status": "1",
         "screen": ""
       },
       "WSTC|4782|20260912|First Class": {
@@ -2304,7 +2304,7 @@
         "date": "20260912",
         "cat": "First Class",
         "price": "120.00",
-        "status": "3",
+        "status": "1",
         "screen": ""
       },
       "WSTC|4782|20260912|Second Class": {
@@ -2313,7 +2313,7 @@
         "date": "20260912",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": ""
       },
       "WSTC|4783|20260912|First Class": {
@@ -2322,7 +2322,7 @@
         "date": "20260912",
         "cat": "First Class",
         "price": "120.00",
-        "status": "3",
+        "status": "1",
         "screen": ""
       },
       "WSTC|4783|20260912|Second Class": {
@@ -2331,7 +2331,7 @@
         "date": "20260912",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": ""
       },
       "WSTC|4784|20260912|Box": {
@@ -2340,7 +2340,7 @@
         "date": "20260912",
         "cat": "Box",
         "price": "180.00",
-        "status": "3",
+        "status": "0",
         "screen": ""
       },
       "WSTC|4784|20260912|Balcony": {
@@ -2349,7 +2349,7 @@
         "date": "20260912",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "3",
+        "status": "1",
         "screen": ""
       },
       "WSTC|4784|20260912|First Class": {
@@ -2358,7 +2358,7 @@
         "date": "20260912",
         "cat": "First Class",
         "price": "120.00",
-        "status": "3",
+        "status": "1",
         "screen": ""
       },
       "WSTC|4784|20260912|Second Class": {
@@ -2367,7 +2367,7 @@
         "date": "20260912",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": ""
       },
       "WSTC|4785|20260912|First Class": {
@@ -2934,7 +2934,7 @@
         "date": "20260912",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": ""
       },
       "PVES|33810|20260912|BUDGET": {
@@ -2970,7 +2970,7 @@
         "date": "20260912",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": ""
       },
       "PVES|33812|20260912|BUDGET": {
@@ -2988,7 +2988,7 @@
         "date": "20260912",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": ""
       },
       "PVES|33823|20260912|BUDGET": {
