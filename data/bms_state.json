@@ -1359,7 +1359,7 @@
         "date": "20260912",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "3",
+        "status": "2",
         "screen": "PXL"
       },
       "PCAN|44770|20260912|PRIME": {
@@ -1488,41 +1488,185 @@
         "status": "3",
         "screen": ""
       },
-      "KMRM|13071|20260912|BALCONY": {
-        "venue": "Kumaran Theatre PROVA 4K DOLBY ATMOS: Madipakkam",
-        "time": "11:30 AM",
+      "KSTK|50748|20260912|Super Premium": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "09:00 AM",
         "date": "20260912",
-        "cat": "BALCONY",
-        "price": "190.00",
-        "status": "3",
-        "screen": ""
+        "cat": "Super Premium",
+        "price": "183.78",
+        "status": "0",
+        "screen": "DolbyAtmos"
       },
-      "KMRM|13071|20260912|FIRST CLASS": {
-        "venue": "Kumaran Theatre PROVA 4K DOLBY ATMOS: Madipakkam",
-        "time": "11:30 AM",
+      "KSTK|50748|20260912|Premium": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "09:00 AM",
         "date": "20260912",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
+        "cat": "Premium",
+        "price": "183.78",
         "status": "3",
-        "screen": ""
+        "screen": "DolbyAtmos"
       },
-      "KMRM|13073|20260912|BALCONY": {
-        "venue": "Kumaran Theatre PROVA 4K DOLBY ATMOS: Madipakkam",
-        "time": "06:30 PM",
+      "KSTK|50748|20260912|Elite": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "09:00 AM",
         "date": "20260912",
-        "cat": "BALCONY",
-        "price": "190.00",
+        "cat": "Elite",
+        "price": "183.78",
         "status": "3",
-        "screen": ""
+        "screen": "DolbyAtmos"
       },
-      "KMRM|13073|20260912|FIRST CLASS": {
-        "venue": "Kumaran Theatre PROVA 4K DOLBY ATMOS: Madipakkam",
-        "time": "06:30 PM",
+      "KSTK|50748|20260912|Economy": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "09:00 AM",
         "date": "20260912",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
+        "cat": "Economy",
+        "price": "54.00",
         "status": "3",
-        "screen": ""
+        "screen": "DolbyAtmos"
+      },
+      "KSTK|50749|20260912|Super Premium": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "12:30 PM",
+        "date": "20260912",
+        "cat": "Super Premium",
+        "price": "183.78",
+        "status": "0",
+        "screen": "DolbyAtmos"
+      },
+      "KSTK|50749|20260912|Premium": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "12:30 PM",
+        "date": "20260912",
+        "cat": "Premium",
+        "price": "183.78",
+        "status": "3",
+        "screen": "DolbyAtmos"
+      },
+      "KSTK|50749|20260912|Elite": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "12:30 PM",
+        "date": "20260912",
+        "cat": "Elite",
+        "price": "183.78",
+        "status": "3",
+        "screen": "DolbyAtmos"
+      },
+      "KSTK|50749|20260912|Economy": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "12:30 PM",
+        "date": "20260912",
+        "cat": "Economy",
+        "price": "54.00",
+        "status": "3",
+        "screen": "DolbyAtmos"
+      },
+      "KSTK|50750|20260912|Super Premium": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "04:00 PM",
+        "date": "20260912",
+        "cat": "Super Premium",
+        "price": "183.78",
+        "status": "0",
+        "screen": "DolbyAtmos"
+      },
+      "KSTK|50750|20260912|Premium": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "04:00 PM",
+        "date": "20260912",
+        "cat": "Premium",
+        "price": "183.78",
+        "status": "3",
+        "screen": "DolbyAtmos"
+      },
+      "KSTK|50750|20260912|Elite": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "04:00 PM",
+        "date": "20260912",
+        "cat": "Elite",
+        "price": "183.78",
+        "status": "3",
+        "screen": "DolbyAtmos"
+      },
+      "KSTK|50750|20260912|Economy": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "04:00 PM",
+        "date": "20260912",
+        "cat": "Economy",
+        "price": "54.00",
+        "status": "3",
+        "screen": "DolbyAtmos"
+      },
+      "KSTK|50751|20260912|Super Premium": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "07:30 PM",
+        "date": "20260912",
+        "cat": "Super Premium",
+        "price": "183.78",
+        "status": "0",
+        "screen": "DolbyAtmos"
+      },
+      "KSTK|50751|20260912|Premium": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "07:30 PM",
+        "date": "20260912",
+        "cat": "Premium",
+        "price": "183.78",
+        "status": "3",
+        "screen": "DolbyAtmos"
+      },
+      "KSTK|50751|20260912|Elite": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "07:30 PM",
+        "date": "20260912",
+        "cat": "Elite",
+        "price": "183.78",
+        "status": "3",
+        "screen": "DolbyAtmos"
+      },
+      "KSTK|50751|20260912|Economy": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "07:30 PM",
+        "date": "20260912",
+        "cat": "Economy",
+        "price": "54.00",
+        "status": "3",
+        "screen": "DolbyAtmos"
+      },
+      "KSTK|50752|20260912|Super Premium": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "11:00 PM",
+        "date": "20260912",
+        "cat": "Super Premium",
+        "price": "183.78",
+        "status": "0",
+        "screen": "DolbyAtmos"
+      },
+      "KSTK|50752|20260912|Premium": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "11:00 PM",
+        "date": "20260912",
+        "cat": "Premium",
+        "price": "183.78",
+        "status": "3",
+        "screen": "DolbyAtmos"
+      },
+      "KSTK|50752|20260912|Elite": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "11:00 PM",
+        "date": "20260912",
+        "cat": "Elite",
+        "price": "183.78",
+        "status": "3",
+        "screen": "DolbyAtmos"
+      },
+      "KSTK|50752|20260912|Economy": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "11:00 PM",
+        "date": "20260912",
+        "cat": "Economy",
+        "price": "54.00",
+        "status": "3",
+        "screen": "DolbyAtmos"
       },
       "INTO|90192|20260912|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -1866,26 +2010,26 @@
         "status": "3",
         "screen": ""
       },
-      "JOTG|11735|20260912|BALCONY": {
-        "venue": "Jothi Theatre 4K A/c DTS: ST Thomas Mount",
-        "time": "12:00 PM",
+      "KMRM|13071|20260912|BALCONY": {
+        "venue": "Kumaran Theatre PROVA 4K DOLBY ATMOS: Madipakkam",
+        "time": "11:30 AM",
         "date": "20260912",
         "cat": "BALCONY",
         "price": "190.00",
         "status": "3",
         "screen": ""
       },
-      "JOTG|11735|20260912|FIRST CLASS": {
-        "venue": "Jothi Theatre 4K A/c DTS: ST Thomas Mount",
-        "time": "12:00 PM",
+      "KMRM|13071|20260912|FIRST CLASS": {
+        "venue": "Kumaran Theatre PROVA 4K DOLBY ATMOS: Madipakkam",
+        "time": "11:30 AM",
         "date": "20260912",
         "cat": "FIRST CLASS",
-        "price": "190.00",
+        "price": "150.00",
         "status": "3",
         "screen": ""
       },
-      "JOTG|11736|20260912|BALCONY": {
-        "venue": "Jothi Theatre 4K A/c DTS: ST Thomas Mount",
+      "KMRM|13073|20260912|BALCONY": {
+        "venue": "Kumaran Theatre PROVA 4K DOLBY ATMOS: Madipakkam",
         "time": "06:30 PM",
         "date": "20260912",
         "cat": "BALCONY",
@@ -1893,12 +2037,12 @@
         "status": "3",
         "screen": ""
       },
-      "JOTG|11736|20260912|FIRST CLASS": {
-        "venue": "Jothi Theatre 4K A/c DTS: ST Thomas Mount",
+      "KMRM|13073|20260912|FIRST CLASS": {
+        "venue": "Kumaran Theatre PROVA 4K DOLBY ATMOS: Madipakkam",
         "time": "06:30 PM",
         "date": "20260912",
         "cat": "FIRST CLASS",
-        "price": "190.00",
+        "price": "150.00",
         "status": "3",
         "screen": ""
       },
@@ -2082,38 +2226,38 @@
         "status": "0",
         "screen": ""
       },
-      "VCDK|5916|20260912|ELITE": {
-        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
+      "JOTG|11735|20260912|BALCONY": {
+        "venue": "Jothi Theatre 4K A/c DTS: ST Thomas Mount",
         "time": "12:00 PM",
         "date": "20260912",
-        "cat": "ELITE",
+        "cat": "BALCONY",
         "price": "190.00",
         "status": "3",
         "screen": ""
       },
-      "VCDK|5916|20260912|PREMIUM": {
-        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
+      "JOTG|11735|20260912|FIRST CLASS": {
+        "venue": "Jothi Theatre 4K A/c DTS: ST Thomas Mount",
         "time": "12:00 PM",
         "date": "20260912",
-        "cat": "PREMIUM",
+        "cat": "FIRST CLASS",
         "price": "190.00",
         "status": "3",
         "screen": ""
       },
-      "VCDK|5918|20260912|ELITE": {
-        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
+      "JOTG|11736|20260912|BALCONY": {
+        "venue": "Jothi Theatre 4K A/c DTS: ST Thomas Mount",
         "time": "06:30 PM",
         "date": "20260912",
-        "cat": "ELITE",
+        "cat": "BALCONY",
         "price": "190.00",
         "status": "3",
         "screen": ""
       },
-      "VCDK|5918|20260912|PREMIUM": {
-        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
+      "JOTG|11736|20260912|FIRST CLASS": {
+        "venue": "Jothi Theatre 4K A/c DTS: ST Thomas Mount",
         "time": "06:30 PM",
         "date": "20260912",
-        "cat": "PREMIUM",
+        "cat": "FIRST CLASS",
         "price": "190.00",
         "status": "3",
         "screen": ""
@@ -2316,39 +2460,39 @@
         "status": "3",
         "screen": ""
       },
-      "JTPL|11286|20260912|BALCONY": {
-        "venue": "Janatha Theatre 4K AC DTS (JBL AUDIO): Pallavaram",
-        "time": "11:30 AM",
+      "VCDK|5916|20260912|ELITE": {
+        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
+        "time": "12:00 PM",
         "date": "20260912",
-        "cat": "BALCONY",
-        "price": "180.00",
+        "cat": "ELITE",
+        "price": "190.00",
         "status": "3",
         "screen": ""
       },
-      "JTPL|11286|20260912|FIRST CLASS": {
-        "venue": "Janatha Theatre 4K AC DTS (JBL AUDIO): Pallavaram",
-        "time": "11:30 AM",
+      "VCDK|5916|20260912|PREMIUM": {
+        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
+        "time": "12:00 PM",
         "date": "20260912",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
+        "cat": "PREMIUM",
+        "price": "190.00",
         "status": "3",
         "screen": ""
       },
-      "JTPL|11288|20260912|BALCONY": {
-        "venue": "Janatha Theatre 4K AC DTS (JBL AUDIO): Pallavaram",
+      "VCDK|5918|20260912|ELITE": {
+        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
         "time": "06:30 PM",
         "date": "20260912",
-        "cat": "BALCONY",
-        "price": "180.00",
+        "cat": "ELITE",
+        "price": "190.00",
         "status": "3",
         "screen": ""
       },
-      "JTPL|11288|20260912|FIRST CLASS": {
-        "venue": "Janatha Theatre 4K AC DTS (JBL AUDIO): Pallavaram",
+      "VCDK|5918|20260912|PREMIUM": {
+        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
         "time": "06:30 PM",
         "date": "20260912",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
+        "cat": "PREMIUM",
+        "price": "190.00",
         "status": "3",
         "screen": ""
       },
@@ -2532,20 +2676,38 @@
         "status": "0",
         "screen": ""
       },
-      "JTMV|13131|20260912|First Class": {
-        "venue": "VVM Cinemas 3D 2K AC Dts, Ponneri: Chennai",
-        "time": "11:15 AM",
+      "JTPL|11286|20260912|BALCONY": {
+        "venue": "Janatha Theatre 4K AC DTS (JBL AUDIO): Pallavaram",
+        "time": "11:30 AM",
         "date": "20260912",
-        "cat": "First Class",
+        "cat": "BALCONY",
+        "price": "180.00",
+        "status": "3",
+        "screen": ""
+      },
+      "JTPL|11286|20260912|FIRST CLASS": {
+        "venue": "Janatha Theatre 4K AC DTS (JBL AUDIO): Pallavaram",
+        "time": "11:30 AM",
+        "date": "20260912",
+        "cat": "FIRST CLASS",
         "price": "150.00",
         "status": "3",
         "screen": ""
       },
-      "JTMV|13132|20260912|First Class": {
-        "venue": "VVM Cinemas 3D 2K AC Dts, Ponneri: Chennai",
-        "time": "06:15 PM",
+      "JTPL|11288|20260912|BALCONY": {
+        "venue": "Janatha Theatre 4K AC DTS (JBL AUDIO): Pallavaram",
+        "time": "06:30 PM",
         "date": "20260912",
-        "cat": "First Class",
+        "cat": "BALCONY",
+        "price": "180.00",
+        "status": "3",
+        "screen": ""
+      },
+      "JTPL|11288|20260912|FIRST CLASS": {
+        "venue": "Janatha Theatre 4K AC DTS (JBL AUDIO): Pallavaram",
+        "time": "06:30 PM",
+        "date": "20260912",
+        "cat": "FIRST CLASS",
         "price": "150.00",
         "status": "3",
         "screen": ""
@@ -2730,6 +2892,24 @@
         "status": "0",
         "screen": ""
       },
+      "JTMV|13131|20260912|First Class": {
+        "venue": "VVM Cinemas 3D 2K AC Dts, Ponneri: Chennai",
+        "time": "11:15 AM",
+        "date": "20260912",
+        "cat": "First Class",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "JTMV|13132|20260912|First Class": {
+        "venue": "VVM Cinemas 3D 2K AC Dts, Ponneri: Chennai",
+        "time": "06:15 PM",
+        "date": "20260912",
+        "cat": "First Class",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
       "PVES|33819|20260912|ELITE": {
         "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
         "time": "09:20 AM",
@@ -2790,7 +2970,7 @@
         "date": "20260912",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "2",
+        "status": "3",
         "screen": ""
       },
       "PVES|33812|20260912|BUDGET": {
@@ -4896,7 +5076,7 @@
         "date": "20260913",
         "cat": "First Class",
         "price": "120.00",
-        "status": "1",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4788|20260913|Second Class": {
@@ -4905,7 +5085,7 @@
         "date": "20260913",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4789|20260913|Box": {
@@ -4914,7 +5094,7 @@
         "date": "20260913",
         "cat": "Box",
         "price": "180.00",
-        "status": "0",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4789|20260913|Balcony": {
@@ -4923,7 +5103,7 @@
         "date": "20260913",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "1",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4789|20260913|First Class": {
@@ -4932,7 +5112,7 @@
         "date": "20260913",
         "cat": "First Class",
         "price": "120.00",
-        "status": "1",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4789|20260913|Second Class": {
@@ -4941,7 +5121,7 @@
         "date": "20260913",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4790|20260913|First Class": {
