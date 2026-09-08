@@ -1566,10 +1566,203 @@ def category_status_label(status):
 #         print(f" ❌ Telegram notification failed: {e}")
 
 
+# def send_telegram(watch_name, subject, changes, shows, movie_info):
+#     """
+#     Sends alerts for new showtimes, restocked tickets, or price changes to NOTIFICATION_USERS.
+#     Retries failed attempts (3x) and notifies TELEGRAM_CHAT_ID if delivery permanently fails.
+#     """
+#     if not TELEGRAM_BOT_TOKEN:
+#         print(" ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN not configured.")
+#         return
+
+#     recipients = get_notification_recipients()
+#     if not recipients:
+#         print(" ⚠️ Telegram skipped — No NOTIFICATION_USERS configured.")
+#         return
+
+#     if not changes:
+#         return
+
+#     now_str = datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%d %b, %I:%M %p")
+#     movie_name = movie_info.get("name", watch_name)
+
+#     # 1. Group changes by unique showtime attributes
+#     grouped_changes = defaultdict(list)
+#     for item in changes:
+#         group_key = (
+#             item["venue"],
+#             item["date"],
+#             item["time"],
+#             item.get("screen", ""),
+#             item["type"],
+#             item.get("icon", "🔄")
+#         )
+#         grouped_changes[group_key].append(item)
+
+#     # 2. Build Alert Header
+#     lines = [
+#         f"🚨 <b>BMS Ticket Alert!</b>",
+#         f"🎬 <b>{escape(str(watch_name.split('_')[0]))}</b> ({escape(str(watch_name))})",
+#         f"🕒 <i>{escape(now_str)}</i>\n",
+#     ]
+
+#     # 3. Format each show with affected categories
+#     for (venue, date, time_val, screen, change_type, icon), items in grouped_changes.items():
+#         screen_str = f" [{escape(str(screen))}]" if screen else ""
+#         formatted_date = format_date(date)
+        
+#         cat_lines = []
+#         for cat in items:
+#             cat_name = escape(str(cat.get('cat', '')))
+#             cat_price = escape(str(cat.get('price', '')))
+#             old_price = escape(str(cat.get('old_price', '')))
+#             cat_status = escape(str(cat.get('status', '')))
+
+#             if change_type == "RESTOCKED":
+#                 cat_lines.append(f"└ 🎟️ {cat_name}: ₹{cat_price} → <b>{cat_status}</b>")
+#             elif change_type in ("PRICE_DROP", "PRICE_INCREASE"):
+#                 cat_lines.append(f"└ 🎟️ {cat_name}: Was ₹{old_price} ➔ <b>₹{cat_price}</b> ({cat_status})")
+#             else:
+#                 cat_lines.append(f"└ 🎟️ {cat_name}: ₹{cat_price} ({cat_status})")
+                
+#         categories_formatted = "\n".join(cat_lines)
+
+#         # 4. Append message section based on change type
+#         if change_type == "NEW":
+#             lines.append(
+#                 f"🆕 <b>NEW SHOW ADDED</b>\n"
+#                 f"📍 {escape(str(venue))}\n"
+#                 f"🕒 <code>{escape(str(time_val))}</code>{screen_str} | Date: <code>{escape(str(formatted_date))}</code>\n"
+#                 f"{categories_formatted}\n"
+#             )
+#         elif change_type == "RESTOCKED":
+#             lines.append(
+#                 f"{icon} <b>TICKETS RESTOCKED</b>\n"
+#                 f"📍 {escape(str(venue))}\n"
+#                 f"🕒 <code>{escape(str(time_val))}</code>{screen_str} | Date: <code>{escape(str(formatted_date))}</code>\n"
+#                 f"{categories_formatted}\n"
+#             )
+#         elif change_type == "PRICE_DROP":
+#             lines.append(
+#                 f"📉 <b>PRICE DROP ALERT</b>\n"
+#                 f"📍 {escape(str(venue))}\n"
+#                 f"🕒 <code>{escape(str(time_val))}</code>{screen_str} | Date: <code>{escape(str(formatted_date))}</code>\n"
+#                 f"{categories_formatted}\n"
+#             )
+#         elif change_type == "PRICE_INCREASE":
+#             lines.append(
+#                 f"📈 <b>PRICE INCREASE ALERT</b>\n"
+#                 f"📍 {escape(str(venue))}\n"
+#                 f"🕒 <code>{escape(str(time_val))}</code>{screen_str} | Date: <code>{escape(str(formatted_date))}</code>\n"
+#                 f"{categories_formatted}\n"
+#             )
+
+#     full_message = "\n".join(lines)
+
+#     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+#     failed_deliveries = []  # Stores details of permanently failed sends
+
+#     # 5. Broadcast to all recipients with Retries
+#     for chat_id in recipients:
+#         success = False
+#         last_error = "Unknown Error"
+
+#         for attempt in range(1, 4):  # Retry up to 3 times
+#             try:
+#                 response = requests.post(
+#                     url,
+#                     json={
+#                         "chat_id": chat_id,
+#                         "text": full_message,
+#                         "parse_mode": "HTML",
+#                         "disable_web_page_preview": True,
+#                     },
+#                     timeout=20,
+#                 )
+
+#                 if response.status_code == 200:
+#                     print(f" ✅ Alert sent to user ID {chat_id}.")
+#                     success = True
+#                     break  # Success — exit retry loop
+#                 else:
+#                     last_error = f"HTTP {response.status_code}: {response.text}"
+#                     print(f" ⚠️ Attempt {attempt} failed for {chat_id}: {last_error}")
+
+#             except requests.RequestException as e:
+#                 last_error = str(e)
+#                 print(f" ⚠️ Attempt {attempt} network error for {chat_id}: {last_error}")
+
+#             time.sleep(attempt * 2)  # Exponential backoff delay (2s, 4s)
+
+#         if not success:
+#             user_info_str = get_telegram_user_info(chat_id)
+#             failed_deliveries.append({
+#                 "chat_id": chat_id,
+#                 "user_info": user_info_str,
+#                 "error": last_error
+#             })
+
+#     # 6. Report Failures to Admin (TELEGRAM_CHAT_ID)
+#     if failed_deliveries and TELEGRAM_CHAT_ID:
+#         report_lines = [
+#             f"⚠️ <b>Delivery Failure Report</b>",
+#             f"Failed to deliver alert for <b>{escape(str(movie_name))}</b> to {len(failed_deliveries)} recipient(s):\n"
+#         ]
+
+#         for item in failed_deliveries:
+#             report_lines.append(
+#                 f"👤 <b>User:</b> {escape(item['user_info'])}\n"
+#                 f"🆔 <b>ID:</b> <code>{item['chat_id']}</code>\n"
+#                 f"❌ <b>Reason:</b> <code>{escape(item['error'])}</code>\n"
+#             )
+
+#         report_lines.append("<b>Original Message Snippet:</b>")
+#         report_lines.append(f"<i>{escape(full_message[:300])}...</i>")
+
+#         try:
+#             requests.post(
+#                 url,
+#                 json={
+#                     "chat_id": TELEGRAM_CHAT_ID,
+#                     "text": "\n".join(report_lines),
+#                     "parse_mode": "HTML"
+#                 },
+#                 timeout=10,
+#             )
+#         except Exception as e:
+#             print(f" ❌ Failed to send failure report to admin: {e}")
+
+
+
+
+def parse_time_to_minutes(time_str):
+    """Helper to convert 12-hour/24-hour time strings into minutes for accurate sorting."""
+    try:
+        t_str = str(time_str).strip().upper()
+        if "AM" in t_str or "PM" in t_str:
+            dt = datetime.strptime(t_str, "%I:%M %p")
+        else:
+            dt = datetime.strptime(t_str, "%H:%M")
+        return dt.hour * 60 + dt.minute
+    except Exception:
+        return 0
+
+def parse_price(price_val):
+    """Helper to extract numeric price for sorting."""
+    try:
+        cleaned = ''.join(c for c in str(price_val) if c.isdigit() or c == '.')
+        return float(cleaned) if cleaned else 0.0
+    except Exception:
+        return 0.0
+
 def send_telegram(watch_name, subject, changes, shows, movie_info):
     """
-    Sends alerts for new showtimes, restocked tickets, or price changes to NOTIFICATION_USERS.
-    Retries failed attempts (3x) and notifies TELEGRAM_CHAT_ID if delivery permanently fails.
+    Sends grouped alerts formatted by:
+      1. Date (Ascending)
+      2. Change Type Priority (NEW -> RESTOCKED -> PRICE DROP -> PRICE INCREASE)
+      3. Venue Name (Ascending)
+      4. Show Time (Ascending)
+      5. Ticket Price (Ascending)
     """
     if not TELEGRAM_BOT_TOKEN:
         print(" ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN not configured.")
@@ -1586,88 +1779,109 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
     now_str = datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%d %b, %I:%M %p")
     movie_name = movie_info.get("name", watch_name)
 
-    # 1. Group changes by unique showtime attributes
-    grouped_changes = defaultdict(list)
-    for item in changes:
-        group_key = (
+    # Priority mapping for Change Types
+    def get_type_priority(change_type):
+        priority_map = {
+            "NEW": 1,
+            "RESTOCKED": 2,
+            "PRICE_DROP": 3,
+            "PRICE_INCREASE": 4
+        }
+        return priority_map.get(change_type, 99)
+
+    # 1. SORT raw changes: Date -> Type Priority -> Venue -> Time -> Price
+    sorted_changes = sorted(
+        changes,
+        key=lambda x: (
+            str(x.get("date", "")),
+            get_type_priority(x.get("type")),
+            str(x.get("venue", "")).lower(),
+            parse_time_to_minutes(x.get("time", "")),
+            parse_price(x.get("price", 0))
+        )
+    )
+
+    # 2. Group changes by Date -> Type -> Showtime Key
+    # Structure: nested_data[date][change_type][show_key] = [items...]
+    nested_data = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
+
+    for item in sorted_changes:
+        d_val = item["date"]
+        c_type = item["type"]
+        show_key = (
             item["venue"],
-            item["date"],
             item["time"],
             item.get("screen", ""),
-            item["type"],
             item.get("icon", "🔄")
         )
-        grouped_changes[group_key].append(item)
+        nested_data[d_val][c_type][show_key].append(item)
 
-    # 2. Build Alert Header
+    # 3. Build Header
     lines = [
         f"🚨 <b>BMS Ticket Alert!</b>",
         f"🎬 <b>{escape(str(watch_name.split('_')[0]))}</b> ({escape(str(watch_name))})",
         f"🕒 <i>{escape(now_str)}</i>\n",
     ]
 
-    # 3. Format each show with affected categories
-    for (venue, date, time_val, screen, change_type, icon), items in grouped_changes.items():
-        screen_str = f" [{escape(str(screen))}]" if screen else ""
-        formatted_date = format_date(date)
-        
-        cat_lines = []
-        for cat in items:
-            cat_name = escape(str(cat.get('cat', '')))
-            cat_price = escape(str(cat.get('price', '')))
-            old_price = escape(str(cat.get('old_price', '')))
-            cat_status = escape(str(cat.get('status', '')))
+    # Section mapping definitions
+    section_headers = {
+        "NEW": "===========================================================\n🆕 <b>NEW SHOW ADDED</b>\n===========================================================",
+        "RESTOCKED": "===========================================================\n🔄 <b>TICKETS RESTOCKED</b>\n===========================================================",
+        "PRICE_DROP": "===========================================================\n📉 <b>PRICE DROP ALERT</b>\n===========================================================",
+        "PRICE_INCREASE": "===========================================================\n📈 <b>PRICE INCREASE ALERT</b>\n==========================================================="
+    }
 
-            if change_type == "RESTOCKED":
-                cat_lines.append(f"└ 🎟️ {cat_name}: ₹{cat_price} → <b>{cat_status}</b>")
-            elif change_type in ("PRICE_DROP", "PRICE_INCREASE"):
-                cat_lines.append(f"└ 🎟️ {cat_name}: Was ₹{old_price} ➔ <b>₹{cat_price}</b> ({cat_status})")
-            else:
-                cat_lines.append(f"└ 🎟️ {cat_name}: ₹{cat_price} ({cat_status})")
+    # 4. Render output grouped by Date first
+    for date_val, type_groups in nested_data.items():
+        formatted_date = format_date(date_val)
+        lines.append(f"<b>for date: {escape(str(formatted_date))}</b>\n")
+
+        # Iterate in priority order (NEW -> RESTOCKED -> PRICE_DROP -> PRICE_INCREASE)
+        for c_type in sorted(type_groups.keys(), key=get_type_priority):
+            shows_dict = type_groups[c_type]
+            
+            # Append Section Header
+            lines.append(section_headers.get(c_type, f"<b>{c_type}</b>"))
+
+            # Render each show group under this change type
+            for (venue, time_val, screen, icon), items in shows_dict.items():
+                screen_str = f" [{escape(str(screen))}]" if screen else ""
                 
-        categories_formatted = "\n".join(cat_lines)
+                cat_lines = []
+                for cat in items:
+                    cat_name = escape(str(cat.get('cat', '')))
+                    cat_price = escape(str(cat.get('price', '')))
+                    old_price = escape(str(cat.get('old_price', '')))
+                    cat_status = escape(str(cat.get('status', '')))
 
-        # 4. Append message section based on change type
-        if change_type == "NEW":
-            lines.append(
-                f"🆕 <b>NEW SHOW ADDED</b>\n"
-                f"📍 {escape(str(venue))}\n"
-                f"🕒 <code>{escape(str(time_val))}</code>{screen_str} | Date: <code>{escape(str(formatted_date))}</code>\n"
-                f"{categories_formatted}\n"
-            )
-        elif change_type == "RESTOCKED":
-            lines.append(
-                f"{icon} <b>TICKETS RESTOCKED</b>\n"
-                f"📍 {escape(str(venue))}\n"
-                f"🕒 <code>{escape(str(time_val))}</code>{screen_str} | Date: <code>{escape(str(formatted_date))}</code>\n"
-                f"{categories_formatted}\n"
-            )
-        elif change_type == "PRICE_DROP":
-            lines.append(
-                f"📉 <b>PRICE DROP ALERT</b>\n"
-                f"📍 {escape(str(venue))}\n"
-                f"🕒 <code>{escape(str(time_val))}</code>{screen_str} | Date: <code>{escape(str(formatted_date))}</code>\n"
-                f"{categories_formatted}\n"
-            )
-        elif change_type == "PRICE_INCREASE":
-            lines.append(
-                f"📈 <b>PRICE INCREASE ALERT</b>\n"
-                f"📍 {escape(str(venue))}\n"
-                f"🕒 <code>{escape(str(time_val))}</code>{screen_str} | Date: <code>{escape(str(formatted_date))}</code>\n"
-                f"{categories_formatted}\n"
-            )
+                    if c_type == "RESTOCKED":
+                        cat_lines.append(f"└ 🎟️ {cat_name}: ₹{cat_price} → <b>{cat_status}</b>")
+                    elif c_type in ("PRICE_DROP", "PRICE_INCREASE"):
+                        cat_lines.append(f"└ 🎟️ {cat_name}: Was ₹{old_price} ➔ <b>₹{cat_price}</b> ({cat_status})")
+                    else:
+                        cat_lines.append(f"└ 🎟️ {cat_name}: ₹{cat_price} ({cat_status})")
+
+                categories_formatted = "\n".join(cat_lines)
+
+                lines.append(
+                    f"📍 {escape(str(venue))}\n"
+                    f"🕒 <code>{escape(str(time_val))}</code>{screen_str}\n"
+                    f"{categories_formatted}\n"
+                )
+
+        lines.append("************************************************************************\n")
 
     full_message = "\n".join(lines)
 
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
-    failed_deliveries = []  # Stores details of permanently failed sends
+    failed_deliveries = []
 
-    # 5. Broadcast to all recipients with Retries
+    # 5. Broadcast to recipients with Retries
     for chat_id in recipients:
         success = False
         last_error = "Unknown Error"
 
-        for attempt in range(1, 4):  # Retry up to 3 times
+        for attempt in range(1, 4):
             try:
                 response = requests.post(
                     url,
@@ -1683,7 +1897,7 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
                 if response.status_code == 200:
                     print(f" ✅ Alert sent to user ID {chat_id}.")
                     success = True
-                    break  # Success — exit retry loop
+                    break
                 else:
                     last_error = f"HTTP {response.status_code}: {response.text}"
                     print(f" ⚠️ Attempt {attempt} failed for {chat_id}: {last_error}")
@@ -1692,7 +1906,7 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
                 last_error = str(e)
                 print(f" ⚠️ Attempt {attempt} network error for {chat_id}: {last_error}")
 
-            time.sleep(attempt * 2)  # Exponential backoff delay (2s, 4s)
+            time.sleep(attempt * 2)
 
         if not success:
             user_info_str = get_telegram_user_info(chat_id)
@@ -1702,7 +1916,7 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
                 "error": last_error
             })
 
-    # 6. Report Failures to Admin (TELEGRAM_CHAT_ID)
+    # 6. Report Failures to Admin
     if failed_deliveries and TELEGRAM_CHAT_ID:
         report_lines = [
             f"⚠️ <b>Delivery Failure Report</b>",
@@ -1731,6 +1945,7 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
             )
         except Exception as e:
             print(f" ❌ Failed to send failure report to admin: {e}")
+
 
 def get_telegram_user_info(chat_id: int) -> str:
     """Helper to fetch a user's name/username via getChat endpoint."""
