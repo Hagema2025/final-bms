@@ -1733,19 +1733,6 @@ def category_status_label(status):
 #             print(f" ❌ Failed to send failure report to admin: {e}")
 
 
-from collections import defaultdict
-from datetime import datetime
-from zoneinfo import ZoneInfo
-from html import escape
-import requests
-import time
-
-AVAIL_STATUS_MAP = {
-    "0": ("SOLD OUT", "🔴"),
-    "1": ("ALMOST FULL", "🟡"),
-    "2": ("FILLING FAST", "🟠"),
-    "3": ("AVAILABLE", "🟢"),
-}
 
 def resolve_status_text(status_key):
     """
