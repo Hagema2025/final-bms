@@ -1735,8 +1735,9 @@ def category_status_label(status):
 
 
 
+
 def parse_time_to_minutes(time_str):
-    """Helper to convert 12-hour/24-hour time strings into minutes for accurate sorting."""
+    """Converts 12-hour/24-hour time strings into minutes for accurate chronological sorting."""
     try:
         t_str = str(time_str).strip().upper()
         if "AM" in t_str or "PM" in t_str:
@@ -1748,21 +1749,62 @@ def parse_time_to_minutes(time_str):
         return 0
 
 def parse_price(price_val):
-    """Helper to extract numeric price for sorting."""
+    """Extracts floating point values for numeric price sorting."""
     try:
         cleaned = ''.join(c for c in str(price_val) if c.isdigit() or c == '.')
         return float(cleaned) if cleaned else 0.0
     except Exception:
         return 0.0
 
+def resolve_status_text(status_key):
+    """Resolves raw status keys or text into clean display text."""
+    key = str(status_key).strip()
+    if key in AVAIL_STATUS_MAP:
+        return AVAIL_STATUS_MAP[key][0]
+    return key  # Fallback to string representation if already parsed
+
+def is_restocked(old_status_key, new_status_key):
+    """
+    Evaluates if state transition represents restocking:
+    0 -> 1, 2, 3
+    1 -> 2, 3
+    2 -> 3
+    """
+    try:
+        old_lvl = int(str(old_status_key))
+        new_lvl = int(str(new_status_key))
+        return new_lvl > old_lvl
+    except (ValueError, TypeError):
+        return False
+
+def split_message_chunks(lines, max_chars=4000):
+    """Splits alert lines into safe payload chunks under Telegram's 4096-character limit."""
+    chunks = []
+    current_chunk = []
+    current_length = 0
+
+    for line in lines:
+        line_len = len(line) + 1  # Including newline
+        if current_length + line_len > max_chars:
+            chunks.append("\n".join(current_chunk))
+            current_chunk = [line]
+            current_length = line_len
+        else:
+            current_chunk.append(line)
+            current_length += line_len
+
+    if current_chunk:
+        chunks.append("\n".join(current_chunk))
+    return chunks
+
 def send_telegram(watch_name, subject, changes, shows, movie_info):
     """
     Sends grouped alerts formatted by:
       1. Date (Ascending)
-      2. Change Type Priority (NEW -> RESTOCKED -> PRICE DROP -> PRICE INCREASE)
-      3. Venue Name (Ascending)
-      4. Show Time (Ascending)
-      5. Ticket Price (Ascending)
+      2. Priority Type (NEW -> RESTOCKED -> PRICE DROP -> PRICE INCREASE)
+      3. Venue (Alphabetical Ascending)
+      4. Time (Chronological Ascending)
+      5. Price (Ascending)
     """
     if not TELEGRAM_BOT_TOKEN:
         print(" ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN not configured.")
@@ -1779,7 +1821,6 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
     now_str = datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%d %b, %I:%M %p")
     movie_name = movie_info.get("name", watch_name)
 
-    # Priority mapping for Change Types
     def get_type_priority(change_type):
         priority_map = {
             "NEW": 1,
@@ -1789,7 +1830,7 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
         }
         return priority_map.get(change_type, 99)
 
-    # 1. SORT raw changes: Date -> Type Priority -> Venue -> Time -> Price
+    # 1. SORT Raw Changes
     sorted_changes = sorted(
         changes,
         key=lambda x: (
@@ -1801,8 +1842,7 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
         )
     )
 
-    # 2. Group changes by Date -> Type -> Showtime Key
-    # Structure: nested_data[date][change_type][show_key] = [items...]
+    # 2. GROUP Nested Dictionary: Date -> Type -> Showtime Key
     nested_data = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
 
     for item in sorted_changes:
@@ -1816,14 +1856,13 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
         )
         nested_data[d_val][c_type][show_key].append(item)
 
-    # 3. Build Header
+    # 3. BUILD Alert Lines
     lines = [
         f"🚨 <b>BMS Ticket Alert!</b>",
         f"🎬 <b>{escape(str(watch_name.split('_')[0]))}</b> ({escape(str(watch_name))})",
         f"🕒 <i>{escape(now_str)}</i>\n",
     ]
 
-    # Section mapping definitions
     section_headers = {
         "NEW": "===========================================================\n🆕 <b>NEW SHOW ADDED</b>\n===========================================================",
         "RESTOCKED": "===========================================================\n🔄 <b>TICKETS RESTOCKED</b>\n===========================================================",
@@ -1831,19 +1870,15 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
         "PRICE_INCREASE": "===========================================================\n📈 <b>PRICE INCREASE ALERT</b>\n==========================================================="
     }
 
-    # 4. Render output grouped by Date first
+    # 4. RENDER Output
     for date_val, type_groups in nested_data.items():
         formatted_date = format_date(date_val)
         lines.append(f"<b>for date: {escape(str(formatted_date))}</b>\n")
 
-        # Iterate in priority order (NEW -> RESTOCKED -> PRICE_DROP -> PRICE_INCREASE)
         for c_type in sorted(type_groups.keys(), key=get_type_priority):
             shows_dict = type_groups[c_type]
-            
-            # Append Section Header
             lines.append(section_headers.get(c_type, f"<b>{c_type}</b>"))
 
-            # Render each show group under this change type
             for (venue, time_val, screen, icon), items in shows_dict.items():
                 screen_str = f" [{escape(str(screen))}]" if screen else ""
                 
@@ -1852,14 +1887,21 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
                     cat_name = escape(str(cat.get('cat', '')))
                     cat_price = escape(str(cat.get('price', '')))
                     old_price = escape(str(cat.get('old_price', '')))
-                    cat_status = escape(str(cat.get('status', '')))
+                    
+                    # Resolve status codes using AVAIL_STATUS_MAP
+                    raw_status = cat.get('status', '')
+                    raw_old_status = cat.get('old_status', '')
+                    
+                    current_status_text = resolve_status_text(raw_status)
+                    old_status_text = resolve_status_text(raw_old_status) if raw_old_status else ""
 
                     if c_type == "RESTOCKED":
-                        cat_lines.append(f"└ 🎟️ {cat_name}: ₹{cat_price} → <b>{cat_status}</b>")
+                        status_str = f"{old_status_text} → <b>{current_status_text}</b>" if old_status_text else f"<b>{current_status_text}</b>"
+                        cat_lines.append(f"└ 🎟️ {cat_name}: ₹{cat_price} ({status_str})")
                     elif c_type in ("PRICE_DROP", "PRICE_INCREASE"):
-                        cat_lines.append(f"└ 🎟️ {cat_name}: Was ₹{old_price} ➔ <b>₹{cat_price}</b> ({cat_status})")
+                        cat_lines.append(f"└ 🎟️ {cat_name}: Was ₹{old_price} ➔ <b>₹{cat_price}</b> ({current_status_text})")
                     else:
-                        cat_lines.append(f"└ 🎟️ {cat_name}: ₹{cat_price} ({cat_status})")
+                        cat_lines.append(f"└ 🎟️ {cat_name}: ₹{cat_price} ({current_status_text})")
 
                 categories_formatted = "\n".join(cat_lines)
 
@@ -1871,44 +1913,50 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
 
         lines.append("************************************************************************\n")
 
-    full_message = "\n".join(lines)
-
+    message_chunks = split_message_chunks(lines)
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     failed_deliveries = []
 
-    # 5. Broadcast to recipients with Retries
+    # 5. BROADCAST Chunks to Recipients with Exponential Backoff
     for chat_id in recipients:
-        success = False
+        user_success = True
         last_error = "Unknown Error"
 
-        for attempt in range(1, 4):
-            try:
-                response = requests.post(
-                    url,
-                    json={
-                        "chat_id": chat_id,
-                        "text": full_message,
-                        "parse_mode": "HTML",
-                        "disable_web_page_preview": True,
-                    },
-                    timeout=20,
-                )
+        for chunk in message_chunks:
+            chunk_success = False
+            for attempt in range(1, 4):
+                try:
+                    response = requests.post(
+                        url,
+                        json={
+                            "chat_id": chat_id,
+                            "text": chunk,
+                            "parse_mode": "HTML",
+                            "disable_web_page_preview": True,
+                        },
+                        timeout=20,
+                    )
 
-                if response.status_code == 200:
-                    print(f" ✅ Alert sent to user ID {chat_id}.")
-                    success = True
-                    break
-                else:
-                    last_error = f"HTTP {response.status_code}: {response.text}"
-                    print(f" ⚠️ Attempt {attempt} failed for {chat_id}: {last_error}")
+                    if response.status_code == 200:
+                        chunk_success = True
+                        break
+                    else:
+                        last_error = f"HTTP {response.status_code}: {response.text}"
+                        print(f" ⚠️ Attempt {attempt} failed for {chat_id}: {last_error}")
 
-            except requests.RequestException as e:
-                last_error = str(e)
-                print(f" ⚠️ Attempt {attempt} network error for {chat_id}: {last_error}")
+                except requests.RequestException as e:
+                    last_error = str(e)
+                    print(f" ⚠️ Attempt {attempt} network error for {chat_id}: {last_error}")
 
-            time.sleep(attempt * 2)
+                time.sleep(attempt * 2)
 
-        if not success:
+            if not chunk_success:
+                user_success = False
+                break
+
+        if user_success:
+            print(f" ✅ Alert sent to user ID {chat_id}.")
+        else:
             user_info_str = get_telegram_user_info(chat_id)
             failed_deliveries.append({
                 "chat_id": chat_id,
@@ -1916,7 +1964,7 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
                 "error": last_error
             })
 
-    # 6. Report Failures to Admin
+    # 6. REPORT Failures to Admin
     if failed_deliveries and TELEGRAM_CHAT_ID:
         report_lines = [
             f"⚠️ <b>Delivery Failure Report</b>",
@@ -1931,7 +1979,8 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
             )
 
         report_lines.append("<b>Original Message Snippet:</b>")
-        report_lines.append(f"<i>{escape(full_message[:300])}...</i>")
+        snippet = "\n".join(lines[:10])
+        report_lines.append(f"<i>{escape(snippet[:300])}...</i>")
 
         try:
             requests.post(
@@ -1945,7 +1994,6 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
             )
         except Exception as e:
             print(f" ❌ Failed to send failure report to admin: {e}")
-
 
 def get_telegram_user_info(chat_id: int) -> str:
     """Helper to fetch a user's name/username via getChat endpoint."""
