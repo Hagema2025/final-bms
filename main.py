@@ -1733,11 +1733,42 @@ def category_status_label(status):
 #             print(f" ❌ Failed to send failure report to admin: {e}")
 
 
+from collections import defaultdict
+from datetime import datetime
+from zoneinfo import ZoneInfo
+from html import escape
+import requests
+import time
 
+AVAIL_STATUS_MAP = {
+    "0": ("SOLD OUT", "🔴"),
+    "1": ("ALMOST FULL", "🟡"),
+    "2": ("FILLING FAST", "🟠"),
+    "3": ("AVAILABLE", "🟢"),
+}
 
+def resolve_status_text(status_key):
+    """
+    Translates raw status keys ('0', '1', '2', '3') into readable labels.
+    Handles integer or string input.
+    """
+    key = str(status_key).strip()
+    if key in AVAIL_STATUS_MAP:
+        return AVAIL_STATUS_MAP[key][0]
+    return key if key else "UNKNOWN"
+
+def is_restocked(old_status_key, new_status_key):
+    """
+    Evaluates if state transition represents restocking (e.g., 0 -> 1, 2, 3 or 1 -> 2, 3).
+    """
+    try:
+        old_lvl = int(str(old_status_key))
+        new_lvl = int(str(new_status_key))
+        return new_lvl > old_lvl
+    except (ValueError, TypeError):
+        return False
 
 def parse_time_to_minutes(time_str):
-    """Converts 12-hour/24-hour time strings into minutes for accurate chronological sorting."""
     try:
         t_str = str(time_str).strip().upper()
         if "AM" in t_str or "PM" in t_str:
@@ -1749,42 +1780,26 @@ def parse_time_to_minutes(time_str):
         return 0
 
 def parse_price(price_val):
-    """Extracts floating point values for numeric price sorting."""
     try:
         cleaned = ''.join(c for c in str(price_val) if c.isdigit() or c == '.')
         return float(cleaned) if cleaned else 0.0
     except Exception:
         return 0.0
 
-def resolve_status_text(status_key):
-    """Resolves raw status keys or text into clean display text."""
-    key = str(status_key).strip()
-    if key in AVAIL_STATUS_MAP:
-        return AVAIL_STATUS_MAP[key][0]
-    return key  # Fallback to string representation if already parsed
-
-def is_restocked(old_status_key, new_status_key):
-    """
-    Evaluates if state transition represents restocking:
-    0 -> 1, 2, 3
-    1 -> 2, 3
-    2 -> 3
-    """
+def format_date(date_str):
     try:
-        old_lvl = int(str(old_status_key))
-        new_lvl = int(str(new_status_key))
-        return new_lvl > old_lvl
-    except (ValueError, TypeError):
-        return False
+        dt = datetime.strptime(str(date_str), "%Y%m%d")
+        return dt.strftime("%a, %d %b %Y")
+    except Exception:
+        return str(date_str)
 
 def split_message_chunks(lines, max_chars=4000):
-    """Splits alert lines into safe payload chunks under Telegram's 4096-character limit."""
     chunks = []
     current_chunk = []
     current_length = 0
 
     for line in lines:
-        line_len = len(line) + 1  # Including newline
+        line_len = len(line) + 1
         if current_length + line_len > max_chars:
             chunks.append("\n".join(current_chunk))
             current_chunk = [line]
@@ -1798,24 +1813,12 @@ def split_message_chunks(lines, max_chars=4000):
     return chunks
 
 def send_telegram(watch_name, subject, changes, shows, movie_info):
-    """
-    Sends grouped alerts formatted by:
-      1. Date (Ascending)
-      2. Priority Type (NEW -> RESTOCKED -> PRICE DROP -> PRICE INCREASE)
-      3. Venue (Alphabetical Ascending)
-      4. Time (Chronological Ascending)
-      5. Price (Ascending)
-    """
     if not TELEGRAM_BOT_TOKEN:
         print(" ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN not configured.")
         return
 
     recipients = get_notification_recipients()
-    if not recipients:
-        print(" ⚠️ Telegram skipped — No NOTIFICATION_USERS configured.")
-        return
-
-    if not changes:
+    if not recipients or not changes:
         return
 
     now_str = datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%d %b, %I:%M %p")
@@ -1830,7 +1833,7 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
         }
         return priority_map.get(change_type, 99)
 
-    # 1. SORT Raw Changes
+    # 1. SORT
     sorted_changes = sorted(
         changes,
         key=lambda x: (
@@ -1842,7 +1845,7 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
         )
     )
 
-    # 2. GROUP Nested Dictionary: Date -> Type -> Showtime Key
+    # 2. GROUP
     nested_data = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
 
     for item in sorted_changes:
@@ -1856,7 +1859,7 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
         )
         nested_data[d_val][c_type][show_key].append(item)
 
-    # 3. BUILD Alert Lines
+    # 3. BUILD LINES
     lines = [
         f"🚨 <b>BMS Ticket Alert!</b>",
         f"🎬 <b>{escape(str(watch_name.split('_')[0]))}</b> ({escape(str(watch_name))})",
@@ -1864,16 +1867,20 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
     ]
 
     section_headers = {
-        "NEW": "=============================\n🆕 <b>NEW SHOW ADDED</b>\n=============================",
-        "RESTOCKED": "=============================\n🔄 <b>TICKETS RESTOCKED</b>\n=============================",
-        "PRICE_DROP": "=============================\n📉 <b>PRICE DROP ALERT</b>\n=============================",
-        "PRICE_INCREASE": "=============================\n📈 <b>PRICE INCREASE ALERT</b>\n============================="
+        "NEW": "===========================\n🆕 <b>NEW SHOW ADDED</b>\n==============================",
+        "RESTOCKED": "============================\n🔄 <b>TICKETS STATUS CHANGE</b>\n===========================",
+        "PRICE_DROP": "==============================\n📉 <b>PRICE DROP ALERT</b>\n==============================",
+        "PRICE_INCREASE": "============================\n📈 <b>PRICE INCREASE ALERT</b>\n============================"
     }
 
-    # 4. RENDER Output
+    # 4. RENDER
     for date_val, type_groups in nested_data.items():
         formatted_date = format_date(date_val)
-        lines.append(f"<b>for date: {escape(str(formatted_date))}</b>\n")
+        lines.append(
+            f"░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n"
+            f"📆 <b>SHOWS FOR: {escape(str(formatted_date)).upper()}</b>\n"
+            f"░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n"
+        )
 
         for c_type in sorted(type_groups.keys(), key=get_type_priority):
             shows_dict = type_groups[c_type]
@@ -1888,15 +1895,18 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
                     cat_price = escape(str(cat.get('price', '')))
                     old_price = escape(str(cat.get('old_price', '')))
                     
-                    # Resolve status codes using AVAIL_STATUS_MAP
-                    raw_status = cat.get('status', '')
-                    raw_old_status = cat.get('old_status', '')
+                    # Explicitly extract and translate raw status values
+                    raw_status = str(cat.get('status', '')).strip()
+                    raw_old_status = str(cat.get('old_status', '')).strip() if cat.get('old_status') is not None else ""
                     
                     current_status_text = resolve_status_text(raw_status)
-                    old_status_text = resolve_status_text(raw_old_status) if raw_old_status else ""
+                    old_status_text = resolve_status_text(raw_old_status) if raw_old_status != "" else ""
 
                     if c_type == "RESTOCKED":
-                        status_str = f"{old_status_text} → <b>{current_status_text}</b>" if old_status_text else f"<b>{current_status_text}</b>"
+                        if old_status_text:
+                            status_str = f"{old_status_text} → <b>{current_status_text}</b>"
+                        else:
+                            status_str = f"<b>{current_status_text}</b>"
                         cat_lines.append(f"└ 🎟️ {cat_name}: ₹{cat_price} ({status_str})")
                     elif c_type in ("PRICE_DROP", "PRICE_INCREASE"):
                         cat_lines.append(f"└ 🎟️ {cat_name}: Was ₹{old_price} ➔ <b>₹{cat_price}</b> ({current_status_text})")
@@ -1911,13 +1921,12 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
                     f"{categories_formatted}\n"
                 )
 
-        lines.append("***************\n")
 
+    # 5. DISPATCH CHUNKS
     message_chunks = split_message_chunks(lines)
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     failed_deliveries = []
 
-    # 5. BROADCAST Chunks to Recipients with Exponential Backoff
     for chat_id in recipients:
         user_success = True
         last_error = "Unknown Error"
@@ -1936,17 +1945,13 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
                         },
                         timeout=20,
                     )
-
                     if response.status_code == 200:
                         chunk_success = True
                         break
                     else:
                         last_error = f"HTTP {response.status_code}: {response.text}"
-                        print(f" ⚠️ Attempt {attempt} failed for {chat_id}: {last_error}")
-
                 except requests.RequestException as e:
                     last_error = str(e)
-                    print(f" ⚠️ Attempt {attempt} network error for {chat_id}: {last_error}")
 
                 time.sleep(attempt * 2)
 
@@ -1954,9 +1959,7 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
                 user_success = False
                 break
 
-        if user_success:
-            print(f" ✅ Alert sent to user ID {chat_id}.")
-        else:
+        if not user_success:
             user_info_str = get_telegram_user_info(chat_id)
             failed_deliveries.append({
                 "chat_id": chat_id,
@@ -1964,24 +1967,17 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
                 "error": last_error
             })
 
-    # 6. REPORT Failures to Admin
     if failed_deliveries and TELEGRAM_CHAT_ID:
         report_lines = [
             f"⚠️ <b>Delivery Failure Report</b>",
             f"Failed to deliver alert for <b>{escape(str(movie_name))}</b> to {len(failed_deliveries)} recipient(s):\n"
         ]
-
         for item in failed_deliveries:
             report_lines.append(
                 f"👤 <b>User:</b> {escape(item['user_info'])}\n"
                 f"🆔 <b>ID:</b> <code>{item['chat_id']}</code>\n"
                 f"❌ <b>Reason:</b> <code>{escape(item['error'])}</code>\n"
             )
-
-        report_lines.append("<b>Original Message Snippet:</b>")
-        snippet = "\n".join(lines[:10])
-        report_lines.append(f"<i>{escape(snippet[:300])}...</i>")
-
         try:
             requests.post(
                 url,
@@ -1992,8 +1988,8 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
                 },
                 timeout=10,
             )
-        except Exception as e:
-            print(f" ❌ Failed to send failure report to admin: {e}")
+        except Exception:
+            pass
 
 def get_telegram_user_info(chat_id: int) -> str:
     """Helper to fetch a user's name/username via getChat endpoint."""
