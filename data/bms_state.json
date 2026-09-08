@@ -2007,7 +2007,7 @@
         "date": "20260912",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": ""
       },
       "PVES|33812|20260912|BUDGET": {
@@ -4518,7 +4518,7 @@
         "date": "20260913",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "3",
         "screen": ""
       },
       "PVHC|32019|20260913|CLASSIC": {
@@ -4662,7 +4662,7 @@
         "date": "20260913",
         "cat": "Box",
         "price": "180.00",
-        "status": "0",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4789|20260913|Balcony": {
@@ -4671,7 +4671,7 @@
         "date": "20260913",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "1",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4789|20260913|First Class": {
@@ -4680,7 +4680,7 @@
         "date": "20260913",
         "cat": "First Class",
         "price": "120.00",
-        "status": "1",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4789|20260913|Second Class": {
@@ -4689,7 +4689,7 @@
         "date": "20260913",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4790|20260913|First Class": {
@@ -5375,6 +5375,96 @@
         "price": "54.35",
         "status": "2",
         "screen": ""
+      },
+      "INPR|65850|20260913|ELITE": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "09:10 AM",
+        "date": "20260913",
+        "cat": "ELITE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INPR|65850|20260913|BUDGET": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "09:10 AM",
+        "date": "20260913",
+        "cat": "BUDGET",
+        "price": "54.35",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INPR|65836|20260913|ELITE": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "12:25 PM",
+        "date": "20260913",
+        "cat": "ELITE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INPR|65836|20260913|BUDGET": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "12:25 PM",
+        "date": "20260913",
+        "cat": "BUDGET",
+        "price": "54.35",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INPR|65852|20260913|ELITE": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "04:15 PM",
+        "date": "20260913",
+        "cat": "ELITE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INPR|65852|20260913|BUDGET": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "04:15 PM",
+        "date": "20260913",
+        "cat": "BUDGET",
+        "price": "54.35",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INPR|65838|20260913|ELITE": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "07:30 PM",
+        "date": "20260913",
+        "cat": "ELITE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INPR|65838|20260913|BUDGET": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "07:30 PM",
+        "date": "20260913",
+        "cat": "BUDGET",
+        "price": "54.35",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INPR|65839|20260913|ELITE": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "11:15 PM",
+        "date": "20260913",
+        "cat": "ELITE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INPR|65839|20260913|BUDGET": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "11:15 PM",
+        "date": "20260913",
+        "cat": "BUDGET",
+        "price": "54.35",
+        "status": "3",
+        "screen": "Atmos"
       },
       "MLMT|8321|20260913|GOLD": {
         "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
