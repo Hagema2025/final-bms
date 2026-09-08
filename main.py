@@ -62,7 +62,7 @@ from urllib.parse import urlparse
 from collections import defaultdict
 from zoneinfo import ZoneInfo
 from curl_cffi import requests
-
+import html
 # ======================================================================
 # CONFIGURATION
 # ======================================================================
@@ -1268,6 +1268,20 @@ def build_state(
 # ======================================================================
 # CHANGE DETECTION
 # ======================================================================
+def is_restocked(old_status_key, new_status_key):
+    """
+    Returns True if ticket availability improved:
+    0 (SOLD OUT) -> 1, 2, 3
+    1 (ALMOST FULL) -> 2, 3
+    2 (FILLING FAST) -> 3
+    """
+    try:
+        old_lvl = int(str(old_status_key).strip())
+        new_lvl = int(str(new_status_key).strip())
+        return new_lvl > old_lvl
+    except (ValueError, TypeError):
+        return False
+
 def detect_changes(old_state, new_state):
     changes = []
 
@@ -1286,7 +1300,8 @@ def detect_changes(old_state, new_state):
             "cat": show["cat"],
             "price": show["price"],
             "screen": show.get("screen", ""),
-            "status": category_status_label(show["status"]),
+            "status": str(show.get("status", "3")),
+            "old_status": ""
         })
 
     # Compare existing shows for status & price changes
@@ -1295,11 +1310,12 @@ def detect_changes(old_state, new_state):
         if not old_show:
             continue
 
-        # 2. Back in stock (Sold Out -> Available / Filling Fast / Almost Full)
-        if old_show["status"] == "0" and new_show["status"] != "0":
-            label, icon = AVAIL_STATUS_MAP.get(
-                new_show["status"], ("UNKNOWN", "⚪")
-            )
+        old_status = str(old_show.get("status", "")).strip()
+        new_status = str(new_show.get("status", "")).strip()
+
+        # 2. Restocked check (0->1,2,3 | 1->2,3 | 2->3)
+        if is_restocked(old_status, new_status):
+            label, icon = AVAIL_STATUS_MAP.get(new_status, ("UNKNOWN", "🔄"))
             changes.append({
                 "type": "RESTOCKED",
                 "icon": icon,
@@ -1308,11 +1324,13 @@ def detect_changes(old_state, new_state):
                 "date": new_show["date"],
                 "cat": new_show["cat"],
                 "price": new_show["price"],
+                "old_price": old_show.get("price"),
                 "screen": new_show.get("screen", ""),
-                "status": label,
+                "status": new_status,        # Pass raw key e.g. "3"
+                "old_status": old_status     # Pass raw key e.g. "0" or "1"
             })
 
-        # 3. Price changes (Price Drop / Price Increase)
+        # 3. Price changes
         try:
             old_price = float(old_show.get("price", 0))
             new_price = float(new_show.get("price", 0))
@@ -1329,7 +1347,8 @@ def detect_changes(old_state, new_state):
                     "old_price": f"{old_price:.2f}",
                     "price": f"{new_price:.2f}",
                     "screen": new_show.get("screen", ""),
-                    "status": category_status_label(new_show["status"]),
+                    "status": new_status,
+                    "old_status": old_status
                 })
         except (ValueError, TypeError):
             pass
@@ -1732,25 +1751,23 @@ def category_status_label(status):
 #         except Exception as e:
 #             print(f" ❌ Failed to send failure report to admin: {e}")
 
-
-
-def resolve_status_text(status_key):
+# 2. HELPER FUNCTIONS
+def resolve_status_info(status_key):
     """
-    Translates raw status keys ('0', '1', '2', '3') into readable labels.
-    Handles integer or string input.
+    Translates raw status keys ('0', '1', '2', '3') into tuple (Label, Emoji).
     """
     key = str(status_key).strip()
     if key in AVAIL_STATUS_MAP:
-        return AVAIL_STATUS_MAP[key][0]
-    return key if key else "UNKNOWN"
+        return AVAIL_STATUS_MAP[key]
+    return (key if key else "UNKNOWN", "⚪")
 
 def is_restocked(old_status_key, new_status_key):
     """
     Evaluates if state transition represents restocking (e.g., 0 -> 1, 2, 3 or 1 -> 2, 3).
     """
     try:
-        old_lvl = int(str(old_status_key))
-        new_lvl = int(str(new_status_key))
+        old_lvl = int(str(old_status_key).strip())
+        new_lvl = int(str(new_status_key).strip())
         return new_lvl > old_lvl
     except (ValueError, TypeError):
         return False
@@ -1799,6 +1816,81 @@ def split_message_chunks(lines, max_chars=4000):
         chunks.append("\n".join(current_chunk))
     return chunks
 
+# 3. DETECT CHANGES
+def detect_changes(old_state, new_state):
+    changes = []
+
+    old_shows = old_state.get("shows", {})
+    new_shows = new_state.get("shows", {})
+
+    # 1. New showtimes added
+    for key in set(new_shows) - set(old_shows):
+        show = new_shows[key]
+        changes.append({
+            "type": "NEW",
+            "icon": "🆕",
+            "venue": show["venue"],
+            "time": show["time"],
+            "date": show["date"],
+            "cat": show["cat"],
+            "price": show["price"],
+            "screen": show.get("screen", ""),
+            "status": str(show.get("status", "3")),
+            "old_status": ""
+        })
+
+    # Compare existing shows for status & price changes
+    for key, new_show in new_shows.items():
+        old_show = old_shows.get(key)
+        if not old_show:
+            continue
+
+        old_status = str(old_show.get("status", "")).strip()
+        new_status = str(new_show.get("status", "")).strip()
+
+        # 2. Restocked check (0->1,2,3 | 1->2,3 | 2->3)
+        if is_restocked(old_status, new_status):
+            label, icon = resolve_status_info(new_status)
+            changes.append({
+                "type": "RESTOCKED",
+                "icon": icon,
+                "venue": new_show["venue"],
+                "time": new_show["time"],
+                "date": new_show["date"],
+                "cat": new_show["cat"],
+                "price": new_show["price"],
+                "old_price": old_show.get("price"),
+                "screen": new_show.get("screen", ""),
+                "status": new_status,
+                "old_status": old_status
+            })
+
+        # 3. Price changes
+        try:
+            old_price = float(old_show.get("price", 0))
+            new_price = float(new_show.get("price", 0))
+
+            if old_price != new_price:
+                price_dropped = new_price < old_price
+                changes.append({
+                    "type": "PRICE_DROP" if price_dropped else "PRICE_INCREASE",
+                    "icon": "📉" if price_dropped else "📈",
+                    "venue": new_show["venue"],
+                    "time": new_show["time"],
+                    "date": new_show["date"],
+                    "cat": new_show["cat"],
+                    "old_price": f"{old_price:.2f}",
+                    "price": f"{new_price:.2f}",
+                    "screen": new_show.get("screen", ""),
+                    "status": new_status,
+                    "old_status": old_status
+                })
+        except (ValueError, TypeError):
+            pass
+
+    return changes
+
+# 4. TELEGRAM ALERT DISPATCHER
 def send_telegram(watch_name, subject, changes, shows, movie_info):
     if not TELEGRAM_BOT_TOKEN:
         print(" ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN not configured.")
@@ -1849,8 +1941,8 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
     # 3. BUILD LINES
     lines = [
         f"🚨 <b>BMS Ticket Alert!</b>",
-        f"🎬 <b>{escape(str(watch_name.split('_')[0]))}</b> ({escape(str(watch_name))})",
-        f"🕒 <i>{escape(now_str)}</i>\n",
+        f"🎬 <b>{html.escape(str(watch_name.split('_')[0]))}</b> ({html.escape(str(watch_name))})",
+        f"🕒 <i>{html.escape(now_str)}</i>\n",
     ]
 
     section_headers = {
@@ -1864,9 +1956,9 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
     for date_val, type_groups in nested_data.items():
         formatted_date = format_date(date_val)
         lines.append(
-            f"░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n"
-            f"📆 <b>SHOWS FOR: {escape(str(formatted_date)).upper()}</b>\n"
-            f"░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n"
+            f"░░░░░░░░░░░░░░░░░░░░░░░\n"
+            f"📆 <b>SHOWS FOR: {html.escape(str(formatted_date)).upper()}</b>\n"
+            f"░░░░░░░░░░░░░░░░░░░░░░░\n"
         )
 
         for c_type in sorted(type_groups.keys(), key=get_type_priority):
@@ -1874,40 +1966,41 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
             lines.append(section_headers.get(c_type, f"<b>{c_type}</b>"))
 
             for (venue, time_val, screen, icon), items in shows_dict.items():
-                screen_str = f" [{escape(str(screen))}]" if screen else ""
+                screen_str = f" [{html.escape(str(screen))}]" if screen else ""
                 
                 cat_lines = []
                 for cat in items:
-                    cat_name = escape(str(cat.get('cat', '')))
-                    cat_price = escape(str(cat.get('price', '')))
-                    old_price = escape(str(cat.get('old_price', '')))
+                    cat_name = html.escape(str(cat.get('cat', '')))
+                    cat_price = html.escape(str(cat.get('price', '')))
+                    old_price = html.escape(str(cat.get('old_price', '')))
                     
-                    # Explicitly extract and translate raw status values
-                    raw_status = str(cat.get('status', '')).strip()
+                    raw_status = str(cat.get('status', '3')).strip()
                     raw_old_status = str(cat.get('old_status', '')).strip() if cat.get('old_status') is not None else ""
                     
-                    current_status_text = resolve_status_text(raw_status)
-                    old_status_text = resolve_status_text(raw_old_status) if raw_old_status != "" else ""
+                    if c_type == "RESTOCKED" and not raw_old_status:
+                        raw_old_status = "0"
+
+                    curr_label, curr_emoji = resolve_status_info(raw_status)
+                    old_label, old_emoji = resolve_status_info(raw_old_status) if raw_old_status != "" else ("", "")
 
                     if c_type == "RESTOCKED":
-                        if old_status_text:
-                            status_str = f"{old_status_text} → <b>{current_status_text}</b>"
+                        if old_label and old_label != curr_label:
+                            status_str = f"{old_emoji} {old_label} → {curr_emoji} <b>{curr_label}</b>"
                         else:
-                            status_str = f"<b>{current_status_text}</b>"
+                            status_str = f"{curr_emoji} <b>{curr_label}</b>"
                         cat_lines.append(f"└ 🎟️ {cat_name}: ₹{cat_price} ({status_str})")
                     elif c_type in ("PRICE_DROP", "PRICE_INCREASE"):
-                        cat_lines.append(f"└ 🎟️ {cat_name}: Was ₹{old_price} ➔ <b>₹{cat_price}</b> ({current_status_text})")
-                    else:
-                        cat_lines.append(f"└ 🎟️ {cat_name}: ₹{cat_price} ({current_status_text})")
+                        cat_lines.append(f"└ 🎟️ {cat_name}: Was ₹{old_price} ➔ <b>₹{cat_price}</b> ({curr_emoji} {curr_label})")
+                    else: # NEW or DEFAULT
+                        cat_lines.append(f"└ 🎟️ {cat_name}: ₹{cat_price} ({curr_emoji} {curr_label})")
 
                 categories_formatted = "\n".join(cat_lines)
 
                 lines.append(
-                    f"📍 {escape(str(venue))}\n"
-                    f"🕒 <code>{escape(str(time_val))}</code>{screen_str}\n"
+                    f"📍 {html.escape(str(venue))}\n"
+                    f"🕒 <code>{html.escape(str(time_val))}</code>{screen_str}\n"
                     f"{categories_formatted}\n"
                 )
-
 
     # 5. DISPATCH CHUNKS
     message_chunks = split_message_chunks(lines)
@@ -1957,13 +2050,13 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
     if failed_deliveries and TELEGRAM_CHAT_ID:
         report_lines = [
             f"⚠️ <b>Delivery Failure Report</b>",
-            f"Failed to deliver alert for <b>{escape(str(movie_name))}</b> to {len(failed_deliveries)} recipient(s):\n"
+            f"Failed to deliver alert for <b>{html.escape(str(movie_name))}</b> to {len(failed_deliveries)} recipient(s):\n"
         ]
         for item in failed_deliveries:
             report_lines.append(
-                f"👤 <b>User:</b> {escape(item['user_info'])}\n"
+                f"👤 <b>User:</b> {html.escape(item['user_info'])}\n"
                 f"🆔 <b>ID:</b> <code>{item['chat_id']}</code>\n"
-                f"❌ <b>Reason:</b> <code>{escape(item['error'])}</code>\n"
+                f"❌ <b>Reason:</b> <code>{html.escape(item['error'])}</code>\n"
             )
         try:
             requests.post(
