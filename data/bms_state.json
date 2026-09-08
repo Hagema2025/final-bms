@@ -412,7 +412,7 @@
         "date": "20260913",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "3",
+        "status": "1",
         "screen": "Atmos"
       },
       "INTO|90178|20260913|CLUB": {
@@ -430,7 +430,7 @@
         "date": "20260913",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "3",
+        "status": "1",
         "screen": "Atmos"
       },
       "INTO|90169|20260913|CLUB": {
@@ -466,7 +466,7 @@
         "date": "20260913",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "3",
+        "status": "1",
         "screen": ""
       },
       "INTO|90180|20260913|CLUB": {
@@ -484,7 +484,7 @@
         "date": "20260913",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "3",
+        "status": "1",
         "screen": "Atmos"
       },
       "INTO|90200|20260913|CLUB": {
@@ -502,7 +502,7 @@
         "date": "20260913",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "3",
+        "status": "1",
         "screen": ""
       },
       "INTO|90181|20260913|CLUB": {
@@ -520,7 +520,7 @@
         "date": "20260913",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "3",
+        "status": "1",
         "screen": "Atmos"
       },
       "INTO|90191|20260913|CLUB": {
@@ -538,7 +538,7 @@
         "date": "20260913",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "3",
+        "status": "1",
         "screen": "Atmos"
       }
     },
