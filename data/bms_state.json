@@ -109,6 +109,150 @@
         "status": "0",
         "screen": "4K DOLBY 7.1"
       },
+      "INTO|90182|20260912|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:00 AM",
+        "date": "20260912",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90182|20260912|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:00 AM",
+        "date": "20260912",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": "Atmos"
+      },
+      "INTO|90162|20260912|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:05 AM",
+        "date": "20260912",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "BIGPIX"
+      },
+      "INTO|90162|20260912|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:05 AM",
+        "date": "20260912",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": "BIGPIX"
+      },
+      "INTO|90183|20260912|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "12:25 PM",
+        "date": "20260912",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90183|20260912|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "12:25 PM",
+        "date": "20260912",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90173|20260912|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "01:00 PM",
+        "date": "20260912",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90173|20260912|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "01:00 PM",
+        "date": "20260912",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90164|20260912|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:20 PM",
+        "date": "20260912",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "BIGPIX"
+      },
+      "INTO|90164|20260912|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:20 PM",
+        "date": "20260912",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": "BIGPIX"
+      },
+      "INTO|90175|20260912|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "08:00 PM",
+        "date": "20260912",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90175|20260912|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "08:00 PM",
+        "date": "20260912",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90176|20260912|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:20 PM",
+        "date": "20260912",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90176|20260912|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:20 PM",
+        "date": "20260912",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90186|20260912|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:30 PM",
+        "date": "20260912",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90186|20260912|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:30 PM",
+        "date": "20260912",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "Atmos"
+      },
       "ACON|47234|20260913|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
         "time": "10:25 AM",
