@@ -2250,7 +2250,7 @@
         "date": "20260912",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "0",
+        "status": "2",
         "screen": "DolbyAtmos"
       },
       "KSTK|50752|20260912|Premium": {
@@ -8046,7 +8046,7 @@
         "date": "20260913",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "3",
         "screen": ""
       },
       "PGRA|22518|20260913|CLASSIC": {
@@ -8226,7 +8226,7 @@
         "date": "20260913",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "3",
         "screen": ""
       },
       "PVHC|32019|20260913|CLASSIC": {
