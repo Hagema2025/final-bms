@@ -4206,78 +4206,6 @@
         "status": "3",
         "screen": "DOLBY ATMOS"
       },
-      "VECT|8285|20260912|BALCONY": {
-        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
-        "time": "11:20 AM",
-        "date": "20260912",
-        "cat": "BALCONY",
-        "price": "190.00",
-        "status": "3",
-        "screen": ""
-      },
-      "VECT|8285|20260912|FIRST CLASS": {
-        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
-        "time": "11:20 AM",
-        "date": "20260912",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "VECT|8286|20260912|BALCONY": {
-        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
-        "time": "03:15 PM",
-        "date": "20260912",
-        "cat": "BALCONY",
-        "price": "190.00",
-        "status": "3",
-        "screen": ""
-      },
-      "VECT|8286|20260912|FIRST CLASS": {
-        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
-        "time": "03:15 PM",
-        "date": "20260912",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "VECT|8287|20260912|BALCONY": {
-        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
-        "time": "06:50 PM",
-        "date": "20260912",
-        "cat": "BALCONY",
-        "price": "190.00",
-        "status": "3",
-        "screen": ""
-      },
-      "VECT|8287|20260912|FIRST CLASS": {
-        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
-        "time": "06:50 PM",
-        "date": "20260912",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "VECT|8288|20260912|BALCONY": {
-        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
-        "time": "10:30 PM",
-        "date": "20260912",
-        "cat": "BALCONY",
-        "price": "190.00",
-        "status": "3",
-        "screen": ""
-      },
-      "VECT|8288|20260912|FIRST CLASS": {
-        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
-        "time": "10:30 PM",
-        "date": "20260912",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
       "GRTC|9882|20260912|COUPLE": {
         "venue": "GanapathyRam Theatre 4K Dolby 7.1: Chennai",
         "time": "11:00 AM",
@@ -5589,7 +5517,7 @@
         "date": "20260913",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "Atmos"
       },
       "INTO|90190|20260913|CLUB": {
@@ -8381,78 +8309,6 @@
         "price": "150.00",
         "status": "3",
         "screen": "DOLBY ATMOS"
-      },
-      "VECT|8289|20260913|BALCONY": {
-        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
-        "time": "11:20 AM",
-        "date": "20260913",
-        "cat": "BALCONY",
-        "price": "190.00",
-        "status": "3",
-        "screen": ""
-      },
-      "VECT|8289|20260913|FIRST CLASS": {
-        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
-        "time": "11:20 AM",
-        "date": "20260913",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "VECT|8290|20260913|BALCONY": {
-        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
-        "time": "03:15 PM",
-        "date": "20260913",
-        "cat": "BALCONY",
-        "price": "190.00",
-        "status": "3",
-        "screen": ""
-      },
-      "VECT|8290|20260913|FIRST CLASS": {
-        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
-        "time": "03:15 PM",
-        "date": "20260913",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "VECT|8291|20260913|BALCONY": {
-        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
-        "time": "06:50 PM",
-        "date": "20260913",
-        "cat": "BALCONY",
-        "price": "190.00",
-        "status": "3",
-        "screen": ""
-      },
-      "VECT|8291|20260913|FIRST CLASS": {
-        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
-        "time": "06:50 PM",
-        "date": "20260913",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "VECT|8292|20260913|BALCONY": {
-        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
-        "time": "10:30 PM",
-        "date": "20260913",
-        "cat": "BALCONY",
-        "price": "190.00",
-        "status": "3",
-        "screen": ""
-      },
-      "VECT|8292|20260913|FIRST CLASS": {
-        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
-        "time": "10:30 PM",
-        "date": "20260913",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
       },
       "WSTC|4787|20260913|Box": {
         "venue": "Woodlands Theatre: Chennai",
