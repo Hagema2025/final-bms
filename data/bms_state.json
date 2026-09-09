@@ -88,7 +88,7 @@
         "date": "20260912",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "BIGPIX"
       },
       "INTO|90194|20260912|CLUB": {
@@ -702,7 +702,7 @@
         "date": "20260912",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "Atmos"
       },
       "INPR|65861|20260912|BUDGET": {
@@ -6021,7 +6021,7 @@
         "date": "20260913",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "2",
+        "status": "1",
         "screen": ""
       },
       "PCAN|44747|20260913|PRIME": {
@@ -6948,7 +6948,7 @@
         "date": "20260913",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "2",
+        "status": "3",
         "screen": ""
       },
       "PVSR|27597|20260913|PREMIUM": {
