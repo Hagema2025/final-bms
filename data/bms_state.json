@@ -2214,7 +2214,7 @@
         "date": "20260912",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "0",
+        "status": "2",
         "screen": "DolbyAtmos"
       },
       "KSTK|50751|20260912|Premium": {
@@ -2250,7 +2250,7 @@
         "date": "20260912",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "2",
+        "status": "0",
         "screen": "DolbyAtmos"
       },
       "KSTK|50752|20260912|Premium": {
@@ -4356,7 +4356,7 @@
         "date": "20260912",
         "cat": "Box",
         "price": "180.00",
-        "status": "3",
+        "status": "0",
         "screen": ""
       },
       "WSTC|4782|20260912|Balcony": {
@@ -4365,7 +4365,7 @@
         "date": "20260912",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "3",
+        "status": "1",
         "screen": ""
       },
       "WSTC|4782|20260912|First Class": {
@@ -4374,7 +4374,7 @@
         "date": "20260912",
         "cat": "First Class",
         "price": "120.00",
-        "status": "3",
+        "status": "1",
         "screen": ""
       },
       "WSTC|4782|20260912|Second Class": {
@@ -4383,7 +4383,7 @@
         "date": "20260912",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": ""
       },
       "WSTC|4783|20260912|First Class": {
@@ -4949,6 +4949,24 @@
         "time": "09:30 PM",
         "date": "20260912",
         "cat": "ELITE",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "HRSR|1083|20260912|PREMIERE ROW": {
+        "venue": "Sri Hari Theatre Dolby Atmos: Pattabiram",
+        "time": "11:30 AM",
+        "date": "20260912",
+        "cat": "PREMIERE ROW",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "HRSR|1084|20260912|PREMIERE ROW": {
+        "venue": "Sri Hari Theatre Dolby Atmos: Pattabiram",
+        "time": "02:30 PM",
+        "date": "20260912",
+        "cat": "PREMIERE ROW",
         "price": "150.00",
         "status": "3",
         "screen": ""
@@ -9161,6 +9179,24 @@
         "time": "09:30 PM",
         "date": "20260913",
         "cat": "ELITE",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "HRSR|1085|20260913|PREMIERE ROW": {
+        "venue": "Sri Hari Theatre Dolby Atmos: Pattabiram",
+        "time": "11:30 AM",
+        "date": "20260913",
+        "cat": "PREMIERE ROW",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "HRSR|1086|20260913|PREMIERE ROW": {
+        "venue": "Sri Hari Theatre Dolby Atmos: Pattabiram",
+        "time": "02:30 PM",
+        "date": "20260913",
+        "cat": "PREMIERE ROW",
         "price": "150.00",
         "status": "3",
         "screen": ""
