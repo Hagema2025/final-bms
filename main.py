@@ -358,6 +358,8 @@ def load_watches():
             for fmt in _as_list(watch.get("formats"))
         ]
 
+        message_thread_id = watch.get("message_thread_id", None)
+
         validated.append({
             "name": name,
             "url": url,
@@ -367,6 +369,7 @@ def load_watches():
             "discover_variants": discover_variants,
             "languages": languages,
             "formats": formats,
+            "message_thread_id": message_thread_id,  # <-- ADD THIS LINE
         })
 
     return validated
