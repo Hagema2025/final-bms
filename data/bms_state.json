@@ -88,7 +88,7 @@
         "date": "20260912",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "BIGPIX"
       },
       "INTO|90194|20260912|CLUB": {
@@ -2142,7 +2142,7 @@
         "date": "20260912",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "2",
+        "status": "0",
         "screen": "DolbyAtmos"
       },
       "KSTK|50749|20260912|Premium": {
@@ -2250,7 +2250,7 @@
         "date": "20260912",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "2",
+        "status": "0",
         "screen": "DolbyAtmos"
       },
       "KSTK|50752|20260912|Premium": {
@@ -6948,7 +6948,7 @@
         "date": "20260913",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "2",
+        "status": "3",
         "screen": ""
       },
       "PVSR|27597|20260913|PREMIUM": {
