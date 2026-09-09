@@ -2024,6 +2024,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                     "text": chunk,
                     "parse_mode": "HTML",
                     "disable_web_page_preview": True,
+                    "disable_notification": False, # Explicitly enable sound/push notifications
                 }
                 
                 # Direct it to the specific topic thread
