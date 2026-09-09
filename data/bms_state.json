@@ -286,7 +286,7 @@
         "date": "20260913",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "Atmos"
       },
       "INTO|90167|20260913|CLUB": {
@@ -1575,7 +1575,7 @@
         "date": "20260912",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "2",
+        "status": "1",
         "screen": "PXL"
       },
       "PCAN|44770|20260912|PRIME": {
@@ -2142,7 +2142,7 @@
         "date": "20260912",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "2",
+        "status": "0",
         "screen": "DolbyAtmos"
       },
       "KSTK|50749|20260912|Premium": {
@@ -2817,7 +2817,7 @@
         "date": "20260912",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": ""
       },
       "PVSR|27595|20260912|PREMIUM": {
@@ -3378,150 +3378,6 @@
         "status": "3",
         "screen": ""
       },
-      "PABC|21617|20260912|PRIME": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "09:00 AM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PABC|21617|20260912|CLASSIC": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "09:00 AM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "3",
-        "screen": ""
-      },
-      "PABC|21657|20260912|PRIME": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "09:30 AM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PABC|21657|20260912|CLASSIC": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "09:30 AM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "3",
-        "screen": ""
-      },
-      "PABC|21608|20260912|PRIME": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "12:15 PM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PABC|21608|20260912|CLASSIC": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "12:15 PM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "3",
-        "screen": ""
-      },
-      "PABC|21649|20260912|PRIME": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "03:45 PM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PABC|21649|20260912|CLASSIC": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "03:45 PM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "3",
-        "screen": ""
-      },
-      "PABC|21619|20260912|PRIME": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "04:00 PM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PABC|21619|20260912|CLASSIC": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "04:00 PM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": ""
-      },
-      "PABC|21610|20260912|PRIME": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "07:10 PM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PABC|21610|20260912|CLASSIC": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "07:10 PM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": ""
-      },
-      "PABC|21661|20260912|PRIME": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "10:25 PM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PABC|21661|20260912|CLASSIC": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "10:25 PM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "3",
-        "screen": ""
-      },
-      "PABC|21611|20260912|PRIME": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "11:00 PM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PABC|21611|20260912|CLASSIC": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "11:00 PM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": ""
-      },
       "PBRM|24753|20260912|ELITE": {
         "venue": "PVR: Perambur, Spectrum Mall",
         "time": "09:00 AM",
@@ -3662,6 +3518,150 @@
         "time": "11:15 PM",
         "date": "20260912",
         "cat": "BUDGET",
+        "price": "54.35",
+        "status": "0",
+        "screen": ""
+      },
+      "PABC|21617|20260912|PRIME": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "09:00 AM",
+        "date": "20260912",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PABC|21617|20260912|CLASSIC": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "09:00 AM",
+        "date": "20260912",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "3",
+        "screen": ""
+      },
+      "PABC|21657|20260912|PRIME": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "09:30 AM",
+        "date": "20260912",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PABC|21657|20260912|CLASSIC": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "09:30 AM",
+        "date": "20260912",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "3",
+        "screen": ""
+      },
+      "PABC|21608|20260912|PRIME": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "12:15 PM",
+        "date": "20260912",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PABC|21608|20260912|CLASSIC": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "12:15 PM",
+        "date": "20260912",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "3",
+        "screen": ""
+      },
+      "PABC|21649|20260912|PRIME": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "03:45 PM",
+        "date": "20260912",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PABC|21649|20260912|CLASSIC": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "03:45 PM",
+        "date": "20260912",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "3",
+        "screen": ""
+      },
+      "PABC|21619|20260912|PRIME": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "04:00 PM",
+        "date": "20260912",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PABC|21619|20260912|CLASSIC": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "04:00 PM",
+        "date": "20260912",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "0",
+        "screen": ""
+      },
+      "PABC|21610|20260912|PRIME": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "07:10 PM",
+        "date": "20260912",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PABC|21610|20260912|CLASSIC": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "07:10 PM",
+        "date": "20260912",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "0",
+        "screen": ""
+      },
+      "PABC|21661|20260912|PRIME": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "10:25 PM",
+        "date": "20260912",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PABC|21661|20260912|CLASSIC": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "10:25 PM",
+        "date": "20260912",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "3",
+        "screen": ""
+      },
+      "PABC|21611|20260912|PRIME": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "11:00 PM",
+        "date": "20260912",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PABC|21611|20260912|CLASSIC": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "11:00 PM",
+        "date": "20260912",
+        "cat": "CLASSIC",
         "price": "54.35",
         "status": "0",
         "screen": ""
@@ -4494,114 +4494,6 @@
         "status": "3",
         "screen": ""
       },
-      "ASGG|10253|20260912|Balcony Class": {
-        "venue": "Alankar Theatre: Maduranthakam",
-        "time": "11:30 AM",
-        "date": "20260912",
-        "cat": "Balcony Class",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "ASGG|10253|20260912|First Class": {
-        "venue": "Alankar Theatre: Maduranthakam",
-        "time": "11:30 AM",
-        "date": "20260912",
-        "cat": "First Class",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "ASGG|10249|20260912|Balcony Class": {
-        "venue": "Alankar Theatre: Maduranthakam",
-        "time": "02:30 PM",
-        "date": "20260912",
-        "cat": "Balcony Class",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "ASGG|10249|20260912|First Class": {
-        "venue": "Alankar Theatre: Maduranthakam",
-        "time": "02:30 PM",
-        "date": "20260912",
-        "cat": "First Class",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "ASGG|10257|20260912|Balcony Class": {
-        "venue": "Alankar Theatre: Maduranthakam",
-        "time": "06:30 PM",
-        "date": "20260912",
-        "cat": "Balcony Class",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "ASGG|10257|20260912|First Class": {
-        "venue": "Alankar Theatre: Maduranthakam",
-        "time": "06:30 PM",
-        "date": "20260912",
-        "cat": "First Class",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "ASGG|10261|20260912|Balcony Class": {
-        "venue": "Alankar Theatre: Maduranthakam",
-        "time": "09:30 PM",
-        "date": "20260912",
-        "cat": "Balcony Class",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "ASGG|10261|20260912|First Class": {
-        "venue": "Alankar Theatre: Maduranthakam",
-        "time": "09:30 PM",
-        "date": "20260912",
-        "cat": "First Class",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "JTPL|11286|20260912|BALCONY": {
-        "venue": "Janatha Theatre 4K AC DTS (JBL AUDIO): Pallavaram",
-        "time": "11:15 AM",
-        "date": "20260912",
-        "cat": "BALCONY",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "JTPL|11286|20260912|FIRST CLASS": {
-        "venue": "Janatha Theatre 4K AC DTS (JBL AUDIO): Pallavaram",
-        "time": "11:15 AM",
-        "date": "20260912",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "JTPL|11288|20260912|BALCONY": {
-        "venue": "Janatha Theatre 4K AC DTS (JBL AUDIO): Pallavaram",
-        "time": "06:15 PM",
-        "date": "20260912",
-        "cat": "BALCONY",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "JTPL|11288|20260912|FIRST CLASS": {
-        "venue": "Janatha Theatre 4K AC DTS (JBL AUDIO): Pallavaram",
-        "time": "06:15 PM",
-        "date": "20260912",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
       "MLMT|8306|20260912|GOLD": {
         "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
         "time": "09:00 AM",
@@ -4809,6 +4701,42 @@
         "status": "3",
         "screen": "DOLBY ATMOS"
       },
+      "JTPL|11286|20260912|BALCONY": {
+        "venue": "Janatha Theatre 4K AC DTS (JBL AUDIO): Pallavaram",
+        "time": "11:15 AM",
+        "date": "20260912",
+        "cat": "BALCONY",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "JTPL|11286|20260912|FIRST CLASS": {
+        "venue": "Janatha Theatre 4K AC DTS (JBL AUDIO): Pallavaram",
+        "time": "11:15 AM",
+        "date": "20260912",
+        "cat": "FIRST CLASS",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "JTPL|11288|20260912|BALCONY": {
+        "venue": "Janatha Theatre 4K AC DTS (JBL AUDIO): Pallavaram",
+        "time": "06:15 PM",
+        "date": "20260912",
+        "cat": "BALCONY",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "JTPL|11288|20260912|FIRST CLASS": {
+        "venue": "Janatha Theatre 4K AC DTS (JBL AUDIO): Pallavaram",
+        "time": "06:15 PM",
+        "date": "20260912",
+        "cat": "FIRST CLASS",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
       "JTMV|13131|20260912|First Class": {
         "venue": "VVM Cinemas 3D 2K AC Dts, Ponneri: Chennai",
         "time": "11:15 AM",
@@ -4985,6 +4913,78 @@
         "time": "09:30 PM",
         "date": "20260912",
         "cat": "ELITE",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "ASGG|10253|20260912|Balcony Class": {
+        "venue": "Alankar Theatre: Maduranthakam",
+        "time": "11:30 AM",
+        "date": "20260912",
+        "cat": "Balcony Class",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "ASGG|10253|20260912|First Class": {
+        "venue": "Alankar Theatre: Maduranthakam",
+        "time": "11:30 AM",
+        "date": "20260912",
+        "cat": "First Class",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "ASGG|10249|20260912|Balcony Class": {
+        "venue": "Alankar Theatre: Maduranthakam",
+        "time": "02:30 PM",
+        "date": "20260912",
+        "cat": "Balcony Class",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "ASGG|10249|20260912|First Class": {
+        "venue": "Alankar Theatre: Maduranthakam",
+        "time": "02:30 PM",
+        "date": "20260912",
+        "cat": "First Class",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "ASGG|10257|20260912|Balcony Class": {
+        "venue": "Alankar Theatre: Maduranthakam",
+        "time": "06:30 PM",
+        "date": "20260912",
+        "cat": "Balcony Class",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "ASGG|10257|20260912|First Class": {
+        "venue": "Alankar Theatre: Maduranthakam",
+        "time": "06:30 PM",
+        "date": "20260912",
+        "cat": "First Class",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "ASGG|10261|20260912|Balcony Class": {
+        "venue": "Alankar Theatre: Maduranthakam",
+        "time": "09:30 PM",
+        "date": "20260912",
+        "cat": "Balcony Class",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "ASGG|10261|20260912|First Class": {
+        "venue": "Alankar Theatre: Maduranthakam",
+        "time": "09:30 PM",
+        "date": "20260912",
+        "cat": "First Class",
         "price": "150.00",
         "status": "3",
         "screen": ""
@@ -6426,7 +6426,7 @@
         "date": "20260913",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": ""
       },
       "PVPZ|37963|20260913|BUDGET": {
