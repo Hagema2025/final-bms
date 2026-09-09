@@ -1593,7 +1593,7 @@
         "date": "20260912",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "3",
+        "status": "2",
         "screen": ""
       },
       "PCAN|44756|20260912|PRIME": {
@@ -2214,7 +2214,7 @@
         "date": "20260912",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "2",
+        "status": "0",
         "screen": "DolbyAtmos"
       },
       "KSTK|50751|20260912|Premium": {
@@ -5922,7 +5922,7 @@
         "date": "20260913",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "3",
         "screen": "PXL"
       },
       "PCAN|44729|20260913|CLASSIC": {
@@ -8046,7 +8046,7 @@
         "date": "20260913",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "3",
         "screen": ""
       },
       "PGRA|22518|20260913|CLASSIC": {
