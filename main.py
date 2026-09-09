@@ -79,7 +79,7 @@ STATE_FILE = "data/bms_state.json"
 
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip()
-
+GROUP_CHAT_ID=os.getenv("GROUP_CHAT_ID", "").strip()
 
 def get_notification_recipients() -> set[int]:
     raw_env = os.getenv("NOTIFICATION_USERS", "")
@@ -1891,13 +1891,16 @@ def detect_changes(old_state, new_state):
     return changes
 
 # 4. TELEGRAM ALERT DISPATCHER
-def send_telegram(watch_name, subject, changes, shows, movie_info):
-    if not TELEGRAM_BOT_TOKEN:
-        print(" ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN not configured.")
+def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
+    # Ensure both variables are available (assuming they are loaded from your .env globally)
+    # GROUP_CHAT_ID = os.getenv("GROUP_CHAT_ID")
+    # TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+    
+    if not TELEGRAM_BOT_TOKEN or not GROUP_CHAT_ID:
+        print(" ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN or GROUP_CHAT_ID not configured.")
         return
 
-    recipients = get_notification_recipients()
-    if not recipients or not changes:
+    if not changes:
         return
 
     now_str = datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%d %b, %I:%M %p")
@@ -2002,72 +2005,76 @@ def send_telegram(watch_name, subject, changes, shows, movie_info):
                     f"{categories_formatted}\n"
                 )
 
-    # 5. DISPATCH CHUNKS
+    # 5. DISPATCH CHUNKS TO THE FORUM TOPIC IN THE GROUP
     message_chunks = split_message_chunks(lines)
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
-    failed_deliveries = []
+    
+    alert_failed = False
+    last_error = "Unknown Error"
 
-    for chat_id in recipients:
-        user_success = True
-        last_error = "Unknown Error"
+    for chunk in message_chunks:
+        chunk_success = False
+        for attempt in range(1, 4):
+            try:
+                payload = {
+                    "chat_id": GROUP_CHAT_ID, # Main Group ID
+                    "text": chunk,
+                    "parse_mode": "HTML",
+                    "disable_web_page_preview": True,
+                }
+                
+                # Direct it to the specific topic thread
+                if threadid:
+                    payload["message_thread_id"] = threadid
 
-        for chunk in message_chunks:
-            chunk_success = False
-            for attempt in range(1, 4):
-                try:
-                    response = requests.post(
-                        url,
-                        json={
-                            "chat_id": chat_id,
-                            "text": chunk,
-                            "parse_mode": "HTML",
-                            "disable_web_page_preview": True,
-                        },
-                        timeout=20,
-                    )
-                    if response.status_code == 200:
-                        chunk_success = True
-                        break
-                    else:
-                        last_error = f"HTTP {response.status_code}: {response.text}"
-                except requests.RequestException as e:
-                    last_error = str(e)
+                response = requests.post(url, json=payload, timeout=20)
+                
+                if response.status_code == 200:
+                    chunk_success = True
+                    break
+                else:
+                    last_error = f"HTTP {response.status_code}: {response.text}"
+            except requests.RequestException as e:
+                last_error = str(e)
 
-                time.sleep(attempt * 2)
+            time.sleep(attempt * 2)
 
-            if not chunk_success:
-                user_success = False
-                break
+        if not chunk_success:
+            alert_failed = True
+            break
 
-        if not user_success:
-            user_info_str = get_telegram_user_info(chat_id)
-            failed_deliveries.append({
-                "chat_id": chat_id,
-                "user_info": user_info_str,
-                "error": last_error
-            })
-
-    if failed_deliveries and TELEGRAM_CHAT_ID:
-        report_lines = [
-            f"⚠️ <b>Delivery Failure Report</b>",
-            f"Failed to deliver alert for <b>{html.escape(str(movie_name))}</b> to {len(failed_deliveries)} recipient(s):\n"
-        ]
-        for item in failed_deliveries:
-            report_lines.append(
-                f"👤 <b>User:</b> {html.escape(item['user_info'])}\n"
-                f"🆔 <b>ID:</b> <code>{item['chat_id']}</code>\n"
-                f"❌ <b>Reason:</b> <code>{html.escape(item['error'])}</code>\n"
-            )
+    # 6. FALLBACK: SEND FAILURE REPORT DIRECTLY TO YOU (ADMIN)
+    if alert_failed and TELEGRAM_CHAT_ID:
+        report_text = (
+            f"⚠️ <b>Delivery Failure Report</b>\n"
+            f"Failed to deliver alert for <b>{html.escape(str(movie_name))}</b> to Topic ID <code>{threadid}</code> in the Group.\n"
+            f"❌ <b>Reason:</b> <code>{html.escape(last_error)}</code>\n\n"
+            f"<i>(Note: This usually happens if the topic was deleted or the bot lacks permissions.)</i>"
+        )
         try:
+            # Send directly to your admin DM (TELEGRAM_CHAT_ID)
             requests.post(
                 url,
                 json={
                     "chat_id": TELEGRAM_CHAT_ID,
-                    "text": "\n".join(report_lines),
+                    "text": report_text,
                     "parse_mode": "HTML"
                 },
                 timeout=10,
             )
+            # Next, send the actual message chunks that failed to deliver to the group
+            for chunk in message_chunks:
+                requests.post(
+                    url,
+                    json={
+                        "chat_id": TELEGRAM_CHAT_ID, # Sending directly to Admin DM
+                        "text": chunk,
+                        "parse_mode": "HTML",
+                        "disable_web_page_preview": True,
+                    },
+                    timeout=10,
+                )
+                time.sleep(1) # Brief pause between chunks to respect Telegram rate limits
         except Exception:
             pass
 
@@ -2552,6 +2559,7 @@ def get_telegram_user_info(chat_id: int) -> str:
 # ======================================================================
 
 def run_event(
+    threadid,
     label,
     event_code,
     region_code,
@@ -2707,6 +2715,7 @@ def run_event(
         # )
 
         send_telegram(
+            threadid,
              label,
                         (
                             f"BMS Alert: "
@@ -2765,6 +2774,7 @@ def run_watch(
 ):
 
     watch_name = watch["name"]
+    watch_threadid=watch["message_thread_id"]
 
     print("")
     print("=" * 70)
@@ -2867,6 +2877,7 @@ def run_watch(
     # --------------------------------------------------------------
 
     state, success, first_full_data = run_event(
+        threadid=watch_threadid,
         label=watch_name,
         event_code=event_code,
         region_code=region_code,
@@ -2981,6 +2992,7 @@ def run_watch(
                 )
 
                 state, variant_success, _ = run_event(
+                            threadid=watch_threadid,
                     label=variant_name,
                     event_code=variant.event_code,
                     region_code=region_code,
