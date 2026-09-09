@@ -1,1 +1,580 @@
-{}
+{
+  "MandaadiTamil_20260909203926": {
+    "shows": {
+      "INTO|90182|20260912|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:00 AM",
+        "date": "20260912",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90182|20260912|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:00 AM",
+        "date": "20260912",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": "Atmos"
+      },
+      "INTO|90162|20260912|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:05 AM",
+        "date": "20260912",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "BIGPIX"
+      },
+      "INTO|90162|20260912|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:05 AM",
+        "date": "20260912",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": "BIGPIX"
+      },
+      "INTO|90183|20260912|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "12:25 PM",
+        "date": "20260912",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90183|20260912|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "12:25 PM",
+        "date": "20260912",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": "Atmos"
+      },
+      "INTO|90173|20260912|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "01:00 PM",
+        "date": "20260912",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90173|20260912|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "01:00 PM",
+        "date": "20260912",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": "Atmos"
+      },
+      "INTO|90164|20260912|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:20 PM",
+        "date": "20260912",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "BIGPIX"
+      },
+      "INTO|90164|20260912|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:20 PM",
+        "date": "20260912",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": "BIGPIX"
+      },
+      "INTO|90194|20260912|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:40 PM",
+        "date": "20260912",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "INTO|90194|20260912|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:40 PM",
+        "date": "20260912",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": ""
+      },
+      "INTO|90175|20260912|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "08:00 PM",
+        "date": "20260912",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90175|20260912|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "08:00 PM",
+        "date": "20260912",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "0",
+        "screen": "Atmos"
+      },
+      "INTO|90195|20260912|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "08:05 PM",
+        "date": "20260912",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "INTO|90195|20260912|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "08:05 PM",
+        "date": "20260912",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": ""
+      },
+      "INTO|90176|20260912|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:20 PM",
+        "date": "20260912",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90176|20260912|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:20 PM",
+        "date": "20260912",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "0",
+        "screen": "Atmos"
+      },
+      "INTO|90186|20260912|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:30 PM",
+        "date": "20260912",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90186|20260912|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:30 PM",
+        "date": "20260912",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "2",
+        "screen": "Atmos"
+      },
+      "ACON|47229|20260912|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:25 AM",
+        "date": "20260912",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1"
+      },
+      "ACON|47229|20260912|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:25 AM",
+        "date": "20260912",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1"
+      },
+      "ACON|47232|20260912|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "01:40 PM",
+        "date": "20260912",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY ATMOS"
+      },
+      "ACON|47232|20260912|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "01:40 PM",
+        "date": "20260912",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY ATMOS"
+      },
+      "ACON|47338|20260912|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "04:55 PM",
+        "date": "20260912",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1"
+      },
+      "ACON|47338|20260912|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "04:55 PM",
+        "date": "20260912",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1"
+      },
+      "ACON|47233|20260912|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "08:15 PM",
+        "date": "20260912",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY ATMOS"
+      },
+      "ACON|47233|20260912|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "08:15 PM",
+        "date": "20260912",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY ATMOS"
+      },
+      "ACON|47231|20260912|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "11:35 PM",
+        "date": "20260912",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1"
+      },
+      "ACON|47231|20260912|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "11:35 PM",
+        "date": "20260912",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1"
+      },
+      "INTO|90187|20260913|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:00 AM",
+        "date": "20260913",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90187|20260913|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:00 AM",
+        "date": "20260913",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": "Atmos"
+      },
+      "INTO|90167|20260913|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:05 AM",
+        "date": "20260913",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "BIGPIX"
+      },
+      "INTO|90167|20260913|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:05 AM",
+        "date": "20260913",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "0",
+        "screen": "BIGPIX"
+      },
+      "INTO|90188|20260913|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "12:25 PM",
+        "date": "20260913",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90188|20260913|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "12:25 PM",
+        "date": "20260913",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": "Atmos"
+      },
+      "INTO|90178|20260913|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "01:00 PM",
+        "date": "20260913",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90178|20260913|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "01:00 PM",
+        "date": "20260913",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": "Atmos"
+      },
+      "INTO|90169|20260913|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:20 PM",
+        "date": "20260913",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "BIGPIX"
+      },
+      "INTO|90169|20260913|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:20 PM",
+        "date": "20260913",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "0",
+        "screen": "BIGPIX"
+      },
+      "INTO|90199|20260913|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:40 PM",
+        "date": "20260913",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "INTO|90199|20260913|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:40 PM",
+        "date": "20260913",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": ""
+      },
+      "INTO|90180|20260913|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "08:00 PM",
+        "date": "20260913",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90180|20260913|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "08:00 PM",
+        "date": "20260913",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": "Atmos"
+      },
+      "INTO|90200|20260913|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "08:05 PM",
+        "date": "20260913",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "INTO|90200|20260913|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "08:05 PM",
+        "date": "20260913",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": ""
+      },
+      "INTO|90181|20260913|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:20 PM",
+        "date": "20260913",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90181|20260913|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:20 PM",
+        "date": "20260913",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "0",
+        "screen": "Atmos"
+      },
+      "INTO|90191|20260913|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:30 PM",
+        "date": "20260913",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos"
+      },
+      "INTO|90191|20260913|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:30 PM",
+        "date": "20260913",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": "Atmos"
+      },
+      "ACON|47234|20260913|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:25 AM",
+        "date": "20260913",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1"
+      },
+      "ACON|47234|20260913|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:25 AM",
+        "date": "20260913",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1"
+      },
+      "ACON|47237|20260913|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "01:40 PM",
+        "date": "20260913",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY ATMOS"
+      },
+      "ACON|47237|20260913|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "01:40 PM",
+        "date": "20260913",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY ATMOS"
+      },
+      "ACON|47235|20260913|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "04:55 PM",
+        "date": "20260913",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1"
+      },
+      "ACON|47235|20260913|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "04:55 PM",
+        "date": "20260913",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1"
+      },
+      "ACON|47238|20260913|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "08:15 PM",
+        "date": "20260913",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY ATMOS"
+      },
+      "ACON|47238|20260913|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "08:15 PM",
+        "date": "20260913",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY ATMOS"
+      },
+      "ACON|47236|20260913|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "11:35 PM",
+        "date": "20260913",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1"
+      },
+      "ACON|47236|20260913|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "11:35 PM",
+        "date": "20260913",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1"
+      }
+    },
+    "dates": {
+      "20260910": "AVAILABLE",
+      "20260911": "AVAILABLE",
+      "20260912": "AVAILABLE",
+      "20260913": "BOOKABLE",
+      "20260914": "AVAILABLE",
+      "20260915": "AVAILABLE",
+      "20260916": "AVAILABLE",
+      "20260917": "AVAILABLE"
+    }
+  },
+  "MandaadiTamil_20260909203926 (Tamil EPIQ)": {
+    "shows": {},
+    "dates": {
+      "20260910": "BOOKABLE",
+      "20260911": "AVAILABLE",
+      "20260912": "NOT_OPEN",
+      "20260913": "NOT_OPEN",
+      "20260914": "NOT_OPEN",
+      "20260915": "NOT_OPEN",
+      "20260916": "NOT_OPEN"
+    }
+  },
+  "MandaadiTamil_20260909203926 (Tamil IMAX 2D)": {
+    "shows": {},
+    "dates": {
+      "20260910": "AVAILABLE",
+      "20260911": "AVAILABLE",
+      "20260912": "AVAILABLE",
+      "20260913": "BOOKABLE",
+      "20260914": "AVAILABLE",
+      "20260915": "NOT_OPEN",
+      "20260916": "NOT_OPEN"
+    }
+  }
+}
