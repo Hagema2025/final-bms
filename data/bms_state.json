@@ -2106,7 +2106,7 @@
         "date": "20260912",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "0",
+        "status": "2",
         "screen": "DolbyAtmos"
       },
       "KSTK|50748|20260912|Premium": {
@@ -2214,7 +2214,7 @@
         "date": "20260912",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "0",
+        "status": "2",
         "screen": "DolbyAtmos"
       },
       "KSTK|50751|20260912|Premium": {
@@ -4446,7 +4446,7 @@
         "date": "20260912",
         "cat": "Box",
         "price": "180.00",
-        "status": "0",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4784|20260912|Balcony": {
@@ -4455,7 +4455,7 @@
         "date": "20260912",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "1",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4784|20260912|First Class": {
@@ -4464,7 +4464,7 @@
         "date": "20260912",
         "cat": "First Class",
         "price": "120.00",
-        "status": "1",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4784|20260912|Second Class": {
@@ -4473,7 +4473,7 @@
         "date": "20260912",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4785|20260912|First Class": {
@@ -4482,7 +4482,7 @@
         "date": "20260912",
         "cat": "First Class",
         "price": "120.00",
-        "status": "1",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4785|20260912|Second Class": {
@@ -4491,7 +4491,7 @@
         "date": "20260912",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": ""
       },
       "MLMT|8306|20260912|GOLD": {
@@ -5985,7 +5985,7 @@
         "date": "20260913",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "2",
+        "status": "1",
         "screen": "PXL"
       },
       "PCAN|44775|20260913|PRIME": {
@@ -6426,7 +6426,7 @@
         "date": "20260913",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": ""
       },
       "PVPZ|37963|20260913|BUDGET": {
@@ -6444,7 +6444,7 @@
         "date": "20260913",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": ""
       },
       "PVPZ|37964|20260913|BUDGET": {
