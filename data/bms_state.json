@@ -2106,7 +2106,7 @@
         "date": "20260912",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "2",
+        "status": "0",
         "screen": "DolbyAtmos"
       },
       "KSTK|50748|20260912|Premium": {
@@ -3090,132 +3090,6 @@
         "status": "3",
         "screen": ""
       },
-      "PSKL|23218|20260912|PRIME": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "09:00 AM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PSKL|23218|20260912|CLASSIC": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "09:00 AM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": ""
-      },
-      "PSKL|23252|20260912|PRIME": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "09:05 AM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PSKL|23252|20260912|CLASSIC": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "09:05 AM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": ""
-      },
-      "PSKL|23229|20260912|PRIME": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "12:25 PM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PSKL|23229|20260912|CLASSIC": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "12:25 PM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": ""
-      },
-      "PSKL|23269|20260912|PRIME": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "03:25 PM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PSKL|23269|20260912|CLASSIC": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "03:25 PM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": ""
-      },
-      "PSKL|23220|20260912|PRIME": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "04:05 PM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PSKL|23220|20260912|CLASSIC": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "04:05 PM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": ""
-      },
-      "PSKL|23231|20260912|PRIME": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "07:30 PM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PSKL|23231|20260912|CLASSIC": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "07:30 PM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": ""
-      },
-      "PSKL|23232|20260912|PRIME": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "11:15 PM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PSKL|23232|20260912|CLASSIC": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "11:15 PM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": ""
-      },
       "PVES|33875|20260912|ELITE": {
         "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
         "time": "09:00 AM",
@@ -3340,6 +3214,132 @@
         "cat": "BUDGET",
         "price": "54.35",
         "status": "1",
+        "screen": ""
+      },
+      "PSKL|23218|20260912|PRIME": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "09:00 AM",
+        "date": "20260912",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PSKL|23218|20260912|CLASSIC": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "09:00 AM",
+        "date": "20260912",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "0",
+        "screen": ""
+      },
+      "PSKL|23252|20260912|PRIME": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "09:05 AM",
+        "date": "20260912",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PSKL|23252|20260912|CLASSIC": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "09:05 AM",
+        "date": "20260912",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "0",
+        "screen": ""
+      },
+      "PSKL|23229|20260912|PRIME": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "12:25 PM",
+        "date": "20260912",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PSKL|23229|20260912|CLASSIC": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "12:25 PM",
+        "date": "20260912",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "0",
+        "screen": ""
+      },
+      "PSKL|23269|20260912|PRIME": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "03:25 PM",
+        "date": "20260912",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PSKL|23269|20260912|CLASSIC": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "03:25 PM",
+        "date": "20260912",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "0",
+        "screen": ""
+      },
+      "PSKL|23220|20260912|PRIME": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "04:05 PM",
+        "date": "20260912",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PSKL|23220|20260912|CLASSIC": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "04:05 PM",
+        "date": "20260912",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "0",
+        "screen": ""
+      },
+      "PSKL|23231|20260912|PRIME": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "07:30 PM",
+        "date": "20260912",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PSKL|23231|20260912|CLASSIC": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "07:30 PM",
+        "date": "20260912",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "0",
+        "screen": ""
+      },
+      "PSKL|23232|20260912|PRIME": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "11:15 PM",
+        "date": "20260912",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PSKL|23232|20260912|CLASSIC": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "11:15 PM",
+        "date": "20260912",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "0",
         "screen": ""
       },
       "KMRM|13071|20260912|BALCONY": {
@@ -3780,7 +3780,7 @@
         "date": "20260912",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": ""
       },
       "PGRA|22513|20260912|CLASSIC": {
@@ -4168,6 +4168,42 @@
         "cat": "Executive",
         "price": "54.35",
         "status": "0",
+        "screen": ""
+      },
+      "VCDK|5916|20260912|ELITE": {
+        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
+        "time": "12:00 PM",
+        "date": "20260912",
+        "cat": "ELITE",
+        "price": "190.00",
+        "status": "3",
+        "screen": ""
+      },
+      "VCDK|5916|20260912|PREMIUM": {
+        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
+        "time": "12:00 PM",
+        "date": "20260912",
+        "cat": "PREMIUM",
+        "price": "190.00",
+        "status": "3",
+        "screen": ""
+      },
+      "VCDK|5918|20260912|ELITE": {
+        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
+        "time": "06:30 PM",
+        "date": "20260912",
+        "cat": "ELITE",
+        "price": "190.00",
+        "status": "3",
+        "screen": ""
+      },
+      "VCDK|5918|20260912|PREMIUM": {
+        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
+        "time": "06:30 PM",
+        "date": "20260912",
+        "cat": "PREMIUM",
+        "price": "190.00",
+        "status": "3",
         "screen": ""
       },
       "MTLM|19359|20260912|PRIME": {
@@ -4917,42 +4953,6 @@
         "status": "3",
         "screen": ""
       },
-      "VRCP|3760|20260912|PREMIUM": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "03:15 PM",
-        "date": "20260912",
-        "cat": "PREMIUM",
-        "price": "190.00",
-        "status": "3",
-        "screen": ""
-      },
-      "VRCP|3760|20260912|EXECUTIVE": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "03:15 PM",
-        "date": "20260912",
-        "cat": "EXECUTIVE",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "VRCP|3762|20260912|PREMIUM": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "10:30 PM",
-        "date": "20260912",
-        "cat": "PREMIUM",
-        "price": "190.00",
-        "status": "3",
-        "screen": ""
-      },
-      "VRCP|3762|20260912|EXECUTIVE": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "10:30 PM",
-        "date": "20260912",
-        "cat": "EXECUTIVE",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
       "GKGM|1393|20260912|ELITE": {
         "venue": "Gayathiri Cinemas A/C Dolby Atmos: Maduranthakam",
         "time": "02:30 PM",
@@ -4970,6 +4970,42 @@
         "price": "150.00",
         "status": "3",
         "screen": ""
+      },
+      "MMPR|2126|20260912|EXECUTIVE": {
+        "venue": "MovieMax: PR Mall, Wall Tax Road, Chennai",
+        "time": "12:45 PM",
+        "date": "20260912",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "4K LASER DOLBY 7.1 "
+      },
+      "MMPR|2126|20260912|BUDGET": {
+        "venue": "MovieMax: PR Mall, Wall Tax Road, Chennai",
+        "time": "12:45 PM",
+        "date": "20260912",
+        "cat": "BUDGET",
+        "price": "54.35",
+        "status": "3",
+        "screen": "4K LASER DOLBY 7.1 "
+      },
+      "MMPR|2128|20260912|EXECUTIVE": {
+        "venue": "MovieMax: PR Mall, Wall Tax Road, Chennai",
+        "time": "07:15 PM",
+        "date": "20260912",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "4K LASER DOLBY 7.1 "
+      },
+      "MMPR|2128|20260912|BUDGET": {
+        "venue": "MovieMax: PR Mall, Wall Tax Road, Chennai",
+        "time": "07:15 PM",
+        "date": "20260912",
+        "cat": "BUDGET",
+        "price": "54.35",
+        "status": "3",
+        "screen": "4K LASER DOLBY 7.1 "
       },
       "TVHP|24979|20260913|ELITE": {
         "venue": "The Vijay Park Multiplex: Injambakkam ECR 4K Atmos",
@@ -7338,6 +7374,132 @@
         "status": "3",
         "screen": ""
       },
+      "PSKL|23223|20260913|PRIME": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "09:00 AM",
+        "date": "20260913",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PSKL|23223|20260913|CLASSIC": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "09:00 AM",
+        "date": "20260913",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "0",
+        "screen": ""
+      },
+      "PSKL|23257|20260913|PRIME": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "09:05 AM",
+        "date": "20260913",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PSKL|23257|20260913|CLASSIC": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "09:05 AM",
+        "date": "20260913",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "0",
+        "screen": ""
+      },
+      "PSKL|23234|20260913|PRIME": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "12:25 PM",
+        "date": "20260913",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PSKL|23234|20260913|CLASSIC": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "12:25 PM",
+        "date": "20260913",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "0",
+        "screen": ""
+      },
+      "PSKL|23274|20260913|PRIME": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "03:25 PM",
+        "date": "20260913",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PSKL|23274|20260913|CLASSIC": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "03:25 PM",
+        "date": "20260913",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "0",
+        "screen": ""
+      },
+      "PSKL|23225|20260913|PRIME": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "04:05 PM",
+        "date": "20260913",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PSKL|23225|20260913|CLASSIC": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "04:05 PM",
+        "date": "20260913",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "0",
+        "screen": ""
+      },
+      "PSKL|23236|20260913|PRIME": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "07:30 PM",
+        "date": "20260913",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PSKL|23236|20260913|CLASSIC": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "07:30 PM",
+        "date": "20260913",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "0",
+        "screen": ""
+      },
+      "PSKL|23237|20260913|PRIME": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "11:15 PM",
+        "date": "20260913",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PSKL|23237|20260913|CLASSIC": {
+        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
+        "time": "11:15 PM",
+        "date": "20260913",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "0",
+        "screen": ""
+      },
       "PVES|33880|20260913|ELITE": {
         "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
         "time": "09:00 AM",
@@ -7480,132 +7642,6 @@
         "cat": "BUDGET",
         "price": "54.35",
         "status": "1",
-        "screen": ""
-      },
-      "PSKL|23223|20260913|PRIME": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "09:00 AM",
-        "date": "20260913",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PSKL|23223|20260913|CLASSIC": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "09:00 AM",
-        "date": "20260913",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": ""
-      },
-      "PSKL|23257|20260913|PRIME": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "09:05 AM",
-        "date": "20260913",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PSKL|23257|20260913|CLASSIC": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "09:05 AM",
-        "date": "20260913",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": ""
-      },
-      "PSKL|23234|20260913|PRIME": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "12:25 PM",
-        "date": "20260913",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PSKL|23234|20260913|CLASSIC": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "12:25 PM",
-        "date": "20260913",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": ""
-      },
-      "PSKL|23274|20260913|PRIME": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "03:25 PM",
-        "date": "20260913",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PSKL|23274|20260913|CLASSIC": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "03:25 PM",
-        "date": "20260913",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": ""
-      },
-      "PSKL|23225|20260913|PRIME": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "04:05 PM",
-        "date": "20260913",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PSKL|23225|20260913|CLASSIC": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "04:05 PM",
-        "date": "20260913",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": ""
-      },
-      "PSKL|23236|20260913|PRIME": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "07:30 PM",
-        "date": "20260913",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PSKL|23236|20260913|CLASSIC": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "07:30 PM",
-        "date": "20260913",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": ""
-      },
-      "PSKL|23237|20260913|PRIME": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "11:15 PM",
-        "date": "20260913",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PSKL|23237|20260913|CLASSIC": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "11:15 PM",
-        "date": "20260913",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
         "screen": ""
       },
       "JOTG|11737|20260913|BALCONY": {
@@ -8046,7 +8082,7 @@
         "date": "20260913",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": ""
       },
       "PGRA|22518|20260913|CLASSIC": {
@@ -8201,6 +8237,42 @@
         "price": "190.00",
         "status": "3",
         "screen": "4K DOLBY ATMOS"
+      },
+      "VCDK|5921|20260913|ELITE": {
+        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
+        "time": "12:00 PM",
+        "date": "20260913",
+        "cat": "ELITE",
+        "price": "190.00",
+        "status": "3",
+        "screen": ""
+      },
+      "VCDK|5921|20260913|PREMIUM": {
+        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
+        "time": "12:00 PM",
+        "date": "20260913",
+        "cat": "PREMIUM",
+        "price": "190.00",
+        "status": "3",
+        "screen": ""
+      },
+      "VCDK|5923|20260913|ELITE": {
+        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
+        "time": "06:30 PM",
+        "date": "20260913",
+        "cat": "ELITE",
+        "price": "190.00",
+        "status": "3",
+        "screen": ""
+      },
+      "VCDK|5923|20260913|PREMIUM": {
+        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
+        "time": "06:30 PM",
+        "date": "20260913",
+        "cat": "PREMIUM",
+        "price": "190.00",
+        "status": "3",
+        "screen": ""
       },
       "PVHC|32018|20260913|PRIME": {
         "venue": "PVR: Ampa Mall, Nelson Manickam Road",
@@ -9147,42 +9219,6 @@
         "status": "3",
         "screen": ""
       },
-      "VRCP|3764|20260913|PREMIUM": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "03:15 PM",
-        "date": "20260913",
-        "cat": "PREMIUM",
-        "price": "190.00",
-        "status": "3",
-        "screen": ""
-      },
-      "VRCP|3764|20260913|EXECUTIVE": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "03:15 PM",
-        "date": "20260913",
-        "cat": "EXECUTIVE",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "VRCP|3766|20260913|PREMIUM": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "10:30 PM",
-        "date": "20260913",
-        "cat": "PREMIUM",
-        "price": "190.00",
-        "status": "3",
-        "screen": ""
-      },
-      "VRCP|3766|20260913|EXECUTIVE": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "10:30 PM",
-        "date": "20260913",
-        "cat": "EXECUTIVE",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
       "GKGM|1397|20260913|ELITE": {
         "venue": "Gayathiri Cinemas A/C Dolby Atmos: Maduranthakam",
         "time": "02:30 PM",
@@ -9200,6 +9236,42 @@
         "price": "150.00",
         "status": "3",
         "screen": ""
+      },
+      "MMPR|2131|20260913|EXECUTIVE": {
+        "venue": "MovieMax: PR Mall, Wall Tax Road, Chennai",
+        "time": "12:45 PM",
+        "date": "20260913",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "4K LASER DOLBY 7.1 "
+      },
+      "MMPR|2131|20260913|BUDGET": {
+        "venue": "MovieMax: PR Mall, Wall Tax Road, Chennai",
+        "time": "12:45 PM",
+        "date": "20260913",
+        "cat": "BUDGET",
+        "price": "54.35",
+        "status": "3",
+        "screen": "4K LASER DOLBY 7.1 "
+      },
+      "MMPR|2133|20260913|EXECUTIVE": {
+        "venue": "MovieMax: PR Mall, Wall Tax Road, Chennai",
+        "time": "07:15 PM",
+        "date": "20260913",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "4K LASER DOLBY 7.1 "
+      },
+      "MMPR|2133|20260913|BUDGET": {
+        "venue": "MovieMax: PR Mall, Wall Tax Road, Chennai",
+        "time": "07:15 PM",
+        "date": "20260913",
+        "cat": "BUDGET",
+        "price": "54.35",
+        "status": "3",
+        "screen": "4K LASER DOLBY 7.1 "
       }
     },
     "dates": {
