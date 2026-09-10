@@ -110,10 +110,11 @@ DATE_STYLE_MAP = {
 }
 
 TIME_PERIODS = {
-    "morning": (600, 1200),
-    "afternoon": (1200, 1600),
-    "evening": (1600, 1900),
-    "night": (1900, 2400),
+    "midnight": (0, 600),          # 12:00 AM - 05:59 AM (Special FDFS & Midnight shows)
+    "morning": (600, 1200),    # 06:00 AM - 11:59 AM (Regular morning shows)
+    "afternoon": (1200, 1600), # 12:00 PM - 03:59 PM (Matinee shows)
+    "evening": (1600, 1900),   # 04:00 PM - 06:59 PM (Evening shows)
+    "night": (1900, 2400),     # 07:00 PM - 11:59 PM (Night shows)
 }
 
 REGION_MAP = {
@@ -1952,8 +1953,8 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
     ]
 
     section_headers = {
-        "NEW": "===========================\n🆕 <b>NEW SHOW ADDED</b>\n==============================",
-        "RESTOCKED": "============================\n🔄 <b>TICKETS STATUS CHANGE</b>\n===============================",
+        "NEW": "==========================\n🆕 <b>NEW SHOW ADDED</b>\n==========================",
+        "RESTOCKED": "==========================\n🔄 <b>TICKETS STATUS CHANGE</b>\n==========================",
         "PRICE_DROP": "==============================\n📉 <b>PRICE DROP ALERT</b>\n==============================",
         "PRICE_INCREASE": "============================\n📈 <b>PRICE INCREASE ALERT</b>\n============================"
     }
@@ -1962,9 +1963,9 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
     for date_val, type_groups in nested_data.items():
         formatted_date = format_date(date_val)
         lines.append(
-            f"░░░░░░░░░░░░░░░░░░░░░░░\n"
+            f"░░░░░░░░░░░░░░░░░░░\n"
             f"📆 <b>SHOWS FOR: {html.escape(str(formatted_date)).upper()}</b>\n"
-            f"░░░░░░░░░░░░░░░░░░░░░░░\n"
+            f"░░░░░░░░░░░░░░░░░░░\n"
         )
 
         for c_type in sorted(type_groups.keys(), key=get_type_priority):
