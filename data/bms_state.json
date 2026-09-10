@@ -2178,7 +2178,7 @@
         "date": "20260912",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "0",
+        "status": "2",
         "screen": "DolbyAtmos"
       },
       "KSTK|50750|20260912|Premium": {
@@ -4392,7 +4392,7 @@
         "date": "20260912",
         "cat": "First Class",
         "price": "120.00",
-        "status": "1",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4783|20260912|Second Class": {
@@ -4401,7 +4401,7 @@
         "date": "20260912",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4784|20260912|Box": {
@@ -8046,7 +8046,7 @@
         "date": "20260913",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "3",
         "screen": ""
       },
       "PGRA|22518|20260913|CLASSIC": {
@@ -8226,7 +8226,7 @@
         "date": "20260913",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "3",
         "screen": ""
       },
       "PVHC|32019|20260913|CLASSIC": {
@@ -8568,7 +8568,7 @@
         "date": "20260913",
         "cat": "Box",
         "price": "180.00",
-        "status": "0",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4789|20260913|Balcony": {
@@ -8577,7 +8577,7 @@
         "date": "20260913",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "1",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4789|20260913|First Class": {
@@ -8586,7 +8586,7 @@
         "date": "20260913",
         "cat": "First Class",
         "price": "120.00",
-        "status": "1",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4789|20260913|Second Class": {
@@ -8595,7 +8595,7 @@
         "date": "20260913",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4790|20260913|First Class": {
