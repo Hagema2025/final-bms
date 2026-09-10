@@ -964,49 +964,5 @@
       "20260915": "NOT_OPEN",
       "20260916": "NOT_OPEN"
     }
-  },
-  "Sardar2Tamil_20260910192559": {
-    "shows": {
-      "INTO|90174|20260912|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "04:25 PM",
-        "date": "20260912",
-        "cat": "CLUB",
-        "price": "183.80",
-        "status": "3",
-        "screen": "Atmos"
-      },
-      "INTO|90174|20260912|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "04:25 PM",
-        "date": "20260912",
-        "cat": "EXECUTIVE",
-        "price": "54.35",
-        "status": "1",
-        "screen": "Atmos"
-      }
-    },
-    "dates": {
-      "20260910": "AVAILABLE",
-      "20260911": "AVAILABLE",
-      "20260912": "BOOKABLE",
-      "20260913": "AVAILABLE",
-      "20260914": "AVAILABLE",
-      "20260915": "AVAILABLE",
-      "20260916": "AVAILABLE",
-      "20260917": "AVAILABLE"
-    }
-  },
-  "Sardar2Tamil_20260910192559 (Tamil EPIQ)": {
-    "shows": {},
-    "dates": {
-      "20260911": "AVAILABLE",
-      "20260912": "BOOKABLE",
-      "20260913": "AVAILABLE",
-      "20260914": "AVAILABLE",
-      "20260915": "NOT_OPEN",
-      "20260916": "NOT_OPEN",
-      "20260917": "NOT_OPEN"
-    }
   }
 }
