@@ -554,13 +554,68 @@
     }
   },
   "MandaadiTamil_20260909203926 (Tamil EPIQ)": {
-    "shows": {},
+    "shows": {
+      "RAKK|3674|20260912|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:00 AM",
+        "date": "20260912",
+        "cat": "Premium",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ"
+      },
+      "RAKK|3677|20260912|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "04:40 PM",
+        "date": "20260912",
+        "cat": "Premium",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ"
+      },
+      "RAKK|3676|20260912|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:50 PM",
+        "date": "20260912",
+        "cat": "Premium",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ"
+      },
+      "RAKK|3687|20260913|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:00 AM",
+        "date": "20260913",
+        "cat": "Premium",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ"
+      },
+      "RAKK|3689|20260913|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "04:40 PM",
+        "date": "20260913",
+        "cat": "Premium",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ"
+      },
+      "RAKK|3690|20260913|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:50 PM",
+        "date": "20260913",
+        "cat": "Premium",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ"
+      }
+    },
     "dates": {
-      "20260910": "BOOKABLE",
+      "20260910": "AVAILABLE",
       "20260911": "AVAILABLE",
-      "20260912": "NOT_OPEN",
-      "20260913": "NOT_OPEN",
-      "20260914": "NOT_OPEN",
+      "20260912": "AVAILABLE",
+      "20260913": "BOOKABLE",
+      "20260914": "AVAILABLE",
       "20260915": "NOT_OPEN",
       "20260916": "NOT_OPEN"
     }
