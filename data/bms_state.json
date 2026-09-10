@@ -322,7 +322,7 @@
         "date": "20260913",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "Atmos"
       },
       "INTO|90178|20260913|CLUB": {
@@ -3843,7 +3843,7 @@
         "date": "20260912",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "3",
+        "status": "2",
         "screen": ""
       },
       "VVGT|31175|20260912|ELITE": {
@@ -4823,6 +4823,60 @@
         "time": "02:30 PM",
         "date": "20260912",
         "cat": "PREMIERE ROW",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "AVMT|904|20260912|BOX 1": {
+        "venue": "AVM Cinemas: Uthukkottai",
+        "time": "02:30 PM",
+        "date": "20260912",
+        "cat": "BOX 1",
+        "price": "180.00",
+        "status": "3",
+        "screen": ""
+      },
+      "AVMT|904|20260912|BOX 2": {
+        "venue": "AVM Cinemas: Uthukkottai",
+        "time": "02:30 PM",
+        "date": "20260912",
+        "cat": "BOX 2",
+        "price": "180.00",
+        "status": "3",
+        "screen": ""
+      },
+      "AVMT|904|20260912|ELITE": {
+        "venue": "AVM Cinemas: Uthukkottai",
+        "time": "02:30 PM",
+        "date": "20260912",
+        "cat": "ELITE",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "AVMT|906|20260912|BOX 1": {
+        "venue": "AVM Cinemas: Uthukkottai",
+        "time": "09:45 PM",
+        "date": "20260912",
+        "cat": "BOX 1",
+        "price": "180.00",
+        "status": "3",
+        "screen": ""
+      },
+      "AVMT|906|20260912|BOX 2": {
+        "venue": "AVM Cinemas: Uthukkottai",
+        "time": "09:45 PM",
+        "date": "20260912",
+        "cat": "BOX 2",
+        "price": "180.00",
+        "status": "3",
+        "screen": ""
+      },
+      "AVMT|906|20260912|ELITE": {
+        "venue": "AVM Cinemas: Uthukkottai",
+        "time": "09:45 PM",
+        "date": "20260912",
+        "cat": "ELITE",
         "price": "150.00",
         "status": "3",
         "screen": ""
@@ -5868,7 +5922,7 @@
         "date": "20260913",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "PXL"
       },
       "PCAN|44729|20260913|CLASSIC": {
@@ -8460,7 +8514,7 @@
         "date": "20260913",
         "cat": "Box",
         "price": "180.00",
-        "status": "3",
+        "status": "0",
         "screen": ""
       },
       "WSTC|4787|20260913|Balcony": {
@@ -8469,7 +8523,7 @@
         "date": "20260913",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "3",
+        "status": "1",
         "screen": ""
       },
       "WSTC|4787|20260913|First Class": {
@@ -8478,7 +8532,7 @@
         "date": "20260913",
         "cat": "First Class",
         "price": "120.00",
-        "status": "3",
+        "status": "1",
         "screen": ""
       },
       "WSTC|4787|20260913|Second Class": {
@@ -8487,7 +8541,7 @@
         "date": "20260913",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": ""
       },
       "WSTC|4788|20260913|First Class": {
@@ -8496,7 +8550,7 @@
         "date": "20260913",
         "cat": "First Class",
         "price": "120.00",
-        "status": "3",
+        "status": "1",
         "screen": ""
       },
       "WSTC|4788|20260913|Second Class": {
@@ -8505,7 +8559,7 @@
         "date": "20260913",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": ""
       },
       "WSTC|4789|20260913|Box": {
@@ -8514,7 +8568,7 @@
         "date": "20260913",
         "cat": "Box",
         "price": "180.00",
-        "status": "0",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4789|20260913|Balcony": {
@@ -8523,7 +8577,7 @@
         "date": "20260913",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "1",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4789|20260913|First Class": {
@@ -8532,7 +8586,7 @@
         "date": "20260913",
         "cat": "First Class",
         "price": "120.00",
-        "status": "1",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4789|20260913|Second Class": {
@@ -8541,7 +8595,7 @@
         "date": "20260913",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": ""
       },
       "WSTC|4790|20260913|First Class": {
@@ -8999,6 +9053,60 @@
         "time": "02:30 PM",
         "date": "20260913",
         "cat": "PREMIERE ROW",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "AVMT|908|20260913|BOX 1": {
+        "venue": "AVM Cinemas: Uthukkottai",
+        "time": "02:30 PM",
+        "date": "20260913",
+        "cat": "BOX 1",
+        "price": "180.00",
+        "status": "3",
+        "screen": ""
+      },
+      "AVMT|908|20260913|BOX 2": {
+        "venue": "AVM Cinemas: Uthukkottai",
+        "time": "02:30 PM",
+        "date": "20260913",
+        "cat": "BOX 2",
+        "price": "180.00",
+        "status": "3",
+        "screen": ""
+      },
+      "AVMT|908|20260913|ELITE": {
+        "venue": "AVM Cinemas: Uthukkottai",
+        "time": "02:30 PM",
+        "date": "20260913",
+        "cat": "ELITE",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "AVMT|910|20260913|BOX 1": {
+        "venue": "AVM Cinemas: Uthukkottai",
+        "time": "09:45 PM",
+        "date": "20260913",
+        "cat": "BOX 1",
+        "price": "180.00",
+        "status": "3",
+        "screen": ""
+      },
+      "AVMT|910|20260913|BOX 2": {
+        "venue": "AVM Cinemas: Uthukkottai",
+        "time": "09:45 PM",
+        "date": "20260913",
+        "cat": "BOX 2",
+        "price": "180.00",
+        "status": "3",
+        "screen": ""
+      },
+      "AVMT|910|20260913|ELITE": {
+        "venue": "AVM Cinemas: Uthukkottai",
+        "time": "09:45 PM",
+        "date": "20260913",
+        "cat": "ELITE",
         "price": "150.00",
         "status": "3",
         "screen": ""
