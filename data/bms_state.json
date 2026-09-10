@@ -1872,7 +1872,7 @@
         "date": "20260912",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "2",
+        "status": "0",
         "screen": "DolbyAtmos"
       },
       "KSTK|50748|20260912|Premium": {
@@ -1980,7 +1980,7 @@
         "date": "20260912",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "0",
+        "status": "2",
         "screen": "DolbyAtmos"
       },
       "KSTK|50751|20260912|Premium": {
@@ -2459,6 +2459,204 @@
         "price": "54.00",
         "status": "0",
         "screen": "4K DOLBY ATMOS"
+      },
+      "PVSR|27592|20260912|ELITE": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "09:00 AM",
+        "date": "20260912",
+        "cat": "ELITE",
+        "price": "183.80",
+        "status": "2",
+        "screen": ""
+      },
+      "PVSR|27592|20260912|PREMIUM": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "09:00 AM",
+        "date": "20260912",
+        "cat": "PREMIUM",
+        "price": "173.00",
+        "status": "3",
+        "screen": ""
+      },
+      "PVSR|27592|20260912|ECONOMY": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "09:00 AM",
+        "date": "20260912",
+        "cat": "ECONOMY",
+        "price": "163.00",
+        "status": "3",
+        "screen": ""
+      },
+      "PVSR|27592|20260912|BUDGET": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "09:00 AM",
+        "date": "20260912",
+        "cat": "BUDGET",
+        "price": "54.35",
+        "status": "3",
+        "screen": ""
+      },
+      "PVSR|27593|20260912|ELITE": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "12:35 PM",
+        "date": "20260912",
+        "cat": "ELITE",
+        "price": "183.80",
+        "status": "2",
+        "screen": ""
+      },
+      "PVSR|27593|20260912|PREMIUM": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "12:35 PM",
+        "date": "20260912",
+        "cat": "PREMIUM",
+        "price": "173.00",
+        "status": "3",
+        "screen": ""
+      },
+      "PVSR|27593|20260912|ECONOMY": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "12:35 PM",
+        "date": "20260912",
+        "cat": "ECONOMY",
+        "price": "163.00",
+        "status": "3",
+        "screen": ""
+      },
+      "PVSR|27593|20260912|BUDGET": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "12:35 PM",
+        "date": "20260912",
+        "cat": "BUDGET",
+        "price": "54.35",
+        "status": "3",
+        "screen": ""
+      },
+      "PVSR|27579|20260912|ELITE": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "03:30 PM",
+        "date": "20260912",
+        "cat": "ELITE",
+        "price": "183.80",
+        "status": "0",
+        "screen": ""
+      },
+      "PVSR|27579|20260912|PREMIUM": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "03:30 PM",
+        "date": "20260912",
+        "cat": "PREMIUM",
+        "price": "173.00",
+        "status": "3",
+        "screen": ""
+      },
+      "PVSR|27579|20260912|BUDGET": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "03:30 PM",
+        "date": "20260912",
+        "cat": "BUDGET",
+        "price": "54.35",
+        "status": "3",
+        "screen": ""
+      },
+      "PVSR|27635|20260912|ELITE": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "03:55 PM",
+        "date": "20260912",
+        "cat": "ELITE",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PVSR|27635|20260912|BUDGET": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "03:55 PM",
+        "date": "20260912",
+        "cat": "BUDGET",
+        "price": "54.35",
+        "status": "3",
+        "screen": ""
+      },
+      "PVSR|27595|20260912|ELITE": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "07:30 PM",
+        "date": "20260912",
+        "cat": "ELITE",
+        "price": "183.80",
+        "status": "1",
+        "screen": ""
+      },
+      "PVSR|27595|20260912|PREMIUM": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "07:30 PM",
+        "date": "20260912",
+        "cat": "PREMIUM",
+        "price": "173.00",
+        "status": "3",
+        "screen": ""
+      },
+      "PVSR|27595|20260912|ECONOMY": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "07:30 PM",
+        "date": "20260912",
+        "cat": "ECONOMY",
+        "price": "163.00",
+        "status": "3",
+        "screen": ""
+      },
+      "PVSR|27595|20260912|BUDGET": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "07:30 PM",
+        "date": "20260912",
+        "cat": "BUDGET",
+        "price": "54.35",
+        "status": "3",
+        "screen": ""
+      },
+      "PVSR|27581|20260912|ELITE": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "10:30 PM",
+        "date": "20260912",
+        "cat": "ELITE",
+        "price": "183.80",
+        "status": "0",
+        "screen": ""
+      },
+      "PVSR|27581|20260912|PREMIUM": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "10:30 PM",
+        "date": "20260912",
+        "cat": "PREMIUM",
+        "price": "173.00",
+        "status": "3",
+        "screen": ""
+      },
+      "PVSR|27581|20260912|BUDGET": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "10:30 PM",
+        "date": "20260912",
+        "cat": "BUDGET",
+        "price": "54.35",
+        "status": "3",
+        "screen": ""
+      },
+      "PVSR|27636|20260912|ELITE": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "11:05 PM",
+        "date": "20260912",
+        "cat": "ELITE",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "PVSR|27636|20260912|BUDGET": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "11:05 PM",
+        "date": "20260912",
+        "cat": "BUDGET",
+        "price": "54.35",
+        "status": "3",
+        "screen": ""
       },
       "PGMV|22044|20260912|PRIME": {
         "venue": "PVR: Grand Mall, Velachery",
@@ -5202,7 +5400,7 @@
         "date": "20260913",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "PXL"
       },
       "PCAN|44729|20260913|CLASSIC": {
