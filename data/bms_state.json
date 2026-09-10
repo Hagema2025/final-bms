@@ -1,6 +1,42 @@
 {
   "MandaadiTamil_20260909203926": {
     "shows": {
+      "RAKK|3698|20260912|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "03:30 PM",
+        "date": "20260912",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS"
+      },
+      "RAKK|3698|20260912|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "03:30 PM",
+        "date": "20260912",
+        "cat": "Elite",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS"
+      },
+      "RAKK|3700|20260912|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:30 PM",
+        "date": "20260912",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS"
+      },
+      "RAKK|3700|20260912|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:30 PM",
+        "date": "20260912",
+        "cat": "Elite",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS"
+      },
       "INTO|90182|20260912|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "09:00 AM",
@@ -270,6 +306,42 @@
         "price": "54.00",
         "status": "0",
         "screen": "4K DOLBY 7.1"
+      },
+      "RAKK|3702|20260913|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "03:30 PM",
+        "date": "20260913",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS"
+      },
+      "RAKK|3702|20260913|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "03:30 PM",
+        "date": "20260913",
+        "cat": "Elite",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS"
+      },
+      "RAKK|3704|20260913|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:30 PM",
+        "date": "20260913",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS"
+      },
+      "RAKK|3704|20260913|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:30 PM",
+        "date": "20260913",
+        "cat": "Elite",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS"
       },
       "INTO|90187|20260913|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
