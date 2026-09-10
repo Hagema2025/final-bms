@@ -2046,186 +2046,6 @@
         "status": "3",
         "screen": "DolbyAtmos"
       },
-      "PVHR|41993|20260912|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "09:00 AM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PVHR|41993|20260912|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "09:00 AM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "2",
-        "screen": ""
-      },
-      "PVHR|41983|20260912|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "09:05 AM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PVHR|41983|20260912|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "09:05 AM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "2",
-        "screen": ""
-      },
-      "PVHR|41974|20260912|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "12:20 PM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PVHR|41974|20260912|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "12:20 PM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "1",
-        "screen": ""
-      },
-      "PVHR|42004|20260912|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "12:45 PM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PVHR|42004|20260912|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "12:45 PM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "1",
-        "screen": ""
-      },
-      "PVHR|41995|20260912|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "03:55 PM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PVHR|41995|20260912|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "03:55 PM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "2",
-        "screen": ""
-      },
-      "PVHR|41985|20260912|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "04:05 PM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PVHR|41985|20260912|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "04:05 PM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "1",
-        "screen": ""
-      },
-      "PVHR|41976|20260912|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "07:15 PM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PVHR|41976|20260912|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "07:15 PM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "1",
-        "screen": ""
-      },
-      "PVHR|42006|20260912|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "07:45 PM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PVHR|42006|20260912|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "07:45 PM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "1",
-        "screen": ""
-      },
-      "PVHR|41977|20260912|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "10:55 PM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PVHR|41977|20260912|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "10:55 PM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "1",
-        "screen": ""
-      },
-      "PVHR|42007|20260912|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "11:25 PM",
-        "date": "20260912",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PVHR|42007|20260912|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "11:25 PM",
-        "date": "20260912",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "1",
-        "screen": ""
-      },
       "FMCN|104817|20260912|SILVER": {
         "venue": "INOX National: Arcot Road",
         "time": "09:00 AM",
@@ -4575,6 +4395,24 @@
         "status": "3",
         "screen": ""
       },
+      "HRSR|1083|20260912|PREMIERE ROW": {
+        "venue": "Sri Hari Theatre Dolby Atmos: Pattabiram",
+        "time": "11:30 AM",
+        "date": "20260912",
+        "cat": "PREMIERE ROW",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "HRSR|1084|20260912|PREMIERE ROW": {
+        "venue": "Sri Hari Theatre Dolby Atmos: Pattabiram",
+        "time": "02:30 PM",
+        "date": "20260912",
+        "cat": "PREMIERE ROW",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
       "GAHC|2078|20260912|BALCONY": {
         "venue": "Gopalakrishna A/C 2K DOLBY 7.1-Karanodai(Redhills)",
         "time": "03:00 PM",
@@ -4661,24 +4499,6 @@
         "time": "09:30 PM",
         "date": "20260912",
         "cat": "ELITE",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "HRSR|1083|20260912|PREMIERE ROW": {
-        "venue": "Sri Hari Theatre Dolby Atmos: Pattabiram",
-        "time": "11:30 AM",
-        "date": "20260912",
-        "cat": "PREMIERE ROW",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "HRSR|1084|20260912|PREMIERE ROW": {
-        "venue": "Sri Hari Theatre Dolby Atmos: Pattabiram",
-        "time": "02:30 PM",
-        "date": "20260912",
-        "cat": "PREMIERE ROW",
         "price": "150.00",
         "status": "3",
         "screen": ""
@@ -6059,186 +5879,6 @@
         "price": "54.00",
         "status": "0",
         "screen": "4K DOLBY ATMOS"
-      },
-      "PVHR|41998|20260913|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "09:00 AM",
-        "date": "20260913",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PVHR|41998|20260913|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "09:00 AM",
-        "date": "20260913",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "1",
-        "screen": ""
-      },
-      "PVHR|41988|20260913|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "09:05 AM",
-        "date": "20260913",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PVHR|41988|20260913|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "09:05 AM",
-        "date": "20260913",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "1",
-        "screen": ""
-      },
-      "PVHR|41979|20260913|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "12:20 PM",
-        "date": "20260913",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PVHR|41979|20260913|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "12:20 PM",
-        "date": "20260913",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "2",
-        "screen": ""
-      },
-      "PVHR|42009|20260913|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "12:45 PM",
-        "date": "20260913",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PVHR|42009|20260913|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "12:45 PM",
-        "date": "20260913",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "1",
-        "screen": ""
-      },
-      "PVHR|42000|20260913|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "03:55 PM",
-        "date": "20260913",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PVHR|42000|20260913|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "03:55 PM",
-        "date": "20260913",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": ""
-      },
-      "PVHR|41990|20260913|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "04:05 PM",
-        "date": "20260913",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PVHR|41990|20260913|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "04:05 PM",
-        "date": "20260913",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "1",
-        "screen": ""
-      },
-      "PVHR|41981|20260913|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "07:15 PM",
-        "date": "20260913",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PVHR|41981|20260913|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "07:15 PM",
-        "date": "20260913",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "2",
-        "screen": ""
-      },
-      "PVHR|42011|20260913|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "07:45 PM",
-        "date": "20260913",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PVHR|42011|20260913|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "07:45 PM",
-        "date": "20260913",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": ""
-      },
-      "PVHR|41982|20260913|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "10:55 PM",
-        "date": "20260913",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PVHR|41982|20260913|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "10:55 PM",
-        "date": "20260913",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "1",
-        "screen": ""
-      },
-      "PVHR|42012|20260913|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "11:25 PM",
-        "date": "20260913",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": ""
-      },
-      "PVHR|42012|20260913|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "11:25 PM",
-        "date": "20260913",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "2",
-        "screen": ""
       },
       "FMCN|104822|20260913|SILVER": {
         "venue": "INOX National: Arcot Road",
@@ -8517,6 +8157,24 @@
         "status": "3",
         "screen": ""
       },
+      "HRSR|1085|20260913|PREMIERE ROW": {
+        "venue": "Sri Hari Theatre Dolby Atmos: Pattabiram",
+        "time": "11:30 AM",
+        "date": "20260913",
+        "cat": "PREMIERE ROW",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
+      "HRSR|1086|20260913|PREMIERE ROW": {
+        "venue": "Sri Hari Theatre Dolby Atmos: Pattabiram",
+        "time": "02:30 PM",
+        "date": "20260913",
+        "cat": "PREMIERE ROW",
+        "price": "150.00",
+        "status": "3",
+        "screen": ""
+      },
       "GAHC|2082|20260913|BALCONY": {
         "venue": "Gopalakrishna A/C 2K DOLBY 7.1-Karanodai(Redhills)",
         "time": "03:00 PM",
@@ -8603,24 +8261,6 @@
         "time": "09:30 PM",
         "date": "20260913",
         "cat": "ELITE",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "HRSR|1085|20260913|PREMIERE ROW": {
-        "venue": "Sri Hari Theatre Dolby Atmos: Pattabiram",
-        "time": "11:30 AM",
-        "date": "20260913",
-        "cat": "PREMIERE ROW",
-        "price": "150.00",
-        "status": "3",
-        "screen": ""
-      },
-      "HRSR|1086|20260913|PREMIERE ROW": {
-        "venue": "Sri Hari Theatre Dolby Atmos: Pattabiram",
-        "time": "02:30 PM",
-        "date": "20260913",
-        "cat": "PREMIERE ROW",
         "price": "150.00",
         "status": "3",
         "screen": ""
