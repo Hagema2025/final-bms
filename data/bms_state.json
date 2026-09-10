@@ -1872,7 +1872,7 @@
         "date": "20260912",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "2",
+        "status": "0",
         "screen": "DolbyAtmos"
       },
       "KSTK|50748|20260912|Premium": {
@@ -5400,7 +5400,7 @@
         "date": "20260913",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "3",
         "screen": "PXL"
       },
       "PCAN|44729|20260913|CLASSIC": {
@@ -6426,7 +6426,7 @@
         "date": "20260913",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": ""
       },
       "PVSR|27597|20260913|PREMIUM": {
