@@ -190,6 +190,33 @@
         "status": "3",
         "screen": "SC 3 DOLBY ATMOS"
       },
+      "RAKK|3747|20260912|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:20 PM",
+        "date": "20260912",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 6"
+      },
+      "RAKK|3747|20260912|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:20 PM",
+        "date": "20260912",
+        "cat": "Elite",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 6"
+      },
+      "RAKK|3747|20260912|LOUNGER": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:20 PM",
+        "date": "20260912",
+        "cat": "LOUNGER",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 6"
+      },
       "RAKK|3715|20260912|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "08:10 PM",
@@ -252,6 +279,33 @@
         "price": "190.00",
         "status": "3",
         "screen": "SC 3 DOLBY ATMOS"
+      },
+      "RAKK|3748|20260912|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:45 PM",
+        "date": "20260912",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 6"
+      },
+      "RAKK|3748|20260912|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:45 PM",
+        "date": "20260912",
+        "cat": "Elite",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 6"
+      },
+      "RAKK|3748|20260912|LOUNGER": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:45 PM",
+        "date": "20260912",
+        "cat": "LOUNGER",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 6"
       },
       "RAKK|3716|20260912|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
