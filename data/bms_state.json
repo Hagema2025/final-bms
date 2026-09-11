@@ -493,7 +493,7 @@
         "date": "20260912",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "BIGPIX"
       },
       "INTO|90164|20260912|EXECUTIVE": {
@@ -511,7 +511,7 @@
         "date": "20260912",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": ""
       },
       "INTO|90194|20260912|EXECUTIVE": {
