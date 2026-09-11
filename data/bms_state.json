@@ -25,7 +25,7 @@
         "date": "20260912",
         "cat": "Premium",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SCREEN 5"
       },
       "RAKK|3741|20260912|Elite": {
@@ -853,7 +853,7 @@
         "date": "20260913",
         "cat": "Premium",
         "price": "190.00",
-        "status": "1",
+        "status": "2",
         "screen": "SC 3 DOLBY ATMOS"
       },
       "RAKK|3702|20260913|Elite": {
