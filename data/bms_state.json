@@ -115,7 +115,7 @@
         "date": "20260912",
         "cat": "Premium",
         "price": "190.00",
-        "status": "2",
+        "status": "3",
         "screen": "SCREEN 5"
       },
       "RAKK|3742|20260912|Elite": {
@@ -1465,13 +1465,13 @@
       }
     },
     "dates": {
-      "20260911": "AVAILABLE",
       "20260912": "AVAILABLE",
       "20260913": "BOOKABLE",
       "20260914": "AVAILABLE",
       "20260915": "AVAILABLE",
       "20260916": "AVAILABLE",
-      "20260917": "AVAILABLE"
+      "20260917": "AVAILABLE",
+      "20260918": "NOT_OPEN"
     }
   },
   "MandaadiTamil_20260909203926 (Tamil IMAX 2D)": {
