@@ -115,7 +115,7 @@
         "date": "20260912",
         "cat": "Premium",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SCREEN 5"
       },
       "RAKK|3742|20260912|Elite": {
@@ -691,7 +691,7 @@
         "date": "20260912",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "Atmos"
       },
       "INTO|90176|20260912|EXECUTIVE": {
@@ -709,7 +709,7 @@
         "date": "20260912",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "Atmos"
       },
       "INTO|90186|20260912|EXECUTIVE": {
@@ -1303,7 +1303,7 @@
         "date": "20260913",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "Atmos"
       },
       "INTO|90180|20260913|EXECUTIVE": {
@@ -1477,13 +1477,13 @@
   "MandaadiTamil_20260909203926 (Tamil IMAX 2D)": {
     "shows": {},
     "dates": {
-      "20260911": "AVAILABLE",
       "20260912": "AVAILABLE",
       "20260913": "BOOKABLE",
       "20260914": "AVAILABLE",
       "20260915": "NOT_OPEN",
       "20260916": "NOT_OPEN",
-      "20260917": "NOT_OPEN"
+      "20260917": "NOT_OPEN",
+      "20260918": "NOT_OPEN"
     }
   }
 }
