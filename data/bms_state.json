@@ -637,7 +637,7 @@
         "date": "20260912",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": ""
       },
       "INTO|90194|20260912|EXECUTIVE": {
@@ -1451,7 +1451,7 @@
         "date": "20260913",
         "cat": "Premium",
         "price": "300.00",
-        "status": "3",
+        "status": "2",
         "screen": "EPIQ"
       },
       "RAKK|3738|20260913|Premium": {
