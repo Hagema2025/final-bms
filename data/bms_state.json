@@ -916,7 +916,7 @@
         "date": "20260913",
         "cat": "Premium",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SC 3 DOLBY ATMOS"
       },
       "RAKK|3728|20260913|Elite": {
@@ -1469,9 +1469,9 @@
       "20260912": "AVAILABLE",
       "20260913": "BOOKABLE",
       "20260914": "AVAILABLE",
-      "20260915": "NOT_OPEN",
-      "20260916": "NOT_OPEN",
-      "20260917": "NOT_OPEN"
+      "20260915": "AVAILABLE",
+      "20260916": "AVAILABLE",
+      "20260917": "AVAILABLE"
     }
   },
   "MandaadiTamil_20260909203926 (Tamil IMAX 2D)": {
