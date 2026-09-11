@@ -1330,7 +1330,7 @@
         "date": "20260913",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "2",
+        "status": "3",
         "screen": "Atmos"
       },
       "INTO|90180|20260913|EXECUTIVE": {
@@ -1507,6 +1507,103 @@
       "20260912": "AVAILABLE",
       "20260913": "BOOKABLE",
       "20260914": "AVAILABLE",
+      "20260915": "NOT_OPEN",
+      "20260916": "NOT_OPEN",
+      "20260917": "NOT_OPEN",
+      "20260918": "NOT_OPEN"
+    }
+  },
+  "Sardar2Tamil_20260912024940": {
+    "shows": {
+      "ACON|47267|20260912|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:15 AM",
+        "date": "20260912",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY ATMOS"
+      },
+      "ACON|47267|20260912|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:15 AM",
+        "date": "20260912",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY ATMOS"
+      },
+      "ACON|47265|20260912|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "01:25 PM",
+        "date": "20260912",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1"
+      },
+      "ACON|47265|20260912|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "01:25 PM",
+        "date": "20260912",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1"
+      },
+      "ACON|47268|20260912|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "04:45 PM",
+        "date": "20260912",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY ATMOS"
+      },
+      "ACON|47268|20260912|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "04:45 PM",
+        "date": "20260912",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY ATMOS"
+      },
+      "ACON|47266|20260912|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "08:00 PM",
+        "date": "20260912",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1"
+      },
+      "ACON|47266|20260912|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "08:00 PM",
+        "date": "20260912",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1"
+      }
+    },
+    "dates": {
+      "20260912": "BOOKABLE",
+      "20260913": "AVAILABLE",
+      "20260914": "AVAILABLE",
+      "20260915": "AVAILABLE",
+      "20260916": "AVAILABLE",
+      "20260917": "AVAILABLE",
+      "20260918": "NOT_OPEN"
+    }
+  },
+  "Sardar2Tamil_20260912024940 (Tamil EPIQ)": {
+    "shows": {},
+    "dates": {
+      "20260912": "BOOKABLE",
+      "20260913": "NOT_OPEN",
+      "20260914": "NOT_OPEN",
       "20260915": "NOT_OPEN",
       "20260916": "NOT_OPEN",
       "20260917": "NOT_OPEN",
