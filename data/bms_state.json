@@ -316,6 +316,24 @@
         "status": "3",
         "screen": "SCREEN 5"
       },
+      "RAKK|3789|20260912|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:15 PM",
+        "date": "20260912",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 2"
+      },
+      "RAKK|3789|20260912|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:15 PM",
+        "date": "20260912",
+        "cat": "Elite",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 2"
+      },
       "RAKK|3700|20260912|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "10:30 PM",
@@ -450,6 +468,24 @@
         "price": "54.00",
         "status": "0",
         "screen": "4K DOLBY ATMOS"
+      },
+      "ACON|47347|20260912|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "11:00 PM",
+        "date": "20260912",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1"
+      },
+      "ACON|47347|20260912|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "11:00 PM",
+        "date": "20260912",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1"
       },
       "ACON|47231|20260912|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
