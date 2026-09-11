@@ -7,7 +7,7 @@
         "date": "20260912",
         "cat": "Premium",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SC 1 DOLBY ATMOS"
       },
       "RAKK|3712|20260912|Elite": {
@@ -1213,7 +1213,7 @@
         "date": "20260913",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": ""
       },
       "INTO|90199|20260913|EXECUTIVE": {
@@ -1319,6 +1319,15 @@
         "status": "2",
         "screen": "EPIQ"
       },
+      "RAKK|3790|20260912|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "01:30 PM",
+        "date": "20260912",
+        "cat": "Premium",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ"
+      },
       "RAKK|3677|20260912|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "04:40 PM",
@@ -1340,6 +1349,15 @@
       "RAKK|3687|20260913|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "10:00 AM",
+        "date": "20260913",
+        "cat": "Premium",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ"
+      },
+      "RAKK|3791|20260913|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "01:30 PM",
         "date": "20260913",
         "cat": "Premium",
         "price": "300.00",
