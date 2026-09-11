@@ -637,7 +637,7 @@
         "date": "20260912",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": ""
       },
       "INTO|90194|20260912|EXECUTIVE": {
@@ -1507,8 +1507,8 @@
       "20260912": "AVAILABLE",
       "20260913": "BOOKABLE",
       "20260914": "AVAILABLE",
-      "20260915": "NOT_OPEN",
-      "20260916": "NOT_OPEN",
+      "20260915": "AVAILABLE",
+      "20260916": "AVAILABLE",
       "20260917": "NOT_OPEN",
       "20260918": "NOT_OPEN"
     }
