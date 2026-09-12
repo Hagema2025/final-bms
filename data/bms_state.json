@@ -79,7 +79,7 @@
         "date": "20260912",
         "cat": "Elite",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SCREEN 5"
       },
       "RAKK|3742|20260912|LOUNGER": {
@@ -169,7 +169,7 @@
         "date": "20260912",
         "cat": "Elite",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SCREEN 5"
       },
       "RAKK|3743|20260912|LOUNGER": {
@@ -205,7 +205,7 @@
         "date": "20260912",
         "cat": "Premium",
         "price": "190.00",
-        "status": "1",
+        "status": "0",
         "screen": "SCREEN 6"
       },
       "RAKK|3747|20260912|Elite": {
