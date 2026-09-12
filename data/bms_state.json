@@ -241,7 +241,7 @@
         "date": "20260912",
         "cat": "Elite",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SC 3 DOLBY ATMOS"
       },
       "RAKK|3747|20260912|Premium": {
@@ -358,7 +358,7 @@
         "date": "20260912",
         "cat": "Premium",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SCREEN 6"
       },
       "RAKK|3748|20260912|Elite": {
@@ -421,7 +421,7 @@
         "date": "20260912",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K DOLBY 7.1"
       },
       "ACON|47350|20260912|PEARL": {
@@ -1470,24 +1470,6 @@
   },
   "Sardar2Tamil_20260912024940": {
     "shows": {
-      "ACON|47267|20260912|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "10:15 AM",
-        "date": "20260912",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "3",
-        "screen": "4K DOLBY ATMOS"
-      },
-      "ACON|47267|20260912|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "10:15 AM",
-        "date": "20260912",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY ATMOS"
-      },
       "ACON|47265|20260912|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
         "time": "01:25 PM",
