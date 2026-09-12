@@ -286,7 +286,7 @@
         "date": "20260912",
         "cat": "Elite",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SC 3 DOLBY ATMOS"
       },
       "RAKK|3748|20260912|Premium": {
@@ -511,7 +511,7 @@
         "date": "20260912",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "Atmos"
       },
       "INTO|90164|20260912|CLUB": {
@@ -1222,7 +1222,7 @@
         "date": "20260913",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "Atmos"
       },
       "INTO|90178|20260913|CLUB": {
@@ -1330,7 +1330,7 @@
         "date": "20260913",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "Atmos"
       },
       "INTO|90191|20260913|CLUB": {
@@ -1388,7 +1388,7 @@
         "date": "20260912",
         "cat": "Premium",
         "price": "300.00",
-        "status": "2",
+        "status": "1",
         "screen": "EPIQ"
       },
       "RAKK|3677|20260912|Premium": {
