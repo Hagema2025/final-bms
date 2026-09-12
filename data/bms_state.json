@@ -268,7 +268,7 @@
         "date": "20260912",
         "cat": "Elite",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SCREEN 2"
       },
       "RAKK|3700|20260912|Premium": {
@@ -376,7 +376,7 @@
         "date": "20260912",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1"
       },
       "ACON|47369|20260912|PEARL": {
@@ -511,7 +511,7 @@
         "date": "20260912",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "2",
+        "status": "1",
         "screen": "Atmos"
       },
       "INTO|90164|20260912|CLUB": {
