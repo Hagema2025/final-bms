@@ -1,33 +1,6 @@
 {
   "MandaadiTamil_20260909203926": {
     "shows": {
-      "RAKK|3778|20260912|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "04:15 PM",
-        "date": "20260912",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "0",
-        "screen": "SCREEN 6"
-      },
-      "RAKK|3778|20260912|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "04:15 PM",
-        "date": "20260912",
-        "cat": "Elite",
-        "price": "190.00",
-        "status": "1",
-        "screen": "SCREEN 6"
-      },
-      "RAKK|3778|20260912|LOUNGER": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "04:15 PM",
-        "date": "20260912",
-        "cat": "LOUNGER",
-        "price": "190.00",
-        "status": "1",
-        "screen": "SCREEN 6"
-      },
       "RAKK|3714|20260912|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "05:00 PM",
@@ -475,7 +448,7 @@
         "date": "20260912",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": ""
       },
       "RAKK|3805|20260913|Premium": {
@@ -484,7 +457,7 @@
         "date": "20260913",
         "cat": "Premium",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SCREEN 6"
       },
       "RAKK|3805|20260913|Elite": {
@@ -1006,7 +979,7 @@
         "date": "20260913",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "3",
+        "status": "2",
         "screen": ""
       },
       "INTO|90167|20260913|CLUB": {
