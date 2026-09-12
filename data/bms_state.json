@@ -1,24 +1,6 @@
 {
   "MandaadiTamil_20260909203926": {
     "shows": {
-      "RAKK|3717|20260912|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "12:00 PM",
-        "date": "20260912",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "0",
-        "screen": "SCREEN 2"
-      },
-      "RAKK|3717|20260912|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "12:00 PM",
-        "date": "20260912",
-        "cat": "Elite",
-        "price": "190.00",
-        "status": "2",
-        "screen": "SCREEN 2"
-      },
       "RAKK|3772|20260912|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "01:10 PM",
@@ -34,7 +16,7 @@
         "date": "20260912",
         "cat": "Elite",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": "SCREEN 6"
       },
       "RAKK|3772|20260912|LOUNGER": {
@@ -151,7 +133,7 @@
         "date": "20260912",
         "cat": "Elite",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SC 1 DOLBY ATMOS"
       },
       "RAKK|3743|20260912|Premium": {
@@ -250,7 +232,7 @@
         "date": "20260912",
         "cat": "Premium",
         "price": "190.00",
-        "status": "1",
+        "status": "0",
         "screen": "SCREEN 5"
       },
       "RAKK|3744|20260912|Elite": {
@@ -421,7 +403,7 @@
         "date": "20260912",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "1",
+        "status": "0",
         "screen": "4K DOLBY ATMOS"
       },
       "ACON|47347|20260912|DIAMOND": {
@@ -430,7 +412,7 @@
         "date": "20260912",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1"
       },
       "ACON|47347|20260912|PEARL": {
@@ -493,7 +475,7 @@
         "date": "20260912",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "Atmos"
       },
       "INTO|90173|20260912|CLUB": {
@@ -621,6 +603,24 @@
         "price": "54.35",
         "status": "0",
         "screen": "Atmos"
+      },
+      "INTO|90313|20260912|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:35 PM",
+        "date": "20260912",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "INTO|90313|20260912|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:35 PM",
+        "date": "20260912",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": ""
       },
       "RAKK|3805|20260913|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
@@ -1135,6 +1135,24 @@
         "status": "0",
         "screen": "Atmos"
       },
+      "INTO|90314|20260913|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:00 AM",
+        "date": "20260913",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "INTO|90314|20260913|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:00 AM",
+        "date": "20260913",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": ""
+      },
       "INTO|90167|20260913|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "09:05 AM",
@@ -1152,6 +1170,24 @@
         "price": "54.35",
         "status": "0",
         "screen": "BIGPIX"
+      },
+      "INTO|90315|20260913|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:20 AM",
+        "date": "20260913",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "INTO|90315|20260913|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:20 AM",
+        "date": "20260913",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": ""
       },
       "INTO|90188|20260913|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -1276,7 +1312,7 @@
         "date": "20260913",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "Atmos"
       },
       "INTO|90191|20260913|CLUB": {
