@@ -1,33 +1,6 @@
 {
   "MandaadiTamil_20260909203926": {
     "shows": {
-      "RAKK|3772|20260912|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "01:10 PM",
-        "date": "20260912",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "0",
-        "screen": "SCREEN 6"
-      },
-      "RAKK|3772|20260912|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "01:10 PM",
-        "date": "20260912",
-        "cat": "Elite",
-        "price": "190.00",
-        "status": "1",
-        "screen": "SCREEN 6"
-      },
-      "RAKK|3772|20260912|LOUNGER": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "01:10 PM",
-        "date": "20260912",
-        "cat": "LOUNGER",
-        "price": "190.00",
-        "status": "1",
-        "screen": "SCREEN 6"
-      },
       "RAKK|3713|20260912|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "01:50 PM",
@@ -106,7 +79,7 @@
         "date": "20260912",
         "cat": "Elite",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": "SCREEN 6"
       },
       "RAKK|3778|20260912|LOUNGER": {
@@ -223,7 +196,7 @@
         "date": "20260912",
         "cat": "Elite",
         "price": "190.00",
-        "status": "2",
+        "status": "3",
         "screen": "SC 1 DOLBY ATMOS"
       },
       "RAKK|3744|20260912|Premium": {
@@ -322,7 +295,7 @@
         "date": "20260912",
         "cat": "Premium",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": "SC 1 DOLBY ATMOS"
       },
       "RAKK|3716|20260912|Elite": {
@@ -439,7 +412,7 @@
         "date": "20260912",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "0",
+        "status": "3",
         "screen": "4K DOLBY 7.1"
       },
       "ACON|47354|20260912|DIAMOND": {
@@ -448,7 +421,7 @@
         "date": "20260912",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "2",
+        "status": "3",
         "screen": "4K DOLBY ATMOS"
       },
       "ACON|47354|20260912|PEARL": {
