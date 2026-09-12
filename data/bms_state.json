@@ -25,7 +25,7 @@
         "date": "20260912",
         "cat": "LOUNGER",
         "price": "190.00",
-        "status": "1",
+        "status": "0",
         "screen": "SCREEN 5"
       },
       "RAKK|3789|20260912|Premium": {
@@ -484,7 +484,7 @@
         "date": "20260913",
         "cat": "Premium",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SC 1 DOLBY ATMOS"
       },
       "RAKK|3724|20260913|Elite": {
@@ -664,7 +664,7 @@
         "date": "20260913",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K DOLBY 7.1"
       },
       "ACON|47235|20260913|PEARL": {
