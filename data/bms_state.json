@@ -484,7 +484,7 @@
         "date": "20260912",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K DOLBY ATMOS"
       },
       "ACON|47347|20260912|DIAMOND": {
@@ -1258,7 +1258,7 @@
         "date": "20260913",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "Atmos"
       },
       "INTO|90188|20260913|EXECUTIVE": {
