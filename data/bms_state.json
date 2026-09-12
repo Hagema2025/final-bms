@@ -322,7 +322,7 @@
         "date": "20260912",
         "cat": "Premium",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SC 1 DOLBY ATMOS"
       },
       "RAKK|3716|20260912|Elite": {
@@ -448,7 +448,7 @@
         "date": "20260912",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY ATMOS"
       },
       "ACON|47354|20260912|PEARL": {
@@ -637,7 +637,7 @@
         "date": "20260912",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "2",
+        "status": "1",
         "screen": ""
       },
       "RAKK|3805|20260913|Premium": {
