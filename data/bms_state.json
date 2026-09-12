@@ -628,7 +628,7 @@
         "date": "20260913",
         "cat": "Premium",
         "price": "190.00",
-        "status": "2",
+        "status": "3",
         "screen": "SCREEN 5"
       },
       "RAKK|3751|20260913|Elite": {
@@ -961,7 +961,7 @@
         "date": "20260913",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "2",
+        "status": "1",
         "screen": ""
       },
       "INTO|90167|20260913|CLUB": {
@@ -1175,15 +1175,6 @@
   },
   "MandaadiTamil_20260909203926 (Tamil EPIQ)": {
     "shows": {
-      "RAKK|3677|20260912|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "04:40 PM",
-        "date": "20260912",
-        "cat": "Premium",
-        "price": "300.00",
-        "status": "1",
-        "screen": "EPIQ"
-      },
       "RAKK|3676|20260912|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "07:50 PM",
@@ -1263,24 +1254,6 @@
   },
   "Sardar2Tamil_20260912024940": {
     "shows": {
-      "ACON|47268|20260912|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "04:45 PM",
-        "date": "20260912",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "3",
-        "screen": "4K DOLBY ATMOS"
-      },
-      "ACON|47268|20260912|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "04:45 PM",
-        "date": "20260912",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY ATMOS"
-      },
       "ACON|47266|20260912|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
         "time": "08:00 PM",
