@@ -1118,26 +1118,7 @@
     }
   },
   "Sardar2Tamil_20260912024940": {
-    "shows": {
-      "ACON|47266|20260912|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "08:00 PM",
-        "date": "20260912",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "3",
-        "screen": "4K DOLBY 7.1"
-      },
-      "ACON|47266|20260912|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "08:00 PM",
-        "date": "20260912",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1"
-      }
-    },
+    "shows": {},
     "dates": {
       "20260912": "BOOKABLE",
       "20260913": "AVAILABLE",
