@@ -268,7 +268,7 @@
         "date": "20260912",
         "cat": "Premium",
         "price": "190.00",
-        "status": "1",
+        "status": "0",
         "screen": "SCREEN 6"
       },
       "RAKK|3748|20260912|Elite": {
@@ -295,7 +295,7 @@
         "date": "20260912",
         "cat": "Premium",
         "price": "190.00",
-        "status": "1",
+        "status": "2",
         "screen": "SC 1 DOLBY ATMOS"
       },
       "RAKK|3716|20260912|Elite": {
@@ -433,24 +433,6 @@
         "status": "0",
         "screen": "4K DOLBY 7.1"
       },
-      "INTO|90173|20260912|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "01:00 PM",
-        "date": "20260912",
-        "cat": "CLUB",
-        "price": "183.80",
-        "status": "1",
-        "screen": "Atmos"
-      },
-      "INTO|90173|20260912|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "01:00 PM",
-        "date": "20260912",
-        "cat": "EXECUTIVE",
-        "price": "54.35",
-        "status": "1",
-        "screen": "Atmos"
-      },
       "INTO|90164|20260912|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "04:20 PM",
@@ -574,7 +556,7 @@
         "date": "20260912",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": ""
       },
       "RAKK|3805|20260913|Premium": {
@@ -1319,15 +1301,6 @@
   },
   "MandaadiTamil_20260909203926 (Tamil EPIQ)": {
     "shows": {
-      "RAKK|3790|20260912|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "01:30 PM",
-        "date": "20260912",
-        "cat": "Premium",
-        "price": "300.00",
-        "status": "1",
-        "screen": "EPIQ"
-      },
       "RAKK|3677|20260912|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "04:40 PM",
