@@ -196,7 +196,7 @@
         "date": "20260912",
         "cat": "Elite",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SC 1 DOLBY ATMOS"
       },
       "RAKK|3744|20260912|Premium": {
@@ -307,24 +307,6 @@
         "status": "3",
         "screen": "SC 1 DOLBY ATMOS"
       },
-      "ACON|47350|20260912|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "01:20 PM",
-        "date": "20260912",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "1",
-        "screen": "4K DOLBY 7.1"
-      },
-      "ACON|47350|20260912|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "01:20 PM",
-        "date": "20260912",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1"
-      },
       "ACON|47232|20260912|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
         "time": "01:40 PM",
@@ -349,7 +331,7 @@
         "date": "20260912",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K DOLBY 7.1"
       },
       "ACON|47369|20260912|PEARL": {
@@ -358,7 +340,7 @@
         "date": "20260912",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "3",
+        "status": "1",
         "screen": "4K DOLBY 7.1"
       },
       "ACON|47338|20260912|DIAMOND": {
@@ -421,7 +403,7 @@
         "date": "20260912",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY ATMOS"
       },
       "ACON|47354|20260912|PEARL": {
@@ -1434,24 +1416,6 @@
   },
   "Sardar2Tamil_20260912024940": {
     "shows": {
-      "ACON|47265|20260912|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "01:25 PM",
-        "date": "20260912",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "3",
-        "screen": "4K DOLBY 7.1"
-      },
-      "ACON|47265|20260912|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "01:25 PM",
-        "date": "20260912",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1"
-      },
       "ACON|47268|20260912|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
         "time": "04:45 PM",
