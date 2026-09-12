@@ -214,7 +214,7 @@
         "date": "20260912",
         "cat": "Elite",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SCREEN 5"
       },
       "RAKK|3744|20260912|LOUNGER": {
@@ -295,7 +295,7 @@
         "date": "20260912",
         "cat": "Premium",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": "SC 1 DOLBY ATMOS"
       },
       "RAKK|3716|20260912|Elite": {
@@ -306,24 +306,6 @@
         "price": "190.00",
         "status": "3",
         "screen": "SC 1 DOLBY ATMOS"
-      },
-      "ACON|47232|20260912|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "01:40 PM",
-        "date": "20260912",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "1",
-        "screen": "4K DOLBY ATMOS"
-      },
-      "ACON|47232|20260912|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "01:40 PM",
-        "date": "20260912",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY ATMOS"
       },
       "ACON|47369|20260912|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
@@ -340,7 +322,7 @@
         "date": "20260912",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "1",
+        "status": "2",
         "screen": "4K DOLBY 7.1"
       },
       "ACON|47338|20260912|DIAMOND": {
@@ -448,7 +430,7 @@
         "date": "20260912",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "BIGPIX"
       },
       "INTO|90194|20260912|CLUB": {
@@ -556,7 +538,7 @@
         "date": "20260912",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": ""
       },
       "RAKK|3805|20260913|Premium": {
@@ -736,7 +718,7 @@
         "date": "20260913",
         "cat": "Premium",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SC 1 DOLBY ATMOS"
       },
       "RAKK|3723|20260913|Elite": {
