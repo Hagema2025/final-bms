@@ -88,7 +88,7 @@
         "date": "20260912",
         "cat": "LOUNGER",
         "price": "190.00",
-        "status": "2",
+        "status": "3",
         "screen": "SCREEN 5"
       },
       "RAKK|3789|20260912|Premium": {
@@ -367,7 +367,7 @@
         "date": "20260913",
         "cat": "Premium",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SC 1 DOLBY ATMOS"
       },
       "RAKK|3721|20260913|Elite": {
@@ -862,7 +862,7 @@
         "date": "20260913",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": ""
       },
       "INTO|90167|20260913|CLUB": {
