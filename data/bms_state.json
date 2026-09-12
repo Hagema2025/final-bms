@@ -448,7 +448,7 @@
         "date": "20260912",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY ATMOS"
       },
       "ACON|47338|20260912|DIAMOND": {
@@ -565,7 +565,7 @@
         "date": "20260912",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "BIGPIX"
       },
       "INTO|90162|20260912|EXECUTIVE": {
@@ -1460,7 +1460,7 @@
         "date": "20260913",
         "cat": "Premium",
         "price": "300.00",
-        "status": "3",
+        "status": "2",
         "screen": "EPIQ"
       },
       "RAKK|3689|20260913|Premium": {
