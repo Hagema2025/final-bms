@@ -106,7 +106,7 @@
         "date": "20260912",
         "cat": "Elite",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": "SCREEN 5"
       },
       "RAKK|3743|20260912|LOUNGER": {
@@ -430,7 +430,7 @@
         "date": "20260912",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "0",
+        "status": "2",
         "screen": ""
       },
       "INTO|90175|20260912|CLUB": {
@@ -511,7 +511,7 @@
         "date": "20260912",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": ""
       },
       "INTO|90313|20260912|EXECUTIVE": {
@@ -934,7 +934,7 @@
         "date": "20260913",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY ATMOS"
       },
       "ACON|47237|20260913|PEARL": {
