@@ -1,33 +1,6 @@
 {
   "MandaadiTamil_20260909203926": {
     "shows": {
-      "RAKK|3743|20260912|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "06:00 PM",
-        "date": "20260912",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "1",
-        "screen": "SCREEN 5"
-      },
-      "RAKK|3743|20260912|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "06:00 PM",
-        "date": "20260912",
-        "cat": "Elite",
-        "price": "190.00",
-        "status": "1",
-        "screen": "SCREEN 5"
-      },
-      "RAKK|3743|20260912|LOUNGER": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "06:00 PM",
-        "date": "20260912",
-        "cat": "LOUNGER",
-        "price": "190.00",
-        "status": "2",
-        "screen": "SCREEN 5"
-      },
       "RAKK|3719|20260912|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "06:40 PM",
@@ -70,7 +43,7 @@
         "date": "20260912",
         "cat": "LOUNGER",
         "price": "190.00",
-        "status": "3",
+        "status": "0",
         "screen": "SCREEN 6"
       },
       "RAKK|3715|20260912|Premium": {
@@ -88,7 +61,7 @@
         "date": "20260912",
         "cat": "Elite",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": "SC 1 DOLBY ATMOS"
       },
       "RAKK|3744|20260912|Premium": {
