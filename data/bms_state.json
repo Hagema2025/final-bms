@@ -61,7 +61,7 @@
         "date": "20260912",
         "cat": "Elite",
         "price": "190.00",
-        "status": "0",
+        "status": "1",
         "screen": "SCREEN 6"
       },
       "RAKK|3747|20260912|LOUNGER": {
@@ -241,7 +241,7 @@
         "date": "20260912",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K DOLBY ATMOS"
       },
       "ACON|47354|20260912|PEARL": {
@@ -250,7 +250,7 @@
         "date": "20260912",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K DOLBY ATMOS"
       },
       "ACON|47231|20260912|DIAMOND": {
@@ -268,7 +268,7 @@
         "date": "20260912",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1"
       },
       "INTO|90175|20260912|CLUB": {
@@ -1034,6 +1034,24 @@
         "cat": "EXECUTIVE",
         "price": "54.35",
         "status": "0",
+        "screen": ""
+      },
+      "INTO|90322|20260913|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:55 PM",
+        "date": "20260913",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": ""
+      },
+      "INTO|90322|20260913|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:55 PM",
+        "date": "20260913",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
         "screen": ""
       },
       "INTO|90181|20260913|CLUB": {
