@@ -1,24 +1,6 @@
 {
   "MandaadiTamil_20260909203926": {
     "shows": {
-      "RAKK|3714|20260912|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "05:00 PM",
-        "date": "20260912",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "0",
-        "screen": "SC 1 DOLBY ATMOS"
-      },
-      "RAKK|3714|20260912|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "05:00 PM",
-        "date": "20260912",
-        "cat": "Elite",
-        "price": "190.00",
-        "status": "1",
-        "screen": "SC 1 DOLBY ATMOS"
-      },
       "RAKK|3743|20260912|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "06:00 PM",
@@ -61,7 +43,7 @@
         "date": "20260912",
         "cat": "Elite",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": "SC 3 DOLBY ATMOS"
       },
       "RAKK|3747|20260912|Premium": {
@@ -187,7 +169,7 @@
         "date": "20260912",
         "cat": "Elite",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": "SCREEN 6"
       },
       "RAKK|3748|20260912|LOUNGER": {
@@ -205,7 +187,7 @@
         "date": "20260912",
         "cat": "Premium",
         "price": "190.00",
-        "status": "0",
+        "status": "1",
         "screen": "SC 1 DOLBY ATMOS"
       },
       "RAKK|3716|20260912|Elite": {
@@ -268,7 +250,7 @@
         "date": "20260912",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "0",
+        "status": "3",
         "screen": "4K DOLBY ATMOS"
       },
       "ACON|47231|20260912|DIAMOND": {
@@ -286,7 +268,7 @@
         "date": "20260912",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "0",
+        "status": "3",
         "screen": "4K DOLBY 7.1"
       },
       "INTO|90194|20260912|CLUB": {
@@ -592,7 +574,7 @@
         "date": "20260913",
         "cat": "Premium",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SCREEN 5"
       },
       "RAKK|3751|20260913|Elite": {
