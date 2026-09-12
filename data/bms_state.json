@@ -1,24 +1,6 @@
 {
   "MandaadiTamil_20260909203926": {
     "shows": {
-      "RAKK|3715|20260912|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "08:10 PM",
-        "date": "20260912",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "0",
-        "screen": "SC 1 DOLBY ATMOS"
-      },
-      "RAKK|3715|20260912|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "08:10 PM",
-        "date": "20260912",
-        "cat": "Elite",
-        "price": "190.00",
-        "status": "1",
-        "screen": "SC 1 DOLBY ATMOS"
-      },
       "RAKK|3744|20260912|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "09:30 PM",
@@ -127,24 +109,6 @@
         "status": "1",
         "screen": "SC 1 DOLBY ATMOS"
       },
-      "ACON|47233|20260912|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "08:15 PM",
-        "date": "20260912",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "0",
-        "screen": "4K DOLBY ATMOS"
-      },
-      "ACON|47233|20260912|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "08:15 PM",
-        "date": "20260912",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY ATMOS"
-      },
       "ACON|47347|20260912|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
         "time": "11:00 PM",
@@ -196,7 +160,7 @@
         "date": "20260912",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "1",
+        "status": "0",
         "screen": "4K DOLBY 7.1"
       },
       "INTO|90175|20260912|CLUB": {
@@ -340,7 +304,7 @@
         "date": "20260913",
         "cat": "Premium",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": "SCREEN 2"
       },
       "RAKK|3726|20260913|Elite": {
@@ -403,7 +367,7 @@
         "date": "20260913",
         "cat": "Premium",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": "SC 1 DOLBY ATMOS"
       },
       "RAKK|3722|20260913|Elite": {
@@ -457,7 +421,7 @@
         "date": "20260913",
         "cat": "Elite",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SC 3 DOLBY ATMOS"
       },
       "RAKK|3723|20260913|Premium": {
@@ -682,7 +646,7 @@
         "date": "20260913",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1"
       },
       "ACON|47351|20260913|PEARL": {
@@ -1091,7 +1055,7 @@
         "date": "20260913",
         "cat": "Premium",
         "price": "300.00",
-        "status": "3",
+        "status": "2",
         "screen": "EPIQ"
       }
     },
