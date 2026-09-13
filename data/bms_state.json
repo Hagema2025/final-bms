@@ -106,7 +106,7 @@
         "date": "20260913",
         "cat": "Elite",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": "SC 3 DOLBY ATMOS"
       },
       "RAKK|3723|20260913|Premium": {
@@ -394,7 +394,7 @@
         "date": "20260913",
         "cat": "ELITE",
         "price": "183.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K DOLBY ATMOS"
       },
       "TVHP|25053|20260913|ELITE": {
@@ -484,7 +484,7 @@
         "date": "20260913",
         "cat": "PLATINUM",
         "price": "190.00",
-        "status": "0",
+        "status": "1",
         "screen": "4K/ATMOS"
       },
       "RSSC|122888|20260913|GoldStar": {
@@ -970,7 +970,7 @@
         "date": "20260913",
         "cat": "EXECUTIVE",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": ""
       },
       "CBMC|12725|20260913|NORMAL": {
@@ -1213,7 +1213,7 @@
         "date": "20260913",
         "cat": "SECOND CLASS",
         "price": "57.98",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1"
       },
       "MAYJ|238729|20260913|FIRST CLASS": {
@@ -1792,31 +1792,13 @@
         "status": "2",
         "screen": "4K DOLBY 7.1"
       },
-      "AGSM|56273|20260913|DIAMOND": {
-        "venue": "AGS Cinemas: Maduravoyal",
-        "time": "12:20 PM",
-        "date": "20260913",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "1",
-        "screen": "4K DOLBY 7.1"
-      },
-      "AGSM|56273|20260913|PEARL": {
-        "venue": "AGS Cinemas: Maduravoyal",
-        "time": "12:20 PM",
-        "date": "20260913",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "1",
-        "screen": "4K DOLBY 7.1"
-      },
       "AGSM|56422|20260913|DIAMOND": {
         "venue": "AGS Cinemas: Maduravoyal",
         "time": "12:50 PM",
         "date": "20260913",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "1",
+        "status": "0",
         "screen": "4K DOLBY ATMOS"
       },
       "AGSM|56422|20260913|PEARL": {
@@ -2032,7 +2014,7 @@
         "date": "20260913",
         "cat": "ELITE",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": ""
       },
       "VVGT|31255|20260913|ECONOMY": {
@@ -2122,7 +2104,7 @@
         "date": "20260913",
         "cat": "ELITE",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": ""
       },
       "VVGT|31319|20260913|ECONOMY": {
@@ -2500,7 +2482,7 @@
         "date": "20260913",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": ""
       },
       "PGMV|22105|20260913|CLASSIC": {
@@ -2563,7 +2545,7 @@
         "date": "20260913",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1"
       },
       "ACON|47353|20260913|DIAMOND": {
@@ -2707,7 +2689,7 @@
         "date": "20260913",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": ""
       },
       "PVHR|41989|20260913|PRIME": {
@@ -2716,7 +2698,7 @@
         "date": "20260913",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": ""
       },
       "PVHR|41989|20260913|CLASSIC": {
@@ -2788,7 +2770,7 @@
         "date": "20260913",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": ""
       },
       "PVHR|41991|20260913|CLASSIC": {
@@ -3151,6 +3133,24 @@
         "status": "0",
         "screen": "DolbyAtmos"
       },
+      "KSTK|50810|20260913|BOX-A": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "02:10 PM",
+        "date": "20260913",
+        "cat": "BOX-A",
+        "price": "183.78",
+        "status": "2",
+        "screen": ""
+      },
+      "KSTK|50810|20260913|BOX-B": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "02:10 PM",
+        "date": "20260913",
+        "cat": "BOX-B",
+        "price": "183.78",
+        "status": "3",
+        "screen": ""
+      },
       "KSTK|50810|20260913|Super Premium": {
         "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
         "time": "02:10 PM",
@@ -3427,7 +3427,7 @@
         "date": "20260913",
         "cat": "Elite",
         "price": "183.78",
-        "status": "3",
+        "status": "2",
         "screen": ""
       },
       "KSTK|50821|20260913|Economy": {
@@ -3472,7 +3472,7 @@
         "date": "20260913",
         "cat": "Economy",
         "price": "54.00",
-        "status": "0",
+        "status": "1",
         "screen": "DolbyAtmos"
       },
       "KSTK|50813|20260913|Super Premium": {
@@ -3490,7 +3490,7 @@
         "date": "20260913",
         "cat": "Premium",
         "price": "183.78",
-        "status": "3",
+        "status": "2",
         "screen": ""
       },
       "KSTK|50813|20260913|Elite": {
@@ -3868,7 +3868,7 @@
         "date": "20260913",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "1",
+        "status": "0",
         "screen": "4K DOLBY 7.1"
       },
       "ACVM|56100|20260913|DIAMOND": {
@@ -3886,7 +3886,7 @@
         "date": "20260913",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "1",
+        "status": "0",
         "screen": "4K DOLBY 7.1"
       },
       "ACVM|55919|20260913|DIAMOND": {
@@ -3904,7 +3904,7 @@
         "date": "20260913",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "0",
+        "status": "1",
         "screen": "4K DOLBY ATMOS"
       },
       "ACVM|56088|20260913|DIAMOND": {
@@ -5011,7 +5011,7 @@
         "date": "20260913",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": ""
       },
       "PABC|21614|20260913|CLASSIC": {
@@ -5425,7 +5425,7 @@
         "date": "20260913",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "Atmos"
       },
       "INTO|90178|20260913|CLUB": {
@@ -5740,7 +5740,7 @@
         "date": "20260913",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": ""
       },
       "PBRM|24770|20260913|BUDGET": {
@@ -6019,7 +6019,7 @@
         "date": "20260913",
         "cat": "LOUNGER",
         "price": "190.00",
-        "status": "2",
+        "status": "3",
         "screen": "4K M-MAX(PLF)"
       },
       "MLMT|8380|20260913|PREMIUM": {
@@ -6202,24 +6202,6 @@
         "status": "3",
         "screen": "DOLBY ATMOS"
       },
-      "SBTR|12048|20260913|Elite": {
-        "venue": "SB Cinemas (Sri Bhagavathi) 4K Atmos: Poonamallee",
-        "time": "12:40 PM",
-        "date": "20260913",
-        "cat": "Elite",
-        "price": "150.00",
-        "status": "0",
-        "screen": "DOLBY ATMOS"
-      },
-      "SBTR|12048|20260913|PLATINUM": {
-        "venue": "SB Cinemas (Sri Bhagavathi) 4K Atmos: Poonamallee",
-        "time": "12:40 PM",
-        "date": "20260913",
-        "cat": "PLATINUM",
-        "price": "150.00",
-        "status": "1",
-        "screen": "DOLBY ATMOS"
-      },
       "SBTR|12039|20260913|Elite": {
         "venue": "SB Cinemas (Sri Bhagavathi) 4K Atmos: Poonamallee",
         "time": "04:20 PM",
@@ -6244,7 +6226,7 @@
         "date": "20260913",
         "cat": "Elite",
         "price": "150.00",
-        "status": "1",
+        "status": "0",
         "screen": "DOLBY ATMOS"
       },
       "SBTR|12040|20260913|PLATINUM": {
@@ -6289,7 +6271,7 @@
         "date": "20260913",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "Atmos"
       },
       "INPR|65867|20260913|ELITE": {
@@ -10663,7 +10645,7 @@
         "date": "20260914",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "2",
+        "status": "1",
         "screen": "DolbyAtmos"
       },
       "KSTK|50785|20260914|Premium": {
@@ -12670,7 +12652,7 @@
         "date": "20260914",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": ""
       },
       "PCAN|44750|20260914|CLASSIC": {
@@ -13120,7 +13102,7 @@
         "date": "20260914",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "1",
+        "status": "2",
         "screen": ""
       },
       "PVPZ|38122|20260914|BUDGET": {
@@ -14443,7 +14425,7 @@
         "date": "20260914",
         "cat": "Elite",
         "price": "150.00",
-        "status": "2",
+        "status": "1",
         "screen": "DOLBY ATMOS"
       },
       "SBTR|12045|20260914|PLATINUM": {
@@ -15391,18 +15373,36 @@
         "status": "3",
         "screen": ""
       },
-      "WSTC|4813|20260914|First Class": {
+      "WSTC|4821|20260914|Box": {
         "venue": "Woodlands Theatre: Chennai",
-        "time": "12:15 PM",
+        "time": "12:00 PM",
+        "date": "20260914",
+        "cat": "Box",
+        "price": "180.00",
+        "status": "3",
+        "screen": ""
+      },
+      "WSTC|4821|20260914|Balcony": {
+        "venue": "Woodlands Theatre: Chennai",
+        "time": "12:00 PM",
+        "date": "20260914",
+        "cat": "Balcony",
+        "price": "180.00",
+        "status": "3",
+        "screen": ""
+      },
+      "WSTC|4821|20260914|First Class": {
+        "venue": "Woodlands Theatre: Chennai",
+        "time": "12:00 PM",
         "date": "20260914",
         "cat": "First Class",
         "price": "120.00",
         "status": "3",
         "screen": ""
       },
-      "WSTC|4813|20260914|Second Class": {
+      "WSTC|4821|20260914|Second Class": {
         "venue": "Woodlands Theatre: Chennai",
-        "time": "12:15 PM",
+        "time": "12:00 PM",
         "date": "20260914",
         "cat": "Second Class",
         "price": "54.35",
@@ -15445,7 +15445,25 @@
         "status": "0",
         "screen": ""
       },
-      "WSTC|4814|20260914|First Class": {
+      "WSTC|4822|20260914|Box": {
+        "venue": "Woodlands Theatre: Chennai",
+        "time": "06:30 PM",
+        "date": "20260914",
+        "cat": "Box",
+        "price": "180.00",
+        "status": "3",
+        "screen": ""
+      },
+      "WSTC|4822|20260914|Balcony": {
+        "venue": "Woodlands Theatre: Chennai",
+        "time": "06:30 PM",
+        "date": "20260914",
+        "cat": "Balcony",
+        "price": "180.00",
+        "status": "3",
+        "screen": ""
+      },
+      "WSTC|4822|20260914|First Class": {
         "venue": "Woodlands Theatre: Chennai",
         "time": "06:30 PM",
         "date": "20260914",
@@ -15454,7 +15472,7 @@
         "status": "3",
         "screen": ""
       },
-      "WSTC|4814|20260914|Second Class": {
+      "WSTC|4822|20260914|Second Class": {
         "venue": "Woodlands Theatre: Chennai",
         "time": "06:30 PM",
         "date": "20260914",
