@@ -25,6 +25,8 @@ TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip()
 GROUP_CHAT_ID=os.getenv("GROUP_CHAT_ID", "").strip()
 NTFY_URL=os.getenv("NTFY_URL","").strip()
 NTFY_TOPIC=os.getenv("NTFY_TOPIC", "").strip()
+NTFY_ERROR_TOPIC = os.getenv("NTFY_ERROR_TOPIC", "").strip()
+
 
 def get_notification_recipients() -> set[int]:
     raw_env = os.getenv("NOTIFICATION_USERS", "")
@@ -215,6 +217,25 @@ def cleanup_state(state):
 # ======================================================================
 # WATCH CONFIGURATION
 # ======================================================================
+def send_ntfy_error(movie_name, date_code):
+    if not NTFY_ERROR_TOPIC:
+        return
+    
+    url = f"{NTFY_URL}/{NTFY_ERROR_TOPIC}"
+    headers = {
+        "Title": "⚠️ BMS Shows Fetch Failed",
+        "Priority": "high",
+        "Tags": "warning,rotating_light"
+    }
+    
+    date_str = date_code if date_code else "default date"
+    message = f"Failed to fetch showtimes for '{movie_name}' (Date: {date_str}). Cloudflare or rate-limit block detected."
+    
+    try:
+        requests.post(url, data=message.encode("utf-8"), headers=headers, timeout=10)
+    except Exception as e:
+        print(f"  ⚠️ Ntfy error alert failed: {e}")
+
 
 def format_date(date_str):
     """Converts '20260912' to '12/09/2026'."""
@@ -410,7 +431,6 @@ def resolve_region(slug):
 # BMS API
 # ======================================================================
 
-
 def fetch_bms(
     event_code,
     date_code,
@@ -419,6 +439,7 @@ def fetch_bms(
     lat,
     lon,
     geohash,
+    show_name,  # <-- ADDED THIS PARAMETER
     max_retries=3,
 ):
     headers = {
@@ -471,21 +492,32 @@ def fetch_bms(
 
             if response.status_code == 200:
                 return response.json()
+                
+            # If the API explicitly says Not Found/Bad Request, it just hasn't opened yet.
+            # Quit quietly without alerting.
+            if response.status_code in [400, 404]:
+                print(f"  ℹ️ BMS HTTP {response.status_code}: Shows likely not opened for {date_code}.")
+                return None
 
             print(
                 f"  ⚠️ BMS HTTP {response.status_code} (Attempt {attempt}/{max_retries})"
             )
 
-            if response.status_code == 403:
-                # Exponential backoff on 403 rate limits
+            if response.status_code in [403, 429]:
+                # Exponential backoff on rate limits/blocks
                 time.sleep(attempt * 3)
+            else:
+                time.sleep(2)
 
         except requests.RequestException as e:
             print(f"  ⚠️ BMS request failed: {e} (Attempt {attempt}/{max_retries})")
             time.sleep(2)
 
+    # --- IF IT REACHES HERE, ALL RETRIES FAILED ---
+    print(f"  ❌ Failed to fetch BMS API after {max_retries} attempts.")
+    send_ntfy_error(show_name, date_code)
+    
     return None
-
 # ======================================================================
 # MOVIE INFO PARSER
 # ======================================================================
@@ -1517,6 +1549,7 @@ def run_event(
             lat,
             lon,
             geohash,
+            label,
         )
 
         if data:
