@@ -23,6 +23,8 @@ STATE_FILE = "data/bms_state.json"
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip()
 GROUP_CHAT_ID=os.getenv("GROUP_CHAT_ID", "").strip()
+NTFY_URL=os.getenv("NTFY_URL","").strip()
+NTFY_TOPIC=os.getenv("NTFY_TOPIC", "").strip()
 
 def get_notification_recipients() -> set[int]:
     raw_env = os.getenv("NOTIFICATION_USERS", "")
@@ -1172,7 +1174,78 @@ def split_message_chunks(lines, max_chars=4000):
         chunks.append("\n".join(current_chunk))
     return chunks
 
-# 4. TELEGRAM ALERT DISPATCHER
+def send_ntfy(label, movie_info, changes):
+    if not NTFY_TOPIC or not changes:
+        return
+
+    movie_name = movie_info.get("name", label)
+    
+    # Group by date -> type -> unique venues/times
+    date_groups = defaultdict(lambda: defaultdict(set))
+    for change in changes:
+        date_val = change.get("date", "")
+        c_type = change.get("type", "UPDATE")
+        venue = change.get("venue", "Unknown").strip()
+        time_val = change.get("time", "").strip()
+        
+        date_groups[date_val][c_type].add(f"{venue} ({time_val})")
+        
+    url = f"{NTFY_URL}/{NTFY_TOPIC}"
+
+    for date_val in sorted(date_groups.keys()):
+        types_dict = date_groups[date_val]
+        formatted_date = format_date(date_val)
+        
+        summary_parts = []
+        if "NEW" in types_dict:
+            shows_str = ", ".join(sorted(types_dict["NEW"]))
+            summary_parts.append(f"New show added in {shows_str}")
+            
+        if "RESTOCKED" in types_dict:
+            shows_str = ", ".join(sorted(types_dict["RESTOCKED"]))
+            summary_parts.append(f"Ticket status changed in {shows_str}")
+            
+        price_changes = types_dict.get("PRICE_DROP", set()).union(types_dict.get("PRICE_INCREASE", set()))
+        if price_changes:
+            shows_str = ", ".join(sorted(price_changes))
+            summary_parts.append(f"Price changed in {shows_str}")
+            
+        if not summary_parts:
+            continue
+            
+        # Keep fun tags, but force everything to High Priority
+        if "NEW" in types_dict:
+            tags = "rotating_light,fire"
+        elif "RESTOCKED" in types_dict:
+            tags = "bell,popcorn"
+        else:
+            tags = "ticket,money_with_wings"
+
+        headers = {
+            "Title": f"BMS Alert: {movie_name} - {formatted_date}",  # <-- Date added to title
+            "Priority": "high",  # Hardcoded to high for ALL alerts
+            "Tags": tags,
+        }
+
+        # Removed the date from the beginning of the message text to avoid redundancy
+        message_text = f"{'; '.join(summary_parts)}."
+        
+        try:
+            response = requests.post(
+                url, 
+                data=message_text.encode("utf-8"), 
+                headers=headers, 
+                timeout=10
+            )
+            if response.status_code != 200:
+                print(f"  ⚠️ Ntfy failed: HTTP {response.status_code}")
+        except Exception as e:
+            print(f"  ⚠️ Ntfy error: {e}")
+
+        time.sleep(0.5)
+
+
+        # 4. TELEGRAM ALERT DISPATCHER
 def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
     # Ensure both variables are available (assuming they are loaded from your .env globally)
     # GROUP_CHAT_ID = os.getenv("GROUP_CHAT_ID")
@@ -1563,6 +1636,8 @@ def run_event(
                         filtered,
                         movie_info,
         )
+
+        send_ntfy(label, movie_info, changes)
 
     else:
         print("  ✅ No changes since last check.")
