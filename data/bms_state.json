@@ -241,7 +241,7 @@
         "date": "20260913",
         "cat": "Elite",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SC 3 DOLBY ATMOS"
       },
       "RAKK|3842|20260913|Premium": {
@@ -250,7 +250,7 @@
         "date": "20260913",
         "cat": "Premium",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": "SCREEN 2"
       },
       "RAKK|3842|20260913|Elite": {
@@ -385,7 +385,7 @@
         "date": "20260913",
         "cat": "ELITE",
         "price": "183.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K DOLBY ATMOS"
       },
       "TVHP|24978|20260913|ELITE": {
@@ -412,7 +412,7 @@
         "date": "20260913",
         "cat": "SuperStar",
         "price": "190.00",
-        "status": "0",
+        "status": "1",
         "screen": "4K/ATMOS"
       },
       "RSSC|122888|20260913|PLATINUM": {
@@ -835,7 +835,7 @@
         "date": "20260913",
         "cat": "PREMIUM",
         "price": "60.00",
-        "status": "2",
+        "status": "1",
         "screen": ""
       },
       "KVCS|9300|20260913|BOX A": {
@@ -889,7 +889,7 @@
         "date": "20260913",
         "cat": "EXECUTIVE",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": ""
       },
       "CBMC|12720|20260913|NORMAL": {
@@ -1063,24 +1063,6 @@
         "status": "3",
         "screen": ""
       },
-      "MAYJ|238549|20260913|FIRST CLASS": {
-        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
-        "time": "01:05 PM",
-        "date": "20260913",
-        "cat": "FIRST CLASS",
-        "price": "183.80",
-        "status": "1",
-        "screen": "4K DOLBY 7.1"
-      },
-      "MAYJ|238549|20260913|SECOND CLASS": {
-        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
-        "time": "01:05 PM",
-        "date": "20260913",
-        "cat": "SECOND CLASS",
-        "price": "57.98",
-        "status": "1",
-        "screen": "4K DOLBY 7.1"
-      },
       "MAYJ|238464|20260913|FIRST CLASS": {
         "venue": "MAYAJAAL Multiplex: ECR, Chennai",
         "time": "01:30 PM",
@@ -1096,7 +1078,7 @@
         "date": "20260913",
         "cat": "SECOND CLASS",
         "price": "57.98",
-        "status": "2",
+        "status": "1",
         "screen": "4K DOLBY 7.1"
       },
       "MAYJ|238729|20260913|FIRST CLASS": {
@@ -1240,7 +1222,7 @@
         "date": "20260913",
         "cat": "SECOND CLASS",
         "price": "57.98",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY ATMOS"
       },
       "MAYJ|238189|20260913|FIRST CLASS": {
@@ -1285,7 +1267,7 @@
         "date": "20260913",
         "cat": "FIRST CLASS",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1"
       },
       "MAYJ|238552|20260913|SECOND CLASS": {
@@ -1294,7 +1276,7 @@
         "date": "20260913",
         "cat": "SECOND CLASS",
         "price": "57.98",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1"
       },
       "MAYJ|238481|20260913|FIRST CLASS": {
@@ -1363,24 +1345,6 @@
       "MAYJ|238502|20260913|SECOND CLASS": {
         "venue": "MAYAJAAL Multiplex: ECR, Chennai",
         "time": "08:40 PM",
-        "date": "20260913",
-        "cat": "SECOND CLASS",
-        "price": "57.98",
-        "status": "3",
-        "screen": "4K DOLBY 7.1"
-      },
-      "MAYJ|238550|20260913|FIRST CLASS": {
-        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
-        "time": "08:45 PM",
-        "date": "20260913",
-        "cat": "FIRST CLASS",
-        "price": "183.80",
-        "status": "3",
-        "screen": "4K DOLBY 7.1"
-      },
-      "MAYJ|238550|20260913|SECOND CLASS": {
-        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
-        "time": "08:45 PM",
         "date": "20260913",
         "cat": "SECOND CLASS",
         "price": "57.98",
@@ -1708,7 +1672,7 @@
         "date": "20260913",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K DOLBY 7.1"
       },
       "AGSM|56275|20260913|DIAMOND": {
@@ -1789,7 +1753,7 @@
         "date": "20260913",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1"
       },
       "AGSM|56475|20260913|PEARL": {
@@ -1998,24 +1962,6 @@
         "price": "54.35",
         "status": "0",
         "screen": ""
-      },
-      "VVGT|31191|20260913|ELITE": {
-        "venue": "Vels Theatres: Chennai",
-        "time": "01:00 PM",
-        "date": "20260913",
-        "cat": "ELITE",
-        "price": "190.00",
-        "status": "1",
-        "screen": "4K  ATMOS ENABLED"
-      },
-      "VVGT|31191|20260913|ECONOMY": {
-        "venue": "Vels Theatres: Chennai",
-        "time": "01:00 PM",
-        "date": "20260913",
-        "cat": "ECONOMY",
-        "price": "190.00",
-        "status": "3",
-        "screen": "4K  ATMOS ENABLED"
       },
       "VVGT|31318|20260913|ELITE": {
         "venue": "Vels Theatres: Chennai",
@@ -2356,7 +2302,7 @@
         "date": "20260913",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1"
       },
       "ACON|47237|20260913|DIAMOND": {
@@ -2428,7 +2374,7 @@
         "date": "20260913",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K DOLBY 7.1"
       },
       "ACON|47426|20260913|DIAMOND": {
@@ -2700,24 +2646,6 @@
         "price": "54.35",
         "status": "0",
         "screen": ""
-      },
-      "FMCN|104838|20260913|SILVER": {
-        "venue": "INOX National: Arcot Road",
-        "time": "12:30 PM",
-        "date": "20260913",
-        "cat": "SILVER",
-        "price": "183.80",
-        "status": "0",
-        "screen": "Atmos"
-      },
-      "FMCN|104838|20260913|PREMIERE": {
-        "venue": "INOX National: Arcot Road",
-        "time": "12:30 PM",
-        "date": "20260913",
-        "cat": "PREMIERE",
-        "price": "54.35",
-        "status": "1",
-        "screen": "Atmos"
       },
       "FMCN|104969|20260913|SILVER": {
         "venue": "INOX National: Arcot Road",
@@ -3193,7 +3121,7 @@
         "date": "20260913",
         "cat": "Elite",
         "price": "183.78",
-        "status": "2",
+        "status": "1",
         "screen": "DolbyAtmos"
       },
       "KSTK|50777|20260913|Economy": {
@@ -3274,7 +3202,7 @@
         "date": "20260913",
         "cat": "Economy",
         "price": "54.00",
-        "status": "2",
+        "status": "0",
         "screen": ""
       },
       "KSTK|50778|20260913|Super Premium": {
@@ -3355,7 +3283,7 @@
         "date": "20260913",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "1",
+        "status": "2",
         "screen": ""
       },
       "KSTK|50850|20260913|Premium": {
@@ -3598,7 +3526,7 @@
         "date": "20260913",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": ""
       },
       "PGRA|22519|20260913|PRIME": {
@@ -3769,7 +3697,7 @@
         "date": "20260913",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "2",
+        "status": "3",
         "screen": "4K DOLBY 7.1"
       },
       "ACVM|56101|20260913|PEARL": {
@@ -3798,24 +3726,6 @@
         "price": "54.00",
         "status": "0",
         "screen": "4K DOLBY 7.1"
-      },
-      "PVSR|27691|20260913|ELITE": {
-        "venue": "PVR: Sathyam, Royapettah",
-        "time": "12:30 PM",
-        "date": "20260913",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "1",
-        "screen": ""
-      },
-      "PVSR|27691|20260913|BUDGET": {
-        "venue": "PVR: Sathyam, Royapettah",
-        "time": "12:30 PM",
-        "date": "20260913",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "0",
-        "screen": ""
       },
       "PVSR|27599|20260913|ELITE": {
         "venue": "PVR: Sathyam, Royapettah",
@@ -3850,7 +3760,7 @@
         "date": "20260913",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": ""
       },
       "PVSR|27585|20260913|ELITE": {
@@ -3913,7 +3823,7 @@
         "date": "20260913",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "1",
+        "status": "2",
         "screen": ""
       },
       "PVSR|27711|20260913|ELITE": {
@@ -4294,24 +4204,6 @@
         "status": "0",
         "screen": ""
       },
-      "MCSK|15808|20260913|SPECIAL": {
-        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
-        "time": "12:35 PM",
-        "date": "20260913",
-        "cat": "SPECIAL",
-        "price": "54.35",
-        "status": "0",
-        "screen": ""
-      },
-      "MCSK|15808|20260913|EXECUTIVE": {
-        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
-        "time": "12:35 PM",
-        "date": "20260913",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
-        "status": "1",
-        "screen": ""
-      },
       "MCSK|15721|20260913|SPECIAL": {
         "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
         "time": "12:40 PM",
@@ -4660,7 +4552,7 @@
         "date": "20260913",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": ""
       },
       "PABC|21623|20260913|CLASSIC": {
@@ -5290,7 +5182,7 @@
         "date": "20260913",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": ""
       },
       "PBRM|24822|20260913|ELITE": {
@@ -5491,51 +5383,6 @@
         "status": "3",
         "screen": "7.1 SCREEN 2"
       },
-      "MLMT|8357|20260913|GOLD": {
-        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
-        "time": "12:50 PM",
-        "date": "20260913",
-        "cat": "GOLD",
-        "price": "190.00",
-        "status": "0",
-        "screen": "4K M-MAX(PLF)"
-      },
-      "MLMT|8357|20260913|PREMIUM": {
-        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
-        "time": "12:50 PM",
-        "date": "20260913",
-        "cat": "PREMIUM",
-        "price": "150.00",
-        "status": "1",
-        "screen": "4K M-MAX(PLF)"
-      },
-      "MLMT|8357|20260913|EXECUTIVE": {
-        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
-        "time": "12:50 PM",
-        "date": "20260913",
-        "cat": "EXECUTIVE",
-        "price": "150.00",
-        "status": "0",
-        "screen": "4K M-MAX(PLF)"
-      },
-      "MLMT|8357|20260913|SILVER": {
-        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
-        "time": "12:50 PM",
-        "date": "20260913",
-        "cat": "SILVER",
-        "price": "150.00",
-        "status": "2",
-        "screen": "4K M-MAX(PLF)"
-      },
-      "MLMT|8357|20260913|LOUNGER": {
-        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
-        "time": "12:50 PM",
-        "date": "20260913",
-        "cat": "LOUNGER",
-        "price": "190.00",
-        "status": "0",
-        "screen": "4K M-MAX(PLF)"
-      },
       "MLMT|8402|20260913|PREMIUM": {
         "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
         "time": "01:20 PM",
@@ -5569,7 +5416,7 @@
         "date": "20260913",
         "cat": "BOX",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "DOLBY ATMOS"
       },
       "MLMT|8367|20260913|PREMIUM": {
@@ -5578,7 +5425,7 @@
         "date": "20260913",
         "cat": "PREMIUM",
         "price": "150.00",
-        "status": "2",
+        "status": "1",
         "screen": "DOLBY ATMOS"
       },
       "MLMT|8367|20260913|EXECUTIVE": {
@@ -5758,7 +5605,7 @@
         "date": "20260913",
         "cat": "PREMIUM",
         "price": "150.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K M-MAX(PLF)"
       },
       "MLMT|8360|20260913|EXECUTIVE": {
@@ -6046,7 +5893,7 @@
         "date": "20260913",
         "cat": "BALCONY",
         "price": "180.00",
-        "status": "2",
+        "status": "1",
         "screen": ""
       },
       "MMKC|8394|20260913|FIRST CLASS": {
@@ -6253,7 +6100,7 @@
         "date": "20260913",
         "cat": "PRIME",
         "price": "150.00",
-        "status": "2",
+        "status": "1",
         "screen": "DOLBY ATMOS"
       },
       "MTLM|19393|20260913|PRIME": {
@@ -6262,7 +6109,7 @@
         "date": "20260913",
         "cat": "PRIME",
         "price": "150.00",
-        "status": "2",
+        "status": "1",
         "screen": "DOLBY ATMOS"
       },
       "MTLM|19385|20260913|PRIME": {
@@ -6280,7 +6127,7 @@
         "date": "20260913",
         "cat": "PRIME",
         "price": "150.00",
-        "status": "3",
+        "status": "2",
         "screen": "DOLBY ATMOS"
       },
       "MTLM|19386|20260913|PRIME": {
@@ -6289,7 +6136,7 @@
         "date": "20260913",
         "cat": "PRIME",
         "price": "150.00",
-        "status": "3",
+        "status": "2",
         "screen": "DOLBY ATMOS"
       },
       "RDMP|28294|20260913|ELITE": {
@@ -6550,7 +6397,7 @@
         "date": "20260913",
         "cat": "FIRSTCLASS",
         "price": "150.00",
-        "status": "3",
+        "status": "2",
         "screen": "RGB/ATMOS"
       },
       "WSTC|4805|20260913|Box": {
@@ -6865,7 +6712,7 @@
         "date": "20260913",
         "cat": "COUPLE",
         "price": "180.00",
-        "status": "2",
+        "status": "1",
         "screen": ""
       },
       "GRTC|9887|20260913|FAMILY CLASS": {
@@ -8359,7 +8206,7 @@
         "date": "20260914",
         "cat": "BOX",
         "price": "150.00",
-        "status": "0",
+        "status": "3",
         "screen": ""
       },
       "MCXF|580|20260914|Premium": {
@@ -10006,7 +9853,7 @@
         "date": "20260914",
         "cat": "SILVER",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "Atmos"
       },
       "FMCN|104829|20260914|PREMIERE": {
@@ -10321,7 +10168,7 @@
         "date": "20260914",
         "cat": "Economy",
         "price": "54.00",
-        "status": "2",
+        "status": "3",
         "screen": ""
       },
       "KSTK|50786|20260914|Super Premium": {
@@ -10438,7 +10285,7 @@
         "date": "20260914",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "2",
+        "status": "3",
         "screen": ""
       },
       "KSTK|50826|20260914|Premium": {
@@ -12049,7 +11896,7 @@
         "date": "20260914",
         "cat": "LOUNGE 1",
         "price": "150.00",
-        "status": "2",
+        "status": "1",
         "screen": "RGB ATMOS"
       },
       "GKCP|4054|20260914|SIGNATURE CLASS": {
@@ -12202,7 +12049,7 @@
         "date": "20260914",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": ""
       },
       "PCAN|44749|20260914|PRIME": {
@@ -13066,7 +12913,7 @@
         "date": "20260914",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "2",
+        "status": "0",
         "screen": ""
       },
       "INTO|90202|20260914|CLUB": {
@@ -13435,7 +13282,7 @@
         "date": "20260914",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": ""
       },
       "PBRM|24799|20260914|BUDGET": {
@@ -13480,7 +13327,7 @@
         "date": "20260914",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "2",
+        "status": "1",
         "screen": ""
       },
       "PBRM|24815|20260914|ELITE": {
@@ -14164,7 +14011,7 @@
         "date": "20260914",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "Atmos"
       },
       "INPR|65872|20260914|ELITE": {
