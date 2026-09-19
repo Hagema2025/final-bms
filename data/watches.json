@@ -76,5 +76,22 @@
     ],
     "formats": [],
     "message_thread_id": 213
+  },
+  {
+    "name": "EnnaVilaiTamil_20260919112532",
+    "url": "https://in.bookmyshow.com/movies/chennai/enna-vilai-tamil/ET00515665",
+    "dates": [
+      "20260919"
+    ],
+    "theatre": [
+      "INOX: The Marina Mall, OMR"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 215
   }
 ]
