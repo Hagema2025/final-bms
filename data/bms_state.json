@@ -46,36 +46,5 @@
       "20260930": "NOT_OPEN",
       "20261001": "NOT_OPEN"
     }
-  },
-  "EnnaVilaiTamil_20260919112532": {
-    "shows": {
-      "INTO|90584|20260919|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "07:20 PM",
-        "date": "20260919",
-        "cat": "CLUB",
-        "price": "183.80",
-        "status": "2",
-        "screen": ""
-      },
-      "INTO|90584|20260919|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "07:20 PM",
-        "date": "20260919",
-        "cat": "EXECUTIVE",
-        "price": "54.35",
-        "status": "0",
-        "screen": ""
-      }
-    },
-    "dates": {
-      "20260919": "BOOKABLE",
-      "20260920": "AVAILABLE",
-      "20260921": "AVAILABLE",
-      "20260922": "AVAILABLE",
-      "20260923": "AVAILABLE",
-      "20260924": "AVAILABLE",
-      "20260925": "NOT_OPEN"
-    }
   }
 }
