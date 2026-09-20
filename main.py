@@ -1291,6 +1291,7 @@ def send_ntfy(label, movie_info, changes):
 
         # 4. TELEGRAM ALERT DISPATCHER
 # 4. TELEGRAM ALERT DISPATCHER
+# 4. TELEGRAM ALERT DISPATCHER (SIMPLIFIED BLOCKS)
 def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
     if not TELEGRAM_BOT_TOKEN or not GROUP_CHAT_ID:
         print(" ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN or GROUP_CHAT_ID not configured.")
@@ -1301,10 +1302,14 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
 
     now_str = datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%d %b, %I:%M %p")
     movie_name = movie_info.get("name", watch_name)
-    
-    # Create clean hashtags (Removes spaces/special chars for Telegram)
     clean_movie_name = re.sub(r'[^A-Za-z0-9]', '', str(watch_name.split('_')[0]))
-    
+
+    def clean_price(price_val):
+        try:
+            return f"₹{int(round(float(price_val)))}"
+        except Exception:
+            return f"₹{price_val}"
+
     # 1. SMART HASHTAG GENERATOR
     tags = set([f"#BMSAlert", f"#{clean_movie_name}"])
     for c in changes:
@@ -1312,26 +1317,14 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
         v_lower = str(c.get('venue', '')).lower()
         s_lower = str(c.get('screen', '')).lower()
         
-        # Format tags
         if "imax" in v_lower or "imax" in s_lower: tags.add("#IMAX")
         if "4dx" in v_lower or "4dx" in s_lower: tags.add("#4DX")
         if "epiq" in v_lower or "epiq" in s_lower: tags.add("#EPIQ")
-        
-        # Location tags (Add more of your city's hubs here)
-        if "omr" in v_lower or "navlur" in v_lower or "marina mall" in v_lower: tags.add("#OMR")
-        if "velachery" in v_lower: tags.add("#Velachery")
-        if "anna nagar" in v_lower: tags.add("#AnnaNagar")
-        if "ecr" in v_lower: tags.add("#ECR")
 
     hashtag_str = " ".join(sorted(tags))
 
     def get_type_priority(change_type):
-        priority_map = {
-            "NEW": 1,
-            "RESTOCKED": 2,
-            "PRICE_DROP": 3,
-            "PRICE_INCREASE": 4
-        }
+        priority_map = {"NEW": 1, "RESTOCKED": 2, "PRICE_DROP": 3, "PRICE_INCREASE": 4}
         return priority_map.get(change_type, 99)
 
     # 2. SORT
@@ -1346,18 +1339,17 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
         )
     )
 
-    # 3. GROUP (Date -> Type -> Venue -> Time -> Categories)
+    # 3. GROUP
     nested_data = defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: defaultdict(list))))
 
     for item in sorted_changes:
         d_val = item["date"]
         c_type = item["type"]
         venue = item["venue"]
-        # Group by time AND include the vcode/sid for the direct hyperlink
         show_key = (item["time"], item.get("screen", ""), item.get("vcode", ""), item.get("sid", ""))
         nested_data[d_val][c_type][venue][show_key].append(item)
 
-    # 4. BUILD LINES (Modern UI)
+    # 4. BUILD HEADER
     lines = [
         f"🚨 <b>BMS Ticket Alert!</b>",
         f"🎬 <b>{html.escape(str(watch_name.split('_')[0]))}</b>",
@@ -1367,12 +1359,12 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
 
     section_headers = {
         "NEW": "\n🆕 <b>NEW SHOWS ADDED</b>",
-        "RESTOCKED": "\n🔄 <b>TICKETS RESTOCKED / STATUS CHANGED</b>",
+        "RESTOCKED": "\n🔄 <b>TICKETS RESTOCKED / CHANGED</b>",
         "PRICE_DROP": "\n📉 <b>PRICE DROP ALERT</b>",
         "PRICE_INCREASE": "\n📈 <b>PRICE INCREASE ALERT</b>"
     }
 
-    # 5. RENDER
+    # 5. RENDER SIMPLIFIED BLOCKS
     for date_val, type_groups in nested_data.items():
         formatted_date = format_date(date_val)
         lines.append(f"\n📅 <b>SHOWS FOR: {html.escape(str(formatted_date)).upper()}</b>")
@@ -1383,38 +1375,41 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
             lines.append(section_headers.get(c_type, f"\n<b>{c_type}</b>"))
 
             for venue, times_dict in venues_dict.items():
-                # Print Venue exactly once per type
-                lines.append(f"\n🏢 <b>{html.escape(str(venue))}</b>")
+                lines.append(f"\n🏢 <b>{html.escape(str(venue))}</b>:")
                 
-                # Iterate through times under that venue
-                time_items = list(times_dict.items())
-                for t_idx, ((time_val, screen, vcode, sid), items) in enumerate(time_items):
+                for (time_val, screen, vcode, sid), items in times_dict.items():
                     screen_str = f" [{html.escape(str(screen))}]" if screen else ""
                     
-                    # Direct Booking Deep Link formatting
+                    # Direct Deep Link
                     time_display = html.escape(str(time_val))
                     if vcode and sid:
                         book_url = f"https://in.bookmyshow.com/booktickets/{vcode}/{sid}"
-                        time_display = f'<a href="{book_url}">{time_display}</a>'
-                        
-                    lines.append(f" ├ 🕒 {time_display}{screen_str}")
-                    
-                    # Iterate through categories under that time
+                        time_display = f'<a href="{book_url}"><b>{time_display}</b></a>'
+                    else:
+                        time_display = f"<b>{time_display}</b>"
+
+                    # Print Time Node (Adds a blank line before it for spacing)
+                    lines.append(f"\n🕒 {time_display}{screen_str}")
+
+                    # Print Category Branches
                     for c_idx, cat in enumerate(items):
-                        is_last = (c_idx == len(items) - 1)
-                        # Tree formatting branches
-                        prefix = " │  └" if is_last else " │  ├"
-                        # If it's the last time slot, adjust the tree spacing slightly
-                        if t_idx == len(time_items) - 1:
-                            prefix = "    └" if is_last else "    ├"
+                        is_last_cat = (c_idx == len(items) - 1)
+                        cat_prefix = "   └" if is_last_cat else "   ├"
+
+                        c_name = html.escape(str(cat.get('cat', '')))
+                        c_name = re.sub(r'(?i)super premium', 'S.Prem', c_name)
+                        c_name = re.sub(r'(?i)superstar', 'S.Star', c_name)
+                        c_name = re.sub(r'(?i)platinum', 'Plat', c_name)
+                        c_name = re.sub(r'(?i)economy', 'Eco', c_name)
+                        c_name = re.sub(r'(?i)premium', 'Prem', c_name)
+                        c_name = re.sub(r'(?i)executive', 'Exec', c_name)
+                        c_name = re.sub(r'(?i)balcony', 'Balc', c_name)
                         
-                        cat_name = html.escape(str(cat.get('cat', '')))
-                        cat_price = html.escape(str(cat.get('price', '')))
-                        old_price = html.escape(str(cat.get('old_price', '')))
+                        price = clean_price(cat.get('price', '0'))
+                        old_price = clean_price(cat.get('old_price', '0'))
                         
                         raw_status = str(cat.get('status', '3')).strip()
                         raw_old_status = str(cat.get('old_status', '')).strip() if cat.get('old_status') is not None else ""
-                        
                         if c_type == "RESTOCKED" and not raw_old_status:
                             raw_old_status = "0"
 
@@ -1423,16 +1418,15 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
 
                         if c_type == "RESTOCKED":
                             if old_label and old_label != curr_label:
-                                status_str = f"{old_emoji} {old_label} ➔ {curr_emoji} <b>{curr_label}</b>"
+                                lines.append(f"{cat_prefix} 🎟️ {c_name}: {price} ({old_emoji}➔{curr_emoji})")
                             else:
-                                status_str = f"{curr_emoji} <b>{curr_label}</b>"
-                            lines.append(f"{prefix} 🎟️ {cat_name}: ₹{cat_price} ({status_str})")
+                                lines.append(f"{cat_prefix} 🎟️ {c_name}: {price} {curr_emoji}")
                         elif c_type in ("PRICE_DROP", "PRICE_INCREASE"):
-                            lines.append(f"{prefix} 🎟️ {cat_name}: Was ₹{old_price} ➔ <b>₹{cat_price}</b> ({curr_emoji} {curr_label})")
-                        else: # NEW or DEFAULT
-                            lines.append(f"{prefix} 🎟️ {cat_name}: ₹{cat_price} ({curr_emoji} {curr_label})")
+                            lines.append(f"{cat_prefix} 🎟️ {c_name}: <s>{old_price}</s>➔<b>{price}</b> {curr_emoji}")
+                        else:
+                            lines.append(f"{cat_prefix} 🎟️ {c_name}: {price} {curr_emoji}")
 
-    # 6. DISPATCH CHUNKS TO THE FORUM TOPIC IN THE GROUP
+    # 6. DISPATCH
     message_chunks = split_message_chunks(lines)
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     
@@ -1447,15 +1441,13 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                     "chat_id": GROUP_CHAT_ID,
                     "text": chunk,
                     "parse_mode": "HTML",
-                    "disable_web_page_preview": True, # Keep True so huge URL thumbnails don't block the screen
+                    "disable_web_page_preview": True,
                     "disable_notification": False, 
                 }
-                
                 if threadid:
                     payload["message_thread_id"] = threadid
 
                 response = requests.post(url, json=payload, timeout=20)
-                
                 if response.status_code == 200:
                     chunk_success = True
                     break
@@ -1470,35 +1462,20 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
             alert_failed = True
             break
 
-    # 7. FALLBACK: SEND FAILURE REPORT DIRECTLY TO YOU (ADMIN)
+    # 7. ADMIN FALLBACK
     if alert_failed and TELEGRAM_CHAT_ID:
         report_text = (
             f"⚠️ <b>Delivery Failure Report</b>\n"
             f"Failed to deliver alert for <b>{html.escape(str(movie_name))}</b> to Topic ID <code>{threadid}</code> in the Group.\n"
-            f"❌ <b>Reason:</b> <code>{html.escape(last_error)}</code>\n\n"
-            f"<i>(Note: This usually happens if the topic was deleted or the bot lacks permissions.)</i>"
+            f"❌ <b>Reason:</b> <code>{html.escape(last_error)}</code>"
         )
         try:
-            requests.post(
-                url,
-                json={"chat_id": TELEGRAM_CHAT_ID, "text": report_text, "parse_mode": "HTML"},
-                timeout=10,
-            )
+            requests.post(url, json={"chat_id": TELEGRAM_CHAT_ID, "text": report_text, "parse_mode": "HTML"}, timeout=10)
             for chunk in message_chunks:
-                requests.post(
-                    url,
-                    json={
-                        "chat_id": TELEGRAM_CHAT_ID,
-                        "text": chunk,
-                        "parse_mode": "HTML",
-                        "disable_web_page_preview": True,
-                    },
-                    timeout=10,
-                )
-                time.sleep(1) 
+                requests.post(url, json={"chat_id": TELEGRAM_CHAT_ID, "text": chunk, "parse_mode": "HTML", "disable_web_page_preview": True}, timeout=10)
+                time.sleep(1)
         except Exception:
             pass
-
 
 def get_telegram_user_info(chat_id: int) -> str:
     """Helper to fetch a user's name/username via getChat endpoint."""
