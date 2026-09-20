@@ -1037,6 +1037,8 @@ def build_state(
                 "price": category.price,
                 "status": category.status,
                 "screen": show.screen_attr,
+                "vcode": show.venue_code,  # <--- ADD THIS
+            "sid": show.session_id,    # <--- ADD THIS
             }
 
     date_state = {
@@ -1073,7 +1075,9 @@ def detect_changes(old_state, new_state):
             "price": show["price"],
             "screen": show.get("screen", ""),
             "status": str(show.get("status", "3")),
-            "old_status": ""
+            "old_status": "",
+            "vcode": show.get("vcode", ""), # <--- ADD THIS
+            "sid": show.get("sid", "")      # <--- ADD THIS
         })
 
     # Compare existing shows for status & price changes
@@ -1099,7 +1103,9 @@ def detect_changes(old_state, new_state):
                 "old_price": old_show.get("price"),
                 "screen": new_show.get("screen", ""),
                 "status": new_status,        # Pass raw key e.g. "3"
-                "old_status": old_status     # Pass raw key e.g. "0" or "1"
+                "old_status": old_status,     # Pass raw key e.g. "0" or "1"
+                "vcode": show.get("vcode", ""), # <--- ADD THIS
+            "sid": show.get("sid", "")      # <--- ADD THIS
             })
 
         # 3. Price changes
@@ -1120,7 +1126,9 @@ def detect_changes(old_state, new_state):
                     "price": f"{new_price:.2f}",
                     "screen": new_show.get("screen", ""),
                     "status": new_status,
-                    "old_status": old_status
+                    "old_status": old_status,
+                    "vcode": show.get("vcode", ""), # <--- ADD THIS
+            "sid": show.get("sid", "")      # <--- ADD THIS
                 })
         except (ValueError, TypeError):
             pass
@@ -1278,11 +1286,8 @@ def send_ntfy(label, movie_info, changes):
 
 
         # 4. TELEGRAM ALERT DISPATCHER
+# 4. TELEGRAM ALERT DISPATCHER
 def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
-    # Ensure both variables are available (assuming they are loaded from your .env globally)
-    # GROUP_CHAT_ID = os.getenv("GROUP_CHAT_ID")
-    # TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
-    
     if not TELEGRAM_BOT_TOKEN or not GROUP_CHAT_ID:
         print(" ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN or GROUP_CHAT_ID not configured.")
         return
@@ -1292,6 +1297,29 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
 
     now_str = datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%d %b, %I:%M %p")
     movie_name = movie_info.get("name", watch_name)
+    
+    # Create clean hashtags (Removes spaces/special chars for Telegram)
+    clean_movie_name = re.sub(r'[^A-Za-z0-9]', '', str(watch_name.split('_')[0]))
+    
+    # 1. SMART HASHTAG GENERATOR
+    tags = set([f"#BMSAlert", f"#{clean_movie_name}"])
+    for c in changes:
+        tags.add(f"#{c.get('type', '').replace('_', '')}")
+        v_lower = str(c.get('venue', '')).lower()
+        s_lower = str(c.get('screen', '')).lower()
+        
+        # Format tags
+        if "imax" in v_lower or "imax" in s_lower: tags.add("#IMAX")
+        if "4dx" in v_lower or "4dx" in s_lower: tags.add("#4DX")
+        if "epiq" in v_lower or "epiq" in s_lower: tags.add("#EPIQ")
+        
+        # Location tags (Add more of your city's hubs here)
+        if "omr" in v_lower or "navlur" in v_lower or "marina mall" in v_lower: tags.add("#OMR")
+        if "velachery" in v_lower: tags.add("#Velachery")
+        if "anna nagar" in v_lower: tags.add("#AnnaNagar")
+        if "ecr" in v_lower: tags.add("#ECR")
+
+    hashtag_str = " ".join(sorted(tags))
 
     def get_type_priority(change_type):
         priority_map = {
@@ -1302,7 +1330,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
         }
         return priority_map.get(change_type, 99)
 
-    # 1. SORT
+    # 2. SORT
     sorted_changes = sorted(
         changes,
         key=lambda x: (
@@ -1314,85 +1342,93 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
         )
     )
 
-    # 2. GROUP
-    nested_data = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
+    # 3. GROUP (Date -> Type -> Venue -> Time -> Categories)
+    nested_data = defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: defaultdict(list))))
 
     for item in sorted_changes:
         d_val = item["date"]
         c_type = item["type"]
-        show_key = (
-            item["venue"],
-            item["time"],
-            item.get("screen", ""),
-            item.get("icon", "🔄")
-        )
-        nested_data[d_val][c_type][show_key].append(item)
+        venue = item["venue"]
+        # Group by time AND include the vcode/sid for the direct hyperlink
+        show_key = (item["time"], item.get("screen", ""), item.get("vcode", ""), item.get("sid", ""))
+        nested_data[d_val][c_type][venue][show_key].append(item)
 
-    # 3. BUILD LINES
+    # 4. BUILD LINES (Modern UI)
     lines = [
         f"🚨 <b>BMS Ticket Alert!</b>",
-        f"🎬 <b>{html.escape(str(watch_name.split('_')[0]))}</b> ({html.escape(str(watch_name))})",
+        f"🎬 <b>{html.escape(str(watch_name.split('_')[0]))}</b>",
+        f"🏷 {hashtag_str}",
         f"🕒 <i>{html.escape(now_str)}</i>\n",
     ]
 
     section_headers = {
-        "NEW": "==========================\n🆕 <b>NEW SHOW ADDED</b>\n==========================",
-        "RESTOCKED": "==========================\n🔄 <b>TICKETS STATUS CHANGE</b>\n==========================",
-        "PRICE_DROP": "==============================\n📉 <b>PRICE DROP ALERT</b>\n==============================",
-        "PRICE_INCREASE": "============================\n📈 <b>PRICE INCREASE ALERT</b>\n============================"
+        "NEW": "\n🆕 <b>NEW SHOWS ADDED</b>",
+        "RESTOCKED": "\n🔄 <b>TICKETS RESTOCKED / STATUS CHANGED</b>",
+        "PRICE_DROP": "\n📉 <b>PRICE DROP ALERT</b>",
+        "PRICE_INCREASE": "\n📈 <b>PRICE INCREASE ALERT</b>"
     }
 
-    # 4. RENDER
+    # 5. RENDER
     for date_val, type_groups in nested_data.items():
         formatted_date = format_date(date_val)
-        lines.append(
-            f"░░░░░░░░░░░░░░░░░░░\n"
-            f"📆 <b>SHOWS FOR: {html.escape(str(formatted_date)).upper()}</b>\n"
-            f"░░░░░░░░░░░░░░░░░░░\n"
-        )
+        lines.append(f"\n📅 <b>SHOWS FOR: {html.escape(str(formatted_date)).upper()}</b>")
+        lines.append(f"━━━━━━━━━━━━━━━━━━━━━━━━")
 
         for c_type in sorted(type_groups.keys(), key=get_type_priority):
-            shows_dict = type_groups[c_type]
-            lines.append(section_headers.get(c_type, f"<b>{c_type}</b>"))
+            venues_dict = type_groups[c_type]
+            lines.append(section_headers.get(c_type, f"\n<b>{c_type}</b>"))
 
-            for (venue, time_val, screen, icon), items in shows_dict.items():
-                screen_str = f" [{html.escape(str(screen))}]" if screen else ""
+            for venue, times_dict in venues_dict.items():
+                # Print Venue exactly once per type
+                lines.append(f"\n🏢 <b>{html.escape(str(venue))}</b>")
                 
-                cat_lines = []
-                for cat in items:
-                    cat_name = html.escape(str(cat.get('cat', '')))
-                    cat_price = html.escape(str(cat.get('price', '')))
-                    old_price = html.escape(str(cat.get('old_price', '')))
+                # Iterate through times under that venue
+                time_items = list(times_dict.items())
+                for t_idx, ((time_val, screen, vcode, sid), items) in enumerate(time_items):
+                    screen_str = f" [{html.escape(str(screen))}]" if screen else ""
                     
-                    raw_status = str(cat.get('status', '3')).strip()
-                    raw_old_status = str(cat.get('old_status', '')).strip() if cat.get('old_status') is not None else ""
+                    # Direct Booking Deep Link formatting
+                    time_display = html.escape(str(time_val))
+                    if vcode and sid:
+                        book_url = f"https://in.bookmyshow.com/booktickets/{vcode}/{sid}"
+                        time_display = f'<a href="{book_url}">{time_display}</a>'
+                        
+                    lines.append(f" ├ 🕒 {time_display}{screen_str}")
                     
-                    if c_type == "RESTOCKED" and not raw_old_status:
-                        raw_old_status = "0"
+                    # Iterate through categories under that time
+                    for c_idx, cat in enumerate(items):
+                        is_last = (c_idx == len(items) - 1)
+                        # Tree formatting branches
+                        prefix = " │  └" if is_last else " │  ├"
+                        # If it's the last time slot, adjust the tree spacing slightly
+                        if t_idx == len(time_items) - 1:
+                            prefix = "    └" if is_last else "    ├"
+                        
+                        cat_name = html.escape(str(cat.get('cat', '')))
+                        cat_price = html.escape(str(cat.get('price', '')))
+                        old_price = html.escape(str(cat.get('old_price', '')))
+                        
+                        raw_status = str(cat.get('status', '3')).strip()
+                        raw_old_status = str(cat.get('old_status', '')).strip() if cat.get('old_status') is not None else ""
+                        
+                        if c_type == "RESTOCKED" and not raw_old_status:
+                            raw_old_status = "0"
 
-                    curr_label, curr_emoji = resolve_status_info(raw_status)
-                    old_label, old_emoji = resolve_status_info(raw_old_status) if raw_old_status != "" else ("", "")
+                        curr_label, curr_emoji = resolve_status_info(raw_status)
+                        old_label, old_emoji = resolve_status_info(raw_old_status) if raw_old_status != "" else ("", "")
 
-                    if c_type == "RESTOCKED":
-                        if old_label and old_label != curr_label:
-                            status_str = f"{old_emoji} {old_label} → {curr_emoji} <b>{curr_label}</b>"
-                        else:
-                            status_str = f"{curr_emoji} <b>{curr_label}</b>"
-                        cat_lines.append(f"└ 🎟️ {cat_name}: ₹{cat_price} ({status_str})")
-                    elif c_type in ("PRICE_DROP", "PRICE_INCREASE"):
-                        cat_lines.append(f"└ 🎟️ {cat_name}: Was ₹{old_price} ➔ <b>₹{cat_price}</b> ({curr_emoji} {curr_label})")
-                    else: # NEW or DEFAULT
-                        cat_lines.append(f"└ 🎟️ {cat_name}: ₹{cat_price} ({curr_emoji} {curr_label})")
+                        if c_type == "RESTOCKED":
+                            if old_label and old_label != curr_label:
+                                status_str = f"{old_emoji} {old_label} ➔ {curr_emoji} <b>{curr_label}</b>"
+                            else:
+                                status_str = f"{curr_emoji} <b>{curr_label}</b>"
+                            lines.append(f"{prefix} 🎟️ {cat_name}: ₹{cat_price} ({status_str})")
+                        elif c_type in ("PRICE_DROP", "PRICE_INCREASE"):
+                            lines.append(f"{prefix} 🎟️ {cat_name}: Was ₹{old_price} ➔ <b>₹{cat_price}</b> ({curr_emoji} {curr_label})")
+                        else: # NEW or DEFAULT
+                            lines.append(f"{prefix} 🎟️ {cat_name}: ₹{cat_price} ({curr_emoji} {curr_label})")
 
-                categories_formatted = "\n".join(cat_lines)
-
-                lines.append(
-                    f"📍 {html.escape(str(venue))}\n"
-                    f"🕒 <code>{html.escape(str(time_val))}</code>{screen_str}\n"
-                    f"{categories_formatted}\n"
-                )
-
-    # 5. DISPATCH CHUNKS TO THE FORUM TOPIC IN THE GROUP
+    # 6. DISPATCH CHUNKS TO THE FORUM TOPIC IN THE GROUP
     message_chunks = split_message_chunks(lines)
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     
@@ -1404,14 +1440,13 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
         for attempt in range(1, 4):
             try:
                 payload = {
-                    "chat_id": GROUP_CHAT_ID, # Main Group ID
+                    "chat_id": GROUP_CHAT_ID,
                     "text": chunk,
                     "parse_mode": "HTML",
-                    "disable_web_page_preview": True,
-                    "disable_notification": False, # Explicitly enable sound/push notifications
+                    "disable_web_page_preview": True, # Keep True so huge URL thumbnails don't block the screen
+                    "disable_notification": False, 
                 }
                 
-                # Direct it to the specific topic thread
                 if threadid:
                     payload["message_thread_id"] = threadid
 
@@ -1431,7 +1466,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
             alert_failed = True
             break
 
-    # 6. FALLBACK: SEND FAILURE REPORT DIRECTLY TO YOU (ADMIN)
+    # 7. FALLBACK: SEND FAILURE REPORT DIRECTLY TO YOU (ADMIN)
     if alert_failed and TELEGRAM_CHAT_ID:
         report_text = (
             f"⚠️ <b>Delivery Failure Report</b>\n"
@@ -1440,32 +1475,27 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
             f"<i>(Note: This usually happens if the topic was deleted or the bot lacks permissions.)</i>"
         )
         try:
-            # Send directly to your admin DM (TELEGRAM_CHAT_ID)
             requests.post(
                 url,
-                json={
-                    "chat_id": TELEGRAM_CHAT_ID,
-                    "text": report_text,
-                    "parse_mode": "HTML"
-                },
+                json={"chat_id": TELEGRAM_CHAT_ID, "text": report_text, "parse_mode": "HTML"},
                 timeout=10,
             )
-            # Next, send the actual message chunks that failed to deliver to the group
             for chunk in message_chunks:
                 requests.post(
                     url,
                     json={
-                        "chat_id": TELEGRAM_CHAT_ID, # Sending directly to Admin DM
+                        "chat_id": TELEGRAM_CHAT_ID,
                         "text": chunk,
                         "parse_mode": "HTML",
                         "disable_web_page_preview": True,
                     },
                     timeout=10,
                 )
-                time.sleep(1) # Brief pause between chunks to respect Telegram rate limits
+                time.sleep(1) 
         except Exception:
             pass
 
+        
 def get_telegram_user_info(chat_id: int) -> str:
     """Helper to fetch a user's name/username via getChat endpoint."""
     try:
