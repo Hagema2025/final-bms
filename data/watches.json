@@ -92,5 +92,22 @@
     ],
     "formats": [],
     "message_thread_id": 243
+  },
+  {
+    "name": "TheParadiseTelugu_20260921002226",
+    "url": "https://in.bookmyshow.com/movies/chennai/the-paradise-telugu/ET00436621",
+    "dates": {
+      "20260925": [],
+      "20260926": [],
+      "20260927": []
+    },
+    "theatre": [],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 245
   }
 ]
