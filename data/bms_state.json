@@ -62,17 +62,13 @@
   "TheParadise_20260920141739": {
     "shows": {},
     "dates": {
-      "20260924": "NOT_OPEN",
+      "20260924": "BOOKABLE",
       "20260925": "NOT_OPEN",
       "20260926": "NOT_OPEN",
       "20260927": "NOT_OPEN",
       "20260928": "NOT_OPEN",
       "20260929": "NOT_OPEN",
-      "20260930": "NOT_OPEN",
-      "20260920": "NOT_OPEN",
-      "20260921": "NOT_OPEN",
-      "20260922": "NOT_OPEN",
-      "20260923": "NOT_OPEN"
+      "20260930": "NOT_OPEN"
     }
   }
 }
