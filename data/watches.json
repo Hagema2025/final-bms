@@ -1,7 +1,7 @@
 [
   {
     "name": "TheParadiseTelugu_20260920224033",
-    "url": "https://in.bookmyshow.com/movies/chennai/the-paradise-tamil/ET00436633",
+    "url": "https://in.bookmyshow.com/movies/chennai/the-paradise-telugu/ET00436621",
     "dates": {
       "20260924": [
         "night"
@@ -77,5 +77,29 @@
     ],
     "formats": [],
     "message_thread_id": 237
+  },
+  {
+    "name": "Mandaadi_20260920231300",
+    "url": "https://in.bookmyshow.com/movies/chennai/mandaadi/ET00442702",
+    "dates": {
+      "20260921": [
+        "night"
+      ],
+      "20260922": []
+    },
+    "theatre": [
+      "INOX: The Marina Mall, OMR",
+      "Rakki Cinemas: OMR, Kelambakkam"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "Tamil"
+    ],
+    "formats": [
+      "2D",
+      "EPIQ"
+    ],
+    "message_thread_id": 239
   }
 ]
