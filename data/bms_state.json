@@ -35,16 +35,580 @@
       "20261001": "NOT_OPEN"
     }
   },
-  "TheParadiseTelugu_20260920224033": {
-    "shows": {},
+  "Mandaadi_20260920231300": {
+    "shows": {
+      "RAKK|4015|20260921|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:55 PM",
+        "date": "20260921",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 1 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4015"
+      },
+      "RAKK|4015|20260921|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:55 PM",
+        "date": "20260921",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SC 1 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4015"
+      },
+      "RAKK|4011|20260921|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:00 PM",
+        "date": "20260921",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4011"
+      },
+      "RAKK|4011|20260921|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:00 PM",
+        "date": "20260921",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4011"
+      },
+      "RAKK|4016|20260921|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "11:00 PM",
+        "date": "20260921",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 1 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4016"
+      },
+      "RAKK|4016|20260921|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "11:00 PM",
+        "date": "20260921",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SC 1 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4016"
+      },
+      "INTO|90617|20260921|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:25 PM",
+        "date": "20260921",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "BIGPIX",
+        "vcode": "INTO",
+        "sid": "90617"
+      },
+      "INTO|90617|20260921|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:25 PM",
+        "date": "20260921",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "0",
+        "screen": "BIGPIX",
+        "vcode": "INTO",
+        "sid": "90617"
+      },
+      "INTO|90632|20260921|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:40 PM",
+        "date": "20260921",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos",
+        "vcode": "INTO",
+        "sid": "90632"
+      },
+      "INTO|90632|20260921|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:40 PM",
+        "date": "20260921",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": "Atmos",
+        "vcode": "INTO",
+        "sid": "90632"
+      },
+      "INTO|90618|20260921|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:50 PM",
+        "date": "20260921",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "BIGPIX",
+        "vcode": "INTO",
+        "sid": "90618"
+      },
+      "INTO|90618|20260921|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:50 PM",
+        "date": "20260921",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "0",
+        "screen": "BIGPIX",
+        "vcode": "INTO",
+        "sid": "90618"
+      },
+      "INTO|90633|20260921|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:00 PM",
+        "date": "20260921",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos",
+        "vcode": "INTO",
+        "sid": "90633"
+      },
+      "INTO|90633|20260921|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:00 PM",
+        "date": "20260921",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": "Atmos",
+        "vcode": "INTO",
+        "sid": "90633"
+      },
+      "RAKK|4027|20260922|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:30 AM",
+        "date": "20260922",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 1 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4027"
+      },
+      "RAKK|4027|20260922|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:30 AM",
+        "date": "20260922",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SC 1 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4027"
+      },
+      "RAKK|4033|20260922|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "12:00 PM",
+        "date": "20260922",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4033"
+      },
+      "RAKK|4033|20260922|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "12:00 PM",
+        "date": "20260922",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4033"
+      },
+      "RAKK|4028|20260922|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "01:35 PM",
+        "date": "20260922",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 1 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4028"
+      },
+      "RAKK|4028|20260922|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "01:35 PM",
+        "date": "20260922",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SC 1 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4028"
+      },
+      "RAKK|4034|20260922|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "03:15 PM",
+        "date": "20260922",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4034"
+      },
+      "RAKK|4034|20260922|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "03:15 PM",
+        "date": "20260922",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4034"
+      },
+      "RAKK|4029|20260922|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "04:45 PM",
+        "date": "20260922",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 1 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4029"
+      },
+      "RAKK|4029|20260922|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "04:45 PM",
+        "date": "20260922",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SC 1 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4029"
+      },
+      "RAKK|4035|20260922|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "06:35 PM",
+        "date": "20260922",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4035"
+      },
+      "RAKK|4035|20260922|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "06:35 PM",
+        "date": "20260922",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4035"
+      },
+      "RAKK|4030|20260922|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:55 PM",
+        "date": "20260922",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 1 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4030"
+      },
+      "RAKK|4030|20260922|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:55 PM",
+        "date": "20260922",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SC 1 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4030"
+      },
+      "RAKK|4036|20260922|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:00 PM",
+        "date": "20260922",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4036"
+      },
+      "RAKK|4036|20260922|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:00 PM",
+        "date": "20260922",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4036"
+      },
+      "RAKK|4031|20260922|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "11:00 PM",
+        "date": "20260922",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 1 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4031"
+      },
+      "RAKK|4031|20260922|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "11:00 PM",
+        "date": "20260922",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SC 1 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4031"
+      },
+      "INTO|90620|20260922|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "12:35 PM",
+        "date": "20260922",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "BIGPIX",
+        "vcode": "INTO",
+        "sid": "90620"
+      },
+      "INTO|90620|20260922|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "12:35 PM",
+        "date": "20260922",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "0",
+        "screen": "BIGPIX",
+        "vcode": "INTO",
+        "sid": "90620"
+      },
+      "INTO|90635|20260922|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "12:50 PM",
+        "date": "20260922",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos",
+        "vcode": "INTO",
+        "sid": "90635"
+      },
+      "INTO|90635|20260922|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "12:50 PM",
+        "date": "20260922",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": "Atmos",
+        "vcode": "INTO",
+        "sid": "90635"
+      },
+      "INTO|90621|20260922|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:00 PM",
+        "date": "20260922",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "BIGPIX",
+        "vcode": "INTO",
+        "sid": "90621"
+      },
+      "INTO|90621|20260922|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:00 PM",
+        "date": "20260922",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "0",
+        "screen": "BIGPIX",
+        "vcode": "INTO",
+        "sid": "90621"
+      },
+      "INTO|90622|20260922|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:25 PM",
+        "date": "20260922",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "BIGPIX",
+        "vcode": "INTO",
+        "sid": "90622"
+      },
+      "INTO|90622|20260922|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:25 PM",
+        "date": "20260922",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "0",
+        "screen": "BIGPIX",
+        "vcode": "INTO",
+        "sid": "90622"
+      },
+      "INTO|90637|20260922|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:40 PM",
+        "date": "20260922",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos",
+        "vcode": "INTO",
+        "sid": "90637"
+      },
+      "INTO|90637|20260922|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:40 PM",
+        "date": "20260922",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": "Atmos",
+        "vcode": "INTO",
+        "sid": "90637"
+      },
+      "INTO|90623|20260922|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:50 PM",
+        "date": "20260922",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "BIGPIX",
+        "vcode": "INTO",
+        "sid": "90623"
+      },
+      "INTO|90623|20260922|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:50 PM",
+        "date": "20260922",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "0",
+        "screen": "BIGPIX",
+        "vcode": "INTO",
+        "sid": "90623"
+      },
+      "INTO|90638|20260922|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:00 PM",
+        "date": "20260922",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "Atmos",
+        "vcode": "INTO",
+        "sid": "90638"
+      },
+      "INTO|90638|20260922|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:00 PM",
+        "date": "20260922",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "0",
+        "screen": "Atmos",
+        "vcode": "INTO",
+        "sid": "90638"
+      }
+    },
     "dates": {
-      "20260924": "BOOKABLE",
+      "20260920": "AVAILABLE",
+      "20260921": "AVAILABLE",
+      "20260922": "BOOKABLE",
+      "20260923": "AVAILABLE",
+      "20260924": "AVAILABLE",
+      "20260925": "NOT_OPEN",
+      "20260926": "NOT_OPEN"
+    }
+  },
+  "Mandaadi_20260920231300 (Tamil EPIQ)": {
+    "shows": {
+      "RAKK|4006|20260921|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:15 PM",
+        "date": "20260921",
+        "cat": "Premium",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ",
+        "vcode": "RAKK",
+        "sid": "4006"
+      },
+      "RAKK|4007|20260921|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:30 PM",
+        "date": "20260921",
+        "cat": "Premium",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ",
+        "vcode": "RAKK",
+        "sid": "4007"
+      },
+      "RAKK|4037|20260922|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:15 PM",
+        "date": "20260922",
+        "cat": "Premium",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ",
+        "vcode": "RAKK",
+        "sid": "4037"
+      },
+      "RAKK|4038|20260922|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:30 PM",
+        "date": "20260922",
+        "cat": "Premium",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ",
+        "vcode": "RAKK",
+        "sid": "4038"
+      }
+    },
+    "dates": {
+      "20260921": "AVAILABLE",
+      "20260922": "BOOKABLE",
+      "20260923": "AVAILABLE",
+      "20260924": "NOT_OPEN",
       "20260925": "NOT_OPEN",
       "20260926": "NOT_OPEN",
-      "20260927": "NOT_OPEN",
-      "20260928": "NOT_OPEN",
-      "20260929": "NOT_OPEN",
-      "20260930": "NOT_OPEN"
+      "20260927": "NOT_OPEN"
     }
   }
 }
