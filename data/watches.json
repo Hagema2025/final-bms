@@ -1,7 +1,7 @@
 [
   {
     "name": "TheParadiseTelugu_20260920224033",
-    "url": "https://in.bookmyshow.com/movies/chennai/the-paradise-tamil/ET00436633",
+    "url": "https://in.bookmyshow.com/movies/chennai/the-paradise-telugu/ET00436621",
     "dates": {
       "20260924": [
         "night"
@@ -24,5 +24,35 @@
     ],
     "formats": [],
     "message_thread_id": 233
+  },
+  {
+    "name": "AvengersEndgameEncore_20260920225921",
+    "url": "https://in.bookmyshow.com/movies/chennai/avengers-endgame-encore/ET00514163",
+    "dates": {
+      "20260925": [
+        "night"
+      ],
+      "20260926": [],
+      "20260927": []
+    },
+    "theatre": [
+      "AGS Cinemas OMR: Navlur",
+      "INOX: The Marina Mall, OMR",
+      "Rakki Cinemas: OMR, Kelambakkam"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "English"
+    ],
+    "formats": [
+      "2D",
+      "BIGPIX",
+      "EPIQ",
+      "IMAX 2D",
+      "MS - Infinity Vision",
+      "PXL"
+    ],
+    "message_thread_id": 235
   }
 ]
