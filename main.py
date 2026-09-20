@@ -269,12 +269,10 @@ def _as_list(value):
 
     return []
 
-
 def load_watches():
     """
     Load watches from watches.json.
     """
-
     if not os.path.exists(WATCHES_FILE):
         print(f"❌ {WATCHES_FILE} not found.")
         sys.exit(1)
@@ -298,7 +296,6 @@ def load_watches():
     validated = []
 
     for index, watch in enumerate(watches, start=1):
-
         if not isinstance(watch, dict):
             print(f"❌ Watch #{index} must be an object.")
             sys.exit(1)
@@ -314,62 +311,43 @@ def load_watches():
             print(f"❌ Watch #{index} is missing 'url'.")
             sys.exit(1)
 
-        dates = watch.get("dates", [])
-
-        if isinstance(dates, str):
-            dates = [
-                d.strip()
-                for d in dates.split(",")
-                if d.strip()
-            ]
-
-        if not isinstance(dates, list):
-            print(
-                f"❌ Watch '{name}': 'dates' must be "
-                f"an array or comma-separated string."
-            )
-            sys.exit(1)
-
-        dates = [str(d).strip() for d in dates if str(d).strip()]
-
-        theatre = [
-            t.lower()
-            for t in _as_list(watch.get("theatre"))
-        ]
-
+        # --- ADVANCED DATE & TIME PARSING ---
+        dates_raw = watch.get("dates", [])
+        time_period_global = [tp.lower() for tp in _as_list(watch.get("time_period"))]
+        date_time_map = {}
         
+        if isinstance(dates_raw, dict):
+            for d_key, d_times in dates_raw.items():
+                clean_d = str(d_key).strip()
+                if clean_d:
+                    date_time_map[clean_d] = [t.lower() for t in _as_list(d_times)]
+            dates_list = list(date_time_map.keys())
+        else:
+            # Fallback to standard list/string format
+            if isinstance(dates_raw, str):
+                dates_list = [d.strip() for d in dates_raw.split(",") if d.strip()]
+            elif isinstance(dates_raw, list):
+                dates_list = [str(d).strip() for d in dates_raw if str(d).strip()]
+            else:
+                dates_list = []
 
-        time_period = [
-            tp.lower()
-            for tp in _as_list(watch.get("time_period"))
-        ]
-
-        discover_variants = bool(
-            watch.get("discover_variants", False)
-        )
-
-        languages = [
-            lang.lower()
-            for lang in _as_list(watch.get("languages"))
-        ]
-
-        formats = [
-            fmt.lower()
-            for fmt in _as_list(watch.get("formats"))
-        ]
-
+        theatre = [t.lower() for t in _as_list(watch.get("theatre"))]
+        discover_variants = bool(watch.get("discover_variants", False))
+        languages = [lang.lower() for lang in _as_list(watch.get("languages"))]
+        formats = [fmt.lower() for fmt in _as_list(watch.get("formats"))]
         message_thread_id = watch.get("message_thread_id", None)
 
         validated.append({
             "name": name,
             "url": url,
-            "dates": dates,
+            "dates": dates_list,
+            "date_time_map": date_time_map,  # <--- NEW DICTIONARY ADDED
             "theatre": theatre,
-            "time_period": time_period,
+            "time_period": time_period_global,
             "discover_variants": discover_variants,
             "languages": languages,
             "formats": formats,
-            "message_thread_id": message_thread_id,  # <-- ADD THIS LINE
+            "message_thread_id": message_thread_id,
         })
 
     return validated
@@ -874,80 +852,55 @@ def parse_shows(data):
 # ======================================================================
 # FILTERING
 # ======================================================================
+# ======================================================================
+# FILTERING
+# ======================================================================
 
 def filter_shows(
     shows,
     theatre_filter,
-    time_periods,
+    time_periods_global,
     date_codes,
+    date_time_map=None, # <--- Added parameter
 ):
+    if date_time_map is None:
+        date_time_map = {}
 
     result = []
-
     theatre_keywords = theatre_filter if theatre_filter else []
-    periods = time_periods if time_periods else []
-
     dates_set = (
-        set(
-            d.strip()
-            for d in date_codes
-            if str(d).strip()
-        )
-        if date_codes
-        else set()
+        set(d.strip() for d in date_codes if str(d).strip())
+        if date_codes else set()
     )
 
     for show in shows:
-
-        # --------------------------------------------------------------
-        # Theatre filter
-        # --------------------------------------------------------------
-
+        # 1. Theatre filter
         if theatre_keywords:
-
-            venue_lower = (
-                show.venue_name.lower()
-            )
-
-            if not any(
-                keyword in venue_lower
-                for keyword in theatre_keywords
-            ):
+            venue_lower = show.venue_name.lower()
+            if not any(keyword in venue_lower for keyword in theatre_keywords):
                 continue
 
-        # --------------------------------------------------------------
-        # Date filter
-        # --------------------------------------------------------------
-
-        if (
-            dates_set
-            and show.date_code
-            and show.date_code not in dates_set
-        ):
+        # 2. Date filter
+        if dates_set and show.date_code and show.date_code not in dates_set:
             continue
 
-        # --------------------------------------------------------------
-        # Time filter
-        # --------------------------------------------------------------
+        # 3. Time filter (Check map specific to this date first, then global fallback)
+        if show.date_code in date_time_map:
+            periods = date_time_map[show.date_code]
+        else:
+            periods = time_periods_global
 
         if periods:
-
             try:
-                time_code = int(
-                    show.time_code
-                )
+                time_code = int(show.time_code)
             except (ValueError, TypeError):
                 time_code = 0
 
             matched = False
-
             for period in periods:
-
                 if period not in TIME_PERIODS:
                     continue
-
                 start, end = TIME_PERIODS[period]
-
                 if start <= time_code < end:
                     matched = True
                     break
@@ -958,7 +911,6 @@ def filter_shows(
         result.append(show)
 
     return result
-
 
 # ======================================================================
 # STATE
@@ -1511,6 +1463,7 @@ def run_event(
     theatre,
     time_period,
     dates_filter,
+    date_time_map,   # <--- ADD THIS HERE
     state,
     save_raw_prefix=None,
 ):
@@ -1622,6 +1575,7 @@ def run_event(
         theatre,
         time_period,
         dates_filter,
+        date_time_map,   # <--- ADD THIS HERE
     )
 
     print(
@@ -1832,6 +1786,10 @@ def run_watch(
     # Base event
     # --------------------------------------------------------------
 
+    # --------------------------------------------------------------
+    # Base event
+    # --------------------------------------------------------------
+
     state, success, first_full_data = run_event(
         threadid=watch_threadid,
         label=watch_name,
@@ -1845,6 +1803,7 @@ def run_watch(
         theatre=watch.get("theatre", []),
         time_period=watch.get("time_period", []),
         dates_filter=watch.get("dates", []),
+        date_time_map=watch.get("date_time_map", {}),  # <--- ADD THIS HERE
         state=state,
         save_raw_prefix=(
             f"bms_response_{watch_name}"
@@ -1948,7 +1907,7 @@ def run_watch(
                 )
 
                 state, variant_success, _ = run_event(
-                            threadid=watch_threadid,
+                    threadid=watch_threadid,
                     label=variant_name,
                     event_code=variant.event_code,
                     region_code=region_code,
@@ -1960,6 +1919,7 @@ def run_watch(
                     theatre=watch.get("theatre", []),
                     time_period=watch.get("time_period", []),
                     dates_filter=watch.get("dates", []),
+                    date_time_map=watch.get("date_time_map", {}),  # <--- ADD THIS HERE
                     state=state,
                     save_raw_prefix=(
                         f"bms_response_{variant_name}"
