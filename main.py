@@ -1056,6 +1056,10 @@ def build_state(
 # CHANGE DETECTION
 # ======================================================================
 
+# ======================================================================
+# CHANGE DETECTION
+# ======================================================================
+
 def detect_changes(old_state, new_state):
     changes = []
 
@@ -1076,8 +1080,8 @@ def detect_changes(old_state, new_state):
             "screen": show.get("screen", ""),
             "status": str(show.get("status", "3")),
             "old_status": "",
-            "vcode": show.get("vcode", ""), # <--- ADD THIS
-            "sid": show.get("sid", "")      # <--- ADD THIS
+            "vcode": show.get("vcode", ""),
+            "sid": show.get("sid", "")
         })
 
     # Compare existing shows for status & price changes
@@ -1089,7 +1093,7 @@ def detect_changes(old_state, new_state):
         old_status = str(old_show.get("status", "")).strip()
         new_status = str(new_show.get("status", "")).strip()
 
-        # 2. Restocked check (0->1,2,3 | 1->2,3 | 2->3)
+        # 2. Restocked check
         if is_restocked(old_status, new_status):
             label, icon = AVAIL_STATUS_MAP.get(new_status, ("UNKNOWN", "🔄"))
             changes.append({
@@ -1102,10 +1106,10 @@ def detect_changes(old_state, new_state):
                 "price": new_show["price"],
                 "old_price": old_show.get("price"),
                 "screen": new_show.get("screen", ""),
-                "status": new_status,        # Pass raw key e.g. "3"
-                "old_status": old_status,     # Pass raw key e.g. "0" or "1"
-                "vcode": show.get("vcode", ""), # <--- ADD THIS
-            "sid": show.get("sid", "")      # <--- ADD THIS
+                "status": new_status,
+                "old_status": old_status,
+                "vcode": new_show.get("vcode", ""), # Fixed variable
+                "sid": new_show.get("sid", "")      # Fixed variable
             })
 
         # 3. Price changes
@@ -1127,8 +1131,8 @@ def detect_changes(old_state, new_state):
                     "screen": new_show.get("screen", ""),
                     "status": new_status,
                     "old_status": old_status,
-                    "vcode": show.get("vcode", ""), # <--- ADD THIS
-            "sid": show.get("sid", "")      # <--- ADD THIS
+                    "vcode": new_show.get("vcode", ""), # Fixed variable
+                    "sid": new_show.get("sid", "")      # Fixed variable
                 })
         except (ValueError, TypeError):
             pass
@@ -1495,7 +1499,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
         except Exception:
             pass
 
-        
+
 def get_telegram_user_info(chat_id: int) -> str:
     """Helper to fetch a user's name/username via getChat endpoint."""
     try:
