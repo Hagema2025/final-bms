@@ -38,5 +38,28 @@
     ],
     "formats": [],
     "message_thread_id": 223
+  },
+  {
+    "name": "TheParadise_20260920141739",
+    "url": "https://in.bookmyshow.com/movies/chennai/the-paradise/ET00436621",
+    "dates": [
+      "20260924",
+      "20260925"
+    ],
+    "theatre": [
+      "AGS Cinemas OMR: Navlur",
+      "INOX: The Marina Mall, OMR",
+      "Rakki Cinemas: OMR, Kelambakkam"
+    ],
+    "time_period": [
+      "evening",
+      "night"
+    ],
+    "discover_variants": true,
+    "languages": [
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 225
   }
 ]
