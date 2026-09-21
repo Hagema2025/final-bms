@@ -111,7 +111,7 @@
         "date": "20260921",
         "cat": "Premium",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SC 1 DOLBY ATMOS",
         "vcode": "RAKK",
         "sid": "4015"
@@ -799,7 +799,7 @@
         "date": "20260927",
         "cat": "BUDGET",
         "price": "96.74",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "INPR",
         "sid": "66105"
@@ -859,7 +859,7 @@
         "date": "20260926",
         "cat": "Premium+3D",
         "price": "300.00",
-        "status": "2",
+        "status": "3",
         "screen": "EPIQ",
         "vcode": "RAKK",
         "sid": "4095"
