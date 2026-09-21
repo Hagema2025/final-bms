@@ -12,7 +12,52 @@
     }
   },
   "MeesayaMurukku2_20260920230122": {
-    "shows": {},
+    "shows": {
+      "RAKK|4111|20260925|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:00 PM",
+        "date": "20260925",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4111"
+      },
+      "RAKK|4111|20260925|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:00 PM",
+        "date": "20260925",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4111"
+      },
+      "RAKK|4112|20260925|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:15 PM",
+        "date": "20260925",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4112"
+      },
+      "RAKK|4112|20260925|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:15 PM",
+        "date": "20260925",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4112"
+      }
+    },
     "dates": {
       "20260925": "AVAILABLE",
       "20260926": "AVAILABLE",
@@ -825,7 +870,7 @@
         "date": "20260926",
         "cat": "Premium+3D",
         "price": "300.00",
-        "status": "3",
+        "status": "2",
         "screen": "EPIQ",
         "vcode": "RAKK",
         "sid": "4095"
@@ -869,7 +914,7 @@
         "date": "20260926",
         "cat": "Premium+3D",
         "price": "300.00",
-        "status": "3",
+        "status": "2",
         "screen": "EPIQ",
         "vcode": "RAKK",
         "sid": "4099"
@@ -891,7 +936,7 @@
         "date": "20260927",
         "cat": "Premium+3D",
         "price": "300.00",
-        "status": "3",
+        "status": "2",
         "screen": "EPIQ",
         "vcode": "RAKK",
         "sid": "4101"
