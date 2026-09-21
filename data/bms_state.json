@@ -98,7 +98,7 @@
         "date": "20260921",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PCAN",
         "sid": "45280"
@@ -422,7 +422,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "245.98",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "INPR",
         "sid": "66105"
