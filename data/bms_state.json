@@ -149,28 +149,6 @@
         "vcode": "RAKK",
         "sid": "4016"
       },
-      "PCAN|45255|20260921|PRIME": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "07:35 PM",
-        "date": "20260921",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "2",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45255"
-      },
-      "PCAN|45255|20260921|CLASSIC": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "07:35 PM",
-        "date": "20260921",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45255"
-      },
       "PCAN|45280|20260921|PRIME": {
         "venue": "PVR: VR Chennai, Anna Nagar",
         "time": "10:30 PM",
@@ -903,7 +881,7 @@
         "date": "20260927",
         "cat": "Premium+3D",
         "price": "300.00",
-        "status": "3",
+        "status": "2",
         "screen": "EPIQ",
         "vcode": "RAKK",
         "sid": "4103"
