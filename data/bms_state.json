@@ -646,17 +646,6 @@
   },
   "Mandaadi_20260920232735 (Tamil EPIQ)": {
     "shows": {
-      "RAKK|4006|20260921|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "07:15 PM",
-        "date": "20260921",
-        "cat": "Premium",
-        "price": "300.00",
-        "status": "3",
-        "screen": "EPIQ",
-        "vcode": "RAKK",
-        "sid": "4006"
-      },
       "RAKK|4007|20260921|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "10:30 PM",
@@ -870,7 +859,7 @@
         "date": "20260926",
         "cat": "Premium+3D",
         "price": "300.00",
-        "status": "3",
+        "status": "2",
         "screen": "EPIQ",
         "vcode": "RAKK",
         "sid": "4095"
@@ -947,7 +936,7 @@
         "date": "20260927",
         "cat": "Premium+3D",
         "price": "300.00",
-        "status": "3",
+        "status": "2",
         "screen": "EPIQ",
         "vcode": "RAKK",
         "sid": "4102"
