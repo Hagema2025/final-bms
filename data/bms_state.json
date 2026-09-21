@@ -818,11 +818,122 @@
     }
   },
   "AvengersEndgameEncoreEnglish_20260921001351 (English EPIQ 3D)": {
-    "shows": {},
+    "shows": {
+      "RAKK|4095|20260926|Premium+3D": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "08:00 AM",
+        "date": "20260926",
+        "cat": "Premium+3D",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ",
+        "vcode": "RAKK",
+        "sid": "4095"
+      },
+      "RAKK|4096|20260926|Premium+3D": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "11:50 AM",
+        "date": "20260926",
+        "cat": "Premium+3D",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ",
+        "vcode": "RAKK",
+        "sid": "4096"
+      },
+      "RAKK|4097|20260926|Premium+3D": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "03:40 PM",
+        "date": "20260926",
+        "cat": "Premium+3D",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ",
+        "vcode": "RAKK",
+        "sid": "4097"
+      },
+      "RAKK|4098|20260926|Premium+3D": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:25 PM",
+        "date": "20260926",
+        "cat": "Premium+3D",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ",
+        "vcode": "RAKK",
+        "sid": "4098"
+      },
+      "RAKK|4099|20260926|Premium+3D": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "11:15 PM",
+        "date": "20260926",
+        "cat": "Premium+3D",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ",
+        "vcode": "RAKK",
+        "sid": "4099"
+      },
+      "RAKK|4100|20260927|Premium+3D": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "08:00 AM",
+        "date": "20260927",
+        "cat": "Premium+3D",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ",
+        "vcode": "RAKK",
+        "sid": "4100"
+      },
+      "RAKK|4101|20260927|Premium+3D": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "11:50 AM",
+        "date": "20260927",
+        "cat": "Premium+3D",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ",
+        "vcode": "RAKK",
+        "sid": "4101"
+      },
+      "RAKK|4102|20260927|Premium+3D": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "03:40 PM",
+        "date": "20260927",
+        "cat": "Premium+3D",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ",
+        "vcode": "RAKK",
+        "sid": "4102"
+      },
+      "RAKK|4103|20260927|Premium+3D": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:25 PM",
+        "date": "20260927",
+        "cat": "Premium+3D",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ",
+        "vcode": "RAKK",
+        "sid": "4103"
+      },
+      "RAKK|4104|20260927|Premium+3D": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "11:15 PM",
+        "date": "20260927",
+        "cat": "Premium+3D",
+        "price": "300.00",
+        "status": "3",
+        "screen": "EPIQ",
+        "vcode": "RAKK",
+        "sid": "4104"
+      }
+    },
     "dates": {
-      "20260925": "BOOKABLE",
-      "20260926": "NOT_OPEN",
-      "20260927": "NOT_OPEN",
+      "20260925": "AVAILABLE",
+      "20260926": "AVAILABLE",
+      "20260927": "BOOKABLE",
       "20260928": "NOT_OPEN",
       "20260929": "NOT_OPEN",
       "20260930": "NOT_OPEN",
