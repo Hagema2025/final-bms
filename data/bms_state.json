@@ -105,28 +105,6 @@
   },
   "Mandaadi_20260920232735": {
     "shows": {
-      "PCAN|45256|20260921|PRIME": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "10:50 PM",
-        "date": "20260921",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "2",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45256"
-      },
-      "PCAN|45256|20260921|CLASSIC": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "10:50 PM",
-        "date": "20260921",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45256"
-      },
       "RAKK|4027|20260922|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "10:30 AM",
