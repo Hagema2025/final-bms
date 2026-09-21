@@ -24,7 +24,30 @@
     }
   },
   "TheParadiseTelugu_20260920224033": {
-    "shows": {},
+    "shows": {
+      "RAKK|4004|20260924|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:15 PM",
+        "date": "20260924",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 2",
+        "vcode": "RAKK",
+        "sid": "4004"
+      },
+      "RAKK|4004|20260924|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:15 PM",
+        "date": "20260924",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 2",
+        "vcode": "RAKK",
+        "sid": "4004"
+      }
+    },
     "dates": {
       "20260924": "BOOKABLE",
       "20260925": "NOT_OPEN",
@@ -186,7 +209,7 @@
         "date": "20260921",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "PXL",
         "vcode": "PCAN",
         "sid": "45256"
