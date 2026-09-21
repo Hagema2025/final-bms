@@ -481,13 +481,13 @@
       }
     },
     "dates": {
-      "20260921": "AVAILABLE",
       "20260922": "BOOKABLE",
       "20260923": "AVAILABLE",
       "20260924": "AVAILABLE",
       "20260925": "AVAILABLE",
       "20260926": "NOT_OPEN",
-      "20260927": "NOT_OPEN"
+      "20260927": "NOT_OPEN",
+      "20260928": "NOT_OPEN"
     }
   },
   "Mandaadi_20260920232735 (Tamil EPIQ)": {
@@ -705,7 +705,7 @@
         "date": "20260926",
         "cat": "Premium+3D",
         "price": "300.00",
-        "status": "1",
+        "status": "2",
         "screen": "EPIQ",
         "vcode": "RAKK",
         "sid": "4097"
