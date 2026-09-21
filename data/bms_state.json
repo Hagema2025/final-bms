@@ -617,7 +617,7 @@
     "dates": {
       "20260921": "AVAILABLE",
       "20260922": "BOOKABLE",
-      "20260923": "AVAILABLE",
+      "20260923": "NOT_OPEN",
       "20260924": "NOT_OPEN",
       "20260925": "NOT_OPEN",
       "20260926": "NOT_OPEN",
@@ -733,7 +733,7 @@
         "date": "20260927",
         "cat": "BUDGET",
         "price": "96.74",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "INPR",
         "sid": "66105"
