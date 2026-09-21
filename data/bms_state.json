@@ -658,7 +658,96 @@
     }
   },
   "AvengersEndgameEncoreEnglish_20260921001351 (English MS-Infinity Vsn 3d)": {
-    "shows": {},
+    "shows": {
+      "INPR|66102|20260926|ELITE": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "10:20 AM",
+        "date": "20260926",
+        "cat": "ELITE",
+        "price": "245.98",
+        "status": "0",
+        "screen": "",
+        "vcode": "INPR",
+        "sid": "66102"
+      },
+      "INPR|66102|20260926|BUDGET": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "10:20 AM",
+        "date": "20260926",
+        "cat": "BUDGET",
+        "price": "96.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "INPR",
+        "sid": "66102"
+      },
+      "INPR|66103|20260926|ELITE": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "06:10 PM",
+        "date": "20260926",
+        "cat": "ELITE",
+        "price": "245.98",
+        "status": "0",
+        "screen": "",
+        "vcode": "INPR",
+        "sid": "66103"
+      },
+      "INPR|66103|20260926|BUDGET": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "06:10 PM",
+        "date": "20260926",
+        "cat": "BUDGET",
+        "price": "96.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "INPR",
+        "sid": "66103"
+      },
+      "INPR|66104|20260927|ELITE": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "10:20 AM",
+        "date": "20260927",
+        "cat": "ELITE",
+        "price": "245.98",
+        "status": "0",
+        "screen": "",
+        "vcode": "INPR",
+        "sid": "66104"
+      },
+      "INPR|66104|20260927|BUDGET": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "10:20 AM",
+        "date": "20260927",
+        "cat": "BUDGET",
+        "price": "96.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "INPR",
+        "sid": "66104"
+      },
+      "INPR|66105|20260927|ELITE": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "06:10 PM",
+        "date": "20260927",
+        "cat": "ELITE",
+        "price": "245.98",
+        "status": "0",
+        "screen": "",
+        "vcode": "INPR",
+        "sid": "66105"
+      },
+      "INPR|66105|20260927|BUDGET": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "06:10 PM",
+        "date": "20260927",
+        "cat": "BUDGET",
+        "price": "96.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "INPR",
+        "sid": "66105"
+      }
+    },
     "dates": {
       "20260925": "AVAILABLE",
       "20260926": "AVAILABLE",
