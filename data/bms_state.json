@@ -105,28 +105,6 @@
   },
   "Mandaadi_20260920232735": {
     "shows": {
-      "RAKK|4033|20260922|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "12:00 PM",
-        "date": "20260922",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "3",
-        "screen": "SC 3 DOLBY ATMOS",
-        "vcode": "RAKK",
-        "sid": "4033"
-      },
-      "RAKK|4033|20260922|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "12:00 PM",
-        "date": "20260922",
-        "cat": "Elite",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SC 3 DOLBY ATMOS",
-        "vcode": "RAKK",
-        "sid": "4033"
-      },
       "RAKK|4028|20260922|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "01:35 PM",
@@ -524,7 +502,7 @@
         "date": "20260926",
         "cat": "ELITE",
         "price": "245.98",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "INPR",
         "sid": "66102"
