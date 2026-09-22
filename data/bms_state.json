@@ -944,5 +944,272 @@
       "20260930": "AVAILABLE",
       "20261001": "AVAILABLE"
     }
+  },
+  "TheParadise_20260923001436 (Tamil 2D)": {
+    "shows": {
+      "RAKK|4004|20260924|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:15 PM",
+        "date": "20260924",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 2",
+        "vcode": "RAKK",
+        "sid": "4004"
+      },
+      "RAKK|4004|20260924|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:15 PM",
+        "date": "20260924",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 2",
+        "vcode": "RAKK",
+        "sid": "4004"
+      },
+      "ACON|47588|20260924|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "07:25 PM",
+        "date": "20260924",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47588"
+      },
+      "ACON|47588|20260924|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "07:25 PM",
+        "date": "20260924",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47588"
+      },
+      "ACON|47589|20260924|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:45 PM",
+        "date": "20260924",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47589"
+      },
+      "ACON|47589|20260924|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:45 PM",
+        "date": "20260924",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47589"
+      },
+      "INTO|90804|20260924|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:15 PM",
+        "date": "20260924",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90804"
+      },
+      "INTO|90804|20260924|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:15 PM",
+        "date": "20260924",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90804"
+      },
+      "INTO|90805|20260924|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:05 PM",
+        "date": "20260924",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90805"
+      },
+      "INTO|90805|20260924|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:05 PM",
+        "date": "20260924",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90805"
+      },
+      "RAKK|4150|20260925|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:45 PM",
+        "date": "20260925",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 6",
+        "vcode": "RAKK",
+        "sid": "4150"
+      },
+      "RAKK|4150|20260925|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:45 PM",
+        "date": "20260925",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 6",
+        "vcode": "RAKK",
+        "sid": "4150"
+      },
+      "RAKK|4150|20260925|LOUNGER": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:45 PM",
+        "date": "20260925",
+        "cat": "LOUNGER",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 6",
+        "vcode": "RAKK",
+        "sid": "4150"
+      },
+      "ACON|47597|20260925|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:30 PM",
+        "date": "20260925",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47597"
+      },
+      "ACON|47597|20260925|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:30 PM",
+        "date": "20260925",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47597"
+      },
+      "ACON|47621|20260926|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:15 AM",
+        "date": "20260926",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47621"
+      },
+      "ACON|47621|20260926|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:15 AM",
+        "date": "20260926",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47621"
+      },
+      "ACON|47615|20260926|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:30 PM",
+        "date": "20260926",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47615"
+      },
+      "ACON|47615|20260926|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:30 PM",
+        "date": "20260926",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47615"
+      },
+      "ACON|47641|20260927|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:15 AM",
+        "date": "20260927",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47641"
+      },
+      "ACON|47641|20260927|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:15 AM",
+        "date": "20260927",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47641"
+      },
+      "ACON|47635|20260927|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:30 PM",
+        "date": "20260927",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47635"
+      },
+      "ACON|47635|20260927|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:30 PM",
+        "date": "20260927",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47635"
+      }
+    },
+    "dates": {
+      "20260924": "AVAILABLE",
+      "20260925": "AVAILABLE",
+      "20260926": "AVAILABLE",
+      "20260927": "BOOKABLE",
+      "20260928": "AVAILABLE",
+      "20260929": "AVAILABLE",
+      "20260930": "AVAILABLE",
+      "20261001": "AVAILABLE"
+    }
   }
 }
