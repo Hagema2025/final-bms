@@ -1,1 +1,27 @@
-[]
+[
+  {
+    "name": "TheParadiseTelugu_20260922234252",
+    "url": "https://in.bookmyshow.com/movies/chennai/the-paradise-telugu/ET00436621",
+    "dates": {
+      "20260924": [
+        "night"
+      ],
+      "20260925": [
+        "night"
+      ],
+      "20260926": [],
+      "20260927": []
+    },
+    "theatre": [
+      "AGS Cinemas OMR: Navlur",
+      "INOX: The Marina Mall, OMR"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 288
+  }
+]
