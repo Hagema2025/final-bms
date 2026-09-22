@@ -458,7 +458,7 @@
         "date": "20260926",
         "cat": "ELITE",
         "price": "245.98",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "INPR",
         "sid": "66103"
@@ -480,7 +480,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "245.98",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "INPR",
         "sid": "66104"
@@ -584,7 +584,7 @@
         "date": "20260926",
         "cat": "Premium+3D",
         "price": "300.00",
-        "status": "1",
+        "status": "2",
         "screen": "EPIQ",
         "vcode": "RAKK",
         "sid": "4096"
