@@ -1244,6 +1244,9 @@ def send_ntfy(label, movie_info, changes):
         # 4. TELEGRAM ALERT DISPATCHER
 # 4. TELEGRAM ALERT DISPATCHER
 # 4. TELEGRAM ALERT DISPATCHER (SIMPLIFIED BLOCKS)
+# ======================================================================
+# Telegram
+# ======================================================================
 def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
     if not TELEGRAM_BOT_TOKEN or not GROUP_CHAT_ID:
         print(" ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN or GROUP_CHAT_ID not configured.")
@@ -1253,8 +1256,15 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
         return
 
     now_str = datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%d %b, %I:%M %p")
-    movie_name = movie_info.get("name", watch_name)
-    clean_movie_name = re.sub(r'[^A-Za-z0-9]', '', str(watch_name.split('_')[0]))
+    movie_name = movie_info.get("name", watch_name.split('_')[0])
+    clean_movie_name = re.sub(r'[^A-Za-z0-9]', '', str(movie_name))
+
+    # --- Extract Language & Format for the Header ---
+    lang_fmt_match = re.search(r'\(([^)]+)\)$', str(watch_name))
+    if lang_fmt_match:
+        lang_fmt_str = f"🗣️ <b>{lang_fmt_match.group(1)}</b>" 
+    else:
+        lang_fmt_str = ""
 
     def clean_price(price_val):
         try:
@@ -1262,18 +1272,15 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
         except Exception:
             return f"₹{price_val}"
 
-    # 1. SMART HASHTAG GENERATOR
-    tags = set([f"#BMSAlert", f"#{clean_movie_name}"])
+    # 1. ORDERED HASHTAG GENERATOR (Movie Name Always First)
+    action_tags = set()
     for c in changes:
-        tags.add(f"#{c.get('type', '').replace('_', '')}")
-        v_lower = str(c.get('venue', '')).lower()
-        s_lower = str(c.get('screen', '')).lower()
-        
-        if "imax" in v_lower or "imax" in s_lower: tags.add("#IMAX")
-        if "4dx" in v_lower or "4dx" in s_lower: tags.add("#4DX")
-        if "epiq" in v_lower or "epiq" in s_lower: tags.add("#EPIQ")
+        c_type = str(c.get('type', '')).upper()
+        if c_type:
+            action_tags.add(f"#{c_type.replace('_', '')}")
 
-    hashtag_str = " ".join(sorted(tags))
+    tag_list = [f"#{clean_movie_name}"] + sorted(list(action_tags))
+    hashtag_str = " ".join(tag_list)
 
     def get_type_priority(change_type):
         priority_map = {"NEW": 1, "RESTOCKED": 2, "PRICE_DROP": 3, "PRICE_INCREASE": 4}
@@ -1301,13 +1308,19 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
         show_key = (item["time"], item.get("screen", ""), item.get("vcode", ""), item.get("sid", ""))
         nested_data[d_val][c_type][venue][show_key].append(item)
 
-    # 4. BUILD HEADER
+    # 4. BUILD MOBILE-OPTIMIZED HEADER
     lines = [
         f"🚨 <b>BMS Ticket Alert!</b>",
-        f"🎬 <b>{html.escape(str(watch_name.split('_')[0]))}</b>",
+        f"🎬 <b>{html.escape(str(movie_name))}</b>",
+    ]
+    
+    if lang_fmt_str:
+        lines.append(lang_fmt_str)
+        
+    lines.extend([
         f"🏷 {hashtag_str}",
         f"🕒 <i>{html.escape(now_str)}</i>\n",
-    ]
+    ])
 
     section_headers = {
         "NEW": "\n🆕 <b>NEW SHOWS ADDED</b>",
@@ -1340,13 +1353,13 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                     else:
                         time_display = f"<b>{time_display}</b>"
 
-                    # Print Time Node (Adds a blank line before it for spacing)
+                    # Print Time Node
                     lines.append(f"\n🕒 {time_display}{screen_str}")
 
                     # Print Category Branches
                     for c_idx, cat in enumerate(items):
                         is_last_cat = (c_idx == len(items) - 1)
-                        cat_prefix = "   └" if is_last_cat else "   ├"
+                        cat_prefix = "    └" if is_last_cat else "    ├"
 
                         c_name = html.escape(str(cat.get('cat', '')))
                         c_name = re.sub(r'(?i)super premium', 'S.Prem', c_name)
@@ -1429,6 +1442,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
         except Exception:
             pass
 
+        
 def get_telegram_user_info(chat_id: int) -> str:
     """Helper to fetch a user's name/username via getChat endpoint."""
     try:
@@ -1812,17 +1826,66 @@ def run_watch(
 
     overall_success = success
 
-    # Filter base event state if language doesn't match expected whitelist
-    if watch.get("languages") and first_full_data:
+    # ==================================================================
+    # DYNAMIC API RENAMING & LANGUAGE FILTERING 
+    # ==================================================================
+    if first_full_data:
         base_info = parse_movie_info(first_full_data)
-        base_lang = base_info.get("language", "").lower()
-
-        if not any(lang in base_lang for lang in watch["languages"]):
-            print(
-                f"  ⚠️ Skipping base watch state: language "
-                f"('{base_info.get('language')}') not in allowed list {watch['languages']}"
-            )
-            state.pop(watch_name, None)
+        raw_lang = str(base_info.get("language", "")).strip()
+        
+        # 1. RENAME TRACKER BASED ON TRUE API DATA
+        if "•" in raw_lang:
+            parts = [p.strip() for p in raw_lang.split("•")]
+            if len(parts) >= 2:
+                api_lang = parts[0]
+                api_fmt = parts[1]
+                correct_tag = f"({api_lang} {api_fmt})"
+                
+                # If the tracker name doesn't match the live API, fix it!
+                if correct_tag not in watch_name:
+                    # Strip out wrong language words from the base name
+                    clean_base = re.sub(r'(?i)(Telugu|Tamil|Hindi|Malayalam|English)', '', watch_name.split('_')[0])
+                    
+                    # Keep the original timestamp ID so Telegram /stop works
+                    try:
+                        timestamp_id = watch_name.split('_')[1].split(' ')[0]
+                    except:
+                        timestamp_id = "000000"
+                        
+                    new_watch_name = f"{clean_base}_{timestamp_id} {correct_tag}"
+                    print(f"  ✨ API Match! Fixing base tracker name to: {new_watch_name}")
+                    
+                    # Update live state
+                    if watch_name in state:
+                        state[new_watch_name] = state.pop(watch_name)
+                        
+                    # Update watches.json permanently
+                    try:
+                        with open(WATCHES_FILE, "r", encoding="utf-8") as f:
+                            all_watches = json.load(f)
+                        for w in all_watches:
+                            if w.get("name") == watch_name:
+                                w["name"] = new_watch_name
+                                break
+                        with open(WATCHES_FILE, "w", encoding="utf-8") as f:
+                            json.dump(all_watches, f, indent=2, ensure_ascii=False)
+                    except Exception as e:
+                        print(f"  ⚠️ Could not save new name to watches.json: {e}")
+                    
+                    # Apply the new name to the active script variables
+                    watch["name"] = new_watch_name
+                    watch_name = new_watch_name
+        
+        # 2. APPLY USER'S LANGUAGE FILTERS
+        if watch.get("languages"):
+            base_lang = raw_lang.lower()
+            if not any(lang in base_lang for lang in watch["languages"]):
+                print(
+                    f"  ⚠️ Skipping base watch state: language "
+                    f"('{raw_lang}') not in allowed list {watch['languages']}"
+                )
+                state.pop(watch_name, None)
+    # ==================================================================
 
     # --------------------------------------------------------------
     # Language/format variant discovery
