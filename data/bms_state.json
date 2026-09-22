@@ -532,5 +532,190 @@
       "20260930": "AVAILABLE",
       "20261001": "AVAILABLE"
     }
+  },
+  "AvengersEndgameEncore_20260923002609 (English 2D) (English 3D)": {
+    "shows": {},
+    "dates": {
+      "20260925": "AVAILABLE",
+      "20260926": "AVAILABLE",
+      "20260927": "BOOKABLE",
+      "20260928": "NOT_OPEN",
+      "20260929": "NOT_OPEN",
+      "20260930": "NOT_OPEN",
+      "20261001": "NOT_OPEN"
+    }
+  },
+  "AvengersEndgameEncore_20260923002609 (English 2D) (English EPIQ 3D)": {
+    "shows": {},
+    "dates": {
+      "20260925": "AVAILABLE",
+      "20260926": "AVAILABLE",
+      "20260927": "BOOKABLE",
+      "20260928": "AVAILABLE",
+      "20260929": "NOT_OPEN",
+      "20260930": "NOT_OPEN",
+      "20261001": "NOT_OPEN"
+    }
+  },
+  "AvengersEndgameEncore_20260923002609 (English 2D) (English IMAX 2D)": {
+    "shows": {},
+    "dates": {
+      "20260925": "AVAILABLE",
+      "20260926": "AVAILABLE",
+      "20260927": "BOOKABLE",
+      "20260928": "AVAILABLE",
+      "20260929": "AVAILABLE",
+      "20260930": "AVAILABLE",
+      "20261001": "NOT_OPEN"
+    }
+  },
+  "AvengersEndgameEncore_20260923002609 (English 2D) (English MS - Infinity Vision)": {
+    "shows": {},
+    "dates": {
+      "20260925": "AVAILABLE",
+      "20260926": "AVAILABLE",
+      "20260927": "BOOKABLE",
+      "20260928": "NOT_OPEN",
+      "20260929": "NOT_OPEN",
+      "20260930": "NOT_OPEN",
+      "20261001": "NOT_OPEN"
+    }
+  },
+  "AvengersEndgameEncore_20260923002609 (English 2D) (English MS-Infinity Vsn 3d)": {
+    "shows": {},
+    "dates": {
+      "20260925": "AVAILABLE",
+      "20260926": "AVAILABLE",
+      "20260927": "BOOKABLE",
+      "20260928": "NOT_OPEN",
+      "20260929": "NOT_OPEN",
+      "20260930": "NOT_OPEN",
+      "20261001": "NOT_OPEN"
+    }
+  },
+  "AvengersEndgameEncore_20260923002609 (English 2D) (Tamil 3D)": {
+    "shows": {},
+    "dates": {
+      "20260925": "AVAILABLE",
+      "20260926": "AVAILABLE",
+      "20260927": "BOOKABLE",
+      "20260928": "NOT_OPEN",
+      "20260929": "NOT_OPEN",
+      "20260930": "NOT_OPEN",
+      "20261001": "NOT_OPEN"
+    }
+  },
+  "Dorothy_20260923002714 (Tamil 2D)": {
+    "shows": {
+      "ACON|47611|20260926|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:35 AM",
+        "date": "20260926",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47611"
+      },
+      "ACON|47611|20260926|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:35 AM",
+        "date": "20260926",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47611"
+      },
+      "ACON|47614|20260926|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "07:35 PM",
+        "date": "20260926",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47614"
+      },
+      "ACON|47614|20260926|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "07:35 PM",
+        "date": "20260926",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47614"
+      },
+      "ACON|47631|20260927|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:35 AM",
+        "date": "20260927",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47631"
+      },
+      "ACON|47631|20260927|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:35 AM",
+        "date": "20260927",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47631"
+      },
+      "ACON|47634|20260927|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "07:35 PM",
+        "date": "20260927",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47634"
+      },
+      "ACON|47634|20260927|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "07:35 PM",
+        "date": "20260927",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47634"
+      }
+    },
+    "dates": {
+      "20260925": "AVAILABLE",
+      "20260926": "AVAILABLE",
+      "20260927": "BOOKABLE",
+      "20260928": "AVAILABLE",
+      "20260929": "AVAILABLE",
+      "20260930": "AVAILABLE",
+      "20261001": "AVAILABLE"
+    }
+  },
+  "MeesayaMurukku2_20260923002824 (Tamil 2D)": {
+    "shows": {},
+    "dates": {
+      "20260925": "AVAILABLE",
+      "20260926": "AVAILABLE",
+      "20260927": "BOOKABLE",
+      "20260928": "AVAILABLE",
+      "20260929": "AVAILABLE",
+      "20260930": "AVAILABLE",
+      "20261001": "AVAILABLE"
+    }
   }
 }
