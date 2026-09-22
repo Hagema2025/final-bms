@@ -96,15 +96,61 @@
     }
   },
   "TheParadiseTelugu_20260922142218": {
-    "shows": {},
+    "shows": {
+      "ACON|47588|20260924|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "07:25 PM",
+        "date": "20260924",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47588"
+      },
+      "ACON|47588|20260924|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "07:25 PM",
+        "date": "20260924",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47588"
+      },
+      "ACON|47589|20260924|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:45 PM",
+        "date": "20260924",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47589"
+      },
+      "ACON|47589|20260924|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:45 PM",
+        "date": "20260924",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47589"
+      }
+    },
     "dates": {
       "20260924": "AVAILABLE",
       "20260925": "AVAILABLE",
       "20260926": "AVAILABLE",
       "20260927": "BOOKABLE",
-      "20260928": "NOT_OPEN",
-      "20260929": "NOT_OPEN",
-      "20260930": "NOT_OPEN"
+      "20260928": "AVAILABLE",
+      "20260929": "AVAILABLE",
+      "20260930": "AVAILABLE",
+      "20261001": "AVAILABLE"
     }
   }
 }
