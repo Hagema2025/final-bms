@@ -105,28 +105,6 @@
   },
   "Mandaadi_20260920232735": {
     "shows": {
-      "RAKK|4028|20260922|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "01:35 PM",
-        "date": "20260922",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "2",
-        "screen": "SC 1 DOLBY ATMOS",
-        "vcode": "RAKK",
-        "sid": "4028"
-      },
-      "RAKK|4028|20260922|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "01:35 PM",
-        "date": "20260922",
-        "cat": "Elite",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SC 1 DOLBY ATMOS",
-        "vcode": "RAKK",
-        "sid": "4028"
-      },
       "RAKK|4034|20260922|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "03:15 PM",
@@ -258,28 +236,6 @@
         "screen": "SC 1 DOLBY ATMOS",
         "vcode": "RAKK",
         "sid": "4031"
-      },
-      "PCAN|45258|20260922|PRIME": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "01:05 PM",
-        "date": "20260922",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45258"
-      },
-      "PCAN|45258|20260922|CLASSIC": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "01:05 PM",
-        "date": "20260922",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45258"
       },
       "PCAN|45339|20260922|PRIME": {
         "venue": "PVR: VR Chennai, Anna Nagar",
