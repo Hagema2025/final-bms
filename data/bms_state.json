@@ -524,7 +524,7 @@
         "date": "20260926",
         "cat": "ELITE",
         "price": "245.98",
-        "status": "0",
+        "status": "2",
         "screen": "",
         "vcode": "INPR",
         "sid": "66103"
@@ -546,7 +546,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "245.98",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "INPR",
         "sid": "66104"
@@ -568,7 +568,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "245.98",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "INPR",
         "sid": "66105"
