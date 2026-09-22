@@ -47,29 +47,5 @@
     ],
     "formats": [],
     "message_thread_id": 237
-  },
-  {
-    "name": "Mandaadi_20260920232735",
-    "url": "https://in.bookmyshow.com/movies/chennai/mandaadi/ET00442702",
-    "dates": {
-      "20260921": [
-        "night"
-      ],
-      "20260922": []
-    },
-    "theatre": [
-      "PVR: VR Chennai, Anna Nagar",
-      "Rakki Cinemas: OMR, Kelambakkam"
-    ],
-    "time_period": [],
-    "discover_variants": true,
-    "languages": [
-      "Tamil"
-    ],
-    "formats": [
-      "2D",
-      "EPIQ"
-    ],
-    "message_thread_id": 241
   }
 ]
