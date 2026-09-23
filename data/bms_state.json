@@ -477,6 +477,50 @@
         "vcode": "ACON",
         "sid": "47615"
       },
+      "INTO|90868|20260926|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:00 AM",
+        "date": "20260926",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90868"
+      },
+      "INTO|90868|20260926|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:00 AM",
+        "date": "20260926",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90868"
+      },
+      "INTO|90872|20260926|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:05 PM",
+        "date": "20260926",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90872"
+      },
+      "INTO|90872|20260926|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:05 PM",
+        "date": "20260926",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90872"
+      },
       "ACON|47641|20260927|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
         "time": "10:15 AM",
@@ -534,7 +578,96 @@
     }
   },
   "AvengersEndgameEncore_20260923002609 (English 2D) (English 3D)": {
-    "shows": {},
+    "shows": {
+      "INTO|90854|20260926|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:20 AM",
+        "date": "20260926",
+        "cat": "CLUB",
+        "price": "245.98",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90854"
+      },
+      "INTO|90854|20260926|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:20 AM",
+        "date": "20260926",
+        "cat": "EXECUTIVE",
+        "price": "96.74",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90854"
+      },
+      "INTO|90855|20260926|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "03:15 PM",
+        "date": "20260926",
+        "cat": "CLUB",
+        "price": "245.98",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90855"
+      },
+      "INTO|90855|20260926|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "03:15 PM",
+        "date": "20260926",
+        "cat": "EXECUTIVE",
+        "price": "96.74",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90855"
+      },
+      "INTO|90856|20260926|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:10 PM",
+        "date": "20260926",
+        "cat": "CLUB",
+        "price": "245.98",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90856"
+      },
+      "INTO|90856|20260926|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:10 PM",
+        "date": "20260926",
+        "cat": "EXECUTIVE",
+        "price": "96.74",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90856"
+      },
+      "INTO|90857|20260926|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:05 PM",
+        "date": "20260926",
+        "cat": "CLUB",
+        "price": "245.98",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90857"
+      },
+      "INTO|90857|20260926|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:05 PM",
+        "date": "20260926",
+        "cat": "EXECUTIVE",
+        "price": "96.74",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90857"
+      }
+    },
     "dates": {
       "20260925": "AVAILABLE",
       "20260926": "AVAILABLE",
