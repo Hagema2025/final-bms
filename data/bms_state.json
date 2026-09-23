@@ -290,50 +290,6 @@
         "vcode": "RAKK",
         "sid": "4004"
       },
-      "INTO|90804|20260924|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "07:15 PM",
-        "date": "20260924",
-        "cat": "CLUB",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "90804"
-      },
-      "INTO|90804|20260924|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "07:15 PM",
-        "date": "20260924",
-        "cat": "EXECUTIVE",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "90804"
-      },
-      "INTO|90805|20260924|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "11:05 PM",
-        "date": "20260924",
-        "cat": "CLUB",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "90805"
-      },
-      "INTO|90805|20260924|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "11:05 PM",
-        "date": "20260924",
-        "cat": "EXECUTIVE",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "90805"
-      },
       "ACON|47588|20260924|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
         "time": "07:25 PM",
@@ -377,6 +333,50 @@
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
         "sid": "47589"
+      },
+      "INTO|90804|20260924|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:15 PM",
+        "date": "20260924",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90804"
+      },
+      "INTO|90804|20260924|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:15 PM",
+        "date": "20260924",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90804"
+      },
+      "INTO|90805|20260924|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:05 PM",
+        "date": "20260924",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90805"
+      },
+      "INTO|90805|20260924|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:05 PM",
+        "date": "20260924",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90805"
       },
       "RAKK|4150|20260925|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
@@ -604,7 +604,7 @@
         "date": "20260927",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "INTO",
         "sid": "90913"
@@ -728,7 +728,7 @@
         "date": "20260927",
         "cat": "EXECUTIVE",
         "price": "96.74",
-        "status": "2",
+        "status": "3",
         "screen": "",
         "vcode": "INTO",
         "sid": "90888"
