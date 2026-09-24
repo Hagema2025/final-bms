@@ -1305,9 +1305,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
         d_val = item["date"]
         c_type = item["type"]
         venue = item["venue"]
-        screen = str(item.get("screen", "")).strip()
-
-        venue_header = f"{venue} [{screen}]" if screen else f"{venue} [NORMAL]"
+        screen = str(item.get("screen", "NORMAL")).strip()
         show_key = (item["time"], item.get("screen", ""), item.get("vcode", ""), item.get("sid", ""))
         nested_data[d_val][c_type][venue][show_key].append(item)
 
@@ -1336,14 +1334,14 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
     for date_val, type_groups in nested_data.items():
         formatted_date = format_date(date_val)
         lines.append(f"\n📅 <b>SHOWS FOR: {html.escape(str(formatted_date)).upper()}</b>")
-        lines.append(f"━━━━━━━━━━━━━━━━━━━━━━━━")
+        lines.append(f"━━━━━━━━━━━━━━━━━━━━━━")
 
         for c_type in sorted(type_groups.keys(), key=get_type_priority):
             venues_dict = type_groups[c_type]
             lines.append(section_headers.get(c_type, f"\n<b>{c_type}</b>"))
 
             for venue, times_dict in venues_dict.items():
-                lines.append(f"\n🏢 <b>{html.escape(str(venue_header))}</b>:")
+                lines.append(f"\n🏢 <b>{html.escape(str(venue))}</b>:")
                 
                 for (time_val, screen, vcode, sid), items in times_dict.items():
                     screen_str = f" [{html.escape(str(screen))}]" if screen else ""
