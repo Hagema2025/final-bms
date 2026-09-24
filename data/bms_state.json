@@ -477,28 +477,6 @@
         "vcode": "ACON",
         "sid": "47615"
       },
-      "INTO|90868|20260926|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "10:00 AM",
-        "date": "20260926",
-        "cat": "CLUB",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "90868"
-      },
-      "INTO|90868|20260926|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "10:00 AM",
-        "date": "20260926",
-        "cat": "EXECUTIVE",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "90868"
-      },
       "INTO|90872|20260926|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "04:05 PM",
@@ -565,28 +543,6 @@
         "vcode": "ACON",
         "sid": "47635"
       },
-      "INTO|90902|20260927|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "10:00 AM",
-        "date": "20260927",
-        "cat": "CLUB",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "90902"
-      },
-      "INTO|90902|20260927|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "10:00 AM",
-        "date": "20260927",
-        "cat": "EXECUTIVE",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "90902"
-      },
       "INTO|90913|20260927|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "04:05 PM",
@@ -604,7 +560,7 @@
         "date": "20260927",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "INTO",
         "sid": "90913"
@@ -706,7 +662,7 @@
         "date": "20260926",
         "cat": "EXECUTIVE",
         "price": "96.74",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "INTO",
         "sid": "90857"
@@ -1166,7 +1122,7 @@
         "date": "20260926",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "INTO",
         "sid": "90860"
