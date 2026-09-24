@@ -1305,6 +1305,9 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
         d_val = item["date"]
         c_type = item["type"]
         venue = item["venue"]
+        screen = str(item.get("screen", "")).strip()
+
+        venue_header = f"{venue} [{screen}]" if screen else f"{venue} [NORMAL]"
         show_key = (item["time"], item.get("screen", ""), item.get("vcode", ""), item.get("sid", ""))
         nested_data[d_val][c_type][venue][show_key].append(item)
 
@@ -1340,7 +1343,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
             lines.append(section_headers.get(c_type, f"\n<b>{c_type}</b>"))
 
             for venue, times_dict in venues_dict.items():
-                lines.append(f"\n🏢 <b>{html.escape(str(venue))}</b>:")
+                lines.append(f"\n🏢 <b>{html.escape(str(venue_header))}</b>:")
                 
                 for (time_val, screen, vcode, sid), items in times_dict.items():
                     screen_str = f" [{html.escape(str(screen))}]" if screen else ""
