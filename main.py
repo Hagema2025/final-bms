@@ -500,64 +500,48 @@ def fetch_bms(
 # MOVIE INFO PARSER
 # ======================================================================
 
-def parse_movie_info(data):
-
+# ======================================================================
+# MOVIE INFO PARSER
+# ======================================================================
+def parse_movie_info(data, fallback_name="Unknown Movie"):
     info = {
-        "name": "Unknown Movie",
+        "name": fallback_name,
         "language": "",
     }
 
-    for widget in data.get(
-        "data", {}
-    ).get(
-        "topStickyWidgets", []
-    ):
+    # 1. Grab Language and Format
+    for widget in data.get("data", {}).get("topStickyWidgets", []):
+        if widget.get("type") == "horizontal-text-list":
+            for item in widget.get("data", []):
+                for row in item.get("leftText", {}).get("data", []):
+                    for component in row.get("components", []):
+                        text = component.get("text", "")
+                        if "•" in text:
+                            info["language"] = text.strip()
 
-        if widget.get("type") != "horizontal-text-list":
-            continue
+    # 2. Hunt down the True Movie Name (Checking 3 different BMS locations!)
+    meta_name = data.get("meta", {}).get("eventName")
+    banner_name = data.get("data", {}).get("banner", {}).get("name")
+    bottom_name = None
+    
+    bottom_sheet = data.get("data", {}).get("bottomSheetData", {})
+    for widget in bottom_sheet.get("format-selector", {}).get("widgets", []):
+        if widget.get("type") == "vertical-text-list":
+            for item in widget.get("data", []):
+                # Check both subtitle and title just in case BMS changes the style ID
+                if item.get("styleId") in ["bottomsheet-subtitle", "bottomsheet-title"]:
+                    bottom_name = item.get("text")
+                    break
 
-        for item in widget.get("data", []):
-
-            for row in item.get(
-                "leftText", {}
-            ).get(
-                "data", []
-            ):
-
-                for component in row.get(
-                    "components", []
-                ):
-
-                    text = component.get("text", "")
-
-                    if "•" in text:
-                        info["language"] = text.strip()
-
-    bottom_sheet = (
-        data.get("data", {})
-        .get("bottomSheetData", {})
-    )
-
-    for widget in (
-        bottom_sheet
-        .get("format-selector", {})
-        .get("widgets", [])
-    ):
-
-        if widget.get("type") != "vertical-text-list":
-            continue
-
-        for item in widget.get("data", []):
-
-            if item.get("styleId") == "bottomsheet-subtitle":
-
-                info["name"] = item.get(
-                    "text",
-                    info["name"],
-                )
+    # Pick the most accurate name available
+    if meta_name:
+        info["name"] = meta_name
+    elif bottom_name:
+        info["name"] = bottom_name
+    elif banner_name:
+        info["name"] = banner_name
 
     return info
-
 
 # ======================================================================
 # LANGUAGE / FORMAT VARIANT PARSER
@@ -1257,7 +1241,14 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
 
     now_str = datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%d %b, %I:%M %p")
     movie_name = movie_info.get("name", watch_name.split('_')[0])
-    clean_movie_name = re.sub(r'[^A-Za-z0-9]', '', str(movie_name))
+    
+    # --- UPGRADED SMART HASHTAG CLEANER ---
+    # 1. Remove anything in parentheses that BMS sometimes sneaks in (like " (Tamil)")
+    tag_name = re.sub(r'\(.*?\)', '', str(movie_name))
+    # 2. Title Case it so it's readable (e.g., "pushpa 2" becomes "Pushpa 2")
+    tag_name = tag_name.title()
+    # 3. Strip EVERYTHING except letters and numbers!
+    clean_movie_name = re.sub(r'[^A-Za-z0-9]', '', tag_name)
 
     # --- Extract Language & Format for the Header ---
     lang_fmt_match = re.search(r'\(([^)]+)\)$', str(watch_name))
@@ -1567,7 +1558,9 @@ def run_event(
             continue
 
         if movie_info["name"] == label:
-            movie_info = parse_movie_info(data)
+            # Use the clean URL name as a safety fallback!
+            clean_fallback = label.split('_')[0]
+            movie_info = parse_movie_info(data, fallback_name=clean_fallback)
 
         all_dates.extend(parse_dates(data))
         all_shows.extend(parse_shows(data))
@@ -1831,7 +1824,9 @@ def run_watch(
     # DYNAMIC API RENAMING & LANGUAGE FILTERING 
     # ==================================================================
     if first_full_data:
-        base_info = parse_movie_info(first_full_data)
+        # Pass the clean URL name to prevent "Unknown Movie" loops
+        clean_fallback = watch_name.split('_')[0]
+        base_info = parse_movie_info(first_full_data, fallback_name=clean_fallback)
         raw_lang = str(base_info.get("language", "")).strip()
         
         # 1. RENAME TRACKER BASED ON TRUE API DATA
