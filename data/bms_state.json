@@ -604,7 +604,7 @@
         "date": "20260927",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "INTO",
         "sid": "90913"
@@ -750,7 +750,7 @@
         "date": "20260927",
         "cat": "EXECUTIVE",
         "price": "96.74",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "INTO",
         "sid": "90889"
@@ -1122,7 +1122,7 @@
         "date": "20260926",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "INTO",
         "sid": "90858"
@@ -1188,7 +1188,7 @@
         "date": "20260926",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "90850"
