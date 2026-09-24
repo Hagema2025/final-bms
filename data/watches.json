@@ -1,6 +1,6 @@
 [
   {
-    "name": "Dorothy_20260923002714 (Tamil 2D)",
+    "name": "DorothyTamil_20260923002714",
     "url": "https://in.bookmyshow.com/movies/chennai/dorothy-tamil/ET00518039",
     "dates": {
       "20260926": [],
@@ -19,7 +19,7 @@
     "message_thread_id": 296
   },
   {
-    "name": "MeesayaMurukku2_20260923002824 (Tamil 2D)",
+    "name": "MeesayaMurukku2Tamil_20260923002824",
     "url": "https://in.bookmyshow.com/movies/chennai/meesaya-murukku-2-tamil/ET00516813",
     "dates": {
       "20260926": [],
@@ -36,5 +36,26 @@
     ],
     "formats": [],
     "message_thread_id": 298
+  },
+  {
+    "name": "DoraemonCastleOfTheUnderseaDevil_20260924205448",
+    "url": "https://in.bookmyshow.com/movies/chennai/doraemon-castle-of-the-undersea-devil/ET00507337",
+    "dates": {
+      "20261002": [
+        "night"
+      ],
+      "20261003": [],
+      "20261004": []
+    },
+    "theatre": [
+      "INOX: The Marina Mall, OMR"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 349
   }
 ]
