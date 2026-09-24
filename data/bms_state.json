@@ -274,7 +274,7 @@
         "date": "20260924",
         "cat": "Premium",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SCREEN 2",
         "vcode": "RAKK",
         "sid": "4004"
@@ -289,28 +289,6 @@
         "screen": "SCREEN 2",
         "vcode": "RAKK",
         "sid": "4004"
-      },
-      "ACON|47588|20260924|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "07:25 PM",
-        "date": "20260924",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47588"
-      },
-      "ACON|47588|20260924|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "07:25 PM",
-        "date": "20260924",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47588"
       },
       "ACON|47589|20260924|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
@@ -860,6 +838,28 @@
   },
   "AvengersEndgameEncore_20260923002609 (English 2D) (Tamil 3D)": {
     "shows": {
+      "INTO|90919|20260926|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:30 PM",
+        "date": "20260926",
+        "cat": "CLUB",
+        "price": "218.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90919"
+      },
+      "INTO|90919|20260926|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:30 PM",
+        "date": "20260926",
+        "cat": "EXECUTIVE",
+        "price": "89.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90919"
+      },
       "INTO|90920|20260927|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "09:30 PM",
