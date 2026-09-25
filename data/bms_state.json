@@ -372,7 +372,7 @@
         "date": "20260926",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY ATMOS",
         "vcode": "ACON",
         "sid": "47629"
@@ -636,7 +636,7 @@
         "date": "20260927",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "INTO",
         "sid": "90892"
