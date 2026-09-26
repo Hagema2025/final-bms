@@ -108,13 +108,16 @@ CINEMA_CHAIN_URLS = {
     "PCAN": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR-VR-Chennai-Anna-Nagar/523",
     "PBRM": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR-Perambur---Spectrum-Mall-Chennai/372",
     "PSKL": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR-SKLS-Galaxy-Mall,-Red-Hills-Chennai/410",
+
+    #Cinepolis
+    "CBMC":"https://cinepolisindia.com/movie-list/38"
 }
 
 
 AVAIL_STATUS_MAP = {
     "0": ("SOLD OUT", "🔴"),
-    "1": ("ALMOST FULL", "🟡"),
-    "2": ("FILLING FAST", "🟠"),
+    "1": ("ALMOST FULL", "🟠"),
+    "2": ("FILLING FAST", "🟡"),
     "3": ("AVAILABLE", "🟢"),
 }
 
