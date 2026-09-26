@@ -110,7 +110,7 @@ CINEMA_CHAIN_URLS = {
     "PSKL": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR-SKLS-Galaxy-Mall,-Red-Hills-Chennai/410",
 
     #Cinepolis
-    "CBMC":"https://cinepolisindia.com/movie-list/38",
+    "CBMC":"https://cinepolisindia.com/movie-list/38"
 }
 
 
@@ -1371,6 +1371,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
     # 5. RENDER ULTRA-COMPACT HIERARCHY
     for date_val, venues_dict in nested_data.items():
         formatted_date = format_date(date_val)
+        lines.append(f"━━━━━━━━━━━━━━━━━━━━")
         lines.append(f"📅 <b>{html.escape(str(formatted_date)).upper()}</b>")
         lines.append(f"━━━━━━━━━━━━━━━━━━━━")
 
@@ -1401,45 +1402,15 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                     time_display = f"<b>{time_display}</b>"
 
                 # Reduced Indentation Space here!
-                lines.append(f" └ 🎟️ {time_display}{screen_str}")
+                lines.append(f" └ 🎟️{time_display} {screen_str}")
 
                 # Print Categories under this show
+                # Print Categories under this show (Super Clean Price-First Layout)
                 for c_idx, cat in enumerate(items):
                     is_last_cat = (c_idx == len(items) - 1)
-                    # Drastically reduced indentation to prevent mobile line-wrap
                     cat_prefix = "   └" if is_last_cat else "   ├"
 
                     c_type = cat.get("type", "")
-                    
-                    # EXACT Emoji Assignment
-                    if c_type == "NEW":
-                        c_icon = "🆕"
-                    elif c_type == "RESTOCKED":
-                        c_icon = "🔄"
-                    elif c_type == "PRICE_DROP":
-                        c_icon = "📉"
-                    elif c_type == "PRICE_INCREASE":
-                        c_icon = "📈"
-                    else:
-                        c_icon = "▪️"
-
-                    # Aggressive String Shortening
-                    c_name = html.escape(str(cat.get('cat', '')))
-                    c_name = re.sub(r'(?i)super\s*premium', 'S.Prem', c_name)
-                    c_name = re.sub(r'(?i)super\s*star', 'S.Star', c_name)
-                    c_name = re.sub(r'(?i)platinum', 'Plat', c_name)
-                    c_name = re.sub(r'(?i)economy', 'Eco', c_name)
-                    c_name = re.sub(r'(?i)premium', 'Prem', c_name)
-                    c_name = re.sub(r'(?i)executive', 'Exec', c_name)
-                    c_name = re.sub(r'(?i)balcony', 'Balc', c_name)
-                    c_name = re.sub(r'(?i)first\s*class', '1st', c_name)
-                    c_name = re.sub(r'(?i)second\s*class', '2nd', c_name)
-                    c_name = re.sub(r'(?i)normal', 'Norm', c_name)
-                    
-                    # Hard-cap category name length to 9 chars to guarantee it fits
-                    if len(c_name) > 9:
-                        c_name = c_name[:7] + ".."
-                    
                     price = clean_price(cat.get('price', '0'))
                     old_price = clean_price(cat.get('old_price', '0'))
                     
@@ -1449,22 +1420,39 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                         raw_old_status = "0"
 
                     curr_label, curr_emoji = resolve_status_info(raw_status)
-                    old_label, old_emoji = resolve_status_info(raw_old_status) if raw_old_status != "" else ("", "")
+                    _, old_emoji = resolve_status_info(raw_old_status) if raw_old_status != "" else ("", "")
 
-                    # Format Status Changes (Removed extra spaces)
-                    if c_type == "RESTOCKED" and old_label and old_label != curr_label:
-                        status_str = f"[{old_emoji}➔{curr_emoji}]"
+                    # Status transition string
+                    status_str = f"[{old_emoji}➔{curr_emoji}]" if c_type == "RESTOCKED" and old_emoji != curr_emoji else curr_emoji
+
+                    # Format based on change type matching your exact idea
+                    # Check if both a price shift AND a restock happened simultaneously
+                    is_price_change = c_type in ("PRICE_DROP", "PRICE_INCREASE")
+                    has_status_transition = (raw_old_status != "" and old_emoji != curr_emoji)
+
+                    if c_type == "NEW":
+                        line_content = f"🆕 <b>{price}</b> {curr_emoji}"
+                        
+                    elif is_price_change and has_status_transition:
+                        # Combined Price Shift + Restock/Status Jump
+                        price_icon = "📉" if c_type == "PRICE_DROP" else "📈"
+                        status_part = f"[{old_emoji}➔{curr_emoji}]"
+                        line_content = f"🔄 {price_icon} <s>{old_price}</s>➔<b>{price}</b> {status_part}"
+                        
+                    elif c_type == "PRICE_DROP":
+                        line_content = f"📉 <s>{old_price}</s>➔<b>{price}</b> {curr_emoji}"
+                        
+                    elif c_type == "PRICE_INCREASE":
+                        line_content = f"📈 <s>{old_price}</s>➔<b>{price}</b> {curr_emoji}"
+                        
+                    elif c_type == "RESTOCKED":
+                        status_part = f"[{old_emoji}➔{curr_emoji}]" if old_emoji != curr_emoji else curr_emoji
+                        line_content = f"🔄 <b>{price}</b> {status_part}"
+                        
                     else:
-                        status_str = f"{curr_emoji}"
+                        line_content = f"▪️ <b>{price}</b> {curr_emoji}"
 
-                    # Format Price Changes (Removed extra spaces)
-                    if c_type in ("PRICE_DROP", "PRICE_INCREASE"):
-                        price_str = f"<s>{old_price}</s>➔<b>{price}</b>"
-                    else:
-                        price_str = f"<b>{price}</b>"
-
-                    # Final line construction (Ultra Tight)
-                    lines.append(f"{cat_prefix} {c_icon} {c_name}: {price_str} {status_str}")
+                    lines.append(f"{cat_prefix} {line_content}")
             
             lines.append("") # Visual gap between venues
 
