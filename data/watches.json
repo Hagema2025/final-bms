@@ -2,12 +2,7 @@
   {
     "name": "BaththaTamil_20260926121234",
     "url": "https://in.bookmyshow.com/movies/chennai/baththa-tamil/ET00515520",
-    "dates": [
-      "20261002",
-      "20261003",
-      "20261004"
-    ],
-    "date_time_map": {
+    "dates": {
       "20261002": [
         "night"
       ],
@@ -15,13 +10,13 @@
       "20261004": []
     },
     "theatre": [
-      "ags cinemas omr: navlur",
-      "inox: the marina mall, omr"
+      "AGS Cinemas OMR: Navlur",
+      "INOX: The Marina Mall, OMR"
     ],
     "time_period": [],
     "discover_variants": true,
     "languages": [
-      "tamil"
+      "Tamil"
     ],
     "formats": [],
     "message_thread_id": 403
@@ -29,12 +24,7 @@
   {
     "name": "YezhuKadalYezhuMalaiTamil_20260926121356",
     "url": "https://in.bookmyshow.com/movies/chennai/yezhu-kadal-yezhu-malai-tamil/ET00342249",
-    "dates": [
-      "20261002",
-      "20261003",
-      "20261004"
-    ],
-    "date_time_map": {
+    "dates": {
       "20261002": [
         "night"
       ],
@@ -42,13 +32,13 @@
       "20261004": []
     },
     "theatre": [
-      "ags cinemas omr: navlur",
-      "inox: the marina mall, omr"
+      "AGS Cinemas OMR: Navlur",
+      "INOX: The Marina Mall, OMR"
     ],
     "time_period": [],
     "discover_variants": true,
     "languages": [
-      "tamil"
+      "Tamil"
     ],
     "formats": [],
     "message_thread_id": 407
@@ -56,12 +46,7 @@
   {
     "name": "DoraemonCastleOfTheUnderseaDevilHindi_20260926121912",
     "url": "https://in.bookmyshow.com/movies/chennai/doraemon-castle-of-the-undersea-devil-hindi/ET00507337",
-    "dates": [
-      "20261002",
-      "20261003",
-      "20261004"
-    ],
-    "date_time_map": {
+    "dates": {
       "20261002": [
         "night"
       ],
@@ -69,43 +54,20 @@
       "20261004": []
     },
     "theatre": [
-      "inox: the marina mall, omr"
+      "INOX: The Marina Mall, OMR"
     ],
     "time_period": [],
     "discover_variants": true,
     "languages": [
-      "tamil"
+      "Tamil"
     ],
     "formats": [],
     "message_thread_id": 411
   },
   {
-    "name": "MeesayaMurukku2_20260926230913 (Tamil 2D)",
-    "url": "https://in.bookmyshow.com/movies/chennai/meesaya-murukku-2/ET00516813",
-    "dates": [
-      "20260926"
-    ],
-    "date_time_map": {
-      "20260926": []
-    },
-    "theatre": [],
-    "time_period": [],
-    "discover_variants": true,
-    "languages": [
-      "tamil"
-    ],
-    "formats": [],
-    "message_thread_id": 417,
-    "expired_notified": true
-  },
-  {
-    "name": "TheParadise_20260926231113 (Tamil 2D)",
+    "name": "TheParadise_20260926231113 (Telugu 2D)",
     "url": "https://in.bookmyshow.com/movies/chennai/the-paradise-tamil/ET00436633",
-    "dates": [
-      "20260926",
-      "20260927"
-    ],
-    "date_time_map": {
+    "dates": {
       "20260926": [],
       "20260927": []
     },
@@ -113,7 +75,7 @@
     "time_period": [],
     "discover_variants": true,
     "languages": [
-      "tamil"
+      "Tamil"
     ],
     "formats": [],
     "message_thread_id": 421
