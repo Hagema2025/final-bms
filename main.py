@@ -43,6 +43,32 @@ def get_notification_recipients() -> set[int]:
 # CONSTANTS
 # ======================================================================
 
+# ======================================================================
+# CINEMA CHAIN SESSION URL MAPPING (VCODE MATCHING)
+# ======================================================================
+
+CINEMA_CHAIN_URLS = {
+    # INOX
+    "INTO": "https://www.inoxmovies.com/cinemasessions/Chennai/INOX-The-Marina-Mall,-OMR,-Chennai/232",
+    "INPR": "https://www.inoxmovies.com/cinemasessions/Chennai/INOX-Luxe-Phoenix-Market-City,-Velachery--(formerly-Jazz-Cinemas)Chennai/320",
+    "INCH": "https://www.inoxmovies.com/cinemasessions/Chennai/INOX-Chennai-Citi-Centre,Dr.-R.-K.-Salai-Chennai/113",
+    "FMCN": "https://www.inoxmovies.com/cinemasessions/Chennai/INOX-National,Virugambakkam-Chennai/28",
+
+    # PVR
+    "PVHR": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR-Heritage-RSL-ECR-Chennai/417",
+    "PGMV": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR,-Grand-Mall,-Velachery/389",
+    "PVES": "https://www.pvrcinemas.com/cinemasessions/Chennai/HDFC-Millennia-PVR:-Escape-Express-Avenue-Mall/359",
+    "PVSR": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR-Sathyam-Royapettah-Chennai/331",
+    "PABC": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR-AEROHUB-Chennai/432",
+    "PGRA": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR-Grand-Galada-Chennai/400",
+    "PVPZ": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR-Palazzo-The-Nexus-Vijaya-Mall/388",
+    "PVHC": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR,-Ampa-Mall,-Nelson-Manickam-Road-Chennai/358",
+    "PCAN": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR-VR-Chennai-Anna-Nagar/523",
+    "PBRM": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR-Perambur---Spectrum-Mall-Chennai/372",
+    "PSKL": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR-SKLS-Galaxy-Mall,-Red-Hills-Chennai/410",
+}
+
+
 AVAIL_STATUS_MAP = {
     "0": ("SOLD OUT", "🔴"),
     "1": ("ALMOST FULL", "🟡"),
@@ -1311,7 +1337,21 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
             lines.append(f"🏢 <b>{html.escape(str(venue))}</b>")
             
             for (time_val, screen, vcode, sid), items in times_dict.items():
-                screen_str = f" [{html.escape(str(screen))}]" if screen else ""
+                screen_str = f" [{html.escape(str(screen))}]" if screen else "[NORM]"
+
+                chain_url = CINEMA_CHAIN_URLS.get(vcode)
+                
+                if chain_url:
+                    screen_str = f' [<a href="{chain_url}">{screen_str}</a>]'
+                else:
+                    # Generic fallback if a new PVR/INOX opens and isn't in your dict yet
+                    venue_upper = venue.upper()
+                    if "PVR" in venue_upper:
+                        screen_str = f' [<a href="https://www.pvrcinemas.com/">{screen_str}</a>]'
+                    elif "INOX" in venue_upper:
+                        screen_str = f' [<a href="https://www.inoxmovies.com/">{screen_str}</a>]'
+                    else:
+                        screen_str = f" [{screen_str}]"
                 
                 # Direct Deep Link for Time
                 time_display = html.escape(str(time_val))
