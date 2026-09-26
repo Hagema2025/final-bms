@@ -1,28 +1,6 @@
 {
   "Dorothy_20260923002714 (Tamil 2D)": {
     "shows": {
-      "ACON|47611|20260926|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "10:35 AM",
-        "date": "20260926",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "2",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47611"
-      },
-      "ACON|47611|20260926|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "10:35 AM",
-        "date": "20260926",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47611"
-      },
       "ACON|47652|20260926|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
         "time": "01:25 PM",
@@ -110,6 +88,28 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "90865"
+      },
+      "INTO|90938|20260926|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:00 PM",
+        "date": "20260926",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90938"
+      },
+      "INTO|90938|20260926|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:00 PM",
+        "date": "20260926",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90938"
       },
       "INTO|90867|20260926|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -287,6 +287,28 @@
         "vcode": "INTO",
         "sid": "90899"
       },
+      "INTO|90939|20260927|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:00 PM",
+        "date": "20260927",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90939"
+      },
+      "INTO|90939|20260927|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:00 PM",
+        "date": "20260927",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90939"
+      },
       "INTO|90901|20260927|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "10:50 PM",
@@ -339,7 +361,7 @@
         "date": "20260926",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "0",
+        "status": "3",
         "screen": "4K DOLBY ATMOS",
         "vcode": "ACON",
         "sid": "47627"
@@ -409,28 +431,6 @@
         "screen": "4K DOLBY ATMOS",
         "vcode": "ACON",
         "sid": "47630"
-      },
-      "INTO|90858|20260926|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "10:00 AM",
-        "date": "20260926",
-        "cat": "CLUB",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "90858"
-      },
-      "INTO|90858|20260926|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "10:00 AM",
-        "date": "20260926",
-        "cat": "EXECUTIVE",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "90858"
       },
       "INTO|90859|20260926|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
