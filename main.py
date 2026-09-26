@@ -1320,10 +1320,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
 
     # --- Extract Language & Format for the Header ---
     lang_fmt_match = re.search(r'\(([^)]+)\)$', str(watch_name))
-    if lang_fmt_match:
-        lang_fmt_str = f" 🗣️ <b>{lang_fmt_match.group(1)}</b>" 
-    else:
-        lang_fmt_str = ""
+    lang_fmt_str = f" 🗣️ <b>{lang_fmt_match.group(1)}</b>" if lang_fmt_match else ""
 
     def clean_price(price_val):
         try:
@@ -1352,9 +1349,8 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
         )
     )
 
-    # 3. BETTER GROUPING (Date -> Venue -> Show (Time/Screen) -> Changes)
+    # 3. BETTER GROUPING
     nested_data = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
-
     for item in sorted_changes:
         d_val = item["date"]
         venue = item["venue"]
@@ -1369,7 +1365,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
         f"🕒 <i>{html.escape(now_str)}</i>\n",
     ]
 
-    # 5. RENDER CLEAN HIERARCHY
+    # 5. RENDER ULTRA-COMPACT HIERARCHY
     for date_val, venues_dict in nested_data.items():
         formatted_date = format_date(date_val)
         lines.append(f"📅 <b>{html.escape(str(formatted_date)).upper()}</b>")
@@ -1380,13 +1376,11 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
             
             for (time_val, screen, vcode, sid), items in times_dict.items():
                 screen_name = html.escape(str(screen)) if screen else "NORM"
-
                 chain_url = CINEMA_CHAIN_URLS.get(vcode)
                 
                 if chain_url:
                     screen_str = f' [<a href="{chain_url}">{screen_name}</a>]'
                 else:
-                    # Generic fallback if a new PVR/INOX opens and isn't in your dict yet
                     venue_upper = venue.upper()
                     if "PVR" in venue_upper:
                         screen_str = f' [<a href="https://www.pvrcinemas.com/">{screen_name}</a>]'
@@ -1403,24 +1397,45 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                 else:
                     time_display = f"<b>{time_display}</b>"
 
-                lines.append(f"  └ 🎟️ {time_display}{screen_str}")
+                # Reduced Indentation Space here!
+                lines.append(f" └ 🎟️ {time_display}{screen_str}")
 
                 # Print Categories under this show
                 for c_idx, cat in enumerate(items):
                     is_last_cat = (c_idx == len(items) - 1)
-                    cat_prefix = "       └" if is_last_cat else "       ├"
+                    # Drastically reduced indentation to prevent mobile line-wrap
+                    cat_prefix = "   └" if is_last_cat else "   ├"
 
                     c_type = cat.get("type", "")
-                    c_icon = cat.get("icon", "▪️")  # Gets the 🆕, 🔄, or 📉 icon
+                    
+                    # EXACT Emoji Assignment
+                    if c_type == "NEW":
+                        c_icon = "🆕"
+                    elif c_type == "RESTOCKED":
+                        c_icon = "🔄"
+                    elif c_type == "PRICE_DROP":
+                        c_icon = "📉"
+                    elif c_type == "PRICE_INCREASE":
+                        c_icon = "📈"
+                    else:
+                        c_icon = "▪️"
 
+                    # Aggressive String Shortening
                     c_name = html.escape(str(cat.get('cat', '')))
-                    c_name = re.sub(r'(?i)super premium', 'S.Prem', c_name)
-                    c_name = re.sub(r'(?i)superstar', 'S.Star', c_name)
+                    c_name = re.sub(r'(?i)super\s*premium', 'S.Prem', c_name)
+                    c_name = re.sub(r'(?i)super\s*star', 'S.Star', c_name)
                     c_name = re.sub(r'(?i)platinum', 'Plat', c_name)
                     c_name = re.sub(r'(?i)economy', 'Eco', c_name)
                     c_name = re.sub(r'(?i)premium', 'Prem', c_name)
                     c_name = re.sub(r'(?i)executive', 'Exec', c_name)
                     c_name = re.sub(r'(?i)balcony', 'Balc', c_name)
+                    c_name = re.sub(r'(?i)first\s*class', '1st', c_name)
+                    c_name = re.sub(r'(?i)second\s*class', '2nd', c_name)
+                    c_name = re.sub(r'(?i)normal', 'Norm', c_name)
+                    
+                    # Hard-cap category name length to 9 chars to guarantee it fits
+                    if len(c_name) > 9:
+                        c_name = c_name[:7] + ".."
                     
                     price = clean_price(cat.get('price', '0'))
                     old_price = clean_price(cat.get('old_price', '0'))
@@ -1433,23 +1448,22 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                     curr_label, curr_emoji = resolve_status_info(raw_status)
                     old_label, old_emoji = resolve_status_info(raw_old_status) if raw_old_status != "" else ("", "")
 
-                    # Format Status Changes
+                    # Format Status Changes (Removed extra spaces)
                     if c_type == "RESTOCKED" and old_label and old_label != curr_label:
-                        status_str = f"({old_emoji}➔{curr_emoji})"
+                        status_str = f"[{old_emoji}➔{curr_emoji}]"
                     else:
                         status_str = f"{curr_emoji}"
 
-                    # Format Price Changes
+                    # Format Price Changes (Removed extra spaces)
                     if c_type in ("PRICE_DROP", "PRICE_INCREASE"):
                         price_str = f"<s>{old_price}</s>➔<b>{price}</b>"
                     else:
-                        price_str = f"{price}"
+                        price_str = f"<b>{price}</b>"
 
-                    # Final line construction
+                    # Final line construction (Ultra Tight)
                     lines.append(f"{cat_prefix} {c_icon} {c_name}: {price_str} {status_str}")
             
-            # Add a small visual gap between different venues
-            lines.append("")
+            lines.append("") # Visual gap between venues
 
     # 6. DISPATCH
     message_chunks = split_message_chunks(lines)
