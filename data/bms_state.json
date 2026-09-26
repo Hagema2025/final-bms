@@ -1607,17 +1607,6 @@
         "screen": "4K LASER DOLBY 7.1 ",
         "vcode": "MMPR",
         "sid": "2334"
-      },
-      "VECT|8407|20260927|FIRST CLASS": {
-        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
-        "time": "11:30 AM",
-        "date": "20260927",
-        "cat": "FIRST CLASS",
-        "price": "130.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VECT",
-        "sid": "8407"
       }
     },
     "dates": {
