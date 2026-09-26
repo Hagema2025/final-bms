@@ -133,17 +133,6 @@
         "vcode": "MAYJ",
         "sid": "239473"
       },
-      "RSSC|123569|20260926|GoldStar": {
-        "venue": "Rohini Silver Screens: Koyambedu",
-        "time": "11:30 PM",
-        "date": "20260926",
-        "cat": "GoldStar",
-        "price": "160.00",
-        "status": "0",
-        "screen": "",
-        "vcode": "RSSC",
-        "sid": "123569"
-      },
       "RSSC|123568|20260926|GoldStar": {
         "venue": "Rohini Silver Screens: Koyambedu",
         "time": "11:55 PM",
@@ -363,50 +352,6 @@
         "screen": "4K  ATMOS ENABLED",
         "vcode": "VVGT",
         "sid": "31625"
-      },
-      "PVHC|32600|20260926|PRIME": {
-        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-        "time": "11:00 PM",
-        "date": "20260926",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVHC",
-        "sid": "32600"
-      },
-      "PVHC|32600|20260926|CLASSIC": {
-        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-        "time": "11:00 PM",
-        "date": "20260926",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVHC",
-        "sid": "32600"
-      },
-      "PSKL|23634|20260926|PRIME": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "11:00 PM",
-        "date": "20260926",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "0",
-        "screen": "",
-        "vcode": "PSKL",
-        "sid": "23634"
-      },
-      "PSKL|23634|20260926|CLASSIC": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "11:00 PM",
-        "date": "20260926",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PSKL",
-        "sid": "23634"
       },
       "INTO|90851|20260926|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -1661,7 +1606,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVHR",
         "sid": "42773"
@@ -2068,7 +2013,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PGRA",
         "sid": "22929"
