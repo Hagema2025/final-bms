@@ -1,17 +1,6 @@
 {
   "MeesayaMurukku2_20260926230913 (Tamil 2D)": {
     "shows": {
-      "TVHP|25432|20260926|ELITE": {
-        "venue": "The Vijay Park Multiplex: Injambakkam ECR 4K Atmos",
-        "time": "11:00 PM",
-        "date": "20260926",
-        "cat": "ELITE",
-        "price": "183.00",
-        "status": "0",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "TVHP",
-        "sid": "25432"
-      },
       "MAYJ|239440|20260926|FIRST CLASS": {
         "venue": "MAYAJAAL Multiplex: ECR, Chennai",
         "time": "11:50 PM",
@@ -172,7 +161,7 @@
         "date": "20260926",
         "cat": "SuperStar",
         "price": "190.00",
-        "status": "1",
+        "status": "0",
         "screen": "RGB ATMOS",
         "vcode": "RSSC",
         "sid": "123462"
@@ -209,72 +198,6 @@
         "screen": "2K/DOLBY 7.1",
         "vcode": "RSSC",
         "sid": "123572"
-      },
-      "PVHR|42729|20260926|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "10:50 PM",
-        "date": "20260926",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "42729"
-      },
-      "PVHR|42729|20260926|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "10:50 PM",
-        "date": "20260926",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "42729"
-      },
-      "VVGT|31666|20260926|ELITE": {
-        "venue": "Vels Theatres: Chennai",
-        "time": "11:45 PM",
-        "date": "20260926",
-        "cat": "ELITE",
-        "price": "160.00",
-        "status": "0",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "VVGT",
-        "sid": "31666"
-      },
-      "VVGT|31666|20260926|ECONOMY": {
-        "venue": "Vels Theatres: Chennai",
-        "time": "11:45 PM",
-        "date": "20260926",
-        "cat": "ECONOMY",
-        "price": "160.00",
-        "status": "0",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "VVGT",
-        "sid": "31666"
-      },
-      "VVGT|31625|20260926|ELITE": {
-        "venue": "Vels Theatres: Chennai",
-        "time": "11:59 PM",
-        "date": "20260926",
-        "cat": "ELITE",
-        "price": "160.00",
-        "status": "0",
-        "screen": "4K  ATMOS ENABLED",
-        "vcode": "VVGT",
-        "sid": "31625"
-      },
-      "VVGT|31625|20260926|ECONOMY": {
-        "venue": "Vels Theatres: Chennai",
-        "time": "11:59 PM",
-        "date": "20260926",
-        "cat": "ECONOMY",
-        "price": "160.00",
-        "status": "1",
-        "screen": "4K  ATMOS ENABLED",
-        "vcode": "VVGT",
-        "sid": "31625"
       },
       "KSTK|51095|20260926|BOX-A": {
         "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
@@ -397,6 +320,50 @@
         "vcode": "KSTK",
         "sid": "51087"
       },
+      "VVGT|31666|20260926|ELITE": {
+        "venue": "Vels Theatres: Chennai",
+        "time": "11:45 PM",
+        "date": "20260926",
+        "cat": "ELITE",
+        "price": "160.00",
+        "status": "0",
+        "screen": "4K DOLBY ATMOS",
+        "vcode": "VVGT",
+        "sid": "31666"
+      },
+      "VVGT|31666|20260926|ECONOMY": {
+        "venue": "Vels Theatres: Chennai",
+        "time": "11:45 PM",
+        "date": "20260926",
+        "cat": "ECONOMY",
+        "price": "160.00",
+        "status": "0",
+        "screen": "4K DOLBY ATMOS",
+        "vcode": "VVGT",
+        "sid": "31666"
+      },
+      "VVGT|31625|20260926|ELITE": {
+        "venue": "Vels Theatres: Chennai",
+        "time": "11:59 PM",
+        "date": "20260926",
+        "cat": "ELITE",
+        "price": "160.00",
+        "status": "0",
+        "screen": "4K  ATMOS ENABLED",
+        "vcode": "VVGT",
+        "sid": "31625"
+      },
+      "VVGT|31625|20260926|ECONOMY": {
+        "venue": "Vels Theatres: Chennai",
+        "time": "11:59 PM",
+        "date": "20260926",
+        "cat": "ECONOMY",
+        "price": "160.00",
+        "status": "1",
+        "screen": "4K  ATMOS ENABLED",
+        "vcode": "VVGT",
+        "sid": "31625"
+      },
       "PVHC|32600|20260926|PRIME": {
         "venue": "PVR: Ampa Mall, Nelson Manickam Road",
         "time": "11:00 PM",
@@ -462,72 +429,6 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "90851"
-      },
-      "PVSR|28120|20260926|ELITE": {
-        "venue": "PVR: Sathyam, Royapettah",
-        "time": "10:50 PM",
-        "date": "20260926",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVSR",
-        "sid": "28120"
-      },
-      "PVSR|28120|20260926|PREMIUM": {
-        "venue": "PVR: Sathyam, Royapettah",
-        "time": "10:50 PM",
-        "date": "20260926",
-        "cat": "PREMIUM",
-        "price": "173.00",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVSR",
-        "sid": "28120"
-      },
-      "PVSR|28120|20260926|ECONOMY": {
-        "venue": "PVR: Sathyam, Royapettah",
-        "time": "10:50 PM",
-        "date": "20260926",
-        "cat": "ECONOMY",
-        "price": "163.00",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVSR",
-        "sid": "28120"
-      },
-      "PVSR|28120|20260926|BUDGET": {
-        "venue": "PVR: Sathyam, Royapettah",
-        "time": "10:50 PM",
-        "date": "20260926",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVSR",
-        "sid": "28120"
-      },
-      "PCAN|45593|20260926|PRIME": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "10:50 PM",
-        "date": "20260926",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "0",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45593"
-      },
-      "PCAN|45593|20260926|CLASSIC": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "10:50 PM",
-        "date": "20260926",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45593"
       }
     },
     "dates": {
@@ -1738,7 +1639,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVHR",
         "sid": "42771"
@@ -2189,7 +2090,7 @@
         "date": "20260927",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "1",
+        "status": "2",
         "screen": "4K LASER DOLBY 7.1 ",
         "vcode": "MMPR",
         "sid": "2334"
