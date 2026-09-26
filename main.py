@@ -1337,21 +1337,21 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
             lines.append(f"🏢 <b>{html.escape(str(venue))}</b>")
             
             for (time_val, screen, vcode, sid), items in times_dict.items():
-                screen_str = f" [{html.escape(str(screen))}]" if screen else "[NORM]"
+                screen_name = html.escape(str(screen)) if screen else "NORM"
 
                 chain_url = CINEMA_CHAIN_URLS.get(vcode)
                 
                 if chain_url:
-                    screen_str = f' [<a href="{chain_url}">{screen_str}</a>]'
+                    screen_str = f' [<a href="{chain_url}">{screen_name}</a>]'
                 else:
                     # Generic fallback if a new PVR/INOX opens and isn't in your dict yet
                     venue_upper = venue.upper()
                     if "PVR" in venue_upper:
-                        screen_str = f' [<a href="https://www.pvrcinemas.com/">{screen_str}</a>]'
+                        screen_str = f' [<a href="https://www.pvrcinemas.com/">{screen_name}</a>]'
                     elif "INOX" in venue_upper:
-                        screen_str = f' [<a href="https://www.inoxmovies.com/">{screen_str}</a>]'
+                        screen_str = f' [<a href="https://www.inoxmovies.com/">{screen_name}</a>]'
                     else:
-                        screen_str = f" [{screen_str}]"
+                        screen_str = f" [{screen_name}]"
                 
                 # Direct Deep Link for Time
                 time_display = html.escape(str(time_val))
