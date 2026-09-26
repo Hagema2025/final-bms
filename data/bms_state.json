@@ -1223,50 +1223,6 @@
         "vcode": "KSTK",
         "sid": "51116"
       },
-      "INPR|66598|20260927|ELITE": {
-        "venue": "INOX: LUXE Phoenix Market City, Velachery",
-        "time": "09:05 AM",
-        "date": "20260927",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "INPR",
-        "sid": "66598"
-      },
-      "INPR|66598|20260927|BUDGET": {
-        "venue": "INOX: LUXE Phoenix Market City, Velachery",
-        "time": "09:05 AM",
-        "date": "20260927",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "INPR",
-        "sid": "66598"
-      },
-      "INPR|66609|20260927|ELITE": {
-        "venue": "INOX: LUXE Phoenix Market City, Velachery",
-        "time": "07:05 PM",
-        "date": "20260927",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "2",
-        "screen": "",
-        "vcode": "INPR",
-        "sid": "66609"
-      },
-      "INPR|66609|20260927|BUDGET": {
-        "venue": "INOX: LUXE Phoenix Market City, Velachery",
-        "time": "07:05 PM",
-        "date": "20260927",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "INPR",
-        "sid": "66609"
-      },
       "INTO|90913|20260927|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "04:05 PM",
