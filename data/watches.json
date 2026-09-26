@@ -20,5 +20,27 @@
     ],
     "formats": [],
     "message_thread_id": 403
+  },
+  {
+    "name": "YezhuKadalYezhuMalaiTamil_20260926121356",
+    "url": "https://in.bookmyshow.com/movies/chennai/yezhu-kadal-yezhu-malai-tamil/ET00342249",
+    "dates": {
+      "20261002": [
+        "night"
+      ],
+      "20261003": [],
+      "20261004": []
+    },
+    "theatre": [
+      "AGS Cinemas OMR: Navlur",
+      "INOX: The Marina Mall, OMR"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 407
   }
 ]
