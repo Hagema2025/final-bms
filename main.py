@@ -110,7 +110,7 @@ CINEMA_CHAIN_URLS = {
     "PSKL": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR-SKLS-Galaxy-Mall,-Red-Hills-Chennai/410",
 
     #Cinepolis
-    "CBMC":"https://cinepolisindia.com/movie-list/38"
+    "CBMC":"https://cinepolisindia.com/movie-list/38",
 }
 
 
