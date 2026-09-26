@@ -12,28 +12,6 @@
         "vcode": "TVHP",
         "sid": "25432"
       },
-      "MAYJ|239371|20260926|FIRST CLASS": {
-        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
-        "time": "11:15 PM",
-        "date": "20260926",
-        "cat": "FIRST CLASS",
-        "price": "183.80",
-        "status": "0",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "MAYJ",
-        "sid": "239371"
-      },
-      "MAYJ|239371|20260926|SECOND CLASS": {
-        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
-        "time": "11:15 PM",
-        "date": "20260926",
-        "cat": "SECOND CLASS",
-        "price": "57.98",
-        "status": "0",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "MAYJ",
-        "sid": "239371"
-      },
       "MAYJ|239440|20260926|FIRST CLASS": {
         "venue": "MAYAJAAL Multiplex: ECR, Chennai",
         "time": "11:50 PM",
@@ -194,7 +172,7 @@
         "date": "20260926",
         "cat": "SuperStar",
         "price": "190.00",
-        "status": "0",
+        "status": "1",
         "screen": "RGB ATMOS",
         "vcode": "RSSC",
         "sid": "123462"
@@ -297,72 +275,6 @@
         "screen": "4K  ATMOS ENABLED",
         "vcode": "VVGT",
         "sid": "31625"
-      },
-      "CBMC|13550|20260926|NORMAL": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "11:10 PM",
-        "date": "20260926",
-        "cat": "NORMAL",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13550"
-      },
-      "CBMC|13550|20260926|EXECUTIVE": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "11:10 PM",
-        "date": "20260926",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
-        "status": "0",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13550"
-      },
-      "PVHC|32600|20260926|PRIME": {
-        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-        "time": "11:00 PM",
-        "date": "20260926",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVHC",
-        "sid": "32600"
-      },
-      "PVHC|32600|20260926|CLASSIC": {
-        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-        "time": "11:00 PM",
-        "date": "20260926",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVHC",
-        "sid": "32600"
-      },
-      "FMCN|105266|20260926|SILVER": {
-        "venue": "INOX National: Arcot Road",
-        "time": "10:45 PM",
-        "date": "20260926",
-        "cat": "SILVER",
-        "price": "183.80",
-        "status": "0",
-        "screen": "",
-        "vcode": "FMCN",
-        "sid": "105266"
-      },
-      "FMCN|105266|20260926|PREMIERE": {
-        "venue": "INOX National: Arcot Road",
-        "time": "10:45 PM",
-        "date": "20260926",
-        "cat": "PREMIERE",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "FMCN",
-        "sid": "105266"
       },
       "KSTK|51095|20260926|BOX-A": {
         "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
@@ -485,6 +397,28 @@
         "vcode": "KSTK",
         "sid": "51087"
       },
+      "PVHC|32600|20260926|PRIME": {
+        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
+        "time": "11:00 PM",
+        "date": "20260926",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "0",
+        "screen": "",
+        "vcode": "PVHC",
+        "sid": "32600"
+      },
+      "PVHC|32600|20260926|CLASSIC": {
+        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
+        "time": "11:00 PM",
+        "date": "20260926",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "PVHC",
+        "sid": "32600"
+      },
       "PSKL|23634|20260926|PRIME": {
         "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
         "time": "11:00 PM",
@@ -572,28 +506,6 @@
         "screen": "",
         "vcode": "PVSR",
         "sid": "28120"
-      },
-      "PABC|22013|20260926|PRIME": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "10:45 PM",
-        "date": "20260926",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "0",
-        "screen": "",
-        "vcode": "PABC",
-        "sid": "22013"
-      },
-      "PABC|22013|20260926|CLASSIC": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "10:45 PM",
-        "date": "20260926",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PABC",
-        "sid": "22013"
       },
       "PCAN|45593|20260926|PRIME": {
         "venue": "PVR: VR Chennai, Anna Nagar",
@@ -1490,28 +1402,6 @@
         "vcode": "MAYJ",
         "sid": "239351"
       },
-      "INCH|80693|20260926|Club": {
-        "venue": "INOX: Chennai Citi Centre, Dr. RK Salai",
-        "time": "10:40 PM",
-        "date": "20260926",
-        "cat": "Club",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "INCH",
-        "sid": "80693"
-      },
-      "INCH|80693|20260926|Executive": {
-        "venue": "INOX: Chennai Citi Centre, Dr. RK Salai",
-        "time": "10:40 PM",
-        "date": "20260926",
-        "cat": "Executive",
-        "price": "54.35",
-        "status": "1",
-        "screen": "",
-        "vcode": "INCH",
-        "sid": "80693"
-      },
       "TVHP|25392|20260927|ELITE": {
         "venue": "The Vijay Park Multiplex: Injambakkam ECR 4K Atmos",
         "time": "10:30 PM",
@@ -1848,7 +1738,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVHR",
         "sid": "42771"
@@ -1870,7 +1760,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVHR",
         "sid": "42773"
