@@ -1325,7 +1325,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
     for date_val, type_groups in nested_data.items():
         formatted_date = format_date(date_val)
         lines.append(f"\n📅 <b>SHOWS FOR: {html.escape(str(formatted_date)).upper()}</b>")
-        lines.append(f"━━━━━━━━━━━━━━━━━━━━━━")
+        lines.append(f"━━━━━━━━━━━━━━━━━━━━")
 
         for c_type in sorted(type_groups.keys(), key=get_type_priority):
             venues_dict = type_groups[c_type]
