@@ -28,6 +28,11 @@ NTFY_TOPIC=os.getenv("NTFY_TOPIC", "").strip()
 NTFY_ERROR_TOPIC = os.getenv("NTFY_ERROR_TOPIC", "").strip()
 
 
+def save_watches(watches):
+    """Saves updated watches data back to the JSON file."""
+    with open(WATCHES_FILE, "w", encoding="utf-8") as f:
+        json.dump(watches, f, indent=2, ensure_ascii=False)
+
 def get_notification_recipients() -> set[int]:
     raw_env = os.getenv("NOTIFICATION_USERS", "")
     recipients = {int(x.strip()) for x in raw_env.split(",") if x.strip().isdigit()}
@@ -38,6 +43,43 @@ def get_notification_recipients() -> set[int]:
         recipients.add(int(fallback_id))
         
     return recipients
+
+def send_watch_expiry_alert(watch, idx):
+    if not TELEGRAM_BOT_TOKEN or not GROUP_CHAT_ID:
+        return
+
+    threadid = watch.get("message_thread_id")
+    watch_name = watch.get("name", f"Watch_{idx}")
+    
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+    
+    # Creates an inline button that maps perfectly to your bot.py's stop handler!
+    kb = {
+        "inline_keyboard": [
+            [{"text": "❌ Stop Tracking & Close Topic", "callback_data": f"confirmstop_{idx}"}]
+        ]
+    }
+    
+    text = (
+        f"⏰ <b>Tracker Expired!</b>\n\n"
+        f"All the configured dates for <code>{html.escape(watch_name)}</code> are now in the past.\n"
+        f"Click below to stop the tracker and safely close this topic."
+    )
+    
+    payload = {
+        "chat_id": GROUP_CHAT_ID,
+        "text": text,
+        "parse_mode": "HTML",
+        "reply_markup": kb
+    }
+    if threadid:
+        payload["message_thread_id"] = threadid
+        
+    try:
+        requests.post(url, json=payload, timeout=10)
+        print(f"  🔔 Expiry notification sent for {watch_name}")
+    except Exception as e:
+        print(f"  ⚠️ Failed to send expiry notification: {e}")
 
 # ======================================================================
 # CONSTANTS
@@ -2020,69 +2062,57 @@ def run_watch(
 # ======================================================================
 
 def main():
-
-    now = datetime.now().strftime(
-        "%Y-%m-%d %H:%M:%S"
-    )
-
-    print(
-        f"[{now}] "
-        f"BMS Ticket Checker — CI mode"
-    )
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"[{now}] BMS Ticket Checker — CI mode")
 
     watches = load_watches()
-
-    print(
-        f"📋 Loaded {len(watches)} watch(es)"
-    )
+    print(f"📋 Loaded {len(watches)} watch(es)")
 
     state = load_state()
     state = cleanup_state(state)
 
     successful = 0
+    watches_updated = False
+    
+    # Get today's date integer in IST format (e.g., 20260926)
+    today_int = int(datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%Y%m%d"))
 
-    for watch in watches:
+    for idx, watch in enumerate(watches):
+        # --- NEW: EXPIRY CHECK LOGIC ---
+        configured_dates = watch.get("dates", [])
+        
+        # Check if dates exist, AND every single date is in the past
+        if configured_dates and all(str(d).isdigit() and int(d) < today_int for d in configured_dates):
+            if not watch.get("expired_notified"):
+                print(f"\n  ⏰ Watch '{watch['name']}' has expired. Sending notification...")
+                send_watch_expiry_alert(watch, idx)
+                watch["expired_notified"] = True
+                watches_updated = True
+            else:
+                print(f"\n  ⏭️ Skipping expired watch '{watch['name']}'.")
+            
+            continue  # Skip API queries for this watch since it is expired!
+        # -------------------------------
 
         try:
-
-            state, success = run_watch(
-                watch,
-                state,
-            )
-
+            state, success = run_watch(watch, state)
             if success:
                 successful += 1
 
         except Exception as e:
-
             print("")
-            print(
-                f"❌ Watch "
-                f"'{watch['name']}' "
-                f"failed:"
-            )
-
-            print(
-                f"   {type(e).__name__}: {e}"
-            )
-
-            # Continue with the remaining watches.
+            print(f"❌ Watch '{watch['name']}' failed:")
+            print(f"   {type(e).__name__}: {e}")
             continue
 
-    # --------------------------------------------------------------
-    # Save global state
-    # --------------------------------------------------------------
-
+    # Save state and potentially updated watches.json
     save_state(state)
+    if watches_updated:
+        save_watches(watches)
 
     print("")
     print("=" * 70)
-
-    print(
-        f"✅ Completed: "
-        f"{successful}/{len(watches)} watch(es)"
-    )
-
+    print(f"✅ Completed: {successful}/{len(watches)} active watch(es)")
     print("=" * 70)
 
 
