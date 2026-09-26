@@ -1335,7 +1335,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                 lines.append(f"\n🏢 <b>{html.escape(str(venue))}</b>:")
                 
                 for (time_val, screen, vcode, sid), items in times_dict.items():
-                    screen_str = f" [{html.escape(str(screen))}]" if screen else ""
+                    screen_str = f" [{html.escape(str(screen))}]" if screen else "NORM"
                     
                     # Direct Deep Link
                     time_display = html.escape(str(time_val))
