@@ -1231,9 +1231,12 @@ def send_ntfy(label, movie_info, changes):
 # ======================================================================
 # Telegram
 # ======================================================================
+# ======================================================================
+# Telegram
+# ======================================================================
 def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
     if not TELEGRAM_BOT_TOKEN or not GROUP_CHAT_ID:
-        print(" ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN or GROUP_CHAT_ID not configured.")
+        print("  ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN or GROUP_CHAT_ID not configured.")
         return
 
     if not changes:
@@ -1243,17 +1246,14 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
     movie_name = movie_info.get("name", watch_name.split('_')[0])
     
     # --- UPGRADED SMART HASHTAG CLEANER ---
-    # 1. Remove anything in parentheses that BMS sometimes sneaks in (like " (Tamil)")
     tag_name = re.sub(r'\(.*?\)', '', str(movie_name))
-    # 2. Title Case it so it's readable (e.g., "pushpa 2" becomes "Pushpa 2")
     tag_name = tag_name.title()
-    # 3. Strip EVERYTHING except letters and numbers!
     clean_movie_name = re.sub(r'[^A-Za-z0-9]', '', tag_name)
 
     # --- Extract Language & Format for the Header ---
     lang_fmt_match = re.search(r'\(([^)]+)\)$', str(watch_name))
     if lang_fmt_match:
-        lang_fmt_str = f"🗣️ <b>{lang_fmt_match.group(1)}</b>" 
+        lang_fmt_str = f" 🗣️ <b>{lang_fmt_match.group(1)}</b>" 
     else:
         lang_fmt_str = ""
 
@@ -1263,7 +1263,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
         except Exception:
             return f"₹{price_val}"
 
-    # 1. ORDERED HASHTAG GENERATOR (Movie Name Always First)
+    # 1. ORDERED HASHTAG GENERATOR
     action_tags = set()
     for c in changes:
         c_type = str(c.get('type', '')).upper()
@@ -1273,115 +1273,101 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
     tag_list = [f"#{clean_movie_name}"] + sorted(list(action_tags))
     hashtag_str = " ".join(tag_list)
 
-    def get_type_priority(change_type):
-        priority_map = {"NEW": 1, "RESTOCKED": 2, "PRICE_DROP": 3, "PRICE_INCREASE": 4}
-        return priority_map.get(change_type, 99)
-
-    # 2. SORT
+    # 2. BETTER SORTING (Date -> Venue -> Time -> Price)
     sorted_changes = sorted(
         changes,
         key=lambda x: (
             str(x.get("date", "")),
-            get_type_priority(x.get("type")),
             str(x.get("venue", "")).lower(),
             parse_time_to_minutes(x.get("time", "")),
             parse_price(x.get("price", 0))
         )
     )
 
-    # 3. GROUP
-    nested_data = defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: defaultdict(list))))
+    # 3. BETTER GROUPING (Date -> Venue -> Show (Time/Screen) -> Changes)
+    nested_data = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
 
     for item in sorted_changes:
         d_val = item["date"]
-        c_type = item["type"]
         venue = item["venue"]
-        screen = str(item.get("screen", "NORMAL")).strip()
         show_key = (item["time"], item.get("screen", ""), item.get("vcode", ""), item.get("sid", ""))
-        nested_data[d_val][c_type][venue][show_key].append(item)
+        nested_data[d_val][venue][show_key].append(item)
 
     # 4. BUILD MOBILE-OPTIMIZED HEADER
     lines = [
         f"🚨 <b>BMS Ticket Alert!</b>",
-        f"🎬 <b>{html.escape(str(movie_name))}</b>",
-    ]
-    
-    if lang_fmt_str:
-        lines.append(lang_fmt_str)
-        
-    lines.extend([
+        f"🎬 <b>{html.escape(str(movie_name))}</b>{lang_fmt_str}",
         f"🏷 {hashtag_str}",
         f"🕒 <i>{html.escape(now_str)}</i>\n",
-    ])
+    ]
 
-    section_headers = {
-        "NEW": "\n🆕 <b>NEW SHOWS ADDED</b>",
-        "RESTOCKED": "\n🔄 <b>TICKETS RESTOCKED / CHANGED</b>",
-        "PRICE_DROP": "\n📉 <b>PRICE DROP ALERT</b>",
-        "PRICE_INCREASE": "\n📈 <b>PRICE INCREASE ALERT</b>"
-    }
-
-    # 5. RENDER SIMPLIFIED BLOCKS
-    for date_val, type_groups in nested_data.items():
+    # 5. RENDER CLEAN HIERARCHY
+    for date_val, venues_dict in nested_data.items():
         formatted_date = format_date(date_val)
-        lines.append(f"\n📅 <b>SHOWS FOR: {html.escape(str(formatted_date)).upper()}</b>")
+        lines.append(f"📅 <b>{html.escape(str(formatted_date)).upper()}</b>")
         lines.append(f"━━━━━━━━━━━━━━━━━━━━")
 
-        for c_type in sorted(type_groups.keys(), key=get_type_priority):
-            venues_dict = type_groups[c_type]
-            lines.append(section_headers.get(c_type, f"\n<b>{c_type}</b>"))
-
-            for venue, times_dict in venues_dict.items():
-                lines.append(f"\n🏢 <b>{html.escape(str(venue))}</b>:")
+        for venue, times_dict in venues_dict.items():
+            lines.append(f"🏢 <b>{html.escape(str(venue))}</b>")
+            
+            for (time_val, screen, vcode, sid), items in times_dict.items():
+                screen_str = f" [{html.escape(str(screen))}]" if screen else ""
                 
-                for (time_val, screen, vcode, sid), items in times_dict.items():
-                    screen_str = f" [{html.escape(str(screen))}]" if screen else "NORM"
+                # Direct Deep Link for Time
+                time_display = html.escape(str(time_val))
+                if vcode and sid:
+                    book_url = f"https://in.bookmyshow.com/booktickets/{vcode}/{sid}"
+                    time_display = f'<a href="{book_url}"><b>{time_display}</b></a>'
+                else:
+                    time_display = f"<b>{time_display}</b>"
+
+                lines.append(f"  └ 🎟️ {time_display}{screen_str}")
+
+                # Print Categories under this show
+                for c_idx, cat in enumerate(items):
+                    is_last_cat = (c_idx == len(items) - 1)
+                    cat_prefix = "       └" if is_last_cat else "       ├"
+
+                    c_type = cat.get("type", "")
+                    c_icon = cat.get("icon", "▪️")  # Gets the 🆕, 🔄, or 📉 icon
+
+                    c_name = html.escape(str(cat.get('cat', '')))
+                    c_name = re.sub(r'(?i)super premium', 'S.Prem', c_name)
+                    c_name = re.sub(r'(?i)superstar', 'S.Star', c_name)
+                    c_name = re.sub(r'(?i)platinum', 'Plat', c_name)
+                    c_name = re.sub(r'(?i)economy', 'Eco', c_name)
+                    c_name = re.sub(r'(?i)premium', 'Prem', c_name)
+                    c_name = re.sub(r'(?i)executive', 'Exec', c_name)
+                    c_name = re.sub(r'(?i)balcony', 'Balc', c_name)
                     
-                    # Direct Deep Link
-                    time_display = html.escape(str(time_val))
-                    if vcode and sid:
-                        book_url = f"https://in.bookmyshow.com/booktickets/{vcode}/{sid}"
-                        time_display = f'<a href="{book_url}"><b>{time_display}</b></a>'
+                    price = clean_price(cat.get('price', '0'))
+                    old_price = clean_price(cat.get('old_price', '0'))
+                    
+                    raw_status = str(cat.get('status', '3')).strip()
+                    raw_old_status = str(cat.get('old_status', '')).strip() if cat.get('old_status') is not None else ""
+                    if c_type == "RESTOCKED" and not raw_old_status:
+                        raw_old_status = "0"
+
+                    curr_label, curr_emoji = resolve_status_info(raw_status)
+                    old_label, old_emoji = resolve_status_info(raw_old_status) if raw_old_status != "" else ("", "")
+
+                    # Format Status Changes
+                    if c_type == "RESTOCKED" and old_label and old_label != curr_label:
+                        status_str = f"({old_emoji}➔{curr_emoji})"
                     else:
-                        time_display = f"<b>{time_display}</b>"
+                        status_str = f"{curr_emoji}"
 
-                    # Print Time Node
-                    lines.append(f"\n🕒 {time_display}{screen_str}")
+                    # Format Price Changes
+                    if c_type in ("PRICE_DROP", "PRICE_INCREASE"):
+                        price_str = f"<s>{old_price}</s>➔<b>{price}</b>"
+                    else:
+                        price_str = f"{price}"
 
-                    # Print Category Branches
-                    for c_idx, cat in enumerate(items):
-                        is_last_cat = (c_idx == len(items) - 1)
-                        cat_prefix = "    └" if is_last_cat else "    ├"
-
-                        c_name = html.escape(str(cat.get('cat', '')))
-                        c_name = re.sub(r'(?i)super premium', 'S.Prem', c_name)
-                        c_name = re.sub(r'(?i)superstar', 'S.Star', c_name)
-                        c_name = re.sub(r'(?i)platinum', 'Plat', c_name)
-                        c_name = re.sub(r'(?i)economy', 'Eco', c_name)
-                        c_name = re.sub(r'(?i)premium', 'Prem', c_name)
-                        c_name = re.sub(r'(?i)executive', 'Exec', c_name)
-                        c_name = re.sub(r'(?i)balcony', 'Balc', c_name)
-                        
-                        price = clean_price(cat.get('price', '0'))
-                        old_price = clean_price(cat.get('old_price', '0'))
-                        
-                        raw_status = str(cat.get('status', '3')).strip()
-                        raw_old_status = str(cat.get('old_status', '')).strip() if cat.get('old_status') is not None else ""
-                        if c_type == "RESTOCKED" and not raw_old_status:
-                            raw_old_status = "0"
-
-                        curr_label, curr_emoji = resolve_status_info(raw_status)
-                        old_label, old_emoji = resolve_status_info(raw_old_status) if raw_old_status != "" else ("", "")
-
-                        if c_type == "RESTOCKED":
-                            if old_label and old_label != curr_label:
-                                lines.append(f"{cat_prefix} 🎟️ {c_name}: {price} ({old_emoji}➔{curr_emoji})")
-                            else:
-                                lines.append(f"{cat_prefix} 🎟️ {c_name}: {price} {curr_emoji}")
-                        elif c_type in ("PRICE_DROP", "PRICE_INCREASE"):
-                            lines.append(f"{cat_prefix} 🎟️ {c_name}: <s>{old_price}</s>➔<b>{price}</b> {curr_emoji}")
-                        else:
-                            lines.append(f"{cat_prefix} 🎟️ {c_name}: {price} {curr_emoji}")
+                    # Final line construction
+                    lines.append(f"{cat_prefix} {c_icon} {c_name}: {price_str} {status_str}")
+            
+            # Add a small visual gap between different venues
+            lines.append("")
 
     # 6. DISPATCH
     message_chunks = split_message_chunks(lines)
@@ -1433,7 +1419,6 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                 time.sleep(1)
         except Exception:
             pass
-
         
 def get_telegram_user_info(chat_id: int) -> str:
     """Helper to fetch a user's name/username via getChat endpoint."""
