@@ -23,17 +23,6 @@
         "vcode": "TVHP",
         "sid": "25388"
       },
-      "MAYJ|238989|20260927|FIRST CLASS 3D": {
-        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
-        "time": "02:20 PM",
-        "date": "20260927",
-        "cat": "FIRST CLASS 3D",
-        "price": "246.40",
-        "status": "2",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "MAYJ",
-        "sid": "238989"
-      },
       "MAYJ|239339|20260927|FIRST CLASS 3D": {
         "venue": "MAYAJAAL Multiplex: ECR, Chennai",
         "time": "03:50 PM",
@@ -150,7 +139,7 @@
         "date": "20260927",
         "cat": "EXECUTIVE",
         "price": "96.74",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "INTO",
         "sid": "90889"
@@ -249,7 +238,7 @@
         "date": "20260927",
         "cat": "NORMAL",
         "price": "101.74",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13688"
@@ -287,49 +276,49 @@
         "vcode": "ACON",
         "sid": "47640"
       },
-      "PGRA|22946|20260927|PRIME": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "06:55 PM",
+      "ACVM|56481|20260927|DIAMOND 3D": {
+        "venue": "AGS Cinemas: Villivakkam",
+        "time": "03:00 PM",
         "date": "20260927",
-        "cat": "PRIME",
-        "price": "245.98",
+        "cat": "DIAMOND 3D",
+        "price": "240.00",
         "status": "1",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22946"
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACVM",
+        "sid": "56481"
       },
-      "PGRA|22946|20260927|CLASSIC": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "06:55 PM",
+      "ACVM|56481|20260927|PEARL 3D": {
+        "venue": "AGS Cinemas: Villivakkam",
+        "time": "03:00 PM",
         "date": "20260927",
-        "cat": "CLASSIC",
-        "price": "96.74",
-        "status": "0",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22946"
+        "cat": "PEARL 3D",
+        "price": "90.00",
+        "status": "1",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACVM",
+        "sid": "56481"
       },
-      "PGRA|22947|20260927|PRIME": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "11:00 PM",
+      "ACVM|56482|20260927|DIAMOND 3D": {
+        "venue": "AGS Cinemas: Villivakkam",
+        "time": "06:45 PM",
         "date": "20260927",
-        "cat": "PRIME",
-        "price": "245.98",
+        "cat": "DIAMOND 3D",
+        "price": "240.00",
+        "status": "1",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACVM",
+        "sid": "56482"
+      },
+      "ACVM|56482|20260927|PEARL 3D": {
+        "venue": "AGS Cinemas: Villivakkam",
+        "time": "06:45 PM",
+        "date": "20260927",
+        "cat": "PEARL 3D",
+        "price": "90.00",
         "status": "3",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22947"
-      },
-      "PGRA|22947|20260927|CLASSIC": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "11:00 PM",
-        "date": "20260927",
-        "cat": "CLASSIC",
-        "price": "96.74",
-        "status": "3",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22947"
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACVM",
+        "sid": "56482"
       },
       "AGSM|56902|20260927|DIAMOND 3D": {
         "venue": "AGS Cinemas: Maduravoyal",
@@ -397,6 +386,50 @@
         "vcode": "AGSM",
         "sid": "56903"
       },
+      "PGRA|22946|20260927|PRIME": {
+        "venue": "PVR: Grand Galada, Pallavaram",
+        "time": "06:55 PM",
+        "date": "20260927",
+        "cat": "PRIME",
+        "price": "245.98",
+        "status": "1",
+        "screen": "",
+        "vcode": "PGRA",
+        "sid": "22946"
+      },
+      "PGRA|22946|20260927|CLASSIC": {
+        "venue": "PVR: Grand Galada, Pallavaram",
+        "time": "06:55 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "96.74",
+        "status": "1",
+        "screen": "",
+        "vcode": "PGRA",
+        "sid": "22946"
+      },
+      "PGRA|22947|20260927|PRIME": {
+        "venue": "PVR: Grand Galada, Pallavaram",
+        "time": "11:00 PM",
+        "date": "20260927",
+        "cat": "PRIME",
+        "price": "245.98",
+        "status": "3",
+        "screen": "",
+        "vcode": "PGRA",
+        "sid": "22947"
+      },
+      "PGRA|22947|20260927|CLASSIC": {
+        "venue": "PVR: Grand Galada, Pallavaram",
+        "time": "11:00 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "96.74",
+        "status": "3",
+        "screen": "",
+        "vcode": "PGRA",
+        "sid": "22947"
+      },
       "PABC|21990|20260927|PRIME": {
         "venue": "PVR: Aerohub, Chennai",
         "time": "07:00 PM",
@@ -440,50 +473,6 @@
         "screen": "",
         "vcode": "PABC",
         "sid": "22036"
-      },
-      "ACVM|56481|20260927|DIAMOND 3D": {
-        "venue": "AGS Cinemas: Villivakkam",
-        "time": "03:00 PM",
-        "date": "20260927",
-        "cat": "DIAMOND 3D",
-        "price": "240.00",
-        "status": "1",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACVM",
-        "sid": "56481"
-      },
-      "ACVM|56481|20260927|PEARL 3D": {
-        "venue": "AGS Cinemas: Villivakkam",
-        "time": "03:00 PM",
-        "date": "20260927",
-        "cat": "PEARL 3D",
-        "price": "90.00",
-        "status": "1",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACVM",
-        "sid": "56481"
-      },
-      "ACVM|56482|20260927|DIAMOND 3D": {
-        "venue": "AGS Cinemas: Villivakkam",
-        "time": "06:45 PM",
-        "date": "20260927",
-        "cat": "DIAMOND 3D",
-        "price": "240.00",
-        "status": "2",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACVM",
-        "sid": "56482"
-      },
-      "ACVM|56482|20260927|PEARL 3D": {
-        "venue": "AGS Cinemas: Villivakkam",
-        "time": "06:45 PM",
-        "date": "20260927",
-        "cat": "PEARL 3D",
-        "price": "90.00",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACVM",
-        "sid": "56482"
       },
       "GKCP|4181|20260927|LOUNGE 1 +3D": {
         "venue": "GK Cinemas RGB + Laser SRL 4D: Porur",
@@ -672,50 +661,6 @@
         "vcode": "MLMT",
         "sid": "8607"
       },
-      "PVES|34447|20260927|ELITE": {
-        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
-        "time": "04:00 PM",
-        "date": "20260927",
-        "cat": "ELITE",
-        "price": "245.98",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVES",
-        "sid": "34447"
-      },
-      "PVES|34447|20260927|BUDGET": {
-        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
-        "time": "04:00 PM",
-        "date": "20260927",
-        "cat": "BUDGET",
-        "price": "96.74",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVES",
-        "sid": "34447"
-      },
-      "PVES|34449|20260927|ELITE": {
-        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
-        "time": "10:20 PM",
-        "date": "20260927",
-        "cat": "ELITE",
-        "price": "245.98",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVES",
-        "sid": "34449"
-      },
-      "PVES|34449|20260927|BUDGET": {
-        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
-        "time": "10:20 PM",
-        "date": "20260927",
-        "cat": "BUDGET",
-        "price": "96.74",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVES",
-        "sid": "34449"
-      },
       "PCAN|45597|20260927|PRIME": {
         "venue": "PVR: VR Chennai, Anna Nagar",
         "time": "06:55 PM",
@@ -759,6 +704,50 @@
         "screen": "",
         "vcode": "PCAN",
         "sid": "45577"
+      },
+      "PVES|34447|20260927|ELITE": {
+        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
+        "time": "04:00 PM",
+        "date": "20260927",
+        "cat": "ELITE",
+        "price": "245.98",
+        "status": "0",
+        "screen": "",
+        "vcode": "PVES",
+        "sid": "34447"
+      },
+      "PVES|34447|20260927|BUDGET": {
+        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
+        "time": "04:00 PM",
+        "date": "20260927",
+        "cat": "BUDGET",
+        "price": "96.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "PVES",
+        "sid": "34447"
+      },
+      "PVES|34449|20260927|ELITE": {
+        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
+        "time": "10:20 PM",
+        "date": "20260927",
+        "cat": "ELITE",
+        "price": "245.98",
+        "status": "1",
+        "screen": "",
+        "vcode": "PVES",
+        "sid": "34449"
+      },
+      "PVES|34449|20260927|BUDGET": {
+        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
+        "time": "10:20 PM",
+        "date": "20260927",
+        "cat": "BUDGET",
+        "price": "96.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "PVES",
+        "sid": "34449"
       }
     },
     "dates": {
@@ -837,7 +826,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "449.00",
-        "status": "0",
+        "status": "1",
         "screen": "IMAX",
         "vcode": "PVPZ",
         "sid": "38252"
@@ -982,7 +971,7 @@
         "date": "20260927",
         "cat": "NORMAL",
         "price": "61.74",
-        "status": "0",
+        "status": "2",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13343"
