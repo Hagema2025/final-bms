@@ -51,7 +51,7 @@
         "date": "20260927",
         "cat": "FIRST CLASS",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": "4K DOLBY 7.1",
         "vcode": "MAYJ",
         "sid": "239467"
@@ -150,7 +150,7 @@
         "date": "20260927",
         "cat": "SuperStar",
         "price": "190.00",
-        "status": "1",
+        "status": "0",
         "screen": "RGB ATMOS",
         "vcode": "RSSC",
         "sid": "123470"
@@ -298,28 +298,6 @@
         "vcode": "KSTK",
         "sid": "51100"
       },
-      "PVHR|42734|20260927|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "10:50 PM",
-        "date": "20260927",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "42734"
-      },
-      "PVHR|42734|20260927|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "10:50 PM",
-        "date": "20260927",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "42734"
-      },
       "PVHC|32603|20260927|PRIME": {
         "venue": "PVR: Ampa Mall, Nelson Manickam Road",
         "time": "11:00 PM",
@@ -364,50 +342,6 @@
         "vcode": "INTO",
         "sid": "90886"
       },
-      "PVSR|28121|20260927|ELITE": {
-        "venue": "PVR: Sathyam, Royapettah",
-        "time": "10:50 PM",
-        "date": "20260927",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVSR",
-        "sid": "28121"
-      },
-      "PVSR|28121|20260927|PREMIUM": {
-        "venue": "PVR: Sathyam, Royapettah",
-        "time": "10:50 PM",
-        "date": "20260927",
-        "cat": "PREMIUM",
-        "price": "173.00",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVSR",
-        "sid": "28121"
-      },
-      "PVSR|28121|20260927|ECONOMY": {
-        "venue": "PVR: Sathyam, Royapettah",
-        "time": "10:50 PM",
-        "date": "20260927",
-        "cat": "ECONOMY",
-        "price": "163.00",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVSR",
-        "sid": "28121"
-      },
-      "PVSR|28121|20260927|BUDGET": {
-        "venue": "PVR: Sathyam, Royapettah",
-        "time": "10:50 PM",
-        "date": "20260927",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVSR",
-        "sid": "28121"
-      },
       "PSKL|23639|20260927|PRIME": {
         "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
         "time": "11:00 PM",
@@ -429,28 +363,6 @@
         "screen": "",
         "vcode": "PSKL",
         "sid": "23639"
-      },
-      "PCAN|45598|20260927|PRIME": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "10:50 PM",
-        "date": "20260927",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "1",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45598"
-      },
-      "PCAN|45598|20260927|CLASSIC": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "10:50 PM",
-        "date": "20260927",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45598"
       }
     },
     "dates": {
