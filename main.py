@@ -1420,56 +1420,76 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                 else:
                     time_display = f"<b>{time_display}</b>"
 
-                # Reduced Indentation Space here!
                 lines.append(f" └ 🎟️{time_display} {screen_str}")
 
-                # Print Categories under this show
-                # Print Categories under this show (Super Clean Price-First Layout)
-                for c_idx, cat in enumerate(items):
-                    is_last_cat = (c_idx == len(items) - 1)
-                    cat_prefix = "   └" if is_last_cat else "   ├"
+                # --- PULL ALL CATEGORIES FOR THIS SHOWTIME FROM FULL SNAPSHOT ---
+                full_categories = []
+                for s in shows:
+                    if (str(s.date_code) == str(date_val) and 
+                        str(s.venue_code) == str(vcode) and 
+                        str(s.session_id) == str(sid)):
+                        full_categories = s.categories
+                        break
+                
+                # Fallback to change items if snapshot lookup misses
+                categories_to_render = full_categories if full_categories else items
+                
+                # Map changes for quick lookup by category name
+                change_map = {c.get("cat"): c for c in items}
 
-                    c_type = cat.get("type", "")
-                    price = clean_price(cat.get('price', '0'))
-                    old_price = clean_price(cat.get('old_price', '0'))
-                    
-                    raw_status = str(cat.get('status', '3')).strip()
-                    raw_old_status = str(cat.get('old_status', '')).strip() if cat.get('old_status') is not None else ""
-                    if c_type == "RESTOCKED" and not raw_old_status:
-                        raw_old_status = "0"
+                for c_idx, cat in enumerate(categories_to_render):
+                    is_last_cat = (c_idx == len(categories_to_render) - 1)
+                    cat_prefix = "    └" if is_last_cat else "    ├"
 
-                    curr_label, curr_emoji = resolve_status_info(raw_status)
-                    _, old_emoji = resolve_status_info(raw_old_status) if raw_old_status != "" else ("", "")
-
-                    # Status transition string
-                    status_str = f"[{old_emoji}➔{curr_emoji}]" if c_type == "RESTOCKED" and old_emoji != curr_emoji else curr_emoji
-
-                    # Format based on change type matching your exact idea
-                    # Check if both a price shift AND a restock happened simultaneously
-                    is_price_change = c_type in ("PRICE_DROP", "PRICE_INCREASE")
-                    has_status_transition = (raw_old_status != "" and old_emoji != curr_emoji)
-
-                    if c_type == "NEW":
-                        line_content = f"🆕 <b>{price}</b> {curr_emoji}"
-                        
-                    elif is_price_change and has_status_transition:
-                        # Combined Price Shift + Restock/Status Jump
-                        price_icon = "📉" if c_type == "PRICE_DROP" else "📈"
-                        status_part = f"[{old_emoji}➔{curr_emoji}]"
-                        line_content = f"🔄 {price_icon} <s>{old_price}</s>➔<b>{price}</b> {status_part}"
-                        
-                    elif c_type == "PRICE_DROP":
-                        line_content = f"📉 <s>{old_price}</s>➔<b>{price}</b> {curr_emoji}"
-                        
-                    elif c_type == "PRICE_INCREASE":
-                        line_content = f"📈 <s>{old_price}</s>➔<b>{price}</b> {curr_emoji}"
-                        
-                    elif c_type == "RESTOCKED":
-                        status_part = f"[{old_emoji}➔{curr_emoji}]" if old_emoji != curr_emoji else curr_emoji
-                        line_content = f"🔄 <b>{price}</b> {status_part}"
-                        
+                    # Handle object vs dict attributes safely
+                    if hasattr(cat, 'name'):
+                        cat_name = cat.name
+                        cat_price = cat.price
+                        cat_status = str(cat.status)
                     else:
-                        line_content = f"▪️ <b>{price}</b> {curr_emoji}"
+                        cat_name = cat.get('cat', '')
+                        cat_price = cat.get('price', '0')
+                        cat_status = str(cat.get('status', '3'))
+
+                    matched_change = change_map.get(cat_name)
+
+                    if matched_change:
+                        # Render category with its active change styling
+                        c_type = matched_change.get("type", "")
+                        price = clean_price(matched_change.get('price', cat_price))
+                        old_price = clean_price(matched_change.get('old_price', '0'))
+                        
+                        raw_status = str(matched_change.get('status', cat_status)).strip()
+                        raw_old_status = str(matched_change.get('old_status', '')).strip()
+                        if c_type == "RESTOCKED" and not raw_old_status:
+                            raw_old_status = "0"
+
+                        curr_label, curr_emoji = resolve_status_info(raw_status)
+                        _, old_emoji = resolve_status_info(raw_old_status) if raw_old_status != "" else ("", "")
+
+                        is_price_change = c_type in ("PRICE_DROP", "PRICE_INCREASE")
+                        has_status_transition = (raw_old_status != "" and old_emoji != curr_emoji)
+
+                        if c_type == "NEW":
+                            line_content = f"🆕  <b>{price}</b>: {curr_emoji}"
+                        elif is_price_change and has_status_transition:
+                            price_icon = "📉" if c_type == "PRICE_DROP" else "📈"
+                            status_part = f"[{old_emoji}➔{curr_emoji}]"
+                            line_content = f"🔄{price_icon} <s>{old_price}</s>➔<b>{price}</b>{status_part}"
+                        elif c_type == "PRICE_DROP":
+                            line_content = f"📉 <s>{old_price}</s>➔<b>{price}</b> {curr_emoji}"
+                        elif c_type == "PRICE_INCREASE":
+                            line_content = f"📈 <s>{old_price}</s>➔<b>{price}</b> {curr_emoji}"
+                        elif c_type == "RESTOCKED":
+                            status_part = f"[{old_emoji}➔{curr_emoji}]" if old_emoji != curr_emoji else curr_emoji
+                            line_content = f"🔄 <b>{price}</b>: {status_part}"
+                        else:
+                            line_content = f"▪️ <b>{price}</b>: {curr_emoji}"
+                    else:
+                        # Render static/unchanged categories for the same show time
+                        price = clean_price(cat_price)
+                        _, curr_emoji = resolve_status_info(cat_status)
+                        line_content = f"▪️ <b>{price}</b>: {curr_emoji}"
 
                     lines.append(f"{cat_prefix} {line_content}")
             
