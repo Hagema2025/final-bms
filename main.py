@@ -342,7 +342,7 @@ def _as_list(value):
 
 def load_watches():
     """
-    Load watches from watches.json.
+    Load watches from watches.json and preserve retention/status fields.
     """
     if not os.path.exists(WATCHES_FILE):
         print(f"❌ {WATCHES_FILE} not found.")
@@ -394,7 +394,6 @@ def load_watches():
                     date_time_map[clean_d] = [t.lower() for t in _as_list(d_times)]
             dates_list = list(date_time_map.keys())
         else:
-            # Fallback to standard list/string format
             if isinstance(dates_raw, str):
                 dates_list = [d.strip() for d in dates_raw.split(",") if d.strip()]
             elif isinstance(dates_raw, list):
@@ -408,18 +407,38 @@ def load_watches():
         formats = [fmt.lower() for fmt in _as_list(watch.get("formats"))]
         message_thread_id = watch.get("message_thread_id", None)
 
-        validated.append({
+        # --- PRESERVE RETENTION & STATUS FIELDS ---
+        status = watch.get("status", None)
+        closed_at = watch.get("closed_at", None)
+        closed_at_formatted = watch.get("closed_at_formatted", None)
+        deletes_at_formatted = watch.get("deletes_at_formatted", None)
+        expired_notified = watch.get("expired_notified", False)
+
+        validated_watch = {
             "name": name,
             "url": url,
             "dates": dates_list,
-            "date_time_map": date_time_map,  # <--- NEW DICTIONARY ADDED
+            "date_time_map": date_time_map,
             "theatre": theatre,
             "time_period": time_period_global,
             "discover_variants": discover_variants,
             "languages": languages,
             "formats": formats,
             "message_thread_id": message_thread_id,
-        })
+            "expired_notified": expired_notified,
+        }
+
+        # Keep status fields if they exist
+        if status:
+            validated_watch["status"] = status
+        if closed_at:
+            validated_watch["closed_at"] = closed_at
+        if closed_at_formatted:
+            validated_watch["closed_at_formatted"] = closed_at_formatted
+        if deletes_at_formatted:
+            validated_watch["deletes_at_formatted"] = deletes_at_formatted
+
+        validated.append(validated_watch)
 
     return validated
 
