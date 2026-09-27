@@ -34,17 +34,6 @@
         "vcode": "MAYJ",
         "sid": "239340"
       },
-      "MAYJ|238991|20260927|FIRST CLASS 3D": {
-        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
-        "time": "11:00 PM",
-        "date": "20260927",
-        "cat": "FIRST CLASS 3D",
-        "price": "246.40",
-        "status": "3",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "MAYJ",
-        "sid": "238991"
-      },
       "MAYJ|239341|20260927|FIRST CLASS 3D": {
         "venue": "MAYAJAAL Multiplex: ECR, Chennai",
         "time": "11:30 PM",
@@ -282,7 +271,7 @@
         "date": "20260927",
         "cat": "DIAMOND 3D",
         "price": "240.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K DOLBY 7.1",
         "vcode": "AGSM",
         "sid": "56974"
@@ -293,7 +282,7 @@
         "date": "20260927",
         "cat": "PEARL 3D",
         "price": "90.00",
-        "status": "0",
+        "status": "3",
         "screen": "4K DOLBY 7.1",
         "vcode": "AGSM",
         "sid": "56974"
@@ -337,7 +326,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "101.74",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PABC",
         "sid": "21990"
@@ -688,17 +677,6 @@
   },
   "AvengersEndgameEncore_20260927131410 (English 2D) (English IMAX 2D)": {
     "shows": {
-      "PVPZ|38468|20260927|ELITE": {
-        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
-        "time": "03:30 PM",
-        "date": "20260927",
-        "cat": "ELITE",
-        "price": "449.00",
-        "status": "1",
-        "screen": "IMAX",
-        "vcode": "PVPZ",
-        "sid": "38468"
-      },
       "PVPZ|38252|20260927|ELITE": {
         "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
         "time": "07:20 PM",
@@ -841,7 +819,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "245.98",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "INPR",
         "sid": "66105"
@@ -929,7 +907,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "96.74",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVHC",
         "sid": "32226"
