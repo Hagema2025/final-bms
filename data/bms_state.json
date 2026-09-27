@@ -238,7 +238,7 @@
         "date": "20260927",
         "cat": "NORMAL",
         "price": "101.74",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13688"
@@ -293,7 +293,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "96.74",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PGRA",
         "sid": "22946"
@@ -447,7 +447,7 @@
         "date": "20260927",
         "cat": "PEARL 3D",
         "price": "90.00",
-        "status": "0",
+        "status": "1",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACVM",
         "sid": "56481"
@@ -583,17 +583,6 @@
         "screen": "",
         "vcode": "PBRM",
         "sid": "25198"
-      },
-      "LKOP|12342|20260927|FIRST CLASS+3D": {
-        "venue": "Lathaa Cinemas A/C Atmos 2K 3D: Chengalpattu",
-        "time": "02:30 PM",
-        "date": "20260927",
-        "cat": "FIRST CLASS+3D",
-        "price": "160.00",
-        "status": "2",
-        "screen": "7.1 SCREEN 2",
-        "vcode": "LKOP",
-        "sid": "12342"
       },
       "VVGT|31636|20260927|ELITE 3D": {
         "venue": "Vels Theatres: Chennai",
@@ -971,7 +960,7 @@
         "date": "20260927",
         "cat": "NORMAL",
         "price": "61.74",
-        "status": "1",
+        "status": "2",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13343"
