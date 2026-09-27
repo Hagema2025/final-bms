@@ -40,7 +40,7 @@
         "date": "20260927",
         "cat": "Elite",
         "price": "150.00",
-        "status": "2",
+        "status": "1",
         "screen": "SCREEN 2",
         "vcode": "RAKK",
         "sid": "4204"
@@ -309,28 +309,6 @@
         "vcode": "CBMC",
         "sid": "13555"
       },
-      "PVHC|32607|20260927|PRIME": {
-        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-        "time": "12:30 PM",
-        "date": "20260927",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVHC",
-        "sid": "32607"
-      },
-      "PVHC|32607|20260927|CLASSIC": {
-        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-        "time": "12:30 PM",
-        "date": "20260927",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVHC",
-        "sid": "32607"
-      },
       "PVHC|32606|20260927|PRIME": {
         "venue": "PVR: Ampa Mall, Nelson Manickam Road",
         "time": "03:25 PM",
@@ -551,17 +529,6 @@
         "vcode": "INTO",
         "sid": "90901"
       },
-      "MAYJ|239156|20260927|FIRST CLASS": {
-        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
-        "time": "01:10 PM",
-        "date": "20260927",
-        "cat": "FIRST CLASS",
-        "price": "183.80",
-        "status": "1",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "MAYJ",
-        "sid": "239156"
-      },
       "MAYJ|239157|20260927|FIRST CLASS": {
         "venue": "MAYAJAAL Multiplex: ECR, Chennai",
         "time": "04:20 PM",
@@ -694,28 +661,6 @@
         "vcode": "HRSR",
         "sid": "1146"
       },
-      "AGSM|56975|20260927|DIAMOND": {
-        "venue": "AGS Cinemas: Maduravoyal",
-        "time": "01:00 PM",
-        "date": "20260927",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "1",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "AGSM",
-        "sid": "56975"
-      },
-      "AGSM|56975|20260927|PEARL": {
-        "venue": "AGS Cinemas: Maduravoyal",
-        "time": "01:00 PM",
-        "date": "20260927",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "AGSM",
-        "sid": "56975"
-      },
       "AGSM|56854|20260927|DIAMOND": {
         "venue": "AGS Cinemas: Maduravoyal",
         "time": "07:45 PM",
@@ -766,7 +711,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "INPR",
         "sid": "66628"
@@ -788,7 +733,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "INPR",
         "sid": "66592"
@@ -810,7 +755,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "INPR",
         "sid": "66633"
@@ -964,7 +909,7 @@
         "date": "20260927",
         "cat": "Economy",
         "price": "54.00",
-        "status": "1",
+        "status": "0",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51102"
@@ -1019,7 +964,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "160.00",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "VVGT",
         "sid": "31651"
@@ -1129,7 +1074,7 @@
         "date": "20260927",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PVHR",
         "sid": "42809"
@@ -1261,7 +1206,7 @@
         "date": "20260927",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PABC",
         "sid": "22033"
@@ -1272,7 +1217,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PABC",
         "sid": "22033"
@@ -1525,7 +1470,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PBRM",
         "sid": "25200"
@@ -1954,7 +1899,7 @@
         "date": "20260927",
         "cat": "Club",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "INCH",
         "sid": "80708"
@@ -2020,7 +1965,7 @@
         "date": "20260927",
         "cat": "DIAMOND",
         "price": "130.00",
-        "status": "1",
+        "status": "0",
         "screen": "4K DOLBY",
         "vcode": "GCRP",
         "sid": "17528"
@@ -2284,7 +2229,7 @@
         "date": "20260927",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PCAN",
         "sid": "45552"
@@ -2372,7 +2317,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVES",
         "sid": "34407"
@@ -2483,6 +2428,1227 @@
       "20260929": "AVAILABLE",
       "20260930": "AVAILABLE",
       "20261001": "AVAILABLE",
+      "20261002": "NOT_OPEN",
+      "20261003": "NOT_OPEN"
+    }
+  },
+  "AvengersEndgameEncore_20260927131410 (English 2D) (English 3D)": {
+    "shows": {
+      "TVHP|25386|20260927|ELITE+3D": {
+        "venue": "The Vijay Park Multiplex: Injambakkam ECR 4K Atmos",
+        "time": "02:50 PM",
+        "date": "20260927",
+        "cat": "ELITE+3D",
+        "price": "241.44",
+        "status": "2",
+        "screen": "4K DOLBY ATMOS",
+        "vcode": "TVHP",
+        "sid": "25386"
+      },
+      "TVHP|25388|20260927|ELITE+3D": {
+        "venue": "The Vijay Park Multiplex: Injambakkam ECR 4K Atmos",
+        "time": "10:10 PM",
+        "date": "20260927",
+        "cat": "ELITE+3D",
+        "price": "241.44",
+        "status": "3",
+        "screen": "4K DOLBY ATMOS",
+        "vcode": "TVHP",
+        "sid": "25388"
+      },
+      "MAYJ|238989|20260927|FIRST CLASS 3D": {
+        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
+        "time": "02:20 PM",
+        "date": "20260927",
+        "cat": "FIRST CLASS 3D",
+        "price": "246.40",
+        "status": "2",
+        "screen": "4K DOLBY ATMOS",
+        "vcode": "MAYJ",
+        "sid": "238989"
+      },
+      "MAYJ|239339|20260927|FIRST CLASS 3D": {
+        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
+        "time": "03:50 PM",
+        "date": "20260927",
+        "cat": "FIRST CLASS 3D",
+        "price": "246.40",
+        "status": "2",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "MAYJ",
+        "sid": "239339"
+      },
+      "MAYJ|238990|20260927|FIRST CLASS 3D": {
+        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
+        "time": "06:10 PM",
+        "date": "20260927",
+        "cat": "FIRST CLASS 3D",
+        "price": "246.40",
+        "status": "3",
+        "screen": "4K DOLBY ATMOS",
+        "vcode": "MAYJ",
+        "sid": "238990"
+      },
+      "MAYJ|239340|20260927|FIRST CLASS 3D": {
+        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
+        "time": "07:40 PM",
+        "date": "20260927",
+        "cat": "FIRST CLASS 3D",
+        "price": "246.40",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "MAYJ",
+        "sid": "239340"
+      },
+      "MAYJ|238991|20260927|FIRST CLASS 3D": {
+        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
+        "time": "11:00 PM",
+        "date": "20260927",
+        "cat": "FIRST CLASS 3D",
+        "price": "246.40",
+        "status": "3",
+        "screen": "4K DOLBY ATMOS",
+        "vcode": "MAYJ",
+        "sid": "238991"
+      },
+      "MAYJ|239341|20260927|FIRST CLASS 3D": {
+        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
+        "time": "11:30 PM",
+        "date": "20260927",
+        "cat": "FIRST CLASS 3D",
+        "price": "246.40",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "MAYJ",
+        "sid": "239341"
+      },
+      "RSSC|123472|20260927|GoldStar +3D Glass Rent": {
+        "venue": "Rohini Silver Screens: Koyambedu",
+        "time": "04:45 PM",
+        "date": "20260927",
+        "cat": "GoldStar +3D Glass Rent",
+        "price": "200.00",
+        "status": "2",
+        "screen": "4K RGB",
+        "vcode": "RSSC",
+        "sid": "123472"
+      },
+      "RSSC|123448|20260927|SuperStar+3d Glass Rent": {
+        "venue": "Rohini Silver Screens: Koyambedu",
+        "time": "07:45 PM",
+        "date": "20260927",
+        "cat": "SuperStar+3d Glass Rent",
+        "price": "230.00",
+        "status": "1",
+        "screen": "4K/ATMOS",
+        "vcode": "RSSC",
+        "sid": "123448"
+      },
+      "RSSC|123448|20260927|PLATINUM +3D Glass Rent": {
+        "venue": "Rohini Silver Screens: Koyambedu",
+        "time": "07:45 PM",
+        "date": "20260927",
+        "cat": "PLATINUM +3D Glass Rent",
+        "price": "220.00",
+        "status": "2",
+        "screen": "4K/ATMOS",
+        "vcode": "RSSC",
+        "sid": "123448"
+      },
+      "RSSC|123448|20260927|GoldStar +3D Glass Rent": {
+        "venue": "Rohini Silver Screens: Koyambedu",
+        "time": "07:45 PM",
+        "date": "20260927",
+        "cat": "GoldStar +3D Glass Rent",
+        "price": "200.00",
+        "status": "3",
+        "screen": "4K/ATMOS",
+        "vcode": "RSSC",
+        "sid": "123448"
+      },
+      "INTO|90889|20260927|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "03:15 PM",
+        "date": "20260927",
+        "cat": "CLUB",
+        "price": "245.98",
+        "status": "1",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90889"
+      },
+      "INTO|90889|20260927|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "03:15 PM",
+        "date": "20260927",
+        "cat": "EXECUTIVE",
+        "price": "96.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90889"
+      },
+      "INTO|90890|20260927|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:10 PM",
+        "date": "20260927",
+        "cat": "CLUB",
+        "price": "245.98",
+        "status": "1",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90890"
+      },
+      "INTO|90890|20260927|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:10 PM",
+        "date": "20260927",
+        "cat": "EXECUTIVE",
+        "price": "96.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90890"
+      },
+      "INTO|90891|20260927|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:05 PM",
+        "date": "20260927",
+        "cat": "CLUB",
+        "price": "245.98",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90891"
+      },
+      "INTO|90891|20260927|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "11:05 PM",
+        "date": "20260927",
+        "cat": "EXECUTIVE",
+        "price": "96.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "90891"
+      },
+      "ACTN|46214|20260927|DIAMOND 3D": {
+        "venue": "AGS Cinemas: T. Nagar",
+        "time": "01:10 PM",
+        "date": "20260927",
+        "cat": "DIAMOND 3D",
+        "price": "240.00",
+        "status": "2",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACTN",
+        "sid": "46214"
+      },
+      "ACTN|46214|20260927|PEARL 3D": {
+        "venue": "AGS Cinemas: T. Nagar",
+        "time": "01:10 PM",
+        "date": "20260927",
+        "cat": "PEARL 3D",
+        "price": "90.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACTN",
+        "sid": "46214"
+      },
+      "ACTN|46212|20260927|DIAMOND 3D": {
+        "venue": "AGS Cinemas: T. Nagar",
+        "time": "07:20 PM",
+        "date": "20260927",
+        "cat": "DIAMOND 3D",
+        "price": "240.00",
+        "status": "2",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACTN",
+        "sid": "46212"
+      },
+      "ACTN|46212|20260927|PEARL 3D": {
+        "venue": "AGS Cinemas: T. Nagar",
+        "time": "07:20 PM",
+        "date": "20260927",
+        "cat": "PEARL 3D",
+        "price": "90.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACTN",
+        "sid": "46212"
+      },
+      "ACTN|46211|20260927|DIAMOND 3D": {
+        "venue": "AGS Cinemas: T. Nagar",
+        "time": "11:00 PM",
+        "date": "20260927",
+        "cat": "DIAMOND 3D",
+        "price": "240.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACTN",
+        "sid": "46211"
+      },
+      "ACTN|46211|20260927|PEARL 3D": {
+        "venue": "AGS Cinemas: T. Nagar",
+        "time": "11:00 PM",
+        "date": "20260927",
+        "cat": "PEARL 3D",
+        "price": "90.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACTN",
+        "sid": "46211"
+      },
+      "CBMC|13688|20260927|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "04:15 PM",
+        "date": "20260927",
+        "cat": "NORMAL",
+        "price": "101.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13688"
+      },
+      "CBMC|13688|20260927|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "04:15 PM",
+        "date": "20260927",
+        "cat": "EXECUTIVE",
+        "price": "250.98",
+        "status": "1",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13688"
+      },
+      "ACON|47640|20260927|DIAMOND 3D": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:40 PM",
+        "date": "20260927",
+        "cat": "DIAMOND 3D",
+        "price": "240.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47640"
+      },
+      "ACON|47640|20260927|PEARL 3D": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:40 PM",
+        "date": "20260927",
+        "cat": "PEARL 3D",
+        "price": "90.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47640"
+      },
+      "PGRA|22946|20260927|PRIME": {
+        "venue": "PVR: Grand Galada, Pallavaram",
+        "time": "06:55 PM",
+        "date": "20260927",
+        "cat": "PRIME",
+        "price": "245.98",
+        "status": "1",
+        "screen": "",
+        "vcode": "PGRA",
+        "sid": "22946"
+      },
+      "PGRA|22946|20260927|CLASSIC": {
+        "venue": "PVR: Grand Galada, Pallavaram",
+        "time": "06:55 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "96.74",
+        "status": "1",
+        "screen": "",
+        "vcode": "PGRA",
+        "sid": "22946"
+      },
+      "PGRA|22947|20260927|PRIME": {
+        "venue": "PVR: Grand Galada, Pallavaram",
+        "time": "11:00 PM",
+        "date": "20260927",
+        "cat": "PRIME",
+        "price": "245.98",
+        "status": "3",
+        "screen": "",
+        "vcode": "PGRA",
+        "sid": "22947"
+      },
+      "PGRA|22947|20260927|CLASSIC": {
+        "venue": "PVR: Grand Galada, Pallavaram",
+        "time": "11:00 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "96.74",
+        "status": "3",
+        "screen": "",
+        "vcode": "PGRA",
+        "sid": "22947"
+      },
+      "AGSM|56902|20260927|DIAMOND 3D": {
+        "venue": "AGS Cinemas: Maduravoyal",
+        "time": "02:45 PM",
+        "date": "20260927",
+        "cat": "DIAMOND 3D",
+        "price": "240.00",
+        "status": "1",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "AGSM",
+        "sid": "56902"
+      },
+      "AGSM|56902|20260927|PEARL 3D": {
+        "venue": "AGS Cinemas: Maduravoyal",
+        "time": "02:45 PM",
+        "date": "20260927",
+        "cat": "PEARL 3D",
+        "price": "90.00",
+        "status": "2",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "AGSM",
+        "sid": "56902"
+      },
+      "AGSM|56974|20260927|DIAMOND 3D": {
+        "venue": "AGS Cinemas: Maduravoyal",
+        "time": "06:50 PM",
+        "date": "20260927",
+        "cat": "DIAMOND 3D",
+        "price": "240.00",
+        "status": "2",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "AGSM",
+        "sid": "56974"
+      },
+      "AGSM|56974|20260927|PEARL 3D": {
+        "venue": "AGS Cinemas: Maduravoyal",
+        "time": "06:50 PM",
+        "date": "20260927",
+        "cat": "PEARL 3D",
+        "price": "90.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "AGSM",
+        "sid": "56974"
+      },
+      "AGSM|56903|20260927|DIAMOND 3D": {
+        "venue": "AGS Cinemas: Maduravoyal",
+        "time": "10:50 PM",
+        "date": "20260927",
+        "cat": "DIAMOND 3D",
+        "price": "240.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "AGSM",
+        "sid": "56903"
+      },
+      "AGSM|56903|20260927|PEARL 3D": {
+        "venue": "AGS Cinemas: Maduravoyal",
+        "time": "10:50 PM",
+        "date": "20260927",
+        "cat": "PEARL 3D",
+        "price": "90.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "AGSM",
+        "sid": "56903"
+      },
+      "PABC|21990|20260927|PRIME": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "07:00 PM",
+        "date": "20260927",
+        "cat": "PRIME",
+        "price": "250.98",
+        "status": "0",
+        "screen": "",
+        "vcode": "PABC",
+        "sid": "21990"
+      },
+      "PABC|21990|20260927|CLASSIC": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "07:00 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "101.74",
+        "status": "3",
+        "screen": "",
+        "vcode": "PABC",
+        "sid": "21990"
+      },
+      "PABC|22036|20260927|PRIME": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "10:55 PM",
+        "date": "20260927",
+        "cat": "PRIME",
+        "price": "250.98",
+        "status": "2",
+        "screen": "",
+        "vcode": "PABC",
+        "sid": "22036"
+      },
+      "PABC|22036|20260927|CLASSIC": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "10:55 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "101.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "PABC",
+        "sid": "22036"
+      },
+      "ACVM|56481|20260927|DIAMOND 3D": {
+        "venue": "AGS Cinemas: Villivakkam",
+        "time": "03:00 PM",
+        "date": "20260927",
+        "cat": "DIAMOND 3D",
+        "price": "240.00",
+        "status": "1",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACVM",
+        "sid": "56481"
+      },
+      "ACVM|56481|20260927|PEARL 3D": {
+        "venue": "AGS Cinemas: Villivakkam",
+        "time": "03:00 PM",
+        "date": "20260927",
+        "cat": "PEARL 3D",
+        "price": "90.00",
+        "status": "1",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACVM",
+        "sid": "56481"
+      },
+      "ACVM|56482|20260927|DIAMOND 3D": {
+        "venue": "AGS Cinemas: Villivakkam",
+        "time": "06:45 PM",
+        "date": "20260927",
+        "cat": "DIAMOND 3D",
+        "price": "240.00",
+        "status": "2",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACVM",
+        "sid": "56482"
+      },
+      "ACVM|56482|20260927|PEARL 3D": {
+        "venue": "AGS Cinemas: Villivakkam",
+        "time": "06:45 PM",
+        "date": "20260927",
+        "cat": "PEARL 3D",
+        "price": "90.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACVM",
+        "sid": "56482"
+      },
+      "GKCP|4181|20260927|LOUNGE 1 +3D": {
+        "venue": "GK Cinemas RGB + Laser SRL 4D: Porur",
+        "time": "04:30 PM",
+        "date": "20260927",
+        "cat": "LOUNGE 1 +3D",
+        "price": "150.00",
+        "status": "0",
+        "screen": "RGB ATMOS",
+        "vcode": "GKCP",
+        "sid": "4181"
+      },
+      "GKCP|4181|20260927|SIGNATURE CLASS +3D": {
+        "venue": "GK Cinemas RGB + Laser SRL 4D: Porur",
+        "time": "04:30 PM",
+        "date": "20260927",
+        "cat": "SIGNATURE CLASS +3D",
+        "price": "150.00",
+        "status": "1",
+        "screen": "RGB ATMOS",
+        "vcode": "GKCP",
+        "sid": "4181"
+      },
+      "PVHR|42781|20260927|PRIME": {
+        "venue": "PVR: Heritage RSL ECR, Chennai",
+        "time": "07:20 PM",
+        "date": "20260927",
+        "cat": "PRIME",
+        "price": "245.98",
+        "status": "2",
+        "screen": "",
+        "vcode": "PVHR",
+        "sid": "42781"
+      },
+      "PVHR|42781|20260927|CLASSIC": {
+        "venue": "PVR: Heritage RSL ECR, Chennai",
+        "time": "07:20 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "96.74",
+        "status": "2",
+        "screen": "",
+        "vcode": "PVHR",
+        "sid": "42781"
+      },
+      "PVHR|42782|20260927|PRIME": {
+        "venue": "PVR: Heritage RSL ECR, Chennai",
+        "time": "11:10 PM",
+        "date": "20260927",
+        "cat": "PRIME",
+        "price": "245.98",
+        "status": "3",
+        "screen": "",
+        "vcode": "PVHR",
+        "sid": "42782"
+      },
+      "PVHR|42782|20260927|CLASSIC": {
+        "venue": "PVR: Heritage RSL ECR, Chennai",
+        "time": "11:10 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "96.74",
+        "status": "3",
+        "screen": "",
+        "vcode": "PVHR",
+        "sid": "42782"
+      },
+      "PBRM|25135|20260927|ELITE": {
+        "venue": "PVR: Perambur, Spectrum Mall",
+        "time": "07:20 PM",
+        "date": "20260927",
+        "cat": "ELITE",
+        "price": "245.98",
+        "status": "1",
+        "screen": "",
+        "vcode": "PBRM",
+        "sid": "25135"
+      },
+      "PBRM|25135|20260927|BUDGET": {
+        "venue": "PVR: Perambur, Spectrum Mall",
+        "time": "07:20 PM",
+        "date": "20260927",
+        "cat": "BUDGET",
+        "price": "96.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "PBRM",
+        "sid": "25135"
+      },
+      "PBRM|25198|20260927|ELITE": {
+        "venue": "PVR: Perambur, Spectrum Mall",
+        "time": "11:10 PM",
+        "date": "20260927",
+        "cat": "ELITE",
+        "price": "245.98",
+        "status": "3",
+        "screen": "",
+        "vcode": "PBRM",
+        "sid": "25198"
+      },
+      "PBRM|25198|20260927|BUDGET": {
+        "venue": "PVR: Perambur, Spectrum Mall",
+        "time": "11:10 PM",
+        "date": "20260927",
+        "cat": "BUDGET",
+        "price": "96.74",
+        "status": "3",
+        "screen": "",
+        "vcode": "PBRM",
+        "sid": "25198"
+      },
+      "LKOP|12342|20260927|FIRST CLASS+3D": {
+        "venue": "Lathaa Cinemas A/C Atmos 2K 3D: Chengalpattu",
+        "time": "02:30 PM",
+        "date": "20260927",
+        "cat": "FIRST CLASS+3D",
+        "price": "160.00",
+        "status": "2",
+        "screen": "7.1 SCREEN 2",
+        "vcode": "LKOP",
+        "sid": "12342"
+      },
+      "VVGT|31636|20260927|ELITE 3D": {
+        "venue": "Vels Theatres: Chennai",
+        "time": "03:15 PM",
+        "date": "20260927",
+        "cat": "ELITE 3D",
+        "price": "241.46",
+        "status": "2",
+        "screen": "",
+        "vcode": "VVGT",
+        "sid": "31636"
+      },
+      "MCSK|16007|20260927|3D SPECIAL": {
+        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
+        "time": "10:45 PM",
+        "date": "20260927",
+        "cat": "3D SPECIAL",
+        "price": "101.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "MCSK",
+        "sid": "16007"
+      },
+      "MCSK|16007|20260927|3D EXECUTIVE": {
+        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
+        "time": "10:45 PM",
+        "date": "20260927",
+        "cat": "3D EXECUTIVE",
+        "price": "250.98",
+        "status": "3",
+        "screen": "",
+        "vcode": "MCSK",
+        "sid": "16007"
+      },
+      "MLMT|8590|20260927|PREMIUM 3D": {
+        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
+        "time": "01:00 PM",
+        "date": "20260927",
+        "cat": "PREMIUM 3D",
+        "price": "180.00",
+        "status": "0",
+        "screen": "DOLBY ATMOS",
+        "vcode": "MLMT",
+        "sid": "8590"
+      },
+      "MLMT|8590|20260927|EXECUTIVE 3D": {
+        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
+        "time": "01:00 PM",
+        "date": "20260927",
+        "cat": "EXECUTIVE 3D",
+        "price": "160.00",
+        "status": "0",
+        "screen": "DOLBY ATMOS",
+        "vcode": "MLMT",
+        "sid": "8590"
+      },
+      "MLMT|8590|20260927|SILVER 3D": {
+        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
+        "time": "01:00 PM",
+        "date": "20260927",
+        "cat": "SILVER 3D",
+        "price": "160.00",
+        "status": "2",
+        "screen": "DOLBY ATMOS",
+        "vcode": "MLMT",
+        "sid": "8590"
+      },
+      "MLMT|8607|20260927|PREMIUM 3D": {
+        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
+        "time": "07:50 PM",
+        "date": "20260927",
+        "cat": "PREMIUM 3D",
+        "price": "180.00",
+        "status": "3",
+        "screen": "DOLBY ATMOS",
+        "vcode": "MLMT",
+        "sid": "8607"
+      },
+      "MLMT|8607|20260927|EXECUTIVE 3D": {
+        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
+        "time": "07:50 PM",
+        "date": "20260927",
+        "cat": "EXECUTIVE 3D",
+        "price": "160.00",
+        "status": "3",
+        "screen": "DOLBY ATMOS",
+        "vcode": "MLMT",
+        "sid": "8607"
+      },
+      "MLMT|8607|20260927|SILVER 3D": {
+        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
+        "time": "07:50 PM",
+        "date": "20260927",
+        "cat": "SILVER 3D",
+        "price": "160.00",
+        "status": "3",
+        "screen": "DOLBY ATMOS",
+        "vcode": "MLMT",
+        "sid": "8607"
+      },
+      "PVES|34447|20260927|ELITE": {
+        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
+        "time": "04:00 PM",
+        "date": "20260927",
+        "cat": "ELITE",
+        "price": "245.98",
+        "status": "0",
+        "screen": "",
+        "vcode": "PVES",
+        "sid": "34447"
+      },
+      "PVES|34447|20260927|BUDGET": {
+        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
+        "time": "04:00 PM",
+        "date": "20260927",
+        "cat": "BUDGET",
+        "price": "96.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "PVES",
+        "sid": "34447"
+      },
+      "PVES|34449|20260927|ELITE": {
+        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
+        "time": "10:20 PM",
+        "date": "20260927",
+        "cat": "ELITE",
+        "price": "245.98",
+        "status": "1",
+        "screen": "",
+        "vcode": "PVES",
+        "sid": "34449"
+      },
+      "PVES|34449|20260927|BUDGET": {
+        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
+        "time": "10:20 PM",
+        "date": "20260927",
+        "cat": "BUDGET",
+        "price": "96.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "PVES",
+        "sid": "34449"
+      },
+      "PCAN|45597|20260927|PRIME": {
+        "venue": "PVR: VR Chennai, Anna Nagar",
+        "time": "06:55 PM",
+        "date": "20260927",
+        "cat": "PRIME",
+        "price": "260.98",
+        "status": "0",
+        "screen": "PXL",
+        "vcode": "PCAN",
+        "sid": "45597"
+      },
+      "PCAN|45597|20260927|CLASSIC": {
+        "venue": "PVR: VR Chennai, Anna Nagar",
+        "time": "06:55 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "111.74",
+        "status": "0",
+        "screen": "PXL",
+        "vcode": "PCAN",
+        "sid": "45597"
+      },
+      "PCAN|45577|20260927|PRIME": {
+        "venue": "PVR: VR Chennai, Anna Nagar",
+        "time": "10:40 PM",
+        "date": "20260927",
+        "cat": "PRIME",
+        "price": "245.98",
+        "status": "1",
+        "screen": "",
+        "vcode": "PCAN",
+        "sid": "45577"
+      },
+      "PCAN|45577|20260927|CLASSIC": {
+        "venue": "PVR: VR Chennai, Anna Nagar",
+        "time": "10:40 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "96.74",
+        "status": "1",
+        "screen": "",
+        "vcode": "PCAN",
+        "sid": "45577"
+      }
+    },
+    "dates": {
+      "20260927": "BOOKABLE",
+      "20260928": "AVAILABLE",
+      "20260929": "AVAILABLE",
+      "20260930": "AVAILABLE",
+      "20261001": "AVAILABLE",
+      "20261002": "NOT_OPEN",
+      "20261003": "NOT_OPEN"
+    }
+  },
+  "AvengersEndgameEncore_20260927131410 (English 2D) (English EPIQ 3D)": {
+    "shows": {
+      "RAKK|4102|20260927|Premium+3D": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "03:40 PM",
+        "date": "20260927",
+        "cat": "Premium+3D",
+        "price": "300.00",
+        "status": "1",
+        "screen": "EPIQ",
+        "vcode": "RAKK",
+        "sid": "4102"
+      },
+      "RAKK|4103|20260927|Premium+3D": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:25 PM",
+        "date": "20260927",
+        "cat": "Premium+3D",
+        "price": "300.00",
+        "status": "1",
+        "screen": "EPIQ",
+        "vcode": "RAKK",
+        "sid": "4103"
+      },
+      "RAKK|4104|20260927|Premium+3D": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "11:15 PM",
+        "date": "20260927",
+        "cat": "Premium+3D",
+        "price": "300.00",
+        "status": "2",
+        "screen": "EPIQ",
+        "vcode": "RAKK",
+        "sid": "4104"
+      }
+    },
+    "dates": {
+      "20260927": "BOOKABLE",
+      "20260928": "AVAILABLE",
+      "20260929": "AVAILABLE",
+      "20260930": "AVAILABLE",
+      "20261001": "AVAILABLE",
+      "20261002": "AVAILABLE",
+      "20261003": "AVAILABLE",
+      "20261004": "AVAILABLE"
+    }
+  },
+  "AvengersEndgameEncore_20260927131410 (English 2D) (English IMAX 2D)": {
+    "shows": {
+      "PVPZ|38468|20260927|ELITE": {
+        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
+        "time": "03:30 PM",
+        "date": "20260927",
+        "cat": "ELITE",
+        "price": "449.00",
+        "status": "0",
+        "screen": "IMAX",
+        "vcode": "PVPZ",
+        "sid": "38468"
+      },
+      "PVPZ|38252|20260927|ELITE": {
+        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
+        "time": "07:20 PM",
+        "date": "20260927",
+        "cat": "ELITE",
+        "price": "449.00",
+        "status": "1",
+        "screen": "IMAX",
+        "vcode": "PVPZ",
+        "sid": "38252"
+      },
+      "PVPZ|38469|20260927|ELITE": {
+        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
+        "time": "11:10 PM",
+        "date": "20260927",
+        "cat": "ELITE",
+        "price": "449.00",
+        "status": "1",
+        "screen": "IMAX",
+        "vcode": "PVPZ",
+        "sid": "38469"
+      }
+    },
+    "dates": {
+      "20260927": "BOOKABLE",
+      "20260928": "AVAILABLE",
+      "20260929": "AVAILABLE",
+      "20260930": "AVAILABLE",
+      "20261001": "NOT_OPEN",
+      "20261002": "NOT_OPEN",
+      "20261003": "NOT_OPEN"
+    }
+  },
+  "AvengersEndgameEncore_20260927131410 (English 2D) (English MS - Infinity Vision)": {
+    "shows": {
+      "PGMV|22492|20260927|PRIME": {
+        "venue": "PVR: Grand Mall, Velachery",
+        "time": "03:00 PM",
+        "date": "20260927",
+        "cat": "PRIME",
+        "price": "210.98",
+        "status": "0",
+        "screen": "",
+        "vcode": "PGMV",
+        "sid": "22492"
+      },
+      "PGMV|22492|20260927|CLASSIC": {
+        "venue": "PVR: Grand Mall, Velachery",
+        "time": "03:00 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "66.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "PGMV",
+        "sid": "22492"
+      },
+      "PGMV|22493|20260927|PRIME": {
+        "venue": "PVR: Grand Mall, Velachery",
+        "time": "06:50 PM",
+        "date": "20260927",
+        "cat": "PRIME",
+        "price": "210.98",
+        "status": "0",
+        "screen": "",
+        "vcode": "PGMV",
+        "sid": "22493"
+      },
+      "PGMV|22493|20260927|CLASSIC": {
+        "venue": "PVR: Grand Mall, Velachery",
+        "time": "06:50 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "66.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "PGMV",
+        "sid": "22493"
+      },
+      "PGMV|22494|20260927|PRIME": {
+        "venue": "PVR: Grand Mall, Velachery",
+        "time": "10:45 PM",
+        "date": "20260927",
+        "cat": "PRIME",
+        "price": "210.98",
+        "status": "1",
+        "screen": "",
+        "vcode": "PGMV",
+        "sid": "22494"
+      },
+      "PGMV|22494|20260927|CLASSIC": {
+        "venue": "PVR: Grand Mall, Velachery",
+        "time": "10:45 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "66.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "PGMV",
+        "sid": "22494"
+      },
+      "CBMC|13341|20260927|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "02:45 PM",
+        "date": "20260927",
+        "cat": "NORMAL",
+        "price": "61.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13341"
+      },
+      "CBMC|13341|20260927|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "02:45 PM",
+        "date": "20260927",
+        "cat": "EXECUTIVE",
+        "price": "210.98",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13341"
+      },
+      "CBMC|13342|20260927|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "06:30 PM",
+        "date": "20260927",
+        "cat": "NORMAL",
+        "price": "61.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13342"
+      },
+      "CBMC|13342|20260927|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "06:30 PM",
+        "date": "20260927",
+        "cat": "EXECUTIVE",
+        "price": "210.98",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13342"
+      },
+      "CBMC|13343|20260927|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "10:15 PM",
+        "date": "20260927",
+        "cat": "NORMAL",
+        "price": "61.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13343"
+      },
+      "CBMC|13343|20260927|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "10:15 PM",
+        "date": "20260927",
+        "cat": "EXECUTIVE",
+        "price": "210.98",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13343"
+      }
+    },
+    "dates": {
+      "20260927": "BOOKABLE",
+      "20260928": "AVAILABLE",
+      "20260929": "AVAILABLE",
+      "20260930": "AVAILABLE",
+      "20261001": "NOT_OPEN",
+      "20261002": "NOT_OPEN",
+      "20261003": "NOT_OPEN"
+    }
+  },
+  "AvengersEndgameEncore_20260927131410 (English 2D) (English MS-Infinity Vsn 3d)": {
+    "shows": {
+      "INPR|66615|20260927|ELITE": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "02:15 PM",
+        "date": "20260927",
+        "cat": "ELITE",
+        "price": "245.98",
+        "status": "1",
+        "screen": "",
+        "vcode": "INPR",
+        "sid": "66615"
+      },
+      "INPR|66615|20260927|BUDGET": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "02:15 PM",
+        "date": "20260927",
+        "cat": "BUDGET",
+        "price": "96.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "INPR",
+        "sid": "66615"
+      },
+      "INPR|66105|20260927|ELITE": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "06:10 PM",
+        "date": "20260927",
+        "cat": "ELITE",
+        "price": "245.98",
+        "status": "0",
+        "screen": "",
+        "vcode": "INPR",
+        "sid": "66105"
+      },
+      "INPR|66105|20260927|BUDGET": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "06:10 PM",
+        "date": "20260927",
+        "cat": "BUDGET",
+        "price": "96.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "INPR",
+        "sid": "66105"
+      },
+      "INPR|66616|20260927|ELITE": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "10:05 PM",
+        "date": "20260927",
+        "cat": "ELITE",
+        "price": "245.98",
+        "status": "1",
+        "screen": "",
+        "vcode": "INPR",
+        "sid": "66616"
+      },
+      "INPR|66616|20260927|BUDGET": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "10:05 PM",
+        "date": "20260927",
+        "cat": "BUDGET",
+        "price": "96.74",
+        "status": "1",
+        "screen": "",
+        "vcode": "INPR",
+        "sid": "66616"
+      },
+      "PVSR|27775|20260927|ELITE": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "07:00 PM",
+        "date": "20260927",
+        "cat": "ELITE",
+        "price": "245.98",
+        "status": "0",
+        "screen": "",
+        "vcode": "PVSR",
+        "sid": "27775"
+      },
+      "PVSR|27775|20260927|PREMIUM": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "07:00 PM",
+        "date": "20260927",
+        "cat": "PREMIUM",
+        "price": "235.00",
+        "status": "0",
+        "screen": "",
+        "vcode": "PVSR",
+        "sid": "27775"
+      },
+      "PVSR|27775|20260927|BUDGET": {
+        "venue": "PVR: Sathyam, Royapettah",
+        "time": "07:00 PM",
+        "date": "20260927",
+        "cat": "BUDGET",
+        "price": "96.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "PVSR",
+        "sid": "27775"
+      },
+      "PVHC|32225|20260927|PRIME": {
+        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
+        "time": "03:20 PM",
+        "date": "20260927",
+        "cat": "PRIME",
+        "price": "245.98",
+        "status": "1",
+        "screen": "",
+        "vcode": "PVHC",
+        "sid": "32225"
+      },
+      "PVHC|32225|20260927|CLASSIC": {
+        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
+        "time": "03:20 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "96.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "PVHC",
+        "sid": "32225"
+      },
+      "PVHC|32226|20260927|PRIME": {
+        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
+        "time": "11:10 PM",
+        "date": "20260927",
+        "cat": "PRIME",
+        "price": "245.98",
+        "status": "1",
+        "screen": "",
+        "vcode": "PVHC",
+        "sid": "32226"
+      },
+      "PVHC|32226|20260927|CLASSIC": {
+        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
+        "time": "11:10 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "96.74",
+        "status": "1",
+        "screen": "",
+        "vcode": "PVHC",
+        "sid": "32226"
+      }
+    },
+    "dates": {
+      "20260927": "BOOKABLE",
+      "20260928": "AVAILABLE",
+      "20260929": "AVAILABLE",
+      "20260930": "AVAILABLE",
+      "20261001": "NOT_OPEN",
       "20261002": "NOT_OPEN",
       "20261003": "NOT_OPEN"
     }
