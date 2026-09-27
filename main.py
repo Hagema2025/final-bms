@@ -56,8 +56,8 @@ def send_watch_expiry_alert(watch, idx):
     # Creates an inline button that maps perfectly to your bot.py's stop handler!
     kb = {
         "inline_keyboard": [
-            [{"text": "❌ Stop Tracking & Close Topic", "callback_data": f"confirmstop_{idx}"}],
-            [{"text": "❌ Stop Tracking & Permanently del Topic", "callback_data": f"confirmstopperm_{idx}"}]
+            [{"text": "Close Topic", "callback_data": f"confirmstop_{idx}"}],
+            [{"text": "Delete Topic", "callback_data": f"confirmstopperm_{idx}"}]
 
         ]
     }
@@ -65,7 +65,7 @@ def send_watch_expiry_alert(watch, idx):
     text = (
         f"⏰ <b>Tracker Expired!</b>\n\n"
         f"All the configured dates for <code>{html.escape(watch_name)}</code> are now in the past.\n"
-        f"Click below to stop the tracker and safely close this topic."
+        f"So now the tracker is stopped."
     )
     
     payload = {
