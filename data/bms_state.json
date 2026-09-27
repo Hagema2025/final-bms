@@ -12,17 +12,6 @@
         "vcode": "TVHP",
         "sid": "25388"
       },
-      "MAYJ|239339|20260927|FIRST CLASS 3D": {
-        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
-        "time": "03:50 PM",
-        "date": "20260927",
-        "cat": "FIRST CLASS 3D",
-        "price": "246.40",
-        "status": "2",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "MAYJ",
-        "sid": "239339"
-      },
       "MAYJ|238990|20260927|FIRST CLASS 3D": {
         "venue": "MAYAJAAL Multiplex: ECR, Chennai",
         "time": "06:10 PM",
@@ -110,28 +99,6 @@
         "screen": "4K/ATMOS",
         "vcode": "RSSC",
         "sid": "123448"
-      },
-      "INTO|90889|20260927|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "03:15 PM",
-        "date": "20260927",
-        "cat": "CLUB",
-        "price": "245.98",
-        "status": "1",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "90889"
-      },
-      "INTO|90889|20260927|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "03:15 PM",
-        "date": "20260927",
-        "cat": "EXECUTIVE",
-        "price": "96.74",
-        "status": "0",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "90889"
       },
       "INTO|90890|20260927|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -282,7 +249,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "96.74",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PGRA",
         "sid": "22946"
@@ -359,7 +326,7 @@
         "date": "20260927",
         "cat": "PRIME",
         "price": "250.98",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PABC",
         "sid": "21990"
@@ -685,17 +652,6 @@
   },
   "AvengersEndgameEncore_20260927131410 (English 2D) (English EPIQ 3D)": {
     "shows": {
-      "RAKK|4102|20260927|Premium+3D": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "03:40 PM",
-        "date": "20260927",
-        "cat": "Premium+3D",
-        "price": "300.00",
-        "status": "1",
-        "screen": "EPIQ",
-        "vcode": "RAKK",
-        "sid": "4102"
-      },
       "RAKK|4103|20260927|Premium+3D": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "07:25 PM",
@@ -784,7 +740,7 @@
         "date": "20260927",
         "cat": "PRIME",
         "price": "210.98",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PGMV",
         "sid": "22493"
