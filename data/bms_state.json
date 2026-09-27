@@ -117,7 +117,7 @@
         "date": "20260927",
         "cat": "FIRST CLASS",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": "4K DOLBY 7.1",
         "vcode": "MAYJ",
         "sid": "239452"
@@ -177,72 +177,6 @@
         "vcode": "RSSC",
         "sid": "123470"
       },
-      "KSTK|51153|20260927|BOX-A": {
-        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
-        "time": "11:20 PM",
-        "date": "20260927",
-        "cat": "BOX-A",
-        "price": "183.78",
-        "status": "0",
-        "screen": "",
-        "vcode": "KSTK",
-        "sid": "51153"
-      },
-      "KSTK|51153|20260927|BOX-B": {
-        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
-        "time": "11:20 PM",
-        "date": "20260927",
-        "cat": "BOX-B",
-        "price": "183.78",
-        "status": "0",
-        "screen": "",
-        "vcode": "KSTK",
-        "sid": "51153"
-      },
-      "KSTK|51153|20260927|Super Premium": {
-        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
-        "time": "11:20 PM",
-        "date": "20260927",
-        "cat": "Super Premium",
-        "price": "183.78",
-        "status": "0",
-        "screen": "",
-        "vcode": "KSTK",
-        "sid": "51153"
-      },
-      "KSTK|51153|20260927|Premium": {
-        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
-        "time": "11:20 PM",
-        "date": "20260927",
-        "cat": "Premium",
-        "price": "183.78",
-        "status": "0",
-        "screen": "",
-        "vcode": "KSTK",
-        "sid": "51153"
-      },
-      "KSTK|51153|20260927|Elite": {
-        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
-        "time": "11:20 PM",
-        "date": "20260927",
-        "cat": "Elite",
-        "price": "130.00",
-        "status": "0",
-        "screen": "",
-        "vcode": "KSTK",
-        "sid": "51153"
-      },
-      "KSTK|51153|20260927|Economy": {
-        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
-        "time": "11:20 PM",
-        "date": "20260927",
-        "cat": "Economy",
-        "price": "54.00",
-        "status": "0",
-        "screen": "",
-        "vcode": "KSTK",
-        "sid": "51153"
-      },
       "KSTK|51100|20260927|BOX-A": {
         "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
         "time": "11:55 PM",
@@ -298,28 +232,6 @@
         "vcode": "KSTK",
         "sid": "51100"
       },
-      "PVHC|32603|20260927|PRIME": {
-        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-        "time": "11:00 PM",
-        "date": "20260927",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVHC",
-        "sid": "32603"
-      },
-      "PVHC|32603|20260927|CLASSIC": {
-        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-        "time": "11:00 PM",
-        "date": "20260927",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVHC",
-        "sid": "32603"
-      },
       "INTO|90886|20260927|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "11:20 PM",
@@ -341,28 +253,6 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "90886"
-      },
-      "PSKL|23639|20260927|PRIME": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "11:00 PM",
-        "date": "20260927",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "0",
-        "screen": "",
-        "vcode": "PSKL",
-        "sid": "23639"
-      },
-      "PSKL|23639|20260927|CLASSIC": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "11:00 PM",
-        "date": "20260927",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PSKL",
-        "sid": "23639"
       }
     },
     "dates": {
