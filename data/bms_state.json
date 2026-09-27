@@ -3708,138 +3708,6 @@
         "vcode": "PBRM",
         "sid": "25222"
       },
-      "PGRA|22995|20260928|PRIME": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "09:40 AM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22995"
-      },
-      "PGRA|22995|20260928|CLASSIC": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "09:40 AM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22995"
-      },
-      "PGRA|22996|20260928|PRIME": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "12:45 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22996"
-      },
-      "PGRA|22996|20260928|CLASSIC": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "12:45 PM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22996"
-      },
-      "PGRA|22967|20260928|PRIME": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "03:30 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22967"
-      },
-      "PGRA|22967|20260928|CLASSIC": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "03:30 PM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22967"
-      },
-      "PGRA|22997|20260928|PRIME": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "03:55 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22997"
-      },
-      "PGRA|22997|20260928|CLASSIC": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "03:55 PM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22997"
-      },
-      "PGRA|22998|20260928|PRIME": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "07:00 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22998"
-      },
-      "PGRA|22998|20260928|CLASSIC": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "07:00 PM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22998"
-      },
-      "PGRA|22999|20260928|PRIME": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "10:15 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22999"
-      },
-      "PGRA|22999|20260928|CLASSIC": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "10:15 PM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22999"
-      },
       "VVTN|21005|20260928|ELITE": {
         "venue": "VETRIVEL RGB DOLBY:NANGANALLUR (NEWLY RENOVATED)",
         "time": "11:45 AM",
@@ -5600,160 +5468,6 @@
         "vcode": "JOTG",
         "sid": "11803"
       },
-      "PCAN|45678|20260928|PRIME": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "09:00 AM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45678"
-      },
-      "PCAN|45678|20260928|CLASSIC": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "09:00 AM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "1",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45678"
-      },
-      "PCAN|45779|20260928|PRIME": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "09:35 AM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PCAN",
-        "sid": "45779"
-      },
-      "PCAN|45779|20260928|CLASSIC": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "09:35 AM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "2",
-        "screen": "",
-        "vcode": "PCAN",
-        "sid": "45779"
-      },
-      "PCAN|45780|20260928|PRIME": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "10:25 AM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PCAN",
-        "sid": "45780"
-      },
-      "PCAN|45780|20260928|CLASSIC": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "10:25 AM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "1",
-        "screen": "",
-        "vcode": "PCAN",
-        "sid": "45780"
-      },
-      "PCAN|45684|20260928|PRIME": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "12:35 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PCAN",
-        "sid": "45684"
-      },
-      "PCAN|45684|20260928|CLASSIC": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "12:35 PM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PCAN",
-        "sid": "45684"
-      },
-      "PCAN|45680|20260928|PRIME": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "03:55 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "2",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45680"
-      },
-      "PCAN|45680|20260928|CLASSIC": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "03:55 PM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45680"
-      },
-      "PCAN|45686|20260928|PRIME": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "07:15 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PCAN",
-        "sid": "45686"
-      },
-      "PCAN|45686|20260928|CLASSIC": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "07:15 PM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PCAN",
-        "sid": "45686"
-      },
-      "PCAN|45682|20260928|PRIME": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "10:50 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45682"
-      },
-      "PCAN|45682|20260928|CLASSIC": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "10:50 PM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45682"
-      },
       "AVMT|990|20260928|BOX 1": {
         "venue": "AVM Cinemas: Uthukkottai",
         "time": "02:30 PM",
@@ -6205,28 +5919,6 @@
         "vcode": "MTLM",
         "sid": "19508"
       },
-      "OMTT|4160|20260928|FIRST CLASS": {
-        "venue": "Odiyan Mani Theatre 2k A/c Dolby: Thiruvottiyur",
-        "time": "02:30 PM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "OMTT",
-        "sid": "4160"
-      },
-      "OMTT|4161|20260928|FIRST CLASS": {
-        "venue": "Odiyan Mani Theatre 2k A/c Dolby: Thiruvottiyur",
-        "time": "06:30 PM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "OMTT",
-        "sid": "4161"
-      },
       "VRCP|3829|20260928|EXECUTIVE": {
         "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
         "time": "11:30 AM",
@@ -6292,6 +5984,28 @@
         "screen": "",
         "vcode": "VRCP",
         "sid": "3832"
+      },
+      "OMTT|4160|20260928|FIRST CLASS": {
+        "venue": "Odiyan Mani Theatre 2k A/c Dolby: Thiruvottiyur",
+        "time": "02:30 PM",
+        "date": "20260928",
+        "cat": "FIRST CLASS",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "OMTT",
+        "sid": "4160"
+      },
+      "OMTT|4161|20260928|FIRST CLASS": {
+        "venue": "Odiyan Mani Theatre 2k A/c Dolby: Thiruvottiyur",
+        "time": "06:30 PM",
+        "date": "20260928",
+        "cat": "FIRST CLASS",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "OMTT",
+        "sid": "4161"
       }
     },
     "dates": {
