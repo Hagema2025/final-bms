@@ -1063,7 +1063,7 @@
         "date": "20260928",
         "cat": "BOX",
         "price": "150.00",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "MCXF",
         "sid": "646"
@@ -4609,39 +4609,6 @@
         "screen": "PLF ENG SUBTITLE",
         "vcode": "GCRP",
         "sid": "17540"
-      },
-      "RDMP|28400|20260928|ELITE": {
-        "venue": "Shree Radha Movie Park 4K Dolby Atmos: Redhills",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "RDMP",
-        "sid": "28400"
-      },
-      "RDMP|28401|20260928|ELITE": {
-        "venue": "Shree Radha Movie Park 4K Dolby Atmos: Redhills",
-        "time": "06:30 PM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "RDMP",
-        "sid": "28401"
-      },
-      "RDMP|28402|20260928|ELITE": {
-        "venue": "Shree Radha Movie Park 4K Dolby Atmos: Redhills",
-        "time": "10:00 PM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "RDMP",
-        "sid": "28402"
       },
       "MMPR|2375|20260928|EXECUTIVE": {
         "venue": "MovieMax: PR Mall, Wall Tax Road, Chennai",
