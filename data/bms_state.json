@@ -238,7 +238,7 @@
         "date": "20260927",
         "cat": "NORMAL",
         "price": "101.74",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13688"
@@ -293,7 +293,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "96.74",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PGRA",
         "sid": "22946"
@@ -319,28 +319,6 @@
         "screen": "",
         "vcode": "PGRA",
         "sid": "22947"
-      },
-      "AGSM|56902|20260927|DIAMOND 3D": {
-        "venue": "AGS Cinemas: Maduravoyal",
-        "time": "02:45 PM",
-        "date": "20260927",
-        "cat": "DIAMOND 3D",
-        "price": "240.00",
-        "status": "1",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "AGSM",
-        "sid": "56902"
-      },
-      "AGSM|56902|20260927|PEARL 3D": {
-        "venue": "AGS Cinemas: Maduravoyal",
-        "time": "02:45 PM",
-        "date": "20260927",
-        "cat": "PEARL 3D",
-        "price": "90.00",
-        "status": "2",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "AGSM",
-        "sid": "56902"
       },
       "AGSM|56974|20260927|DIAMOND 3D": {
         "venue": "AGS Cinemas: Maduravoyal",
@@ -910,28 +888,6 @@
         "vcode": "PGMV",
         "sid": "22494"
       },
-      "CBMC|13341|20260927|NORMAL": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "02:45 PM",
-        "date": "20260927",
-        "cat": "NORMAL",
-        "price": "61.74",
-        "status": "0",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13341"
-      },
-      "CBMC|13341|20260927|EXECUTIVE": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "02:45 PM",
-        "date": "20260927",
-        "cat": "EXECUTIVE",
-        "price": "210.98",
-        "status": "0",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13341"
-      },
       "CBMC|13342|20260927|NORMAL": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
         "time": "06:30 PM",
@@ -960,7 +916,7 @@
         "date": "20260927",
         "cat": "NORMAL",
         "price": "61.74",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13343"
@@ -989,28 +945,6 @@
   },
   "AvengersEndgameEncore_20260927131410 (English 2D) (English MS-Infinity Vsn 3d)": {
     "shows": {
-      "INPR|66615|20260927|ELITE": {
-        "venue": "INOX: LUXE Phoenix Market City, Velachery",
-        "time": "02:15 PM",
-        "date": "20260927",
-        "cat": "ELITE",
-        "price": "245.98",
-        "status": "1",
-        "screen": "",
-        "vcode": "INPR",
-        "sid": "66615"
-      },
-      "INPR|66615|20260927|BUDGET": {
-        "venue": "INOX: LUXE Phoenix Market City, Velachery",
-        "time": "02:15 PM",
-        "date": "20260927",
-        "cat": "BUDGET",
-        "price": "96.74",
-        "status": "0",
-        "screen": "",
-        "vcode": "INPR",
-        "sid": "66615"
-      },
       "INPR|66105|20260927|ELITE": {
         "venue": "INOX: LUXE Phoenix Market City, Velachery",
         "time": "06:10 PM",
@@ -1055,6 +989,50 @@
         "vcode": "INPR",
         "sid": "66616"
       },
+      "PVHC|32225|20260927|PRIME": {
+        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
+        "time": "03:20 PM",
+        "date": "20260927",
+        "cat": "PRIME",
+        "price": "245.98",
+        "status": "1",
+        "screen": "",
+        "vcode": "PVHC",
+        "sid": "32225"
+      },
+      "PVHC|32225|20260927|CLASSIC": {
+        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
+        "time": "03:20 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "96.74",
+        "status": "1",
+        "screen": "",
+        "vcode": "PVHC",
+        "sid": "32225"
+      },
+      "PVHC|32226|20260927|PRIME": {
+        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
+        "time": "11:10 PM",
+        "date": "20260927",
+        "cat": "PRIME",
+        "price": "245.98",
+        "status": "1",
+        "screen": "",
+        "vcode": "PVHC",
+        "sid": "32226"
+      },
+      "PVHC|32226|20260927|CLASSIC": {
+        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
+        "time": "11:10 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "96.74",
+        "status": "1",
+        "screen": "",
+        "vcode": "PVHC",
+        "sid": "32226"
+      },
       "PVSR|27775|20260927|ELITE": {
         "venue": "PVR: Sathyam, Royapettah",
         "time": "07:00 PM",
@@ -1087,50 +1065,6 @@
         "screen": "",
         "vcode": "PVSR",
         "sid": "27775"
-      },
-      "PVHC|32225|20260927|PRIME": {
-        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-        "time": "03:20 PM",
-        "date": "20260927",
-        "cat": "PRIME",
-        "price": "245.98",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVHC",
-        "sid": "32225"
-      },
-      "PVHC|32225|20260927|CLASSIC": {
-        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-        "time": "03:20 PM",
-        "date": "20260927",
-        "cat": "CLASSIC",
-        "price": "96.74",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVHC",
-        "sid": "32225"
-      },
-      "PVHC|32226|20260927|PRIME": {
-        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-        "time": "11:10 PM",
-        "date": "20260927",
-        "cat": "PRIME",
-        "price": "245.98",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVHC",
-        "sid": "32226"
-      },
-      "PVHC|32226|20260927|CLASSIC": {
-        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-        "time": "11:10 PM",
-        "date": "20260927",
-        "cat": "CLASSIC",
-        "price": "96.74",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVHC",
-        "sid": "32226"
       }
     },
     "dates": {
