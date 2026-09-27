@@ -1,17 +1,6 @@
 {
   "AvengersEndgameEncore_20260927131410 (English 2D) (English 3D)": {
     "shows": {
-      "TVHP|25386|20260927|ELITE+3D": {
-        "venue": "The Vijay Park Multiplex: Injambakkam ECR 4K Atmos",
-        "time": "02:50 PM",
-        "date": "20260927",
-        "cat": "ELITE+3D",
-        "price": "241.44",
-        "status": "2",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "TVHP",
-        "sid": "25386"
-      },
       "TVHP|25388|20260927|ELITE+3D": {
         "venue": "The Vijay Park Multiplex: Injambakkam ECR 4K Atmos",
         "time": "10:10 PM",
@@ -540,17 +529,6 @@
         "vcode": "PBRM",
         "sid": "25198"
       },
-      "VVGT|31636|20260927|ELITE 3D": {
-        "venue": "Vels Theatres: Chennai",
-        "time": "03:15 PM",
-        "date": "20260927",
-        "cat": "ELITE 3D",
-        "price": "241.46",
-        "status": "1",
-        "screen": "",
-        "vcode": "VVGT",
-        "sid": "31636"
-      },
       "MCSK|16007|20260927|3D SPECIAL": {
         "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
         "time": "10:45 PM",
@@ -612,7 +590,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "245.98",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVES",
         "sid": "34447"
@@ -689,7 +667,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "96.74",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PCAN",
         "sid": "45577"
@@ -800,6 +778,50 @@
   },
   "AvengersEndgameEncore_20260927131410 (English 2D) (English MS - Infinity Vision)": {
     "shows": {
+      "CBMC|13342|20260927|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "06:30 PM",
+        "date": "20260927",
+        "cat": "NORMAL",
+        "price": "61.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13342"
+      },
+      "CBMC|13342|20260927|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "06:30 PM",
+        "date": "20260927",
+        "cat": "EXECUTIVE",
+        "price": "210.98",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13342"
+      },
+      "CBMC|13343|20260927|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "10:15 PM",
+        "date": "20260927",
+        "cat": "NORMAL",
+        "price": "61.74",
+        "status": "1",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13343"
+      },
+      "CBMC|13343|20260927|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "10:15 PM",
+        "date": "20260927",
+        "cat": "EXECUTIVE",
+        "price": "210.98",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13343"
+      },
       "PGMV|22492|20260927|PRIME": {
         "venue": "PVR: Grand Mall, Velachery",
         "time": "03:00 PM",
@@ -865,50 +887,6 @@
         "screen": "",
         "vcode": "PGMV",
         "sid": "22494"
-      },
-      "CBMC|13342|20260927|NORMAL": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "06:30 PM",
-        "date": "20260927",
-        "cat": "NORMAL",
-        "price": "61.74",
-        "status": "0",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13342"
-      },
-      "CBMC|13342|20260927|EXECUTIVE": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "06:30 PM",
-        "date": "20260927",
-        "cat": "EXECUTIVE",
-        "price": "210.98",
-        "status": "0",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13342"
-      },
-      "CBMC|13343|20260927|NORMAL": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "10:15 PM",
-        "date": "20260927",
-        "cat": "NORMAL",
-        "price": "61.74",
-        "status": "1",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13343"
-      },
-      "CBMC|13343|20260927|EXECUTIVE": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "10:15 PM",
-        "date": "20260927",
-        "cat": "EXECUTIVE",
-        "price": "210.98",
-        "status": "0",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13343"
       }
     },
     "dates": {
