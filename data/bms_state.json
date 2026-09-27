@@ -348,7 +348,7 @@
         "date": "20260927",
         "cat": "PEARL 3D",
         "price": "90.00",
-        "status": "2",
+        "status": "3",
         "screen": "4K DOLBY 7.1",
         "vcode": "AGSM",
         "sid": "56902"
@@ -1149,7 +1149,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "96.74",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVHC",
         "sid": "32226"
@@ -1904,28 +1904,6 @@
         "vcode": "INPR",
         "sid": "66633"
       },
-      "ACON|47691|20260927|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "01:25 PM",
-        "date": "20260927",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "1",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47691"
-      },
-      "ACON|47691|20260927|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "01:25 PM",
-        "date": "20260927",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47691"
-      },
       "ACON|47634|20260927|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
         "time": "07:35 PM",
@@ -2240,7 +2218,7 @@
         "date": "20260927",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "1",
+        "status": "0",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACVM",
         "sid": "56539"
@@ -2266,28 +2244,6 @@
         "screen": "4K DOLBY 7.1",
         "vcode": "ACVM",
         "sid": "56524"
-      },
-      "PABC|21999|20260927|PRIME": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "12:55 PM",
-        "date": "20260927",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "0",
-        "screen": "",
-        "vcode": "PABC",
-        "sid": "21999"
-      },
-      "PABC|21999|20260927|CLASSIC": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "12:55 PM",
-        "date": "20260927",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PABC",
-        "sid": "21999"
       },
       "PABC|22033|20260927|PRIME": {
         "venue": "PVR: Aerohub, Chennai",
@@ -2328,7 +2284,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PABC",
         "sid": "22001"
@@ -2438,7 +2394,7 @@
         "date": "20260927",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K DOLBY ATMOS",
         "vcode": "ACTN",
         "sid": "46223"
@@ -2548,32 +2504,10 @@
         "date": "20260927",
         "cat": "PREMIERE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "FMCN",
         "sid": "105239"
-      },
-      "PBRM|25200|20260927|ELITE": {
-        "venue": "PVR: Perambur, Spectrum Mall",
-        "time": "12:50 PM",
-        "date": "20260927",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "2",
-        "screen": "",
-        "vcode": "PBRM",
-        "sid": "25200"
-      },
-      "PBRM|25200|20260927|BUDGET": {
-        "venue": "PVR: Perambur, Spectrum Mall",
-        "time": "12:50 PM",
-        "date": "20260927",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "1",
-        "screen": "",
-        "vcode": "PBRM",
-        "sid": "25200"
       },
       "PBRM|25162|20260927|ELITE": {
         "venue": "PVR: Perambur, Spectrum Mall",
@@ -2801,7 +2735,7 @@
         "date": "20260927",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PGMV",
         "sid": "22464"
@@ -2845,7 +2779,7 @@
         "date": "20260927",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PGRA",
         "sid": "22917"
