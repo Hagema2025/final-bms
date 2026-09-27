@@ -172,7 +172,7 @@
         "date": "20260927",
         "cat": "GoldStar",
         "price": "160.00",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "RSSC",
         "sid": "123619"
@@ -232,28 +232,6 @@
         "vcode": "CBMC",
         "sid": "13560"
       },
-      "PVHR|42792|20260927|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "10:30 PM",
-        "date": "20260927",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "42792"
-      },
-      "PVHR|42792|20260927|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "10:30 PM",
-        "date": "20260927",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "42792"
-      },
       "PVHR|42734|20260927|PRIME": {
         "venue": "PVR: Heritage RSL ECR, Chennai",
         "time": "10:50 PM",
@@ -275,28 +253,6 @@
         "screen": "",
         "vcode": "PVHR",
         "sid": "42734"
-      },
-      "PVHC|32605|20260927|PRIME": {
-        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-        "time": "10:35 PM",
-        "date": "20260927",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVHC",
-        "sid": "32605"
-      },
-      "PVHC|32605|20260927|CLASSIC": {
-        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-        "time": "10:35 PM",
-        "date": "20260927",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVHC",
-        "sid": "32605"
       },
       "PVHC|32603|20260927|PRIME": {
         "venue": "PVR: Ampa Mall, Nelson Manickam Road",
@@ -485,50 +441,6 @@
         "vcode": "INTO",
         "sid": "90886"
       },
-      "GKCP|4183|20260927|LOUNGE 1": {
-        "venue": "GK Cinemas RGB + Laser SRL 4D: Porur",
-        "time": "11:15 PM",
-        "date": "20260927",
-        "cat": "LOUNGE 1",
-        "price": "150.00",
-        "status": "0",
-        "screen": "RGB ATMOS",
-        "vcode": "GKCP",
-        "sid": "4183"
-      },
-      "GKCP|4183|20260927|SIGNATURE CLASS": {
-        "venue": "GK Cinemas RGB + Laser SRL 4D: Porur",
-        "time": "11:15 PM",
-        "date": "20260927",
-        "cat": "SIGNATURE CLASS",
-        "price": "150.00",
-        "status": "0",
-        "screen": "RGB ATMOS",
-        "vcode": "GKCP",
-        "sid": "4183"
-      },
-      "FMCN|105229|20260927|SILVER": {
-        "venue": "INOX National: Arcot Road",
-        "time": "10:30 PM",
-        "date": "20260927",
-        "cat": "SILVER",
-        "price": "183.80",
-        "status": "0",
-        "screen": "",
-        "vcode": "FMCN",
-        "sid": "105229"
-      },
-      "FMCN|105229|20260927|PREMIERE": {
-        "venue": "INOX National: Arcot Road",
-        "time": "10:30 PM",
-        "date": "20260927",
-        "cat": "PREMIERE",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "FMCN",
-        "sid": "105229"
-      },
       "FMCN|105265|20260927|SILVER": {
         "venue": "INOX National: Arcot Road",
         "time": "10:45 PM",
@@ -546,32 +458,10 @@
         "date": "20260927",
         "cat": "PREMIERE",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "FMCN",
         "sid": "105265"
-      },
-      "PVSR|28086|20260927|ELITE": {
-        "venue": "PVR: Sathyam, Royapettah",
-        "time": "10:30 PM",
-        "date": "20260927",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVSR",
-        "sid": "28086"
-      },
-      "PVSR|28086|20260927|BUDGET": {
-        "venue": "PVR: Sathyam, Royapettah",
-        "time": "10:30 PM",
-        "date": "20260927",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVSR",
-        "sid": "28086"
       },
       "PVSR|28121|20260927|ELITE": {
         "venue": "PVR: Sathyam, Royapettah",
@@ -617,50 +507,6 @@
         "vcode": "PVSR",
         "sid": "28121"
       },
-      "VVGT|31664|20260927|ELITE": {
-        "venue": "Vels Theatres: Chennai",
-        "time": "11:00 PM",
-        "date": "20260927",
-        "cat": "ELITE",
-        "price": "160.00",
-        "status": "1",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "VVGT",
-        "sid": "31664"
-      },
-      "VVGT|31664|20260927|ECONOMY": {
-        "venue": "Vels Theatres: Chennai",
-        "time": "11:00 PM",
-        "date": "20260927",
-        "cat": "ECONOMY",
-        "price": "160.00",
-        "status": "0",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "VVGT",
-        "sid": "31664"
-      },
-      "VVGT|31745|20260927|ELITE": {
-        "venue": "Vels Theatres: Chennai",
-        "time": "11:05 PM",
-        "date": "20260927",
-        "cat": "ELITE",
-        "price": "160.00",
-        "status": "1",
-        "screen": "",
-        "vcode": "VVGT",
-        "sid": "31745"
-      },
-      "VVGT|31745|20260927|ECONOMY": {
-        "venue": "Vels Theatres: Chennai",
-        "time": "11:05 PM",
-        "date": "20260927",
-        "cat": "ECONOMY",
-        "price": "160.00",
-        "status": "0",
-        "screen": "",
-        "vcode": "VVGT",
-        "sid": "31745"
-      },
       "PABC|22018|20260927|PRIME": {
         "venue": "PVR: Aerohub, Chennai",
         "time": "10:45 PM",
@@ -704,28 +550,6 @@
         "screen": "",
         "vcode": "PSKL",
         "sid": "23639"
-      },
-      "PVES|34429|20260927|ELITE": {
-        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
-        "time": "10:30 PM",
-        "date": "20260927",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVES",
-        "sid": "34429"
-      },
-      "PVES|34429|20260927|BUDGET": {
-        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
-        "time": "10:30 PM",
-        "date": "20260927",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVES",
-        "sid": "34429"
       },
       "PCAN|45598|20260927|PRIME": {
         "venue": "PVR: VR Chennai, Anna Nagar",
