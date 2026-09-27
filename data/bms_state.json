@@ -1063,7 +1063,7 @@
         "date": "20260928",
         "cat": "BOX",
         "price": "150.00",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "MCXF",
         "sid": "646"
@@ -1129,7 +1129,7 @@
         "date": "20260928",
         "cat": "BOX",
         "price": "150.00",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "MCXF",
         "sid": "650"
