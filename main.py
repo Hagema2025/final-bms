@@ -1422,7 +1422,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                 else:
                     time_display = f"<b>{time_display}</b>"
 
-                lines.append(f" └ 🎟️{time_display} {screen_str}")
+                lines.append(f" 🎟️{time_display} {screen_str}")
 
                 # --- PULL ALL CATEGORIES FOR THIS SHOWTIME FROM FULL SNAPSHOT ---
                 full_categories = []
@@ -1470,34 +1470,34 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                         has_status_transition = (raw_old_status != "" and old_emoji != curr_emoji)
 
                         if c_type == "NEW":
-                            cat_icon = "🆕"
+                            cat_icon = "[🆕]"
                             detail_line = f"<b>{price}</b> {curr_emoji}"
                         elif is_price_change and has_status_transition:
-                            cat_icon = "📉🔄" if c_type == "PRICE_DROP" else "📈🔄"
+                            cat_icon = "[📉🔄]" if c_type == "PRICE_DROP" else "[📈🔄]"
                             status_part = f"[{old_emoji}➔{curr_emoji}]"
                             detail_line = f"<s>{old_price}</s>➔<b>{price}</b> {status_part}"
                         elif c_type == "PRICE_DROP":
-                            cat_icon = "📉"
+                            cat_icon = "[📉]"
                             detail_line = f"<s>{old_price}</s>➔<b>{price}</b> {curr_emoji}"
                         elif c_type == "PRICE_INCREASE":
-                            cat_icon = "📈"
+                            cat_icon = "[📈]"
                             detail_line = f"<s>{old_price}</s>➔<b>{price}</b> {curr_emoji}"
                         elif c_type == "RESTOCKED":
-                            cat_icon = "🔄"
+                            cat_icon = "[🔄]"
                             status_part = f"[{old_emoji}➔{curr_emoji}]" if old_emoji != curr_emoji else curr_emoji
                             detail_line = f"<b>{price}</b> {status_part}"
                         else:
-                            cat_icon = "▪️"
+                            cat_icon = ""
                             detail_line = f"<b>{price}</b> {curr_emoji}"
                     else:
                         price = clean_price(cat_price)
                         _, curr_emoji = resolve_status_info(cat_status)
-                        cat_icon = "▪️"
+                        cat_icon = ""
                         detail_line = f"<b>{price}</b> {curr_emoji}"
 
                     # Append Spaced Block Lines with the icon right next to the category name
-                    lines.append(f"     └{cat_icon} <b>{safe_cat_name}</b>")
-                    lines.append(f"     *   {detail_line}")
+                    lines.append(f"   └<b>{safe_cat_name}</b> {cat_icon}")
+                    lines.append(f"      {detail_line}")
             
             lines.append("") # Visual gap between venues
 
