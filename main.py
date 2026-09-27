@@ -1439,10 +1439,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                 # Map changes for quick lookup by category name
                 change_map = {c.get("cat"): c for c in items}
 
-                for c_idx, cat in enumerate(categories_to_render):
-                    is_last_cat = (c_idx == len(categories_to_render) - 1)
-                    cat_prefix = "    └" if is_last_cat else "    ├"
-
+                for cat in categories_to_render:
                     # Handle object vs dict attributes safely
                     if hasattr(cat, 'name'):
                         cat_name = cat.name
@@ -1453,10 +1450,10 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                         cat_price = cat.get('price', '0')
                         cat_status = str(cat.get('status', '3'))
 
+                    safe_cat_name = html.escape(str(cat_name).strip())
                     matched_change = change_map.get(cat_name)
 
                     if matched_change:
-                        # Render category with its active change styling
                         c_type = matched_change.get("type", "")
                         price = clean_price(matched_change.get('price', cat_price))
                         old_price = clean_price(matched_change.get('old_price', '0'))
@@ -1473,27 +1470,35 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                         has_status_transition = (raw_old_status != "" and old_emoji != curr_emoji)
 
                         if c_type == "NEW":
-                            line_content = f"🆕  <b>{price}</b>: {curr_emoji}"
+                            cat_icon = "🆕"
+                            detail_line = f"<b>{price}</b> {curr_emoji}"
                         elif is_price_change and has_status_transition:
-                            price_icon = "📉" if c_type == "PRICE_DROP" else "📈"
+                            cat_icon = "📉🔄" if c_type == "PRICE_DROP" else "📈🔄"
                             status_part = f"[{old_emoji}➔{curr_emoji}]"
-                            line_content = f"🔄{price_icon} <s>{old_price}</s>➔<b>{price}</b>{status_part}"
+                            detail_line = f"<s>{old_price}</s>➔<b>{price}</b> {status_part}"
                         elif c_type == "PRICE_DROP":
-                            line_content = f"📉 <s>{old_price}</s>➔<b>{price}</b> {curr_emoji}"
+                            cat_icon = "📉"
+                            detail_line = f"<s>{old_price}</s>➔<b>{price}</b> {curr_emoji}"
                         elif c_type == "PRICE_INCREASE":
-                            line_content = f"📈 <s>{old_price}</s>➔<b>{price}</b> {curr_emoji}"
+                            cat_icon = "📈"
+                            detail_line = f"<s>{old_price}</s>➔<b>{price}</b> {curr_emoji}"
                         elif c_type == "RESTOCKED":
+                            cat_icon = "🔄"
                             status_part = f"[{old_emoji}➔{curr_emoji}]" if old_emoji != curr_emoji else curr_emoji
-                            line_content = f"🔄 <b>{price}</b>: {status_part}"
+                            detail_line = f"<b>{price}</b> {status_part}"
                         else:
-                            line_content = f"▪️ <b>{price}</b>: {curr_emoji}"
+                            cat_icon = "▪️"
+                            detail_line = f"<b>{price}</b> {curr_emoji}"
                     else:
-                        # Render static/unchanged categories for the same show time
                         price = clean_price(cat_price)
                         _, curr_emoji = resolve_status_info(cat_status)
-                        line_content = f"▪️ <b>{price}</b>: {curr_emoji}"
+                        cat_icon = "▪️"
+                        detail_line = f"<b>{price}</b> {curr_emoji}"
 
-                    lines.append(f"{cat_prefix} {line_content}")
+                    # Append Spaced Block Lines with the icon right next to the category name
+                    lines.append(f"     {cat_icon} <b>{safe_cat_name}</b>")
+                    lines.append(f"     └ {detail_line}")
+                    lines.append("")  # Breathing room between seat tiers
             
             lines.append("") # Visual gap between venues
 
@@ -1547,7 +1552,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                 time.sleep(1)
         except Exception:
             pass
-        
+
 def get_telegram_user_info(chat_id: int) -> str:
     """Helper to fetch a user's name/username via getChat endpoint."""
     try:
