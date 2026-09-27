@@ -1063,7 +1063,7 @@
         "date": "20260928",
         "cat": "BOX",
         "price": "150.00",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "MCXF",
         "sid": "646"
@@ -5386,7 +5386,7 @@
         "date": "20260928",
         "cat": "Box",
         "price": "180.00",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4934"
@@ -5397,7 +5397,7 @@
         "date": "20260928",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4934"
@@ -5408,7 +5408,7 @@
         "date": "20260928",
         "cat": "First Class",
         "price": "120.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4934"
@@ -5419,7 +5419,7 @@
         "date": "20260928",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4934"
@@ -6205,6 +6205,28 @@
         "vcode": "MTLM",
         "sid": "19508"
       },
+      "OMTT|4160|20260928|FIRST CLASS": {
+        "venue": "Odiyan Mani Theatre 2k A/c Dolby: Thiruvottiyur",
+        "time": "02:30 PM",
+        "date": "20260928",
+        "cat": "FIRST CLASS",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "OMTT",
+        "sid": "4160"
+      },
+      "OMTT|4161|20260928|FIRST CLASS": {
+        "venue": "Odiyan Mani Theatre 2k A/c Dolby: Thiruvottiyur",
+        "time": "06:30 PM",
+        "date": "20260928",
+        "cat": "FIRST CLASS",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "OMTT",
+        "sid": "4161"
+      },
       "VRCP|3829|20260928|EXECUTIVE": {
         "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
         "time": "11:30 AM",
@@ -6270,28 +6292,6 @@
         "screen": "",
         "vcode": "VRCP",
         "sid": "3832"
-      },
-      "OMTT|4160|20260928|FIRST CLASS": {
-        "venue": "Odiyan Mani Theatre 2k A/c Dolby: Thiruvottiyur",
-        "time": "02:30 PM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "OMTT",
-        "sid": "4160"
-      },
-      "OMTT|4161|20260928|FIRST CLASS": {
-        "venue": "Odiyan Mani Theatre 2k A/c Dolby: Thiruvottiyur",
-        "time": "06:30 PM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "OMTT",
-        "sid": "4161"
       }
     },
     "dates": {
