@@ -1189,7 +1189,7 @@ def resolve_status_info(status_key):
     key = str(status_key).strip()
     if key in AVAIL_STATUS_MAP:
         return AVAIL_STATUS_MAP[key]
-    return (key if key else "UNKNOWN", "⚪")
+    return (key if key else "NA", "⚪")
 
 def is_restocked(old_status_key, new_status_key):
     """
@@ -1477,13 +1477,13 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                             detail_line = f"<s>{old_price}</s>➔<b>{price}</b> {status_part}"
                         elif c_type == "PRICE_DROP":
                             cat_icon = "📉"
-                            detail_line = f"<s>{old_price}</s>➔<b>{price}</b> [{curr_emoji}{curr_emoji}]"
+                            detail_line = f"<s>{old_price}</s>➔<b>{price}</b> [{curr_st}{curr_emoji}]"
                         elif c_type == "PRICE_INCREASE":
                             cat_icon = "📈"
                             detail_line = f"<s>{old_price}</s>➔<b>{price}</b> [{curr_st}{curr_emoji}]"
                         elif c_type == "RESTOCKED":
                             cat_icon = "🔄"
-                            status_part = f"[{old_st}{old_emoji}➔{curr_st}{curr_emoji}]" if old_emoji != curr_emoji else curr_emoji
+                            status_part = f"[{old_st}{old_emoji}➔{curr_st}{curr_emoji}]"
                             detail_line = f"<b>{price}</b> {status_part}"
                         else:
                             cat_icon = ""
@@ -1495,8 +1495,8 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                         detail_line = f"<b>{price}</b> {curr_emoji}"
 
                     # Append Spaced Block Lines with the icon right next to the category name
-                    lines.append(f"  └🎟️<b>{safe_cat_name}</b> {cat_icon}")
-                    lines.append(f"      {detail_line}")
+                    lines.append(f" └🎟️<b>{safe_cat_name}</b> {cat_icon}")
+                    lines.append(f"   {detail_line}")
             
             lines.append("") # Visual gap between venues
 
