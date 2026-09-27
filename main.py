@@ -1,2214 +1,2083 @@
+import base64
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import os
 import re
-import sys
 import json
-from html import escape
-from datetime import datetime
-from dataclasses import dataclass, field
+import logging
+from datetime import datetime, timedelta, timezone
+from threading import Thread
 from urllib.parse import urlparse
-from collections import defaultdict
 from zoneinfo import ZoneInfo
-from curl_cffi import requests
-import html
-import time
-import random
+from dotenv import load_dotenv
+from telegram.helpers import escape_markdown
+load_dotenv()  # Loads variables from your local .env file
+import asyncio
+import requests
+from telegram import (
+    Update,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    LinkPreviewOptions,
+)
+from telegram.constants import ParseMode
+from telegram.error import BadRequest
+from telegram.ext import (
+    ApplicationBuilder,
+    CommandHandler,
+    MessageHandler,
+    CallbackQueryHandler,
+    ConversationHandler,
+    ContextTypes,
+    filters,
+)
+
+from data_config import Theatres, Languages, Formats, TimePeriods,VENUE_MAP
+
+# ======================================================================
+# LOGGING SETUP
+# ======================================================================
+logging.basicConfig(
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
+)
+log = logging.getLogger(__name__)
+
 # ======================================================================
 # CONFIGURATION
 # ======================================================================
+load_dotenv()  # Loads variables from your local .env file
 
-WATCHES_FILE = "data/watches.json"
-STATE_FILE = "data/bms_state.json"
+BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+
+GITHUB_REPO_WATCHES = os.getenv("GITHUB_REPO_WATCHES")
+GITHUB_TOKEN_WATCHES = os.getenv("GITHUB_TOKEN_WATCHES")
+GITHUB_WATCHES_PATH = os.getenv("GITHUB_WATCHES_PATH")
+GITHUB_WSTATE_PATH = os.getenv("GITHUB_WSTATE_PATH")
+GITHUB_BRANCH_WATCHES = os.getenv("GITHUB_BRANCH_WATCHES")
+GROUP_CHAT_ID_WATCHES = os.getenv("GROUP_CHAT_ID_WATCHES")
 
 
-TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
-TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip()
-GROUP_CHAT_ID=os.getenv("GROUP_CHAT_ID", "").strip()
-NTFY_URL=os.getenv("NTFY_URL","").strip()
-NTFY_TOPIC=os.getenv("NTFY_TOPIC", "").strip()
-NTFY_ERROR_TOPIC = os.getenv("NTFY_ERROR_TOPIC", "").strip()
+GITHUB_REPO_SHOWS = os.getenv("GITHUB_REPO_SHOWS")
+GITHUB_TOKEN_SHOWS = os.getenv("GITHUB_TOKEN_SHOWS")
+GITHUB_SHOWS_PATH = os.getenv("GITHUB_SHOWS_PATH")
+GITHUB_SSTATE_PATH = os.getenv("GITHUB_SSTATE_PATH")
+GITHUB_BRANCH_SHOWS = os.getenv("GITHUB_BRANCH_SHOWS")
+GROUP_CHAT_ID_SHOWS = os.getenv("GROUP_CHAT_ID_SHOWS")
+
+THEATRES_PER_PAGE = 6
+WATCHES_PER_PAGE = 3  # 3 to 4 is ideal so full names fit comfortably on mobile
+
+WATCHES_CACHE = None  # <--- ADD THIS
+SHOWS_CACHE = None
+
+# Conversation States
+# Conversation States (Watches + Manual Shows)
+# Conversation States (Watches + Manual Shows with Seat/Row Prefs)
+(
+    STATE_URL,
+    STATE_LANGUAGE,
+    STATE_FORMAT,
+    STATE_THEATRE,
+    STATE_DATE,
+    STATE_CUSTOM_DATE,
+    STATE_TIME,
+    STATE_SHOW_URL,
+    STATE_SHOW_THEATRE,  # <--- Added
+    STATE_SHOW_NAME,
+    STATE_SHOW_TIME,
+    STATE_SHOW_SEAT_COUNT,
+    STATE_SHOW_ADJACENT,
+    STATE_SHOW_ROWS,
+STATE_SHOW_ROW_SEATS
+) = range(15)
 
 
-def save_watches(watches):
-    """Saves updated watches data back to the JSON file."""
-    with open(WATCHES_FILE, "w", encoding="utf-8") as f:
-        json.dump(watches, f, indent=2, ensure_ascii=False)
+# Parse comma-separated IDs into sets of integers
+def parse_id_list(env_var: str) -> set[int]:
+    raw = os.getenv(env_var, "")
+    return {int(x.strip()) for x in raw.split(",") if x.strip().isdigit()}
 
-def get_notification_recipients() -> set[int]:
-    raw_env = os.getenv("NOTIFICATION_USERS", "")
-    recipients = {int(x.strip()) for x in raw_env.split(",") if x.strip().isdigit()}
-    
-    # Optional fallback for backward compatibility
-    fallback_id = os.getenv("TELEGRAM_CHAT_ID")
-    if not recipients and fallback_id and fallback_id.isdigit():
-        recipients.add(int(fallback_id))
-        
-    return recipients
+ALLOWED_USERS = parse_id_list("ALLOWED_USERS")
 
-def send_watch_expiry_alert(watch, idx):
-    if not TELEGRAM_BOT_TOKEN or not GROUP_CHAT_ID:
-        return
+# ============================================================
+# GITHUB JSON STORAGE
+# ============================================================
 
-    threadid = watch.get("message_thread_id")
-    watch_name = watch.get("name", f"Watch_{idx}")
-    
-    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
-    
-    # Creates an inline button that maps perfectly to your bot.py's stop handler!
-    kb = {
-        "inline_keyboard": [
-            [{"text": "❌ Stop Tracking & Close Topic", "callback_data": f"confirmstop_{idx}"}]
-        ]
+GITHUB_API_BASE = "https://api.github.com"
+
+def _github_headers(isWatch):
+    token = GITHUB_TOKEN_WATCHES if isWatch else GITHUB_TOKEN_SHOWS
+    return {
+        "Authorization": f"Bearer {token}", 
+        "Accept": "application/vnd.github+json", 
+        "X-GitHub-Api-Version": "2022-11-28", 
+        "User-Agent": "bms-telegram-bot"
     }
+
+def _github_get_file(path, isWatch):
+    repo = GITHUB_REPO_WATCHES if isWatch else GITHUB_REPO_SHOWS
+    r = requests.get(f"{GITHUB_API_BASE}/repos/{repo}/contents/{path}", headers=_github_headers(isWatch), timeout=20)
+    if r.status_code == 404: 
+        return None, None
+    r.raise_for_status()
+    payload = r.json()
+    raw = base64.b64decode(payload["content"]).decode("utf-8")
+    return json.loads(raw), payload.get("sha")
+
+
+def _github_put_file(path, data, message, isWatch):
+    repo = GITHUB_REPO_WATCHES if isWatch else GITHUB_REPO_SHOWS
+    branch = GITHUB_BRANCH_WATCHES if isWatch else GITHUB_BRANCH_SHOWS
+    url = f"{GITHUB_API_BASE}/repos/{repo}/contents/{path}"
+    content = json.dumps(data, indent=2, ensure_ascii=False) + "\n"
     
-    text = (
-        f"⏰ <b>Tracker Expired!</b>\n\n"
-        f"All the configured dates for <code>{html.escape(watch_name)}</code> are now in the past.\n"
-        f"Click below to stop the tracker and safely close this topic."
-    )
-    
-    payload = {
-        "chat_id": GROUP_CHAT_ID,
-        "text": text,
-        "parse_mode": "HTML",
-        "reply_markup": kb
-    }
-    if threadid:
-        payload["message_thread_id"] = threadid
-        
-    try:
-        requests.post(url, json=payload, timeout=10)
-        print(f"  🔔 Expiry notification sent for {watch_name}")
-    except Exception as e:
-        print(f"  ⚠️ Failed to send expiry notification: {e}")
-
-# ======================================================================
-# CONSTANTS
-# ======================================================================
-
-# ======================================================================
-# CINEMA CHAIN SESSION URL MAPPING (VCODE MATCHING)
-# ======================================================================
-
-CINEMA_CHAIN_URLS = {
-    # INOX
-    "INTO": "https://www.inoxmovies.com/cinemasessions/Chennai/INOX-The-Marina-Mall,-OMR,-Chennai/232",
-    "INPR": "https://www.inoxmovies.com/cinemasessions/Chennai/INOX-Luxe-Phoenix-Market-City,-Velachery--(formerly-Jazz-Cinemas)Chennai/320",
-    "INCH": "https://www.inoxmovies.com/cinemasessions/Chennai/INOX-Chennai-Citi-Centre,Dr.-R.-K.-Salai-Chennai/113",
-    "FMCN": "https://www.inoxmovies.com/cinemasessions/Chennai/INOX-National,Virugambakkam-Chennai/28",
-
-    # PVR
-    "PVHR": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR-Heritage-RSL-ECR-Chennai/417",
-    "PGMV": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR,-Grand-Mall,-Velachery/389",
-    "PVES": "https://www.pvrcinemas.com/cinemasessions/Chennai/HDFC-Millennia-PVR:-Escape-Express-Avenue-Mall/359",
-    "PVSR": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR-Sathyam-Royapettah-Chennai/331",
-    "PABC": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR-AEROHUB-Chennai/432",
-    "PGRA": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR-Grand-Galada-Chennai/400",
-    "PVPZ": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR-Palazzo-The-Nexus-Vijaya-Mall/388",
-    "PVHC": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR,-Ampa-Mall,-Nelson-Manickam-Road-Chennai/358",
-    "PCAN": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR-VR-Chennai-Anna-Nagar/523",
-    "PBRM": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR-Perambur---Spectrum-Mall-Chennai/372",
-    "PSKL": "https://www.pvrcinemas.com/cinemasessions/Chennai/PVR-SKLS-Galaxy-Mall,-Red-Hills-Chennai/410",
-
-    #Cinepolis
-    "CBMC":"https://cinepolisindia.com/movie-list/38"
-}
-
-
-AVAIL_STATUS_MAP = {
-    "0": ("SOLD OUT", "🔴"),
-    "1": ("ALMOST FULL", "🟠"),
-    "2": ("FILLING FAST", "🟡"),
-    "3": ("AVAILABLE", "🟢"),
-}
-
-DATE_STYLE_MAP = {
-    "date-selected": "BOOKABLE",
-    "date-disabled": "NOT_OPEN",
-    "date-default": "AVAILABLE",
-}
-
-TIME_PERIODS = {
-    "midnight": (0, 600),          # 12:00 AM - 05:59 AM (Special FDFS & Midnight shows)
-    "morning": (600, 1200),    # 06:00 AM - 11:59 AM (Regular morning shows)
-    "afternoon": (1200, 1600), # 12:00 PM - 03:59 PM (Matinee shows)
-    "evening": (1600, 1900),   # 04:00 PM - 06:59 PM (Evening shows)
-    "night": (1900, 2400),     # 07:00 PM - 11:59 PM (Night shows)
-}
-
-REGION_MAP = {
-    "chennai": (
-        "CHEN",
-        "chennai",
-        "13.056",
-        "80.206",
-        "tf3",
-    ),
-    "mumbai": (
-        "MUMBAI",
-        "mumbai",
-        "19.076",
-        "72.878",
-        "te7",
-    ),
-    "delhi-ncr": (
-        "NCR",
-        "delhi-ncr",
-        "28.613",
-        "77.209",
-        "ttn",
-    ),
-    "delhi": (
-        "NCR",
-        "delhi-ncr",
-        "28.613",
-        "77.209",
-        "ttn",
-    ),
-    "bengaluru": (
-        "BANG",
-        "bengaluru",
-        "12.972",
-        "77.594",
-        "tdr",
-    ),
-    "bangalore": (
-        "BANG",
-        "bengaluru",
-        "12.972",
-        "77.594",
-        "tdr",
-    ),
-    "hyderabad": (
-        "HYD",
-        "hyderabad",
-        "17.385",
-        "78.487",
-        "tep",
-    ),
-    "kolkata": (
-        "KOLK",
-        "kolkata",
-        "22.573",
-        "88.364",
-        "tun",
-    ),
-    "pune": (
-        "PUNE",
-        "pune",
-        "18.520",
-        "73.856",
-        "te2",
-    ),
-    "kochi": (
-        "KOCH",
-        "kochi",
-        "9.932",
-        "76.267",
-        "t9z",
-    ),
-}
-
-
-API_URL = (
-    "https://in.bookmyshow.com/api/movies-data/v4/"
-    "showtimes-by-event/primary-dynamic"
-)
-
-
-# ======================================================================
-# DATA CLASSES
-# ======================================================================
-
-@dataclass
-class CatInfo:
-    name: str
-    price: str
-    status: str
-
-
-@dataclass
-class ShowInfo:
-    venue_code: str
-    venue_name: str
-    session_id: str
-    date_code: str
-    time: str
-    time_code: str
-    screen_attr: str
-    categories: list[CatInfo] = field(default_factory=list)
-
-
-@dataclass
-class DateInfo:
-    date_code: str
-    status: str
-
-
-@dataclass
-class VariantInfo:
-    language: str
-    format: str
-    event_code: str
-    event_url: str
-    is_current: bool
-
-
-def cleanup_state(state):
-    """
-    Scans the bms_state.json dictionary and deletes any shows or tracked 
-    dates that are older than today's date in IST.
-    """
-    today_int = int(datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%Y%m%d"))
-    
-    for watch_name, watch_data in list(state.items()):
-        
-        # 1. Clean up old shows
-        shows = watch_data.get("shows", {})
-        expired_show_keys = [
-            key for key, show_info in shows.items()
-            if show_info.get("date") and str(show_info.get("date")).isdigit() and int(show_info.get("date")) < today_int
-        ]
-        
-        for key in expired_show_keys:
-            del shows[key]
-            
-        # 2. Clean up old dates tracking
-        dates = watch_data.get("dates", {})
-        expired_date_keys = [
-            date_code for date_code in dates.keys()
-            if str(date_code).isdigit() and int(date_code) < today_int
-        ]
-        
-        for date_code in expired_date_keys:
-            del dates[date_code]
-            
-    return state
-
-
-# ======================================================================
-# WATCH CONFIGURATION
-# ======================================================================
-def send_ntfy_error(movie_name, date_code):
-    if not NTFY_ERROR_TOPIC:
-        return
-    
-    url = f"{NTFY_URL}/{NTFY_ERROR_TOPIC}"
-    headers = {
-        "Title": "⚠️ BMS Shows Fetch Failed",
-        "Priority": "high",
-        "Tags": "warning,rotating_light"
-    }
-    
-    date_str = date_code if date_code else "default date"
-    message = f"Failed to fetch showtimes for '{movie_name}' (Date: {date_str}). Cloudflare or rate-limit block detected."
-    
-    try:
-        requests.post(url, data=message.encode("utf-8"), headers=headers, timeout=10)
-    except Exception as e:
-        print(f"  ⚠️ Ntfy error alert failed: {e}")
-
-
-def format_date(date_str):
-    """Converts '20260912' to '12/09/2026'."""
-    try:
-        return datetime.strptime(str(date_str), "%Y%m%d").strftime("%d/%m/%Y")
-    except (ValueError, TypeError):
-        return date_str
-    
-def _as_list(value):
-    """
-    Normalize a config value that may be a list, a comma-separated
-    string, or missing, into a clean list of stripped strings.
-    """
-
-    if not value:
-        return []
-
-    if isinstance(value, str):
-        return [
-            item.strip()
-            for item in value.split(",")
-            if item.strip()
-        ]
-
-    if isinstance(value, list):
-        return [
-            str(item).strip()
-            for item in value
-            if str(item).strip()
-        ]
-
-    return []
-
-def load_watches():
-    """
-    Load watches from watches.json and preserve retention/status fields.
-    """
-    if not os.path.exists(WATCHES_FILE):
-        print(f"❌ {WATCHES_FILE} not found.")
-        sys.exit(1)
-
-    try:
-        with open(WATCHES_FILE, "r", encoding="utf-8") as f:
-            watches = json.load(f)
-    except json.JSONDecodeError as e:
-        print(f"❌ Invalid JSON in {WATCHES_FILE}")
-        print(f"   {e}")
-        sys.exit(1)
-
-    if not isinstance(watches, list):
-        print(f"❌ {WATCHES_FILE} must contain a JSON array.")
-        sys.exit(1)
-
-    if not watches:
-        print(f"❌ No watches configured in {WATCHES_FILE}.")
-        sys.exit(1)
-
-    validated = []
-
-    for index, watch in enumerate(watches, start=1):
-        if not isinstance(watch, dict):
-            print(f"❌ Watch #{index} must be an object.")
-            sys.exit(1)
-
-        name = str(watch.get("name", "")).strip()
-        url = str(watch.get("url", "")).strip()
-
-        if not name:
-            print(f"❌ Watch #{index} is missing 'name'.")
-            sys.exit(1)
-
-        if not url:
-            print(f"❌ Watch #{index} is missing 'url'.")
-            sys.exit(1)
-
-        # --- ADVANCED DATE & TIME PARSING ---
-        dates_raw = watch.get("dates", [])
-        time_period_global = [tp.lower() for tp in _as_list(watch.get("time_period"))]
-        date_time_map = {}
-        
-        if isinstance(dates_raw, dict):
-            for d_key, d_times in dates_raw.items():
-                clean_d = str(d_key).strip()
-                if clean_d:
-                    date_time_map[clean_d] = [t.lower() for t in _as_list(d_times)]
-            dates_list = list(date_time_map.keys())
-        else:
-            if isinstance(dates_raw, str):
-                dates_list = [d.strip() for d in dates_raw.split(",") if d.strip()]
-            elif isinstance(dates_raw, list):
-                dates_list = [str(d).strip() for d in dates_raw if str(d).strip()]
-            else:
-                dates_list = []
-
-        theatre = [t.lower() for t in _as_list(watch.get("theatre"))]
-        discover_variants = bool(watch.get("discover_variants", False))
-        languages = [lang.lower() for lang in _as_list(watch.get("languages"))]
-        formats = [fmt.lower() for fmt in _as_list(watch.get("formats"))]
-        message_thread_id = watch.get("message_thread_id", None)
-
-        # --- PRESERVE RETENTION & STATUS FIELDS ---
-        status = watch.get("status", None)
-        closed_at = watch.get("closed_at", None)
-        closed_at_formatted = watch.get("closed_at_formatted", None)
-        deletes_at_formatted = watch.get("deletes_at_formatted", None)
-        expired_notified = watch.get("expired_notified", False)
-
-        validated_watch = {
-            "name": name,
-            "url": url,
-            "dates": dates_list,
-            "date_time_map": date_time_map,
-            "theatre": theatre,
-            "time_period": time_period_global,
-            "discover_variants": discover_variants,
-            "languages": languages,
-            "formats": formats,
-            "message_thread_id": message_thread_id,
-            "expired_notified": expired_notified,
+    for attempt in range(3):
+        _, sha = _github_get_file(path, isWatch)
+        body = {
+            "message": message, 
+            "content": base64.b64encode(content.encode()).decode(), 
+            "branch": branch
         }
+        if sha: 
+            body["sha"] = sha
+        r = requests.put(url, headers=_github_headers(isWatch), json=body, timeout=20)
+        if r.status_code in (200, 201): 
+            return
+        if r.status_code == 409 and attempt < 2: 
+            continue
+        r.raise_for_status()
+    raise RuntimeError(f"Could not update GitHub file: {path}")
 
-        # Keep status fields if they exist
-        if status:
-            validated_watch["status"] = status
-        if closed_at:
-            validated_watch["closed_at"] = closed_at
-        if closed_at_formatted:
-            validated_watch["closed_at_formatted"] = closed_at_formatted
-        if deletes_at_formatted:
-            validated_watch["deletes_at_formatted"] = deletes_at_formatted
 
-        validated.append(validated_watch)
+def load_watches() -> list:
+    global WATCHES_CACHE
+    if WATCHES_CACHE is not None:
+        return WATCHES_CACHE
+    data, _ = _github_get_file(GITHUB_WATCHES_PATH, True)
+    WATCHES_CACHE = data if isinstance(data, list) else []
+    return WATCHES_CACHE
 
-    return validated
+def save_watches(watches: list):
+    global WATCHES_CACHE
+    _github_put_file(GITHUB_WATCHES_PATH, watches, "Update BMS watches", True)
+    WATCHES_CACHE = watches
+    log.info("WATCHES SAVED TO GITHUB & CACHE UPDATED | count=%d", len(watches))
+
+
+def load_shows() -> list:
+    global SHOWS_CACHE
+    if SHOWS_CACHE is not None:
+        return SHOWS_CACHE
+    data, _ = _github_get_file(GITHUB_SHOWS_PATH, False)
+    SHOWS_CACHE = data if isinstance(data, list) else []
+    return SHOWS_CACHE
+
+def save_shows(shows: list):
+    global SHOWS_CACHE
+    _github_put_file(GITHUB_SHOWS_PATH, shows, "Update BMS shows", False)
+    SHOWS_CACHE = shows
+
+async def auto_delete_all_service_messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Instantly deletes all service messages and system notifications."""
+    msg = update.effective_message
+    if not msg:
+        return
+
+    # Check if it's any form of service message
+    is_service = (
+        msg.new_chat_members or
+        msg.left_chat_member or
+        msg.pinned_message or
+        msg.new_chat_title or
+        msg.new_chat_photo or
+        msg.delete_chat_photo or
+        msg.forum_topic_created or 
+        msg.forum_topic_closed or 
+        msg.forum_topic_reopened or 
+        msg.forum_topic_edited or
+        msg.general_forum_topic_hidden or
+        msg.general_forum_topic_unhidden
+    )
+
+    if is_service:
+        try:
+            await msg.delete()
+            print(f"🗑️ Successfully deleted system service message in chat {update.effective_chat.id}")
+        except Exception as e:
+            print(f"⚠️ Failed to delete service message: {e}")
+
+async def is_authorized(update: Update) -> bool:
+    """Verifies if the incoming user ID is in ALLOWED_USERS."""
+    user = update.effective_user
+    if not user or user.id not in ALLOWED_USERS:
+        user_id = user.id if user else "Unknown"
+        user_name = user.full_name if user else "Unknown"
+        
+        log.warning(f"⛔ Unauthorized access attempt | ID: {user_id} ---> Name: {user_name}")
+
+        # Optional: Send callback feedback to prevent Telegram UI freeze
+        if update.callback_query:
+            await update.callback_query.answer("⛔ Access Denied", show_alert=True)
+            
+        return False
+    return True
+
+async def background_delayed_pin(bot, chat_id, message_id,buffer_message_id=None):
+    """Waits 3 seconds, then pins the message to bypass Telegram UI caching bugs."""
+    await asyncio.sleep(3)
+    try:
+        await bot.pin_chat_message(chat_id=chat_id, message_id=message_id, disable_notification=False)
+
+        # 2. Delete the buffer message so the chat looks clean
+        if buffer_message_id:
+            await bot.delete_message(chat_id=chat_id, message_id=buffer_message_id)
+    except Exception as e:
+        log.error(f"Background pin failed: {e}")
+
+async def auto_delete_pin_notification(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Listens for 'Bot pinned a message' service messages and instantly deletes them."""
+    if update.message:
+        try:
+            await update.message.delete()
+        except Exception:
+            pass
+    
+def build_watches_view(watches: list, page: int = 0) -> tuple[str, InlineKeyboardMarkup]:
+    if not watches:
+        return "📭 No active watches found.", None
+
+    total_pages = max(1, (len(watches) + WATCHES_PER_PAGE - 1) // WATCHES_PER_PAGE)
+    page = max(0, min(page, total_pages - 1))
+
+    start_idx = page * WATCHES_PER_PAGE
+    end_idx = start_idx + WATCHES_PER_PAGE
+    page_watches = watches[start_idx:end_idx]
+
+    # 1. Build the text display with full, unclipped names
+    lines = [f"📋 *Active Watches* (Page {page + 1}/{total_pages}):\n"]
+    keyboard = []
+
+    for offset, w in enumerate(page_watches):
+        global_idx = start_idx + offset
+        display_num = global_idx + 1
+        full_name = w.get("name", f"Watch_{global_idx}")
+
+        # Full name displayed in the message bubble
+        lines.append(f"*{display_num}.* `{full_name}`")
+
+        # Compact numbered action buttons
+        keyboard.append([
+            InlineKeyboardButton(f"🔍 Inspect {display_num}", callback_data=f"insp_{global_idx}"),
+            InlineKeyboardButton(f"❌ Stop {display_num}", callback_data=f"stop_{global_idx}")
+        ])
+
+    # 2. Add pagination navigation row if there are multiple pages
+    if total_pages > 1:
+        nav_row = []
+        if page > 0:
+            nav_row.append(InlineKeyboardButton("⬅️ Prev", callback_data=f"wpage_{page - 1}"))
+        
+        nav_row.append(InlineKeyboardButton(f"📄 {page + 1}/{total_pages}", callback_data="noop"))
+        
+        if page < total_pages - 1:
+            nav_row.append(InlineKeyboardButton("Next ➡️", callback_data=f"wpage_{page + 1}"))
+            
+        keyboard.append(nav_row)
+
+    return "\n".join(lines), InlineKeyboardMarkup(keyboard)
+
+
+def build_shows_view(shows: list, page: int = 0) -> tuple[str, InlineKeyboardMarkup]:
+    if not shows:
+        return "📭 No active shows found.", None
+    total_pages = max(1, (len(shows) + WATCHES_PER_PAGE - 1) // WATCHES_PER_PAGE)
+    page = max(0, min(page, total_pages - 1))
+    start_idx = page * WATCHES_PER_PAGE
+    page_shows = shows[start_idx:start_idx + WATCHES_PER_PAGE]
+
+    lines = [f"📋 *Active Manual Shows* (Page {page + 1}/{total_pages}):\n"]
+    keyboard = []
+    for offset, s in enumerate(page_shows):
+        global_idx = start_idx + offset
+        display_num = global_idx + 1
+        lines.append(
+    f"*{display_num}.* `{s.get('name')}` | Theatre: `{s.get('theatre', s.get('venue_code'))}` (`{s.get('venue_code')}`) | Session: `{s.get('session_id')}`"
+)        
+        keyboard.append([
+            InlineKeyboardButton(f"❌ Remove {display_num}", callback_data=f"delshow_{global_idx}")
+        ])
+    if total_pages > 1:
+        nav_row = []
+        if page > 0: nav_row.append(InlineKeyboardButton("⬅️ Prev", callback_data=f"spage_{page - 1}"))
+        nav_row.append(InlineKeyboardButton(f"📄 {page + 1}/{total_pages}", callback_data="noop"))
+        if page < total_pages - 1: nav_row.append(InlineKeyboardButton("Next ➡️", callback_data=f"spage_{page + 1}"))
+        keyboard.append(nav_row)
+    return "\n".join(lines), InlineKeyboardMarkup(keyboard)
+
+# RENDER HEALTH SERVER
+# ============================================================
+class HealthHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        if self.path in ("/", "/health"):
+            body = b"OK"
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+        else:
+            self.send_response(404)
+            self.end_headers()
+
+    # UptimeRobot relies on HEAD requests to check server status
+    def do_HEAD(self):
+        if self.path in ("/", "/health"):
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain")
+            self.end_headers()
+        else:
+            self.send_response(404)
+            self.end_headers()
+
+    def log_message(self, format, *args):
+        # Suppress noisy HTTP logs
+        return
+
+
+def start_health_server():
+    """
+    Render Web Services require the application to listen
+    on the PORT supplied by Render.
+    """
+
+    port = int(
+        os.getenv(
+            "PORT",
+            "10000",
+        )
+    )
+
+    server = ThreadingHTTPServer(
+        (
+            "0.0.0.0",
+            port,
+        ),
+        HealthHandler,
+    )
+
+    thread = Thread(
+        target=server.serve_forever,
+        daemon=True,
+    )
+
+    thread.start()
+
+    log.info(
+        "Health server listening on 0.0.0.0:%s",
+        port,
+    )
+
 
 
 # ======================================================================
-# URL PARSER
+# HELPER FUNCTIONS
 # ======================================================================
 
-def parse_bms_url(url):
+def parse_seat_layout_url(url: str) -> dict:
+    """Extracts venue, session, and date from a BMS seat layout URL."""
     path = urlparse(url).path.strip("/")
     parts = path.split("/")
 
-    result = {
-        "event_code": None,
-        "date_code": None,
-        "region_slug": None,
-    }
+    if "seat-layout" in parts:
+        idx = parts.index("seat-layout")
+        # Structure: .../seat-layout/{event_code}/{venue_code}/{session_id}/{date}
+        if idx + 4 < len(parts):
+            return {
+                "event_code": parts[idx + 1],
+                "venue_code": parts[idx + 2],
+                "session_id": parts[idx + 3],
+                "date": parts[idx + 4],
+            }
+    raise ValueError("Invalid URL: missing seat-layout information (venue code, session, or date).")
+
+def parse_seat_preferences(text: str) -> list:
+    text = text.strip().upper()
+    if text in ("ANY", "ALL", ""):
+        return []
+    
+    # Split the input into included and excluded parts
+    include_text, exclude_text = text, ""
+    if "EXCEPT" in text:
+        include_text, exclude_text = text.split("EXCEPT", 1)
+    elif "!" in text:
+        include_text, exclude_text = text.split("!", 1)
+        
+    def expand_ranges(part: str) -> set:
+        seats = set()
+        for item in part.split(","):
+            item = item.strip()
+            if not item: continue
+            
+            # If it's a range like "1-30"
+            if "-" in item:
+                try:
+                    start, end = map(int, item.split("-", 1))
+                    if start <= end:
+                        seats.update(range(start, end + 1))
+                except ValueError:
+                    pass # Ignore invalid ranges safely
+            else:
+                try:
+                    seats.add(int(item))
+                except ValueError:
+                    pass
+        return seats
+
+    # Parse both sides, then subtract the excluded seats from the included seats
+    include_seats = expand_ranges(include_text)
+    exclude_seats = expand_ranges(exclude_text)
+    
+    final_seats = include_seats - exclude_seats
+    
+    # Return as a list of sorted string numbers (which your existing logic expects)
+    return [str(s) for s in sorted(final_seats)]
+
+async def show_main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await is_authorized(update): return ConversationHandler.END
+
+    keyboard = [
+        [InlineKeyboardButton("➕ Add Watches", callback_data="menu_new_watch")],
+        [InlineKeyboardButton("📋 View Active Watches", callback_data="menu_list_watches")],
+        [InlineKeyboardButton("➕ Add Shows", callback_data="menu_new_show")],
+        [InlineKeyboardButton("📋 View Active Shows", callback_data="menu_list_shows")],
+        [InlineKeyboardButton("ℹ️ Help", callback_data="menu_help")]
+    ]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    text = "🍿 *BMS Ticket Watcher Dashboard*\n\nSelect an option below:"
+
+    if update.message:
+        await update.message.reply_text(text, reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
+    elif update.callback_query:
+        await update.callback_query.answer()
+        await update.callback_query.edit_message_text(text, reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
+    return ConversationHandler.END
+
+async def handle_main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await is_authorized(update): return ConversationHandler.END
+    query = update.callback_query
+    await query.answer()
+    
+    if query.data == "menu_new_watch":
+        await query.edit_message_text("🔗 *New Watch Setup*\n\nPlease paste the full *BookMyShow movie link*:", parse_mode=ParseMode.MARKDOWN)
+        return STATE_URL
+    elif query.data == "menu_list_watches":
+        watches = load_watches()
+        text, reply_markup = build_watches_view(watches, page=0)
+        kb_list = list(reply_markup.inline_keyboard) if reply_markup and reply_markup.inline_keyboard else []
+        kb_list.append([InlineKeyboardButton("🏠 Main Menu", callback_data="menu_main")])
+        await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(kb_list), parse_mode=ParseMode.MARKDOWN)
+        return ConversationHandler.END
+    elif query.data == "menu_new_show":
+        await query.edit_message_text(
+            "🎬 *Add Manual Show*\n\nPlease paste the full *BookMyShow seat-layout URL*:\n\n"
+            "_Example: https://in.bookmyshow.com/movies/chen/seat-layout/ET00442702/RAKK/3934/20260919_", 
+            parse_mode=ParseMode.MARKDOWN
+        )
+        context.user_data["show"] = {}
+        return STATE_SHOW_URL
+    elif query.data == "menu_list_shows":
+        shows = load_shows()
+        text, reply_markup = build_shows_view(shows, page=0)
+        kb_list = list(reply_markup.inline_keyboard) if reply_markup and reply_markup.inline_keyboard else []
+        kb_list.append([InlineKeyboardButton("🏠 Main Menu", callback_data="menu_main")])
+        await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(kb_list), parse_mode=ParseMode.MARKDOWN)
+        return ConversationHandler.END
+    elif query.data == "menu_help":
+        help_text = "ℹ️ *Instructions:*\nUse *Add Watches* for URL filters or *Add Shows* for direct manual session tracking."
+        kb = [[InlineKeyboardButton("🏠 Back to Menu", callback_data="menu_main")]]
+        await query.edit_message_text(help_text, reply_markup=InlineKeyboardMarkup(kb), parse_mode=ParseMode.MARKDOWN)
+        return ConversationHandler.END
+    elif query.data == "menu_main":
+        await show_main_menu(update, context)
+        return ConversationHandler.END
+
+
+async def receive_show_url(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    url = (update.message.text or "").strip()
+    try:
+        parsed = parse_seat_layout_url(url)
+        v_code = parsed["venue_code"].upper()
+        theatre_name = VENUE_MAP.get(v_code)
+
+        context.user_data["show"]["venue_code"] = v_code
+        context.user_data["show"]["theatre"] = theatre_name or ""
+        context.user_data["show"]["session_id"] = parsed["session_id"]
+        context.user_data["show"]["date"] = parsed["date"]
+        # --- ADD THIS LINE ---
+        context.user_data["show"]["url"] = url
+
+        if theatre_name:
+            await update.message.reply_text(
+                f"✅ *Extracted Data:*\n"
+                f"🏛️ Theatre: `{theatre_name}` (`{v_code}`)\n"
+                f"🆔 Session: `{parsed['session_id']}`\n"
+                f"📅 Date: `{parsed['date']}`\n\n"
+                "Now, enter a reference name for this show (e.g., `Leo - AGS Vivira`)\n"
+                "_(or type /cancel to stop)_:",
+                parse_mode=ParseMode.MARKDOWN
+            )
+            return STATE_SHOW_NAME
+        else:
+            await update.message.reply_text(
+                f"✅ *Extracted Data:*\n"
+                f"🏛️ Venue Code: `{v_code}`\n"
+                f"🆔 Session: `{parsed['session_id']}`\n"
+                f"📅 Date: `{parsed['date']}`\n\n"
+                f"Please enter the *Theatre Name* for venue `{v_code}`:\n"
+                "_(or type /cancel to stop)_:",
+                parse_mode=ParseMode.MARKDOWN
+            )
+            return STATE_SHOW_THEATRE
+        
+    except ValueError as e:
+        await update.message.reply_text(f"⚠️ {e}\n\nPlease paste a valid seat layout URL:")
+        return STATE_SHOW_URL
+
+
+async def receive_show_theatre(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handler for when venue code is not recognized in VENUE_MAP."""
+    context.user_data["show"]["theatre"] = update.message.text.strip()
+    await update.message.reply_text(
+        "Now, enter a reference name for this show (e.g., `Leo - AGS Vivira`)\n"
+        "_(or type /cancel to stop)_:",
+        parse_mode=ParseMode.MARKDOWN
+    )
+    return STATE_SHOW_NAME
+
+async def receive_show_name(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    context.user_data["show"]["name"] = update.message.text.strip()
+    
+    # Detailed instruction text for the Smart Time Validator
+    instructions = (
+        "⏰ *Enter Show Time*\n\n"
+        "Please provide the showtime. Our smart validator accepts several formats:\n\n"
+        "✅ *Valid Examples:*\n"
+        "• `10:30 AM`  (Standard)\n"
+        "• `02:15 PM`  (Standard)\n"
+        "• `10 AM`     (No minutes)\n"
+        "• `22:30`     (24-hour format)\n"
+        "• `14`        (24-hour hour-only)\n\n"
+        "_(or type /cancel to stop)_:"
+    )
+    
+    await update.message.reply_text(instructions, parse_mode=ParseMode.MARKDOWN)
+    return STATE_SHOW_TIME
+
+
+
+async def receive_show_time(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    raw_time = update.message.text.strip()
+    
+    # --- STRICT TIME VALIDATOR ---
+    parsed_time = None
+    
+    # Clean up common typos (like replacing dots with colons "10.30" -> "10:30")
+    clean_time = raw_time.replace('.', ':').upper()
+    
+    # List of exact formats we will accept
+    formats_to_try = [
+        "%I:%M %p",  # 10:30 AM
+        "%I:%M%p",   # 10:30AM (no space)
+        "%H:%M",     # 22:30 (military time)
+        "%I %p",     # 10 AM (no minutes)
+        "%I%p",      # 10AM (no minutes, no space)
+        "%H"         # 10 or 22 (just the hour, assumes 24-hour clock)
+    ]
+    
+    for fmt in formats_to_try:
+        try:
+            parsed_time = datetime.strptime(clean_time, fmt).time()
+            break  # Stop looking if we found a match!
+        except ValueError:
+            continue
+            
+    # If the user typed gibberish, reject it and ask again
+    # If the user typed gibberish, reject it and ask again
+    if not parsed_time:
+        await update.message.reply_text(
+            "⚠️ *Invalid time format!*\n\n"
+            "Please try again using one of these supported formats:\n"
+            "• `10:30 AM`  (Standard)\n"
+            "• `02:15 PM`  (Standard)\n"
+            "• `10 AM`     (No minutes)\n"
+            "• `22:30`     (24-hour format)\n"
+            "• `14`        (24-hour hour-only)\n\n"
+            "_(or type /cancel to stop)_:",
+            parse_mode=ParseMode.MARKDOWN
+        )
+        return STATE_SHOW_TIME
+        
+    # Standardize the valid time perfectly (e.g., changes "02:15 PM" to "2:15 PM")
+    formatted_time = parsed_time.strftime("%I:%M %p").lstrip('0')
+    
+    # Save the strictly validated time
+    context.user_data["show"]["show_time"] = formatted_time
+    
+    # Move to the next step
+    await update.message.reply_text(
+        "💺 How many seats do you need? (e.g., `2` or `4`)\n"
+        "_(or type /cancel to stop)_:", 
+        parse_mode=ParseMode.MARKDOWN
+    )
+    return STATE_SHOW_SEAT_COUNT
+
+async def receive_show_seat_count(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    try:
+        count = int(update.message.text.strip())
+        if count <= 0: raise ValueError()
+        context.user_data["show"]["seat_count"] = count
+    except ValueError:
+        await update.message.reply_text("⚠️ Please enter a valid positive number:")
+        return STATE_SHOW_SEAT_COUNT
+
+    kb = [
+        [
+            InlineKeyboardButton("✅ Yes (Strictly Adjacent)", callback_data="show_adj_yes"),
+            InlineKeyboardButton("❌ No (Distributed OK)", callback_data="show_adj_no")
+        ]
+    ]
+    await update.message.reply_text(
+        "👥 *Adjacency Requirement*\n\nDo you require strictly adjacent/consecutive seats?\n""_(or type /cancel to stop)_:",
+        reply_markup=InlineKeyboardMarkup(kb),
+        parse_mode=ParseMode.MARKDOWN
+    )
+    return STATE_SHOW_ADJACENT
+
+async def receive_show_adjacency(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    context.user_data["show"]["require_adjacent"] = (query.data == "show_adj_yes")
+
+    await query.edit_message_text(
+        "🔤 *Preferred Rows*\n\nEnter preferred rows separated by commas (e.g., `H,I,J`) or type `ALL`\n""_(or type /cancel to stop)_:",
+        parse_mode=ParseMode.MARKDOWN
+    )
+    return STATE_SHOW_ROWS
+async def receive_show_rows(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    text = (update.message.text or "").strip().upper()
+    show = context.user_data["show"]
+    
+    if text in ("ALL", "ANY"):
+        show["row_preferences"] = {} # Empty means any row/seat is fine
+        return await finalize_manual_show(update, context)
+        
+    rows = [r.strip() for r in text.split(",") if r.strip()]
+    show["pending_rows"] = rows
+    show["row_preferences"] = {}
+    
+    first_row = rows[0]
+    await update.message.reply_text(
+        f"🔢 *Preferred Seats for Row {first_row}*\n\n"
+        "Enter seats using commas, ranges, or exclusions.\n"
+        "Examples:\n"
+        "• `1, 2, 3`\n"
+        "• `1-30`\n"
+        "• `1-30 except 15, 16`\n"
+        "• `1-30 ! 10-20`\n"
+        "Or type `ANY` if you don't care about specific seats in this row\n"
+        "_(or type /cancel to stop)_:",
+        parse_mode=ParseMode.MARKDOWN
+    )
+    return STATE_SHOW_ROW_SEATS
+
+async def receive_row_seats(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    text = (update.message.text or "").strip().upper()
+    show = context.user_data["show"]
+    
+    pending_rows = show.get("pending_rows", [])
+    current_row = pending_rows.pop(0)
+    
+    # 🔥 Use our new helper function here
+    show["row_preferences"][current_row] = parse_seat_preferences(text)
+    
+    if pending_rows:
+        next_row = pending_rows[0]
+        await update.message.reply_text(
+              f"🔢 *Preferred Seats for Row {next_row}*\n\n"
+                    "Enter seats using commas, ranges, or exclusions.\n"
+                    "Examples:\n"
+                    "• `1, 2, 3`\n"
+                    "• `1-30`\n"
+                    "• `1-30 except 15, 16`\n"
+                    "• `1-30 ! 10-20`\n"
+                    "Or type `ANY` if you don't care about specific seats in this row\n"
+                    "_(or type /cancel to stop)_:",
+            parse_mode=ParseMode.MARKDOWN
+        )
+        return STATE_SHOW_ROW_SEATS
+    else:
+        return await finalize_manual_show(update, context)
+    
+async def finalize_manual_show(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    show_entry = context.user_data["show"]
+
+    raw_date = show_entry.get("date", "")
+    try:
+        formatted_date = datetime.strptime(raw_date, "%Y%m%d").strftime("%d%m%y")
+    except ValueError:
+        formatted_date = raw_date
+    
+    theatre_display = show_entry.get("theatre") or show_entry.get("venue_code", "Venue")
+
+    thread_id = None
+    if GROUP_CHAT_ID_SHOWS:
+        try:
+            esc = lambda text: escape_markdown(str(text), version=2)
+            topic_name = f"{show_entry.get('name', 'Show')}_{theatre_display}_{formatted_date}|{show_entry.get('show_time', 'Time')}"[:128]
+            topic = await context.bot.create_forum_topic(chat_id=GROUP_CHAT_ID_SHOWS, name=topic_name)
+            thread_id = topic.message_thread_id
+            
+            if show_entry["row_preferences"]:
+                rows_list = [f"Row {r}: {s if s else 'ANY'}" for r, s in show_entry["row_preferences"].items()]
+                prefs_summary_text = "\n" + "\n".join([f"  • {esc(rs)}" for rs in rows_list])
+            else:
+                prefs_summary_text = " " + esc("ALL ROWS / ANY SEATS")
+
+            adj_text = "Yes (Strictly Adjacent)" if show_entry.get("require_adjacent", True) else "No (Distributed OK)"
+
+            # --- NEW HYPERLINK LOGIC ---
+            safe_name = esc(show_entry['name'])
+            show_url = show_entry.get('url', '')
+            
+            # Create the MarkdownV2 hyperlink: [Show Name](https://...)
+            if show_url:
+                name_hyperlink = f"[{safe_name}]({show_url})"
+            else:
+                name_hyperlink = safe_name
+
+            summary = (
+                "🎉 *Manual Show Configuration Summary*\n\n"
+                f"🎬 *Show Name:* {name_hyperlink}\n"
+                f"🏛️ *Theatre:* {esc(theatre_display)} \\({esc(show_entry['venue_code'])}\\)\n"
+                f"🆔 *Session ID:* {esc(show_entry['session_id'])}\n"
+                f"📅 *Date:* {esc(show_entry['date'])}\n"
+                f"⏰ *Time:* {esc(show_entry['show_time'])}\n"
+                f"💺 *Seats Required:* {esc(show_entry['seat_count'])}\n"
+                f"👥 *Strict Adjacent:* {esc(adj_text)}\n"
+                f"📍 *Row Preferences:*{prefs_summary_text}\n\n"
+                "🔔 _Automated alerts for this manual show will appear in this topic\\._"
+            )
+            # --- NEW: Send a tiny buffer message first ---
+            # --- 1. Send Buffer Message ---
+            buffer_msg = await context.bot.send_message(
+                chat_id=GROUP_CHAT_ID_SHOWS, 
+                message_thread_id=thread_id, 
+                text="🚀 _Initializing tracker..._", 
+                parse_mode=ParseMode.MARKDOWN
+            )
+            topic_msg = await context.bot.send_message(
+                chat_id=GROUP_CHAT_ID_SHOWS, message_thread_id=thread_id, text=summary, parse_mode=ParseMode.MARKDOWN_V2,link_preview_options=LinkPreviewOptions(is_disabled=True)  # <--- ADD THIS
+            )
+            asyncio.create_task(background_delayed_pin(context.bot, GROUP_CHAT_ID_SHOWS, topic_msg.message_id,buffer_msg.message_id))
+        except Exception as e:
+            log.error(f"Failed to create show forum topic: {e}")
+
+    show_entry["message_thread_id"] = thread_id
+    
+    shows = load_shows()
+    shows.append(show_entry)
+    save_shows(shows)
+
+    await update.message.reply_text(
+        f"✅ *Manual Show Added Successfully!*\n\n"
+        f"Name: `{show_entry['name']}`\n"
+        f"Theatre: `{theatre_display}` (`{show_entry['venue_code']}`)\n"
+        f"Session ID: `{show_entry['session_id']}`\n"
+        f"A dedicated topic has been created in the group.",
+        parse_mode=ParseMode.MARKDOWN
+    )
+    context.user_data.clear()
+    return ConversationHandler.END
+
+    
+def parse_bms_url(url: str) -> dict:
+    path = urlparse(url).path.strip("/")
+    parts = path.split("/")
+
+    event_code = None
+    region_slug = None
+    movie_slug = ""
 
     for part in parts:
-
         if re.match(r"^ET\d{8,}$", part):
-            result["event_code"] = part
-
-        elif re.match(r"^\d{8}$", part):
-            result["date_code"] = part
+            event_code = part
 
     if "movies" in parts:
-
         idx = parts.index("movies")
-
         if idx + 1 < len(parts):
-            result["region_slug"] = parts[idx + 1]
+            region_slug = parts[idx + 1]
+        if idx + 2 < len(parts):
+            movie_slug = parts[idx + 2]
 
-    return result
+    if not event_code or not region_slug:
+        raise ValueError("Invalid URL: missing event code (ET...) or city region.")
 
-
-# ======================================================================
-# REGION RESOLVER
-# ======================================================================
-
-def resolve_region(slug):
-
-    key = (slug or "").lower().strip()
-
-    if key in REGION_MAP:
-        return REGION_MAP[key]
-
-    return (
-        key.upper()[:6],
-        key,
-        "0",
-        "0",
-        "",
-    )
-
-
-# ======================================================================
-# BMS API
-# ======================================================================
-
-def fetch_bms(
-    event_code,
-    date_code,
-    region_code,
-    region_slug,
-    lat,
-    lon,
-    geohash,
-    show_name,  # <-- ADDED THIS PARAMETER
-    max_retries=3,
-):
-    headers = {
-        "User-Agent": (
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-            "AppleWebKit/537.36 (KHTML, like Gecko) "
-            "Chrome/128.0.0.0 Safari/537.36"
-        ),
-        "Accept": "application/json, text/plain, */*",
-        "Accept-Language": "en-US,en;q=0.9",
-        "Referer": f"https://in.bookmyshow.com/movies/{region_slug}/buytickets/{event_code}/",
-        "sec-ch-ua": '"Chromium";v="128", "Not;A=Brand";v="24"',
-        "sec-ch-ua-mobile": "?0",
-        "sec-ch-ua-platform": '"Windows"',
-        "x-app-code": "WEB",
-        "x-region-code": region_code,
-        "x-region-slug": region_slug,
-        "x-geohash": geohash,
-        "x-latitude": lat,
-        "x-longitude": lon,
-        "x-location-selection": "manual",
-        "x-lsid": "",
+    movie_name = movie_slug.replace("-", " ").title() if movie_slug else "MovieWatch"
+    movie_name=movie_name.replace(" ","")
+    return {
+        "event_code": event_code,
+        "region_slug": region_slug.lower(),
+        "movie_slug": movie_slug,
+        "movie_name": movie_name,
     }
 
-    params = {
-        "eventCode": event_code,
-        "dateCode": date_code or "",
-        "isDesktop": "true",
-        "regionCode": region_code,
-        "xLocationShared": "false",
-        "memberId": "",
-        "lsId": "",
-        "subCode": "",
-        "lat": lat,
-        "lon": lon,
-    }
 
-    # Introduce a polite, random delay before every request to avoid 403 blocks
-    time.sleep(random.uniform(1.5, 3.0))
-
-    for attempt in range(1, max_retries + 1):
-        try:
-            response = requests.get(
-                API_URL,
-                headers=headers,
-                params=params,
-                impersonate="chrome",
-                timeout=20,
-            )
-
-            if response.status_code == 200:
-                return response.json()
-                
-            # If the API explicitly says Not Found/Bad Request, it just hasn't opened yet.
-            # Quit quietly without alerting.
-            if response.status_code in [400, 404]:
-                print(f"  ℹ️ BMS HTTP {response.status_code}: Shows likely not opened for {date_code}.")
-                return None
-
-            print(
-                f"  ⚠️ BMS HTTP {response.status_code} (Attempt {attempt}/{max_retries})"
-            )
-
-            if response.status_code in [403, 429]:
-                # Exponential backoff on rate limits/blocks
-                time.sleep(attempt * 3)
-            else:
-                time.sleep(2)
-
-        except requests.RequestException as e:
-            print(f"  ⚠️ BMS request failed: {e} (Attempt {attempt}/{max_retries})")
-            time.sleep(2)
-
-    # --- IF IT REACHES HERE, ALL RETRIES FAILED ---
-    print(f"  ❌ Failed to fetch BMS API after {max_retries} attempts.")
-    send_ntfy_error(show_name, date_code)
-    
-    return None
-# ======================================================================
-# MOVIE INFO PARSER
-# ======================================================================
-
-# ======================================================================
-# MOVIE INFO PARSER
-# ======================================================================
-def parse_movie_info(data, fallback_name="Unknown Movie"):
-    info = {
-        "name": fallback_name,
-        "language": "",
-    }
-
-    # 1. Grab Language and Format
-    for widget in data.get("data", {}).get("topStickyWidgets", []):
-        if widget.get("type") == "horizontal-text-list":
-            for item in widget.get("data", []):
-                for row in item.get("leftText", {}).get("data", []):
-                    for component in row.get("components", []):
-                        text = component.get("text", "")
-                        if "•" in text:
-                            info["language"] = text.strip()
-
-    # 2. Hunt down the True Movie Name (Checking 3 different BMS locations!)
-    meta_name = data.get("meta", {}).get("eventName")
-    banner_name = data.get("data", {}).get("banner", {}).get("name")
-    bottom_name = None
-    
-    bottom_sheet = data.get("data", {}).get("bottomSheetData", {})
-    for widget in bottom_sheet.get("format-selector", {}).get("widgets", []):
-        if widget.get("type") == "vertical-text-list":
-            for item in widget.get("data", []):
-                # Check both subtitle and title just in case BMS changes the style ID
-                if item.get("styleId") in ["bottomsheet-subtitle", "bottomsheet-title"]:
-                    bottom_name = item.get("text")
-                    break
-
-    # Pick the most accurate name available
-    if meta_name:
-        info["name"] = meta_name
-    elif bottom_name:
-        info["name"] = bottom_name
-    elif banner_name:
-        info["name"] = banner_name
-
-    return info
-
-# ======================================================================
-# LANGUAGE / FORMAT VARIANT PARSER
-# ======================================================================
-
-def parse_format_selector(data):
-    """
-    Read the "Select language and format" bottomsheet and return
-    one VariantInfo per selectable language+format chip, including
-    the currently-selected one (isDisabled == true).
-    """
-
-    variants = []
-
-    bottom_sheet = (
-        data.get("data", {})
-        .get("bottomSheetData", {})
-    )
-
-    widgets = (
-        bottom_sheet
-        .get("format-selector", {})
-        .get("widgets", [])
-    )
-
-    for widget in widgets:
-
-        if widget.get("type") != "chip-list":
-            continue
-
-        # The chip-list "text" field holds the language name
-        # (e.g. "Tamil", "Malayalam") for that group of chips.
-        language = widget.get("text", "").strip()
-
-        for chip in widget.get("data", []):
-
-            if chip.get("type") != "chip":
-                continue
-
-            cta = chip.get("cta", {})
-            additional = cta.get("additionalData", {})
-
-            event_code = additional.get("eventCode", "")
-
-            if not event_code:
-                continue
-
-            variants.append(
-                VariantInfo(
-                    language=(
-                        additional.get(
-                            "language",
-                            language,
-                        )
-                        or language
-                    ),
-                    format=chip.get("title", "").strip(),
-                    event_code=event_code,
-                    event_url=additional.get(
-                        "eventUrl",
-                        "",
-                    ),
-                    is_current=bool(
-                        additional.get(
-                            "isDisabled",
-                            False,
-                        )
-                    ),
-                )
-            )
-
-    return variants
-
-
-def select_variants(variants, languages, formats):
-    """
-    Filter discovered variants (excluding the current/base one) down
-    to those matching the languages/formats whitelists, if given.
-    Empty whitelist means "match everything".
-    """
-
-    result = []
-
-    for variant in variants:
-
-        if variant.is_current:
-            continue
-
-        if languages and variant.language.lower() not in languages:
-            continue
-
-        if formats and variant.format.lower() not in formats:
-            continue
-
-        result.append(variant)
-
-    return result
-
-
-# ======================================================================
-# DATE PARSER
-# ======================================================================
-
-def parse_dates(data):
-
+def get_next_10_dates() -> list[tuple[str, str]]:
     dates = []
-
-    widgets = (
-        data.get("data", {})
-        .get("topStickyWidgets", [])
-    )
-
-    for widget in widgets:
-
-        if widget.get(
-            "type"
-        ) != "horizontal-block-list":
-            continue
-
-        for item in widget.get("data", []):
-
-            texts = item.get("data", [])
-
-            if len(texts) < 3:
-                continue
-
-            style = item.get(
-                "styleId",
-                "",
-            )
-
-            dates.append(
-                DateInfo(
-                    date_code=item.get("id", ""),
-                    status=DATE_STYLE_MAP.get(
-                        style,
-                        "UNKNOWN",
-                    ),
-                )
-            )
-
+    today = datetime.now()
+    for i in range(10):
+        target = today + timedelta(days=i)
+        dates.append((target.strftime("%Y%m%d"), target.strftime("%a, %d %b")))
     return dates
 
 
-# ======================================================================
-# SHOW PARSER
-# ======================================================================
-
-def parse_shows(data):
-
-    shows = []
-
-    widgets = (
-        data.get("data", {})
-        .get("showtimeWidgets", [])
-    )
-
-    for widget in widgets:
-
-        if widget.get(
-            "type"
-        ) != "groupList":
-            continue
-
-        for group in widget.get("data", []):
-
-            if group.get(
-                "type"
-            ) != "venueGroup":
-                continue
-
-            for card in group.get("data", []):
-
-                if card.get(
-                    "type"
-                ) != "venue-card":
-                    continue
-
-                additional = card.get(
-                    "additionalData",
-                    {},
-                )
-
-                venue_name = additional.get(
-                    "venueName",
-                    "Unknown",
-                )
-
-                venue_code = additional.get(
-                    "venueCode",
-                    "",
-                )
-
-                for showtime in card.get(
-                    "showtimes",
-                    [],
-                ):
-
-                    show_additional = (
-                        showtime.get(
-                            "additionalData",
-                            {},
-                        )
-                    )
-
-                    date_code = str(
-                        show_additional.get(
-                            "showDateCode",
-                            "",
-                        )
-                        or show_additional.get(
-                            "dateCode",
-                            "",
-                        )
-                    ).strip()
-
-                    cutoff = show_additional.get(
-                        "cutOffDateTime",
-                        "",
-                    )
-
-                    if (
-                        not date_code
-                        and re.match(
-                            r"^\d{8}",
-                            cutoff,
-                        )
-                    ):
-                        date_code = cutoff[:8]
-
-                    show = ShowInfo(
-                        venue_code=venue_code,
-                        venue_name=venue_name,
-                        session_id=show_additional.get(
-                            "sessionId",
-                            "",
-                        ),
-                        date_code=date_code,
-                        time=showtime.get(
-                            "title",
-                            "",
-                        ),
-                        time_code=show_additional.get(
-                            "showTimeCode",
-                            "",
-                        ),
-                        screen_attr=(
-                            showtime.get(
-                                "screenAttr",
-                                "",
-                            )
-                            or show_additional.get(
-                                "attributes",
-                                "",
-                            )
-                        ),
-                    )
-
-                    for category in show_additional.get(
-                        "categories",
-                        [],
-                    ):
-
-                        status = str(
-                            category.get(
-                                "availStatus",
-                                "",
-                            )
-                        )
-
-                        show.categories.append(
-                            CatInfo(
-                                name=category.get(
-                                    "priceDesc",
-                                    "",
-                                ),
-                                price=str(
-                                    category.get(
-                                        "curPrice",
-                                        "0",
-                                    )
-                                ),
-                                status=status,
-                            )
-                        )
-
-                    shows.append(show)
-
-    return shows
-
-
-# ======================================================================
-# FILTERING
-# ======================================================================
-# ======================================================================
-# FILTERING
-# ======================================================================
-
-def filter_shows(
-    shows,
-    theatre_filter,
-    time_periods_global,
-    date_codes,
-    date_time_map=None, # <--- Added parameter
-):
-    if date_time_map is None:
-        date_time_map = {}
-
-    result = []
-    theatre_keywords = theatre_filter if theatre_filter else []
-    dates_set = (
-        set(d.strip() for d in date_codes if str(d).strip())
-        if date_codes else set()
-    )
-
-    for show in shows:
-        # 1. Theatre filter
-        if theatre_keywords:
-            venue_lower = show.venue_name.lower()
-            if not any(keyword in venue_lower for keyword in theatre_keywords):
-                continue
-
-        # 2. Date filter
-        if dates_set and show.date_code and show.date_code not in dates_set:
-            continue
-
-        # 3. Time filter (Check map specific to this date first, then global fallback)
-        if show.date_code in date_time_map:
-            periods = date_time_map[show.date_code]
-        else:
-            periods = time_periods_global
-
-        if periods:
-            try:
-                time_code = int(show.time_code)
-            except (ValueError, TypeError):
-                time_code = 0
-
-            matched = False
-            for period in periods:
-                if period not in TIME_PERIODS:
-                    continue
-                start, end = TIME_PERIODS[period]
-                if start <= time_code < end:
-                    matched = True
-                    break
-
-            if not matched:
-                continue
-
-        result.append(show)
-
-    return result
-
-# ======================================================================
-# STATE
-# ======================================================================
-
-def load_state():
-
+async def safe_edit_reply_markup(query, reply_markup):
     try:
-
-        with open(
-            STATE_FILE,
-            "r",
-            encoding="utf-8",
-        ) as f:
-
-            return json.load(f)
-
-    except (
-        FileNotFoundError,
-        json.JSONDecodeError,
-    ):
-
-        return {}
+        await query.edit_message_reply_markup(reply_markup=reply_markup)
+    except BadRequest as e:
+        if "Message is not modified" not in str(e):
+            raise
 
 
-def save_state(state):
+def build_multiselect_keyboard(
+    options: list,
+    selected: set,
+    step_prefix: str,
+    columns: int = 2,
+    allow_custom_date: bool = False,
+    page: int = 0,
+    paginated: bool = False,
+    require_selection: bool = False,
+    exclude_any: bool = False,
+) -> InlineKeyboardMarkup:
+    keyboard = []
+    row = []
 
-    temp_file = f"{STATE_FILE}.tmp"
+    active_options = options
+    total_pages = 1
 
-    with open(
-        temp_file,
-        "w",
-        encoding="utf-8",
-    ) as f:
+    if paginated:
+        total_pages = max(1, (len(options) + THEATRES_PER_PAGE - 1) // THEATRES_PER_PAGE)
+        page = max(0, min(page, total_pages - 1))
+        start_idx = page * THEATRES_PER_PAGE
+        end_idx = start_idx + THEATRES_PER_PAGE
+        active_options = options[start_idx:end_idx]
 
-        json.dump(
-            state,
-            f,
-            indent=2,
-            ensure_ascii=False,
+    for item in active_options:
+        val = item[0] if isinstance(item, tuple) else item
+        label = item[1] if isinstance(item, tuple) else item
+
+        orig_idx = options.index(item)
+
+        mark = "✅ " if val in selected else ""
+        btn_text = f"{mark}{label}"
+        row.append(InlineKeyboardButton(btn_text, callback_data=f"tgl_{orig_idx}"))
+
+        if len(row) == columns:
+            keyboard.append(row)
+            row = []
+
+    if row:
+        keyboard.append(row)
+
+    if paginated and total_pages > 1:
+        nav_row = []
+        if page > 0:
+            nav_row.append(InlineKeyboardButton("⬅️ Prev", callback_data=f"page_{page - 1}"))
+        nav_row.append(InlineKeyboardButton(f"📄 {page + 1}/{total_pages}", callback_data="noop"))
+        if page < total_pages - 1:
+            nav_row.append(InlineKeyboardButton("Next ➡️", callback_data=f"page_{page + 1}"))
+        keyboard.append(nav_row)
+
+    ctrl_row = []
+    
+    if not exclude_any:
+        ctrl_row.append(
+            InlineKeyboardButton(
+                "🌐 Any / All" if selected else "✅ Any / All",
+                callback_data="tgl_ANY",
+            )
         )
 
-    os.replace(
-        temp_file,
-        STATE_FILE,
-    )
+    ctrl_row.append(InlineKeyboardButton("⬅️ Back", callback_data=f"back_{step_prefix}"))
+
+    if require_selection and not selected:
+        ctrl_row.append(InlineKeyboardButton("⚠️ Select a date to proceed", callback_data="alert_no_selection"))
+    else:
+        ctrl_row.append(InlineKeyboardButton("Next ➡️", callback_data=f"next_{step_prefix}"))
+
+    keyboard.append(ctrl_row)
+
+    if allow_custom_date:
+        keyboard.append([
+            InlineKeyboardButton("➕ Add Custom Date (YYYYMMDD)", callback_data="add_custom_date")
+        ])
+
+    keyboard.append([
+        InlineKeyboardButton("❌ Cancel", callback_data="cancel_watch")
+    ])
+
+    return InlineKeyboardMarkup(keyboard)
+
+
+def append_to_watches_file(watch_entry: dict):
+    watches = load_watches()
+    watches.append(watch_entry)  # Append to array
+    save_watches(watches)
+    log.info("WATCH APPENDED TO GITHUB | total_count=%d", len(watches))
 
 
 # ======================================================================
-# STATE BUILDER
+# CONVERSATION STEP HANDLERS
 # ======================================================================
+async def handle_smart_link(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await is_authorized(update): return ConversationHandler.END
+    url = (update.message.text or "").strip()
+    log.info(f"Smart router received link: {url}")
 
-def build_state(
-    shows,
-    dates,
-):
-
-    show_state = {}
-
-    for show in shows:
-
-        for category in show.categories:
-
-            key = (
-                f"{show.venue_code}|"
-                f"{show.session_id}|"
-                f"{show.date_code}|"
-                f"{category.name}"
-            )
-
-            show_state[key] = {
-                "venue": show.venue_name,
-                "time": show.time,
-                "date": show.date_code,
-                "cat": category.name,
-                "price": category.price,
-                "status": category.status,
-                "screen": show.screen_attr,
-                "vcode": show.venue_code,  # <--- ADD THIS
-            "sid": show.session_id,    # <--- ADD THIS
-            }
-
-    date_state = {
-        date.date_code: date.status
-        for date in dates
-    }
-
-    return {
-        "shows": show_state,
-        "dates": date_state,
-    }
-
-
-# ======================================================================
-# CHANGE DETECTION
-# ======================================================================
-
-# ======================================================================
-# CHANGE DETECTION
-# ======================================================================
-
-def detect_changes(old_state, new_state):
-    changes = []
-
-    old_shows = old_state.get("shows", {})
-    new_shows = new_state.get("shows", {})
-
-    # 1. New showtimes added
-    for key in set(new_shows) - set(old_shows):
-        show = new_shows[key]
-        changes.append({
-            "type": "NEW",
-            "icon": "🆕",
-            "venue": show["venue"],
-            "time": show["time"],
-            "date": show["date"],
-            "cat": show["cat"],
-            "price": show["price"],
-            "screen": show.get("screen", ""),
-            "status": str(show.get("status", "3")),
-            "old_status": "",
-            "vcode": show.get("vcode", ""),
-            "sid": show.get("sid", "")
-        })
-
-    # Compare existing shows for status & price changes
-    for key, new_show in new_shows.items():
-        old_show = old_shows.get(key)
-        if not old_show:
-            continue
-
-        old_status = str(old_show.get("status", "")).strip()
-        new_status = str(new_show.get("status", "")).strip()
-
-        # 2. Restocked check
-        if is_restocked(old_status, new_status):
-            label, icon = AVAIL_STATUS_MAP.get(new_status, ("UNKNOWN", "🔄"))
-            changes.append({
-                "type": "RESTOCKED",
-                "icon": icon,
-                "venue": new_show["venue"],
-                "time": new_show["time"],
-                "date": new_show["date"],
-                "cat": new_show["cat"],
-                "price": new_show["price"],
-                "old_price": old_show.get("price"),
-                "screen": new_show.get("screen", ""),
-                "status": new_status,
-                "old_status": old_status,
-                "vcode": new_show.get("vcode", ""), # Fixed variable
-                "sid": new_show.get("sid", "")      # Fixed variable
-            })
-
-        # 3. Price changes
+    # --- BRANCH 1: SHOW LINK ---
+    if "seat-layout" in url:
         try:
-            old_price = float(old_show.get("price", 0))
-            new_price = float(new_show.get("price", 0))
-
-            if old_price != new_price:
-                price_dropped = new_price < old_price
-                changes.append({
-                    "type": "PRICE_DROP" if price_dropped else "PRICE_INCREASE",
-                    "icon": "📉" if price_dropped else "📈",
-                    "venue": new_show["venue"],
-                    "time": new_show["time"],
-                    "date": new_show["date"],
-                    "cat": new_show["cat"],
-                    "old_price": f"{old_price:.2f}",
-                    "price": f"{new_price:.2f}",
-                    "screen": new_show.get("screen", ""),
-                    "status": new_status,
-                    "old_status": old_status,
-                    "vcode": new_show.get("vcode", ""), # Fixed variable
-                    "sid": new_show.get("sid", "")      # Fixed variable
-                })
-        except (ValueError, TypeError):
-            pass
-
-    return changes
-# ======================================================================
-# EMAIL HELPERS
-# ======================================================================
-
-def category_status_label(status):
-
-    return AVAIL_STATUS_MAP.get(
-        status,
-        ("UNKNOWN", ""),
-    )[0]
-
-
-# ======================================================================
-# Telegram
-# ======================================================================
-# 2. HELPER FUNCTIONS
-def resolve_status_info(status_key):
-    """
-    Translates raw status keys ('0', '1', '2', '3') into tuple (Label, Emoji).
-    """
-    key = str(status_key).strip()
-    if key in AVAIL_STATUS_MAP:
-        return AVAIL_STATUS_MAP[key]
-    return (key if key else "UNKNOWN", "⚪")
-
-def is_restocked(old_status_key, new_status_key):
-    """
-    Evaluates if state transition represents restocking (e.g., 0 -> 1, 2, 3 or 1 -> 2, 3).
-    """
-    try:
-        old_lvl = int(str(old_status_key).strip())
-        new_lvl = int(str(new_status_key).strip())
-        return new_lvl > old_lvl
-    except (ValueError, TypeError):
-        return False
-
-def parse_time_to_minutes(time_str):
-    try:
-        t_str = str(time_str).strip().upper()
-        if "AM" in t_str or "PM" in t_str:
-            dt = datetime.strptime(t_str, "%I:%M %p")
-        else:
-            dt = datetime.strptime(t_str, "%H:%M")
-        return dt.hour * 60 + dt.minute
-    except Exception:
-        return 0
-
-def parse_price(price_val):
-    try:
-        cleaned = ''.join(c for c in str(price_val) if c.isdigit() or c == '.')
-        return float(cleaned) if cleaned else 0.0
-    except Exception:
-        return 0.0
-
-def format_date(date_str):
-    try:
-        dt = datetime.strptime(str(date_str), "%Y%m%d")
-        return dt.strftime("%a, %d %b %Y")
-    except Exception:
-        return str(date_str)
-
-def split_message_chunks(lines, max_chars=4000):
-    chunks = []
-    current_chunk = []
-    current_length = 0
-
-    for line in lines:
-        line_len = len(line) + 1
-        if current_length + line_len > max_chars:
-            chunks.append("\n".join(current_chunk))
-            current_chunk = [line]
-            current_length = line_len
-        else:
-            current_chunk.append(line)
-            current_length += line_len
-
-    if current_chunk:
-        chunks.append("\n".join(current_chunk))
-    return chunks
-
-def send_ntfy(label, movie_info, changes):
-    if not NTFY_TOPIC or not changes:
-        return
-
-    movie_name = movie_info.get("name", label)
-    
-    # Group by date -> type -> unique venues/times
-    date_groups = defaultdict(lambda: defaultdict(set))
-    for change in changes:
-        date_val = change.get("date", "")
-        c_type = change.get("type", "UPDATE")
-        venue = change.get("venue", "Unknown").strip()
-        time_val = change.get("time", "").strip()
-        
-        date_groups[date_val][c_type].add(f"{venue} ({time_val})")
-        
-    url = f"{NTFY_URL}/{NTFY_TOPIC}"
-
-    for date_val in sorted(date_groups.keys()):
-        types_dict = date_groups[date_val]
-        formatted_date = format_date(date_val)
-        
-        summary_parts = []
-        if "NEW" in types_dict:
-            shows_str = ", ".join(sorted(types_dict["NEW"]))
-            summary_parts.append(f"New show added in {shows_str}")
+            parsed = parse_seat_layout_url(url)
+            v_code = parsed["venue_code"].upper()
+            theatre_name = VENUE_MAP.get(v_code)
+            context.user_data["show"] = {
+                "venue_code": v_code,
+                "theatre": theatre_name or "",
+                "session_id": parsed["session_id"],
+                "date": parsed["date"],
+                # --- ADD THIS LINE ---
+                "url": url  
+            }
             
-        if "RESTOCKED" in types_dict:
-            shows_str = ", ".join(sorted(types_dict["RESTOCKED"]))
-            summary_parts.append(f"Ticket status changed in {shows_str}")
+            # If theatre is recognized in VENUE_MAP, proceed to Show Name
+            if theatre_name:
+                await update.message.reply_text(
+                    f"🎯 *Smart Detection: Add Manual Show*\n\n"
+                    f"✅ *Extracted Data:*\n"
+                    f"🏛️ Theatre: `{theatre_name}` (`{v_code}`)\n"
+                    f"🆔 Session: `{parsed['session_id']}`\n"
+                    f"📅 Date: `{parsed['date']}`\n\n"
+                    "Now, enter a reference name for this show (e.g., `Leo - AGS Vivira`)\n"
+                    "_(or type /cancel to stop)_:",
+                    parse_mode=ParseMode.MARKDOWN
+                )
+                return STATE_SHOW_NAME
+            else:
+                # If code is not recognized, ask for Theatre Name
+                await update.message.reply_text(
+                    f"🎯 *Smart Detection: Add Manual Show*\n\n"
+                    f"✅ *Extracted Data:*\n"
+                    f"🏛️ Venue Code: `{v_code}`\n"
+                    f"🆔 Session: `{parsed['session_id']}`\n"
+                    f"📅 Date: `{parsed['date']}`\n\n"
+                    f"Please enter the *Theatre Name* for venue `{v_code}` (e.g., `Rakki Cinemas`)\n"
+                    "_(or type /cancel to stop)_:",
+                    parse_mode=ParseMode.MARKDOWN
+                )
+                return STATE_SHOW_THEATRE
             
-        price_changes = types_dict.get("PRICE_DROP", set()).union(types_dict.get("PRICE_INCREASE", set()))
-        if price_changes:
-            shows_str = ", ".join(sorted(price_changes))
-            summary_parts.append(f"Price changed in {shows_str}")
-            
-        if not summary_parts:
-            continue
-            
-        # Keep fun tags, but force everything to High Priority
-        if "NEW" in types_dict:
-            tags = "rotating_light,fire"
-        elif "RESTOCKED" in types_dict:
-            tags = "bell,popcorn"
-        else:
-            tags = "ticket,money_with_wings"
+        except ValueError as e:
+            await update.message.reply_text(f"⚠️ {e}\n\nPlease paste a valid seat layout URL:")
+            return STATE_SHOW_URL
 
-        headers = {
-            "Title": f"BMS Alert: {movie_name} - {formatted_date}",  # <-- Date added to title
-            "Priority": "high",  # Hardcoded to high for ALL alerts
-            "Tags": tags,
+    # --- BRANCH 2: WATCH LINK ---
+    else:
+        try:
+            parsed = parse_bms_url(url)
+        except Exception as e:
+            await update.message.reply_text(
+                f"❌ *Could not parse URL:* {e}\n\nPlease send a valid BookMyShow event URL:",
+                parse_mode=ParseMode.MARKDOWN,
+            )
+            return STATE_URL
+
+        context.user_data["watch"] = {
+            "name": parsed["movie_name"],
+            "url": url,
+            "event_code": parsed["event_code"],
+            "region_slug": parsed["region_slug"],
+            "languages": set(),
+            "formats": set(),
+            "theatre": set(),
+            "dates": set(),
+            "date_time_map": {},    # <--- Added for advanced dates
+            "current_times": set(), # <--- Temp storage for the active date
         }
 
-        # Removed the date from the beginning of the message text to avoid redundancy
-        message_text = f"{'; '.join(summary_parts)}."
-        
-        try:
-            response = requests.post(
-                url, 
-                data=message_text.encode("utf-8"), 
-                headers=headers, 
-                timeout=10
-            )
-            if response.status_code != 200:
-                print(f"  ⚠️ Ntfy failed: HTTP {response.status_code}")
-        except Exception as e:
-            print(f"  ⚠️ Ntfy error: {e}")
+        options = Languages.get_all()
+        context.user_data["current_options"] = options
+        context.user_data["current_page"] = 0
 
-        time.sleep(0.5)
-
-
-        # 4. TELEGRAM ALERT DISPATCHER
-# 4. TELEGRAM ALERT DISPATCHER
-# 4. TELEGRAM ALERT DISPATCHER (SIMPLIFIED BLOCKS)
-# ======================================================================
-# Telegram
-# ======================================================================
-# ======================================================================
-# Telegram
-# ======================================================================
-def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
-    if not TELEGRAM_BOT_TOKEN or not GROUP_CHAT_ID:
-        print("  ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN or GROUP_CHAT_ID not configured.")
-        return
-
-    if not changes:
-        return
-
-    now_str = datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%d %b, %I:%M %p")
-    movie_name = movie_info.get("name", watch_name.split('_')[0])
-    
-    # --- UPGRADED SMART HASHTAG CLEANER ---
-    tag_name = re.sub(r'\(.*?\)', '', str(movie_name))
-    tag_name = tag_name.title()
-    clean_movie_name = re.sub(r'[^A-Za-z0-9]', '', tag_name)
-
-    # --- Extract Language & Format for the Header ---
-    lang_fmt_match = re.search(r'\(([^)]+)\)$', str(watch_name))
-    lang_fmt_str = f" 🗣️ <b>{lang_fmt_match.group(1)}</b>" if lang_fmt_match else ""
-
-    def clean_price(price_val):
-        try:
-            return f"₹{int(round(float(price_val)))}"
-        except Exception:
-            return f"₹{price_val}"
-
-    # 1. ORDERED HASHTAG GENERATOR
-    action_tags = set()
-    for c in changes:
-        c_type = str(c.get('type', '')).upper()
-        if c_type:
-            action_tags.add(f"#{c_type.replace('_', '')}")
-
-    tag_list = [f"#{clean_movie_name}"] + sorted(list(action_tags))
-    hashtag_str = " ".join(tag_list)
-
-    # 2. BETTER SORTING (Date -> Venue -> Time -> Price)
-    sorted_changes = sorted(
-        changes,
-        key=lambda x: (
-            str(x.get("date", "")),
-            str(x.get("venue", "")).lower(),
-            parse_time_to_minutes(x.get("time", "")),
-            parse_price(x.get("price", 0))
+        kb = build_multiselect_keyboard(
+            options=options,
+            selected=context.user_data["watch"]["languages"],
+            step_prefix="language",
+            columns=2,
         )
-    )
 
-    # 3. BETTER GROUPING
-    nested_data = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
-    for item in sorted_changes:
-        d_val = item["date"]
-        venue = item["venue"]
-        show_key = (item["time"], item.get("screen", ""), item.get("vcode", ""), item.get("sid", ""))
-        nested_data[d_val][venue][show_key].append(item)
-
-    # 4. BUILD MOBILE-OPTIMIZED HEADER
-    lines = [
-        f"🚨 <b>BMS Ticket Alert!</b>",
-        f"🎬 <b>{html.escape(str(movie_name))}</b>{lang_fmt_str}",
-        f"🏷 {hashtag_str}",
-        f"🕒 <i>{html.escape(now_str)}</i>\n",
-    ]
-
-    # 5. RENDER ULTRA-COMPACT HIERARCHY
-    for date_val, venues_dict in nested_data.items():
-        formatted_date = format_date(date_val)
-        lines.append(f"━━━━━━━━━━━━━━━━━━━━")
-        lines.append(f"📅 <b>{html.escape(str(formatted_date)).upper()}</b>")
-        lines.append(f"━━━━━━━━━━━━━━━━━━━━")
-
-        for venue, times_dict in venues_dict.items():
-            lines.append(f"🏢 <b>{html.escape(str(venue))}</b>")
-            
-            for (time_val, screen, vcode, sid), items in times_dict.items():
-                screen_name = html.escape(str(screen)) if screen else "NORM"
-                chain_url = CINEMA_CHAIN_URLS.get(vcode)
-                
-                if chain_url:
-                    screen_str = f' [<a href="{chain_url}">{screen_name}</a>]'
-                else:
-                    venue_upper = venue.upper()
-                    if "PVR" in venue_upper:
-                        screen_str = f' [<a href="https://www.pvrcinemas.com/">{screen_name}</a>]'
-                    elif "INOX" in venue_upper:
-                        screen_str = f' [<a href="https://www.inoxmovies.com/">{screen_name}</a>]'
-                    else:
-                        screen_str = f" [{screen_name}]"
-                
-                # Direct Deep Link for Time
-                time_display = html.escape(str(time_val))
-                if vcode and sid:
-                    book_url = f"https://in.bookmyshow.com/booktickets/{vcode}/{sid}"
-                    time_display = f'<a href="{book_url}"><b>{time_display}</b></a>'
-                else:
-                    time_display = f"<b>{time_display}</b>"
-
-                lines.append(f" └ 🎟️{time_display} {screen_str}")
-
-                # --- PULL ALL CATEGORIES FOR THIS SHOWTIME FROM FULL SNAPSHOT ---
-                full_categories = []
-                for s in shows:
-                    if (str(s.date_code) == str(date_val) and 
-                        str(s.venue_code) == str(vcode) and 
-                        str(s.session_id) == str(sid)):
-                        full_categories = s.categories
-                        break
-                
-                # Fallback to change items if snapshot lookup misses
-                categories_to_render = full_categories if full_categories else items
-                
-                # Map changes for quick lookup by category name
-                change_map = {c.get("cat"): c for c in items}
-
-                for c_idx, cat in enumerate(categories_to_render):
-                    is_last_cat = (c_idx == len(categories_to_render) - 1)
-                    cat_prefix = "    └" if is_last_cat else "    ├"
-
-                    # Handle object vs dict attributes safely
-                    if hasattr(cat, 'name'):
-                        cat_name = cat.name
-                        cat_price = cat.price
-                        cat_status = str(cat.status)
-                    else:
-                        cat_name = cat.get('cat', '')
-                        cat_price = cat.get('price', '0')
-                        cat_status = str(cat.get('status', '3'))
-
-                    matched_change = change_map.get(cat_name)
-
-                    if matched_change:
-                        # Render category with its active change styling
-                        c_type = matched_change.get("type", "")
-                        price = clean_price(matched_change.get('price', cat_price))
-                        old_price = clean_price(matched_change.get('old_price', '0'))
-                        
-                        raw_status = str(matched_change.get('status', cat_status)).strip()
-                        raw_old_status = str(matched_change.get('old_status', '')).strip()
-                        if c_type == "RESTOCKED" and not raw_old_status:
-                            raw_old_status = "0"
-
-                        curr_label, curr_emoji = resolve_status_info(raw_status)
-                        _, old_emoji = resolve_status_info(raw_old_status) if raw_old_status != "" else ("", "")
-
-                        is_price_change = c_type in ("PRICE_DROP", "PRICE_INCREASE")
-                        has_status_transition = (raw_old_status != "" and old_emoji != curr_emoji)
-
-                        if c_type == "NEW":
-                            line_content = f"🆕  <b>{price}</b>: {curr_emoji}"
-                        elif is_price_change and has_status_transition:
-                            price_icon = "📉" if c_type == "PRICE_DROP" else "📈"
-                            status_part = f"[{old_emoji}➔{curr_emoji}]"
-                            line_content = f"🔄{price_icon} <s>{old_price}</s>➔<b>{price}</b>{status_part}"
-                        elif c_type == "PRICE_DROP":
-                            line_content = f"📉 <s>{old_price}</s>➔<b>{price}</b> {curr_emoji}"
-                        elif c_type == "PRICE_INCREASE":
-                            line_content = f"📈 <s>{old_price}</s>➔<b>{price}</b> {curr_emoji}"
-                        elif c_type == "RESTOCKED":
-                            status_part = f"[{old_emoji}➔{curr_emoji}]" if old_emoji != curr_emoji else curr_emoji
-                            line_content = f"🔄 <b>{price}</b>: {status_part}"
-                        else:
-                            line_content = f"▪️ <b>{price}</b>: {curr_emoji}"
-                    else:
-                        # Render static/unchanged categories for the same show time
-                        price = clean_price(cat_price)
-                        _, curr_emoji = resolve_status_info(cat_status)
-                        line_content = f"▪️ <b>{price}</b>: {curr_emoji}"
-
-                    lines.append(f"{cat_prefix} {line_content}")
-            
-            lines.append("") # Visual gap between venues
-
-    # 6. DISPATCH
-    message_chunks = split_message_chunks(lines)
-    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
-    
-    alert_failed = False
-    last_error = "Unknown Error"
-
-    for chunk in message_chunks:
-        chunk_success = False
-        for attempt in range(1, 4):
-            try:
-                payload = {
-                    "chat_id": GROUP_CHAT_ID,
-                    "text": chunk,
-                    "parse_mode": "HTML",
-                    "disable_web_page_preview": True,
-                    "disable_notification": False, 
-                }
-                if threadid:
-                    payload["message_thread_id"] = threadid
-
-                response = requests.post(url, json=payload, timeout=20)
-                if response.status_code == 200:
-                    chunk_success = True
-                    break
-                else:
-                    last_error = f"HTTP {response.status_code}: {response.text}"
-            except requests.RequestException as e:
-                last_error = str(e)
-
-            time.sleep(attempt * 2)
-
-        if not chunk_success:
-            alert_failed = True
-            break
-
-    # 7. ADMIN FALLBACK
-    if alert_failed and TELEGRAM_CHAT_ID:
-        report_text = (
-            f"⚠️ <b>Delivery Failure Report</b>\n"
-            f"Failed to deliver alert for <b>{html.escape(str(movie_name))}</b> to Topic ID <code>{threadid}</code> in the Group.\n"
-            f"❌ <b>Reason:</b> <code>{html.escape(last_error)}</code>"
+        await update.message.reply_text(
+            f"🎯 *Smart Detection: Add Watch*\n\n"
+            f"🎬 *Movie:* {parsed['movie_name']}\n"
+            f"📍 *City:* {parsed['region_slug'].title()}\n\n"
+            "📌 *Step 1: Select Languages*\n"
+            "_(Tap to toggle, select 'Any' to match all, then click Next)_",
+            reply_markup=kb,
+            parse_mode=ParseMode.MARKDOWN,
         )
-        try:
-            requests.post(url, json={"chat_id": TELEGRAM_CHAT_ID, "text": report_text, "parse_mode": "HTML"}, timeout=10)
-            for chunk in message_chunks:
-                requests.post(url, json={"chat_id": TELEGRAM_CHAT_ID, "text": chunk, "parse_mode": "HTML", "disable_web_page_preview": True}, timeout=10)
-                time.sleep(1)
-        except Exception:
-            pass
-        
-def get_telegram_user_info(chat_id: int) -> str:
-    """Helper to fetch a user's name/username via getChat endpoint."""
+        return STATE_LANGUAGE
+    
+async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    log.info(f"User {update.effective_user.id} requested the main menu.")
+    await show_main_menu(update, context)
+    return ConversationHandler.END
+
+
+async def receive_url(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    url = (update.message.text or "").strip()
+    log.info(f"Received URL input: {url}")
+
     try:
-        url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/getChat"
-        res = requests.post(url, json={"chat_id": chat_id}, timeout=5).json()
-        if res.get("ok"):
-            chat = res.get("result", {})
-            first_name = chat.get("first_name", "")
-            last_name = chat.get("last_name", "")
-            full_name = f"{first_name} {last_name}".strip() or "Unknown"
-            username = f" (@{chat['username']})" if chat.get("username") else ""
-            return f"{full_name}{username}"
-    except Exception:
-        pass
-    return "Unknown User"
+        parsed = parse_bms_url(url)
+    except Exception as e:
+        log.warning(f"Failed to parse URL '{url}': {e}")
+        await update.message.reply_text(
+            f"❌ *Could not parse URL:* {e}\n\nPlease send a valid BookMyShow event URL:",
+            parse_mode=ParseMode.MARKDOWN,
+        )
+        return STATE_URL
 
-
-# ======================================================================
-# RUN A SINGLE EVENT (one language/format variant, or the base watch)
-# ======================================================================
-
-def run_event(
-    threadid,
-    label,
-    event_code,
-    region_code,
-    region_slug_resolved,
-    lat,
-    lon,
-    geohash,
-    date_list,
-    theatre,
-    time_period,
-    dates_filter,
-    date_time_map,   # <--- ADD THIS HERE
-    state,
-    save_raw_prefix=None,
-):
-    """
-    Fetch, filter, diff and (if needed) alert for one event_code.
-
-    Returns (state, success, first_full_data) where first_full_data
-    is the first raw BMS response fetched (used for variant
-    discovery when called for the base watch), or None if nothing
-    was fetched successfully.
-    """
-
-    all_shows = []
-    all_dates = []
-    first_full_data = None
-
-    movie_info = {
-        "name": label,
-        "language": "",
+    context.user_data["watch"] = {
+        "name": parsed["movie_name"],
+        "url": url,
+        "event_code": parsed["event_code"],
+        "region_slug": parsed["region_slug"],
+        "languages": set(),
+        "formats": set(),
+        "theatre": set(),
+        "dates": set(),
+        "date_time_map": {},    # <--- Added for advanced dates
+        "current_times": set(), # <--- Temp storage for the active date
     }
 
+    options = Languages.get_all()
+    context.user_data["current_options"] = options
+    context.user_data["current_page"] = 0
 
-    # Filter out past dates before hitting the API
-    today_int = int(datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%Y%m%d"))
-    valid_dates = []
+    kb = build_multiselect_keyboard(
+        options=options,
+        selected=context.user_data["watch"]["languages"],
+        step_prefix="language",
+        columns=2,
+    )
 
-    for d in date_list:
-        if not d: # Keep default empty date behavior
-            valid_dates.append(d)
-        elif str(d).isdigit() and int(d) >= today_int:
-            valid_dates.append(d)
+    await update.message.reply_text(
+        f"🎬 *Movie:* {parsed['movie_name']}\n"
+        f"📍 *City:* {parsed['region_slug'].title()}\n\n"
+        "📌 *Step 1: Select Languages*\n"
+        "_(Tap to toggle, select 'Any' to match all, then click Next)_",
+        reply_markup=kb,
+        parse_mode=ParseMode.MARKDOWN,
+    )
+    return STATE_LANGUAGE
+
+
+async def handle_language_toggle(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    data = query.data
+    log.info(f"STATE_LANGUAGE callback data received: {data}")
+    watch = context.user_data["watch"]
+    options = context.user_data["current_options"]
+
+    if data == "next_language":
+        options = Formats.get_all()
+        context.user_data["current_options"] = options
+        context.user_data["current_page"] = 0
+        kb = build_multiselect_keyboard(
+            options=options,
+            selected=watch["formats"],
+            step_prefix="format",
+            columns=2,
+        )
+        await query.edit_message_text(
+            f"🎬 *{watch['name']}*\n\n"
+            "📌 *Step 2: Select Screen Formats*\n"
+            "_(Tap to toggle, select 'Any' to match all, then click Next)_",
+            reply_markup=kb,
+            parse_mode=ParseMode.MARKDOWN,
+        )
+        return STATE_FORMAT
+
+    if data == "back_language":
+        await query.edit_message_text("🚫 Setup restarted. Send a valid BookMyShow movie link:")
+        return STATE_URL
+
+    if data.startswith("page_"):
+        context.user_data["current_page"] = int(data.split("_")[1])
+    elif data == "tgl_ANY":
+        watch["languages"].clear()
+    elif data.startswith("tgl_"):
+        idx = int(data.split("_")[1])
+        item = options[idx]
+        if item in watch["languages"]:
+            watch["languages"].remove(item)
         else:
-            print(f"  ⏭️ Skipping past date: {d}")
+            watch["languages"].add(item)
 
-    for date_code in valid_dates:
+    kb = build_multiselect_keyboard(
+        options=options,
+        selected=watch["languages"],
+        step_prefix="language",
+        columns=2,
+        page=context.user_data.get("current_page", 0),
+    )
+    await safe_edit_reply_markup(query, reply_markup=kb)
+    return STATE_LANGUAGE
 
-        print(
-            f"  🔎 [{label}] Checking date "
-            f"{date_code or '(default)'}..."
+
+async def handle_format_toggle(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    data = query.data
+    log.info(f"STATE_FORMAT callback data received: {data}")
+    watch = context.user_data["watch"]
+    options = context.user_data["current_options"]
+
+    if data == "next_format":
+        city_slug = watch["region_slug"]
+        city_theatres = Theatres.get_by_city(city_slug) or Theatres.get_all()
+        context.user_data["current_options"] = city_theatres
+        context.user_data["current_page"] = 0
+        kb = build_multiselect_keyboard(
+            options=city_theatres,
+            selected=watch["theatre"],
+            step_prefix="theatre",
+            columns=1,
+            paginated=True,
         )
-
-        data = fetch_bms(
-            event_code,
-            date_code,
-            region_code,
-            region_slug_resolved,
-            lat,
-            lon,
-            geohash,
-            label,
+        await query.edit_message_text(
+            f"🎬 *{watch['name']}*\n\n"
+            f"📌 *Step 3: Select Theatres in {city_slug.title()}*\n"
+            "_(Use pagination below to browse venues)_",
+            reply_markup=kb,
+            parse_mode=ParseMode.MARKDOWN,
         )
+        return STATE_THEATRE
 
-        if data:
+    if data == "back_format":
+        options = Languages.get_all()
+        context.user_data["current_options"] = options
+        context.user_data["current_page"] = 0
+        kb = build_multiselect_keyboard(options, watch["languages"], "language", 2)
+        await query.edit_message_text(
+            f"🎬 *{watch['name']}*\n\n📌 *Step 1: Select Languages*",
+            reply_markup=kb, parse_mode=ParseMode.MARKDOWN
+        )
+        return STATE_LANGUAGE
 
-            if first_full_data is None:
-                first_full_data = data
-
-            if save_raw_prefix:
-
-                filename = (
-                    f"{save_raw_prefix}_"
-                    f"{date_code or 'default'}.json"
-                )
-
-                with open(
-                    filename, "w", encoding="utf-8"
-                ) as f:
-                    json.dump(
-                        data, f, indent=2, ensure_ascii=False
-                    )
-
-                print(
-                    f"  ✅ Raw BMS data saved to: {filename}"
-                )
-
+    if data.startswith("page_"):
+        context.user_data["current_page"] = int(data.split("_")[1])
+    elif data == "tgl_ANY":
+        watch["formats"].clear()
+    elif data.startswith("tgl_"):
+        idx = int(data.split("_")[1])
+        item = options[idx]
+        if item in watch["formats"]:
+            watch["formats"].remove(item)
         else:
-            print("  ❌ No BMS data received.")
+            watch["formats"].add(item)
 
-        if not data:
-
-            print(
-                f"  ⚠️ No data for "
-                f"{date_code or '(default)'}"
-            )
-
-            continue
-
-        if movie_info["name"] == label:
-            # Use the clean URL name as a safety fallback!
-            clean_fallback = label.split('_')[0]
-            movie_info = parse_movie_info(data, fallback_name=clean_fallback)
-
-        all_dates.extend(parse_dates(data))
-        all_shows.extend(parse_shows(data))
-
-    if not all_shows:
-
-        print("  ⚠️ No showtimes found.")
-
-        # Don't destroy existing state on a temporary
-        # BMS/API failure.
-        return state, False, first_full_data
-
-    print(
-        f"  🎬 {movie_info['name']} "
-        f"{movie_info['language']}"
+    kb = build_multiselect_keyboard(
+        options=options,
+        selected=watch["formats"],
+        step_prefix="format",
+        columns=2,
+        page=context.user_data.get("current_page", 0),
     )
+    await safe_edit_reply_markup(query, reply_markup=kb)
+    return STATE_FORMAT
 
-    filtered = filter_shows(
-        all_shows,
-        theatre,
-        time_period,
-        dates_filter,
-        date_time_map,   # <--- ADD THIS HERE
-    )
 
-    print(
-        f"  📊 {len(filtered)} "
-        f"showtime(s) after filters"
-    )
+async def handle_theatre_toggle(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    data = query.data
+    log.info(f"STATE_THEATRE callback data received: {data}")
+    watch = context.user_data["watch"]
+    options = context.user_data["current_options"]
 
-    new_watch_state = build_state(
-        filtered,
-        all_dates,
-    )
-
-    old_watch_state = state.get(label, {})
-
-    changes = []
-
-    if old_watch_state:
-        changes = detect_changes(
-            old_watch_state,
-            new_watch_state,
+    if data == "next_theatre":
+        date_options = get_next_10_dates()
+        context.user_data["current_options"] = date_options
+        context.user_data["current_page"] = 0
+        kb = build_multiselect_keyboard(
+            options=date_options,
+            selected=watch["dates"],
+            step_prefix="date",
+            columns=2,
+            allow_custom_date=True,
+            require_selection=True,
+            exclude_any=True,
         )
-
-    state[label] = new_watch_state
-
-    if changes:
-
-        print(
-            f"\n  ⚡ "
-            f"{len(changes)} change(s) detected:"
+        await query.edit_message_text(
+            f"🎬 *{watch['name']}*\n\n"
+            "📌 *Step 4: Select Dates (Required)*\n"
+            "_(Choose at least one date or add a custom date)_",
+            reply_markup=kb,
+            parse_mode=ParseMode.MARKDOWN,
         )
+        return STATE_DATE
 
-        for change in changes:
-            print(f"     {change}")
-
-        # send_email(
-        #     label,
-        #     (
-        #         f"BMS Alert: "
-        #         f"{movie_info['name']} - "
-        #         f"{len(changes)} change(s)"
-        #     ),
-        #     changes,
-        #     filtered,
-        #     movie_info,
-        # )
-
-        send_telegram(
-            threadid,
-             label,
-                        (
-                            f"BMS Alert: "
-                            f"{movie_info['name']} - "
-                            f"{len(changes)} change(s)"
-                        ),
-                        changes,
-                        filtered,
-                        movie_info,
+    if data == "back_theatre":
+        options = Formats.get_all()
+        context.user_data["current_options"] = options
+        context.user_data["current_page"] = 0
+        kb = build_multiselect_keyboard(options, watch["formats"], "format", 2)
+        await query.edit_message_text(
+            f"🎬 *{watch['name']}*\n\n📌 *Step 2: Select Formats*",
+            reply_markup=kb, parse_mode=ParseMode.MARKDOWN
         )
+        return STATE_FORMAT
 
-        send_ntfy(label, movie_info, changes)
-
-    else:
-        print("  ✅ No changes since last check.")
-
-    print(
-        f"\n  Current status "
-        f"({len(filtered)} shows):"
-    )
-
-    for show in filtered:
-
-        categories = ", ".join(
-            (
-                f"{category.name}"
-                f"=₹{category.price}"
-                f"({AVAIL_STATUS_MAP.get(
-                    category.status,
-                    ('?', '')
-                )[0]})"
-            )
-            for category in show.categories
-        )
-
-        screen = (
-            f"|{show.screen_attr}"
-            if show.screen_attr
-            else ""
-        )
-
-        print(
-            f"    {show.venue_name} — "
-            f"{show.time}{screen} "
-            f"[{show.date_code}] — "
-            f"{categories}"
-        )
-
-    return state, True, first_full_data
-
-
-# ======================================================================
-# RUN ONE WATCH
-# ======================================================================
-def run_watch(
-    watch,
-    state,
-):
-
-    watch_name = watch["name"]
-    watch_threadid=watch["message_thread_id"]
-
-    print("")
-    print("=" * 70)
-    print(
-        f"🎬 WATCH: {watch_name}"
-    )
-    print("=" * 70)
-
-    url = watch["url"]
-
-    parsed = parse_bms_url(url)
-
-    event_code = parsed["event_code"]
-    region_slug = parsed["region_slug"]
-    url_date = parsed.get(
-        "date_code",
-        "",
-    )
-
-    if not event_code or not region_slug:
-
-        print(
-            "  ❌ Invalid BMS URL."
-        )
-
-        print(
-            "     Could not extract "
-            "event code or region."
-        )
-
-        return state, False
-
-    (
-        region_code,
-        region_slug_resolved,
-        lat,
-        lon,
-        geohash,
-    ) = resolve_region(
-        region_slug
-    )
-
-    # --------------------------------------------------------------
-    # Dates
-    # --------------------------------------------------------------
-
-    configured_dates = watch.get(
-        "dates",
-        [],
-    )
-
-    if configured_dates:
-
-        date_list = [
-            str(d).strip()
-            for d in configured_dates
-            if str(d).strip()
-        ]
-
-    elif url_date:
-
-        date_list = [url_date]
-
-    else:
-
-        date_list = [""]
-
-    print(
-        f"  Event: {event_code}"
-    )
-
-    print(
-        f"  Region: {region_code}"
-    )
-
-    print(
-        f"  Dates: {date_list}"
-    )
-
-    print(
-        f"  Theatre: "
-        f"{watch.get('theatre', []) or 'ALL'}"
-    )
-
-    print(
-        f"  Time: "
-        f"{watch.get('time_period', []) or 'ALL'}"
-    )
-
-    if watch.get("discover_variants"):
-
-        print(
-            f"  Language/format discovery: ON "
-            f"(languages={watch.get('languages') or 'ANY'}, "
-            f"formats={watch.get('formats') or 'ANY'})"
-        )
-
-    # --------------------------------------------------------------
-    # Base event
-    # --------------------------------------------------------------
-
-    # --------------------------------------------------------------
-    # Base event
-    # --------------------------------------------------------------
-
-    state, success, first_full_data = run_event(
-        threadid=watch_threadid,
-        label=watch_name,
-        event_code=event_code,
-        region_code=region_code,
-        region_slug_resolved=region_slug_resolved,
-        lat=lat,
-        lon=lon,
-        geohash=geohash,
-        date_list=date_list,
-        theatre=watch.get("theatre", []),
-        time_period=watch.get("time_period", []),
-        dates_filter=watch.get("dates", []),
-        date_time_map=watch.get("date_time_map", {}),  # <--- ADD THIS HERE
-        state=state,
-        save_raw_prefix=(
-            f"bms_response_{watch_name}"
-        ),
-    )
-
-    overall_success = success
-
-    # ==================================================================
-    # DYNAMIC API RENAMING & LANGUAGE FILTERING 
-    # ==================================================================
-    if first_full_data:
-        # Pass the clean URL name to prevent "Unknown Movie" loops
-        clean_fallback = watch_name.split('_')[0]
-        base_info = parse_movie_info(first_full_data, fallback_name=clean_fallback)
-        raw_lang = str(base_info.get("language", "")).strip()
-        
-        # 1. RENAME TRACKER BASED ON TRUE API DATA
-        if "•" in raw_lang:
-            parts = [p.strip() for p in raw_lang.split("•")]
-            if len(parts) >= 2:
-                api_lang = parts[0]
-                api_fmt = parts[1]
-                correct_tag = f"({api_lang} {api_fmt})"
-                
-                # If the tracker name doesn't match the live API, fix it!
-                if correct_tag not in watch_name:
-                    # Strip out wrong language words from the base name
-                    clean_base = re.sub(r'(?i)(Telugu|Tamil|Hindi|Malayalam|English)', '', watch_name.split('_')[0])
-                    
-                    # Keep the original timestamp ID so Telegram /stop works
-                    try:
-                        timestamp_id = watch_name.split('_')[1].split(' ')[0]
-                    except:
-                        timestamp_id = "000000"
-                        
-                    new_watch_name = f"{clean_base}_{timestamp_id} {correct_tag}"
-                    print(f"  ✨ API Match! Fixing base tracker name to: {new_watch_name}")
-                    
-                    # Update live state
-                    if watch_name in state:
-                        state[new_watch_name] = state.pop(watch_name)
-                        
-                    # Update watches.json permanently
-                    try:
-                        with open(WATCHES_FILE, "r", encoding="utf-8") as f:
-                            all_watches = json.load(f)
-                        for w in all_watches:
-                            if w.get("name") == watch_name:
-                                w["name"] = new_watch_name
-                                break
-                        with open(WATCHES_FILE, "w", encoding="utf-8") as f:
-                            json.dump(all_watches, f, indent=2, ensure_ascii=False)
-                    except Exception as e:
-                        print(f"  ⚠️ Could not save new name to watches.json: {e}")
-                    
-                    # Apply the new name to the active script variables
-                    watch["name"] = new_watch_name
-                    watch_name = new_watch_name
-        
-        # 2. APPLY USER'S LANGUAGE FILTERS
-        if watch.get("languages"):
-            base_lang = raw_lang.lower()
-            if not any(lang in base_lang for lang in watch["languages"]):
-                print(
-                    f"  ⚠️ Skipping base watch state: language "
-                    f"('{raw_lang}') not in allowed list {watch['languages']}"
-                )
-                state.pop(watch_name, None)
-    # ==================================================================
-
-    # --------------------------------------------------------------
-    # Language/format variant discovery
-    # --------------------------------------------------------------
-
-    if watch.get("discover_variants") and first_full_data:
-
-        variants = parse_format_selector(first_full_data)
-
-        if not variants:
-
-            print(
-                "  ℹ️ No language/format chips found "
-                "for this event."
-            )
-
+    if data.startswith("page_"):
+        context.user_data["current_page"] = int(data.split("_")[1])
+    elif data == "tgl_ANY":
+        watch["theatre"].clear()
+    elif data.startswith("tgl_"):
+        idx = int(data.split("_")[1])
+        item = options[idx]
+        if item in watch["theatre"]:
+            watch["theatre"].remove(item)
         else:
+            watch["theatre"].add(item)
 
-            selected = select_variants(
-                variants,
-                watch.get("languages", []),
-                watch.get("formats", []),
-            )
+    kb = build_multiselect_keyboard(
+        options=options,
+        selected=watch["theatre"],
+        step_prefix="theatre",
+        columns=1,
+        page=context.user_data.get("current_page", 0),
+        paginated=True,
+    )
+    await safe_edit_reply_markup(query, reply_markup=kb)
+    return STATE_THEATRE
 
-            print(
-                f"  🌐 Discovered {len(variants)} "
-                f"language/format variant(s); "
-                f"{len(selected)} selected to track "
-                f"(besides the base watch)."
-            )
 
-            # Auto-update watch URL in watches.json maintaining full /movies/{region}/ path
-            if len(selected) == 1 and selected[0].event_code:
-             if not any(lang in base_lang for lang in watch["languages"]):
-                target_variant = selected[0]
-                v_code = target_variant.event_code
-                clean_region = region_slug_resolved or region_slug or "chennai"
+async def handle_date_toggle(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    data = query.data
+    log.info(f"STATE_DATE callback data received: {data}")
+    watch = context.user_data["watch"]
+    options = context.user_data["current_options"]
 
-                # Extract title slug from chip path if present
-                title_slug = ""
-                if target_variant.event_url:
-                    parts = [p for p in target_variant.event_url.strip("/").split("/") if p and p != v_code and p != "movies" and p != clean_region]
-                    if parts:
-                        title_slug = parts[-1]
+    if data == "alert_no_selection":
+        await query.answer("⚠️ Please select at least one date before proceeding!", show_alert=True)
+        return STATE_DATE
 
-                if not title_slug:
-                    title_slug = f"movie-{v_code}"
+    await query.answer()
 
-                # Reconstruct standardized URL format: https://in.bookmyshow.com/movies/{region}/{title_slug}/{event_code}
-                new_url = f"https://in.bookmyshow.com/movies/{clean_region}/{title_slug}/{v_code}"
+    if data == "add_custom_date":
+        await query.edit_message_text(
+            "📅 *Enter Custom Date*\n\n"
+            "Please send the date in `YYYYMMDD` format (e.g., `20260915`):",
+            parse_mode=ParseMode.MARKDOWN,
+        )
+        return STATE_CUSTOM_DATE
 
-                if watch["url"] != new_url:
-                    print(
-                        f"  💡 Auto-updating watch URL to target variant directly: {new_url}"
-                    )
-                    watch["url"] = new_url
+    if data == "next_date":
+        if not watch["dates"]:
+            await query.answer("⚠️ Please select at least one date!", show_alert=True)
+            return STATE_DATE
 
-                    try:
-                        if os.path.exists(WATCHES_FILE):
-                            with open(WATCHES_FILE, "r", encoding="utf-8") as f:
-                                watches_data = json.load(f)
+        # 1. Prepare the Date Loop
+        context.user_data["sorted_dates"] = sorted(list(watch["dates"]))
+        context.user_data["current_date_idx"] = 0
+        watch["date_time_map"] = {}
+        watch["current_times"] = set()
 
-                            for w in watches_data:
-                                if w.get("name") == watch_name:
-                                    w["url"] = new_url
+        time_options = TimePeriods.get_all()
+        context.user_data["current_options"] = time_options
+        context.user_data["current_page"] = 0
 
-                            with open(WATCHES_FILE, "w", encoding="utf-8") as f:
-                                json.dump(watches_data, f, indent=2, ensure_ascii=False)
-                    except Exception as e:
-                        print(f"  ⚠️ Could not update {WATCHES_FILE}: {e}")
-
-            for variant in selected:
-
-                variant_name = (
-                    f"{watch_name} "
-                    f"({variant.language} {variant.format})"
-                )
-
-                print(
-                    f"\n  --- Variant: {variant_name} "
-                    f"[{variant.event_code}] ---"
-                )
-
-                state, variant_success, _ = run_event(
-                    threadid=watch_threadid,
-                    label=variant_name,
-                    event_code=variant.event_code,
-                    region_code=region_code,
-                    region_slug_resolved=region_slug_resolved,
-                    lat=lat,
-                    lon=lon,
-                    geohash=geohash,
-                    date_list=date_list,
-                    theatre=watch.get("theatre", []),
-                    time_period=watch.get("time_period", []),
-                    dates_filter=watch.get("dates", []),
-                    date_time_map=watch.get("date_time_map", {}),  # <--- ADD THIS HERE
-                    state=state,
-                    save_raw_prefix=(
-                        f"bms_response_{variant_name}"
-                    ),
-                )
-
-                overall_success = (
-                    overall_success or variant_success
-                )
-
-    return state, overall_success
-# ======================================================================
-# MAIN
-# ======================================================================
-def main():
-    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    print(f"[{now}] BMS Ticket Checker — CI mode")
-
-    watches = load_watches()
-    print(f"📋 Loaded {len(watches)} watch(es)")
-
-    state = load_state()
-    state = cleanup_state(state)
-
-    successful = 0
-    watches_updated = False
-    
-    # Get current time for 14-day cleanup comparison
-    current_time = time.time()
-    FOURTEEN_DAYS_SECONDS = 14 * 86400
-    today_int = int(datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%Y%m%d"))
-
-    surviving_watches = []
-
-    for idx, watch in enumerate(watches):
-        status = watch.get("status")
-        closed_at = watch.get("closed_at", 0)
-        watch_name = watch.get("name", "Unknown")
-        
-        # --- 1. 14-DAY PASSIVE CLEANUP FOR CLOSED WATCHES ---
-        if status == "closed":
-            surviving_watches.append(watch) # Retain in list during the 14-day window
-            
-            if closed_at and (current_time - closed_at) > FOURTEEN_DAYS_SECONDS:
-                thread_id = watch.get("message_thread_id")
-                
-                # A. Permanently delete the topic from Telegram
-                if thread_id and GROUP_CHAT_ID and TELEGRAM_BOT_TOKEN:
-                    try:
-                        del_url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/deleteForumTopic"
-                        payload = {
-                            "chat_id": GROUP_CHAT_ID,
-                            "message_thread_id": thread_id
-                        }
-                        res = requests.post(del_url, json=payload, timeout=10)
-                        if res.status_code == 200:
-                            print(f"\n🗑️ 14-day retention expired. Purged topic ID {thread_id} for '{watch_name}'")
-                        else:
-                            print(f"\n⚠️ Failed to purge topic for '{watch_name}': {res.text}")
-                    except Exception as e:
-                        print(f"\n⚠️ Error deleting forum topic: {e}")
-
-                # B. Purge any residual keys from state.json (bms_state.json)
-                try:
-                    timestamp_match = re.search(r'_(\d{10,})', watch_name)
-                    unique_id = timestamp_match.group(1) if timestamp_match else watch_name.split('_')[0]
-                    
-                    keys_to_delete = [k for k in state.keys() if unique_id in str(k)]
-                    if keys_to_delete:
-                        for k in keys_to_delete:
-                            del state[k]
-                        print(f"🧹 Cleaned up {len(keys_to_delete)} residual state record(s) for expired watch ID {unique_id}")
-                except Exception as e:
-                    print(f"⚠️ Error cleaning residual state for '{watch_name}': {e}")
-                
-                print(f"🧹 Removing closed watch '{watch_name}' permanently from watches.json.")
-                surviving_watches.pop() # Drop it from the surviving list
-                watches_updated = True
-            
-            continue  # CRITICAL: Skip all active checks and searches for closed watches!
-
-        # --- 2. REGULAR EXPIRY CHECK FOR ACTIVE WATCHES ---
-        configured_dates = watch.get("dates", [])
-        
-        if configured_dates and all(str(d).isdigit() and int(d) < today_int for d in configured_dates):
-            if not watch.get("expired_notified"):
-                print(f"\n  ⏰ Watch '{watch['name']}' has expired. Sending notification...")
-                send_watch_expiry_alert(watch, idx)
-                watch["expired_notified"] = True
-                watches_updated = True
-            else:
-                print(f"\n  ⏭️ Skipping expired watch '{watch['name']}' (Waiting for manual close).")
-            
-            surviving_watches.append(watch)
-            continue
-
-        # --- 3. RUN ACTIVE WATCH ---
-        surviving_watches.append(watch)
+        # 2. Get the first date to display
+        first_date = context.user_data["sorted_dates"][0]
         try:
-            state, success = run_watch(watch, state)
-            if success:
-                successful += 1
+            formatted_date = datetime.strptime(first_date, "%Y%m%d").strftime("%d %b %Y")
+        except:
+            formatted_date = first_date
 
+        kb = build_multiselect_keyboard(
+            options=time_options,
+            selected=watch["current_times"],
+            step_prefix="time",
+            columns=1,
+        )
+        await query.edit_message_text(
+            f"🎬 *{watch['name']}*\n\n"
+            f"📌 *Step 5: Select Show Times for {formatted_date}*\n"
+            "_(Select 'Any / All' to track all day)_",
+            reply_markup=kb,
+            parse_mode=ParseMode.MARKDOWN,
+        )
+        return STATE_TIME
+    
+    if data == "back_date":
+        city_slug = watch["region_slug"]
+        city_theatres = Theatres.get_by_city(city_slug) or Theatres.get_all()
+        context.user_data["current_options"] = city_theatres
+        context.user_data["current_page"] = 0
+        kb = build_multiselect_keyboard(city_theatres, watch["theatre"], "theatre", 1, paginated=True)
+        await query.edit_message_text(
+            f"🎬 *{watch['name']}*\n\n📌 *Step 3: Select Theatres*",
+            reply_markup=kb, parse_mode=ParseMode.MARKDOWN
+        )
+        return STATE_THEATRE
+
+    if data.startswith("page_"):
+        context.user_data["current_page"] = int(data.split("_")[1])
+    elif data.startswith("tgl_"):
+        idx = int(data.split("_")[1])
+        date_code = options[idx][0]
+        if date_code in watch["dates"]:
+            watch["dates"].remove(date_code)
+        else:
+            watch["dates"].add(date_code)
+
+    kb = build_multiselect_keyboard(
+        options=options,
+        selected=watch["dates"],
+        step_prefix="date",
+        columns=2,
+        allow_custom_date=True,
+        page=context.user_data.get("current_page", 0),
+        require_selection=True,
+        exclude_any=True,
+    )
+    await safe_edit_reply_markup(query, reply_markup=kb)
+    return STATE_DATE
+
+
+async def receive_custom_date(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    text = (update.message.text or "").strip()
+    log.info(f"Custom date received: {text}")
+    watch = context.user_data["watch"]
+
+    if not re.match(r"^\d{8}$", text):
+        await update.message.reply_text(
+            "⚠️ Invalid format! Please enter an 8-digit date code like `20260920`:",
+            parse_mode=ParseMode.MARKDOWN,
+        )
+        return STATE_CUSTOM_DATE
+
+    watch["dates"].add(text)
+
+    date_options = get_next_10_dates()
+    context.user_data["current_options"] = date_options
+
+    kb = build_multiselect_keyboard(
+        options=date_options,
+        selected=watch["dates"],
+        step_prefix="date",
+        columns=2,
+        allow_custom_date=True,
+        require_selection=True,
+        exclude_any=True,
+    )
+
+    await update.message.reply_text(
+        f"✅ Added date `{text}`.\nSelect more or tap Next:",
+        reply_markup=kb,
+        parse_mode=ParseMode.MARKDOWN,
+    )
+    return STATE_DATE
+
+async def finalize_watch_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Helper function to save the watch once all dates have times selected."""
+    query = update.callback_query
+    watch = context.user_data["watch"]
+    
+    IST = timezone(timedelta(hours=5, minutes=30))
+    current_time_str = datetime.now(IST).strftime("%Y%m%d%H%M%S")
+    watch_name = watch["name"] + "_" + current_time_str
+
+    esc = lambda text: escape_markdown(str(text), version=2)
+
+    raw_langs = esc(", ".join(sorted(list(watch["languages"]))) if watch["languages"] else "ALL")
+    raw_formats = esc(", ".join(sorted(list(watch["formats"]))) if watch["formats"] else "ALL")
+
+    # Build advanced Date/Time summary
+    dt_lines = []
+    for d_code, t_list in watch["date_time_map"].items():
+        try:
+            pretty_date = datetime.strptime(d_code, "%Y%m%d").strftime("%d %b")
+        except:
+            pretty_date = d_code
+        t_str = ", ".join(t_list).title() if t_list else "All Times"
+        dt_lines.append(f"  • {esc(pretty_date)}: {esc(t_str)}")
+    dt_summary = "\n" + "\n".join(dt_lines)
+
+    if watch["theatre"]:
+        theatre_list_str = "\n" + "\n".join([f"  • {esc(t)}" for t in sorted(list(watch["theatre"]))])
+    else:
+        theatre_list_str = " " + esc("ALL")
+
+    # --- NEW HYPERLINK LOGIC FOR WATCHES ---
+    safe_watch_name = esc(watch["name"])
+    watch_url = watch.get("url", "")
+    
+    # Create the MarkdownV2 hyperlink: [Movie Name_123456789](https://...)
+    if watch_url:
+        name_hyperlink = f"[{safe_watch_name}]({watch_url})"
+    else:
+        name_hyperlink = safe_watch_name
+
+    summary = (
+        "🎉 *Watch Configuration Summary*\n\n"
+        f"🎬 *Movie:* {name_hyperlink}\n"
+        f"🌐 *Languages:* {raw_langs}\n"
+        f"📦 *Formats:* {raw_formats}\n"
+        f"📅 *Dates & Times:*{dt_summary}\n"
+        f"🏛️ *Theatres:*{theatre_list_str}\n\n"
+        "🔔 _Automated alerts for this watch will appear in this topic\\._"
+    )
+
+    thread_id = None
+    if GROUP_CHAT_ID_WATCHES:
+        try:
+            chat_id = int(GROUP_CHAT_ID_WATCHES)
+            topic = await context.bot.create_forum_topic(chat_id=GROUP_CHAT_ID_WATCHES, name=watch_name[:128])
+            thread_id = topic.message_thread_id
+
+            # --- NEW: Send a tiny buffer message first ---
+            # --- 1. Send Buffer Message ---
+            buffer_msg = await context.bot.send_message(
+                chat_id=chat_id, 
+                message_thread_id=thread_id, 
+                text="🚀 _Initializing tracker..._", 
+                parse_mode=ParseMode.MARKDOWN
+            )
+            
+            topic_msg = await context.bot.send_message(
+                chat_id=GROUP_CHAT_ID_WATCHES, message_thread_id=thread_id,
+                text=summary, parse_mode=ParseMode.MARKDOWN_V2,
+                link_preview_options=LinkPreviewOptions(is_disabled=True)  # <--- ADD THIS
+            )
+            asyncio.create_task(background_delayed_pin(context.bot, chat_id, topic_msg.message_id,buffer_msg.message_id))
         except Exception as e:
-            print("")
-            print(f"❌ Watch '{watch['name']}' failed:")
-            print(f"    {type(e).__name__}: {e}")
-            continue
+            log.error(f"Failed to create topic or pin message: {e}")
 
-    # Save state and updated watches list if any changes occurred
-    save_state(state)
-    if watches_updated:
-        save_watches(surviving_watches)
+    # Pass the dictionary directly to the 'dates' field for main.py to read
+    new_watch_entry = {
+        "name": watch_name,
+        "url": watch["url"],
+        "dates": watch["date_time_map"], 
+        "theatre": sorted(list(watch["theatre"])),
+        "time_period": [], 
+        "discover_variants": True,
+        "languages": sorted(list(watch["languages"])),
+        "formats": sorted(list(watch["formats"])),
+        "message_thread_id": thread_id, 
+    }
 
-    print("")
-    print("=" * 70)
-    print(f"✅ Completed: {successful}/{len(surviving_watches)} active watch(es)")
-    print("=" * 70)
+    append_to_watches_file(new_watch_entry)
+
+    dm_confirmation = summary + f"\n\n✅ *Setup Complete\\!* A dedicated topic has been created in the group\\."
+    await query.edit_message_text(dm_confirmation, parse_mode=ParseMode.MARKDOWN_V2,link_preview_options=LinkPreviewOptions(is_disabled=True))  # <--- ADD THIS)
+    
+    context.user_data.clear()
+    return ConversationHandler.END
+
+
+async def handle_time_toggle_and_save(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    data = query.data
+    watch = context.user_data["watch"]
+    options = context.user_data["current_options"]
+    
+    sorted_dates = context.user_data.get("sorted_dates", [])
+    current_idx = context.user_data.get("current_date_idx", 0)
+
+    if not sorted_dates or current_idx >= len(sorted_dates):
+        return ConversationHandler.END
+
+    current_date_val = sorted_dates[current_idx]
+
+    # --- 1. HANDLE BACK BUTTON ---
+    if data == "back_time":
+        if current_idx > 0:
+            # Go back to the PREVIOUS date's time selection
+            context.user_data["current_date_idx"] -= 1
+            prev_date = sorted_dates[context.user_data["current_date_idx"]]
+            watch["current_times"] = set(watch["date_time_map"].get(prev_date, []))
+            
+            try:
+                formatted_date = datetime.strptime(prev_date, "%Y%m%d").strftime("%d %b %Y")
+            except:
+                formatted_date = prev_date
+
+            kb = build_multiselect_keyboard(options=options, selected=watch["current_times"], step_prefix="time", columns=1)
+            await query.edit_message_text(
+                f"🎬 *{watch['name']}*\n\n📌 *Step 5: Select Show Times for {formatted_date}*",
+                reply_markup=kb, parse_mode=ParseMode.MARKDOWN
+            )
+            return STATE_TIME
+        else:
+            # Go all the way back to the main Dates selection
+            date_options = get_next_10_dates()
+            context.user_data["current_options"] = date_options
+            kb = build_multiselect_keyboard(date_options, watch["dates"], "date", 2, allow_custom_date=True, require_selection=True, exclude_any=True)
+            await query.edit_message_text(
+                f"🎬 *{watch['name']}*\n\n📌 *Step 4: Select Dates*",
+                reply_markup=kb, parse_mode=ParseMode.MARKDOWN
+            )
+            return STATE_DATE
+
+    # --- 2. HANDLE TOGGLES ---
+    if data == "tgl_ANY":
+        watch["current_times"].clear()
+    elif data.startswith("tgl_"):
+        idx = int(data.split("_")[1])
+        raw_option = options[idx]
+        time_key = raw_option[0] if isinstance(raw_option, tuple) else raw_option
+        
+        if time_key in watch["current_times"]:
+            watch["current_times"].remove(time_key)
+        else:
+            watch["current_times"].add(time_key)
+
+    # --- 3. HANDLE NEXT / FINISH ---
+    if data == "next_time":
+        # Save times for this specific date
+        watch["date_time_map"][current_date_val] = sorted(list(watch["current_times"]))
+        
+        # Advance the loop
+        context.user_data["current_date_idx"] += 1
+        new_idx = context.user_data["current_date_idx"]
+        
+        if new_idx < len(sorted_dates):
+            # Show screen for the NEXT date
+            next_date = sorted_dates[new_idx]
+            watch["current_times"].clear() 
+            
+            try:
+                formatted_date = datetime.strptime(next_date, "%Y%m%d").strftime("%d %b %Y")
+            except:
+                formatted_date = next_date
+
+            kb = build_multiselect_keyboard(options=options, selected=watch["current_times"], step_prefix="time", columns=1)
+            await query.edit_message_text(
+                f"🎬 *{watch['name']}*\n\n"
+                f"📌 *Step 5: Select Show Times for {formatted_date}*\n"
+                "_(Select 'Any / All' to track all day)_",
+                reply_markup=kb,
+                parse_mode=ParseMode.MARKDOWN,
+            )
+            return STATE_TIME
+        else:
+            # All dates processed! Finalize the setup.
+            return await finalize_watch_setup(update, context)
+
+    # Redraw keyboard if just a toggle
+    kb = build_multiselect_keyboard(options=options, selected=watch["current_times"], step_prefix="time", columns=1)
+    await safe_edit_reply_markup(query, reply_markup=kb)
+    return STATE_TIME
+
+async def cancel_watch(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    log.info("Setup workflow cancelled.")
+    context.user_data.clear()
+    if update.callback_query:
+        await update.callback_query.answer()
+        await update.callback_query.edit_message_text("🚫 Setup canceled.")
+    elif update.message:
+        await update.message.reply_text("🚫 Setup canceled.")
+    return ConversationHandler.END
+
+
+# ======================================================================
+# NEW STANDALONE COMMAND HANDLERS (/watches, /stop, /inspect)
+# ======================================================================
+
+async def list_watches_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    log.info(f"User {update.effective_user.id} requested paginated watch list.")
+    watches = load_watches()
+
+    text, reply_markup = build_watches_view(watches, page=0)
+    await update.message.reply_text(
+        text,
+        reply_markup=reply_markup,
+        parse_mode=ParseMode.MARKDOWN
+    )
+
+async def list_shows_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    text, reply_markup = build_shows_view(load_shows(), page=0)
+    await update.message.reply_text(text, reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
+
+async def handle_watch_actions(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # --- ADD THIS SECURITY CHECK FIRST ---
+    if not await is_authorized(update):
+        return
+    query = update.callback_query
+    await query.answer()
+    data = query.data
+    watches = load_watches()
+
+    # --- 1. HANDLE PAGE FLIP ---
+    if data.startswith("wpage_"):
+        page_num = int(data.split("_")[1])
+        text, reply_markup = build_watches_view(watches, page=page_num)
+        await query.edit_message_text(text, reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
+
+    # --- 2. INSPECT WATCH ---
+    elif data.startswith("insp_"):
+        idx = int(data.split("_")[1])
+        if idx >= len(watches):
+            await query.edit_message_text("⚠️ Watch not found. The list might have changed.")
+            return
+
+        matched = watches[idx]
+        langs_str = ", ".join(matched.get("languages", [])) or "ALL"
+        formats_str = ", ".join(matched.get("formats", [])) or "ALL"
+        dates_str = ", ".join(matched.get("dates", []))
+        times_str = ", ".join(matched.get("time_period", [])) or "ALL"
+        theatres_str = f"{len(matched.get('theatre', []))} selected" if matched.get("theatre") else "ALL"
+
+        details = (
+            f"🔍 *Watch Details: {escape_markdown(matched.get('name', ''), version=2)}*\n\n"
+            f"🔗 *URL:* {escape_markdown(matched.get('url', ''), version=2)}\n"
+            f"🌐 *Languages:* {escape_markdown(langs_str, version=2)}\n"
+            f"📦 *Formats:* {escape_markdown(formats_str, version=2)}\n"
+            f"🏛️ *Theatres:* {escape_markdown(theatres_str, version=2)}\n"
+            f"📅 *Dates:* {escape_markdown(dates_str, version=2)}\n"
+            f"⏰ *Times:* {escape_markdown(times_str, version=2)}"
+        )
+
+        kb = [[InlineKeyboardButton("⬅️ Back to List", callback_data="back_to_list")]]
+        await query.edit_message_text(details, reply_markup=InlineKeyboardMarkup(kb), parse_mode=ParseMode.MARKDOWN_V2)
+
+    # --- 3. INTENT TO STOP ---
+    elif data.startswith("stop_"):
+        idx = int(data.split("_")[1])
+        if idx >= len(watches):
+            return
+
+        exact_watch_name = watches[idx].get("name")
+        kb = [
+            [
+                InlineKeyboardButton("✅ Yes, Stop It", callback_data=f"confirmstopperm_{idx}"),
+                InlineKeyboardButton("❌ Cancel", callback_data="back_to_list")
+            ]
+        ]
+        await query.edit_message_text(
+            f"⚠️ *Are you sure you want to stop tracking:*\n`{escape_markdown(exact_watch_name, version=2)}`?",
+            reply_markup=InlineKeyboardMarkup(kb),
+            parse_mode=ParseMode.MARKDOWN_V2
+        )
+
+    # --- 4. CONFIRM STOP ---
+    # --- 4. CONFIRM STOP ---
+    elif data.startswith("confirmstop_"):
+        idx = int(data.split("_")[1])
+        if idx >= len(watches):
+            return
+
+        matched = watches[idx]
+        exact_watch_name = matched.get("name")
+
+        # Delete Topic
+        thread_id = matched.get("message_thread_id")
+        if thread_id and GROUP_CHAT_ID_WATCHES:
+            try:
+                await context.bot.close_forum_topic(chat_id=GROUP_CHAT_ID_WATCHES, message_thread_id=thread_id)
+                # await context.bot.delete_forum_topic(chat_id=GROUP_CHAT_ID_WATCHES, message_thread_id=thread_id)
+            except Exception as e:
+                log.error(f"Failed to delete forum topic: {e}")
+
+        # Update GitHub Watches & Cache
+        # updated_watches = [w for i, w in enumerate(watches) if i != idx]
+        # save_watches(updated_watches)
+
+        # --- 2. Update watches.json instead of removing (with Asia/Kolkata Timestamps) ---
+        from datetime import datetime, timedelta
+        from zoneinfo import ZoneInfo
+
+        kolkata_now = datetime.now(ZoneInfo("Asia/Kolkata"))
+        formatted_closed_time = kolkata_now.strftime("%d/%m/%y %I:%M %p")
+
+        deletion_target = kolkata_now + timedelta(days=14)
+        formatted_deletion_time = deletion_target.strftime("%d/%m/%y %I:%M %p")
+
+        matched["status"] = "closed"
+        matched["closed_at"] = int(kolkata_now.timestamp())
+        matched["closed_at_formatted"] = formatted_closed_time
+        matched["deletes_at_formatted"] = formatted_deletion_time
+        
+        save_watches(watches)
+
+        # --- ROBUST STATE CLEANUP (Resistant to Renaming) ---
+        deleted_count = 0
+        try:
+            # Extract the unique timestamp ID (e.g., "1710923012") from the watch name
+            timestamp_match = re.search(r'_(\d{10,})', exact_watch_name)
+            unique_id = timestamp_match.group(1) if timestamp_match else exact_watch_name.split('_')[0]
+
+            bms_state, sha = _github_get_file(GITHUB_WSTATE_PATH, True)
+            if bms_state and isinstance(bms_state, dict):
+                # Delete any state key containing this unique ID or base name
+                keys_to_delete = [k for k in bms_state.keys() if unique_id in str(k)]
+                if keys_to_delete:
+                    for k in keys_to_delete:
+                        del bms_state[k]
+                    _github_put_file(GITHUB_WSTATE_PATH, bms_state, f"Cleared states for watch ID {unique_id}", True)
+                    deleted_count = len(keys_to_delete)
+        except Exception as e:
+            log.error(f"Failed to clear bms_state.json: {e}")
+
+        if query.message.chat.type in ["group", "supergroup"]:
+            # Grab the original message text (e.g., "Tracker Expired!")
+            original_text = query.message.text or "⏰ Tracker Expired!"
+            
+            # Append the closed status to the original text
+            updated_text = (
+                f"{original_text}\n\n"
+                f"🔒 As per ur req *Tracker Closed*\n"
+                f"• Closed at: `{formatted_closed_time}`\n"
+                f"• Auto-deletes on: `{formatted_deletion_time}`"
+            )
+            
+            # Create a "dead" inline button just for the UI design
+            disabled_kb = [[InlineKeyboardButton("🔒 Tracker Closed", callback_data="noop")]]
+            
+            await query.edit_message_text(
+                text=updated_text,
+                reply_markup=InlineKeyboardMarkup(disabled_kb),
+                parse_mode=ParseMode.MARKDOWN
+            )
+        else:
+            # If clicked in the bot's private DM, show success and menu buttons
+            kb = [
+                [InlineKeyboardButton("⬅️ Back to List", callback_data="back_to_list")],
+                [InlineKeyboardButton("🏠 Main Menu", callback_data="menu_main")]
+            ]
+            
+            await query.edit_message_text(
+                f"✅ *Successfully stopped watch\\!*\n"
+                f"🔒 Closed Topic for: `{escape_markdown(exact_watch_name, version=2)}`\n"
+                f"🧹 Cleared `{deleted_count}` state variant\\(s\\)\\.\n\n"
+                f"⏱️ *Retention Schedule:*\n"
+                f"• Closed at: `{escape_markdown(formatted_closed_time, version=2)}`\n"
+                f"• Auto\\-deletes on: `{escape_markdown(formatted_deletion_time, version=2)}`",
+                reply_markup=InlineKeyboardMarkup(kb),
+                parse_mode=ParseMode.MARKDOWN_V2
+            )
+    elif data.startswith("confirmstopperm_"):
+       idx = int(data.split("_")[1])
+       if idx >= len(watches):
+          return
+
+       matched = watches[idx]
+       exact_watch_name = matched.get("name")
+
+    # 1. Permanently Delete Forum Topic
+       thread_id = matched.get("message_thread_id")
+       if thread_id and GROUP_CHAT_ID_WATCHES:
+          try:
+            await context.bot.close_forum_topic(chat_id=GROUP_CHAT_ID_WATCHES, message_thread_id=thread_id)
+            await context.bot.delete_forum_topic(chat_id=GROUP_CHAT_ID_WATCHES, message_thread_id=thread_id)
+          except Exception as e:
+            log.error(f"Failed to delete forum topic: {e}")
+
+    # 2. Permanently Remove from watches.json (Hard Delete)
+       watches = [w for i, w in enumerate(watches) if i != idx]
+       save_watches(watches)
+
+    # 3. Robust State Cleanup in bms_state.json
+       deleted_count = 0
+       try:
+          timestamp_match = re.search(r'_(\d{10,})', exact_watch_name)
+          unique_id = timestamp_match.group(1) if timestamp_match else exact_watch_name.split('_')[0]
+
+          bms_state, sha = _github_get_file(GITHUB_WSTATE_PATH, True)
+          if bms_state and isinstance(bms_state, dict):
+            keys_to_delete = [k for k in bms_state.keys() if unique_id in str(k)]
+            if keys_to_delete:
+                for k in keys_to_delete:
+                    del bms_state[k]
+                _github_put_file(GITHUB_WSTATE_PATH, bms_state, f"Permanently cleared states for watch ID {unique_id}", True)
+                deleted_count = len(keys_to_delete)
+       except Exception as e:
+          log.error(f"Failed to clear bms_state.json: {e}")
+
+    # 4. Smart UI Response
+       kolkata_now = datetime.now(ZoneInfo("Asia/Kolkata"))
+       formatted_time = kolkata_now.strftime("%d/%m/%y %I:%M %p")
+
+       if query.message.chat.type in ["group", "supergroup"]:
+        original_text = query.message.text or "⏰ Tracker Expired!"
+        updated_text = (
+            f"{original_text}\n\n"
+            f"🗑️ *Permanently Deleted*\n"
+            f"• Deleted at: `{formatted_time}`"
+        )
+        disabled_kb = [[InlineKeyboardButton("🗑️ Permanently Deleted", callback_data="noop")]]
+        await query.edit_message_text(
+            text=updated_text,
+            reply_markup=InlineKeyboardMarkup(disabled_kb),
+            parse_mode=ParseMode.MARKDOWN
+        )
+       else:
+        kb = [
+            [InlineKeyboardButton("⬅️ Back to List", callback_data="back_to_list")],
+            [InlineKeyboardButton("🏠 Main Menu", callback_data="menu_main")]
+        ]
+        await query.edit_message_text(
+            f"✅ *Watch permanently deleted\\!*\n"
+            f"🗑️ Topic deleted and `{deleted_count}` state variant\\(s\\) wiped\\.\n\n"
+            f"• Deleted at: `{escape_markdown(formatted_time, version=2)}`",
+            reply_markup=InlineKeyboardMarkup(kb),
+            parse_mode=ParseMode.MARKDOWN_V2
+        )
+    # --- 5. NAVIGATE BACK TO LIST ---
+    elif data == "back_to_list":
+        fresh_watches = load_watches()
+        text, reply_markup = build_watches_view(fresh_watches, page=0)
+        await query.edit_message_text(text, reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
+
+async def handle_show_actions(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await is_authorized(update):
+        return
+    query = update.callback_query
+    await query.answer()
+    data = query.data
+    shows = load_shows()
+
+    if data.startswith("spage_"):
+        page_num = int(data.split("_")[1])
+        text, reply_markup = build_shows_view(shows, page=page_num)
+        kb_list = list(reply_markup.inline_keyboard) if reply_markup and reply_markup.inline_keyboard else []
+        kb_list.append([InlineKeyboardButton("🏠 Main Menu", callback_data="menu_main")])
+        await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(kb_list), parse_mode=ParseMode.MARKDOWN)
+
+    elif data.startswith("delshow_"):
+        idx = int(data.split("_")[1])
+        if idx < len(shows):
+            matched_show = shows[idx]
+            thread_id = matched_show.get("message_thread_id")
+            v_code = str(matched_show.get("venue_code", "")).strip().upper()
+            s_id = str(matched_show.get("session_id", "")).strip()
+            
+            # --- 1. Properly Close Topic ---
+            if thread_id and GROUP_CHAT_ID_SHOWS:
+                try:
+                    await context.bot.close_forum_topic(chat_id=GROUP_CHAT_ID_SHOWS, message_thread_id=thread_id)
+                except Exception as e:
+                    log.error(f"Failed to close show forum topic: {e}")
+            
+            # --- 2. Remove from shows.json ---
+            # updated_shows = [s for i, s in enumerate(shows) if i != idx]
+            # save_shows(updated_shows)
+            kolkata_now = datetime.now(ZoneInfo("Asia/Kolkata"))
+
+# 2. Format as DD/MM/YY HH:MM AM/PM
+            formatted_closed_time = kolkata_now.strftime("%d/%m/%y %I:%M %p")
+
+# 3. Calculate 14 days later for auto-deletion target
+            deletion_target = kolkata_now + timedelta(days=14)
+            formatted_deletion_time = deletion_target.strftime("%d/%m/%y %I:%M %p")
+            matched_show["status"] = "closed"
+            matched_show["closed_at"] = int(kolkata_now.timestamp())
+            matched_show["closed_at_formatted"] = formatted_closed_time
+            matched_show["deletes_at_formatted"] = formatted_deletion_time
+            save_shows(shows)
+            
+            # --- 3. EXACT Clean up in state.json ---
+            deleted_count = 0
+            try:
+                s_state, sha = _github_get_file(GITHUB_SSTATE_PATH, False) 
+                if s_state and isinstance(s_state, dict):
+                    
+                    # 1. Safely handle the thread_id exactly how main.py handles it
+                    raw_thread = matched_show.get("message_thread_id", "")
+                    thread_id_str = str(raw_thread).strip() if raw_thread is not None else ""
+                    
+                    # 2. Build the EXACT key
+                    exact_state_key = f"{v_code}_{s_id}_{thread_id_str}"
+                    
+                    # 3. Strictly delete ONLY this exact key
+                    if exact_state_key in s_state:
+                        del s_state[exact_state_key]
+                        _github_put_file(GITHUB_SSTATE_PATH, s_state, f"Cleared exact state for {exact_state_key}", False)
+                        deleted_count = 1
+                    else:
+                        log.warning(f"Exact state key '{exact_state_key}' not found in state.json.")
+            except Exception as e:
+                log.error(f"Failed to clear shows state.json: {e}")
+
+            # --- 4. SMART UI RESPONSE (Group vs Private DM) ---
+            if query.message.chat.type in ["group", "supergroup"]:
+                # Grab the original message text
+                original_text = query.message.text or "⏰ Showtime Reached!"
+                
+                # Append the closed status to the original text
+                updated_text = (
+                    f"{original_text}\n\n"
+                    f"🔒As per ur req *Tracker Closed*\n"
+                    f"• Closed at: `{formatted_closed_time}`\n"
+                    f"• Auto-deletes on: `{formatted_deletion_time}`"
+                )
+                
+                # Create a "dead" inline button just for the UI design
+                disabled_kb = [[InlineKeyboardButton("🔒 Tracker Closed", callback_data="noop")]]
+                
+                await query.edit_message_text(
+                    text=updated_text,
+                    reply_markup=InlineKeyboardMarkup(disabled_kb),
+                    parse_mode=ParseMode.MARKDOWN
+                )
+            else:
+                # If clicked in the bot's private DM, render the full list and main menu button
+                text, reply_markup = build_shows_view(load_shows(), page=0)
+                kb_list = list(reply_markup.inline_keyboard) if reply_markup and reply_markup.inline_keyboard else []
+                kb_list.append([InlineKeyboardButton("🏠 Main Menu", callback_data="menu_main")])
+                
+                await query.edit_message_text(
+                    f"✅ *Manual show successfully updated!*\n"
+                    f"🔒 Topic closed and state record cleared (`{deleted_count}`).\n\n"
+                    f"⏱️ *Retention Schedule:*\n"
+                    f"• Closed at: `{formatted_closed_time}`\n"
+                    f"• Auto-deletes on: `{formatted_deletion_time}`", 
+                    reply_markup=InlineKeyboardMarkup(kb_list), 
+                    parse_mode=ParseMode.MARKDOWN
+                )
+# ======================================================================
+# BOT RUNNER
+# ======================================================================
+auth_filter = filters.User(user_id=list(ALLOWED_USERS)) if ALLOWED_USERS else filters.ALL
+def main():
+    if BOT_TOKEN == "YOUR_TELEGRAM_BOT_TOKEN_HERE" or not BOT_TOKEN:
+        print("❌ Error: Set the TELEGRAM_BOT_TOKEN environment variable first.")
+        return
+
+    # --- ADD THESE TWO LINES ---
+    print("📥 Pre-loading watches from GitHub into memory...")
+    load_watches()
+
+    app = ApplicationBuilder().token(BOT_TOKEN).build()
+
+    conv_handler = ConversationHandler(
+        entry_points=[
+            CommandHandler("start", start_command, filters=auth_filter),
+            CommandHandler("newwatch", start_command, filters=auth_filter),
+            CallbackQueryHandler(handle_main_menu, pattern="^menu_(new_watch|new_show)$"),
+MessageHandler(filters.Regex(r"bookmyshow\.com") & auth_filter, handle_smart_link),  ],
+        states={
+            STATE_URL: [
+                MessageHandler(filters.TEXT & ~filters.COMMAND, receive_url)
+            ],
+            STATE_LANGUAGE: [
+                CallbackQueryHandler(cancel_watch, pattern="^cancel_watch$"),
+                CallbackQueryHandler(handle_language_toggle),
+            ],
+            STATE_FORMAT: [
+                CallbackQueryHandler(cancel_watch, pattern="^cancel_watch$"),
+                CallbackQueryHandler(handle_format_toggle),
+            ],
+            STATE_THEATRE: [
+                CallbackQueryHandler(cancel_watch, pattern="^cancel_watch$"),
+                CallbackQueryHandler(handle_theatre_toggle),
+            ],
+            STATE_DATE: [
+                CallbackQueryHandler(cancel_watch, pattern="^cancel_watch$"),
+                CallbackQueryHandler(handle_date_toggle),
+            ],
+            STATE_CUSTOM_DATE: [
+                MessageHandler(filters.TEXT & ~filters.COMMAND, receive_custom_date)
+            ],
+            STATE_TIME: [
+                CallbackQueryHandler(cancel_watch, pattern="^cancel_watch$"),
+                CallbackQueryHandler(handle_time_toggle_and_save),
+            ],
+
+STATE_SHOW_URL: [MessageHandler(filters.TEXT & ~filters.COMMAND, receive_show_url)],
+            STATE_SHOW_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, receive_show_name)],
+            STATE_SHOW_THEATRE: [MessageHandler(filters.TEXT & ~filters.COMMAND, receive_show_theatre)], # <--- Added
+            STATE_SHOW_TIME: [MessageHandler(filters.TEXT & ~filters.COMMAND, receive_show_time)],
+            STATE_SHOW_SEAT_COUNT: [MessageHandler(filters.TEXT & ~filters.COMMAND, receive_show_seat_count)],
+            STATE_SHOW_ADJACENT: [CallbackQueryHandler(receive_show_adjacency, pattern="^show_adj_")],
+            STATE_SHOW_ROWS: [MessageHandler(filters.TEXT & ~filters.COMMAND, receive_show_rows)],
+            STATE_SHOW_ROW_SEATS: [MessageHandler(filters.TEXT & ~filters.COMMAND, receive_row_seats)],
+        },
+        fallbacks=[CommandHandler("cancel", cancel_watch,filters=auth_filter),
+                   CallbackQueryHandler(handle_main_menu, pattern="^menu_main$") # Allow going back to menu
+                   ],
+        allow_reentry=True,  # <--- CRITICAL FIX: Allows /start or URL entry while in an active state
+    )
+
+    app.add_handler(conv_handler)
+    app.add_handler(
+        CallbackQueryHandler(
+            handle_main_menu, 
+            pattern="^menu_(list_watches|list_shows|new_show|help|main)$"
+        )
+    )
+    # Register the requested standalone handlers
+    app.add_handler(CommandHandler("watches", list_watches_command,filters=auth_filter))
+    app.add_handler(
+    CallbackQueryHandler(
+        handle_watch_actions, 
+        pattern="^(wpage_|insp_|stop_|confirmstopperm_ |confirmstop_|back_to_list)"
+    )
+)
+
+    app.add_handler(CallbackQueryHandler(handle_show_actions, pattern="^(spage_|delshow_)"))
+
+
+    # Combine your custom comprehensive service filter with built-in status updates 
+
+# 1. Build the comprehensive filter combining standard status updates and custom forum/live events
+    comprehensive_service_filter = filters.StatusUpdate.ALL | filters.MessageFilter(lambda m: bool(
+    # Standard Service Updates
+    m.new_chat_members or
+    m.left_chat_member or
+    m.pinned_message or
+    m.new_chat_title or
+    m.new_chat_photo or
+    m.delete_chat_photo or
+    # Forum Topic Events
+    m.forum_topic_created or 
+    m.forum_topic_closed or 
+    m.forum_topic_reopened or 
+    m.forum_topic_edited or
+    m.general_forum_topic_hidden or
+    m.general_forum_topic_unhidden or
+    # Video Chat / Live Events
+    m.video_chat_scheduled or
+    m.video_chat_started or
+    m.video_chat_ended or
+    m.video_chat_participants_invited or
+    # Giveaways
+    m.giveaway_created or
+    m.giveaway_completed or
+    m.giveaway_winners
+))
+
+# 2. Register the handler to your application
+    app.add_handler(MessageHandler(comprehensive_service_filter, auto_delete_all_service_messages))
+
+    print("🤖 Telegram Watch Builder Bot is running...")
+    app.run_polling()
 
 
 if __name__ == "__main__":
+    start_health_server()
     main()
