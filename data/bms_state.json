@@ -337,7 +337,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "101.74",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PABC",
         "sid": "21990"
@@ -885,7 +885,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "245.98",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVSR",
         "sid": "27775"
@@ -907,32 +907,10 @@
         "date": "20260927",
         "cat": "BUDGET",
         "price": "96.74",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVSR",
         "sid": "27775"
-      },
-      "PVHC|32225|20260927|PRIME": {
-        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-        "time": "03:20 PM",
-        "date": "20260927",
-        "cat": "PRIME",
-        "price": "245.98",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVHC",
-        "sid": "32225"
-      },
-      "PVHC|32225|20260927|CLASSIC": {
-        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-        "time": "03:20 PM",
-        "date": "20260927",
-        "cat": "CLASSIC",
-        "price": "96.74",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVHC",
-        "sid": "32225"
       },
       "PVHC|32226|20260927|PRIME": {
         "venue": "PVR: Ampa Mall, Nelson Manickam Road",
