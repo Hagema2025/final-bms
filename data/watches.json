@@ -80,10 +80,14 @@
       "Tamil"
     ],
     "formats": [],
-    "message_thread_id": 460
+    "message_thread_id": 460,
+    "status": "closed",
+    "closed_at": 1790495673,
+    "closed_at_formatted": "27/09/26 01:24 PM",
+    "deletes_at_formatted": "11/10/26 01:24 PM"
   },
   {
-    "name": "AvengersEndgameEncore_20260927131410 (English 2D)",
+    "name": "AvengersEndgameEncore_20260927131410",
     "url": "https://in.bookmyshow.com/movies/chennai/avengers-endgame-encore/ET00514163",
     "dates": {
       "20260927": []
