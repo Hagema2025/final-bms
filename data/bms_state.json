@@ -117,7 +117,7 @@
         "date": "20260927",
         "cat": "GoldStar",
         "price": "160.00",
-        "status": "0",
+        "status": "1",
         "screen": "2K/DOLBY 7.1",
         "vcode": "RSSC",
         "sid": "123538"
@@ -260,7 +260,7 @@
         "date": "20260927",
         "cat": "EXECUTIVE",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13553"
@@ -854,7 +854,7 @@
         "date": "20260927",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
         "sid": "47634"
@@ -876,7 +876,7 @@
         "date": "20260927",
         "cat": "BOX-A",
         "price": "183.78",
-        "status": "2",
+        "status": "0",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51101"
@@ -964,7 +964,7 @@
         "date": "20260927",
         "cat": "Economy",
         "price": "54.00",
-        "status": "2",
+        "status": "1",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51102"
@@ -1189,28 +1189,6 @@
         "vcode": "PVHR",
         "sid": "42797"
       },
-      "ACVM|56431|20260927|DIAMOND": {
-        "venue": "AGS Cinemas: Villivakkam",
-        "time": "12:55 PM",
-        "date": "20260927",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "1",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACVM",
-        "sid": "56431"
-      },
-      "ACVM|56431|20260927|PEARL": {
-        "venue": "AGS Cinemas: Villivakkam",
-        "time": "12:55 PM",
-        "date": "20260927",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACVM",
-        "sid": "56431"
-      },
       "ACVM|56539|20260927|DIAMOND": {
         "venue": "AGS Cinemas: Villivakkam",
         "time": "07:15 PM",
@@ -1283,7 +1261,7 @@
         "date": "20260927",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PABC",
         "sid": "22033"
@@ -1294,7 +1272,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PABC",
         "sid": "22033"
@@ -1316,7 +1294,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PABC",
         "sid": "22001"
@@ -1415,7 +1393,7 @@
         "date": "20260927",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "1",
+        "status": "0",
         "screen": "4K DOLBY ATMOS",
         "vcode": "ACTN",
         "sid": "46223"
@@ -1426,7 +1404,7 @@
         "date": "20260927",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "0",
+        "status": "3",
         "screen": "4K DOLBY ATMOS",
         "vcode": "ACTN",
         "sid": "46223"
@@ -1481,7 +1459,7 @@
         "date": "20260927",
         "cat": "SILVER",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "FMCN",
         "sid": "105237"
@@ -1547,7 +1525,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "1",
+        "status": "2",
         "screen": "",
         "vcode": "PBRM",
         "sid": "25200"
@@ -1767,7 +1745,7 @@
         "date": "20260927",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PGMV",
         "sid": "22504"
@@ -1844,7 +1822,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PGRA",
         "sid": "22917"
@@ -2212,28 +2190,6 @@
         "vcode": "NLTC",
         "sid": "12183"
       },
-      "PVPZ|38722|20260927|ELITE": {
-        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
-        "time": "12:20 PM",
-        "date": "20260927",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVPZ",
-        "sid": "38722"
-      },
-      "PVPZ|38722|20260927|BUDGET": {
-        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
-        "time": "12:20 PM",
-        "date": "20260927",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVPZ",
-        "sid": "38722"
-      },
       "PVPZ|38724|20260927|ELITE": {
         "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
         "time": "07:20 PM",
@@ -2416,7 +2372,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVES",
         "sid": "34407"
