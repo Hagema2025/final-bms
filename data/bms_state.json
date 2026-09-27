@@ -5309,7 +5309,7 @@
         "date": "20260928",
         "cat": "Box",
         "price": "180.00",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4934"
@@ -5320,7 +5320,7 @@
         "date": "20260928",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "1",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4934"
@@ -5331,7 +5331,7 @@
         "date": "20260928",
         "cat": "First Class",
         "price": "120.00",
-        "status": "1",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4934"
@@ -5342,7 +5342,7 @@
         "date": "20260928",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4934"
@@ -5353,7 +5353,7 @@
         "date": "20260928",
         "cat": "Box",
         "price": "180.00",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4935"
@@ -5364,7 +5364,7 @@
         "date": "20260928",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "1",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4935"
@@ -5375,7 +5375,7 @@
         "date": "20260928",
         "cat": "First Class",
         "price": "120.00",
-        "status": "1",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4935"
@@ -5386,7 +5386,7 @@
         "date": "20260928",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4935"
@@ -5397,7 +5397,7 @@
         "date": "20260928",
         "cat": "Box",
         "price": "180.00",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4971"
@@ -5408,7 +5408,7 @@
         "date": "20260928",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "1",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4971"
@@ -5419,7 +5419,7 @@
         "date": "20260928",
         "cat": "First Class",
         "price": "120.00",
-        "status": "1",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4971"
@@ -5430,7 +5430,7 @@
         "date": "20260928",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4971"
@@ -5727,7 +5727,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "PXL",
         "vcode": "PCAN",
         "sid": "45680"
@@ -6127,6 +6127,83 @@
         "screen": "4K M-MAX(PLF)",
         "vcode": "MLMT",
         "sid": "8612"
+      },
+      "VECT|8412|20260928|FIRST CLASS": {
+        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
+        "time": "11:30 AM",
+        "date": "20260928",
+        "cat": "FIRST CLASS",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "VECT",
+        "sid": "8412"
+      },
+      "VECT|8413|20260928|BALCONY": {
+        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
+        "time": "02:45 PM",
+        "date": "20260928",
+        "cat": "BALCONY",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "VECT",
+        "sid": "8413"
+      },
+      "VECT|8413|20260928|FIRST CLASS": {
+        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
+        "time": "02:45 PM",
+        "date": "20260928",
+        "cat": "FIRST CLASS",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "VECT",
+        "sid": "8413"
+      },
+      "VECT|8414|20260928|BALCONY": {
+        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
+        "time": "06:30 PM",
+        "date": "20260928",
+        "cat": "BALCONY",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "VECT",
+        "sid": "8414"
+      },
+      "VECT|8414|20260928|FIRST CLASS": {
+        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
+        "time": "06:30 PM",
+        "date": "20260928",
+        "cat": "FIRST CLASS",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "VECT",
+        "sid": "8414"
+      },
+      "VECT|8415|20260928|BALCONY": {
+        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
+        "time": "10:00 PM",
+        "date": "20260928",
+        "cat": "BALCONY",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "VECT",
+        "sid": "8415"
+      },
+      "VECT|8415|20260928|FIRST CLASS": {
+        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
+        "time": "10:00 PM",
+        "date": "20260928",
+        "cat": "FIRST CLASS",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "VECT",
+        "sid": "8415"
       },
       "VRCP|3829|20260928|EXECUTIVE": {
         "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
