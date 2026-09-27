@@ -78,17 +78,6 @@
         "vcode": "RSSC",
         "sid": "123575"
       },
-      "MAYJ|239353|20260927|FIRST CLASS": {
-        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
-        "time": "01:45 PM",
-        "date": "20260927",
-        "cat": "FIRST CLASS",
-        "price": "183.80",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "MAYJ",
-        "sid": "239353"
-      },
       "AGSM|56874|20260927|DIAMOND": {
         "venue": "AGS Cinemas: Maduravoyal",
         "time": "04:15 PM",
@@ -110,6 +99,17 @@
         "screen": "4K DOLBY ATMOS",
         "vcode": "AGSM",
         "sid": "56874"
+      },
+      "MAYJ|239353|20260927|FIRST CLASS": {
+        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
+        "time": "01:45 PM",
+        "date": "20260927",
+        "cat": "FIRST CLASS",
+        "price": "183.80",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "MAYJ",
+        "sid": "239353"
       },
       "CBMC|13507|20260927|NORMAL": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
@@ -590,7 +590,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38803"
