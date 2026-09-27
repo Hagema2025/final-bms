@@ -2079,14 +2079,50 @@ def main():
     successful = 0
     watches_updated = False
     
-    # Get today's date integer in IST format (e.g., 20260926)
+    # Get current time for 14-day cleanup comparison
+    current_time = time.time()
+    FOURTEEN_DAYS_SECONDS = 14 * 86400
     today_int = int(datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%Y%m%d"))
 
+    surviving_watches = []
+
     for idx, watch in enumerate(watches):
-        # --- NEW: EXPIRY CHECK LOGIC ---
+        status = watch.get("status")
+        closed_at = watch.get("closed_at", 0)
+        
+        # --- 1. 14-DAY PASSIVE CLEANUP FOR CLOSED WATCHES ---
+        if status == "closed":
+            if closed_at and (current_time - closed_at) > FOURTEEN_DAYS_SECONDS:
+                thread_id = watch.get("message_thread_id")
+                watch_name = watch.get("name", "Unknown")
+                
+                # Permanently delete the topic from Telegram
+                if thread_id and GROUP_CHAT_ID and TELEGRAM_BOT_TOKEN:
+                    try:
+                        del_url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/deleteForumTopic"
+                        payload = {
+                            "chat_id": GROUP_CHAT_ID,
+                            "message_thread_id": thread_id
+                        }
+                        res = requests.post(del_url, json=payload, timeout=10)
+                        if res.status_code == 200:
+                            print(f"\n🗑️ 14-day retention expired. Purged topic ID {thread_id} for '{watch_name}'")
+                        else:
+                            print(f"\n⚠️ Failed to purge topic for '{watch_name}': {res.text}")
+                    except Exception as e:
+                        print(f"\n⚠️ Error deleting forum topic: {e}")
+                
+                print(f"🧹 Removing closed watch '{watch_name}' permanently from watches.json.")
+                watches_updated = True
+                continue  # Skip adding to surviving_watches (effectively deleting it)
+            else:
+                # Within the 14-day window, retain it safely in watches.json
+                surviving_watches.append(watch)
+                continue
+
+        # --- 2. REGULAR EXPIRY CHECK FOR ACTIVE WATCHES ---
         configured_dates = watch.get("dates", [])
         
-        # Check if dates exist, AND every single date is in the past
         if configured_dates and all(str(d).isdigit() and int(d) < today_int for d in configured_dates):
             if not watch.get("expired_notified"):
                 print(f"\n  ⏰ Watch '{watch['name']}' has expired. Sending notification...")
@@ -2094,11 +2130,13 @@ def main():
                 watch["expired_notified"] = True
                 watches_updated = True
             else:
-                print(f"\n  ⏭️ Skipping expired watch '{watch['name']}'.")
+                print(f"\n  ⏭️ Skipping expired watch '{watch['name']}' (Waiting for manual close).")
             
-            continue  # Skip API queries for this watch since it is expired!
-        # -------------------------------
+            surviving_watches.append(watch)
+            continue
 
+        # --- 3. RUN ACTIVE WATCH ---
+        surviving_watches.append(watch)
         try:
             state, success = run_watch(watch, state)
             if success:
@@ -2107,17 +2145,17 @@ def main():
         except Exception as e:
             print("")
             print(f"❌ Watch '{watch['name']}' failed:")
-            print(f"   {type(e).__name__}: {e}")
+            print(f"    {type(e).__name__}: {e}")
             continue
 
-    # Save state and potentially updated watches.json
+    # Save state and updated watches list if any changes occurred
     save_state(state)
     if watches_updated:
-        save_watches(watches)
+        save_watches(surviving_watches)
 
     print("")
     print("=" * 70)
-    print(f"✅ Completed: {successful}/{len(watches)} active watch(es)")
+    print(f"✅ Completed: {successful}/{len(surviving_watches)} active watch(es)")
     print("=" * 70)
 
 
