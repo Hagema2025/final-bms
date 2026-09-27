@@ -254,49 +254,27 @@
         "vcode": "CBMC",
         "sid": "13688"
       },
-      "PABC|21990|20260927|PRIME": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "07:00 PM",
+      "ACON|47640|20260927|DIAMOND 3D": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:40 PM",
         "date": "20260927",
-        "cat": "PRIME",
-        "price": "250.98",
+        "cat": "DIAMOND 3D",
+        "price": "240.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47640"
+      },
+      "ACON|47640|20260927|PEARL 3D": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:40 PM",
+        "date": "20260927",
+        "cat": "PEARL 3D",
+        "price": "90.00",
         "status": "0",
-        "screen": "",
-        "vcode": "PABC",
-        "sid": "21990"
-      },
-      "PABC|21990|20260927|CLASSIC": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "07:00 PM",
-        "date": "20260927",
-        "cat": "CLASSIC",
-        "price": "101.74",
-        "status": "2",
-        "screen": "",
-        "vcode": "PABC",
-        "sid": "21990"
-      },
-      "PABC|22036|20260927|PRIME": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "10:55 PM",
-        "date": "20260927",
-        "cat": "PRIME",
-        "price": "250.98",
-        "status": "2",
-        "screen": "",
-        "vcode": "PABC",
-        "sid": "22036"
-      },
-      "PABC|22036|20260927|CLASSIC": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "10:55 PM",
-        "date": "20260927",
-        "cat": "CLASSIC",
-        "price": "101.74",
-        "status": "0",
-        "screen": "",
-        "vcode": "PABC",
-        "sid": "22036"
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47640"
       },
       "PGRA|22946|20260927|PRIME": {
         "venue": "PVR: Grand Galada, Pallavaram",
@@ -386,49 +364,49 @@
         "vcode": "AGSM",
         "sid": "56903"
       },
-      "ACON|47640|20260927|DIAMOND 3D": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "10:40 PM",
+      "PABC|21990|20260927|PRIME": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "07:00 PM",
         "date": "20260927",
-        "cat": "DIAMOND 3D",
-        "price": "240.00",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47640"
-      },
-      "ACON|47640|20260927|PEARL 3D": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "10:40 PM",
-        "date": "20260927",
-        "cat": "PEARL 3D",
-        "price": "90.00",
+        "cat": "PRIME",
+        "price": "250.98",
         "status": "0",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47640"
+        "screen": "",
+        "vcode": "PABC",
+        "sid": "21990"
       },
-      "ACVM|56481|20260927|DIAMOND 3D": {
-        "venue": "AGS Cinemas: Villivakkam",
-        "time": "03:00 PM",
+      "PABC|21990|20260927|CLASSIC": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "07:00 PM",
         "date": "20260927",
-        "cat": "DIAMOND 3D",
-        "price": "240.00",
-        "status": "1",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACVM",
-        "sid": "56481"
+        "cat": "CLASSIC",
+        "price": "101.74",
+        "status": "2",
+        "screen": "",
+        "vcode": "PABC",
+        "sid": "21990"
       },
-      "ACVM|56481|20260927|PEARL 3D": {
-        "venue": "AGS Cinemas: Villivakkam",
-        "time": "03:00 PM",
+      "PABC|22036|20260927|PRIME": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "10:55 PM",
         "date": "20260927",
-        "cat": "PEARL 3D",
-        "price": "90.00",
-        "status": "1",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACVM",
-        "sid": "56481"
+        "cat": "PRIME",
+        "price": "250.98",
+        "status": "2",
+        "screen": "",
+        "vcode": "PABC",
+        "sid": "22036"
+      },
+      "PABC|22036|20260927|CLASSIC": {
+        "venue": "PVR: Aerohub, Chennai",
+        "time": "10:55 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "101.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "PABC",
+        "sid": "22036"
       },
       "ACVM|56482|20260927|DIAMOND 3D": {
         "venue": "AGS Cinemas: Villivakkam",
@@ -595,50 +573,6 @@
         "vcode": "MCSK",
         "sid": "16007"
       },
-      "PCAN|45597|20260927|PRIME": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "06:55 PM",
-        "date": "20260927",
-        "cat": "PRIME",
-        "price": "260.98",
-        "status": "1",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45597"
-      },
-      "PCAN|45597|20260927|CLASSIC": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "06:55 PM",
-        "date": "20260927",
-        "cat": "CLASSIC",
-        "price": "111.74",
-        "status": "0",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45597"
-      },
-      "PCAN|45577|20260927|PRIME": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "10:40 PM",
-        "date": "20260927",
-        "cat": "PRIME",
-        "price": "245.98",
-        "status": "1",
-        "screen": "",
-        "vcode": "PCAN",
-        "sid": "45577"
-      },
-      "PCAN|45577|20260927|CLASSIC": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "10:40 PM",
-        "date": "20260927",
-        "cat": "CLASSIC",
-        "price": "96.74",
-        "status": "1",
-        "screen": "",
-        "vcode": "PCAN",
-        "sid": "45577"
-      },
       "MLMT|8607|20260927|PREMIUM 3D": {
         "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
         "time": "07:50 PM",
@@ -715,6 +649,50 @@
         "screen": "",
         "vcode": "PVES",
         "sid": "34449"
+      },
+      "PCAN|45597|20260927|PRIME": {
+        "venue": "PVR: VR Chennai, Anna Nagar",
+        "time": "06:55 PM",
+        "date": "20260927",
+        "cat": "PRIME",
+        "price": "260.98",
+        "status": "1",
+        "screen": "PXL",
+        "vcode": "PCAN",
+        "sid": "45597"
+      },
+      "PCAN|45597|20260927|CLASSIC": {
+        "venue": "PVR: VR Chennai, Anna Nagar",
+        "time": "06:55 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "111.74",
+        "status": "0",
+        "screen": "PXL",
+        "vcode": "PCAN",
+        "sid": "45597"
+      },
+      "PCAN|45577|20260927|PRIME": {
+        "venue": "PVR: VR Chennai, Anna Nagar",
+        "time": "10:40 PM",
+        "date": "20260927",
+        "cat": "PRIME",
+        "price": "245.98",
+        "status": "1",
+        "screen": "",
+        "vcode": "PCAN",
+        "sid": "45577"
+      },
+      "PCAN|45577|20260927|CLASSIC": {
+        "venue": "PVR: VR Chennai, Anna Nagar",
+        "time": "10:40 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "96.74",
+        "status": "1",
+        "screen": "",
+        "vcode": "PCAN",
+        "sid": "45577"
       }
     },
     "dates": {
@@ -822,50 +800,6 @@
   },
   "AvengersEndgameEncore_20260927131410 (English 2D) (English MS - Infinity Vision)": {
     "shows": {
-      "CBMC|13342|20260927|NORMAL": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "06:30 PM",
-        "date": "20260927",
-        "cat": "NORMAL",
-        "price": "61.74",
-        "status": "0",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13342"
-      },
-      "CBMC|13342|20260927|EXECUTIVE": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "06:30 PM",
-        "date": "20260927",
-        "cat": "EXECUTIVE",
-        "price": "210.98",
-        "status": "0",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13342"
-      },
-      "CBMC|13343|20260927|NORMAL": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "10:15 PM",
-        "date": "20260927",
-        "cat": "NORMAL",
-        "price": "61.74",
-        "status": "1",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13343"
-      },
-      "CBMC|13343|20260927|EXECUTIVE": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "10:15 PM",
-        "date": "20260927",
-        "cat": "EXECUTIVE",
-        "price": "210.98",
-        "status": "0",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13343"
-      },
       "PGMV|22492|20260927|PRIME": {
         "venue": "PVR: Grand Mall, Velachery",
         "time": "03:00 PM",
@@ -931,6 +865,50 @@
         "screen": "",
         "vcode": "PGMV",
         "sid": "22494"
+      },
+      "CBMC|13342|20260927|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "06:30 PM",
+        "date": "20260927",
+        "cat": "NORMAL",
+        "price": "61.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13342"
+      },
+      "CBMC|13342|20260927|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "06:30 PM",
+        "date": "20260927",
+        "cat": "EXECUTIVE",
+        "price": "210.98",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13342"
+      },
+      "CBMC|13343|20260927|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "10:15 PM",
+        "date": "20260927",
+        "cat": "NORMAL",
+        "price": "61.74",
+        "status": "1",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13343"
+      },
+      "CBMC|13343|20260927|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "10:15 PM",
+        "date": "20260927",
+        "cat": "EXECUTIVE",
+        "price": "210.98",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13343"
       }
     },
     "dates": {
@@ -951,7 +929,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "245.98",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "INPR",
         "sid": "66105"
@@ -995,7 +973,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "245.98",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVSR",
         "sid": "27775"
@@ -1017,7 +995,7 @@
         "date": "20260927",
         "cat": "BUDGET",
         "price": "96.74",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVSR",
         "sid": "27775"
@@ -1028,7 +1006,7 @@
         "date": "20260927",
         "cat": "PRIME",
         "price": "245.98",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVHC",
         "sid": "32225"
@@ -1039,7 +1017,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "96.74",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVHC",
         "sid": "32225"
