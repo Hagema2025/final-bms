@@ -1129,7 +1129,7 @@
         "date": "20260928",
         "cat": "BOX",
         "price": "150.00",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "MCXF",
         "sid": "650"
@@ -1613,7 +1613,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVHC",
         "sid": "32625"
@@ -3109,7 +3109,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28123"
@@ -6603,13 +6603,13 @@
       }
     },
     "dates": {
-      "20260927": "AVAILABLE",
       "20260928": "BOOKABLE",
       "20260929": "AVAILABLE",
       "20260930": "AVAILABLE",
       "20261001": "AVAILABLE",
       "20261002": "NOT_OPEN",
-      "20261003": "NOT_OPEN"
+      "20261003": "NOT_OPEN",
+      "20261004": "NOT_OPEN"
     }
   }
 }
