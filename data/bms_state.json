@@ -111,28 +111,6 @@
         "vcode": "AGSM",
         "sid": "56874"
       },
-      "AGSM|56875|20260927|DIAMOND": {
-        "venue": "AGS Cinemas: Maduravoyal",
-        "time": "10:45 PM",
-        "date": "20260927",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "3",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "AGSM",
-        "sid": "56875"
-      },
-      "AGSM|56875|20260927|PEARL": {
-        "venue": "AGS Cinemas: Maduravoyal",
-        "time": "10:45 PM",
-        "date": "20260927",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "AGSM",
-        "sid": "56875"
-      },
       "MAYJ|239353|20260927|FIRST CLASS": {
         "venue": "MAYAJAAL Multiplex: ECR, Chennai",
         "time": "01:45 PM",
@@ -722,7 +700,7 @@
         "date": "20260927",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38745"
