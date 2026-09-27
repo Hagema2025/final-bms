@@ -155,28 +155,6 @@
         "vcode": "CBMC",
         "sid": "13509"
       },
-      "INPR|66598|20260927|ELITE": {
-        "venue": "INOX: LUXE Phoenix Market City, Velachery",
-        "time": "09:05 AM",
-        "date": "20260927",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "INPR",
-        "sid": "66598"
-      },
-      "INPR|66598|20260927|BUDGET": {
-        "venue": "INOX: LUXE Phoenix Market City, Velachery",
-        "time": "09:05 AM",
-        "date": "20260927",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "INPR",
-        "sid": "66598"
-      },
       "INPR|66609|20260927|ELITE": {
         "venue": "INOX: LUXE Phoenix Market City, Velachery",
         "time": "07:05 PM",
@@ -198,28 +176,6 @@
         "screen": "",
         "vcode": "INPR",
         "sid": "66609"
-      },
-      "FMCN|105205|20260927|SILVER": {
-        "venue": "INOX National: Arcot Road",
-        "time": "09:00 AM",
-        "date": "20260927",
-        "cat": "SILVER",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "FMCN",
-        "sid": "105205"
-      },
-      "FMCN|105205|20260927|PREMIERE": {
-        "venue": "INOX National: Arcot Road",
-        "time": "09:00 AM",
-        "date": "20260927",
-        "cat": "PREMIERE",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "FMCN",
-        "sid": "105205"
       },
       "FMCN|105206|20260927|SILVER": {
         "venue": "INOX National: Arcot Road",
