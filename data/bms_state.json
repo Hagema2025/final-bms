@@ -359,7 +359,7 @@
         "date": "20260927",
         "cat": "PRIME",
         "price": "250.98",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PABC",
         "sid": "21990"
@@ -370,7 +370,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "101.74",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PABC",
         "sid": "21990"
@@ -778,28 +778,6 @@
   },
   "AvengersEndgameEncore_20260927131410 (English 2D) (English MS - Infinity Vision)": {
     "shows": {
-      "PGMV|22492|20260927|PRIME": {
-        "venue": "PVR: Grand Mall, Velachery",
-        "time": "03:00 PM",
-        "date": "20260927",
-        "cat": "PRIME",
-        "price": "210.98",
-        "status": "1",
-        "screen": "",
-        "vcode": "PGMV",
-        "sid": "22492"
-      },
-      "PGMV|22492|20260927|CLASSIC": {
-        "venue": "PVR: Grand Mall, Velachery",
-        "time": "03:00 PM",
-        "date": "20260927",
-        "cat": "CLASSIC",
-        "price": "66.74",
-        "status": "3",
-        "screen": "",
-        "vcode": "PGMV",
-        "sid": "22492"
-      },
       "PGMV|22493|20260927|PRIME": {
         "venue": "PVR: Grand Mall, Velachery",
         "time": "06:50 PM",
@@ -951,7 +929,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "245.98",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVSR",
         "sid": "27775"
@@ -973,7 +951,7 @@
         "date": "20260927",
         "cat": "BUDGET",
         "price": "96.74",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVSR",
         "sid": "27775"
