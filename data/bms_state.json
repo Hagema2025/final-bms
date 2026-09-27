@@ -3681,7 +3681,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PGRA",
         "sid": "22996"
@@ -5661,7 +5661,7 @@
         "date": "20260928",
         "cat": "Box",
         "price": "180.00",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4935"
@@ -5672,7 +5672,7 @@
         "date": "20260928",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4935"
@@ -5683,7 +5683,7 @@
         "date": "20260928",
         "cat": "First Class",
         "price": "120.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4935"
@@ -5694,7 +5694,7 @@
         "date": "20260928",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4935"
@@ -5705,7 +5705,7 @@
         "date": "20260928",
         "cat": "Box",
         "price": "180.00",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4971"
@@ -5716,7 +5716,7 @@
         "date": "20260928",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4971"
@@ -5727,7 +5727,7 @@
         "date": "20260928",
         "cat": "First Class",
         "price": "120.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4971"
@@ -5738,7 +5738,7 @@
         "date": "20260928",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4971"
