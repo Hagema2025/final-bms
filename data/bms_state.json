@@ -183,7 +183,7 @@
         "date": "20260927",
         "cat": "DIAMOND 3D",
         "price": "240.00",
-        "status": "1",
+        "status": "2",
         "screen": "4K DOLBY 7.1",
         "vcode": "AGSM",
         "sid": "56974"
@@ -304,7 +304,7 @@
         "date": "20260927",
         "cat": "PEARL 3D",
         "price": "90.00",
-        "status": "2",
+        "status": "3",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACVM",
         "sid": "56482"
