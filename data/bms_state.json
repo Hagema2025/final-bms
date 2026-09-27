@@ -150,7 +150,7 @@
         "date": "20260927",
         "cat": "PEARL 3D",
         "price": "90.00",
-        "status": "0",
+        "status": "3",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACTN",
         "sid": "46212"
@@ -177,27 +177,49 @@
         "vcode": "ACTN",
         "sid": "46211"
       },
-      "CBMC|13688|20260927|NORMAL": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "04:15 PM",
+      "AGSM|56974|20260927|DIAMOND 3D": {
+        "venue": "AGS Cinemas: Maduravoyal",
+        "time": "06:50 PM",
         "date": "20260927",
-        "cat": "NORMAL",
-        "price": "101.74",
-        "status": "0",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13688"
-      },
-      "CBMC|13688|20260927|EXECUTIVE": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "04:15 PM",
-        "date": "20260927",
-        "cat": "EXECUTIVE",
-        "price": "250.98",
+        "cat": "DIAMOND 3D",
+        "price": "240.00",
         "status": "1",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13688"
+        "screen": "4K DOLBY 7.1",
+        "vcode": "AGSM",
+        "sid": "56974"
+      },
+      "AGSM|56974|20260927|PEARL 3D": {
+        "venue": "AGS Cinemas: Maduravoyal",
+        "time": "06:50 PM",
+        "date": "20260927",
+        "cat": "PEARL 3D",
+        "price": "90.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "AGSM",
+        "sid": "56974"
+      },
+      "AGSM|56903|20260927|DIAMOND 3D": {
+        "venue": "AGS Cinemas: Maduravoyal",
+        "time": "10:50 PM",
+        "date": "20260927",
+        "cat": "DIAMOND 3D",
+        "price": "240.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "AGSM",
+        "sid": "56903"
+      },
+      "AGSM|56903|20260927|PEARL 3D": {
+        "venue": "AGS Cinemas: Maduravoyal",
+        "time": "10:50 PM",
+        "date": "20260927",
+        "cat": "PEARL 3D",
+        "price": "90.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "AGSM",
+        "sid": "56903"
       },
       "ACON|47640|20260927|DIAMOND 3D": {
         "venue": "AGS Cinemas OMR: Navlur",
@@ -265,49 +287,27 @@
         "vcode": "PGRA",
         "sid": "22947"
       },
-      "AGSM|56974|20260927|DIAMOND 3D": {
-        "venue": "AGS Cinemas: Maduravoyal",
-        "time": "06:50 PM",
+      "ACVM|56482|20260927|DIAMOND 3D": {
+        "venue": "AGS Cinemas: Villivakkam",
+        "time": "06:45 PM",
         "date": "20260927",
         "cat": "DIAMOND 3D",
         "price": "240.00",
         "status": "1",
         "screen": "4K DOLBY 7.1",
-        "vcode": "AGSM",
-        "sid": "56974"
+        "vcode": "ACVM",
+        "sid": "56482"
       },
-      "AGSM|56974|20260927|PEARL 3D": {
-        "venue": "AGS Cinemas: Maduravoyal",
-        "time": "06:50 PM",
+      "ACVM|56482|20260927|PEARL 3D": {
+        "venue": "AGS Cinemas: Villivakkam",
+        "time": "06:45 PM",
         "date": "20260927",
         "cat": "PEARL 3D",
         "price": "90.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1",
-        "vcode": "AGSM",
-        "sid": "56974"
-      },
-      "AGSM|56903|20260927|DIAMOND 3D": {
-        "venue": "AGS Cinemas: Maduravoyal",
-        "time": "10:50 PM",
-        "date": "20260927",
-        "cat": "DIAMOND 3D",
-        "price": "240.00",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "AGSM",
-        "sid": "56903"
-      },
-      "AGSM|56903|20260927|PEARL 3D": {
-        "venue": "AGS Cinemas: Maduravoyal",
-        "time": "10:50 PM",
-        "date": "20260927",
-        "cat": "PEARL 3D",
-        "price": "90.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "AGSM",
-        "sid": "56903"
+        "vcode": "ACVM",
+        "sid": "56482"
       },
       "PABC|21990|20260927|PRIME": {
         "venue": "PVR: Aerohub, Chennai",
@@ -352,50 +352,6 @@
         "screen": "",
         "vcode": "PABC",
         "sid": "22036"
-      },
-      "ACVM|56482|20260927|DIAMOND 3D": {
-        "venue": "AGS Cinemas: Villivakkam",
-        "time": "06:45 PM",
-        "date": "20260927",
-        "cat": "DIAMOND 3D",
-        "price": "240.00",
-        "status": "1",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACVM",
-        "sid": "56482"
-      },
-      "ACVM|56482|20260927|PEARL 3D": {
-        "venue": "AGS Cinemas: Villivakkam",
-        "time": "06:45 PM",
-        "date": "20260927",
-        "cat": "PEARL 3D",
-        "price": "90.00",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACVM",
-        "sid": "56482"
-      },
-      "GKCP|4181|20260927|LOUNGE 1 +3D": {
-        "venue": "GK Cinemas RGB + Laser SRL 4D: Porur",
-        "time": "04:30 PM",
-        "date": "20260927",
-        "cat": "LOUNGE 1 +3D",
-        "price": "150.00",
-        "status": "0",
-        "screen": "RGB ATMOS",
-        "vcode": "GKCP",
-        "sid": "4181"
-      },
-      "GKCP|4181|20260927|SIGNATURE CLASS +3D": {
-        "venue": "GK Cinemas RGB + Laser SRL 4D: Porur",
-        "time": "04:30 PM",
-        "date": "20260927",
-        "cat": "SIGNATURE CLASS +3D",
-        "price": "150.00",
-        "status": "1",
-        "screen": "RGB ATMOS",
-        "vcode": "GKCP",
-        "sid": "4181"
       },
       "PVHR|42781|20260927|PRIME": {
         "venue": "PVR: Heritage RSL ECR, Chennai",
@@ -784,7 +740,7 @@
         "date": "20260927",
         "cat": "NORMAL",
         "price": "61.74",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13343"
@@ -863,7 +819,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "245.98",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVSR",
         "sid": "27775"
@@ -874,7 +830,7 @@
         "date": "20260927",
         "cat": "PREMIUM",
         "price": "235.00",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVSR",
         "sid": "27775"
