@@ -95,7 +95,7 @@
         "date": "20260927",
         "cat": "GoldStar +3D Glass Rent",
         "price": "200.00",
-        "status": "1",
+        "status": "2",
         "screen": "4K RGB",
         "vcode": "RSSC",
         "sid": "123472"
@@ -546,7 +546,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "96.74",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PVHR",
         "sid": "42782"
@@ -837,7 +837,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "449.00",
-        "status": "1",
+        "status": "0",
         "screen": "IMAX",
         "vcode": "PVPZ",
         "sid": "38252"
@@ -1149,7 +1149,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "96.74",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVHC",
         "sid": "32226"
@@ -1173,7 +1173,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "183.00",
-        "status": "1",
+        "status": "0",
         "screen": "4K DOLBY ATMOS",
         "vcode": "TVHP",
         "sid": "25414"
@@ -1547,7 +1547,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "2",
+        "status": "3",
         "screen": "",
         "vcode": "PVHC",
         "sid": "32568"
@@ -1580,7 +1580,7 @@
         "date": "20260927",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "1",
+        "status": "2",
         "screen": "",
         "vcode": "INTO",
         "sid": "90939"
@@ -1635,7 +1635,7 @@
         "date": "20260927",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "INTO",
         "sid": "90901"
@@ -1844,7 +1844,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "INPR",
         "sid": "66592"
@@ -1976,7 +1976,7 @@
         "date": "20260927",
         "cat": "Premium",
         "price": "183.78",
-        "status": "3",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51102"
@@ -2273,7 +2273,7 @@
         "date": "20260927",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "3",
         "screen": "",
         "vcode": "PABC",
         "sid": "22037"
@@ -2339,7 +2339,7 @@
         "date": "20260927",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "1",
+        "status": "0",
         "screen": "4K DOLBY ATMOS",
         "vcode": "ACTN",
         "sid": "46223"
@@ -2350,7 +2350,7 @@
         "date": "20260927",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "0",
+        "status": "1",
         "screen": "4K DOLBY ATMOS",
         "vcode": "ACTN",
         "sid": "46223"
@@ -2713,7 +2713,7 @@
         "date": "20260927",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PGRA",
         "sid": "22917"
@@ -2812,7 +2812,7 @@
         "date": "20260927",
         "cat": "First Class",
         "price": "120.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4945"
@@ -2823,7 +2823,7 @@
         "date": "20260927",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4945"
@@ -2900,7 +2900,7 @@
         "date": "20260927",
         "cat": "DIAMOND",
         "price": "130.00",
-        "status": "0",
+        "status": "1",
         "screen": "4K DOLBY",
         "vcode": "GCRP",
         "sid": "17528"
@@ -3186,7 +3186,7 @@
         "date": "20260927",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PCAN",
         "sid": "45630"
