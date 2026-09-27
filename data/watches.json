@@ -68,25 +68,6 @@
     "message_thread_id": 456
   },
   {
-    "name": "Dorothy_20260927125705 (Tamil 2D)",
-    "url": "https://in.bookmyshow.com/movies/chennai/dorothy/ET00518039",
-    "dates": {
-      "20260927": []
-    },
-    "theatre": [],
-    "time_period": [],
-    "discover_variants": true,
-    "languages": [
-      "Tamil"
-    ],
-    "formats": [],
-    "message_thread_id": 460,
-    "status": "closed",
-    "closed_at": 1790499199,
-    "closed_at_formatted": "27/09/26 02:23 PM",
-    "deletes_at_formatted": "11/10/26 02:23 PM"
-  },
-  {
     "name": "AvengersEndgameEncore_20260927131410 (English 2D)",
     "url": "https://in.bookmyshow.com/movies/chennai/avengers-endgame-encore/ET00514163",
     "dates": {
