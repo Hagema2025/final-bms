@@ -117,7 +117,7 @@
         "date": "20260927",
         "cat": "SuperStar",
         "price": "190.00",
-        "status": "0",
+        "status": "1",
         "screen": "RGB ATMOS",
         "vcode": "RSSC",
         "sid": "123469"
@@ -150,7 +150,7 @@
         "date": "20260927",
         "cat": "GoldStar",
         "price": "160.00",
-        "status": "1",
+        "status": "0",
         "screen": "2K/DOLBY 7.1",
         "vcode": "RSSC",
         "sid": "123618"
@@ -260,7 +260,7 @@
         "date": "20260927",
         "cat": "PREMIUM CIRCLE",
         "price": "150.00",
-        "status": "2",
+        "status": "1",
         "screen": "SCREEN 1",
         "vcode": "RRGB",
         "sid": "1244"
@@ -315,7 +315,7 @@
         "date": "20260927",
         "cat": "EXECUTIVE",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13560"
@@ -359,7 +359,7 @@
         "date": "20260927",
         "cat": "SECOND CLASS",
         "price": "57.98",
-        "status": "1",
+        "status": "0",
         "screen": "4K DOLBY 7.1",
         "vcode": "MAYJ",
         "sid": "239598"
@@ -403,7 +403,7 @@
         "date": "20260927",
         "cat": "FIRST CLASS",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "4K DOLBY ATMOS",
         "vcode": "MAYJ",
         "sid": "239601"
@@ -436,7 +436,7 @@
         "date": "20260927",
         "cat": "FIRST CLASS",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1",
         "vcode": "MAYJ",
         "sid": "239442"
@@ -568,7 +568,7 @@
         "date": "20260927",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "1",
+        "status": "0",
         "screen": "4K DOLBY ATMOS",
         "vcode": "AGSM",
         "sid": "56977"
@@ -678,7 +678,7 @@
         "date": "20260927",
         "cat": "Executive",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "INCH",
         "sid": "80728"
@@ -1085,7 +1085,7 @@
         "date": "20260927",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "0",
+        "status": "1",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACVM",
         "sid": "56601"
@@ -1096,7 +1096,7 @@
         "date": "20260927",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "1",
+        "status": "0",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACVM",
         "sid": "56601"
@@ -1140,7 +1140,7 @@
         "date": "20260927",
         "cat": "PREMIUM",
         "price": "173.00",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28121"
@@ -1151,7 +1151,7 @@
         "date": "20260927",
         "cat": "ECONOMY",
         "price": "163.00",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28121"
@@ -1162,7 +1162,7 @@
         "date": "20260927",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28121"
@@ -1228,7 +1228,7 @@
         "date": "20260927",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "0",
+        "status": "1",
         "screen": "4K DOLBY ATMOS",
         "vcode": "ACTN",
         "sid": "46314"
@@ -1305,7 +1305,7 @@
         "date": "20260927",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PGMV",
         "sid": "22486"
@@ -1448,7 +1448,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "PSKL",
         "sid": "23639"
@@ -1573,17 +1573,6 @@
         "screen": "4K LASER DOLBY 7.1 ",
         "vcode": "MMPR",
         "sid": "2331"
-      },
-      "RDMP|28399|20260927|ELITE": {
-        "venue": "Shree Radha Movie Park 4K Dolby Atmos: Redhills",
-        "time": "10:00 PM",
-        "date": "20260927",
-        "cat": "ELITE",
-        "price": "150.00",
-        "status": "1",
-        "screen": "",
-        "vcode": "RDMP",
-        "sid": "28399"
       },
       "GCRP|17529|20260927|DIAMOND": {
         "venue": "Green Cinemas 4K Atmos, PLF: Padi",
@@ -1712,7 +1701,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "150.00",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "VCDK",
         "sid": "5991"
@@ -1789,7 +1778,7 @@
         "date": "20260927",
         "cat": "SILVER",
         "price": "130.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K M-MAX(PLF)",
         "vcode": "MLMT",
         "sid": "8588"
@@ -1822,7 +1811,7 @@
         "date": "20260927",
         "cat": "FIRST CLASS",
         "price": "150.00",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "VECT",
         "sid": "8406"
