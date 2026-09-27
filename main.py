@@ -2084,7 +2084,6 @@ def run_watch(
 # ======================================================================
 # MAIN
 # ======================================================================
-
 def main():
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(f"[{now}] BMS Ticket Checker — CI mode")
@@ -2108,14 +2107,16 @@ def main():
     for idx, watch in enumerate(watches):
         status = watch.get("status")
         closed_at = watch.get("closed_at", 0)
+        watch_name = watch.get("name", "Unknown")
         
         # --- 1. 14-DAY PASSIVE CLEANUP FOR CLOSED WATCHES ---
         if status == "closed":
+            surviving_watches.append(watch) # Retain in list during the 14-day window
+            
             if closed_at and (current_time - closed_at) > FOURTEEN_DAYS_SECONDS:
                 thread_id = watch.get("message_thread_id")
-                watch_name = watch.get("name", "Unknown")
                 
-                # Permanently delete the topic from Telegram
+                # A. Permanently delete the topic from Telegram
                 if thread_id and GROUP_CHAT_ID and TELEGRAM_BOT_TOKEN:
                     try:
                         del_url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/deleteForumTopic"
@@ -2130,14 +2131,25 @@ def main():
                             print(f"\n⚠️ Failed to purge topic for '{watch_name}': {res.text}")
                     except Exception as e:
                         print(f"\n⚠️ Error deleting forum topic: {e}")
+
+                # B. Purge any residual keys from state.json (bms_state.json)
+                try:
+                    timestamp_match = re.search(r'_(\d{10,})', watch_name)
+                    unique_id = timestamp_match.group(1) if timestamp_match else watch_name.split('_')[0]
+                    
+                    keys_to_delete = [k for k in state.keys() if unique_id in str(k)]
+                    if keys_to_delete:
+                        for k in keys_to_delete:
+                            del state[k]
+                        print(f"🧹 Cleaned up {len(keys_to_delete)} residual state record(s) for expired watch ID {unique_id}")
+                except Exception as e:
+                    print(f"⚠️ Error cleaning residual state for '{watch_name}': {e}")
                 
                 print(f"🧹 Removing closed watch '{watch_name}' permanently from watches.json.")
+                surviving_watches.pop() # Drop it from the surviving list
                 watches_updated = True
-                continue  # Skip adding to surviving_watches (effectively deleting it)
-            else:
-                # Within the 14-day window, retain it safely in watches.json
-                surviving_watches.append(watch)
-                continue
+            
+            continue  # CRITICAL: Skip all active checks and searches for closed watches!
 
         # --- 2. REGULAR EXPIRY CHECK FOR ACTIVE WATCHES ---
         configured_dates = watch.get("dates", [])
