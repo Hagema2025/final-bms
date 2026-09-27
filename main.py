@@ -1497,7 +1497,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
 
                     # Append Spaced Block Lines with the icon right next to the category name
                     lines.append(f"     └{cat_icon} <b>{safe_cat_name}</b>")
-                    lines.append(f"        {detail_line}")
+                    lines.append(f"     *   {detail_line}")
             
             lines.append("") # Visual gap between venues
 
