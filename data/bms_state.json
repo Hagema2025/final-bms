@@ -56,17 +56,6 @@
         "vcode": "KVCS",
         "sid": "9361"
       },
-      "RSSC|123449|20260927|GoldStar": {
-        "venue": "Rohini Silver Screens: Koyambedu",
-        "time": "09:15 AM",
-        "date": "20260927",
-        "cat": "GoldStar",
-        "price": "160.00",
-        "status": "3",
-        "screen": "2K/DOLBY 7.1",
-        "vcode": "RSSC",
-        "sid": "123449"
-      },
       "RSSC|123476|20260927|GoldStar": {
         "venue": "Rohini Silver Screens: Koyambedu",
         "time": "01:05 PM",
@@ -166,50 +155,6 @@
         "vcode": "CBMC",
         "sid": "13509"
       },
-      "INPR|66598|20260927|ELITE": {
-        "venue": "INOX: LUXE Phoenix Market City, Velachery",
-        "time": "09:05 AM",
-        "date": "20260927",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "INPR",
-        "sid": "66598"
-      },
-      "INPR|66598|20260927|BUDGET": {
-        "venue": "INOX: LUXE Phoenix Market City, Velachery",
-        "time": "09:05 AM",
-        "date": "20260927",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "INPR",
-        "sid": "66598"
-      },
-      "INPR|66609|20260927|ELITE": {
-        "venue": "INOX: LUXE Phoenix Market City, Velachery",
-        "time": "07:05 PM",
-        "date": "20260927",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "2",
-        "screen": "",
-        "vcode": "INPR",
-        "sid": "66609"
-      },
-      "INPR|66609|20260927|BUDGET": {
-        "venue": "INOX: LUXE Phoenix Market City, Velachery",
-        "time": "07:05 PM",
-        "date": "20260927",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "INPR",
-        "sid": "66609"
-      },
       "FMCN|105205|20260927|SILVER": {
         "venue": "INOX National: Arcot Road",
         "time": "09:00 AM",
@@ -249,32 +194,10 @@
         "date": "20260927",
         "cat": "PREMIERE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "FMCN",
         "sid": "105206"
-      },
-      "ACON|47635|20260927|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "10:30 PM",
-        "date": "20260927",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47635"
-      },
-      "ACON|47635|20260927|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "10:30 PM",
-        "date": "20260927",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47635"
       },
       "PBRM|25161|20260927|ELITE": {
         "venue": "PVR: Perambur, Spectrum Mall",
@@ -297,6 +220,28 @@
         "screen": "",
         "vcode": "PBRM",
         "sid": "25161"
+      },
+      "ACON|47635|20260927|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:30 PM",
+        "date": "20260927",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47635"
+      },
+      "ACON|47635|20260927|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:30 PM",
+        "date": "20260927",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47635"
       },
       "PVHR|42771|20260927|PRIME": {
         "venue": "PVR: Heritage RSL ECR, Chennai",
@@ -342,6 +287,28 @@
         "vcode": "PVHR",
         "sid": "42773"
       },
+      "KMRM|13143|20260927|BALCONY": {
+        "venue": "Kumaran Theatre PROVA 4K DOLBY ATMOS: Madipakkam",
+        "time": "11:30 AM",
+        "date": "20260927",
+        "cat": "BALCONY",
+        "price": "130.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "KMRM",
+        "sid": "13143"
+      },
+      "KMRM|13143|20260927|FIRST CLASS": {
+        "venue": "Kumaran Theatre PROVA 4K DOLBY ATMOS: Madipakkam",
+        "time": "11:30 AM",
+        "date": "20260927",
+        "cat": "FIRST CLASS",
+        "price": "130.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "KMRM",
+        "sid": "13143"
+      },
       "KSTK|51116|20260927|Super Premium": {
         "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
         "time": "11:10 PM",
@@ -386,27 +353,49 @@
         "vcode": "KSTK",
         "sid": "51116"
       },
-      "KMRM|13143|20260927|BALCONY": {
-        "venue": "Kumaran Theatre PROVA 4K DOLBY ATMOS: Madipakkam",
-        "time": "11:30 AM",
+      "INPR|66598|20260927|ELITE": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "09:05 AM",
         "date": "20260927",
-        "cat": "BALCONY",
-        "price": "130.00",
+        "cat": "ELITE",
+        "price": "183.80",
         "status": "3",
         "screen": "",
-        "vcode": "KMRM",
-        "sid": "13143"
+        "vcode": "INPR",
+        "sid": "66598"
       },
-      "KMRM|13143|20260927|FIRST CLASS": {
-        "venue": "Kumaran Theatre PROVA 4K DOLBY ATMOS: Madipakkam",
-        "time": "11:30 AM",
+      "INPR|66598|20260927|BUDGET": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "09:05 AM",
         "date": "20260927",
-        "cat": "FIRST CLASS",
-        "price": "130.00",
-        "status": "3",
+        "cat": "BUDGET",
+        "price": "54.35",
+        "status": "0",
         "screen": "",
-        "vcode": "KMRM",
-        "sid": "13143"
+        "vcode": "INPR",
+        "sid": "66598"
+      },
+      "INPR|66609|20260927|ELITE": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "07:05 PM",
+        "date": "20260927",
+        "cat": "ELITE",
+        "price": "183.80",
+        "status": "2",
+        "screen": "",
+        "vcode": "INPR",
+        "sid": "66609"
+      },
+      "INPR|66609|20260927|BUDGET": {
+        "venue": "INOX: LUXE Phoenix Market City, Velachery",
+        "time": "07:05 PM",
+        "date": "20260927",
+        "cat": "BUDGET",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "INPR",
+        "sid": "66609"
       },
       "INTO|90913|20260927|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -441,28 +430,6 @@
         "vcode": "VVTN",
         "sid": "20991"
       },
-      "PGMV|22473|20260927|PRIME": {
-        "venue": "PVR: Grand Mall, Velachery",
-        "time": "12:15 PM",
-        "date": "20260927",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PGMV",
-        "sid": "22473"
-      },
-      "PGMV|22473|20260927|CLASSIC": {
-        "venue": "PVR: Grand Mall, Velachery",
-        "time": "12:15 PM",
-        "date": "20260927",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PGMV",
-        "sid": "22473"
-      },
       "PVHC|32548|20260927|PRIME": {
         "venue": "PVR: Ampa Mall, Nelson Manickam Road",
         "time": "03:00 PM",
@@ -484,17 +451,6 @@
         "screen": "",
         "vcode": "PVHC",
         "sid": "32548"
-      },
-      "SSCC|23416|20260927|Elite": {
-        "venue": "Sivasakthi Cinemas RGB 4K Laser: Padi",
-        "time": "11:30 AM",
-        "date": "20260927",
-        "cat": "Elite",
-        "price": "130.00",
-        "status": "3",
-        "screen": "RGB/ATMOS",
-        "vcode": "SSCC",
-        "sid": "23416"
       },
       "PABC|21982|20260927|PRIME": {
         "venue": "PVR: Aerohub, Chennai",
@@ -518,6 +474,17 @@
         "vcode": "PABC",
         "sid": "21982"
       },
+      "SSCC|23416|20260927|Elite": {
+        "venue": "Sivasakthi Cinemas RGB 4K Laser: Padi",
+        "time": "11:30 AM",
+        "date": "20260927",
+        "cat": "Elite",
+        "price": "130.00",
+        "status": "3",
+        "screen": "RGB/ATMOS",
+        "vcode": "SSCC",
+        "sid": "23416"
+      },
       "PSKL|23600|20260927|PRIME": {
         "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
         "time": "11:20 AM",
@@ -539,17 +506,6 @@
         "screen": "",
         "vcode": "PSKL",
         "sid": "23600"
-      },
-      "SVWT|14405|20260927|FIRSTCLASS": {
-        "venue": "Vigneshwara Theatre RGB Laser: Poonamallee",
-        "time": "10:00 PM",
-        "date": "20260927",
-        "cat": "FIRSTCLASS",
-        "price": "130.00",
-        "status": "3",
-        "screen": "RGB/ATMOS",
-        "vcode": "SVWT",
-        "sid": "14405"
       },
       "MCSK|16004|20260927|SPECIAL": {
         "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
@@ -573,6 +529,17 @@
         "vcode": "MCSK",
         "sid": "16004"
       },
+      "SVWT|14405|20260927|FIRSTCLASS": {
+        "venue": "Vigneshwara Theatre RGB Laser: Poonamallee",
+        "time": "10:00 PM",
+        "date": "20260927",
+        "cat": "FIRSTCLASS",
+        "price": "130.00",
+        "status": "3",
+        "screen": "RGB/ATMOS",
+        "vcode": "SVWT",
+        "sid": "14405"
+      },
       "AMTT|5001|20260927|PREMIUM": {
         "venue": "Arul Muruga Theatre 4K: Thiruporur",
         "time": "02:45 PM",
@@ -594,50 +561,6 @@
         "screen": "",
         "vcode": "AMTT",
         "sid": "5001"
-      },
-      "SLMP|28294|20260927|FIRST CLASS": {
-        "venue": "SLB (LakshmiBala) Movie Park 4K Dolby Atmos: Padi",
-        "time": "03:30 PM",
-        "date": "20260927",
-        "cat": "FIRST CLASS",
-        "price": "130.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "SLMP",
-        "sid": "28294"
-      },
-      "SLMP|28295|20260927|FIRST CLASS": {
-        "venue": "SLB (LakshmiBala) Movie Park 4K Dolby Atmos: Padi",
-        "time": "07:00 PM",
-        "date": "20260927",
-        "cat": "FIRST CLASS",
-        "price": "130.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "SLMP",
-        "sid": "28295"
-      },
-      "PGRA|22929|20260927|PRIME": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "03:25 PM",
-        "date": "20260927",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22929"
-      },
-      "PGRA|22929|20260927|CLASSIC": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "03:25 PM",
-        "date": "20260927",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22929"
       },
       "PVPZ|38803|20260927|ELITE": {
         "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
@@ -683,6 +606,28 @@
         "vcode": "PVPZ",
         "sid": "38745"
       },
+      "SLMP|28294|20260927|FIRST CLASS": {
+        "venue": "SLB (LakshmiBala) Movie Park 4K Dolby Atmos: Padi",
+        "time": "03:30 PM",
+        "date": "20260927",
+        "cat": "FIRST CLASS",
+        "price": "130.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "SLMP",
+        "sid": "28294"
+      },
+      "SLMP|28295|20260927|FIRST CLASS": {
+        "venue": "SLB (LakshmiBala) Movie Park 4K Dolby Atmos: Padi",
+        "time": "07:00 PM",
+        "date": "20260927",
+        "cat": "FIRST CLASS",
+        "price": "130.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "SLMP",
+        "sid": "28295"
+      },
       "PCAN|45521|20260927|PRIME": {
         "venue": "PVR: VR Chennai, Anna Nagar",
         "time": "09:50 PM",
@@ -726,6 +671,50 @@
         "screen": "",
         "vcode": "INCH",
         "sid": "80694"
+      },
+      "PGMV|22473|20260927|PRIME": {
+        "venue": "PVR: Grand Mall, Velachery",
+        "time": "12:15 PM",
+        "date": "20260927",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "PGMV",
+        "sid": "22473"
+      },
+      "PGMV|22473|20260927|CLASSIC": {
+        "venue": "PVR: Grand Mall, Velachery",
+        "time": "12:15 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "1",
+        "screen": "",
+        "vcode": "PGMV",
+        "sid": "22473"
+      },
+      "PGRA|22929|20260927|PRIME": {
+        "venue": "PVR: Grand Galada, Pallavaram",
+        "time": "03:25 PM",
+        "date": "20260927",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "PGRA",
+        "sid": "22929"
+      },
+      "PGRA|22929|20260927|CLASSIC": {
+        "venue": "PVR: Grand Galada, Pallavaram",
+        "time": "03:25 PM",
+        "date": "20260927",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "PGRA",
+        "sid": "22929"
       },
       "MMPR|2334|20260927|EXECUTIVE": {
         "venue": "MovieMax: PR Mall, Wall Tax Road, Chennai",
