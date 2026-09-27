@@ -1063,7 +1063,7 @@
         "date": "20260928",
         "cat": "BOX",
         "price": "150.00",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "MCXF",
         "sid": "646"
@@ -1096,7 +1096,7 @@
         "date": "20260928",
         "cat": "BOX",
         "price": "150.00",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "MCXF",
         "sid": "649"
@@ -1129,7 +1129,7 @@
         "date": "20260928",
         "cat": "BOX",
         "price": "150.00",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "MCXF",
         "sid": "650"
@@ -1965,7 +1965,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38857"
@@ -2031,7 +2031,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38859"
@@ -5518,7 +5518,7 @@
         "date": "20260928",
         "cat": "Box",
         "price": "180.00",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -5529,7 +5529,7 @@
         "date": "20260928",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "1",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -5540,7 +5540,7 @@
         "date": "20260928",
         "cat": "First Class",
         "price": "120.00",
-        "status": "1",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -5551,7 +5551,7 @@
         "date": "20260928",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
