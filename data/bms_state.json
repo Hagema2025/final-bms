@@ -183,7 +183,7 @@
         "date": "20260927",
         "cat": "PREMIUM CIRCLE",
         "price": "150.00",
-        "status": "3",
+        "status": "2",
         "screen": "SCREEN 2",
         "vcode": "RRGB",
         "sid": "1258"
@@ -216,7 +216,7 @@
         "date": "20260927",
         "cat": "EXECUTIVE",
         "price": "183.80",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13560"
@@ -337,7 +337,7 @@
         "date": "20260927",
         "cat": "FIRST CLASS",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "4K DOLBY 7.1",
         "vcode": "MAYJ",
         "sid": "239467"
@@ -348,7 +348,7 @@
         "date": "20260927",
         "cat": "SECOND CLASS",
         "price": "57.98",
-        "status": "3",
+        "status": "0",
         "screen": "4K DOLBY 7.1",
         "vcode": "MAYJ",
         "sid": "239467"
@@ -392,7 +392,7 @@
         "date": "20260927",
         "cat": "SECOND CLASS",
         "price": "57.98",
-        "status": "2",
+        "status": "1",
         "screen": "4K DOLBY 7.1",
         "vcode": "MAYJ",
         "sid": "239456"
@@ -463,28 +463,6 @@
         "vcode": "PVHR",
         "sid": "42734"
       },
-      "AGSM|56828|20260927|DIAMOND": {
-        "venue": "AGS Cinemas: Maduravoyal",
-        "time": "10:00 PM",
-        "date": "20260927",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "1",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "AGSM",
-        "sid": "56828"
-      },
-      "AGSM|56828|20260927|PEARL": {
-        "venue": "AGS Cinemas: Maduravoyal",
-        "time": "10:00 PM",
-        "date": "20260927",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "AGSM",
-        "sid": "56828"
-      },
       "AGSM|56977|20260927|DIAMOND": {
         "venue": "AGS Cinemas: Maduravoyal",
         "time": "10:45 PM",
@@ -513,7 +491,7 @@
         "date": "20260927",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVHC",
         "sid": "32560"
@@ -617,35 +595,13 @@
         "vcode": "INCH",
         "sid": "80728"
       },
-      "ACON|47650|20260927|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "10:00 PM",
-        "date": "20260927",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "1",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "ACON",
-        "sid": "47650"
-      },
-      "ACON|47650|20260927|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "10:00 PM",
-        "date": "20260927",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "ACON",
-        "sid": "47650"
-      },
       "ACON|47730|20260927|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
         "time": "10:30 PM",
         "date": "20260927",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "1",
+        "status": "0",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
         "sid": "47730"
@@ -656,7 +612,7 @@
         "date": "20260927",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "0",
+        "status": "1",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
         "sid": "47730"
@@ -887,7 +843,7 @@
         "date": "20260927",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "2",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28086"
@@ -898,7 +854,7 @@
         "date": "20260927",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28121"
@@ -909,7 +865,7 @@
         "date": "20260927",
         "cat": "PREMIUM",
         "price": "173.00",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28121"
@@ -931,32 +887,10 @@
         "date": "20260927",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "2",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28121"
-      },
-      "ACVM|56380|20260927|DIAMOND": {
-        "venue": "AGS Cinemas: Villivakkam",
-        "time": "10:00 PM",
-        "date": "20260927",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "1",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "ACVM",
-        "sid": "56380"
-      },
-      "ACVM|56380|20260927|PEARL": {
-        "venue": "AGS Cinemas: Villivakkam",
-        "time": "10:00 PM",
-        "date": "20260927",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "ACVM",
-        "sid": "56380"
       },
       "ACVM|56601|20260927|DIAMOND": {
         "venue": "AGS Cinemas: Villivakkam",
@@ -997,7 +931,7 @@
         "date": "20260927",
         "cat": "ECONOMY",
         "price": "160.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K DOLBY ATMOS",
         "vcode": "VVGT",
         "sid": "31664"
@@ -1019,7 +953,7 @@
         "date": "20260927",
         "cat": "ECONOMY",
         "price": "160.00",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "VVGT",
         "sid": "31745"
@@ -1052,7 +986,7 @@
         "date": "20260927",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "1",
+        "status": "0",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACTN",
         "sid": "46220"
@@ -1228,7 +1162,7 @@
         "date": "20260927",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PABC",
         "sid": "22018"
@@ -1426,7 +1360,7 @@
         "date": "20260927",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "0",
+        "status": "1",
         "screen": "PXL",
         "vcode": "PCAN",
         "sid": "45598"
@@ -1437,7 +1371,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "PXL",
         "vcode": "PCAN",
         "sid": "45598"
