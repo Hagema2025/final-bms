@@ -1,39 +1,6 @@
 {
   "MeesayaMurukku2_20260927203759 (Tamil 2D)": {
     "shows": {
-      "RAKK|4240|20260927|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "09:30 PM",
-        "date": "20260927",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "0",
-        "screen": "SCREEN 5",
-        "vcode": "RAKK",
-        "sid": "4240"
-      },
-      "RAKK|4240|20260927|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "09:30 PM",
-        "date": "20260927",
-        "cat": "Elite",
-        "price": "150.00",
-        "status": "1",
-        "screen": "SCREEN 5",
-        "vcode": "RAKK",
-        "sid": "4240"
-      },
-      "RAKK|4240|20260927|LOUNGER": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "09:30 PM",
-        "date": "20260927",
-        "cat": "LOUNGER",
-        "price": "150.00",
-        "status": "1",
-        "screen": "SCREEN 5",
-        "vcode": "RAKK",
-        "sid": "4240"
-      },
       "RAKK|4270|20260927|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "09:50 PM",
@@ -139,7 +106,7 @@
         "date": "20260927",
         "cat": "GoldStar",
         "price": "160.00",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "RSSC",
         "sid": "123619"
@@ -293,7 +260,7 @@
         "date": "20260927",
         "cat": "FIRST CLASS",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": "4K DOLBY 7.1",
         "vcode": "MAYJ",
         "sid": "239600"
@@ -304,7 +271,7 @@
         "date": "20260927",
         "cat": "SECOND CLASS",
         "price": "57.98",
-        "status": "2",
+        "status": "1",
         "screen": "4K DOLBY 7.1",
         "vcode": "MAYJ",
         "sid": "239600"
@@ -326,7 +293,7 @@
         "date": "20260927",
         "cat": "SECOND CLASS",
         "price": "57.98",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY ATMOS",
         "vcode": "MAYJ",
         "sid": "239601"
@@ -436,7 +403,7 @@
         "date": "20260927",
         "cat": "SECOND CLASS",
         "price": "57.98",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1",
         "vcode": "MAYJ",
         "sid": "239603"
@@ -799,7 +766,7 @@
         "date": "20260927",
         "cat": "BOX-A",
         "price": "183.78",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "KSTK",
         "sid": "51153"
@@ -810,7 +777,7 @@
         "date": "20260927",
         "cat": "BOX-B",
         "price": "183.78",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "KSTK",
         "sid": "51153"
@@ -865,7 +832,7 @@
         "date": "20260927",
         "cat": "BOX-A",
         "price": "183.78",
-        "status": "2",
+        "status": "0",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51100"
@@ -1195,7 +1162,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PGRA",
         "sid": "22941"
@@ -1217,7 +1184,7 @@
         "date": "20260927",
         "cat": "SIGNATURE CLASS",
         "price": "150.00",
-        "status": "1",
+        "status": "0",
         "screen": "RGB ATMOS",
         "vcode": "GKCP",
         "sid": "4183"
@@ -1228,7 +1195,7 @@
         "date": "20260927",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PGMV",
         "sid": "22486"
@@ -1239,7 +1206,7 @@
         "date": "20260927",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PGMV",
         "sid": "22486"
@@ -1376,27 +1343,27 @@
         "vcode": "SVWT",
         "sid": "14407"
       },
-      "SBTR|12097|20260927|Elite": {
-        "venue": "SB Cinemas (Sri Bhagavathi) 4K Atmos: Poonamallee",
-        "time": "09:45 PM",
+      "GCRP|17529|20260927|DIAMOND": {
+        "venue": "Green Cinemas 4K Atmos, PLF: Padi",
+        "time": "10:30 PM",
         "date": "20260927",
-        "cat": "Elite",
-        "price": "150.00",
+        "cat": "DIAMOND",
+        "price": "130.00",
         "status": "0",
-        "screen": "DOLBY ATMOS",
-        "vcode": "SBTR",
-        "sid": "12097"
+        "screen": "PLF ENG SUBTITLE",
+        "vcode": "GCRP",
+        "sid": "17529"
       },
-      "SBTR|12097|20260927|PLATINUM": {
-        "venue": "SB Cinemas (Sri Bhagavathi) 4K Atmos: Poonamallee",
-        "time": "09:45 PM",
+      "GCRP|17529|20260927|PEARL": {
+        "venue": "Green Cinemas 4K Atmos, PLF: Padi",
+        "time": "10:30 PM",
         "date": "20260927",
-        "cat": "PLATINUM",
-        "price": "150.00",
-        "status": "0",
-        "screen": "DOLBY ATMOS",
-        "vcode": "SBTR",
-        "sid": "12097"
+        "cat": "PEARL",
+        "price": "130.00",
+        "status": "1",
+        "screen": "PLF ENG SUBTITLE",
+        "vcode": "GCRP",
+        "sid": "17529"
       },
       "MMPR|2331|20260927|EXECUTIVE": {
         "venue": "MovieMax: PR Mall, Wall Tax Road, Chennai",
@@ -1420,46 +1387,13 @@
         "vcode": "MMPR",
         "sid": "2331"
       },
-      "RDMP|28399|20260927|ELITE": {
-        "venue": "Shree Radha Movie Park 4K Dolby Atmos: Redhills",
-        "time": "10:00 PM",
-        "date": "20260927",
-        "cat": "ELITE",
-        "price": "150.00",
-        "status": "1",
-        "screen": "",
-        "vcode": "RDMP",
-        "sid": "28399"
-      },
-      "GCRP|17529|20260927|DIAMOND": {
-        "venue": "Green Cinemas 4K Atmos, PLF: Padi",
-        "time": "10:30 PM",
-        "date": "20260927",
-        "cat": "DIAMOND",
-        "price": "130.00",
-        "status": "0",
-        "screen": "PLF ENG SUBTITLE",
-        "vcode": "GCRP",
-        "sid": "17529"
-      },
-      "GCRP|17529|20260927|PEARL": {
-        "venue": "Green Cinemas 4K Atmos, PLF: Padi",
-        "time": "10:30 PM",
-        "date": "20260927",
-        "cat": "PEARL",
-        "price": "130.00",
-        "status": "1",
-        "screen": "PLF ENG SUBTITLE",
-        "vcode": "GCRP",
-        "sid": "17529"
-      },
       "AVMT|988|20260927|BOX 1": {
         "venue": "AVM Cinemas: Uthukkottai",
         "time": "09:45 PM",
         "date": "20260927",
         "cat": "BOX 1",
         "price": "150.00",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "AVMT",
         "sid": "988"
@@ -1470,7 +1404,7 @@
         "date": "20260927",
         "cat": "BOX 2",
         "price": "150.00",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "AVMT",
         "sid": "988"
@@ -1496,17 +1430,6 @@
         "screen": "",
         "vcode": "MMKC",
         "sid": "8450"
-      },
-      "LKOP|12352|20260927|FIRST CLASS": {
-        "venue": "Lathaa Cinemas A/C Atmos 2K 3D: Chengalpattu",
-        "time": "09:30 PM",
-        "date": "20260927",
-        "cat": "FIRST CLASS",
-        "price": "130.00",
-        "status": "0",
-        "screen": "DOLBY ATMOS",
-        "vcode": "LKOP",
-        "sid": "12352"
       },
       "PVES|34429|20260927|ELITE": {
         "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
@@ -1580,7 +1503,7 @@
         "date": "20260927",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": "PXL",
         "vcode": "PCAN",
         "sid": "45598"
@@ -1683,17 +1606,6 @@
         "screen": "",
         "vcode": "VECT",
         "sid": "8406"
-      },
-      "VRCP|3828|20260927|EXECUTIVE": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "10:00 PM",
-        "date": "20260927",
-        "cat": "EXECUTIVE",
-        "price": "150.00",
-        "status": "2",
-        "screen": "",
-        "vcode": "VRCP",
-        "sid": "3828"
       }
     },
     "dates": {
