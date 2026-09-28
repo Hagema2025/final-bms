@@ -1492,7 +1492,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38859"
@@ -2310,50 +2310,6 @@
         "screen": "",
         "vcode": "FMCN",
         "sid": "105271"
-      },
-      "PVSR|28122|20260928|ELITE": {
-        "venue": "PVR: Sathyam, Royapettah",
-        "time": "10:20 AM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PVSR",
-        "sid": "28122"
-      },
-      "PVSR|28122|20260928|PREMIUM": {
-        "venue": "PVR: Sathyam, Royapettah",
-        "time": "10:20 AM",
-        "date": "20260928",
-        "cat": "PREMIUM",
-        "price": "173.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "PVSR",
-        "sid": "28122"
-      },
-      "PVSR|28122|20260928|ECONOMY": {
-        "venue": "PVR: Sathyam, Royapettah",
-        "time": "10:20 AM",
-        "date": "20260928",
-        "cat": "ECONOMY",
-        "price": "163.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "PVSR",
-        "sid": "28122"
-      },
-      "PVSR|28122|20260928|BUDGET": {
-        "venue": "PVR: Sathyam, Royapettah",
-        "time": "10:20 AM",
-        "date": "20260928",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "3",
-        "screen": "",
-        "vcode": "PVSR",
-        "sid": "28122"
       },
       "PVSR|28123|20260928|ELITE": {
         "venue": "PVR: Sathyam, Royapettah",
@@ -3972,28 +3928,6 @@
         "vcode": "SUTC",
         "sid": "20493"
       },
-      "PABC|22043|20260928|PRIME": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "10:20 AM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "2",
-        "screen": "",
-        "vcode": "PABC",
-        "sid": "22043"
-      },
-      "PABC|22043|20260928|CLASSIC": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "10:20 AM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PABC",
-        "sid": "22043"
-      },
       "PABC|22044|20260928|PRIME": {
         "venue": "PVR: Aerohub, Chennai",
         "time": "01:20 PM",
@@ -4176,7 +4110,7 @@
         "date": "20260928",
         "cat": "Elite",
         "price": "150.00",
-        "status": "2",
+        "status": "3",
         "screen": "DOLBY ATMOS",
         "vcode": "SBTR",
         "sid": "12102"
@@ -5078,7 +5012,7 @@
         "date": "20260928",
         "cat": "Box",
         "price": "180.00",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -5089,7 +5023,7 @@
         "date": "20260928",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -5100,7 +5034,7 @@
         "date": "20260928",
         "cat": "First Class",
         "price": "120.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -5111,32 +5045,10 @@
         "date": "20260928",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
-      },
-      "PCAN|45780|20260928|PRIME": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "10:25 AM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "2",
-        "screen": "",
-        "vcode": "PCAN",
-        "sid": "45780"
-      },
-      "PCAN|45780|20260928|CLASSIC": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "10:25 AM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PCAN",
-        "sid": "45780"
       },
       "PCAN|45684|20260928|PRIME": {
         "venue": "PVR: VR Chennai, Anna Nagar",
