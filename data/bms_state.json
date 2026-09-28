@@ -194,7 +194,7 @@
         "date": "20260928",
         "cat": "SuperStar",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K/ATMOS",
         "vcode": "RSSC",
         "sid": "123594"
@@ -205,7 +205,7 @@
         "date": "20260928",
         "cat": "PLATINUM",
         "price": "180.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K/ATMOS",
         "vcode": "RSSC",
         "sid": "123594"
@@ -238,7 +238,7 @@
         "date": "20260928",
         "cat": "PLATINUM",
         "price": "180.00",
-        "status": "2",
+        "status": "3",
         "screen": "RGB ATMOS",
         "vcode": "RSSC",
         "sid": "123589"
@@ -403,7 +403,7 @@
         "date": "20260928",
         "cat": "BOX B",
         "price": "180.00",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "KVCS",
         "sid": "9365"
@@ -425,7 +425,7 @@
         "date": "20260928",
         "cat": "PREMIUM",
         "price": "60.00",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "KVCS",
         "sid": "9365"
@@ -678,7 +678,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "PVHR",
         "sid": "42856"
@@ -700,7 +700,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "PVHR",
         "sid": "42813"
@@ -722,7 +722,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "PVHR",
         "sid": "42903"
@@ -777,7 +777,7 @@
         "date": "20260928",
         "cat": "SILVER",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "FMCN",
         "sid": "105285"
@@ -1272,7 +1272,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "1",
+        "status": "2",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38843"
@@ -1338,7 +1338,7 @@
         "date": "20260928",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "2",
+        "status": "3",
         "screen": "4K DOLBY ATMOS",
         "vcode": "ACVM",
         "sid": "56383"
@@ -1734,7 +1734,7 @@
         "date": "20260928",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PGMV",
         "sid": "22541"
@@ -2090,17 +2090,6 @@
         "screen": "",
         "vcode": "VECT",
         "sid": "8415"
-      },
-      "GKGM|1466|20260928|ELITE": {
-        "venue": "Gayathiri Cinemas A/C Dolby Atmos: Maduranthakam",
-        "time": "06:30 PM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "100.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "GKGM",
-        "sid": "1466"
       },
       "GKGM|1467|20260928|ELITE": {
         "venue": "Gayathiri Cinemas A/C Dolby Atmos: Maduranthakam",
@@ -2669,7 +2658,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "4K LASER DOLBY 7.1 ",
         "vcode": "MMPR",
         "sid": "2344"
