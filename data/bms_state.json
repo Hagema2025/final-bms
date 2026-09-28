@@ -227,7 +227,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY ATMOS",
         "vcode": "TVHP",
         "sid": "25445"
@@ -694,28 +694,6 @@
         "vcode": "KVCS",
         "sid": "9365"
       },
-      "RRGB|1283|20260928|PREMIUM CIRCLE": {
-        "venue": "Rakki RGB Laser 4K: Thiruvallur",
-        "time": "11:45 AM",
-        "date": "20260928",
-        "cat": "PREMIUM CIRCLE",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 1",
-        "vcode": "RRGB",
-        "sid": "1283"
-      },
-      "RRGB|1283|20260928|EXECUTIVE CLASS": {
-        "venue": "Rakki RGB Laser 4K: Thiruvallur",
-        "time": "11:45 AM",
-        "date": "20260928",
-        "cat": "EXECUTIVE CLASS",
-        "price": "130.00",
-        "status": "3",
-        "screen": "SCREEN 1",
-        "vcode": "RRGB",
-        "sid": "1283"
-      },
       "RRGB|1284|20260928|PREMIUM CIRCLE": {
         "venue": "Rakki RGB Laser 4K: Thiruvallur",
         "time": "03:15 PM",
@@ -865,7 +843,7 @@
         "date": "20260928",
         "cat": "EXECUTIVE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13608"
@@ -964,7 +942,7 @@
         "date": "20260928",
         "cat": "FIRST CLASS",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1",
         "vcode": "MAYJ",
         "sid": "239487"
@@ -1184,7 +1162,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "0",
+        "status": "2",
         "screen": "",
         "vcode": "PVHR",
         "sid": "42854"
@@ -2031,7 +2009,7 @@
         "date": "20260928",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "3",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51125"
@@ -2196,7 +2174,7 @@
         "date": "20260928",
         "cat": "PREMIERE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "FMCN",
         "sid": "105315"
@@ -2251,7 +2229,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "2",
+        "status": "3",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28123"
@@ -2889,7 +2867,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PVES",
         "sid": "34489"
@@ -3142,7 +3120,7 @@
         "date": "20260928",
         "cat": "SIGNATURE CLASS",
         "price": "150.00",
-        "status": "3",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "GKCP",
         "sid": "4202"
@@ -3366,28 +3344,6 @@
         "screen": "",
         "vcode": "PGRA",
         "sid": "22999"
-      },
-      "VVTN|21005|20260928|ELITE": {
-        "venue": "VETRIVEL RGB DOLBY:NANGANALLUR (NEWLY RENOVATED)",
-        "time": "11:45 AM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "190.00",
-        "status": "2",
-        "screen": "DOLBY ATMOS/4K",
-        "vcode": "VVTN",
-        "sid": "21005"
-      },
-      "VVTN|21005|20260928|PREMIUM": {
-        "venue": "VETRIVEL RGB DOLBY:NANGANALLUR (NEWLY RENOVATED)",
-        "time": "11:45 AM",
-        "date": "20260928",
-        "cat": "PREMIUM",
-        "price": "150.00",
-        "status": "3",
-        "screen": "DOLBY ATMOS/4K",
-        "vcode": "VVTN",
-        "sid": "21005"
       },
       "VVTN|21006|20260928|ELITE": {
         "venue": "VETRIVEL RGB DOLBY:NANGANALLUR (NEWLY RENOVATED)",
@@ -4555,17 +4511,6 @@
         "vcode": "GRTC",
         "sid": "9951"
       },
-      "MMKC|8451|20260928|FIRST CLASS": {
-        "venue": "Medavakkam Kumaran Cinemas RGB LASER Dolby Atmos",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "MMKC",
-        "sid": "8451"
-      },
       "MMKC|8454|20260928|FIRST CLASS": {
         "venue": "Medavakkam Kumaran Cinemas RGB LASER Dolby Atmos",
         "time": "10:00 PM",
@@ -4631,28 +4576,6 @@
         "screen": "",
         "vcode": "VRCP",
         "sid": "3832"
-      },
-      "REMC|6735|20260928|FIRST CLASS": {
-        "venue": "Remy Cinemas A/C DTS 2K 3D Laser: Avadi",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "130.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "REMC",
-        "sid": "6735"
-      },
-      "REMC|6735|20260928|SECOND CLASS": {
-        "venue": "Remy Cinemas A/C DTS 2K 3D Laser: Avadi",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "SECOND CLASS",
-        "price": "130.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "REMC",
-        "sid": "6735"
       },
       "REMC|6737|20260928|FIRST CLASS": {
         "venue": "Remy Cinemas A/C DTS 2K 3D Laser: Avadi",
@@ -4792,7 +4715,7 @@
         "date": "20260928",
         "cat": "Box",
         "price": "180.00",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4971"
@@ -4803,7 +4726,7 @@
         "date": "20260928",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4971"
@@ -4814,7 +4737,7 @@
         "date": "20260928",
         "cat": "First Class",
         "price": "120.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4971"
@@ -4825,7 +4748,7 @@
         "date": "20260928",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4971"
@@ -5127,17 +5050,6 @@
         "vcode": "AMTT",
         "sid": "5006"
       },
-      "MTLM|19505|20260928|PRIME": {
-        "venue": "Mani Talkies 2K RGB Laser ATMOS: Minjur",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "150.00",
-        "status": "2",
-        "screen": "DOLBY ATMOS",
-        "vcode": "MTLM",
-        "sid": "19505"
-      },
       "MTLM|19506|20260928|PRIME": {
         "venue": "Mani Talkies 2K RGB Laser ATMOS: Minjur",
         "time": "03:00 PM",
@@ -5170,61 +5082,6 @@
         "screen": "DOLBY ATMOS",
         "vcode": "MTLM",
         "sid": "19508"
-      },
-      "MLMT|8609|20260928|GOLD": {
-        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "GOLD",
-        "price": "190.00",
-        "status": "1",
-        "screen": "4K M-MAX(PLF)",
-        "vcode": "MLMT",
-        "sid": "8609"
-      },
-      "MLMT|8609|20260928|PREMIUM": {
-        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "PREMIUM",
-        "price": "150.00",
-        "status": "2",
-        "screen": "4K M-MAX(PLF)",
-        "vcode": "MLMT",
-        "sid": "8609"
-      },
-      "MLMT|8609|20260928|EXECUTIVE": {
-        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "130.00",
-        "status": "2",
-        "screen": "4K M-MAX(PLF)",
-        "vcode": "MLMT",
-        "sid": "8609"
-      },
-      "MLMT|8609|20260928|SILVER": {
-        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "SILVER",
-        "price": "130.00",
-        "status": "3",
-        "screen": "4K M-MAX(PLF)",
-        "vcode": "MLMT",
-        "sid": "8609"
-      },
-      "MLMT|8609|20260928|LOUNGER": {
-        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "LOUNGER",
-        "price": "190.00",
-        "status": "3",
-        "screen": "4K M-MAX(PLF)",
-        "vcode": "MLMT",
-        "sid": "8609"
       },
       "MLMT|8610|20260928|GOLD": {
         "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
