@@ -1613,7 +1613,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38861"
@@ -1635,7 +1635,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38840"
@@ -2075,7 +2075,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVHC",
         "sid": "32625"
@@ -2251,7 +2251,7 @@
         "date": "20260928",
         "cat": "Economy",
         "price": "54.00",
-        "status": "2",
+        "status": "3",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51121"
@@ -5254,7 +5254,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "2",
         "screen": "4K LASER DOLBY 7.1 ",
         "vcode": "MMPR",
         "sid": "2341"
@@ -5622,72 +5622,6 @@
         "vcode": "MMKC",
         "sid": "8454"
       },
-      "VRCP|3829|20260928|EXECUTIVE": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VRCP",
-        "sid": "3829"
-      },
-      "VRCP|3830|20260928|PREMIUM": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "02:45 PM",
-        "date": "20260928",
-        "cat": "PREMIUM",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VRCP",
-        "sid": "3830"
-      },
-      "VRCP|3830|20260928|EXECUTIVE": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "02:45 PM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VRCP",
-        "sid": "3830"
-      },
-      "VRCP|3831|20260928|PREMIUM": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "06:30 PM",
-        "date": "20260928",
-        "cat": "PREMIUM",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VRCP",
-        "sid": "3831"
-      },
-      "VRCP|3831|20260928|EXECUTIVE": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "06:30 PM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VRCP",
-        "sid": "3831"
-      },
-      "VRCP|3832|20260928|EXECUTIVE": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "10:00 PM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VRCP",
-        "sid": "3832"
-      },
       "REMC|6735|20260928|FIRST CLASS": {
         "venue": "Remy Cinemas A/C DTS 2K 3D Laser: Avadi",
         "time": "11:30 AM",
@@ -5804,7 +5738,7 @@
         "date": "20260928",
         "cat": "Box",
         "price": "180.00",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4934"
@@ -5815,7 +5749,7 @@
         "date": "20260928",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4934"
@@ -5826,7 +5760,7 @@
         "date": "20260928",
         "cat": "First Class",
         "price": "120.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4934"
@@ -5837,7 +5771,7 @@
         "date": "20260928",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4934"
@@ -5936,7 +5870,7 @@
         "date": "20260928",
         "cat": "Box",
         "price": "180.00",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -5947,7 +5881,7 @@
         "date": "20260928",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "1",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -5958,7 +5892,7 @@
         "date": "20260928",
         "cat": "First Class",
         "price": "120.00",
-        "status": "1",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -5969,7 +5903,7 @@
         "date": "20260928",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
