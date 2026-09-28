@@ -788,7 +788,7 @@
         "date": "20260928",
         "cat": "NORMAL",
         "price": "54.35",
-        "status": "0",
+        "status": "2",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13611"
@@ -1365,28 +1365,6 @@
         "vcode": "PVHR",
         "sid": "42866"
       },
-      "PVPZ|38845|20260928|ELITE": {
-        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
-        "time": "10:45 AM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVPZ",
-        "sid": "38845"
-      },
-      "PVPZ|38845|20260928|BUDGET": {
-        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
-        "time": "10:45 AM",
-        "date": "20260928",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVPZ",
-        "sid": "38845"
-      },
       "PVPZ|38857|20260928|ELITE": {
         "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
         "time": "01:30 PM",
@@ -1496,28 +1474,6 @@
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38860"
-      },
-      "ACON|47654|20260928|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "11:15 AM",
-        "date": "20260928",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "3",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "ACON",
-        "sid": "47654"
-      },
-      "ACON|47654|20260928|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "11:15 AM",
-        "date": "20260928",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "ACON",
-        "sid": "47654"
       },
       "ACON|47655|20260928|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
@@ -1976,7 +1932,7 @@
         "date": "20260928",
         "cat": "Economy",
         "price": "54.00",
-        "status": "1",
+        "status": "0",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51123"
@@ -3505,7 +3461,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "INPR",
         "sid": "66653"
@@ -3527,7 +3483,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "1",
+        "status": "2",
         "screen": "",
         "vcode": "INPR",
         "sid": "66654"
@@ -4038,28 +3994,6 @@
         "vcode": "PSKL",
         "sid": "23679"
       },
-      "SBTR|12102|20260928|Elite": {
-        "venue": "SB Cinemas (Sri Bhagavathi) 4K Atmos: Poonamallee",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "Elite",
-        "price": "150.00",
-        "status": "2",
-        "screen": "DOLBY ATMOS",
-        "vcode": "SBTR",
-        "sid": "12102"
-      },
-      "SBTR|12102|20260928|PLATINUM": {
-        "venue": "SB Cinemas (Sri Bhagavathi) 4K Atmos: Poonamallee",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "PLATINUM",
-        "price": "150.00",
-        "status": "3",
-        "screen": "DOLBY ATMOS",
-        "vcode": "SBTR",
-        "sid": "12102"
-      },
       "SBTR|12103|20260928|Elite": {
         "venue": "SB Cinemas (Sri Bhagavathi) 4K Atmos: Poonamallee",
         "time": "03:00 PM",
@@ -4385,7 +4319,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "2",
+        "status": "3",
         "screen": "4K LASER DOLBY 7.1 ",
         "vcode": "MMPR",
         "sid": "2344"
@@ -4466,17 +4400,6 @@
         "screen": "",
         "vcode": "KMRM",
         "sid": "13165"
-      },
-      "SVWT|14408|20260928|FIRSTCLASS": {
-        "venue": "Vigneshwara Theatre RGB Laser: Poonamallee",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "FIRSTCLASS",
-        "price": "130.00",
-        "status": "3",
-        "screen": "RGB/ATMOS",
-        "vcode": "SVWT",
-        "sid": "14408"
       },
       "SVWT|14410|20260928|FIRSTCLASS": {
         "venue": "Vigneshwara Theatre RGB Laser: Poonamallee",
@@ -4913,7 +4836,7 @@
         "date": "20260928",
         "cat": "Box",
         "price": "180.00",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -4924,7 +4847,7 @@
         "date": "20260928",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "1",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -4935,7 +4858,7 @@
         "date": "20260928",
         "cat": "First Class",
         "price": "120.00",
-        "status": "1",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -4946,7 +4869,7 @@
         "date": "20260928",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -5034,7 +4957,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "PXL",
         "vcode": "PCAN",
         "sid": "45682"
@@ -5232,7 +5155,7 @@
         "date": "20260928",
         "cat": "PRIME",
         "price": "150.00",
-        "status": "3",
+        "status": "2",
         "screen": "DOLBY ATMOS",
         "vcode": "MTLM",
         "sid": "19505"
@@ -5298,7 +5221,7 @@
         "date": "20260928",
         "cat": "EXECUTIVE",
         "price": "130.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K M-MAX(PLF)",
         "vcode": "MLMT",
         "sid": "8609"
