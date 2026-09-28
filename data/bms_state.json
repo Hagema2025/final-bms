@@ -502,7 +502,7 @@
         "date": "20260928",
         "cat": "NORMAL",
         "price": "54.35",
-        "status": "2",
+        "status": "0",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13597"
@@ -715,28 +715,6 @@
         "screen": "4K DOLBY 7.1",
         "vcode": "MAYJ",
         "sid": "239491"
-      },
-      "AGSM|56831|20260928|DIAMOND": {
-        "venue": "AGS Cinemas: Maduravoyal",
-        "time": "03:45 PM",
-        "date": "20260928",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "2",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "AGSM",
-        "sid": "56831"
-      },
-      "AGSM|56831|20260928|PEARL": {
-        "venue": "AGS Cinemas: Maduravoyal",
-        "time": "03:45 PM",
-        "date": "20260928",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "AGSM",
-        "sid": "56831"
       },
       "AGSM|56832|20260928|DIAMOND": {
         "venue": "AGS Cinemas: Maduravoyal",
@@ -1376,61 +1354,6 @@
         "vcode": "PVHC",
         "sid": "32629"
       },
-      "KSTK|51123|20260928|BOX-A": {
-        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
-        "time": "03:30 PM",
-        "date": "20260928",
-        "cat": "BOX-A",
-        "price": "183.78",
-        "status": "0",
-        "screen": "RGB ATMOS",
-        "vcode": "KSTK",
-        "sid": "51123"
-      },
-      "KSTK|51123|20260928|Super Premium": {
-        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
-        "time": "03:30 PM",
-        "date": "20260928",
-        "cat": "Super Premium",
-        "price": "183.78",
-        "status": "0",
-        "screen": "RGB ATMOS",
-        "vcode": "KSTK",
-        "sid": "51123"
-      },
-      "KSTK|51123|20260928|Premium": {
-        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
-        "time": "03:30 PM",
-        "date": "20260928",
-        "cat": "Premium",
-        "price": "183.78",
-        "status": "0",
-        "screen": "RGB ATMOS",
-        "vcode": "KSTK",
-        "sid": "51123"
-      },
-      "KSTK|51123|20260928|Elite": {
-        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
-        "time": "03:30 PM",
-        "date": "20260928",
-        "cat": "Elite",
-        "price": "130.00",
-        "status": "0",
-        "screen": "RGB ATMOS",
-        "vcode": "KSTK",
-        "sid": "51123"
-      },
-      "KSTK|51123|20260928|Economy": {
-        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
-        "time": "03:30 PM",
-        "date": "20260928",
-        "cat": "Economy",
-        "price": "54.00",
-        "status": "0",
-        "screen": "RGB ATMOS",
-        "vcode": "KSTK",
-        "sid": "51123"
-      },
       "KSTK|51155|20260928|Super Premium": {
         "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
         "time": "05:00 PM",
@@ -1459,7 +1382,7 @@
         "date": "20260928",
         "cat": "Elite",
         "price": "130.00",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "KSTK",
         "sid": "51155"
@@ -1562,6 +1485,50 @@
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51125"
+      },
+      "KSTK|51159|20260928|Super Premium": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "11:20 PM",
+        "date": "20260928",
+        "cat": "Super Premium",
+        "price": "183.78",
+        "status": "3",
+        "screen": "",
+        "vcode": "KSTK",
+        "sid": "51159"
+      },
+      "KSTK|51159|20260928|Premium": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "11:20 PM",
+        "date": "20260928",
+        "cat": "Premium",
+        "price": "183.78",
+        "status": "3",
+        "screen": "",
+        "vcode": "KSTK",
+        "sid": "51159"
+      },
+      "KSTK|51159|20260928|Elite": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "11:20 PM",
+        "date": "20260928",
+        "cat": "Elite",
+        "price": "130.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "KSTK",
+        "sid": "51159"
+      },
+      "KSTK|51159|20260928|Economy": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "11:20 PM",
+        "date": "20260928",
+        "cat": "Economy",
+        "price": "54.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "KSTK",
+        "sid": "51159"
       },
       "KSTK|51126|20260928|Super Premium": {
         "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
@@ -1695,28 +1662,6 @@
         "vcode": "PVPZ",
         "sid": "38860"
       },
-      "ACVM|56382|20260928|DIAMOND": {
-        "venue": "AGS Cinemas: Villivakkam",
-        "time": "03:45 PM",
-        "date": "20260928",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "3",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "ACVM",
-        "sid": "56382"
-      },
-      "ACVM|56382|20260928|PEARL": {
-        "venue": "AGS Cinemas: Villivakkam",
-        "time": "03:45 PM",
-        "date": "20260928",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "ACVM",
-        "sid": "56382"
-      },
       "ACVM|56383|20260928|DIAMOND": {
         "venue": "AGS Cinemas: Villivakkam",
         "time": "06:50 PM",
@@ -1745,7 +1690,7 @@
         "date": "20260928",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACVM",
         "sid": "56577"
@@ -2130,7 +2075,7 @@
         "date": "20260928",
         "cat": "SIGNATURE CLASS",
         "price": "150.00",
-        "status": "2",
+        "status": "1",
         "screen": "RGB ATMOS",
         "vcode": "GKCP",
         "sid": "4201"
@@ -2284,7 +2229,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PGMV",
         "sid": "22539"
@@ -2306,7 +2251,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "PGMV",
         "sid": "22567"
@@ -2361,7 +2306,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "DOLBY ATMOS/4K",
         "vcode": "VVTN",
         "sid": "21007"
@@ -2482,7 +2427,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PVES",
         "sid": "34490"
@@ -2559,7 +2504,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "1",
+        "status": "2",
         "screen": "",
         "vcode": "PBRM",
         "sid": "25220"
@@ -2779,7 +2724,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "INPR",
         "sid": "66654"
@@ -2977,7 +2922,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "PSKL",
         "sid": "23677"
@@ -3373,7 +3318,7 @@
         "date": "20260928",
         "cat": "EXECUTIVE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "4K LASER DOLBY 7.1 ",
         "vcode": "MMPR",
         "sid": "2342"
@@ -3703,7 +3648,7 @@
         "date": "20260928",
         "cat": "GOLD",
         "price": "190.00",
-        "status": "2",
+        "status": "0",
         "screen": "4K M-MAX(PLF)",
         "vcode": "MLMT",
         "sid": "8611"
