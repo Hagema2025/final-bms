@@ -1422,7 +1422,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                 else:
                     time_display = f"<b>{time_display}</b>"
 
-                lines.append(f"\n🕒{time_display}{screen_str}")
+                lines.append(f"🕒{time_display}{screen_str}")
 
                 # --- PULL ALL CATEGORIES FOR THIS SHOWTIME FROM FULL SNAPSHOT ---
                 full_categories = []
@@ -1487,16 +1487,16 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                             detail_line = f"<b>{price}</b> {status_part}"
                         else:
                             cat_icon = ""
-                            detail_line = f"<b>{price}</b> {curr_emoji}"
+                            detail_line = f"<b>{price}</b> [{curr_st}{curr_emoji}]"
                     else:
                         price = clean_price(cat_price)
                         _, curr_emoji = resolve_status_info(cat_status)
                         cat_icon = ""
-                        detail_line = f"<b>{price}</b> {curr_emoji}"
+                        detail_line = f"<b>{price}</b> [{curr_st}{curr_emoji}]"
 
                     # Append Spaced Block Lines with the icon right next to the category name
                     lines.append(f" └🎟️<b>{safe_cat_name}</b> {cat_icon}")
-                    lines.append(f"   {detail_line}")
+                    lines.append(f"   <code>{detail_line}</code>")
             
             lines.append("") # Visual gap between venues
 
