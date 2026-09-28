@@ -1,1 +1,14 @@
-{}
+{
+  "Dorothy_20260929002846 (Tamil 2D)": {
+    "shows": {},
+    "dates": {
+      "20260929": "BOOKABLE",
+      "20260930": "AVAILABLE",
+      "20261001": "AVAILABLE",
+      "20261002": "NOT_OPEN",
+      "20261003": "NOT_OPEN",
+      "20261004": "NOT_OPEN",
+      "20261005": "NOT_OPEN"
+    }
+  }
+}
