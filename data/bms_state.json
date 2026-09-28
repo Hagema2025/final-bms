@@ -282,7 +282,7 @@
         "date": "20260928",
         "cat": "PLATINUM",
         "price": "180.00",
-        "status": "3",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "RSSC",
         "sid": "123586"
@@ -2053,7 +2053,7 @@
         "date": "20260928",
         "cat": "Elite",
         "price": "130.00",
-        "status": "2",
+        "status": "3",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51125"
@@ -2251,7 +2251,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28123"
@@ -2691,7 +2691,7 @@
         "date": "20260928",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PGMV",
         "sid": "22538"
@@ -2724,7 +2724,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PGMV",
         "sid": "22539"
@@ -3747,7 +3747,7 @@
         "date": "20260928",
         "cat": "FIRST CLASS",
         "price": "130.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K/LASER",
         "vcode": "SUTC",
         "sid": "20490"
@@ -4836,7 +4836,7 @@
         "date": "20260928",
         "cat": "Box",
         "price": "180.00",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -4847,7 +4847,7 @@
         "date": "20260928",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -4858,7 +4858,7 @@
         "date": "20260928",
         "cat": "First Class",
         "price": "120.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -4869,7 +4869,7 @@
         "date": "20260928",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -4880,7 +4880,7 @@
         "date": "20260928",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PCAN",
         "sid": "45684"
@@ -5104,28 +5104,6 @@
         "screen": "",
         "vcode": "AVMT",
         "sid": "992"
-      },
-      "AMTT|5004|20260928|PREMIUM": {
-        "venue": "Arul Muruga Theatre 4K: Thiruporur",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "PREMIUM",
-        "price": "130.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "AMTT",
-        "sid": "5004"
-      },
-      "AMTT|5004|20260928|PRIME": {
-        "venue": "Arul Muruga Theatre 4K: Thiruporur",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "130.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "AMTT",
-        "sid": "5004"
       },
       "AMTT|5006|20260928|PREMIUM": {
         "venue": "Arul Muruga Theatre 4K: Thiruporur",
