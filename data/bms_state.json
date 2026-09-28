@@ -1189,28 +1189,6 @@
         "vcode": "AGSM",
         "sid": "56833"
       },
-      "PVHR|42816|20260928|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "10:10 AM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "42816"
-      },
-      "PVHR|42816|20260928|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "10:10 AM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "42816"
-      },
       "PVHR|42854|20260928|PRIME": {
         "venue": "PVR: Heritage RSL ECR, Chennai",
         "time": "12:00 PM",
@@ -1338,7 +1316,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVHR",
         "sid": "42813"
@@ -1536,7 +1514,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38860"
@@ -1976,7 +1954,7 @@
         "date": "20260928",
         "cat": "Economy",
         "price": "54.00",
-        "status": "1",
+        "status": "0",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51122"
@@ -2020,7 +1998,7 @@
         "date": "20260928",
         "cat": "Economy",
         "price": "54.00",
-        "status": "2",
+        "status": "1",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51123"
@@ -3670,7 +3648,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "INPR",
         "sid": "66655"
@@ -3872,17 +3850,6 @@
         "screen": "",
         "vcode": "VECT",
         "sid": "8415"
-      },
-      "GKGM|1464|20260928|ELITE": {
-        "venue": "Gayathiri Cinemas A/C Dolby Atmos: Maduranthakam",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "100.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "GKGM",
-        "sid": "1464"
       },
       "GKGM|1465|20260928|ELITE": {
         "venue": "Gayathiri Cinemas A/C Dolby Atmos: Maduranthakam",
@@ -4209,7 +4176,7 @@
         "date": "20260928",
         "cat": "Elite",
         "price": "150.00",
-        "status": "3",
+        "status": "2",
         "screen": "DOLBY ATMOS",
         "vcode": "SBTR",
         "sid": "12102"
@@ -4659,7 +4626,7 @@
         "time": "11:30 AM",
         "date": "20260928",
         "cat": "FIRSTCLASS",
-        "price": "150.00",
+        "price": "130.00",
         "status": "3",
         "screen": "RGB/ATMOS",
         "vcode": "SVWT",
@@ -4670,7 +4637,7 @@
         "time": "06:30 PM",
         "date": "20260928",
         "cat": "FIRSTCLASS",
-        "price": "150.00",
+        "price": "130.00",
         "status": "3",
         "screen": "RGB/ATMOS",
         "vcode": "SVWT",
@@ -4681,7 +4648,7 @@
         "time": "10:00 PM",
         "date": "20260928",
         "cat": "FIRSTCLASS",
-        "price": "150.00",
+        "price": "130.00",
         "status": "3",
         "screen": "RGB/ATMOS",
         "vcode": "SVWT",
@@ -5067,7 +5034,7 @@
         "date": "20260928",
         "cat": "Box",
         "price": "180.00",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4971"
@@ -5078,7 +5045,7 @@
         "date": "20260928",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4971"
@@ -5089,7 +5056,7 @@
         "date": "20260928",
         "cat": "First Class",
         "price": "120.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4971"
@@ -5100,7 +5067,7 @@
         "date": "20260928",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4971"
@@ -5111,7 +5078,7 @@
         "date": "20260928",
         "cat": "Box",
         "price": "180.00",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -5122,7 +5089,7 @@
         "date": "20260928",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "1",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -5133,7 +5100,7 @@
         "date": "20260928",
         "cat": "First Class",
         "price": "120.00",
-        "status": "1",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -5144,7 +5111,7 @@
         "date": "20260928",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
