@@ -183,7 +183,7 @@
         "date": "20260928",
         "cat": "GoldStar",
         "price": "160.00",
-        "status": "3",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "RSSC",
         "sid": "123588"
@@ -381,7 +381,7 @@
         "date": "20260928",
         "cat": "PREMIUM",
         "price": "60.00",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "KVCS",
         "sid": "9379"
@@ -540,17 +540,6 @@
         "vcode": "MCXF",
         "sid": "650"
       },
-      "MAYJ|239489|20260928|FIRST CLASS": {
-        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
-        "time": "06:00 PM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "183.80",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "MAYJ",
-        "sid": "239489"
-      },
       "MAYJ|239559|20260928|FIRST CLASS": {
         "venue": "MAYAJAAL Multiplex: ECR, Chennai",
         "time": "07:30 PM",
@@ -634,7 +623,7 @@
         "date": "20260928",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "1",
+        "status": "0",
         "screen": "4K DOLBY 7.1",
         "vcode": "AGSM",
         "sid": "56832"
@@ -678,7 +667,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PVHR",
         "sid": "42856"
@@ -1349,7 +1338,7 @@
         "date": "20260928",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "0",
+        "status": "2",
         "screen": "4K DOLBY ATMOS",
         "vcode": "ACVM",
         "sid": "56383"
@@ -1657,7 +1646,7 @@
         "date": "20260928",
         "cat": "SIGNATURE CLASS",
         "price": "150.00",
-        "status": "3",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "GKCP",
         "sid": "4203"
@@ -1910,7 +1899,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PVES",
         "sid": "34491"
@@ -2174,7 +2163,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "1",
+        "status": "2",
         "screen": "",
         "vcode": "INPR",
         "sid": "66668"
@@ -2662,50 +2651,6 @@
         "screen": "4K LASER DOLBY 7.1 ",
         "vcode": "MMPR",
         "sid": "2344"
-      },
-      "GRTC|9950|20260928|COUPLE": {
-        "venue": "GanapathyRam Theatre 4K Dolby 7.1: Chennai",
-        "time": "06:30 PM",
-        "date": "20260928",
-        "cat": "COUPLE",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "GRTC",
-        "sid": "9950"
-      },
-      "GRTC|9950|20260928|FAMILY CLASS": {
-        "venue": "GanapathyRam Theatre 4K Dolby 7.1: Chennai",
-        "time": "06:30 PM",
-        "date": "20260928",
-        "cat": "FAMILY CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "GRTC",
-        "sid": "9950"
-      },
-      "GRTC|9950|20260928|BALCONY": {
-        "venue": "GanapathyRam Theatre 4K Dolby 7.1: Chennai",
-        "time": "06:30 PM",
-        "date": "20260928",
-        "cat": "BALCONY",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "GRTC",
-        "sid": "9950"
-      },
-      "GRTC|9950|20260928|FIRST CLASS": {
-        "venue": "GanapathyRam Theatre 4K Dolby 7.1: Chennai",
-        "time": "06:30 PM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "120.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "GRTC",
-        "sid": "9950"
       },
       "GRTC|9951|20260928|COUPLE": {
         "venue": "GanapathyRam Theatre 4K Dolby 7.1: Chennai",
