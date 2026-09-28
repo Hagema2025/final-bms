@@ -7,7 +7,7 @@
         "date": "20260928",
         "cat": "Premium",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": "SC 3 DOLBY ATMOS",
         "vcode": "RAKK",
         "sid": "4247"
@@ -172,7 +172,7 @@
         "date": "20260928",
         "cat": "PLATINUM",
         "price": "180.00",
-        "status": "2",
+        "status": "1",
         "screen": "RGB ATMOS",
         "vcode": "RSSC",
         "sid": "123588"
@@ -238,7 +238,7 @@
         "date": "20260928",
         "cat": "PLATINUM",
         "price": "180.00",
-        "status": "3",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "RSSC",
         "sid": "123589"
@@ -634,7 +634,7 @@
         "date": "20260928",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K DOLBY 7.1",
         "vcode": "AGSM",
         "sid": "56832"
@@ -1140,7 +1140,7 @@
         "date": "20260928",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "1",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51125"
@@ -1525,7 +1525,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "2",
+        "status": "3",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28135"
@@ -1580,7 +1580,7 @@
         "date": "20260928",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PGRA",
         "sid": "22998"
@@ -1800,7 +1800,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "160.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K  ATMOS ENABLED",
         "vcode": "VVGT",
         "sid": "31678"
@@ -2042,7 +2042,7 @@
         "date": "20260928",
         "cat": "FIRST CLASS",
         "price": "130.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K/LASER",
         "vcode": "SUTC",
         "sid": "20492"
@@ -2207,7 +2207,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "INPR",
         "sid": "66656"
@@ -2669,7 +2669,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "4K LASER DOLBY 7.1 ",
         "vcode": "MMPR",
         "sid": "2344"
@@ -2944,7 +2944,7 @@
         "date": "20260928",
         "cat": "EXECUTIVE",
         "price": "130.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K M-MAX(PLF)",
         "vcode": "MLMT",
         "sid": "8611"
