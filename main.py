@@ -10,8 +10,7 @@ from collections import defaultdict
 from zoneinfo import ZoneInfo
 from curl_cffi import requests
 import html
-import time    alert_failed = False
-
+import time
 import random
 # ======================================================================
 # CONFIGURATION
@@ -255,7 +254,22 @@ class VariantInfo:
     event_url: str
     is_current: bool
 
-
+def is_show_in_future(date_code, time_str):
+    """Checks if a given BMS date_code and time string are in the future."""
+    if not date_code or not time_str:
+        return True
+    try:
+        # Clean hidden spaces BMS sometimes uses
+        clean_time = str(time_str).strip().upper().replace("\xa0", " ")
+        clean_time = " ".join(clean_time.split()) 
+        
+        dt_str = f"{str(date_code).strip()} {clean_time}"
+        fmt = "%Y%m%d %I:%M %p" if "AM" in clean_time or "PM" in clean_time else "%Y%m%d %H:%M"
+        show_dt = datetime.strptime(dt_str, fmt).replace(tzinfo=ZoneInfo("Asia/Kolkata"))
+        return show_dt > datetime.now(ZoneInfo("Asia/Kolkata"))
+    except Exception:
+        return True # Fallback safely if format behaves unexpectedly
+     
 def cleanup_state(state):
     """
     Scans the bms_state.json dictionary and deletes any shows or tracked 
@@ -951,6 +965,8 @@ def filter_shows(
     )
 
     for show in shows:
+        if not is_show_in_future(show.date_code, show.time):
+            continue
         # 1. Theatre filter
         if theatre_keywords:
             venue_lower = show.venue_name.lower()
@@ -1394,9 +1410,9 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
     # 5. RENDER ULTRA-COMPACT HIERARCHY
     for date_val, venues_dict in nested_data.items():
         formatted_date = format_date(date_val)
-        lines.append(f"━━━━━━━━━━━━━━━━━━━━")
+        lines.append(f"╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌")
         lines.append(f"📅 <b>{html.escape(str(formatted_date)).upper()}</b>")
-        lines.append(f"━━━━━━━━━━━━━━━━━━━━")
+        lines.append(f"╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌")
 
         for venue, times_dict in venues_dict.items():
             lines.append(f"🏢 <b>{html.escape(str(venue))}</b>")
@@ -1437,6 +1453,16 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                 
                 # Fallback to change items if snapshot lookup misses
                 categories_to_render = full_categories if full_categories else items
+
+# Sort High to Low. If prices are the same, sort Alphabetically by Category Name.
+                categories_to_render = sorted(
+    categories_to_render, 
+    key=lambda c: (
+        -parse_price(c.price if hasattr(c, 'price') else c.get('price', 0)),  # Negative forces High to Low
+        str(c.name if hasattr(c, 'name') else c.get('cat', '')).lower()       # Alphabetical tie-breaker
+    )
+)
+                
                 
                 # Map changes for quick lookup by category name
                 change_map = {c.get("cat"): c for c in items}
@@ -1500,7 +1526,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                     lines.append(f" └🎟️<b>{safe_cat_name}</b> {cat_icon}")
                     lines.append(f"   <code>{detail_line}</code>")
             
-            lines.append("") # Visual gap between venues
+                lines.append("") # Visual gap between venues
 
     # 6. DISPATCH
     message_chunks = split_message_chunks(lines)
@@ -1724,6 +1750,11 @@ def run_event(
 
         for key, old_show in old_shows.items():
             if key not in new_shows:
+
+                # 👇 ADD THESE TWO LINES 👇
+                if not is_show_in_future(old_show["date"], old_show["time"]):
+                    continue
+                # 👆👆👆👆👆👆👆👆👆👆👆👆
                 # Show is missing in this fetch cycle! Check its previous missing count.
                 current_missing = old_show.get("missing_count", 0) + 1
                 
@@ -1735,13 +1766,20 @@ def run_event(
                 else:
                     print(f"  🗑️ Show dropped after {MAX_MISSING_CHECKS} consecutive missing checks: {old_show['venue']} {old_show['time']}")
 
-    changes = []
+    # changes = []
 
-    if old_watch_state:
-        changes = detect_changes(
-            old_watch_state,
-            new_watch_state,
-        )
+    # if old_watch_state:
+    #     changes = detect_changes(
+    #         old_watch_state,
+    #         new_watch_state,
+    #     )
+
+    # REMOVED the "if old_watch_state:" restriction 
+    # so it alerts on the very first run too!
+    changes = detect_changes(
+        old_watch_state,
+        new_watch_state,
+    )
 
     state[label] = new_watch_state
 
