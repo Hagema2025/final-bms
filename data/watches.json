@@ -2,13 +2,7 @@
   {
     "name": "YezhuKadalYezhuMalaiTamil_20260927111037",
     "url": "https://in.bookmyshow.com/movies/chennai/yezhu-kadal-yezhu-malai-tamil/ET00342249",
-    "dates": [
-      "20261001",
-      "20261002",
-      "20261003",
-      "20261004"
-    ],
-    "date_time_map": {
+    "dates": {
       "20261001": [
         "night"
       ],
@@ -17,29 +11,22 @@
       "20261004": []
     },
     "theatre": [
-      "ags cinemas omr: navlur",
-      "cinepolis: bsr mall, omr, thoraipakkam",
-      "inox: the marina mall, omr"
+      "AGS Cinemas OMR: Navlur",
+      "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+      "INOX: The Marina Mall, OMR"
     ],
     "time_period": [],
     "discover_variants": true,
     "languages": [
-      "tamil"
+      "Tamil"
     ],
     "formats": [],
-    "message_thread_id": 448,
-    "expired_notified": false
+    "message_thread_id": 448
   },
   {
     "name": "BaththaTamil_20260927111157",
     "url": "https://in.bookmyshow.com/movies/chennai/baththa-tamil/ET00515520",
-    "dates": [
-      "20261001",
-      "20261002",
-      "20261003",
-      "20261004"
-    ],
-    "date_time_map": {
+    "dates": {
       "20261001": [
         "night"
       ],
@@ -48,89 +35,96 @@
       "20261004": []
     },
     "theatre": [
-      "ags cinemas omr: navlur",
-      "cinepolis: bsr mall, omr, thoraipakkam",
-      "inox: the marina mall, omr"
+      "AGS Cinemas OMR: Navlur",
+      "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+      "INOX: The Marina Mall, OMR"
     ],
     "time_period": [],
     "discover_variants": true,
     "languages": [
-      "tamil"
+      "Tamil"
     ],
     "formats": [],
-    "message_thread_id": 452,
-    "expired_notified": false
+    "message_thread_id": 452
   },
   {
     "name": "DoraemonCastleOfTheUnderseaDevilHindi_20260927111310",
     "url": "https://in.bookmyshow.com/movies/chennai/doraemon-castle-of-the-undersea-devil-hindi/ET00507337",
-    "dates": [
-      "20261002",
-      "20261003",
-      "20261004"
-    ],
-    "date_time_map": {
+    "dates": {
       "20261002": [],
       "20261003": [],
       "20261004": []
     },
     "theatre": [
-      "ags cinemas omr: navlur",
-      "inox: the marina mall, omr"
+      "AGS Cinemas OMR: Navlur",
+      "INOX: The Marina Mall, OMR"
     ],
     "time_period": [],
     "discover_variants": true,
     "languages": [
-      "tamil"
+      "Tamil"
     ],
     "formats": [],
-    "message_thread_id": 456,
-    "expired_notified": false
+    "message_thread_id": 456
   },
   {
     "name": "AnbilAvanTamil_20260927190706",
     "url": "https://in.bookmyshow.com/movies/chennai/anbil-avan-tamil/ET00518059",
-    "dates": [
-      "20261002",
-      "20261003",
-      "20261004"
-    ],
-    "date_time_map": {
+    "dates": {
       "20261002": [],
       "20261003": [],
       "20261004": []
     },
     "theatre": [
-      "ags cinemas omr: navlur",
-      "cinepolis: bsr mall, omr, thoraipakkam",
-      "inox: the marina mall, omr"
+      "AGS Cinemas OMR: Navlur",
+      "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+      "INOX: The Marina Mall, OMR"
     ],
     "time_period": [],
     "discover_variants": true,
     "languages": [
-      "tamil"
+      "Tamil"
     ],
     "formats": [],
-    "message_thread_id": 505,
-    "expired_notified": false
+    "message_thread_id": 505
   },
   {
     "name": "MeesayaMurukku2_20260928001041 (Tamil 2D)",
     "url": "https://in.bookmyshow.com/movies/chennai/meesaya-murukku-2-tamil/ET00516813",
-    "dates": [
-      "20260928"
-    ],
-    "date_time_map": {
+    "dates": {
       "20260928": []
     },
     "theatre": [],
     "time_period": [],
     "discover_variants": true,
     "languages": [
-      "tamil"
+      "Tamil"
     ],
     "formats": [],
-    "message_thread_id": 531,
-    "expired_notified": true
+    "message_thread_id": 531
+  },
+  {
+    "name": "DorothyTamil_20260929002846",
+    "url": "https://in.bookmyshow.com/movies/chennai/dorothy-tamil/ET00518039",
+    "dates": {
+      "20261001": [
+        "night"
+      ],
+      "20261002": [],
+      "20261003": [],
+      "20261004": []
+    },
+    "theatre": [
+      "AGS Cinemas OMR: Navlur",
+      "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+      "INOX: The Marina Mall, OMR"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 642
   }
 ]
