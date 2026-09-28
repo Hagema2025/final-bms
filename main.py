@@ -1067,6 +1067,7 @@ def build_state(
                 "screen": show.screen_attr,
                 "vcode": show.venue_code,  # <--- ADD THIS
             "sid": show.session_id,    # <--- ADD THIS
+            "missing_count": 0,  # <-- NEW: Freshly seen shows have 0 missing count
             }
 
     date_state = {
@@ -1713,6 +1714,25 @@ def run_event(
     )
 
     old_watch_state = state.get(label, {})
+    # --- GRACE PERIOD LOGIC FOR MISSING SHOWS ---
+    if old_watch_state and "shows" in old_watch_state:
+        old_shows = old_watch_state["shows"]
+        new_shows = new_watch_state["shows"]
+        
+        MAX_MISSING_CHECKS = 3  # Keep missing shows for up to 3 checks
+
+        for key, old_show in old_shows.items():
+            if key not in new_shows:
+                # Show is missing in this fetch cycle! Check its previous missing count.
+                current_missing = old_show.get("missing_count", 0) + 1
+                
+                if current_missing < MAX_MISSING_CHECKS:
+                    # Carry it over into the new state and increment counter
+                    old_show["missing_count"] = current_missing
+                    new_shows[key] = old_show
+                    # print(f"  ℹ️ Show temporarily missing, preserving grace period ({current_missing}/{MAX_MISSING_CHECKS}): {old_show['venue']} {old_show['time']}")
+                else:
+                    print(f"  🗑️ Show dropped after {MAX_MISSING_CHECKS} consecutive missing checks: {old_show['venue']} {old_show['time']}")
 
     changes = []
 
