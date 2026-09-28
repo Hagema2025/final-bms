@@ -89,7 +89,7 @@
     "message_thread_id": 505
   },
   {
-    "name": "Dorothy_20260929002846 (Tamil 2D)",
+    "name": "DorothyTamil_20260929002846",
     "url": "https://in.bookmyshow.com/movies/chennai/dorothy-tamil/ET00518039",
     "dates": {
       "20261001": [
@@ -111,5 +111,29 @@
     ],
     "formats": [],
     "message_thread_id": 642
+  },
+  {
+    "name": "MeesayaMurukku2Tamil_20260929003757",
+    "url": "https://in.bookmyshow.com/movies/chennai/meesaya-murukku-2-tamil/ET00516813",
+    "dates": {
+      "20261001": [
+        "night"
+      ],
+      "20261002": [],
+      "20261003": [],
+      "20261004": []
+    },
+    "theatre": [
+      "AGS Cinemas OMR: Navlur",
+      "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+      "INOX: The Marina Mall, OMR"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 647
   }
 ]
