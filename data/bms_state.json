@@ -49,78 +49,6 @@
         "sid": "239491",
         "missing_count": 0
       },
-      "KSTK|51159|20260928|BOX-A": {
-        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
-        "time": "11:20 PM",
-        "date": "20260928",
-        "cat": "BOX-A",
-        "price": "183.78",
-        "status": "0",
-        "screen": "",
-        "vcode": "KSTK",
-        "sid": "51159",
-        "missing_count": 0
-      },
-      "KSTK|51159|20260928|BOX-B": {
-        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
-        "time": "11:20 PM",
-        "date": "20260928",
-        "cat": "BOX-B",
-        "price": "183.78",
-        "status": "0",
-        "screen": "",
-        "vcode": "KSTK",
-        "sid": "51159",
-        "missing_count": 0
-      },
-      "KSTK|51159|20260928|Super Premium": {
-        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
-        "time": "11:20 PM",
-        "date": "20260928",
-        "cat": "Super Premium",
-        "price": "183.78",
-        "status": "0",
-        "screen": "",
-        "vcode": "KSTK",
-        "sid": "51159",
-        "missing_count": 0
-      },
-      "KSTK|51159|20260928|Premium": {
-        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
-        "time": "11:20 PM",
-        "date": "20260928",
-        "cat": "Premium",
-        "price": "183.78",
-        "status": "0",
-        "screen": "",
-        "vcode": "KSTK",
-        "sid": "51159",
-        "missing_count": 0
-      },
-      "KSTK|51159|20260928|Elite": {
-        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
-        "time": "11:20 PM",
-        "date": "20260928",
-        "cat": "Elite",
-        "price": "130.00",
-        "status": "0",
-        "screen": "",
-        "vcode": "KSTK",
-        "sid": "51159",
-        "missing_count": 0
-      },
-      "KSTK|51159|20260928|Economy": {
-        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
-        "time": "11:20 PM",
-        "date": "20260928",
-        "cat": "Economy",
-        "price": "54.00",
-        "status": "0",
-        "screen": "",
-        "vcode": "KSTK",
-        "sid": "51159",
-        "missing_count": 0
-      },
       "KSTK|51126|20260928|BOX-A": {
         "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
         "time": "11:45 PM",
@@ -181,6 +109,78 @@
         "sid": "51126",
         "missing_count": 0
       },
+      "KSTK|51159|20260928|BOX-A": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "11:20 PM",
+        "date": "20260928",
+        "cat": "BOX-A",
+        "price": "183.78",
+        "status": "0",
+        "screen": "",
+        "vcode": "KSTK",
+        "sid": "51159",
+        "missing_count": 1
+      },
+      "KSTK|51159|20260928|BOX-B": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "11:20 PM",
+        "date": "20260928",
+        "cat": "BOX-B",
+        "price": "183.78",
+        "status": "0",
+        "screen": "",
+        "vcode": "KSTK",
+        "sid": "51159",
+        "missing_count": 1
+      },
+      "KSTK|51159|20260928|Super Premium": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "11:20 PM",
+        "date": "20260928",
+        "cat": "Super Premium",
+        "price": "183.78",
+        "status": "0",
+        "screen": "",
+        "vcode": "KSTK",
+        "sid": "51159",
+        "missing_count": 1
+      },
+      "KSTK|51159|20260928|Premium": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "11:20 PM",
+        "date": "20260928",
+        "cat": "Premium",
+        "price": "183.78",
+        "status": "0",
+        "screen": "",
+        "vcode": "KSTK",
+        "sid": "51159",
+        "missing_count": 1
+      },
+      "KSTK|51159|20260928|Elite": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "11:20 PM",
+        "date": "20260928",
+        "cat": "Elite",
+        "price": "130.00",
+        "status": "0",
+        "screen": "",
+        "vcode": "KSTK",
+        "sid": "51159",
+        "missing_count": 1
+      },
+      "KSTK|51159|20260928|Economy": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "11:20 PM",
+        "date": "20260928",
+        "cat": "Economy",
+        "price": "54.00",
+        "status": "0",
+        "screen": "",
+        "vcode": "KSTK",
+        "sid": "51159",
+        "missing_count": 1
+      },
       "PVHC|32629|20260928|PRIME": {
         "venue": "PVR: Ampa Mall, Nelson Manickam Road",
         "time": "11:00 PM",
@@ -191,7 +191,7 @@
         "screen": "",
         "vcode": "PVHC",
         "sid": "32629",
-        "missing_count": 0
+        "missing_count": 1
       },
       "PVHC|32629|20260928|CLASSIC": {
         "venue": "PVR: Ampa Mall, Nelson Manickam Road",
@@ -203,7 +203,7 @@
         "screen": "",
         "vcode": "PVHC",
         "sid": "32629",
-        "missing_count": 0
+        "missing_count": 1
       },
       "PGRA|23045|20260928|PRIME": {
         "venue": "PVR: Grand Galada, Pallavaram",
@@ -215,7 +215,7 @@
         "screen": "",
         "vcode": "PGRA",
         "sid": "23045",
-        "missing_count": 0
+        "missing_count": 1
       },
       "PGRA|23045|20260928|CLASSIC": {
         "venue": "PVR: Grand Galada, Pallavaram",
@@ -227,7 +227,7 @@
         "screen": "",
         "vcode": "PGRA",
         "sid": "23045",
-        "missing_count": 0
+        "missing_count": 1
       },
       "RSSC|123595|20260928|SuperStar": {
         "venue": "Rohini Silver Screens: Koyambedu",
@@ -239,7 +239,7 @@
         "screen": "4K/ATMOS",
         "vcode": "RSSC",
         "sid": "123595",
-        "missing_count": 1
+        "missing_count": 2
       },
       "RSSC|123595|20260928|PLATINUM": {
         "venue": "Rohini Silver Screens: Koyambedu",
@@ -251,7 +251,7 @@
         "screen": "4K/ATMOS",
         "vcode": "RSSC",
         "sid": "123595",
-        "missing_count": 1
+        "missing_count": 2
       },
       "RSSC|123595|20260928|GoldStar": {
         "venue": "Rohini Silver Screens: Koyambedu",
@@ -263,7 +263,7 @@
         "screen": "4K/ATMOS",
         "vcode": "RSSC",
         "sid": "123595",
-        "missing_count": 1
+        "missing_count": 2
       },
       "MAYJ|239606|20260928|FIRST CLASS": {
         "venue": "MAYAJAAL Multiplex: ECR, Chennai",
@@ -275,7 +275,7 @@
         "screen": "4K DOLBY 7.1",
         "vcode": "MAYJ",
         "sid": "239606",
-        "missing_count": 1
+        "missing_count": 2
       },
       "PGMV|22578|20260928|PRIME": {
         "venue": "PVR: Grand Mall, Velachery",
@@ -287,7 +287,7 @@
         "screen": "",
         "vcode": "PGMV",
         "sid": "22578",
-        "missing_count": 1
+        "missing_count": 2
       },
       "PGMV|22578|20260928|CLASSIC": {
         "venue": "PVR: Grand Mall, Velachery",
@@ -299,7 +299,7 @@
         "screen": "",
         "vcode": "PGMV",
         "sid": "22578",
-        "missing_count": 1
+        "missing_count": 2
       },
       "PVSR|28126|20260928|ELITE": {
         "venue": "PVR: Sathyam, Royapettah",
@@ -311,7 +311,7 @@
         "screen": "",
         "vcode": "PVSR",
         "sid": "28126",
-        "missing_count": 1
+        "missing_count": 2
       },
       "PVSR|28126|20260928|PREMIUM": {
         "venue": "PVR: Sathyam, Royapettah",
@@ -323,7 +323,7 @@
         "screen": "",
         "vcode": "PVSR",
         "sid": "28126",
-        "missing_count": 1
+        "missing_count": 2
       },
       "PVSR|28126|20260928|ECONOMY": {
         "venue": "PVR: Sathyam, Royapettah",
@@ -335,7 +335,7 @@
         "screen": "",
         "vcode": "PVSR",
         "sid": "28126",
-        "missing_count": 1
+        "missing_count": 2
       },
       "PVSR|28126|20260928|BUDGET": {
         "venue": "PVR: Sathyam, Royapettah",
@@ -347,7 +347,7 @@
         "screen": "",
         "vcode": "PVSR",
         "sid": "28126",
-        "missing_count": 1
+        "missing_count": 2
       },
       "PCAN|45682|20260928|PRIME": {
         "venue": "PVR: VR Chennai, Anna Nagar",
@@ -359,7 +359,7 @@
         "screen": "PXL",
         "vcode": "PCAN",
         "sid": "45682",
-        "missing_count": 1
+        "missing_count": 2
       },
       "PCAN|45682|20260928|CLASSIC": {
         "venue": "PVR: VR Chennai, Anna Nagar",
@@ -371,174 +371,6 @@
         "screen": "PXL",
         "vcode": "PCAN",
         "sid": "45682",
-        "missing_count": 1
-      },
-      "FMCN|105271|20260928|SILVER": {
-        "venue": "INOX National: Arcot Road",
-        "time": "10:45 PM",
-        "date": "20260928",
-        "cat": "SILVER",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "FMCN",
-        "sid": "105271",
-        "missing_count": 2
-      },
-      "FMCN|105271|20260928|PREMIERE": {
-        "venue": "INOX National: Arcot Road",
-        "time": "10:45 PM",
-        "date": "20260928",
-        "cat": "PREMIERE",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "FMCN",
-        "sid": "105271",
-        "missing_count": 2
-      },
-      "INCH|80774|20260928|Club": {
-        "venue": "INOX: Chennai Citi Centre, Dr. RK Salai",
-        "time": "10:40 PM",
-        "date": "20260928",
-        "cat": "Club",
-        "price": "183.80",
-        "status": "2",
-        "screen": "",
-        "vcode": "INCH",
-        "sid": "80774",
-        "missing_count": 2
-      },
-      "INCH|80774|20260928|Executive": {
-        "venue": "INOX: Chennai Citi Centre, Dr. RK Salai",
-        "time": "10:40 PM",
-        "date": "20260928",
-        "cat": "Executive",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "INCH",
-        "sid": "80774",
-        "missing_count": 2
-      },
-      "PVPZ|38860|20260928|ELITE": {
-        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
-        "time": "10:45 PM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVPZ",
-        "sid": "38860",
-        "missing_count": 2
-      },
-      "PVPZ|38860|20260928|BUDGET": {
-        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
-        "time": "10:45 PM",
-        "date": "20260928",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVPZ",
-        "sid": "38860",
-        "missing_count": 2
-      },
-      "INTO|90948|20260928|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "10:40 PM",
-        "date": "20260928",
-        "cat": "CLUB",
-        "price": "183.80",
-        "status": "1",
-        "screen": "BIGPIX",
-        "vcode": "INTO",
-        "sid": "90948",
-        "missing_count": 2
-      },
-      "INTO|90948|20260928|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "10:40 PM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "54.35",
-        "status": "0",
-        "screen": "BIGPIX",
-        "vcode": "INTO",
-        "sid": "90948",
-        "missing_count": 2
-      },
-      "PVES|34492|20260928|ELITE": {
-        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
-        "time": "10:40 PM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVES",
-        "sid": "34492",
-        "missing_count": 2
-      },
-      "PVES|34492|20260928|BUDGET": {
-        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
-        "time": "10:40 PM",
-        "date": "20260928",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "3",
-        "screen": "",
-        "vcode": "PVES",
-        "sid": "34492",
-        "missing_count": 2
-      },
-      "VVGT|31684|20260928|ELITE": {
-        "venue": "Vels Theatres: Chennai",
-        "time": "11:10 PM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "160.00",
-        "status": "1",
-        "screen": "",
-        "vcode": "VVGT",
-        "sid": "31684",
-        "missing_count": 2
-      },
-      "VVGT|31684|20260928|ECONOMY": {
-        "venue": "Vels Theatres: Chennai",
-        "time": "11:10 PM",
-        "date": "20260928",
-        "cat": "ECONOMY",
-        "price": "160.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VVGT",
-        "sid": "31684",
-        "missing_count": 2
-      },
-      "PABC|22047|20260928|PRIME": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "10:45 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "PABC",
-        "sid": "22047",
-        "missing_count": 2
-      },
-      "PABC|22047|20260928|CLASSIC": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "10:45 PM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PABC",
-        "sid": "22047",
         "missing_count": 2
       }
     },
