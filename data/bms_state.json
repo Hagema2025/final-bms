@@ -1255,6 +1255,28 @@
         "vcode": "MAYJ",
         "sid": "239560"
       },
+      "MAYJ|239607|20260928|FIRST CLASS": {
+        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
+        "time": "11:00 PM",
+        "date": "20260928",
+        "cat": "FIRST CLASS",
+        "price": "183.80",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "MAYJ",
+        "sid": "239607"
+      },
+      "MAYJ|239606|20260928|FIRST CLASS": {
+        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
+        "time": "11:30 PM",
+        "date": "20260928",
+        "cat": "FIRST CLASS",
+        "price": "183.80",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "MAYJ",
+        "sid": "239606"
+      },
       "MAYJ|239491|20260928|FIRST CLASS": {
         "venue": "MAYAJAAL Multiplex: ECR, Chennai",
         "time": "11:55 PM",
@@ -1613,7 +1635,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38861"
@@ -2735,7 +2757,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28122"
