@@ -1646,7 +1646,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38858"
@@ -2240,7 +2240,7 @@
         "date": "20260928",
         "cat": "Economy",
         "price": "54.00",
-        "status": "3",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51122"
@@ -2570,7 +2570,7 @@
         "date": "20260928",
         "cat": "PREMIERE",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "FMCN",
         "sid": "105315"
@@ -3208,7 +3208,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "0",
+        "status": "2",
         "screen": "",
         "vcode": "PGMV",
         "sid": "22537"
@@ -3824,7 +3824,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "PBRM",
         "sid": "25218"
@@ -3846,7 +3846,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "PBRM",
         "sid": "25266"
@@ -4286,7 +4286,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "INPR",
         "sid": "66668"
@@ -5155,7 +5155,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "4K LASER DOLBY 7.1 ",
         "vcode": "MMPR",
         "sid": "2375"
@@ -5177,7 +5177,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "2",
+        "status": "1",
         "screen": "4K LASER DOLBY 7.1 ",
         "vcode": "MMPR",
         "sid": "2341"
@@ -5815,7 +5815,7 @@
         "date": "20260928",
         "cat": "Box",
         "price": "180.00",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4971"
@@ -5826,7 +5826,7 @@
         "date": "20260928",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4971"
@@ -5837,7 +5837,7 @@
         "date": "20260928",
         "cat": "First Class",
         "price": "120.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4971"
@@ -5848,7 +5848,7 @@
         "date": "20260928",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4971"
@@ -5859,7 +5859,7 @@
         "date": "20260928",
         "cat": "Box",
         "price": "180.00",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -5870,7 +5870,7 @@
         "date": "20260928",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "1",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -5881,7 +5881,7 @@
         "date": "20260928",
         "cat": "First Class",
         "price": "120.00",
-        "status": "1",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -5892,7 +5892,7 @@
         "date": "20260928",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
