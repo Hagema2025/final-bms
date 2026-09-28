@@ -18,7 +18,7 @@
         "date": "20260928",
         "cat": "Elite",
         "price": "150.00",
-        "status": "3",
+        "status": "2",
         "screen": "SCREEN 5",
         "vcode": "RAKK",
         "sid": "4249"
@@ -502,7 +502,7 @@
         "date": "20260928",
         "cat": "SuperStar",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "RSSC",
         "sid": "123589"
@@ -726,28 +726,6 @@
         "screen": "",
         "vcode": "KVCS",
         "sid": "9365"
-      },
-      "RRGB|1310|20260928|PREMIUM CIRCLE": {
-        "venue": "Rakki RGB Laser 4K: Thiruvallur",
-        "time": "10:15 AM",
-        "date": "20260928",
-        "cat": "PREMIUM CIRCLE",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 2",
-        "vcode": "RRGB",
-        "sid": "1310"
-      },
-      "RRGB|1310|20260928|EXECUTIVE CLASS": {
-        "venue": "Rakki RGB Laser 4K: Thiruvallur",
-        "time": "10:15 AM",
-        "date": "20260928",
-        "cat": "EXECUTIVE CLASS",
-        "price": "130.00",
-        "status": "3",
-        "screen": "SCREEN 2",
-        "vcode": "RRGB",
-        "sid": "1310"
       },
       "RRGB|1283|20260928|PREMIUM CIRCLE": {
         "venue": "Rakki RGB Laser 4K: Thiruvallur",
@@ -1481,7 +1459,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38845"
@@ -1580,7 +1558,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38859"
@@ -2047,50 +2025,6 @@
         "vcode": "PVHC",
         "sid": "32629"
       },
-      "KSTK|51121|20260928|Super Premium": {
-        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
-        "time": "10:00 AM",
-        "date": "20260928",
-        "cat": "Super Premium",
-        "price": "183.78",
-        "status": "3",
-        "screen": "RGB ATMOS",
-        "vcode": "KSTK",
-        "sid": "51121"
-      },
-      "KSTK|51121|20260928|Premium": {
-        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
-        "time": "10:00 AM",
-        "date": "20260928",
-        "cat": "Premium",
-        "price": "183.78",
-        "status": "3",
-        "screen": "RGB ATMOS",
-        "vcode": "KSTK",
-        "sid": "51121"
-      },
-      "KSTK|51121|20260928|Elite": {
-        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
-        "time": "10:00 AM",
-        "date": "20260928",
-        "cat": "Elite",
-        "price": "130.00",
-        "status": "2",
-        "screen": "RGB ATMOS",
-        "vcode": "KSTK",
-        "sid": "51121"
-      },
-      "KSTK|51121|20260928|Economy": {
-        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
-        "time": "10:00 AM",
-        "date": "20260928",
-        "cat": "Economy",
-        "price": "54.00",
-        "status": "0",
-        "screen": "RGB ATMOS",
-        "vcode": "KSTK",
-        "sid": "51121"
-      },
       "KSTK|51122|20260928|Super Premium": {
         "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
         "time": "12:45 PM",
@@ -2295,7 +2229,7 @@
         "date": "20260928",
         "cat": "Elite",
         "price": "130.00",
-        "status": "3",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51125"
@@ -2354,28 +2288,6 @@
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51126"
-      },
-      "FMCN|105342|20260928|SILVER": {
-        "venue": "INOX National: Arcot Road",
-        "time": "09:40 AM",
-        "date": "20260928",
-        "cat": "SILVER",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "FMCN",
-        "sid": "105342"
-      },
-      "FMCN|105342|20260928|PREMIERE": {
-        "venue": "INOX National: Arcot Road",
-        "time": "09:40 AM",
-        "date": "20260928",
-        "cat": "PREMIERE",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "FMCN",
-        "sid": "105342"
       },
       "FMCN|105283|20260928|SILVER": {
         "venue": "INOX National: Arcot Road",
@@ -2559,7 +2471,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "2",
+        "status": "3",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28123"
@@ -2636,7 +2548,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28124"
@@ -3675,28 +3587,6 @@
         "vcode": "PBRM",
         "sid": "25222"
       },
-      "PGRA|22995|20260928|PRIME": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "09:40 AM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22995"
-      },
-      "PGRA|22995|20260928|CLASSIC": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "09:40 AM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22995"
-      },
       "PGRA|22996|20260928|PRIME": {
         "venue": "PVR: Grand Galada, Pallavaram",
         "time": "12:45 PM",
@@ -4423,28 +4313,6 @@
         "vcode": "PABC",
         "sid": "22047"
       },
-      "PSKL|23675|20260928|PRIME": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "09:40 AM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PSKL",
-        "sid": "23675"
-      },
-      "PSKL|23675|20260928|CLASSIC": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "09:40 AM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "3",
-        "screen": "",
-        "vcode": "PSKL",
-        "sid": "23675"
-      },
       "PSKL|23676|20260928|PRIME": {
         "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
         "time": "12:50 PM",
@@ -4620,28 +4488,6 @@
         "screen": "DOLBY ATMOS",
         "vcode": "SBTR",
         "sid": "12105"
-      },
-      "MCSK|16074|20260928|SPECIAL": {
-        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
-        "time": "09:45 AM",
-        "date": "20260928",
-        "cat": "SPECIAL",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "MCSK",
-        "sid": "16074"
-      },
-      "MCSK|16074|20260928|EXECUTIVE": {
-        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
-        "time": "09:45 AM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "MCSK",
-        "sid": "16074"
       },
       "MCSK|16013|20260928|SPECIAL": {
         "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
@@ -5324,72 +5170,6 @@
         "screen": "",
         "vcode": "VRCP",
         "sid": "3832"
-      },
-      "REMC|6735|20260928|FIRST CLASS": {
-        "venue": "Remy Cinemas A/C DTS 2K 3D Laser: Avadi",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "130.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "REMC",
-        "sid": "6735"
-      },
-      "REMC|6735|20260928|SECOND CLASS": {
-        "venue": "Remy Cinemas A/C DTS 2K 3D Laser: Avadi",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "SECOND CLASS",
-        "price": "130.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "REMC",
-        "sid": "6735"
-      },
-      "REMC|6737|20260928|FIRST CLASS": {
-        "venue": "Remy Cinemas A/C DTS 2K 3D Laser: Avadi",
-        "time": "03:00 PM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "130.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "REMC",
-        "sid": "6737"
-      },
-      "REMC|6737|20260928|SECOND CLASS": {
-        "venue": "Remy Cinemas A/C DTS 2K 3D Laser: Avadi",
-        "time": "03:00 PM",
-        "date": "20260928",
-        "cat": "SECOND CLASS",
-        "price": "130.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "REMC",
-        "sid": "6737"
-      },
-      "REMC|6738|20260928|FIRST CLASS": {
-        "venue": "Remy Cinemas A/C DTS 2K 3D Laser: Avadi",
-        "time": "06:30 PM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "130.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "REMC",
-        "sid": "6738"
-      },
-      "REMC|6738|20260928|SECOND CLASS": {
-        "venue": "Remy Cinemas A/C DTS 2K 3D Laser: Avadi",
-        "time": "06:30 PM",
-        "date": "20260928",
-        "cat": "SECOND CLASS",
-        "price": "130.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "REMC",
-        "sid": "6738"
       },
       "JOTG|11801|20260928|BALCONY": {
         "venue": "Jothi Theatre 4K A/c DTS: ST Thomas Mount",
