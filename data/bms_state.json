@@ -1,6 +1,31 @@
 {
   "Dorothy_20260929002846 (Tamil 2D)": {
-    "shows": {},
+    "shows": {
+      "ACON|47714|20261001|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "07:45 PM",
+        "date": "20261001",
+        "cat": "DIAMOND",
+        "price": "150.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47714",
+        "missing_count": 0
+      },
+      "ACON|47714|20261001|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "07:45 PM",
+        "date": "20261001",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47714",
+        "missing_count": 0
+      }
+    },
     "dates": {
       "20260929": "BOOKABLE",
       "20260930": "AVAILABLE",
