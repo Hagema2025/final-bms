@@ -304,7 +304,7 @@
         "date": "20260928",
         "cat": "SuperStar",
         "price": "190.00",
-        "status": "1",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "RSSC",
         "sid": "123585"
@@ -1129,7 +1129,7 @@
         "date": "20260928",
         "cat": "BOX",
         "price": "150.00",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "MCXF",
         "sid": "650"
@@ -1679,7 +1679,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38858"
@@ -2460,7 +2460,7 @@
         "date": "20260928",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "3",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51126"
@@ -4297,7 +4297,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "INPR",
         "sid": "66655"
@@ -4395,7 +4395,7 @@
         "time": "11:30 AM",
         "date": "20260928",
         "cat": "Elite",
-        "price": "150.00",
+        "price": "130.00",
         "status": "3",
         "screen": "RGB/ATMOS",
         "vcode": "SSCC",
@@ -4406,7 +4406,7 @@
         "time": "03:00 PM",
         "date": "20260928",
         "cat": "Elite",
-        "price": "150.00",
+        "price": "130.00",
         "status": "3",
         "screen": "RGB/ATMOS",
         "vcode": "SSCC",
@@ -4417,7 +4417,7 @@
         "time": "10:15 PM",
         "date": "20260928",
         "cat": "Elite",
-        "price": "150.00",
+        "price": "130.00",
         "status": "3",
         "screen": "RGB/ATMOS",
         "vcode": "SSCC",
@@ -5232,7 +5232,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "3",
+        "status": "2",
         "screen": "4K LASER DOLBY 7.1 ",
         "vcode": "MMPR",
         "sid": "2342"
@@ -5804,7 +5804,7 @@
         "date": "20260928",
         "cat": "Box",
         "price": "180.00",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4935"
@@ -5815,7 +5815,7 @@
         "date": "20260928",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4935"
@@ -5826,7 +5826,7 @@
         "date": "20260928",
         "cat": "First Class",
         "price": "120.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4935"
@@ -5837,7 +5837,7 @@
         "date": "20260928",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4935"
