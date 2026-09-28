@@ -18,7 +18,7 @@
         "date": "20260928",
         "cat": "Elite",
         "price": "150.00",
-        "status": "3",
+        "status": "2",
         "screen": "SCREEN 5",
         "vcode": "RAKK",
         "sid": "4260"
@@ -216,7 +216,7 @@
         "date": "20260928",
         "cat": "GoldStar",
         "price": "160.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K/ATMOS",
         "vcode": "RSSC",
         "sid": "123593"
@@ -227,7 +227,7 @@
         "date": "20260928",
         "cat": "SuperStar",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": "RGB ATMOS",
         "vcode": "RSSC",
         "sid": "123588"
@@ -425,7 +425,7 @@
         "date": "20260928",
         "cat": "BOX B",
         "price": "180.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "KVCS",
         "sid": "9379"
@@ -502,7 +502,7 @@
         "date": "20260928",
         "cat": "NORMAL",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13597"
@@ -513,7 +513,7 @@
         "date": "20260928",
         "cat": "EXECUTIVE",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13597"
@@ -964,7 +964,7 @@
         "date": "20260928",
         "cat": "PREMIERE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "FMCN",
         "sid": "105286"
@@ -1056,28 +1056,6 @@
         "screen": "4K DOLBY ATMOS",
         "vcode": "ACON",
         "sid": "47658"
-      },
-      "INCH|80731|20260928|Club": {
-        "venue": "INOX: Chennai Citi Centre, Dr. RK Salai",
-        "time": "04:00 PM",
-        "date": "20260928",
-        "cat": "Club",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "INCH",
-        "sid": "80731"
-      },
-      "INCH|80731|20260928|Executive": {
-        "venue": "INOX: Chennai Citi Centre, Dr. RK Salai",
-        "time": "04:00 PM",
-        "date": "20260928",
-        "cat": "Executive",
-        "price": "54.35",
-        "status": "2",
-        "screen": "",
-        "vcode": "INCH",
-        "sid": "80731"
       },
       "INCH|80746|20260928|Club": {
         "venue": "INOX: Chennai Citi Centre, Dr. RK Salai",
@@ -1188,28 +1166,6 @@
         "screen": "",
         "vcode": "INCH",
         "sid": "80774"
-      },
-      "PVHC|32659|20260928|PRIME": {
-        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-        "time": "04:00 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVHC",
-        "sid": "32659"
-      },
-      "PVHC|32659|20260928|CLASSIC": {
-        "venue": "PVR: Ampa Mall, Nelson Manickam Road",
-        "time": "04:00 PM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVHC",
-        "sid": "32659"
       },
       "PVHC|32642|20260928|PRIME": {
         "venue": "PVR: Ampa Mall, Nelson Manickam Road",
@@ -1580,7 +1536,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38859"
@@ -1855,7 +1811,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "2",
+        "status": "3",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28126"
@@ -2047,28 +2003,6 @@
         "vcode": "INTO",
         "sid": "90948"
       },
-      "PGMV|22539|20260928|PRIME": {
-        "venue": "PVR: Grand Mall, Velachery",
-        "time": "04:00 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "2",
-        "screen": "",
-        "vcode": "PGMV",
-        "sid": "22539"
-      },
-      "PGMV|22539|20260928|CLASSIC": {
-        "venue": "PVR: Grand Mall, Velachery",
-        "time": "04:00 PM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PGMV",
-        "sid": "22539"
-      },
       "PGMV|22567|20260928|PRIME": {
         "venue": "PVR: Grand Mall, Velachery",
         "time": "04:30 PM",
@@ -2097,7 +2031,7 @@
         "date": "20260928",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PGMV",
         "sid": "22540"
@@ -2717,28 +2651,6 @@
         "screen": "PLF ENG SUBTITLE",
         "vcode": "GCRP",
         "sid": "17540"
-      },
-      "PSKL|23677|20260928|PRIME": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "04:00 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PSKL",
-        "sid": "23677"
-      },
-      "PSKL|23677|20260928|CLASSIC": {
-        "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
-        "time": "04:00 PM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "2",
-        "screen": "",
-        "vcode": "PSKL",
-        "sid": "23677"
       },
       "PSKL|23678|20260928|PRIME": {
         "venue": "PVR: SKLS Galaxy Mall, Red Hills Chennai",
