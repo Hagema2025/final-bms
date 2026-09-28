@@ -403,7 +403,7 @@
         "date": "20260928",
         "cat": "SuperStar",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "RSSC",
         "sid": "123590"
@@ -1167,28 +1167,6 @@
         "vcode": "INCH",
         "sid": "80774"
       },
-      "ACON|47655|20260928|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "02:00 PM",
-        "date": "20260928",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "3",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "ACON",
-        "sid": "47655"
-      },
-      "ACON|47655|20260928|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "02:00 PM",
-        "date": "20260928",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "ACON",
-        "sid": "47655"
-      },
       "ACON|47656|20260928|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
         "time": "04:50 PM",
@@ -1404,7 +1382,7 @@
         "date": "20260928",
         "cat": "PREMIERE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "FMCN",
         "sid": "105343"
@@ -1496,6 +1474,17 @@
         "screen": "",
         "vcode": "FMCN",
         "sid": "105271"
+      },
+      "KSTK|51123|20260928|BOX-A": {
+        "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
+        "time": "03:30 PM",
+        "date": "20260928",
+        "cat": "BOX-A",
+        "price": "183.78",
+        "status": "3",
+        "screen": "RGB ATMOS",
+        "vcode": "KSTK",
+        "sid": "51123"
       },
       "KSTK|51123|20260928|Super Premium": {
         "venue": "Kasi Talkies Dolby Atmos: Ashok Nagar",
@@ -1716,28 +1705,6 @@
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51126"
-      },
-      "PVPZ|38857|20260928|ELITE": {
-        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
-        "time": "01:30 PM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVPZ",
-        "sid": "38857"
-      },
-      "PVPZ|38857|20260928|BUDGET": {
-        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
-        "time": "01:30 PM",
-        "date": "20260928",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVPZ",
-        "sid": "38857"
       },
       "PVPZ|38858|20260928|ELITE": {
         "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
@@ -3609,50 +3576,6 @@
         "vcode": "MMKC",
         "sid": "8454"
       },
-      "GRTC|9949|20260928|COUPLE": {
-        "venue": "GanapathyRam Theatre 4K Dolby 7.1: Chennai",
-        "time": "02:45 PM",
-        "date": "20260928",
-        "cat": "COUPLE",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "GRTC",
-        "sid": "9949"
-      },
-      "GRTC|9949|20260928|FAMILY CLASS": {
-        "venue": "GanapathyRam Theatre 4K Dolby 7.1: Chennai",
-        "time": "02:45 PM",
-        "date": "20260928",
-        "cat": "FAMILY CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "GRTC",
-        "sid": "9949"
-      },
-      "GRTC|9949|20260928|BALCONY": {
-        "venue": "GanapathyRam Theatre 4K Dolby 7.1: Chennai",
-        "time": "02:45 PM",
-        "date": "20260928",
-        "cat": "BALCONY",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "GRTC",
-        "sid": "9949"
-      },
-      "GRTC|9949|20260928|FIRST CLASS": {
-        "venue": "GanapathyRam Theatre 4K Dolby 7.1: Chennai",
-        "time": "02:45 PM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "120.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "GRTC",
-        "sid": "9949"
-      },
       "GRTC|9950|20260928|COUPLE": {
         "venue": "GanapathyRam Theatre 4K Dolby 7.1: Chennai",
         "time": "06:30 PM",
@@ -4033,7 +3956,7 @@
         "date": "20260928",
         "cat": "BOX 2",
         "price": "150.00",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "AVMT",
         "sid": "990"
