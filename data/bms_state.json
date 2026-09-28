@@ -232,39 +232,6 @@
         "vcode": "RRGB",
         "sid": "1287"
       },
-      "RSSC|123587|20260928|SuperStar": {
-        "venue": "Rohini Silver Screens: Koyambedu",
-        "time": "03:00 PM",
-        "date": "20260928",
-        "cat": "SuperStar",
-        "price": "190.00",
-        "status": "1",
-        "screen": "RGB ATMOS",
-        "vcode": "RSSC",
-        "sid": "123587"
-      },
-      "RSSC|123587|20260928|PLATINUM": {
-        "venue": "Rohini Silver Screens: Koyambedu",
-        "time": "03:00 PM",
-        "date": "20260928",
-        "cat": "PLATINUM",
-        "price": "180.00",
-        "status": "1",
-        "screen": "RGB ATMOS",
-        "vcode": "RSSC",
-        "sid": "123587"
-      },
-      "RSSC|123587|20260928|GoldStar": {
-        "venue": "Rohini Silver Screens: Koyambedu",
-        "time": "03:00 PM",
-        "date": "20260928",
-        "cat": "GoldStar",
-        "price": "160.00",
-        "status": "1",
-        "screen": "RGB ATMOS",
-        "vcode": "RSSC",
-        "sid": "123587"
-      },
       "RSSC|123593|20260928|SuperStar": {
         "venue": "Rohini Silver Screens: Koyambedu",
         "time": "04:40 PM",
@@ -1470,7 +1437,7 @@
         "date": "20260928",
         "cat": "BOX-A",
         "price": "183.78",
-        "status": "3",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51123"
@@ -2119,7 +2086,7 @@
         "date": "20260928",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PGRA",
         "sid": "22967"
@@ -2443,28 +2410,6 @@
         "vcode": "PGMV",
         "sid": "22541"
       },
-      "VVTN|21006|20260928|ELITE": {
-        "venue": "VETRIVEL RGB DOLBY:NANGANALLUR (NEWLY RENOVATED)",
-        "time": "03:00 PM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "190.00",
-        "status": "2",
-        "screen": "DOLBY ATMOS/4K",
-        "vcode": "VVTN",
-        "sid": "21006"
-      },
-      "VVTN|21006|20260928|PREMIUM": {
-        "venue": "VETRIVEL RGB DOLBY:NANGANALLUR (NEWLY RENOVATED)",
-        "time": "03:00 PM",
-        "date": "20260928",
-        "cat": "PREMIUM",
-        "price": "150.00",
-        "status": "3",
-        "screen": "DOLBY ATMOS/4K",
-        "vcode": "VVTN",
-        "sid": "21006"
-      },
       "VVTN|21007|20260928|ELITE": {
         "venue": "VETRIVEL RGB DOLBY:NANGANALLUR (NEWLY RENOVATED)",
         "time": "06:45 PM",
@@ -2680,7 +2625,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PBRM",
         "sid": "25220"
@@ -3235,6 +3180,28 @@
         "vcode": "MCSK",
         "sid": "16015"
       },
+      "MCSK|16081|20260928|SPECIAL": {
+        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
+        "time": "07:30 PM",
+        "date": "20260928",
+        "cat": "SPECIAL",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "MCSK",
+        "sid": "16081"
+      },
+      "MCSK|16081|20260928|EXECUTIVE": {
+        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
+        "time": "07:30 PM",
+        "date": "20260928",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "MCSK",
+        "sid": "16081"
+      },
       "MCSK|16016|20260928|SPECIAL": {
         "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
         "time": "10:20 PM",
@@ -3422,28 +3389,6 @@
         "vcode": "JOTG",
         "sid": "11803"
       },
-      "REMC|6737|20260928|FIRST CLASS": {
-        "venue": "Remy Cinemas A/C DTS 2K 3D Laser: Avadi",
-        "time": "03:00 PM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "130.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "REMC",
-        "sid": "6737"
-      },
-      "REMC|6737|20260928|SECOND CLASS": {
-        "venue": "Remy Cinemas A/C DTS 2K 3D Laser: Avadi",
-        "time": "03:00 PM",
-        "date": "20260928",
-        "cat": "SECOND CLASS",
-        "price": "130.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "REMC",
-        "sid": "6737"
-      },
       "REMC|6738|20260928|FIRST CLASS": {
         "venue": "Remy Cinemas A/C DTS 2K 3D Laser: Avadi",
         "time": "06:30 PM",
@@ -3615,7 +3560,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "4K LASER DOLBY 7.1 ",
         "vcode": "MMPR",
         "sid": "2344"
@@ -3828,39 +3773,6 @@
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
-      },
-      "AVMT|990|20260928|BOX 1": {
-        "venue": "AVM Cinemas: Uthukkottai",
-        "time": "02:30 PM",
-        "date": "20260928",
-        "cat": "BOX 1",
-        "price": "150.00",
-        "status": "2",
-        "screen": "",
-        "vcode": "AVMT",
-        "sid": "990"
-      },
-      "AVMT|990|20260928|BOX 2": {
-        "venue": "AVM Cinemas: Uthukkottai",
-        "time": "02:30 PM",
-        "date": "20260928",
-        "cat": "BOX 2",
-        "price": "150.00",
-        "status": "2",
-        "screen": "",
-        "vcode": "AVMT",
-        "sid": "990"
-      },
-      "AVMT|990|20260928|ELITE": {
-        "venue": "AVM Cinemas: Uthukkottai",
-        "time": "02:30 PM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "130.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "AVMT",
-        "sid": "990"
       },
       "AVMT|991|20260928|BOX 1": {
         "venue": "AVM Cinemas: Uthukkottai",
