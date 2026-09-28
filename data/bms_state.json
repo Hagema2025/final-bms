@@ -782,28 +782,6 @@
         "vcode": "RRGB",
         "sid": "1287"
       },
-      "CBMC|13596|20260928|NORMAL": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "11:00 AM",
-        "date": "20260928",
-        "cat": "NORMAL",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13596"
-      },
-      "CBMC|13596|20260928|EXECUTIVE": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "11:00 AM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13596"
-      },
       "CBMC|13611|20260928|NORMAL": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
         "time": "12:15 PM",
@@ -1316,7 +1294,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVHR",
         "sid": "42813"
@@ -1437,7 +1415,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38858"
@@ -1492,7 +1470,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38859"
@@ -2119,7 +2097,7 @@
         "date": "20260928",
         "cat": "Elite",
         "price": "130.00",
-        "status": "3",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51125"
@@ -2438,7 +2416,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28125"
@@ -2949,28 +2927,6 @@
         "vcode": "ACTN",
         "sid": "46240"
       },
-      "PVES|34472|20260928|ELITE": {
-        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
-        "time": "10:30 AM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PVES",
-        "sid": "34472"
-      },
-      "PVES|34472|20260928|BUDGET": {
-        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
-        "time": "10:30 AM",
-        "date": "20260928",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVES",
-        "sid": "34472"
-      },
       "PVES|34489|20260928|ELITE": {
         "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
         "time": "01:05 PM",
@@ -3219,7 +3175,7 @@
         "date": "20260928",
         "cat": "LOUNGE 1",
         "price": "150.00",
-        "status": "2",
+        "status": "1",
         "screen": "RGB ATMOS",
         "vcode": "GKCP",
         "sid": "4202"
@@ -3571,7 +3527,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "INPR",
         "sid": "66654"
@@ -3697,17 +3653,6 @@
         "vcode": "GAHC",
         "sid": "2144"
       },
-      "SSCC|23421|20260928|Elite": {
-        "venue": "Sivasakthi Cinemas RGB 4K Laser: Padi",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "Elite",
-        "price": "130.00",
-        "status": "3",
-        "screen": "RGB/ATMOS",
-        "vcode": "SSCC",
-        "sid": "23421"
-      },
       "SSCC|23422|20260928|Elite": {
         "venue": "Sivasakthi Cinemas RGB 4K Laser: Padi",
         "time": "03:00 PM",
@@ -3729,17 +3674,6 @@
         "screen": "RGB/ATMOS",
         "vcode": "SSCC",
         "sid": "23424"
-      },
-      "VECT|8412|20260928|FIRST CLASS": {
-        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VECT",
-        "sid": "8412"
       },
       "VECT|8413|20260928|BALCONY": {
         "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
@@ -3934,7 +3868,7 @@
         "date": "20260928",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PABC",
         "sid": "22044"
@@ -4110,7 +4044,7 @@
         "date": "20260928",
         "cat": "Elite",
         "price": "150.00",
-        "status": "3",
+        "status": "2",
         "screen": "DOLBY ATMOS",
         "vcode": "SBTR",
         "sid": "12102"
@@ -4368,17 +4302,6 @@
         "vcode": "GCRP",
         "sid": "17540"
       },
-      "RDMP|28400|20260928|ELITE": {
-        "venue": "Shree Radha Movie Park 4K Dolby Atmos: Redhills",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "RDMP",
-        "sid": "28400"
-      },
       "RDMP|28401|20260928|ELITE": {
         "venue": "Shree Radha Movie Park 4K Dolby Atmos: Redhills",
         "time": "06:30 PM",
@@ -4462,21 +4385,10 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "3",
+        "status": "2",
         "screen": "4K LASER DOLBY 7.1 ",
         "vcode": "MMPR",
         "sid": "2344"
-      },
-      "LKOP|12354|20260928|FIRST CLASS": {
-        "venue": "Lathaa Cinemas A/C Atmos 2K 3D: Chengalpattu",
-        "time": "11:00 AM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "130.00",
-        "status": "3",
-        "screen": "DOLBY ATMOS",
-        "vcode": "LKOP",
-        "sid": "12354"
       },
       "LKOP|12355|20260928|FIRST CLASS": {
         "venue": "Lathaa Cinemas A/C Atmos 2K 3D: Chengalpattu",
@@ -4741,17 +4653,6 @@
         "screen": "",
         "vcode": "MMKC",
         "sid": "8454"
-      },
-      "VRCP|3829|20260928|EXECUTIVE": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VRCP",
-        "sid": "3829"
       },
       "VRCP|3830|20260928|PREMIUM": {
         "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
@@ -5133,7 +5034,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "PXL",
         "vcode": "PCAN",
         "sid": "45682"
@@ -5375,7 +5276,7 @@
         "date": "20260928",
         "cat": "GOLD",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K M-MAX(PLF)",
         "vcode": "MLMT",
         "sid": "8609"
@@ -5386,7 +5287,7 @@
         "date": "20260928",
         "cat": "PREMIUM",
         "price": "150.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K M-MAX(PLF)",
         "vcode": "MLMT",
         "sid": "8609"
