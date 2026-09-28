@@ -870,28 +870,6 @@
         "vcode": "RRGB",
         "sid": "1287"
       },
-      "CBMC|13610|20260928|NORMAL": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "09:30 AM",
-        "date": "20260928",
-        "cat": "NORMAL",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13610"
-      },
-      "CBMC|13610|20260928|EXECUTIVE": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "09:30 AM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13610"
-      },
       "CBMC|13596|20260928|NORMAL": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
         "time": "11:00 AM",
@@ -2427,7 +2405,7 @@
         "date": "20260928",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "2",
+        "status": "3",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51126"
@@ -2636,7 +2614,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28131"
@@ -2691,7 +2669,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28123"
@@ -3076,7 +3054,7 @@
         "date": "20260928",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "90944"
@@ -3208,7 +3186,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "2",
+        "status": "0",
         "screen": "",
         "vcode": "PGMV",
         "sid": "22537"
@@ -3807,28 +3785,6 @@
         "vcode": "GKCP",
         "sid": "4203"
       },
-      "PBRM|25218|20260928|ELITE": {
-        "venue": "PVR: Perambur, Spectrum Mall",
-        "time": "09:00 AM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PBRM",
-        "sid": "25218"
-      },
-      "PBRM|25218|20260928|BUDGET": {
-        "venue": "PVR: Perambur, Spectrum Mall",
-        "time": "09:00 AM",
-        "date": "20260928",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "3",
-        "screen": "",
-        "vcode": "PBRM",
-        "sid": "25218"
-      },
       "PBRM|25266|20260928|ELITE": {
         "venue": "PVR: Perambur, Spectrum Mall",
         "time": "09:10 AM",
@@ -4187,7 +4143,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "INPR",
         "sid": "66665"
@@ -4286,7 +4242,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "INPR",
         "sid": "66668"
@@ -4726,7 +4682,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "PSKL",
         "sid": "23675"
@@ -5771,7 +5727,7 @@
         "date": "20260928",
         "cat": "Box",
         "price": "180.00",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4935"
@@ -5782,7 +5738,7 @@
         "date": "20260928",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "1",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4935"
@@ -5793,7 +5749,7 @@
         "date": "20260928",
         "cat": "First Class",
         "price": "120.00",
-        "status": "1",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4935"
@@ -5804,7 +5760,7 @@
         "date": "20260928",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4935"
@@ -5859,7 +5815,7 @@
         "date": "20260928",
         "cat": "Box",
         "price": "180.00",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -5870,7 +5826,7 @@
         "date": "20260928",
         "cat": "Balcony",
         "price": "180.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -5881,7 +5837,7 @@
         "date": "20260928",
         "cat": "First Class",
         "price": "120.00",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
@@ -5892,32 +5848,10 @@
         "date": "20260928",
         "cat": "Second Class",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
-      },
-      "PCAN|45678|20260928|PRIME": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "09:00 AM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45678"
-      },
-      "PCAN|45678|20260928|CLASSIC": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "09:00 AM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45678"
       },
       "PCAN|45779|20260928|PRIME": {
         "venue": "PVR: VR Chennai, Anna Nagar",
