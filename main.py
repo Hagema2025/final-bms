@@ -10,7 +10,8 @@ from collections import defaultdict
 from zoneinfo import ZoneInfo
 from curl_cffi import requests
 import html
-import time
+import time    alert_failed = False
+
 import random
 # ======================================================================
 # CONFIGURATION
