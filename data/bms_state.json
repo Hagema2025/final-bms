@@ -7,7 +7,7 @@
         "date": "20260928",
         "cat": "Premium",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SCREEN 5",
         "vcode": "RAKK",
         "sid": "4260"
@@ -216,7 +216,7 @@
         "date": "20260928",
         "cat": "GoldStar",
         "price": "160.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K/ATMOS",
         "vcode": "RSSC",
         "sid": "123593"
@@ -502,7 +502,7 @@
         "date": "20260928",
         "cat": "NORMAL",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13597"
@@ -628,17 +628,6 @@
         "vcode": "MCXF",
         "sid": "650"
       },
-      "MAYJ|239558|20260928|FIRST CLASS": {
-        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
-        "time": "04:30 PM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "183.80",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "MAYJ",
-        "sid": "239558"
-      },
       "MAYJ|239489|20260928|FIRST CLASS": {
         "venue": "MAYAJAAL Multiplex: ECR, Chennai",
         "time": "06:00 PM",
@@ -733,7 +722,7 @@
         "date": "20260928",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "0",
+        "status": "3",
         "screen": "4K DOLBY 7.1",
         "vcode": "AGSM",
         "sid": "56832"
@@ -891,28 +880,6 @@
         "screen": "",
         "vcode": "PVHR",
         "sid": "42866"
-      },
-      "FMCN|105284|20260928|SILVER": {
-        "venue": "INOX National: Arcot Road",
-        "time": "03:50 PM",
-        "date": "20260928",
-        "cat": "SILVER",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "FMCN",
-        "sid": "105284"
-      },
-      "FMCN|105284|20260928|PREMIERE": {
-        "venue": "INOX National: Arcot Road",
-        "time": "03:50 PM",
-        "date": "20260928",
-        "cat": "PREMIERE",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "FMCN",
-        "sid": "105284"
       },
       "FMCN|105343|20260928|SILVER": {
         "venue": "INOX National: Arcot Road",
@@ -1338,7 +1305,7 @@
         "date": "20260928",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "2",
+        "status": "0",
         "screen": "",
         "vcode": "KSTK",
         "sid": "51155"
@@ -1349,7 +1316,7 @@
         "date": "20260928",
         "cat": "Premium",
         "price": "183.78",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "KSTK",
         "sid": "51155"
@@ -1371,7 +1338,7 @@
         "date": "20260928",
         "cat": "Economy",
         "price": "54.00",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "KSTK",
         "sid": "51155"
@@ -1426,7 +1393,7 @@
         "date": "20260928",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "1",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51125"
@@ -1613,7 +1580,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38859"
@@ -1877,7 +1844,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28135"
@@ -1888,7 +1855,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28126"
@@ -1925,28 +1892,6 @@
         "screen": "",
         "vcode": "PVSR",
         "sid": "28126"
-      },
-      "PGRA|22997|20260928|PRIME": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "03:55 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "2",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22997"
-      },
-      "PGRA|22997|20260928|CLASSIC": {
-        "venue": "PVR: Grand Galada, Pallavaram",
-        "time": "03:55 PM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PGRA",
-        "sid": "22997"
       },
       "PGRA|22998|20260928|PRIME": {
         "venue": "PVR: Grand Galada, Pallavaram",
@@ -2035,28 +1980,6 @@
         "screen": "RGB ATMOS",
         "vcode": "GKCP",
         "sid": "4203"
-      },
-      "INTO|90970|20260928|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "03:55 PM",
-        "date": "20260928",
-        "cat": "CLUB",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "90970"
-      },
-      "INTO|90970|20260928|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "03:55 PM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "54.35",
-        "status": "1",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "90970"
       },
       "INTO|90946|20260928|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -2361,7 +2284,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PVES",
         "sid": "34490"
@@ -3091,28 +3014,6 @@
         "screen": "",
         "vcode": "REMC",
         "sid": "6738"
-      },
-      "PCAN|45680|20260928|PRIME": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "03:55 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "1",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45680"
-      },
-      "PCAN|45680|20260928|CLASSIC": {
-        "venue": "PVR: VR Chennai, Anna Nagar",
-        "time": "03:55 PM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "PXL",
-        "vcode": "PCAN",
-        "sid": "45680"
       },
       "PCAN|45686|20260928|PRIME": {
         "venue": "PVR: VR Chennai, Anna Nagar",
