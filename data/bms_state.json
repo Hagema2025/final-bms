@@ -78,39 +78,6 @@
         "vcode": "RRGB",
         "sid": "1287"
       },
-      "RSSC|123594|20260928|SuperStar": {
-        "venue": "Rohini Silver Screens: Koyambedu",
-        "time": "08:00 PM",
-        "date": "20260928",
-        "cat": "SuperStar",
-        "price": "190.00",
-        "status": "1",
-        "screen": "4K/ATMOS",
-        "vcode": "RSSC",
-        "sid": "123594"
-      },
-      "RSSC|123594|20260928|PLATINUM": {
-        "venue": "Rohini Silver Screens: Koyambedu",
-        "time": "08:00 PM",
-        "date": "20260928",
-        "cat": "PLATINUM",
-        "price": "180.00",
-        "status": "1",
-        "screen": "4K/ATMOS",
-        "vcode": "RSSC",
-        "sid": "123594"
-      },
-      "RSSC|123594|20260928|GoldStar": {
-        "venue": "Rohini Silver Screens: Koyambedu",
-        "time": "08:00 PM",
-        "date": "20260928",
-        "cat": "GoldStar",
-        "price": "160.00",
-        "status": "2",
-        "screen": "4K/ATMOS",
-        "vcode": "RSSC",
-        "sid": "123594"
-      },
       "RSSC|123589|20260928|SuperStar": {
         "venue": "Rohini Silver Screens: Koyambedu",
         "time": "09:00 PM",
@@ -150,7 +117,7 @@
         "date": "20260928",
         "cat": "SuperStar",
         "price": "190.00",
-        "status": "2",
+        "status": "3",
         "screen": "4K/ATMOS",
         "vcode": "RSSC",
         "sid": "123595"
@@ -408,28 +375,6 @@
         "vcode": "AGSM",
         "sid": "56833"
       },
-      "PVHR|42903|20260928|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "07:35 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "2",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "42903"
-      },
-      "PVHR|42903|20260928|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "07:35 PM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "42903"
-      },
       "PVHR|42812|20260928|PRIME": {
         "venue": "PVR: Heritage RSL ECR, Chennai",
         "time": "10:10 PM",
@@ -474,35 +419,13 @@
         "vcode": "PVHR",
         "sid": "42866"
       },
-      "FMCN|105315|20260928|SILVER": {
-        "venue": "INOX National: Arcot Road",
-        "time": "07:35 PM",
-        "date": "20260928",
-        "cat": "SILVER",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "FMCN",
-        "sid": "105315"
-      },
-      "FMCN|105315|20260928|PREMIERE": {
-        "venue": "INOX National: Arcot Road",
-        "time": "07:35 PM",
-        "date": "20260928",
-        "cat": "PREMIERE",
-        "price": "54.35",
-        "status": "3",
-        "screen": "",
-        "vcode": "FMCN",
-        "sid": "105315"
-      },
       "FMCN|105286|20260928|SILVER": {
         "venue": "INOX National: Arcot Road",
         "time": "10:30 PM",
         "date": "20260928",
         "cat": "SILVER",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "FMCN",
         "sid": "105286"
@@ -561,28 +484,6 @@
         "screen": "4K DOLBY ATMOS",
         "vcode": "ACON",
         "sid": "47658"
-      },
-      "INCH|80747|20260928|Club": {
-        "venue": "INOX: Chennai Citi Centre, Dr. RK Salai",
-        "time": "07:30 PM",
-        "date": "20260928",
-        "cat": "Club",
-        "price": "183.80",
-        "status": "2",
-        "screen": "",
-        "vcode": "INCH",
-        "sid": "80747"
-      },
-      "INCH|80747|20260928|Executive": {
-        "venue": "INOX: Chennai Citi Centre, Dr. RK Salai",
-        "time": "07:30 PM",
-        "date": "20260928",
-        "cat": "Executive",
-        "price": "54.35",
-        "status": "2",
-        "screen": "",
-        "vcode": "INCH",
-        "sid": "80747"
       },
       "INCH|80733|20260928|Club": {
         "venue": "INOX: Chennai Citi Centre, Dr. RK Salai",
@@ -722,7 +623,7 @@
         "date": "20260928",
         "cat": "Premium",
         "price": "183.78",
-        "status": "1",
+        "status": "0",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51125"
@@ -832,7 +733,7 @@
         "date": "20260928",
         "cat": "Economy",
         "price": "54.00",
-        "status": "3",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51126"
@@ -1079,6 +980,28 @@
         "vcode": "PGRA",
         "sid": "22999"
       },
+      "PGRA|23045|20260928|PRIME": {
+        "venue": "PVR: Grand Galada, Pallavaram",
+        "time": "11:05 PM",
+        "date": "20260928",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "PGRA",
+        "sid": "23045"
+      },
+      "PGRA|23045|20260928|CLASSIC": {
+        "venue": "PVR: Grand Galada, Pallavaram",
+        "time": "11:05 PM",
+        "date": "20260928",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "PGRA",
+        "sid": "23045"
+      },
       "GKCP|4203|20260928|LOUNGE 1": {
         "venue": "GK Cinemas RGB + Laser SRL 4D: Porur",
         "time": "10:50 PM",
@@ -1100,28 +1023,6 @@
         "screen": "RGB ATMOS",
         "vcode": "GKCP",
         "sid": "4203"
-      },
-      "INTO|90947|20260928|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "07:30 PM",
-        "date": "20260928",
-        "cat": "CLUB",
-        "price": "183.80",
-        "status": "2",
-        "screen": "BIGPIX",
-        "vcode": "INTO",
-        "sid": "90947"
-      },
-      "INTO|90947|20260928|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "07:30 PM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "54.35",
-        "status": "1",
-        "screen": "BIGPIX",
-        "vcode": "INTO",
-        "sid": "90947"
       },
       "INTO|90948|20260928|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -1277,28 +1178,6 @@
         "vcode": "VVGT",
         "sid": "31684"
       },
-      "PVES|34491|20260928|ELITE": {
-        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
-        "time": "07:35 PM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVES",
-        "sid": "34491"
-      },
-      "PVES|34491|20260928|BUDGET": {
-        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
-        "time": "07:35 PM",
-        "date": "20260928",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "3",
-        "screen": "",
-        "vcode": "PVES",
-        "sid": "34491"
-      },
       "PVES|34492|20260928|ELITE": {
         "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
         "time": "10:40 PM",
@@ -1338,7 +1217,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PBRM",
         "sid": "25222"
@@ -1415,7 +1294,7 @@
         "date": "20260928",
         "cat": "Elite",
         "price": "150.00",
-        "status": "2",
+        "status": "1",
         "screen": "DOLBY ATMOS",
         "vcode": "SBTR",
         "sid": "12105"
@@ -1481,7 +1360,7 @@
         "date": "20260928",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PABC",
         "sid": "22047"
@@ -1540,28 +1419,6 @@
         "screen": "",
         "vcode": "PSKL",
         "sid": "23679"
-      },
-      "MCSK|16081|20260928|SPECIAL": {
-        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
-        "time": "07:30 PM",
-        "date": "20260928",
-        "cat": "SPECIAL",
-        "price": "54.35",
-        "status": "2",
-        "screen": "",
-        "vcode": "MCSK",
-        "sid": "16081"
-      },
-      "MCSK|16081|20260928|EXECUTIVE": {
-        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
-        "time": "07:30 PM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
-        "status": "2",
-        "screen": "",
-        "vcode": "MCSK",
-        "sid": "16081"
       },
       "MCSK|16016|20260928|SPECIAL": {
         "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
