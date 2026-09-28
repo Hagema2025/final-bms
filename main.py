@@ -1422,7 +1422,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                 else:
                     time_display = f"<b>{time_display}</b>"
 
-                lines.append(f"🕒{time_display}{screen_str}")
+                lines.append(f"\n🕒{time_display}{screen_str}")
 
                 # --- PULL ALL CATEGORIES FOR THIS SHOWTIME FROM FULL SNAPSHOT ---
                 full_categories = []
