@@ -7,7 +7,7 @@
         "date": "20260928",
         "cat": "Premium",
         "price": "190.00",
-        "status": "1",
+        "status": "0",
         "screen": "SCREEN 5",
         "vcode": "RAKK",
         "sid": "4249"
@@ -1013,17 +1013,6 @@
         "vcode": "MCXF",
         "sid": "650"
       },
-      "MAYJ|239556|20260928|FIRST CLASS": {
-        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
-        "time": "10:30 AM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "183.80",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "MAYJ",
-        "sid": "239556"
-      },
       "MAYJ|239487|20260928|FIRST CLASS": {
         "venue": "MAYAJAAL Multiplex: ECR, Chennai",
         "time": "12:00 PM",
@@ -1492,7 +1481,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38857"
@@ -1558,7 +1547,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38859"
@@ -2064,7 +2053,7 @@
         "date": "20260928",
         "cat": "Economy",
         "price": "54.00",
-        "status": "1",
+        "status": "0",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51122"
@@ -2460,7 +2449,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28122"
@@ -3417,7 +3406,7 @@
         "date": "20260928",
         "cat": "LOUNGE 1",
         "price": "150.00",
-        "status": "2",
+        "status": "1",
         "screen": "RGB ATMOS",
         "vcode": "GKCP",
         "sid": "4200"
@@ -4698,28 +4687,6 @@
         "vcode": "RDMP",
         "sid": "28402"
       },
-      "MMPR|2375|20260928|EXECUTIVE": {
-        "venue": "MovieMax: PR Mall, Wall Tax Road, Chennai",
-        "time": "10:15 AM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
-        "status": "3",
-        "screen": "4K LASER DOLBY 7.1 ",
-        "vcode": "MMPR",
-        "sid": "2375"
-      },
-      "MMPR|2375|20260928|BUDGET": {
-        "venue": "MovieMax: PR Mall, Wall Tax Road, Chennai",
-        "time": "10:15 AM",
-        "date": "20260928",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "0",
-        "screen": "4K LASER DOLBY 7.1 ",
-        "vcode": "MMPR",
-        "sid": "2375"
-      },
       "MMPR|2341|20260928|EXECUTIVE": {
         "venue": "MovieMax: PR Mall, Wall Tax Road, Chennai",
         "time": "01:15 PM",
@@ -4759,7 +4726,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "2",
+        "status": "3",
         "screen": "4K LASER DOLBY 7.1 ",
         "vcode": "MMPR",
         "sid": "2342"
@@ -4906,50 +4873,6 @@
         "screen": "RGB/ATMOS",
         "vcode": "SVWT",
         "sid": "14411"
-      },
-      "GRTC|9948|20260928|COUPLE": {
-        "venue": "GanapathyRam Theatre 4K Dolby 7.1: Chennai",
-        "time": "11:00 AM",
-        "date": "20260928",
-        "cat": "COUPLE",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "GRTC",
-        "sid": "9948"
-      },
-      "GRTC|9948|20260928|FAMILY CLASS": {
-        "venue": "GanapathyRam Theatre 4K Dolby 7.1: Chennai",
-        "time": "11:00 AM",
-        "date": "20260928",
-        "cat": "FAMILY CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "GRTC",
-        "sid": "9948"
-      },
-      "GRTC|9948|20260928|BALCONY": {
-        "venue": "GanapathyRam Theatre 4K Dolby 7.1: Chennai",
-        "time": "11:00 AM",
-        "date": "20260928",
-        "cat": "BALCONY",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "GRTC",
-        "sid": "9948"
-      },
-      "GRTC|9948|20260928|FIRST CLASS": {
-        "venue": "GanapathyRam Theatre 4K Dolby 7.1: Chennai",
-        "time": "11:00 AM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "120.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "GRTC",
-        "sid": "9948"
       },
       "GRTC|9949|20260928|COUPLE": {
         "venue": "GanapathyRam Theatre 4K Dolby 7.1: Chennai",
@@ -5170,6 +5093,72 @@
         "screen": "",
         "vcode": "VRCP",
         "sid": "3832"
+      },
+      "REMC|6735|20260928|FIRST CLASS": {
+        "venue": "Remy Cinemas A/C DTS 2K 3D Laser: Avadi",
+        "time": "11:30 AM",
+        "date": "20260928",
+        "cat": "FIRST CLASS",
+        "price": "130.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "REMC",
+        "sid": "6735"
+      },
+      "REMC|6735|20260928|SECOND CLASS": {
+        "venue": "Remy Cinemas A/C DTS 2K 3D Laser: Avadi",
+        "time": "11:30 AM",
+        "date": "20260928",
+        "cat": "SECOND CLASS",
+        "price": "130.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "REMC",
+        "sid": "6735"
+      },
+      "REMC|6737|20260928|FIRST CLASS": {
+        "venue": "Remy Cinemas A/C DTS 2K 3D Laser: Avadi",
+        "time": "03:00 PM",
+        "date": "20260928",
+        "cat": "FIRST CLASS",
+        "price": "130.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "REMC",
+        "sid": "6737"
+      },
+      "REMC|6737|20260928|SECOND CLASS": {
+        "venue": "Remy Cinemas A/C DTS 2K 3D Laser: Avadi",
+        "time": "03:00 PM",
+        "date": "20260928",
+        "cat": "SECOND CLASS",
+        "price": "130.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "REMC",
+        "sid": "6737"
+      },
+      "REMC|6738|20260928|FIRST CLASS": {
+        "venue": "Remy Cinemas A/C DTS 2K 3D Laser: Avadi",
+        "time": "06:30 PM",
+        "date": "20260928",
+        "cat": "FIRST CLASS",
+        "price": "130.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "REMC",
+        "sid": "6738"
+      },
+      "REMC|6738|20260928|SECOND CLASS": {
+        "venue": "Remy Cinemas A/C DTS 2K 3D Laser: Avadi",
+        "time": "06:30 PM",
+        "date": "20260928",
+        "cat": "SECOND CLASS",
+        "price": "130.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "REMC",
+        "sid": "6738"
       },
       "JOTG|11801|20260928|BALCONY": {
         "venue": "Jothi Theatre 4K A/c DTS: ST Thomas Mount",
@@ -5679,7 +5668,7 @@
       },
       "MTLM|19508|20260928|PRIME": {
         "venue": "Mani Talkies 2K RGB Laser ATMOS: Minjur",
-        "time": "09:45 PM",
+        "time": "10:00 PM",
         "date": "20260928",
         "cat": "PRIME",
         "price": "150.00",
