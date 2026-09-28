@@ -7,7 +7,7 @@
         "date": "20260928",
         "cat": "Premium",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": "SC 3 DOLBY ATMOS",
         "vcode": "RAKK",
         "sid": "4247"
@@ -348,7 +348,7 @@
         "date": "20260928",
         "cat": "BOX A",
         "price": "180.00",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "KVCS",
         "sid": "9379"
@@ -634,7 +634,7 @@
         "date": "20260928",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1",
         "vcode": "AGSM",
         "sid": "56832"
@@ -854,7 +854,7 @@
         "date": "20260928",
         "cat": "PREMIERE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "FMCN",
         "sid": "105271"
@@ -902,28 +902,6 @@
         "screen": "4K DOLBY ATMOS",
         "vcode": "ACON",
         "sid": "47658"
-      },
-      "INCH|80746|20260928|Club": {
-        "venue": "INOX: Chennai Citi Centre, Dr. RK Salai",
-        "time": "04:30 PM",
-        "date": "20260928",
-        "cat": "Club",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "INCH",
-        "sid": "80746"
-      },
-      "INCH|80746|20260928|Executive": {
-        "venue": "INOX: Chennai Citi Centre, Dr. RK Salai",
-        "time": "04:30 PM",
-        "date": "20260928",
-        "cat": "Executive",
-        "price": "54.35",
-        "status": "3",
-        "screen": "",
-        "vcode": "INCH",
-        "sid": "80746"
       },
       "INCH|80732|20260928|Club": {
         "venue": "INOX: Chennai Citi Centre, Dr. RK Salai",
@@ -1206,7 +1184,7 @@
         "date": "20260928",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "2",
+        "status": "1",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51125"
@@ -1283,7 +1261,7 @@
         "date": "20260928",
         "cat": "Economy",
         "price": "54.00",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "KSTK",
         "sid": "51159"
@@ -1514,7 +1492,7 @@
         "date": "20260928",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACTN",
         "sid": "46239"
@@ -1794,28 +1772,6 @@
         "vcode": "INTO",
         "sid": "90948"
       },
-      "PGMV|22567|20260928|PRIME": {
-        "venue": "PVR: Grand Mall, Velachery",
-        "time": "04:30 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "2",
-        "screen": "",
-        "vcode": "PGMV",
-        "sid": "22567"
-      },
-      "PGMV|22567|20260928|CLASSIC": {
-        "venue": "PVR: Grand Mall, Velachery",
-        "time": "04:30 PM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PGMV",
-        "sid": "22567"
-      },
       "PGMV|22540|20260928|PRIME": {
         "venue": "PVR: Grand Mall, Velachery",
         "time": "07:00 PM",
@@ -2075,7 +2031,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PBRM",
         "sid": "25221"
@@ -2332,28 +2288,6 @@
         "screen": "",
         "vcode": "INPR",
         "sid": "66656"
-      },
-      "PABC|22045|20260928|PRIME": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "04:35 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "2",
-        "screen": "",
-        "vcode": "PABC",
-        "sid": "22045"
-      },
-      "PABC|22045|20260928|CLASSIC": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "04:35 PM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PABC",
-        "sid": "22045"
       },
       "PABC|22046|20260928|PRIME": {
         "venue": "PVR: Aerohub, Chennai",
