@@ -243,24 +243,13 @@
         "vcode": "RSSC",
         "sid": "123590"
       },
-      "TVHP|25447|20260928|ELITE": {
-        "venue": "The Vijay Park Multiplex: Injambakkam ECR 4K Atmos",
-        "time": "07:00 PM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "183.00",
-        "status": "2",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "TVHP",
-        "sid": "25447"
-      },
       "TVHP|25448|20260928|ELITE": {
         "venue": "The Vijay Park Multiplex: Injambakkam ECR 4K Atmos",
         "time": "10:20 PM",
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY ATMOS",
         "vcode": "TVHP",
         "sid": "25448"
@@ -348,7 +337,7 @@
         "date": "20260928",
         "cat": "EXECUTIVE",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13598"
@@ -711,7 +700,7 @@
         "date": "20260928",
         "cat": "PREMIERE",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "FMCN",
         "sid": "105271"
@@ -722,7 +711,7 @@
         "date": "20260928",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY ATMOS",
         "vcode": "ACON",
         "sid": "47657"
@@ -799,7 +788,7 @@
         "date": "20260928",
         "cat": "Executive",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "INCH",
         "sid": "80747"
@@ -854,7 +843,7 @@
         "date": "20260928",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PVHC",
         "sid": "32642"
@@ -1151,7 +1140,7 @@
         "date": "20260928",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACVM",
         "sid": "56577"
@@ -1162,7 +1151,7 @@
         "date": "20260928",
         "cat": "PEARL",
         "price": "54.00",
-        "status": "0",
+        "status": "2",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACVM",
         "sid": "56577"
@@ -1210,28 +1199,6 @@
         "screen": "4K DOLBY 7.1",
         "vcode": "ACVM",
         "sid": "56578"
-      },
-      "ACTN|46239|20260928|DIAMOND": {
-        "venue": "AGS Cinemas: T. Nagar",
-        "time": "07:00 PM",
-        "date": "20260928",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "2",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACTN",
-        "sid": "46239"
-      },
-      "ACTN|46239|20260928|PEARL": {
-        "venue": "AGS Cinemas: T. Nagar",
-        "time": "07:00 PM",
-        "date": "20260928",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACTN",
-        "sid": "46239"
       },
       "ACTN|46240|20260928|DIAMOND": {
         "venue": "AGS Cinemas: T. Nagar",
@@ -1426,7 +1393,7 @@
         "date": "20260928",
         "cat": "SIGNATURE CLASS",
         "price": "150.00",
-        "status": "1",
+        "status": "0",
         "screen": "RGB ATMOS",
         "vcode": "GKCP",
         "sid": "4202"
@@ -1558,7 +1525,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PGMV",
         "sid": "22578"
@@ -1772,17 +1739,6 @@
         "vcode": "PBRM",
         "sid": "25222"
       },
-      "GAHC|2143|20260928|FIRST CLASS": {
-        "venue": "Gopalakrishna A/C 2K DOLBY 7.1-Karanodai(Redhills)",
-        "time": "06:30 PM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "120.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "GAHC",
-        "sid": "2143"
-      },
       "GAHC|2144|20260928|FIRST CLASS": {
         "venue": "Gopalakrishna A/C 2K DOLBY 7.1-Karanodai(Redhills)",
         "time": "10:00 PM",
@@ -1899,7 +1855,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "2",
         "screen": "",
         "vcode": "INPR",
         "sid": "66668"
@@ -2031,7 +1987,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "PSKL",
         "sid": "23678"
@@ -2376,39 +2332,6 @@
         "screen": "",
         "vcode": "WSTC",
         "sid": "4936"
-      },
-      "AVMT|991|20260928|BOX 1": {
-        "venue": "AVM Cinemas: Uthukkottai",
-        "time": "06:30 PM",
-        "date": "20260928",
-        "cat": "BOX 1",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "AVMT",
-        "sid": "991"
-      },
-      "AVMT|991|20260928|BOX 2": {
-        "venue": "AVM Cinemas: Uthukkottai",
-        "time": "06:30 PM",
-        "date": "20260928",
-        "cat": "BOX 2",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "AVMT",
-        "sid": "991"
-      },
-      "AVMT|991|20260928|ELITE": {
-        "venue": "AVM Cinemas: Uthukkottai",
-        "time": "06:30 PM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "130.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "AVMT",
-        "sid": "991"
       },
       "AVMT|992|20260928|BOX 1": {
         "venue": "AVM Cinemas: Uthukkottai",
