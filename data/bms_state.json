@@ -1943,7 +1943,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38845"
@@ -2240,7 +2240,7 @@
         "date": "20260928",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "2",
+        "status": "3",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51124"
@@ -5358,6 +5358,72 @@
         "vcode": "MMKC",
         "sid": "8454"
       },
+      "VRCP|3829|20260928|EXECUTIVE": {
+        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
+        "time": "11:30 AM",
+        "date": "20260928",
+        "cat": "EXECUTIVE",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "VRCP",
+        "sid": "3829"
+      },
+      "VRCP|3830|20260928|PREMIUM": {
+        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
+        "time": "02:45 PM",
+        "date": "20260928",
+        "cat": "PREMIUM",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "VRCP",
+        "sid": "3830"
+      },
+      "VRCP|3830|20260928|EXECUTIVE": {
+        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
+        "time": "02:45 PM",
+        "date": "20260928",
+        "cat": "EXECUTIVE",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "VRCP",
+        "sid": "3830"
+      },
+      "VRCP|3831|20260928|PREMIUM": {
+        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
+        "time": "06:30 PM",
+        "date": "20260928",
+        "cat": "PREMIUM",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "VRCP",
+        "sid": "3831"
+      },
+      "VRCP|3831|20260928|EXECUTIVE": {
+        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
+        "time": "06:30 PM",
+        "date": "20260928",
+        "cat": "EXECUTIVE",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "VRCP",
+        "sid": "3831"
+      },
+      "VRCP|3832|20260928|EXECUTIVE": {
+        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
+        "time": "10:00 PM",
+        "date": "20260928",
+        "cat": "EXECUTIVE",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "VRCP",
+        "sid": "3832"
+      },
       "REMC|6735|20260928|FIRST CLASS": {
         "venue": "Remy Cinemas A/C DTS 2K 3D Laser: Avadi",
         "time": "11:30 AM",
@@ -5423,6 +5489,50 @@
         "screen": "",
         "vcode": "REMC",
         "sid": "6738"
+      },
+      "JOTG|11801|20260928|BALCONY": {
+        "venue": "Jothi Theatre 4K A/c DTS: ST Thomas Mount",
+        "time": "03:00 PM",
+        "date": "20260928",
+        "cat": "BALCONY",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "JOTG",
+        "sid": "11801"
+      },
+      "JOTG|11801|20260928|FIRST CLASS": {
+        "venue": "Jothi Theatre 4K A/c DTS: ST Thomas Mount",
+        "time": "03:00 PM",
+        "date": "20260928",
+        "cat": "FIRST CLASS",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "JOTG",
+        "sid": "11801"
+      },
+      "JOTG|11803|20260928|BALCONY": {
+        "venue": "Jothi Theatre 4K A/c DTS: ST Thomas Mount",
+        "time": "10:15 PM",
+        "date": "20260928",
+        "cat": "BALCONY",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "JOTG",
+        "sid": "11803"
+      },
+      "JOTG|11803|20260928|FIRST CLASS": {
+        "venue": "Jothi Theatre 4K A/c DTS: ST Thomas Mount",
+        "time": "10:15 PM",
+        "date": "20260928",
+        "cat": "FIRST CLASS",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "JOTG",
+        "sid": "11803"
       },
       "WSTC|4934|20260928|Box": {
         "venue": "Woodlands Theatre: Chennai",
@@ -5600,50 +5710,6 @@
         "vcode": "WSTC",
         "sid": "4936"
       },
-      "JOTG|11801|20260928|BALCONY": {
-        "venue": "Jothi Theatre 4K A/c DTS: ST Thomas Mount",
-        "time": "03:00 PM",
-        "date": "20260928",
-        "cat": "BALCONY",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "JOTG",
-        "sid": "11801"
-      },
-      "JOTG|11801|20260928|FIRST CLASS": {
-        "venue": "Jothi Theatre 4K A/c DTS: ST Thomas Mount",
-        "time": "03:00 PM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "JOTG",
-        "sid": "11801"
-      },
-      "JOTG|11803|20260928|BALCONY": {
-        "venue": "Jothi Theatre 4K A/c DTS: ST Thomas Mount",
-        "time": "10:15 PM",
-        "date": "20260928",
-        "cat": "BALCONY",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "JOTG",
-        "sid": "11803"
-      },
-      "JOTG|11803|20260928|FIRST CLASS": {
-        "venue": "Jothi Theatre 4K A/c DTS: ST Thomas Mount",
-        "time": "10:15 PM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "JOTG",
-        "sid": "11803"
-      },
       "PCAN|45678|20260928|PRIME": {
         "venue": "PVR: VR Chennai, Anna Nagar",
         "time": "09:00 AM",
@@ -5705,7 +5771,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PCAN",
         "sid": "45780"
@@ -5797,6 +5863,50 @@
         "screen": "PXL",
         "vcode": "PCAN",
         "sid": "45682"
+      },
+      "VCDK|5995|20260928|ELITE": {
+        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
+        "time": "03:00 PM",
+        "date": "20260928",
+        "cat": "ELITE",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "VCDK",
+        "sid": "5995"
+      },
+      "VCDK|5995|20260928|PREMIUM": {
+        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
+        "time": "03:00 PM",
+        "date": "20260928",
+        "cat": "PREMIUM",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "VCDK",
+        "sid": "5995"
+      },
+      "VCDK|5998|20260928|ELITE": {
+        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
+        "time": "09:45 PM",
+        "date": "20260928",
+        "cat": "ELITE",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "VCDK",
+        "sid": "5998"
+      },
+      "VCDK|5998|20260928|PREMIUM": {
+        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
+        "time": "09:45 PM",
+        "date": "20260928",
+        "cat": "PREMIUM",
+        "price": "150.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "VCDK",
+        "sid": "5998"
       },
       "AVMT|990|20260928|BOX 1": {
         "venue": "AVM Cinemas: Uthukkottai",
@@ -5897,50 +6007,6 @@
         "vcode": "AVMT",
         "sid": "992"
       },
-      "VCDK|5995|20260928|ELITE": {
-        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
-        "time": "03:00 PM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VCDK",
-        "sid": "5995"
-      },
-      "VCDK|5995|20260928|PREMIUM": {
-        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
-        "time": "03:00 PM",
-        "date": "20260928",
-        "cat": "PREMIUM",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VCDK",
-        "sid": "5995"
-      },
-      "VCDK|5998|20260928|ELITE": {
-        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
-        "time": "09:45 PM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VCDK",
-        "sid": "5998"
-      },
-      "VCDK|5998|20260928|PREMIUM": {
-        "venue": "Venkateswara Cinemas DOLBY ATMOS: Kundrathur",
-        "time": "09:45 PM",
-        "date": "20260928",
-        "cat": "PREMIUM",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VCDK",
-        "sid": "5998"
-      },
       "AMTT|5004|20260928|PREMIUM": {
         "venue": "Arul Muruga Theatre 4K: Thiruporur",
         "time": "11:30 AM",
@@ -5984,6 +6050,50 @@
         "screen": "",
         "vcode": "AMTT",
         "sid": "5006"
+      },
+      "MTLM|19505|20260928|PRIME": {
+        "venue": "Mani Talkies 2K RGB Laser ATMOS: Minjur",
+        "time": "11:30 AM",
+        "date": "20260928",
+        "cat": "PRIME",
+        "price": "150.00",
+        "status": "3",
+        "screen": "DOLBY ATMOS",
+        "vcode": "MTLM",
+        "sid": "19505"
+      },
+      "MTLM|19506|20260928|PRIME": {
+        "venue": "Mani Talkies 2K RGB Laser ATMOS: Minjur",
+        "time": "03:00 PM",
+        "date": "20260928",
+        "cat": "PRIME",
+        "price": "150.00",
+        "status": "3",
+        "screen": "DOLBY ATMOS",
+        "vcode": "MTLM",
+        "sid": "19506"
+      },
+      "MTLM|19507|20260928|PRIME": {
+        "venue": "Mani Talkies 2K RGB Laser ATMOS: Minjur",
+        "time": "06:30 PM",
+        "date": "20260928",
+        "cat": "PRIME",
+        "price": "150.00",
+        "status": "3",
+        "screen": "DOLBY ATMOS",
+        "vcode": "MTLM",
+        "sid": "19507"
+      },
+      "MTLM|19508|20260928|PRIME": {
+        "venue": "Mani Talkies 2K RGB Laser ATMOS: Minjur",
+        "time": "09:45 PM",
+        "date": "20260928",
+        "cat": "PRIME",
+        "price": "150.00",
+        "status": "3",
+        "screen": "DOLBY ATMOS",
+        "vcode": "MTLM",
+        "sid": "19508"
       },
       "MLMT|8609|20260928|GOLD": {
         "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
@@ -6205,50 +6315,6 @@
         "vcode": "MLMT",
         "sid": "8612"
       },
-      "MTLM|19505|20260928|PRIME": {
-        "venue": "Mani Talkies 2K RGB Laser ATMOS: Minjur",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "150.00",
-        "status": "3",
-        "screen": "DOLBY ATMOS",
-        "vcode": "MTLM",
-        "sid": "19505"
-      },
-      "MTLM|19506|20260928|PRIME": {
-        "venue": "Mani Talkies 2K RGB Laser ATMOS: Minjur",
-        "time": "03:00 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "150.00",
-        "status": "3",
-        "screen": "DOLBY ATMOS",
-        "vcode": "MTLM",
-        "sid": "19506"
-      },
-      "MTLM|19507|20260928|PRIME": {
-        "venue": "Mani Talkies 2K RGB Laser ATMOS: Minjur",
-        "time": "06:30 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "150.00",
-        "status": "3",
-        "screen": "DOLBY ATMOS",
-        "vcode": "MTLM",
-        "sid": "19507"
-      },
-      "MTLM|19508|20260928|PRIME": {
-        "venue": "Mani Talkies 2K RGB Laser ATMOS: Minjur",
-        "time": "09:45 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "150.00",
-        "status": "3",
-        "screen": "DOLBY ATMOS",
-        "vcode": "MTLM",
-        "sid": "19508"
-      },
       "OMTT|4160|20260928|FIRST CLASS": {
         "venue": "Odiyan Mani Theatre 2k A/c Dolby: Thiruvottiyur",
         "time": "02:30 PM",
@@ -6270,72 +6336,6 @@
         "screen": "",
         "vcode": "OMTT",
         "sid": "4161"
-      },
-      "VRCP|3829|20260928|EXECUTIVE": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "11:30 AM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VRCP",
-        "sid": "3829"
-      },
-      "VRCP|3830|20260928|PREMIUM": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "02:45 PM",
-        "date": "20260928",
-        "cat": "PREMIUM",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VRCP",
-        "sid": "3830"
-      },
-      "VRCP|3830|20260928|EXECUTIVE": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "02:45 PM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VRCP",
-        "sid": "3830"
-      },
-      "VRCP|3831|20260928|PREMIUM": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "06:30 PM",
-        "date": "20260928",
-        "cat": "PREMIUM",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VRCP",
-        "sid": "3831"
-      },
-      "VRCP|3831|20260928|EXECUTIVE": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "06:30 PM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VRCP",
-        "sid": "3831"
-      },
-      "VRCP|3832|20260928|EXECUTIVE": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "10:00 PM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VRCP",
-        "sid": "3832"
       }
     },
     "dates": {
