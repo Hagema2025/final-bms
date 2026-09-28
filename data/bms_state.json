@@ -205,7 +205,7 @@
         "date": "20260928",
         "cat": "SuperStar",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": "RGB ATMOS",
         "vcode": "RSSC",
         "sid": "123587"
@@ -227,7 +227,7 @@
         "date": "20260928",
         "cat": "GoldStar",
         "price": "160.00",
-        "status": "3",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "RSSC",
         "sid": "123587"
@@ -1426,7 +1426,7 @@
         "date": "20260928",
         "cat": "PREMIERE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "FMCN",
         "sid": "105315"
@@ -1569,7 +1569,7 @@
         "date": "20260928",
         "cat": "Economy",
         "price": "54.00",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "KSTK",
         "sid": "51155"
@@ -2394,7 +2394,7 @@
         "date": "20260928",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PGMV",
         "sid": "22567"
@@ -2460,7 +2460,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "DOLBY ATMOS/4K",
         "vcode": "VVTN",
         "sid": "21006"
@@ -2504,7 +2504,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "DOLBY ATMOS/4K",
         "vcode": "VVTN",
         "sid": "21008"
@@ -2860,17 +2860,6 @@
         "screen": "4K/LASER",
         "vcode": "SUTC",
         "sid": "20493"
-      },
-      "VECT|8413|20260928|FIRST CLASS": {
-        "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
-        "time": "02:45 PM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VECT",
-        "sid": "8413"
       },
       "VECT|8414|20260928|FIRST CLASS": {
         "venue": "Vela Cinemas RGB 4KLaser DolbyAtmos: Thiruninravur",
@@ -3466,28 +3455,6 @@
         "vcode": "MMPR",
         "sid": "2344"
       },
-      "KMRM|13148|20260928|BALCONY": {
-        "venue": "Kumaran Theatre PROVA 4K DOLBY ATMOS: Madipakkam",
-        "time": "02:45 PM",
-        "date": "20260928",
-        "cat": "BALCONY",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "KMRM",
-        "sid": "13148"
-      },
-      "KMRM|13148|20260928|FIRST CLASS": {
-        "venue": "Kumaran Theatre PROVA 4K DOLBY ATMOS: Madipakkam",
-        "time": "02:45 PM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "KMRM",
-        "sid": "13148"
-      },
       "KMRM|13165|20260928|BALCONY": {
         "venue": "Kumaran Theatre PROVA 4K DOLBY ATMOS: Madipakkam",
         "time": "06:45 PM",
@@ -3516,7 +3483,7 @@
         "date": "20260928",
         "cat": "FIRST CLASS",
         "price": "130.00",
-        "status": "3",
+        "status": "2",
         "screen": "DOLBY ATMOS",
         "vcode": "LKOP",
         "sid": "12355"
@@ -3663,28 +3630,6 @@
         "screen": "",
         "vcode": "GRTC",
         "sid": "9951"
-      },
-      "VRCP|3830|20260928|PREMIUM": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "02:45 PM",
-        "date": "20260928",
-        "cat": "PREMIUM",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VRCP",
-        "sid": "3830"
-      },
-      "VRCP|3830|20260928|EXECUTIVE": {
-        "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
-        "time": "02:45 PM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "150.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VRCP",
-        "sid": "3830"
       },
       "VRCP|3831|20260928|PREMIUM": {
         "venue": "VR Cinemas RGB 4K LASER DOLBY ATMOS: Pattabiram",
@@ -3945,7 +3890,7 @@
         "date": "20260928",
         "cat": "BOX 1",
         "price": "150.00",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "AVMT",
         "sid": "990"
@@ -4099,7 +4044,7 @@
         "date": "20260928",
         "cat": "GOLD",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K M-MAX(PLF)",
         "vcode": "MLMT",
         "sid": "8610"
