@@ -1,28 +1,6 @@
 {
   "MeesayaMurukku2_20260928001041 (Tamil 2D)": {
     "shows": {
-      "RAKK|4246|20260928|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "03:20 PM",
-        "date": "20260928",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "2",
-        "screen": "SC 3 DOLBY ATMOS",
-        "vcode": "RAKK",
-        "sid": "4246"
-      },
-      "RAKK|4246|20260928|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "03:20 PM",
-        "date": "20260928",
-        "cat": "Elite",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SC 3 DOLBY ATMOS",
-        "vcode": "RAKK",
-        "sid": "4246"
-      },
       "RAKK|4260|20260928|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "04:45 PM",
@@ -216,7 +194,7 @@
         "date": "20260928",
         "cat": "SuperStar",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": "4K/ATMOS",
         "vcode": "RSSC",
         "sid": "123593"
@@ -535,7 +513,7 @@
         "date": "20260928",
         "cat": "EXECUTIVE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13597"
@@ -810,7 +788,7 @@
         "date": "20260928",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PVHR",
         "sid": "42868"
@@ -1173,7 +1151,7 @@
         "date": "20260928",
         "cat": "Executive",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "INCH",
         "sid": "80731"
@@ -1415,7 +1393,7 @@
         "date": "20260928",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "1",
+        "status": "0",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51123"
@@ -1426,7 +1404,7 @@
         "date": "20260928",
         "cat": "Premium",
         "price": "183.78",
-        "status": "1",
+        "status": "0",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51123"
@@ -1492,7 +1470,7 @@
         "date": "20260928",
         "cat": "Economy",
         "price": "54.00",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "KSTK",
         "sid": "51155"
@@ -2218,7 +2196,7 @@
         "date": "20260928",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "INTO",
         "sid": "90970"
@@ -2603,7 +2581,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PBRM",
         "sid": "25220"
@@ -2823,7 +2801,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "INPR",
         "sid": "66654"
@@ -2834,7 +2812,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "INPR",
         "sid": "66654"
@@ -2971,28 +2949,6 @@
         "vcode": "PABC",
         "sid": "22047"
       },
-      "GCRP|17549|20260928|DIAMOND": {
-        "venue": "Green Cinemas 4K Atmos, PLF: Padi",
-        "time": "03:10 PM",
-        "date": "20260928",
-        "cat": "DIAMOND",
-        "price": "130.00",
-        "status": "2",
-        "screen": "4K DOLBY",
-        "vcode": "GCRP",
-        "sid": "17549"
-      },
-      "GCRP|17549|20260928|PEARL": {
-        "venue": "Green Cinemas 4K Atmos, PLF: Padi",
-        "time": "03:10 PM",
-        "date": "20260928",
-        "cat": "PEARL",
-        "price": "130.00",
-        "status": "3",
-        "screen": "4K DOLBY",
-        "vcode": "GCRP",
-        "sid": "17549"
-      },
       "GCRP|17532|20260928|DIAMOND": {
         "venue": "Green Cinemas 4K Atmos, PLF: Padi",
         "time": "07:00 PM",
@@ -3120,7 +3076,7 @@
         "date": "20260928",
         "cat": "EXECUTIVE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "MCSK",
         "sid": "16014"
