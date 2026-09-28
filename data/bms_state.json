@@ -128,7 +128,7 @@
         "date": "20260928",
         "cat": "PLATINUM",
         "price": "180.00",
-        "status": "2",
+        "status": "1",
         "screen": "RGB ATMOS",
         "vcode": "RSSC",
         "sid": "123589"
@@ -150,7 +150,7 @@
         "date": "20260928",
         "cat": "SuperStar",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K/ATMOS",
         "vcode": "RSSC",
         "sid": "123595"
@@ -491,7 +491,7 @@
         "date": "20260928",
         "cat": "PREMIERE",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "FMCN",
         "sid": "105315"
@@ -634,7 +634,7 @@
         "date": "20260928",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PVHC",
         "sid": "32688"
@@ -711,7 +711,7 @@
         "date": "20260928",
         "cat": "Super Premium",
         "price": "183.78",
-        "status": "1",
+        "status": "0",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51125"
@@ -777,7 +777,7 @@
         "date": "20260928",
         "cat": "Elite",
         "price": "130.00",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "KSTK",
         "sid": "51159"
@@ -909,7 +909,7 @@
         "date": "20260928",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACVM",
         "sid": "56578"
@@ -1338,7 +1338,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "1",
+        "status": "2",
         "screen": "",
         "vcode": "PBRM",
         "sid": "25222"
@@ -1772,50 +1772,6 @@
         "vcode": "VCDK",
         "sid": "5998"
       },
-      "WSTC|4936|20260928|Box": {
-        "venue": "Woodlands Theatre: Chennai",
-        "time": "10:00 PM",
-        "date": "20260928",
-        "cat": "Box",
-        "price": "180.00",
-        "status": "0",
-        "screen": "",
-        "vcode": "WSTC",
-        "sid": "4936"
-      },
-      "WSTC|4936|20260928|Balcony": {
-        "venue": "Woodlands Theatre: Chennai",
-        "time": "10:00 PM",
-        "date": "20260928",
-        "cat": "Balcony",
-        "price": "180.00",
-        "status": "1",
-        "screen": "",
-        "vcode": "WSTC",
-        "sid": "4936"
-      },
-      "WSTC|4936|20260928|First Class": {
-        "venue": "Woodlands Theatre: Chennai",
-        "time": "10:00 PM",
-        "date": "20260928",
-        "cat": "First Class",
-        "price": "120.00",
-        "status": "1",
-        "screen": "",
-        "vcode": "WSTC",
-        "sid": "4936"
-      },
-      "WSTC|4936|20260928|Second Class": {
-        "venue": "Woodlands Theatre: Chennai",
-        "time": "10:00 PM",
-        "date": "20260928",
-        "cat": "Second Class",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "WSTC",
-        "sid": "4936"
-      },
       "AVMT|992|20260928|BOX 1": {
         "venue": "AVM Cinemas: Uthukkottai",
         "time": "09:45 PM",
@@ -1848,17 +1804,6 @@
         "screen": "",
         "vcode": "AVMT",
         "sid": "992"
-      },
-      "MTLM|19508|20260928|PRIME": {
-        "venue": "Mani Talkies 2K RGB Laser ATMOS: Minjur",
-        "time": "10:00 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "150.00",
-        "status": "3",
-        "screen": "DOLBY ATMOS",
-        "vcode": "MTLM",
-        "sid": "19508"
       },
       "MLMT|8612|20260928|GOLD": {
         "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
@@ -1914,6 +1859,17 @@
         "screen": "4K M-MAX(PLF)",
         "vcode": "MLMT",
         "sid": "8612"
+      },
+      "MTLM|19508|20260928|PRIME": {
+        "venue": "Mani Talkies 2K RGB Laser ATMOS: Minjur",
+        "time": "10:00 PM",
+        "date": "20260928",
+        "cat": "PRIME",
+        "price": "150.00",
+        "status": "3",
+        "screen": "DOLBY ATMOS",
+        "vcode": "MTLM",
+        "sid": "19508"
       }
     },
     "dates": {
