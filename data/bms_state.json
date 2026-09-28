@@ -260,7 +260,7 @@
         "date": "20260928",
         "cat": "GoldStar",
         "price": "160.00",
-        "status": "2",
+        "status": "1",
         "screen": "RGB ATMOS",
         "vcode": "RSSC",
         "sid": "123587"
@@ -502,7 +502,7 @@
         "date": "20260928",
         "cat": "BOX A",
         "price": "180.00",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "KVCS",
         "sid": "9379"
@@ -535,7 +535,7 @@
         "date": "20260928",
         "cat": "PREMIUM",
         "price": "60.00",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "KVCS",
         "sid": "9379"
@@ -716,17 +716,6 @@
         "vcode": "MCXF",
         "sid": "650"
       },
-      "MAYJ|239488|20260928|FIRST CLASS": {
-        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
-        "time": "03:00 PM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "183.80",
-        "status": "2",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "MAYJ",
-        "sid": "239488"
-      },
       "MAYJ|239558|20260928|FIRST CLASS": {
         "venue": "MAYAJAAL Multiplex: ECR, Chennai",
         "time": "04:30 PM",
@@ -821,7 +810,7 @@
         "date": "20260928",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1",
         "vcode": "AGSM",
         "sid": "56831"
@@ -1393,7 +1382,7 @@
         "date": "20260928",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PVHC",
         "sid": "32642"
@@ -1503,7 +1492,7 @@
         "date": "20260928",
         "cat": "Premium",
         "price": "183.78",
-        "status": "2",
+        "status": "1",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51123"
@@ -1569,7 +1558,7 @@
         "date": "20260928",
         "cat": "Economy",
         "price": "54.00",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "KSTK",
         "sid": "51155"
@@ -2784,28 +2773,6 @@
         "vcode": "GAHC",
         "sid": "2144"
       },
-      "SUTC|20491|20260928|QUIET": {
-        "venue": "Gokulam Cinemas 4K Dolby Atmos: Poonamalle",
-        "time": "02:45 PM",
-        "date": "20260928",
-        "cat": "QUIET",
-        "price": "190.00",
-        "status": "2",
-        "screen": "4K/LASER",
-        "vcode": "SUTC",
-        "sid": "20491"
-      },
-      "SUTC|20491|20260928|FIRST CLASS": {
-        "venue": "Gokulam Cinemas 4K Dolby Atmos: Poonamalle",
-        "time": "02:45 PM",
-        "date": "20260928",
-        "cat": "FIRST CLASS",
-        "price": "130.00",
-        "status": "2",
-        "screen": "4K/LASER",
-        "vcode": "SUTC",
-        "sid": "20491"
-      },
       "SUTC|20492|20260928|QUIET": {
         "venue": "Gokulam Cinemas 4K Dolby Atmos: Poonamalle",
         "time": "06:45 PM",
@@ -3098,7 +3065,7 @@
         "date": "20260928",
         "cat": "DIAMOND",
         "price": "130.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY",
         "vcode": "GCRP",
         "sid": "17549"
@@ -3982,61 +3949,6 @@
         "screen": "",
         "vcode": "AMTT",
         "sid": "5006"
-      },
-      "MLMT|8610|20260928|GOLD": {
-        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
-        "time": "02:40 PM",
-        "date": "20260928",
-        "cat": "GOLD",
-        "price": "190.00",
-        "status": "2",
-        "screen": "4K M-MAX(PLF)",
-        "vcode": "MLMT",
-        "sid": "8610"
-      },
-      "MLMT|8610|20260928|PREMIUM": {
-        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
-        "time": "02:40 PM",
-        "date": "20260928",
-        "cat": "PREMIUM",
-        "price": "150.00",
-        "status": "2",
-        "screen": "4K M-MAX(PLF)",
-        "vcode": "MLMT",
-        "sid": "8610"
-      },
-      "MLMT|8610|20260928|EXECUTIVE": {
-        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
-        "time": "02:40 PM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "130.00",
-        "status": "3",
-        "screen": "4K M-MAX(PLF)",
-        "vcode": "MLMT",
-        "sid": "8610"
-      },
-      "MLMT|8610|20260928|SILVER": {
-        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
-        "time": "02:40 PM",
-        "date": "20260928",
-        "cat": "SILVER",
-        "price": "130.00",
-        "status": "3",
-        "screen": "4K M-MAX(PLF)",
-        "vcode": "MLMT",
-        "sid": "8610"
-      },
-      "MLMT|8610|20260928|LOUNGER": {
-        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
-        "time": "02:40 PM",
-        "date": "20260928",
-        "cat": "LOUNGER",
-        "price": "190.00",
-        "status": "2",
-        "screen": "4K M-MAX(PLF)",
-        "vcode": "MLMT",
-        "sid": "8610"
       },
       "MLMT|8611|20260928|GOLD": {
         "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
