@@ -18,7 +18,7 @@
         "date": "20260928",
         "cat": "Elite",
         "price": "150.00",
-        "status": "3",
+        "status": "2",
         "screen": "SCREEN 5",
         "vcode": "RAKK",
         "sid": "4261"
@@ -293,7 +293,7 @@
         "date": "20260928",
         "cat": "PREMIUM",
         "price": "60.00",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "KVCS",
         "sid": "9365"
@@ -507,28 +507,6 @@
         "vcode": "AGSM",
         "sid": "56833"
       },
-      "PVHR|42856|20260928|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "06:40 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "42856"
-      },
-      "PVHR|42856|20260928|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "06:40 PM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "2",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "42856"
-      },
       "PVHR|42813|20260928|PRIME": {
         "venue": "PVR: Heritage RSL ECR, Chennai",
         "time": "07:10 PM",
@@ -568,7 +546,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVHR",
         "sid": "42903"
@@ -700,7 +678,7 @@
         "date": "20260928",
         "cat": "PREMIERE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "FMCN",
         "sid": "105271"
@@ -766,7 +744,7 @@
         "date": "20260928",
         "cat": "Executive",
         "price": "54.35",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "INCH",
         "sid": "80732"
@@ -788,7 +766,7 @@
         "date": "20260928",
         "cat": "Executive",
         "price": "54.35",
-        "status": "1",
+        "status": "3",
         "screen": "",
         "vcode": "INCH",
         "sid": "80747"
@@ -1228,7 +1206,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28125"
@@ -1250,7 +1228,7 @@
         "date": "20260928",
         "cat": "ECONOMY",
         "price": "163.00",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PVSR",
         "sid": "28125"
@@ -1552,28 +1530,6 @@
         "vcode": "VVTN",
         "sid": "21008"
       },
-      "VVGT|31759|20260928|ELITE": {
-        "venue": "Vels Theatres: Chennai",
-        "time": "07:15 PM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "160.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VVGT",
-        "sid": "31759"
-      },
-      "VVGT|31759|20260928|ECONOMY": {
-        "venue": "Vels Theatres: Chennai",
-        "time": "07:15 PM",
-        "date": "20260928",
-        "cat": "ECONOMY",
-        "price": "160.00",
-        "status": "3",
-        "screen": "",
-        "vcode": "VVGT",
-        "sid": "31759"
-      },
       "VVGT|31679|20260928|ELITE": {
         "venue": "Vels Theatres: Chennai",
         "time": "09:10 PM",
@@ -1694,28 +1650,6 @@
         "screen": "RGB/ATMOS",
         "vcode": "SSCC",
         "sid": "23424"
-      },
-      "PBRM|25221|20260928|ELITE": {
-        "venue": "PVR: Perambur, Spectrum Mall",
-        "time": "06:40 PM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "PBRM",
-        "sid": "25221"
-      },
-      "PBRM|25221|20260928|BUDGET": {
-        "venue": "PVR: Perambur, Spectrum Mall",
-        "time": "06:40 PM",
-        "date": "20260928",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "2",
-        "screen": "",
-        "vcode": "PBRM",
-        "sid": "25221"
       },
       "PBRM|25222|20260928|ELITE": {
         "venue": "PVR: Perambur, Spectrum Mall",
@@ -1899,7 +1833,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PABC",
         "sid": "22046"
@@ -1925,28 +1859,6 @@
         "screen": "",
         "vcode": "PABC",
         "sid": "22047"
-      },
-      "GCRP|17532|20260928|DIAMOND": {
-        "venue": "Green Cinemas 4K Atmos, PLF: Padi",
-        "time": "07:00 PM",
-        "date": "20260928",
-        "cat": "DIAMOND",
-        "price": "130.00",
-        "status": "1",
-        "screen": "PLF ENG SUBTITLE",
-        "vcode": "GCRP",
-        "sid": "17532"
-      },
-      "GCRP|17532|20260928|PEARL": {
-        "venue": "Green Cinemas 4K Atmos, PLF: Padi",
-        "time": "07:00 PM",
-        "date": "20260928",
-        "cat": "PEARL",
-        "price": "130.00",
-        "status": "3",
-        "screen": "PLF ENG SUBTITLE",
-        "vcode": "GCRP",
-        "sid": "17532"
       },
       "GCRP|17540|20260928|DIAMOND": {
         "venue": "Green Cinemas 4K Atmos, PLF: Padi",
@@ -2020,7 +1932,7 @@
         "date": "20260928",
         "cat": "SPECIAL",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "MCSK",
         "sid": "16015"
@@ -2053,7 +1965,7 @@
         "date": "20260928",
         "cat": "EXECUTIVE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "MCSK",
         "sid": "16081"
@@ -2163,7 +2075,7 @@
         "date": "20260928",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "PXL",
         "vcode": "PCAN",
         "sid": "45682"
@@ -2376,61 +2288,6 @@
         "screen": "DOLBY ATMOS",
         "vcode": "MTLM",
         "sid": "19508"
-      },
-      "MLMT|8611|20260928|GOLD": {
-        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
-        "time": "07:00 PM",
-        "date": "20260928",
-        "cat": "GOLD",
-        "price": "190.00",
-        "status": "0",
-        "screen": "4K M-MAX(PLF)",
-        "vcode": "MLMT",
-        "sid": "8611"
-      },
-      "MLMT|8611|20260928|PREMIUM": {
-        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
-        "time": "07:00 PM",
-        "date": "20260928",
-        "cat": "PREMIUM",
-        "price": "150.00",
-        "status": "1",
-        "screen": "4K M-MAX(PLF)",
-        "vcode": "MLMT",
-        "sid": "8611"
-      },
-      "MLMT|8611|20260928|EXECUTIVE": {
-        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
-        "time": "07:00 PM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "130.00",
-        "status": "1",
-        "screen": "4K M-MAX(PLF)",
-        "vcode": "MLMT",
-        "sid": "8611"
-      },
-      "MLMT|8611|20260928|SILVER": {
-        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
-        "time": "07:00 PM",
-        "date": "20260928",
-        "cat": "SILVER",
-        "price": "130.00",
-        "status": "2",
-        "screen": "4K M-MAX(PLF)",
-        "vcode": "MLMT",
-        "sid": "8611"
-      },
-      "MLMT|8611|20260928|LOUNGER": {
-        "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
-        "time": "07:00 PM",
-        "date": "20260928",
-        "cat": "LOUNGER",
-        "price": "190.00",
-        "status": "3",
-        "screen": "4K M-MAX(PLF)",
-        "vcode": "MLMT",
-        "sid": "8611"
       },
       "MLMT|8612|20260928|GOLD": {
         "venue": "Marvel Movie Max 4K Laser Dolby Atmos: Tiruvallur",
