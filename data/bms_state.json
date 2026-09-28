@@ -1,39 +1,6 @@
 {
   "MeesayaMurukku2_20260928001041 (Tamil 2D)": {
     "shows": {
-      "RAKK|4259|20260928|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "01:35 PM",
-        "date": "20260928",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "1",
-        "screen": "SCREEN 5",
-        "vcode": "RAKK",
-        "sid": "4259"
-      },
-      "RAKK|4259|20260928|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "01:35 PM",
-        "date": "20260928",
-        "cat": "Elite",
-        "price": "150.00",
-        "status": "1",
-        "screen": "SCREEN 5",
-        "vcode": "RAKK",
-        "sid": "4259"
-      },
-      "RAKK|4259|20260928|LOUNGER": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "01:35 PM",
-        "date": "20260928",
-        "cat": "LOUNGER",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 5",
-        "vcode": "RAKK",
-        "sid": "4259"
-      },
       "RAKK|4246|20260928|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "03:20 PM",
@@ -953,7 +920,7 @@
         "date": "20260928",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVHR",
         "sid": "42815"
@@ -1111,28 +1078,6 @@
         "screen": "",
         "vcode": "PVHR",
         "sid": "42866"
-      },
-      "INCH|80730|20260928|Club": {
-        "venue": "INOX: Chennai Citi Centre, Dr. RK Salai",
-        "time": "01:00 PM",
-        "date": "20260928",
-        "cat": "Club",
-        "price": "183.80",
-        "status": "2",
-        "screen": "",
-        "vcode": "INCH",
-        "sid": "80730"
-      },
-      "INCH|80730|20260928|Executive": {
-        "venue": "INOX: Chennai Citi Centre, Dr. RK Salai",
-        "time": "01:00 PM",
-        "date": "20260928",
-        "cat": "Executive",
-        "price": "54.35",
-        "status": "1",
-        "screen": "",
-        "vcode": "INCH",
-        "sid": "80730"
       },
       "INCH|80731|20260928|Club": {
         "venue": "INOX: Chennai Citi Centre, Dr. RK Salai",
@@ -1360,7 +1305,7 @@
         "date": "20260928",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PVHC",
         "sid": "32659"
@@ -1547,7 +1492,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38859"
@@ -1877,7 +1822,7 @@
         "date": "20260928",
         "cat": "PREMIERE",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "FMCN",
         "sid": "105286"
@@ -2212,28 +2157,6 @@
         "vcode": "ACVM",
         "sid": "56578"
       },
-      "PGMV|22538|20260928|PRIME": {
-        "venue": "PVR: Grand Mall, Velachery",
-        "time": "01:00 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "PGMV",
-        "sid": "22538"
-      },
-      "PGMV|22538|20260928|CLASSIC": {
-        "venue": "PVR: Grand Mall, Velachery",
-        "time": "01:00 PM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "1",
-        "screen": "",
-        "vcode": "PGMV",
-        "sid": "22538"
-      },
       "PGMV|22539|20260928|PRIME": {
         "venue": "PVR: Grand Mall, Velachery",
         "time": "04:00 PM",
@@ -2321,28 +2244,6 @@
         "screen": "",
         "vcode": "PGMV",
         "sid": "22541"
-      },
-      "PVES|34489|20260928|ELITE": {
-        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
-        "time": "01:05 PM",
-        "date": "20260928",
-        "cat": "ELITE",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVES",
-        "sid": "34489"
-      },
-      "PVES|34489|20260928|BUDGET": {
-        "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
-        "time": "01:05 PM",
-        "date": "20260928",
-        "cat": "BUDGET",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVES",
-        "sid": "34489"
       },
       "PVES|34490|20260928|ELITE": {
         "venue": "HDFC Millennia PVR: Escape-Express Avenue Mall",
@@ -4198,7 +4099,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "150.00",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "VCDK",
         "sid": "5995"
