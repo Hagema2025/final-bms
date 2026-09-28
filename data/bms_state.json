@@ -238,7 +238,7 @@
         "date": "20260928",
         "cat": "SuperStar",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K/ATMOS",
         "vcode": "RSSC",
         "sid": "123592"
@@ -249,7 +249,7 @@
         "date": "20260928",
         "cat": "PLATINUM",
         "price": "180.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K/ATMOS",
         "vcode": "RSSC",
         "sid": "123592"
@@ -524,7 +524,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "129.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "KVCS",
         "sid": "9379"
@@ -656,7 +656,7 @@
         "date": "20260928",
         "cat": "NORMAL",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13609"
@@ -1173,7 +1173,7 @@
         "date": "20260928",
         "cat": "Executive",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "INCH",
         "sid": "80730"
@@ -2223,28 +2223,6 @@
         "vcode": "PVSR",
         "sid": "28126"
       },
-      "ACVM|56381|20260928|DIAMOND": {
-        "venue": "AGS Cinemas: Villivakkam",
-        "time": "12:50 PM",
-        "date": "20260928",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "3",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "ACVM",
-        "sid": "56381"
-      },
-      "ACVM|56381|20260928|PEARL": {
-        "venue": "AGS Cinemas: Villivakkam",
-        "time": "12:50 PM",
-        "date": "20260928",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "ACVM",
-        "sid": "56381"
-      },
       "ACVM|56382|20260928|DIAMOND": {
         "venue": "AGS Cinemas: Villivakkam",
         "time": "03:45 PM",
@@ -2361,7 +2339,7 @@
         "date": "20260928",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PGMV",
         "sid": "22538"
@@ -2471,7 +2449,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PVES",
         "sid": "34489"
@@ -2773,6 +2751,28 @@
         "vcode": "VVGT",
         "sid": "31677"
       },
+      "VVGT|31678|20260928|ELITE": {
+        "venue": "Vels Theatres: Chennai",
+        "time": "06:15 PM",
+        "date": "20260928",
+        "cat": "ELITE",
+        "price": "160.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "VVGT",
+        "sid": "31678"
+      },
+      "VVGT|31678|20260928|ECONOMY": {
+        "venue": "Vels Theatres: Chennai",
+        "time": "06:15 PM",
+        "date": "20260928",
+        "cat": "ECONOMY",
+        "price": "160.00",
+        "status": "3",
+        "screen": "",
+        "vcode": "VVGT",
+        "sid": "31678"
+      },
       "VVGT|31679|20260928|ELITE": {
         "venue": "Vels Theatres: Chennai",
         "time": "09:00 PM",
@@ -2834,7 +2834,7 @@
         "date": "20260928",
         "cat": "SIGNATURE CLASS",
         "price": "150.00",
-        "status": "2",
+        "status": "1",
         "screen": "RGB ATMOS",
         "vcode": "GKCP",
         "sid": "4200"
@@ -3362,7 +3362,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "INPR",
         "sid": "66656"
@@ -3450,7 +3450,7 @@
         "date": "20260928",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PABC",
         "sid": "22044"
@@ -3531,28 +3531,6 @@
         "screen": "",
         "vcode": "PABC",
         "sid": "22047"
-      },
-      "MCSK|16013|20260928|SPECIAL": {
-        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
-        "time": "12:20 PM",
-        "date": "20260928",
-        "cat": "SPECIAL",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "MCSK",
-        "sid": "16013"
-      },
-      "MCSK|16013|20260928|EXECUTIVE": {
-        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
-        "time": "12:20 PM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "MCSK",
-        "sid": "16013"
       },
       "MCSK|16014|20260928|SPECIAL": {
         "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
@@ -4400,50 +4378,6 @@
         "screen": "PXL",
         "vcode": "PCAN",
         "sid": "45682"
-      },
-      "WSTC|4935|20260928|Box": {
-        "venue": "Woodlands Theatre: Chennai",
-        "time": "03:00 PM",
-        "date": "20260928",
-        "cat": "Box",
-        "price": "180.00",
-        "status": "0",
-        "screen": "",
-        "vcode": "WSTC",
-        "sid": "4935"
-      },
-      "WSTC|4935|20260928|Balcony": {
-        "venue": "Woodlands Theatre: Chennai",
-        "time": "03:00 PM",
-        "date": "20260928",
-        "cat": "Balcony",
-        "price": "180.00",
-        "status": "1",
-        "screen": "",
-        "vcode": "WSTC",
-        "sid": "4935"
-      },
-      "WSTC|4935|20260928|First Class": {
-        "venue": "Woodlands Theatre: Chennai",
-        "time": "03:00 PM",
-        "date": "20260928",
-        "cat": "First Class",
-        "price": "120.00",
-        "status": "1",
-        "screen": "",
-        "vcode": "WSTC",
-        "sid": "4935"
-      },
-      "WSTC|4935|20260928|Second Class": {
-        "venue": "Woodlands Theatre: Chennai",
-        "time": "03:00 PM",
-        "date": "20260928",
-        "cat": "Second Class",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "WSTC",
-        "sid": "4935"
       },
       "WSTC|4971|20260928|Box": {
         "venue": "Woodlands Theatre: Chennai",
