@@ -216,7 +216,7 @@
         "date": "20260928",
         "cat": "PLATINUM",
         "price": "180.00",
-        "status": "3",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "RSSC",
         "sid": "123587"
@@ -583,28 +583,6 @@
         "screen": "SCREEN 1",
         "vcode": "RRGB",
         "sid": "1287"
-      },
-      "CBMC|13609|20260928|NORMAL": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "01:55 PM",
-        "date": "20260928",
-        "cat": "NORMAL",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13609"
-      },
-      "CBMC|13609|20260928|EXECUTIVE": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "01:55 PM",
-        "date": "20260928",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
-        "status": "2",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13609"
       },
       "CBMC|13597|20260928|NORMAL": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
@@ -1470,7 +1448,7 @@
         "date": "20260928",
         "cat": "PREMIERE",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "FMCN",
         "sid": "105315"
@@ -1547,7 +1525,7 @@
         "date": "20260928",
         "cat": "Elite",
         "price": "130.00",
-        "status": "3",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51123"
@@ -1602,7 +1580,7 @@
         "date": "20260928",
         "cat": "Economy",
         "price": "54.00",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "KSTK",
         "sid": "51155"
@@ -1646,7 +1624,7 @@
         "date": "20260928",
         "cat": "Economy",
         "price": "54.00",
-        "status": "3",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "KSTK",
         "sid": "51124"
@@ -1844,7 +1822,7 @@
         "date": "20260928",
         "cat": "BUDGET",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "38860"
@@ -2317,7 +2295,7 @@
         "date": "20260928",
         "cat": "LOUNGE 1",
         "price": "150.00",
-        "status": "3",
+        "status": "2",
         "screen": "RGB ATMOS",
         "vcode": "GKCP",
         "sid": "4203"
@@ -2449,7 +2427,7 @@
         "date": "20260928",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PGMV",
         "sid": "22567"
@@ -2691,7 +2669,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PVES",
         "sid": "34491"
@@ -2779,7 +2757,7 @@
         "date": "20260928",
         "cat": "ELITE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PBRM",
         "sid": "25221"
@@ -3125,28 +3103,6 @@
         "vcode": "INPR",
         "sid": "66656"
       },
-      "PABC|22044|20260928|PRIME": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "01:20 PM",
-        "date": "20260928",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "PABC",
-        "sid": "22044"
-      },
-      "PABC|22044|20260928|CLASSIC": {
-        "venue": "PVR: Aerohub, Chennai",
-        "time": "01:20 PM",
-        "date": "20260928",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "2",
-        "screen": "",
-        "vcode": "PABC",
-        "sid": "22044"
-      },
       "PABC|22045|20260928|PRIME": {
         "venue": "PVR: Aerohub, Chennai",
         "time": "04:35 PM",
@@ -3483,7 +3439,7 @@
         "date": "20260928",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "PXL",
         "vcode": "PCAN",
         "sid": "45682"
