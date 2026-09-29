@@ -401,32 +401,7 @@
     }
   },
   "YezhuKadalYezhuMalai_20260927111037 (Tamil 2D)": {
-    "shows": {
-      "ACON|47734|20261001|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "10:15 PM",
-        "date": "20261001",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47734",
-        "missing_count": 2
-      },
-      "ACON|47734|20261001|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "10:15 PM",
-        "date": "20261001",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47734",
-        "missing_count": 2
-      }
-    },
+    "shows": {},
     "dates": {
       "20261001": "AVAILABLE",
       "20261002": "AVAILABLE",
