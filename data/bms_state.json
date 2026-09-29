@@ -99,13 +99,15 @@
       }
     },
     "dates": {
-      "20260930": "BOOKABLE",
+      "20260930": "AVAILABLE",
       "20261001": "AVAILABLE",
       "20261002": "AVAILABLE",
       "20261003": "AVAILABLE",
-      "20261004": "NOT_OPEN",
-      "20261005": "NOT_OPEN",
-      "20261006": "NOT_OPEN"
+      "20261004": "BOOKABLE",
+      "20261005": "AVAILABLE",
+      "20261006": "AVAILABLE",
+      "20261007": "AVAILABLE",
+      "20261008": "AVAILABLE"
     }
   },
   "MeesayaMurukku2_20260929003757 (Tamil 2D)": {
@@ -263,7 +265,8 @@
       "20261004": "BOOKABLE",
       "20261005": "AVAILABLE",
       "20261006": "AVAILABLE",
-      "20261007": "AVAILABLE"
+      "20261007": "AVAILABLE",
+      "20261008": "AVAILABLE"
     }
   },
   "Baththa_20260927111157 (Tamil 2D)": {
