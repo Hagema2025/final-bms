@@ -99,13 +99,13 @@
       }
     },
     "dates": {
-      "20260929": "BOOKABLE",
-      "20260930": "AVAILABLE",
+      "20260930": "BOOKABLE",
       "20261001": "AVAILABLE",
       "20261002": "AVAILABLE",
       "20261003": "NOT_OPEN",
       "20261004": "NOT_OPEN",
-      "20261005": "NOT_OPEN"
+      "20261005": "NOT_OPEN",
+      "20261006": "NOT_OPEN"
     }
   },
   "MeesayaMurukku2_20260929003757 (Tamil 2D)": {
@@ -299,7 +299,7 @@
         "date": "20261001",
         "cat": "NORMAL",
         "price": "54.35",
-        "status": "1",
+        "status": "2",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13713",
@@ -412,7 +412,7 @@
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
         "sid": "47734",
-        "missing_count": 1
+        "missing_count": 2
       },
       "ACON|47734|20261001|PEARL": {
         "venue": "AGS Cinemas OMR: Navlur",
@@ -424,7 +424,7 @@
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
         "sid": "47734",
-        "missing_count": 1
+        "missing_count": 2
       }
     },
     "dates": {
