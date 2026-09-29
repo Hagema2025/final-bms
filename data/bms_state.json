@@ -88,12 +88,12 @@
       }
     },
     "dates": {
-      "20260929": "BOOKABLE",
+      "20260929": "AVAILABLE",
       "20260930": "AVAILABLE",
       "20261001": "AVAILABLE",
-      "20261002": "NOT_OPEN",
-      "20261003": "NOT_OPEN",
-      "20261004": "NOT_OPEN",
+      "20261002": "AVAILABLE",
+      "20261003": "AVAILABLE",
+      "20261004": "BOOKABLE",
       "20261005": "NOT_OPEN"
     }
   },
@@ -193,6 +193,18 @@
       "20261005": "NOT_OPEN",
       "20261006": "NOT_OPEN",
       "20261007": "NOT_OPEN"
+    }
+  },
+  "AnbilAvan_20260927190706 (Tamil 2D)": {
+    "shows": {},
+    "dates": {
+      "20261002": "AVAILABLE",
+      "20261003": "AVAILABLE",
+      "20261004": "BOOKABLE",
+      "20261005": "NOT_OPEN",
+      "20261006": "NOT_OPEN",
+      "20261007": "NOT_OPEN",
+      "20261008": "NOT_OPEN"
     }
   }
 }
