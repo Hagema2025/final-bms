@@ -3,7 +3,7 @@
     "shows": {
       "CBMC|13699|20261001|NORMAL": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "07:35 PM",
+        "time": "07:30 PM",
         "date": "20261001",
         "cat": "NORMAL",
         "price": "54.35",
@@ -15,7 +15,7 @@
       },
       "CBMC|13699|20261001|EXECUTIVE": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "07:35 PM",
+        "time": "07:30 PM",
         "date": "20261001",
         "cat": "EXECUTIVE",
         "price": "183.80",
@@ -27,7 +27,7 @@
       },
       "CBMC|13700|20261001|NORMAL": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "10:35 PM",
+        "time": "10:30 PM",
         "date": "20261001",
         "cat": "NORMAL",
         "price": "54.35",
@@ -39,7 +39,7 @@
       },
       "CBMC|13700|20261001|EXECUTIVE": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "10:35 PM",
+        "time": "10:30 PM",
         "date": "20261001",
         "cat": "EXECUTIVE",
         "price": "183.80",
@@ -112,7 +112,7 @@
     "shows": {
       "CBMC|13704|20261001|NORMAL": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "07:55 PM",
+        "time": "07:50 PM",
         "date": "20261001",
         "cat": "NORMAL",
         "price": "54.35",
@@ -124,7 +124,7 @@
       },
       "CBMC|13704|20261001|EXECUTIVE": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "07:55 PM",
+        "time": "07:50 PM",
         "date": "20261001",
         "cat": "EXECUTIVE",
         "price": "183.80",
@@ -136,7 +136,7 @@
       },
       "CBMC|13705|20261001|NORMAL": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "10:50 PM",
+        "time": "10:45 PM",
         "date": "20261001",
         "cat": "NORMAL",
         "price": "54.35",
@@ -148,7 +148,7 @@
       },
       "CBMC|13705|20261001|EXECUTIVE": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "10:50 PM",
+        "time": "10:45 PM",
         "date": "20261001",
         "cat": "EXECUTIVE",
         "price": "183.80",
@@ -269,6 +269,54 @@
   },
   "Baththa_20260927111157 (Tamil 2D)": {
     "shows": {
+      "CBMC|13712|20261001|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "07:35 PM",
+        "date": "20261001",
+        "cat": "NORMAL",
+        "price": "54.35",
+        "status": "2",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13712",
+        "missing_count": 0
+      },
+      "CBMC|13712|20261001|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "07:35 PM",
+        "date": "20261001",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13712",
+        "missing_count": 0
+      },
+      "CBMC|13713|20261001|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "10:50 PM",
+        "date": "20261001",
+        "cat": "NORMAL",
+        "price": "54.35",
+        "status": "2",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13713",
+        "missing_count": 0
+      },
+      "CBMC|13713|20261001|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "10:50 PM",
+        "date": "20261001",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13713",
+        "missing_count": 0
+      },
       "ACON|47742|20261001|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
         "time": "07:50 PM",
