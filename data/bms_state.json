@@ -190,7 +190,9 @@
       "20261002": "AVAILABLE",
       "20261003": "AVAILABLE",
       "20261004": "BOOKABLE",
-      "20261005": "NOT_OPEN"
+      "20261005": "AVAILABLE",
+      "20261006": "AVAILABLE",
+      "20261007": "AVAILABLE"
     }
   },
   "Baththa_20260927111157 (Tamil 2D)": {
