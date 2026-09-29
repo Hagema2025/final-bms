@@ -7,7 +7,7 @@
         "date": "20261001",
         "cat": "NORMAL",
         "price": "54.35",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13699",
@@ -92,7 +92,7 @@
         "date": "20261001",
         "cat": "NORMAL",
         "price": "54.35",
-        "status": "2",
+        "status": "0",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13704",
@@ -251,9 +251,9 @@
       "20261002": "AVAILABLE",
       "20261003": "AVAILABLE",
       "20261004": "BOOKABLE",
-      "20261005": "NOT_OPEN",
-      "20261006": "NOT_OPEN",
-      "20261007": "NOT_OPEN"
+      "20261005": "AVAILABLE",
+      "20261006": "AVAILABLE",
+      "20261007": "AVAILABLE"
     }
   },
   "YezhuKadalYezhuMalai_20260927111037 (Tamil 2D)": {
