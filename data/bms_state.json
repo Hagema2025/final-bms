@@ -49,30 +49,6 @@
         "sid": "13700",
         "missing_count": 0
       },
-      "ACON|47714|20261001|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "07:20 PM",
-        "date": "20261001",
-        "cat": "DIAMOND",
-        "price": "150.00",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47714",
-        "missing_count": 0
-      },
-      "ACON|47714|20261001|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "07:20 PM",
-        "date": "20261001",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47714",
-        "missing_count": 0
-      },
       "INTO|91081|20261001|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "10:40 PM",
@@ -95,6 +71,30 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91081",
+        "missing_count": 0
+      },
+      "ACON|47714|20261001|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "07:20 PM",
+        "date": "20261001",
+        "cat": "DIAMOND",
+        "price": "150.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47714",
+        "missing_count": 0
+      },
+      "ACON|47714|20261001|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "07:20 PM",
+        "date": "20261001",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47714",
         "missing_count": 0
       }
     },
@@ -410,7 +410,8 @@
       "20261004": "BOOKABLE",
       "20261005": "AVAILABLE",
       "20261006": "AVAILABLE",
-      "20261007": "AVAILABLE"
+      "20261007": "AVAILABLE",
+      "20261008": "AVAILABLE"
     }
   },
   "AnbilAvan_20260927190706 (Tamil 2D)": {
