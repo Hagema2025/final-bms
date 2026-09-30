@@ -313,6 +313,78 @@
         "sid": "47780",
         "missing_count": 0
       },
+      "INTO|91174|20261004|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:30 AM",
+        "date": "20261004",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91174",
+        "missing_count": 0
+      },
+      "INTO|91174|20261004|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:30 AM",
+        "date": "20261004",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91174",
+        "missing_count": 0
+      },
+      "INTO|91176|20261004|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:00 PM",
+        "date": "20261004",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91176",
+        "missing_count": 0
+      },
+      "INTO|91176|20261004|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:00 PM",
+        "date": "20261004",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91176",
+        "missing_count": 0
+      },
+      "INTO|91178|20261004|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:35 PM",
+        "date": "20261004",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91178",
+        "missing_count": 0
+      },
+      "INTO|91178|20261004|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:35 PM",
+        "date": "20261004",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91178",
+        "missing_count": 0
+      },
       "ACON|47800|20261004|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
         "time": "04:25 PM",
@@ -490,7 +562,7 @@
         "date": "20261001",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91074",
@@ -2084,6 +2156,54 @@
         "vcode": "INTO",
         "sid": "91136",
         "missing_count": 0
+      },
+      "INTO|91139|20261003|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "01:20 PM",
+        "date": "20261003",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91139",
+        "missing_count": 0
+      },
+      "INTO|91139|20261003|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "01:20 PM",
+        "date": "20261003",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91139",
+        "missing_count": 0
+      },
+      "INTO|91143|20261004|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "01:20 PM",
+        "date": "20261004",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91143",
+        "missing_count": 0
+      },
+      "INTO|91143|20261004|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "01:20 PM",
+        "date": "20261004",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91143",
+        "missing_count": 0
       }
     },
     "dates": {
@@ -2145,6 +2265,30 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91148",
+        "missing_count": 0
+      },
+      "INTO|91151|20261004|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "12:25 PM",
+        "date": "20261004",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91151",
+        "missing_count": 0
+      },
+      "INTO|91151|20261004|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "12:25 PM",
+        "date": "20261004",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91151",
         "missing_count": 0
       }
     },
