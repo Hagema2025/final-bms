@@ -793,7 +793,7 @@
         "date": "20261001",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "3",
+        "status": "2",
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91091",
@@ -1182,30 +1182,6 @@
         "vcode": "ACON",
         "sid": "47807",
         "missing_count": 0
-      },
-      "CBMC|13721|20261001|NORMAL": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "10:10 PM",
-        "date": "20261001",
-        "cat": "NORMAL",
-        "price": "54.35",
-        "status": "2",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13721",
-        "missing_count": 2
-      },
-      "CBMC|13721|20261001|EXECUTIVE": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "10:10 PM",
-        "date": "20261001",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13721",
-        "missing_count": 2
       }
     },
     "dates": {
@@ -1220,32 +1196,7 @@
     }
   },
   "YezhuKadalYezhuMalai_20260927111037 (Tamil 2D)": {
-    "shows": {
-      "CBMC|13732|20261001|NORMAL": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "08:15 PM",
-        "date": "20261001",
-        "cat": "NORMAL",
-        "price": "54.35",
-        "status": "2",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13732",
-        "missing_count": 2
-      },
-      "CBMC|13732|20261001|EXECUTIVE": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "08:15 PM",
-        "date": "20261001",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13732",
-        "missing_count": 2
-      }
-    },
+    "shows": {},
     "dates": {
       "20261001": "AVAILABLE",
       "20261002": "AVAILABLE",
