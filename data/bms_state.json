@@ -679,30 +679,6 @@
         "sid": "13712",
         "missing_count": 0
       },
-      "CBMC|13721|20261001|NORMAL": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "10:10 PM",
-        "date": "20261001",
-        "cat": "NORMAL",
-        "price": "54.35",
-        "status": "2",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13721",
-        "missing_count": 0
-      },
-      "CBMC|13721|20261001|EXECUTIVE": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "10:10 PM",
-        "date": "20261001",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13721",
-        "missing_count": 0
-      },
       "CBMC|13713|20261001|NORMAL": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
         "time": "10:50 PM",
@@ -1206,6 +1182,30 @@
         "vcode": "ACON",
         "sid": "47807",
         "missing_count": 0
+      },
+      "CBMC|13721|20261001|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "10:10 PM",
+        "date": "20261001",
+        "cat": "NORMAL",
+        "price": "54.35",
+        "status": "2",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13721",
+        "missing_count": 1
+      },
+      "CBMC|13721|20261001|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "10:10 PM",
+        "date": "20261001",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13721",
+        "missing_count": 1
       }
     },
     "dates": {
@@ -1231,7 +1231,7 @@
         "screen": "",
         "vcode": "CBMC",
         "sid": "13732",
-        "missing_count": 0
+        "missing_count": 1
       },
       "CBMC|13732|20261001|EXECUTIVE": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
@@ -1243,7 +1243,7 @@
         "screen": "",
         "vcode": "CBMC",
         "sid": "13732",
-        "missing_count": 0
+        "missing_count": 1
       }
     },
     "dates": {
