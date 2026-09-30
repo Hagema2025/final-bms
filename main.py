@@ -311,7 +311,7 @@ def send_ntfy_error(movie_name, date_code):
     
     url = f"{NTFY_URL}/{NTFY_ERROR_TOPIC}"
     headers = {
-        "Title": "⚠️ BMS Shows Fetch Failed",
+        "Title": "⚠️ Shows Fetch Failed",
         "Priority": "high",
         "Tags": "warning,rotating_light"
     }
@@ -1312,7 +1312,7 @@ def send_ntfy(label, movie_info, changes):
             tags = "ticket,money_with_wings"
 
         headers = {
-            "Title": f"BMS Alert: {movie_name} - {formatted_date}",  # <-- Date added to title
+            "Title": f"Show Alert: {movie_name} - {formatted_date}",  # <-- Date added to title
             "Priority": "high",  # Hardcoded to high for ALL alerts
             "Tags": tags,
         }
