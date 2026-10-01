@@ -1,1 +1,27 @@
-[]
+[
+  {
+    "name": "YezhuKadalYezhuMalaiTamil_20261001220020",
+    "url": "https://in.bookmyshow.com/movies/chennai/yezhu-kadal-yezhu-malai-tamil/ET00342249",
+    "dates": {
+      "20261002": [],
+      "20261003": [],
+      "20261004": []
+    },
+    "theatre": [
+      "AGS Cinemas OMR: Navlur",
+      "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+      "INOX: The Marina Mall, OMR",
+      "MAYAJAAL Multiplex: ECR, Chennai",
+      "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
+      "PVR: Heritage RSL ECR, Chennai",
+      "The Vijay Park Multiplex: Injambakkam ECR 4K Atmos"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 758
+  }
+]
