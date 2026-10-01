@@ -1521,7 +1521,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                             detail_line = f"<b>{price}</b> [{curr_st}{curr_emoji}]"
                     else:
                         price = clean_price(cat_price)
-                        _, curr_emoji = resolve_status_info(cat_status)
+                        curr_st, curr_emoji = resolve_status_info(cat_status)
                         cat_icon = ""
                         detail_line = f"<b>{price}</b> [{curr_st}{curr_emoji}]"
 
