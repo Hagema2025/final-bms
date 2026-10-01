@@ -78,10 +78,18 @@ def send_watch_expiry_alert(watch, idx):
         payload["message_thread_id"] = threadid
         
     try:
-        requests.post(url, json=payload, timeout=10)
+      response = requests.post(url, json=payload, timeout=10)
+
+      if response.status_code == 200:
         print(f"  🔔 Expiry notification sent for {watch_name}")
+      else:
+        print(
+            f"  ⚠️ Failed to send expiry notification "
+            f"for {watch_name}: HTTP {response.status_code} {response.text}"
+        )
+
     except Exception as e:
-        print(f"  ⚠️ Failed to send expiry notification: {e}")
+      print(f"  ⚠️ Failed to send expiry notification: {e}")
 
 # ======================================================================
 # CONSTANTS
@@ -1344,6 +1352,361 @@ def send_ntfy(label, movie_info, changes):
 # ======================================================================
 # Telegram
 # ======================================================================
+
+# ======================================================================
+# REMOVED SHOW ALERT
+# ======================================================================
+# ======================================================================
+# REMOVED SHOW TELEGRAM ALERT
+# ======================================================================
+def send_removed_shows_telegram(
+    threadid,
+    watch_name,
+    removed_shows,
+    movie_info,
+):
+    if not TELEGRAM_BOT_TOKEN or not GROUP_CHAT_ID:
+        print(
+            "  ⚠️ Removed-show Telegram skipped — "
+            "TELEGRAM_BOT_TOKEN or GROUP_CHAT_ID not configured."
+        )
+        return
+
+    if not removed_shows:
+        return
+
+    now_str = datetime.now(
+        ZoneInfo("Asia/Kolkata")
+    ).strftime("%d %b, %I:%M %p")
+
+    movie_name = movie_info.get(
+        "name",
+        watch_name.split("_")[0]
+    )
+
+    # --------------------------------------------------------------
+    # Language / Format — same style as send_telegram()
+    # --------------------------------------------------------------
+    lang_fmt_match = re.search(
+        r'\(([^)]+)\)$',
+        str(watch_name)
+    )
+
+    lang_fmt_str = (
+        f" 🗣️ <b>{html.escape(lang_fmt_match.group(1))}</b>"
+        if lang_fmt_match
+        else ""
+    )
+
+    # --------------------------------------------------------------
+    # Sort:
+    # DATE -> VENUE -> TIME
+    # --------------------------------------------------------------
+    sorted_shows = sorted(
+        removed_shows,
+        key=lambda x: (
+            str(x.get("date", "")),
+            str(x.get("venue", "")).lower(),
+            parse_time_to_minutes(
+                x.get("time", "")
+            ),
+            str(x.get("screen", "")).lower(),
+        )
+    )
+
+    # --------------------------------------------------------------
+    # Group:
+    # DATE -> VENUE
+    # --------------------------------------------------------------
+    grouped = defaultdict(
+        lambda: defaultdict(list)
+    )
+
+    for show in sorted_shows:
+        grouped[
+            str(show.get("date", ""))
+        ][
+            str(show.get("venue", ""))
+        ].append(show)
+
+    # --------------------------------------------------------------
+    # HEADER
+    # --------------------------------------------------------------
+    lines = [
+        "🚨 <b>SHOW REMOVED!</b>",
+        f"🎬 <b>{html.escape(str(movie_name))}</b>{lang_fmt_str}",
+        "🏷 <b>#SHOWREMOVED</b>",
+        f"🕒 <i>{html.escape(now_str)}</i>",
+        "",
+    ]
+
+    # --------------------------------------------------------------
+    # DATE -> VENUE -> TIME
+    # --------------------------------------------------------------
+    for date_val, venues_dict in grouped.items():
+
+        formatted_date = format_date(date_val)
+
+        lines.append(
+            "╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌"
+        )
+
+        lines.append(
+            f"📅 <b>{html.escape(str(formatted_date)).upper()}</b>"
+        )
+
+        lines.append(
+            "╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌"
+        )
+
+        # Venue alphabetical order
+        for venue, venue_shows in sorted(
+            venues_dict.items(),
+            key=lambda x: x[0].lower()
+        ):
+
+            lines.append(
+                f"🏢 <b>{html.escape(str(venue))}</b>"
+            )
+
+            # Time order inside venue
+            venue_shows = sorted(
+                venue_shows,
+                key=lambda x: (
+                    parse_time_to_minutes(
+                        x.get("time", "")
+                    ),
+                    str(x.get("screen", "")).lower(),
+                )
+            )
+
+            for show in venue_shows:
+
+                time_val = str(
+                    show.get("time", "")
+                ).strip()
+
+                screen = str(
+                    show.get("screen", "")
+                ).strip()
+
+                vcode = str(
+                    show.get("vcode", "")
+                ).strip()
+
+                sid = str(
+                    show.get("sid", "")
+                ).strip()
+
+                # --------------------------------------------------
+                # Screen formatting — SAME STYLE as send_telegram()
+                # --------------------------------------------------
+                raw_screen = (
+                    screen if screen else "NORM"
+                )
+
+                if len(raw_screen) > 15:
+                    raw_screen = (
+                        raw_screen[:12] + "..."
+                    )
+
+                screen_name = html.escape(
+                    raw_screen
+                )
+
+                chain_url = CINEMA_CHAIN_URLS.get(
+                    vcode
+                )
+
+                if chain_url:
+                    screen_str = (
+                        f' [<a href="{chain_url}">'
+                        f"{screen_name}"
+                        f"</a>]"
+                    )
+
+                else:
+                    venue_upper = venue.upper()
+
+                    if "PVR" in venue_upper:
+                        screen_str = (
+                            f' [<a href="'
+                            f'https://www.pvrcinemas.com/'
+                            f'">{screen_name}</a>]'
+                        )
+
+                    elif "INOX" in venue_upper:
+                        screen_str = (
+                            f' [<a href="'
+                            f'https://www.inoxmovies.com/'
+                            f'">{screen_name}</a>]'
+                        )
+
+                    else:
+                        screen_str = (
+                            f" [{screen_name}]"
+                        )
+
+                # --------------------------------------------------
+                # Direct BMS show link — TIME is clickable
+                # --------------------------------------------------
+                time_display = html.escape(
+                    time_val
+                )
+
+                if vcode and sid:
+
+                    book_url = (
+                        "https://in.bookmyshow.com/"
+                        f"booktickets/{vcode}/{sid}"
+                    )
+
+                    time_display = (
+                        f'<a href="{book_url}">'
+                        f"<b>{time_display}</b>"
+                        f"</a>"
+                    )
+
+                else:
+                    time_display = (
+                        f"<b>{time_display}</b>"
+                    )
+
+                # --------------------------------------------------
+                # Removed-show line
+                # No price/status/category information here.
+                # --------------------------------------------------
+                lines.append(
+                    f"❌{time_display}"
+                    f"{screen_str} "
+                )
+
+            lines.append("")
+
+        lines.append("")
+
+    # --------------------------------------------------------------
+    # DISPATCH — same retry/chunk style as send_telegram()
+    # --------------------------------------------------------------
+    message_chunks = split_message_chunks(
+        lines
+    )
+
+    url = (
+        f"https://api.telegram.org/"
+        f"bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+    )
+
+    alert_failed = False
+    last_error = "Unknown Error"
+
+    for chunk in message_chunks:
+
+        chunk_success = False
+
+        for attempt in range(1, 4):
+
+            try:
+
+                payload = {
+                    "chat_id": GROUP_CHAT_ID,
+                    "text": chunk,
+                    "parse_mode": "HTML",
+                    "disable_web_page_preview": True,
+                    "disable_notification": False,
+                }
+
+                # IMPORTANT:
+                # Send to the SAME forum topic as normal alerts.
+                if threadid:
+                    payload[
+                        "message_thread_id"
+                    ] = threadid
+
+                response = requests.post(
+                    url,
+                    json=payload,
+                    timeout=20,
+                )
+
+                if response.status_code == 200:
+                    chunk_success = True
+                    break
+
+                last_error = (
+                    f"HTTP {response.status_code}: "
+                    f"{response.text}"
+                )
+
+            except requests.RequestException as e:
+                last_error = str(e)
+
+            time.sleep(attempt * 2)
+
+        if not chunk_success:
+            alert_failed = True
+            break
+
+    # --------------------------------------------------------------
+    # ADMIN FALLBACK — same as send_telegram()
+    # --------------------------------------------------------------
+    if alert_failed:
+
+        print(
+            f"  ⚠️ Failed to send removed-show alert: "
+            f"{last_error}"
+        )
+
+        if TELEGRAM_CHAT_ID:
+
+            report_text = (
+                "⚠️ <b>Delivery Failure Report</b>\n"
+                f"Failed to deliver removed-show alert "
+                f"for <b>{html.escape(str(movie_name))}</b> "
+                f"to Topic ID <code>{threadid}</code> "
+                "in the Group.\n"
+                f"❌ <b>Reason:</b> "
+                f"<code>{html.escape(last_error)}</code>"
+            )
+
+            try:
+
+                requests.post(
+                    url,
+                    json={
+                        "chat_id": TELEGRAM_CHAT_ID,
+                        "text": report_text,
+                        "parse_mode": "HTML",
+                    },
+                    timeout=10,
+                )
+
+                for chunk in message_chunks:
+
+                    requests.post(
+                        url,
+                        json={
+                            "chat_id": TELEGRAM_CHAT_ID,
+                            "text": chunk,
+                            "parse_mode": "HTML",
+                            "disable_web_page_preview": True,
+                        },
+                        timeout=10,
+                    )
+
+                    time.sleep(1)
+
+            except Exception:
+                pass
+
+    else:
+
+        print(
+            f"  🗑️ Removed-show alert sent "
+            f"to thread {threadid} "
+            f"({len(removed_shows)} show(s))"
+        )
+
 def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
     if not TELEGRAM_BOT_TOKEN or not GROUP_CHAT_ID:
         print("  ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN or GROUP_CHAT_ID not configured.")
@@ -1631,6 +1994,7 @@ def run_event(
 
     all_shows = []
     all_dates = []
+    successful_date_codes = set()
     first_full_data = None
 
     movie_info = {
@@ -1670,6 +2034,10 @@ def run_event(
         )
 
         if data:
+            # BMS successfully responded for this requested date.
+    # This date is safe to use for missing-show detection.
+            if date_code:
+              successful_date_codes.add(str(date_code))
 
             if first_full_data is None:
                 first_full_data = data
@@ -1709,12 +2077,24 @@ def run_event(
             clean_fallback = label.split('_')[0]
             movie_info = parse_movie_info(data, fallback_name=clean_fallback)
 
-        all_dates.extend(parse_dates(data))
+        returned_dates = parse_dates(data)
+        all_dates.extend(returned_dates)
         all_shows.extend(parse_shows(data))
 
-    if not all_shows:
+# For the default-date API request, use the dates actually
+# returned by BMS as the successfully checked dates.
+        if not date_code:
+           successful_date_codes.update(
+        str(d.date_code)
+        for d in returned_dates
+        if d.date_code
+    )
 
-        print("  ⚠️ No showtimes found.")
+    if not successful_date_codes:
+
+
+        print("  ⚠️ No successfully checked dates.")
+
 
         # Don't destroy existing state on a temporary
         # BMS/API failure.
@@ -1744,30 +2124,206 @@ def run_event(
     )
 
     old_watch_state = state.get(label, {})
+    
     # --- GRACE PERIOD LOGIC FOR MISSING SHOWS ---
+        # ==============================================================
+    # SHOW REMOVAL / MISSING SHOW GRACE LOGIC
+    #
+    # IMPORTANT:
+    # - State is stored per ticket category.
+    # - A physical show is only considered missing when ALL of its
+    #   categories are absent from a SUCCESSFUL BMS response.
+    # - SOLD categories are NOT treated as removed.
+    # - API/server failures must NOT increment missing_count.
+    # ==============================================================
+
+    removed_shows = []
+
     if old_watch_state and "shows" in old_watch_state:
+
         old_shows = old_watch_state["shows"]
         new_shows = new_watch_state["shows"]
-        
-        MAX_MISSING_CHECKS = 3  # Keep missing shows for up to 3 checks
 
+        MAX_MISSING_CHECKS = 3
+
+        # ----------------------------------------------------------
+        # Build physical-show keys from the NEW successful snapshot.
+        #
+        # Category is intentionally NOT part of this key.
+        # ----------------------------------------------------------
+        new_physical_shows = set()
+
+        for new_show in new_shows.values():
+
+            physical_key = (
+                str(new_show.get("date", "")),
+                str(new_show.get("venue", "")),
+                str(new_show.get("time", "")),
+                str(new_show.get("vcode", "")),
+                str(new_show.get("sid", "")),
+            )
+
+            new_physical_shows.add(physical_key)
+
+        # ----------------------------------------------------------
+        # Track which physical shows we already processed.
+        #
+        # This is important because the state contains one entry
+        # for every ticket category.
+        # ----------------------------------------------------------
+        processed_physical_shows = set()
+
+        # ----------------------------------------------------------
+        # Check every old category entry.
+        # ----------------------------------------------------------
         for key, old_show in old_shows.items():
-            if key not in new_shows:
 
-                # 👇 ADD THESE TWO LINES 👇
-                if not is_show_in_future(old_show["date"], old_show["time"]):
-                    continue
-                # 👆👆👆👆👆👆👆👆👆👆👆👆
-                # Show is missing in this fetch cycle! Check its previous missing count.
-                current_missing = old_show.get("missing_count", 0) + 1
-                
-                if current_missing < MAX_MISSING_CHECKS:
-                    # Carry it over into the new state and increment counter
-                    old_show["missing_count"] = current_missing
-                    new_shows[key] = old_show
-                    # print(f"  ℹ️ Show temporarily missing, preserving grace period ({current_missing}/{MAX_MISSING_CHECKS}): {old_show['venue']} {old_show['time']}")
-                else:
-                    print(f"  🗑️ Show dropped after {MAX_MISSING_CHECKS} consecutive missing checks: {old_show['venue']} {old_show['time']}")
+            physical_key = (
+                str(old_show.get("date", "")),
+                str(old_show.get("venue", "")),
+                str(old_show.get("time", "")),
+                str(old_show.get("vcode", "")),
+                str(old_show.get("sid", "")),
+            )
+
+            # Same physical show can exist multiple times because
+            # each category is stored separately.
+            if physical_key in processed_physical_shows:
+                continue
+
+            processed_physical_shows.add(physical_key)
+
+            # ------------------------------------------------------
+            # IMPORTANT:
+            # Only compare shows belonging to dates that BMS
+            # successfully responded for.
+            # ------------------------------------------------------
+            old_show_date = str(old_show.get("date", ""))
+
+            if old_show_date not in successful_date_codes:
+                new_shows[key] = old_show
+                continue
+
+            # ------------------------------------------------------
+            # Ignore shows that have already started/passed.
+            # cleanup_state() handles old dates separately.
+            # ------------------------------------------------------
+            if not is_show_in_future(
+                old_show.get("date", ""),
+                old_show.get("time", ""),
+            ):
+                continue
+
+            # ------------------------------------------------------
+            # If the physical show still exists in the NEW snapshot,
+            # then it is NOT removed.
+            #
+            # This also covers:
+            #   Category A = SOLD
+            #   Category B = FEW
+            #   Category C = AVL
+            #
+            # The show remains alive.
+            # ------------------------------------------------------
+            if physical_key in new_physical_shows:
+
+                # Reset missing count for every category belonging
+                # to this physical show.
+                for old_key, old_category in old_shows.items():
+
+                    old_physical_key = (
+                        str(old_category.get("date", "")),
+                        str(old_category.get("venue", "")),
+                        str(old_category.get("time", "")),
+                        str(old_category.get("vcode", "")),
+                        str(old_category.get("sid", "")),
+                    )
+
+                    if old_physical_key == physical_key:
+                        old_category["missing_count"] = 0
+
+                continue
+
+            # ------------------------------------------------------
+            # Physical show is absent from the successful BMS
+            # snapshot.
+            #
+            # Since build_state() contains every category, reaching
+            # here means ALL previously tracked categories disappeared.
+            # ------------------------------------------------------
+
+            current_missing = old_show.get(
+                "missing_count",
+                0,
+            ) + 1
+
+            # ------------------------------------------------------
+            # Update missing_count for ALL categories belonging to
+            # this same physical show.
+            #
+            # This makes the grace counter represent the SHOW,
+            # not an individual category.
+            # ------------------------------------------------------
+            for old_key, old_category in old_shows.items():
+
+                old_physical_key = (
+                    str(old_category.get("date", "")),
+                    str(old_category.get("venue", "")),
+                    str(old_category.get("time", "")),
+                    str(old_category.get("vcode", "")),
+                    str(old_category.get("sid", "")),
+                )
+
+                if old_physical_key == physical_key:
+
+                    old_category["missing_count"] = current_missing
+
+                    # Keep the categories during the grace period.
+                    if current_missing <= MAX_MISSING_CHECKS:
+                        new_shows[old_key] = old_category
+
+            # ------------------------------------------------------
+            # Show has survived the complete grace period.
+            # ------------------------------------------------------
+            if current_missing > MAX_MISSING_CHECKS:
+
+                print(
+                    f"  🗑️ SHOW REMOVED after "
+                    f"{MAX_MISSING_CHECKS} consecutive "
+                    f"successful missing checks: "
+                    f"{old_show.get('venue', 'Unknown')} "
+                    f"{old_show.get('time', '')}"
+                )
+
+                # One physical show only.
+                removed_shows.append({
+                    "date": old_show.get("date", ""),
+                    "venue": old_show.get("venue", ""),
+                    "time": old_show.get("time", ""),
+                    "screen": old_show.get("screen", ""),
+                    "vcode": old_show.get("vcode", ""),
+                    "sid": old_show.get("sid", ""),
+                })
+
+                # Remove ALL category entries belonging to this
+                # physical show from the new state.
+                keys_to_remove = []
+
+                for old_key, old_category in new_shows.items():
+
+                    new_physical_key = (
+                        str(old_category.get("date", "")),
+                        str(old_category.get("venue", "")),
+                        str(old_category.get("time", "")),
+                        str(old_category.get("vcode", "")),
+                        str(old_category.get("sid", "")),
+                    )
+
+                    if new_physical_key == physical_key:
+                        keys_to_remove.append(old_key)
+
+                for old_key in keys_to_remove:
+                    new_shows.pop(old_key, None)
 
     # changes = []
 
@@ -1779,6 +2335,19 @@ def run_event(
 
     # REMOVED the "if old_watch_state:" restriction 
     # so it alerts on the very first run too!
+        # ==============================================================
+    # SEND REMOVED-SHOW ALERT
+    # ==============================================================
+
+    if removed_shows:
+
+        send_removed_shows_telegram(
+            threadid,
+            label,
+            removed_shows,
+            movie_info,
+        )
+
     changes = detect_changes(
         old_watch_state,
         new_watch_state,
@@ -2006,6 +2575,7 @@ def run_watch(
         clean_fallback = watch_name.split('_')[0]
         base_info = parse_movie_info(first_full_data, fallback_name=clean_fallback)
         raw_lang = str(base_info.get("language", "")).strip()
+        base_lang = raw_lang.lower()
         
         # 1. RENAME TRACKER BASED ON TRUE API DATA
         if "•" in raw_lang:
