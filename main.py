@@ -2704,6 +2704,7 @@ def run_watch(
                     title_slug = f"movie-{v_code}"
 
                 # Reconstruct standardized URL format: https://in.bookmyshow.com/movies/{region}/{title_slug}/{event_code}
+                # Reconstruct standardized URL format: https://in.bookmyshow.com/movies/{region}/{title_slug}/{event_code}
                 new_url = f"https://in.bookmyshow.com/movies/{clean_region}/{title_slug}/{v_code}"
 
                 if watch["url"] != new_url:
@@ -2711,6 +2712,30 @@ def run_watch(
                         f"  💡 Auto-updating watch URL to target variant directly: {new_url}"
                     )
                     watch["url"] = new_url
+                    
+                    # 🔥 FIX: Synchronize the base watch name with the new variant immediately
+                    correct_tag = f"({target_variant.language} {target_variant.format})"
+                    clean_base = re.sub(r'(?i)(Telugu|Tamil|Hindi|Malayalam|English)', '', watch_name.split('_')[0])
+                    
+                    try:
+                        timestamp_id = watch_name.split('_')[1].split(' ')[0]
+                    except Exception:
+                        timestamp_id = "000000"
+                        
+                    new_watch_name = f"{clean_base}_{timestamp_id} {correct_tag}"
+                    
+                    # 🔥 STATE MIGRATION: Fix the broken state keys so we don't spam duplicate alerts!
+                    old_stacked_name = f"{watch_name} {correct_tag}"
+                    if old_stacked_name in state:
+                        state[new_watch_name] = state.pop(old_stacked_name)
+                    elif watch_name in state:
+                        state[new_watch_name] = state.pop(watch_name)
+                        
+                    print(f"  💡 Pre-emptively fixing base watch name to match variant: {new_watch_name}")
+                    
+                    old_watch_name = watch_name
+                    watch["name"] = new_watch_name
+                    watch_name = new_watch_name # Update for the rest of the loop
 
                     try:
                         if os.path.exists(WATCHES_FILE):
@@ -2718,8 +2743,9 @@ def run_watch(
                                 watches_data = json.load(f)
 
                             for w in watches_data:
-                                if w.get("name") == watch_name:
+                                if w.get("name") == old_watch_name:
                                     w["url"] = new_url
+                                    w["name"] = new_watch_name # 🔥 Save the new name permanently!
 
                             with open(WATCHES_FILE, "w", encoding="utf-8") as f:
                                 json.dump(watches_data, f, indent=2, ensure_ascii=False)
