@@ -1,6 +1,6 @@
 [
   {
-    "name": "YezhuKadalYezhuMalai_20261001220020 (Tamil 2D)",
+    "name": "YezhuKadalYezhuMalaiTamil_20261001220020",
     "url": "https://in.bookmyshow.com/movies/chennai/yezhu-kadal-yezhu-malai-tamil/ET00342249",
     "dates": {
       "20261002": [],
@@ -23,5 +23,25 @@
     ],
     "formats": [],
     "message_thread_id": 758
+  },
+  {
+    "name": "DoraemonCastleOfTheUnderseaDevilHindi_20261001221357",
+    "url": "https://in.bookmyshow.com/movies/chennai/doraemon-castle-of-the-undersea-devil-hindi/ET00507337",
+    "dates": {
+      "20261002": [],
+      "20261003": [],
+      "20261004": []
+    },
+    "theatre": [
+      "AGS Cinemas OMR: Navlur",
+      "INOX: The Marina Mall, OMR"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 765
   }
 ]
