@@ -49,6 +49,30 @@
         "sid": "13700",
         "missing_count": 0
       },
+      "ACON|47714|20261001|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "07:20 PM",
+        "date": "20261001",
+        "cat": "DIAMOND",
+        "price": "150.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47714",
+        "missing_count": 0
+      },
+      "ACON|47714|20261001|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "07:20 PM",
+        "date": "20261001",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47714",
+        "missing_count": 0
+      },
       "INTO|91083|20261001|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "07:00 PM",
@@ -97,28 +121,28 @@
         "sid": "91081",
         "missing_count": 0
       },
-      "ACON|47714|20261001|DIAMOND": {
+      "ACON|47758|20261002|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
-        "time": "07:20 PM",
-        "date": "20261001",
+        "time": "04:25 PM",
+        "date": "20261002",
         "cat": "DIAMOND",
         "price": "150.00",
         "status": "3",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
-        "sid": "47714",
+        "sid": "47758",
         "missing_count": 0
       },
-      "ACON|47714|20261001|PEARL": {
+      "ACON|47758|20261002|PEARL": {
         "venue": "AGS Cinemas OMR: Navlur",
-        "time": "07:20 PM",
-        "date": "20261001",
+        "time": "04:25 PM",
+        "date": "20261002",
         "cat": "PEARL",
         "price": "54.00",
         "status": "0",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
-        "sid": "47714",
+        "sid": "47758",
         "missing_count": 0
       },
       "INTO|91119|20261002|CLUB": {
@@ -193,28 +217,28 @@
         "sid": "91121",
         "missing_count": 0
       },
-      "ACON|47758|20261002|DIAMOND": {
+      "ACON|47780|20261003|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
         "time": "04:25 PM",
-        "date": "20261002",
+        "date": "20261003",
         "cat": "DIAMOND",
         "price": "150.00",
         "status": "3",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
-        "sid": "47758",
+        "sid": "47780",
         "missing_count": 0
       },
-      "ACON|47758|20261002|PEARL": {
+      "ACON|47780|20261003|PEARL": {
         "venue": "AGS Cinemas OMR: Navlur",
         "time": "04:25 PM",
-        "date": "20261002",
+        "date": "20261003",
         "cat": "PEARL",
         "price": "54.00",
         "status": "0",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
-        "sid": "47758",
+        "sid": "47780",
         "missing_count": 0
       },
       "INTO|91169|20261003|CLUB": {
@@ -287,30 +311,6 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91173",
-        "missing_count": 0
-      },
-      "ACON|47780|20261003|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "04:25 PM",
-        "date": "20261003",
-        "cat": "DIAMOND",
-        "price": "150.00",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47780",
-        "missing_count": 0
-      },
-      "ACON|47780|20261003|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "04:25 PM",
-        "date": "20261003",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47780",
         "missing_count": 0
       },
       "ACON|47800|20261004|DIAMOND": {
