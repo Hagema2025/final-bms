@@ -193,30 +193,6 @@
         "sid": "47765",
         "missing_count": 0
       },
-      "INTO|91136|20261002|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "01:20 PM",
-        "date": "20261002",
-        "cat": "CLUB",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "91136",
-        "missing_count": 0
-      },
-      "INTO|91136|20261002|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "01:20 PM",
-        "date": "20261002",
-        "cat": "EXECUTIVE",
-        "price": "54.35",
-        "status": "1",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "91136",
-        "missing_count": 0
-      },
       "PVHR|43039|20261002|PRIME": {
         "venue": "PVR: Heritage RSL ECR, Chennai",
         "time": "03:50 PM",
@@ -259,10 +235,34 @@
         "date": "20261002",
         "cat": "CLASSIC",
         "price": "54.35",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PVHR",
         "sid": "43040",
+        "missing_count": 0
+      },
+      "INTO|91136|20261002|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "01:20 PM",
+        "date": "20261002",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "1",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91136",
+        "missing_count": 0
+      },
+      "INTO|91136|20261002|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "01:20 PM",
+        "date": "20261002",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91136",
         "missing_count": 0
       },
       "MCSK|16123|20261002|SPECIAL": {
