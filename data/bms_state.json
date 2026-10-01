@@ -607,7 +607,7 @@
         "date": "20261004",
         "cat": "NORMAL",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "CBMC",
         "sid": "13842",
@@ -849,7 +849,7 @@
         "date": "20261002",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "INTO",
         "sid": "91136",
@@ -1109,6 +1109,78 @@
   },
   "AnbilAvan_20260927190706 (Tamil 2D)": {
     "shows": {
+      "INTO|91221|20261002|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:00 AM",
+        "date": "20261002",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91221",
+        "missing_count": 0
+      },
+      "INTO|91221|20261002|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:00 AM",
+        "date": "20261002",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91221",
+        "missing_count": 0
+      },
+      "INTO|91138|20261002|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "12:25 PM",
+        "date": "20261002",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "1",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91138",
+        "missing_count": 0
+      },
+      "INTO|91138|20261002|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "12:25 PM",
+        "date": "20261002",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "1",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91138",
+        "missing_count": 0
+      },
+      "INTO|91215|20261002|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "06:55 PM",
+        "date": "20261002",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91215",
+        "missing_count": 0
+      },
+      "INTO|91215|20261002|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "06:55 PM",
+        "date": "20261002",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91215",
+        "missing_count": 0
+      },
       "CBMC|13788|20261002|NORMAL": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
         "time": "09:45 AM",
@@ -1203,78 +1275,6 @@
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
         "sid": "47756",
-        "missing_count": 0
-      },
-      "INTO|91221|20261002|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "10:00 AM",
-        "date": "20261002",
-        "cat": "CLUB",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "91221",
-        "missing_count": 0
-      },
-      "INTO|91221|20261002|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "10:00 AM",
-        "date": "20261002",
-        "cat": "EXECUTIVE",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "91221",
-        "missing_count": 0
-      },
-      "INTO|91138|20261002|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "12:25 PM",
-        "date": "20261002",
-        "cat": "CLUB",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "91138",
-        "missing_count": 0
-      },
-      "INTO|91138|20261002|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "12:25 PM",
-        "date": "20261002",
-        "cat": "EXECUTIVE",
-        "price": "54.35",
-        "status": "1",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "91138",
-        "missing_count": 0
-      },
-      "INTO|91215|20261002|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "06:55 PM",
-        "date": "20261002",
-        "cat": "CLUB",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "91215",
-        "missing_count": 0
-      },
-      "INTO|91215|20261002|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "06:55 PM",
-        "date": "20261002",
-        "cat": "EXECUTIVE",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "91215",
         "missing_count": 0
       },
       "INTO|91222|20261003|CLUB": {
@@ -1710,15 +1710,88 @@
     }
   },
   "DoraemonCastleOfTheUnderseaDevil_20260927111310 (Hindi 2D) (Tamil 2D)": {
-    "shows": {},
+    "shows": {
+      "ACON|47815|20261002|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:25 PM",
+        "date": "20261002",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47815",
+        "missing_count": 0
+      },
+      "ACON|47815|20261002|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:25 PM",
+        "date": "20261002",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47815",
+        "missing_count": 0
+      },
+      "ACON|47816|20261003|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:25 PM",
+        "date": "20261003",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47816",
+        "missing_count": 0
+      },
+      "ACON|47816|20261003|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:25 PM",
+        "date": "20261003",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47816",
+        "missing_count": 0
+      },
+      "ACON|47817|20261004|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:25 PM",
+        "date": "20261004",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47817",
+        "missing_count": 0
+      },
+      "ACON|47817|20261004|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:25 PM",
+        "date": "20261004",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47817",
+        "missing_count": 0
+      }
+    },
     "dates": {
       "20261002": "AVAILABLE",
       "20261003": "AVAILABLE",
       "20261004": "BOOKABLE",
-      "20261005": "NOT_OPEN",
-      "20261006": "NOT_OPEN",
-      "20261007": "NOT_OPEN",
-      "20261008": "NOT_OPEN"
+      "20261005": "AVAILABLE",
+      "20261006": "AVAILABLE",
+      "20261007": "AVAILABLE",
+      "20261008": "AVAILABLE"
     }
   },
   "AnbilAvan_20261001093755 (Tamil 2D)": {
