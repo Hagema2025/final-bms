@@ -2703,10 +2703,12 @@ def run_watch(
 
             for variant in selected:
 
-                variant_name = (
-                    f"{watch_name} "
-                    f"({variant.language} {variant.format})"
-                )
+                variant_tag = f"({variant.language} {variant.format})"
+
+                if watch_name.endswith(variant_tag):
+                  variant_name = watch_name
+                else:
+                  variant_name = f"{watch_name} {variant_tag}"
 
                 print(
                     f"\n  --- Variant: {variant_name} "
