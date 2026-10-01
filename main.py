@@ -51,14 +51,17 @@ def send_watch_expiry_alert(watch, idx):
     threadid = watch.get("message_thread_id")
     watch_name = watch.get("name", f"Watch_{idx}")
     
+    # 🔥 Extract the UID to match the bot's new system
+    timestamp_match = re.search(r'_(\d{10,})', watch_name)
+    uid = timestamp_match.group(1) if timestamp_match else watch_name.split('_')[0][:20]
+    
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     
-    # Creates an inline button that maps perfectly to your bot.py's stop handler!
+    # 🔥 Use the UID in the callback_data
     kb = {
         "inline_keyboard": [
-            [{"text": "Close Topic", "callback_data": f"confirmstop_{idx}"}],
-            [{"text": "Delete Topic", "callback_data": f"confirmstopperm_{idx}"}]
-
+            [{"text": "Close Topic", "callback_data": f"confirmstop_{uid}"}],
+            [{"text": "Delete Topic", "callback_data": f"confirmstopperm_{uid}"}]
         ]
     }
     
@@ -90,7 +93,6 @@ def send_watch_expiry_alert(watch, idx):
 
     except Exception as e:
       print(f"  ⚠️ Failed to send expiry notification: {e}")
-
 # ======================================================================
 # CONSTANTS
 # ======================================================================
