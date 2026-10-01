@@ -408,42 +408,6 @@
         "vcode": "MCSK",
         "sid": "16167",
         "missing_count": 0
-      },
-      "RAKK|4413|20261002|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "07:15 PM",
-        "date": "20261002",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "3",
-        "screen": "SCREEN 6",
-        "vcode": "RAKK",
-        "sid": "4413",
-        "missing_count": 3
-      },
-      "RAKK|4413|20261002|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "07:15 PM",
-        "date": "20261002",
-        "cat": "Elite",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 6",
-        "vcode": "RAKK",
-        "sid": "4413",
-        "missing_count": 3
-      },
-      "RAKK|4413|20261002|LOUNGER": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "07:15 PM",
-        "date": "20261002",
-        "cat": "LOUNGER",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 6",
-        "vcode": "RAKK",
-        "sid": "4413",
-        "missing_count": 3
       }
     },
     "dates": {
