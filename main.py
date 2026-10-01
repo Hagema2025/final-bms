@@ -2338,12 +2338,35 @@ def run_event(
         # ==============================================================
     # SEND REMOVED-SHOW ALERT
     # ==============================================================
+    # Use the actual language/format returned by BMS for alerts
+    alert_label = label
+
+    raw_alert_lang = str(movie_info.get("language", "")).strip()
+
+    if "•" in raw_alert_lang:
+      parts = [p.strip() for p in raw_alert_lang.split("•")]
+      if len(parts) >= 2:
+        alert_tag = f"({parts[0]} {parts[1]})"
+
+        if not str(alert_label).endswith(alert_tag):
+            clean_base = re.sub(
+                r'(?i)(Telugu|Tamil|Hindi|Malayalam|English)',
+                '',
+                str(alert_label).split('_')[0]
+            )
+
+            try:
+                timestamp_id = str(alert_label).split('_')[1].split(' ')[0]
+            except Exception:
+                timestamp_id = "000000"
+
+            alert_label = f"{clean_base}_{timestamp_id} {alert_tag}"
 
     if removed_shows:
 
         send_removed_shows_telegram(
             threadid,
-            label,
+            alert_label,
             removed_shows,
             movie_info,
         )
@@ -2379,7 +2402,7 @@ def run_event(
 
         send_telegram(
             threadid,
-             label,
+            alert_label,
                         (
                             f"BMS Alert: "
                             f"{movie_info['name']} - "
