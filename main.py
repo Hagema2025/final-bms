@@ -26,7 +26,7 @@ GROUP_CHAT_ID=os.getenv("GROUP_CHAT_ID", "").strip()
 NTFY_URL=os.getenv("NTFY_URL","").strip()
 NTFY_TOPIC=os.getenv("NTFY_TOPIC", "").strip()
 NTFY_ERROR_TOPIC = os.getenv("NTFY_ERROR_TOPIC", "").strip()
-
+DISCORD_WEBHOOK_URL=os.getenv("DISCORD_WEBHOOK_URL", "").strip()
 
 def save_watches(watches):
     """Saves updated watches data back to the JSON file."""
@@ -93,6 +93,28 @@ def send_watch_expiry_alert(watch, idx):
 
     except Exception as e:
       print(f"  ⚠️ Failed to send expiry notification: {e}")
+
+def delete_discord_forum_thread(thread_id: str):
+    """Permanently deletes a Discord Forum thread using the Bot API."""
+    bot_token = os.getenv("DISCORD_BOT_TOKEN", "").strip()
+    if not bot_token or not thread_id:
+        return
+
+    # Discord API endpoint to delete a channel/thread
+    url = f"https://discord.com/api/v10/channels/{thread_id}"
+    headers = {
+        "Authorization": f"Bot {bot_token}"
+    }
+
+    try:
+        res = requests.delete(url, headers=headers, timeout=10)
+        if res.status_code in [200, 204]:
+            print(f"✅ Successfully deleted Discord thread ID: {thread_id}")
+        else:
+            print(f"⚠️ Failed to delete Discord thread {thread_id}: HTTP {res.status_code} {res.text}")
+    except Exception as e:
+        print(f"⚠ Discord API Error deleting thread: {e}")
+
 # ======================================================================
 # CONSTANTS
 # ======================================================================
@@ -1708,6 +1730,124 @@ def send_removed_shows_telegram(
             f"to thread {threadid} "
             f"({len(removed_shows)} show(s))"
         )
+def update_discord_dashboard(threadid, watch_name, filtered_shows, movie_info, state):
+    if not DISCORD_WEBHOOK_URL or not filtered_shows:
+        return
+
+    movie_name = movie_info.get("name", watch_name.split('_')[0])
+    
+    # 1. Group ALL current shows by Venue
+    nested_data = defaultdict(list)
+    for show in filtered_shows:
+        nested_data[show.venue_name].append(show)
+
+    all_embeds = []
+    
+    # 2. Build Embeds (Split theatres if >25 shows)
+    for venue, shows in nested_data.items():
+        for i in range(0, len(shows), 25):
+            chunked_shows = shows[i:i+25]
+            fields = []
+            
+            for show in chunked_shows:
+                best_cat = show.categories[0] if show.categories else None
+                if not best_cat: continue
+                
+                time_val = show.time
+                screen = show.screen_attr or "NORM"
+                status_label, status_emoji = resolve_status_info(best_cat.status)
+                
+                # Direct Deep Link
+                book_url = f"https://in.bookmyshow.com/booktickets/{show.venue_code}/{show.session_id}" if show.venue_code and show.session_id else "https://in.bookmyshow.com"
+                
+                # Clean Price
+                clean_price = f"₹{int(round(float(best_cat.price)))}" if str(best_cat.price).replace('.', '', 1).isdigit() else f"₹{best_cat.price}"
+
+                fields.append({
+                    "name": f"{time_val} ({screen[:12]})",
+                    "value": f"[{clean_price}]({book_url}) • `{status_label} {status_emoji}`",
+                    "inline": True
+                })
+
+            title = f"🏢 {venue}" if i == 0 else f"🏢 {venue} (Cont.)"
+            all_embeds.append({
+                "title": title,
+                "color": 3447003, # Blue border
+                "fields": fields
+            })
+
+    # 3. Smart Payload Packer (Keep under 10 embeds & 5500 chars)
+    payloads = []
+    current_embeds = []
+    current_chars = 0
+    
+    for embed in all_embeds:
+        embed_chars = len(embed["title"])
+        for f in embed["fields"]:
+            embed_chars += len(f["name"]) + len(f["value"])
+            
+        if len(current_embeds) >= 10 or (current_chars + embed_chars) > 5500:
+            payloads.append({"embeds": current_embeds})
+            current_embeds = []
+            current_chars = 0
+            
+        current_embeds.append(embed)
+        current_chars += embed_chars
+        
+    if current_embeds:
+        payloads.append({"embeds": current_embeds})
+        
+    if payloads:
+        payloads[0]["content"] = f"🔴 **LIVE TRACKER: {movie_name}**"
+        payloads[-1]["embeds"][-1]["footer"] = {
+            "text": f"Last Updated: {datetime.now(ZoneInfo('Asia/Kolkata')).strftime('%I:%M %p')}"
+        }
+
+    # 4. Dispatch and Track Multiple Message IDs
+    message_id_key = f"{watch_name}_discord_msg_ids"
+    saved_msg_ids = state.get(message_id_key, [])
+    if isinstance(saved_msg_ids, str): 
+        saved_msg_ids = [saved_msg_ids]
+        
+    new_msg_ids = []
+
+    for i, payload in enumerate(payloads):
+        try:
+            url_base = f"{DISCORD_WEBHOOK_URL}?wait=true"
+            if threadid:
+                url_base += f"&thread_id={threadid}"
+                
+            if i < len(saved_msg_ids):
+                msg_id = saved_msg_ids[i]
+                patch_url = f"{DISCORD_WEBHOOK_URL}/messages/{msg_id}"
+                if threadid:
+                    patch_url += f"?thread_id={threadid}"
+                    
+                res = requests.patch(patch_url, json=payload, timeout=10)
+                if res.status_code in [200, 204]:
+                    new_msg_ids.append(msg_id)
+                else:
+                    print(f"  ⚠️ Discord PATCH failed: {res.text}")
+            else:
+                res = requests.post(url_base, json=payload, timeout=10)
+                if res.status_code in [200, 204, 201]:
+                    new_msg_ids.append(res.json()["id"])
+                    
+            time.sleep(1) # Rate limit protection
+        except Exception as e:
+            print(f"  ⚠️ Discord Error: {e}")
+
+    # 5. Cleanup leftover messages if shows were removed
+    for msg_id in saved_msg_ids[len(payloads):]:
+        try:
+            del_url = f"{DISCORD_WEBHOOK_URL}/messages/{msg_id}"
+            if threadid:
+                del_url += f"?thread_id={threadid}"
+            requests.delete(del_url, timeout=10)
+        except Exception:
+            pass
+
+    state[message_id_key] = new_msg_ids
 
 def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
     if not TELEGRAM_BOT_TOKEN or not GROUP_CHAT_ID:
@@ -2417,8 +2557,23 @@ def run_event(
 
         send_ntfy(label, movie_info, changes)
 
+        # --- NEW DISCORD INSTANT PING ---
+        if DISCORD_WEBHOOK_URL:
+            ping_payload = {
+                "content": f"🚨 **TICKET ALERT:** New shows or restocks for **{movie_info['name']}**! Check the live board above."
+            }
+            ping_url = f"{DISCORD_WEBHOOK_URL}?thread_id={threadid}" if threadid else DISCORD_WEBHOOK_URL
+            try:
+                requests.post(ping_url, json=ping_payload, timeout=10)
+            except Exception:
+                pass
+
     else:
         print("  ✅ No changes since last check.")
+
+    # --- NEW SILENT DISCORD DASHBOARD UPDATE ---
+    if filtered:
+        update_discord_dashboard(threadid, alert_label, filtered, movie_info, state)
 
     print(
         f"\n  Current status "
@@ -2825,6 +2980,7 @@ def main():
             
             if closed_at and (current_time - closed_at) > FOURTEEN_DAYS_SECONDS:
                 thread_id = watch.get("message_thread_id")
+                discord_thread_id = watch.get("discord_thread_id") # <--- Grab Discord Thread ID
                 
                 # A. Permanently delete the topic from Telegram
                 if thread_id and GROUP_CHAT_ID and TELEGRAM_BOT_TOKEN:
@@ -2841,6 +2997,13 @@ def main():
                             print(f"\n⚠️ Failed to purge topic for '{watch_name}': {res.text}")
                     except Exception as e:
                         print(f"\n⚠️ Error deleting forum topic: {e}")
+                # A2. Permanently delete the thread from Discord (NEW)
+                if discord_thread_id:
+                    try:
+                        delete_discord_forum_thread(discord_thread_id)
+                        print(f"\n🗑️ 14-day retention expired. Purged Discord thread ID {discord_thread_id} for '{watch_name}'")
+                    except Exception as e:
+                        print(f"\n⚠️ Error deleting Discord thread: {e}")
 
                 # B. Purge any residual keys from state.json (bms_state.json)
                 try:
