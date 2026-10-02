@@ -41,5 +41,23 @@
     ],
     "formats": [],
     "message_thread_id": 820
+  },
+  {
+    "name": "DorothyTamil_20261002190431",
+    "url": "https://in.bookmyshow.com/movies/chennai/dorothy-tamil/ET00518039",
+    "dates": {
+      "20261005": []
+    },
+    "theatre": [
+      "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+      "INOX: The Marina Mall, OMR"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 835
   }
 ]
