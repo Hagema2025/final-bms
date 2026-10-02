@@ -55,7 +55,7 @@
         "date": "20261002",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "INTO",
         "sid": "91215",
@@ -71,6 +71,54 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91215",
+        "missing_count": 0
+      },
+      "MAYJ|239716|20261002|FIRST CLASS": {
+        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
+        "time": "01:50 PM",
+        "date": "20261002",
+        "cat": "FIRST CLASS",
+        "price": "183.80",
+        "status": "2",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "MAYJ",
+        "sid": "239716",
+        "missing_count": 0
+      },
+      "MAYJ|239717|20261002|FIRST CLASS": {
+        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
+        "time": "05:10 PM",
+        "date": "20261002",
+        "cat": "FIRST CLASS",
+        "price": "183.80",
+        "status": "2",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "MAYJ",
+        "sid": "239717",
+        "missing_count": 0
+      },
+      "MAYJ|239718|20261002|FIRST CLASS": {
+        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
+        "time": "08:30 PM",
+        "date": "20261002",
+        "cat": "FIRST CLASS",
+        "price": "183.80",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "MAYJ",
+        "sid": "239718",
+        "missing_count": 0
+      },
+      "MAYJ|239719|20261002|FIRST CLASS": {
+        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
+        "time": "11:50 PM",
+        "date": "20261002",
+        "cat": "FIRST CLASS",
+        "price": "183.80",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "MAYJ",
+        "sid": "239719",
         "missing_count": 0
       },
       "CBMC|13787|20261002|NORMAL": {
@@ -119,54 +167,6 @@
         "screen": "",
         "vcode": "CBMC",
         "sid": "13789",
-        "missing_count": 0
-      },
-      "MAYJ|239716|20261002|FIRST CLASS": {
-        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
-        "time": "01:50 PM",
-        "date": "20261002",
-        "cat": "FIRST CLASS",
-        "price": "183.80",
-        "status": "2",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "MAYJ",
-        "sid": "239716",
-        "missing_count": 0
-      },
-      "MAYJ|239717|20261002|FIRST CLASS": {
-        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
-        "time": "05:10 PM",
-        "date": "20261002",
-        "cat": "FIRST CLASS",
-        "price": "183.80",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "MAYJ",
-        "sid": "239717",
-        "missing_count": 0
-      },
-      "MAYJ|239718|20261002|FIRST CLASS": {
-        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
-        "time": "08:30 PM",
-        "date": "20261002",
-        "cat": "FIRST CLASS",
-        "price": "183.80",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "MAYJ",
-        "sid": "239718",
-        "missing_count": 0
-      },
-      "MAYJ|239719|20261002|FIRST CLASS": {
-        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
-        "time": "11:50 PM",
-        "date": "20261002",
-        "cat": "FIRST CLASS",
-        "price": "183.80",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "MAYJ",
-        "sid": "239719",
         "missing_count": 0
       },
       "ACON|47756|20261002|DIAMOND": {
