@@ -17,5 +17,29 @@
     ],
     "formats": [],
     "message_thread_id": 802
+  },
+  {
+    "name": "AnbilAvanTamil_20261002130551",
+    "url": "https://in.bookmyshow.com/movies/chennai/anbil-avan-tamil/ET00518059",
+    "dates": {
+      "20261002": [],
+      "20261003": []
+    },
+    "theatre": [
+      "AGS Cinemas OMR: Navlur",
+      "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+      "INOX: The Marina Mall, OMR",
+      "MAYAJAAL Multiplex: ECR, Chennai",
+      "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
+      "PVR: Heritage RSL ECR, Chennai",
+      "The Vijay Park Multiplex: Injambakkam ECR 4K Atmos"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 820
   }
 ]
