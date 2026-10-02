@@ -43,7 +43,7 @@
         "date": "20261002",
         "cat": "Premium",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SC 1 DOLBY ATMOS",
         "vcode": "RAKK",
         "sid": "4380",
@@ -289,30 +289,6 @@
         "sid": "47756",
         "missing_count": 0
       },
-      "PVHR|43153|20261002|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "09:40 AM",
-        "date": "20261002",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "43153",
-        "missing_count": 0
-      },
-      "PVHR|43153|20261002|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "09:40 AM",
-        "date": "20261002",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "43153",
-        "missing_count": 0
-      },
       "PVHR|43043|20261002|PRIME": {
         "venue": "PVR: Heritage RSL ECR, Chennai",
         "time": "04:15 PM",
@@ -359,30 +335,6 @@
         "screen": "",
         "vcode": "PVHR",
         "sid": "43044",
-        "missing_count": 0
-      },
-      "MCSK|16166|20261002|SPECIAL": {
-        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
-        "time": "09:40 AM",
-        "date": "20261002",
-        "cat": "SPECIAL",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "MCSK",
-        "sid": "16166",
-        "missing_count": 0
-      },
-      "MCSK|16166|20261002|EXECUTIVE": {
-        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
-        "time": "09:40 AM",
-        "date": "20261002",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "MCSK",
-        "sid": "16166",
         "missing_count": 0
       },
       "MCSK|16167|20261002|SPECIAL": {
