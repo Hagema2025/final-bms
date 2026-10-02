@@ -1,30 +1,6 @@
 {
   "DoraemonCastleOfTheUnderseaDevil_20261001225828 (Tamil 2D)": {
     "shows": {
-      "ACON|47815|20261002|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "10:25 PM",
-        "date": "20261002",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "2",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47815",
-        "missing_count": 0
-      },
-      "ACON|47815|20261002|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "10:25 PM",
-        "date": "20261002",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47815",
-        "missing_count": 0
-      },
       "ACON|47816|20261003|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
         "time": "10:25 PM",
