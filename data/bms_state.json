@@ -252,30 +252,6 @@
         "vcode": "PVHR",
         "sid": "43044",
         "missing_count": 0
-      },
-      "MCSK|16167|20261002|SPECIAL": {
-        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
-        "time": "12:40 PM",
-        "date": "20261002",
-        "cat": "SPECIAL",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "MCSK",
-        "sid": "16167",
-        "missing_count": 0
-      },
-      "MCSK|16167|20261002|EXECUTIVE": {
-        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
-        "time": "12:40 PM",
-        "date": "20261002",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "MCSK",
-        "sid": "16167",
-        "missing_count": 0
       }
     },
     "dates": {
