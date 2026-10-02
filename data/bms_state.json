@@ -13,30 +13,6 @@
         "sid": "25537",
         "missing_count": 0
       },
-      "RAKK|4378|20261002|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "10:30 AM",
-        "date": "20261002",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "1",
-        "screen": "SC 1 DOLBY ATMOS",
-        "vcode": "RAKK",
-        "sid": "4378",
-        "missing_count": 0
-      },
-      "RAKK|4378|20261002|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "10:30 AM",
-        "date": "20261002",
-        "cat": "Elite",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SC 1 DOLBY ATMOS",
-        "vcode": "RAKK",
-        "sid": "4378",
-        "missing_count": 0
-      },
       "RAKK|4380|20261002|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "10:45 PM",
@@ -155,18 +131,6 @@
         "screen": "",
         "vcode": "CBMC",
         "sid": "13789",
-        "missing_count": 0
-      },
-      "MAYJ|239715|20261002|FIRST CLASS": {
-        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
-        "time": "10:30 AM",
-        "date": "20261002",
-        "cat": "FIRST CLASS",
-        "price": "183.80",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "MAYJ",
-        "sid": "239715",
         "missing_count": 0
       },
       "MAYJ|239716|20261002|FIRST CLASS": {
