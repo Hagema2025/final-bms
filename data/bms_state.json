@@ -7,7 +7,7 @@
         "date": "20261002",
         "cat": "ELITE",
         "price": "183.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY ATMOS",
         "vcode": "TVHP",
         "sid": "25537",
@@ -59,30 +59,6 @@
         "screen": "SC 1 DOLBY ATMOS",
         "vcode": "RAKK",
         "sid": "4380",
-        "missing_count": 0
-      },
-      "INTO|91221|20261002|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "10:00 AM",
-        "date": "20261002",
-        "cat": "CLUB",
-        "price": "183.80",
-        "status": "2",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "91221",
-        "missing_count": 0
-      },
-      "INTO|91221|20261002|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "10:00 AM",
-        "date": "20261002",
-        "cat": "EXECUTIVE",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "91221",
         "missing_count": 0
       },
       "INTO|91138|20261002|CLUB": {
