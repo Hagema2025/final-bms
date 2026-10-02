@@ -1,18 +1,6 @@
 {
   "AnbilAvan_20261001224949 (Tamil 2D)": {
     "shows": {
-      "TVHP|25537|20261002|ELITE": {
-        "venue": "The Vijay Park Multiplex: Injambakkam ECR 4K Atmos",
-        "time": "11:15 AM",
-        "date": "20261002",
-        "cat": "ELITE",
-        "price": "183.00",
-        "status": "2",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "TVHP",
-        "sid": "25537",
-        "missing_count": 0
-      },
       "RAKK|4380|20261002|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "10:45 PM",
@@ -259,7 +247,7 @@
         "date": "20261002",
         "cat": "SPECIAL",
         "price": "54.35",
-        "status": "0",
+        "status": "3",
         "screen": "",
         "vcode": "MCSK",
         "sid": "16167",
