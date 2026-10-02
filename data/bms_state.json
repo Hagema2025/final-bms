@@ -170,54 +170,6 @@
         "sid": "13789",
         "missing_count": 0
       },
-      "ACON|47756|20261002|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "04:20 PM",
-        "date": "20261002",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "1",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47756",
-        "missing_count": 0
-      },
-      "ACON|47756|20261002|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "04:20 PM",
-        "date": "20261002",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "2",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47756",
-        "missing_count": 0
-      },
-      "PVHR|43043|20261002|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "04:15 PM",
-        "date": "20261002",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "43043",
-        "missing_count": 0
-      },
-      "PVHR|43043|20261002|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "04:15 PM",
-        "date": "20261002",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "43043",
-        "missing_count": 0
-      },
       "PVHR|43044|20261002|PRIME": {
         "venue": "PVR: Heritage RSL ECR, Chennai",
         "time": "10:50 PM",
