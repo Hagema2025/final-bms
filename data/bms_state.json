@@ -147,12 +147,12 @@
       }
     },
     "dates": {
-      "20261003": "BOOKABLE",
+      "20261003": "AVAILABLE",
       "20261004": "AVAILABLE",
       "20261005": "AVAILABLE",
       "20261006": "AVAILABLE",
       "20261007": "AVAILABLE",
-      "20261008": "AVAILABLE",
+      "20261008": "BOOKABLE",
       "20261009": "NOT_OPEN"
     }
   }
