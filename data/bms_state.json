@@ -59,5 +59,150 @@
       "20261008": "AVAILABLE",
       "20261009": "NOT_OPEN"
     }
+  },
+  "DoraemonCastleOfTheUnderseaDevil_20261003221459 (Tamil 2D)": {
+    "shows": {
+      "RAKK|4418|20261004|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "12:05 PM",
+        "date": "20261004",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "2",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4418",
+        "missing_count": 0
+      },
+      "RAKK|4418|20261004|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "12:05 PM",
+        "date": "20261004",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4418",
+        "missing_count": 0
+      },
+      "RAKK|4418|20261004|LOUNGER": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "12:05 PM",
+        "date": "20261004",
+        "cat": "LOUNGER",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4418",
+        "missing_count": 0
+      },
+      "RAKK|4407|20261004|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "02:15 PM",
+        "date": "20261004",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "2",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4407",
+        "missing_count": 0
+      },
+      "RAKK|4407|20261004|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "02:15 PM",
+        "date": "20261004",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4407",
+        "missing_count": 0
+      },
+      "RAKK|4407|20261004|LOUNGER": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "02:15 PM",
+        "date": "20261004",
+        "cat": "LOUNGER",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4407",
+        "missing_count": 0
+      },
+      "RAKK|4408|20261004|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "04:30 PM",
+        "date": "20261004",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4408",
+        "missing_count": 0
+      },
+      "RAKK|4408|20261004|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "04:30 PM",
+        "date": "20261004",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4408",
+        "missing_count": 0
+      },
+      "RAKK|4408|20261004|LOUNGER": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "04:30 PM",
+        "date": "20261004",
+        "cat": "LOUNGER",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4408",
+        "missing_count": 0
+      },
+      "CBMC|13895|20261004|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "01:35 PM",
+        "date": "20261004",
+        "cat": "NORMAL",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13895",
+        "missing_count": 0
+      },
+      "CBMC|13895|20261004|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "01:35 PM",
+        "date": "20261004",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13895",
+        "missing_count": 0
+      }
+    },
+    "dates": {
+      "20261003": "AVAILABLE",
+      "20261004": "BOOKABLE",
+      "20261005": "AVAILABLE",
+      "20261006": "AVAILABLE",
+      "20261007": "AVAILABLE",
+      "20261008": "AVAILABLE",
+      "20261009": "NOT_OPEN"
+    }
   }
 }
