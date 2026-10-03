@@ -1,30 +1,6 @@
 {
   "Dorothy_20261003143401 (Tamil 2D)": {
     "shows": {
-      "CBMC|13928|20261005|NORMAL": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "10:45 PM",
-        "date": "20261005",
-        "cat": "NORMAL",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13928",
-        "missing_count": 0
-      },
-      "CBMC|13928|20261005|EXECUTIVE": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "10:45 PM",
-        "date": "20261005",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13928",
-        "missing_count": 0
-      },
       "INTO|91261|20261005|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "10:35 PM",
@@ -47,6 +23,30 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91261",
+        "missing_count": 0
+      },
+      "CBMC|13928|20261005|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "10:45 PM",
+        "date": "20261005",
+        "cat": "NORMAL",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13928",
+        "missing_count": 0
+      },
+      "CBMC|13928|20261005|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "10:45 PM",
+        "date": "20261005",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13928",
         "missing_count": 0
       }
     },
