@@ -455,6 +455,8 @@ def load_watches():
         languages = [lang.lower() for lang in _as_list(watch.get("languages"))]
         formats = [fmt.lower() for fmt in _as_list(watch.get("formats"))]
         message_thread_id = watch.get("message_thread_id", None)
+        discord_thread_id = watch.get("discord_thread_id", None)
+
 
         # --- PRESERVE RETENTION & STATUS FIELDS ---
         status = watch.get("status", None)
@@ -475,6 +477,7 @@ def load_watches():
             "formats": formats,
             "message_thread_id": message_thread_id,
             "expired_notified": expired_notified,
+            "discord_thread_id":discord_thread_id
         }
 
         # Keep status fields if they exist
@@ -2109,6 +2112,7 @@ def get_telegram_user_info(chat_id: int) -> str:
 # ======================================================================
 
 def run_event(
+        discord_thread_id,
     threadid,
     label,
     event_code,
@@ -2562,7 +2566,7 @@ def run_event(
             ping_payload = {
                 "content": f"🚨 **TICKET ALERT:** New shows or restocks for **{movie_info['name']}**! Check the live board above."
             }
-            ping_url = f"{DISCORD_WEBHOOK_URL}?thread_id={threadid}" if threadid else DISCORD_WEBHOOK_URL
+            ping_url = f"{DISCORD_WEBHOOK_URL}?thread_id={discord_thread_id}" if threadid else DISCORD_WEBHOOK_URL
             try:
                 requests.post(ping_url, json=ping_payload, timeout=10)
             except Exception:
@@ -2573,7 +2577,7 @@ def run_event(
 
     # --- NEW SILENT DISCORD DASHBOARD UPDATE ---
     if filtered:
-        update_discord_dashboard(threadid, alert_label, filtered, movie_info, state)
+        update_discord_dashboard(discord_thread_id, alert_label, filtered, movie_info, state)
 
     print(
         f"\n  Current status "
@@ -2620,6 +2624,7 @@ def run_watch(
 
     watch_name = watch["name"]
     watch_threadid=watch["message_thread_id"]
+    discord_thread_id=watch["discord_thread_id"]
 
     print("")
     print("=" * 70)
@@ -2726,6 +2731,7 @@ def run_watch(
     # --------------------------------------------------------------
 
     state, success, first_full_data = run_event(
+        discord_thread_id=discord_thread_id,
         threadid=watch_threadid,
         label=watch_name,
         event_code=event_code,
@@ -2922,6 +2928,7 @@ def run_watch(
                 )
 
                 state, variant_success, _ = run_event(
+                    discord_thread_id=discord_thread_id,
                     threadid=watch_threadid,
                     label=variant_name,
                     event_code=variant.event_code,
