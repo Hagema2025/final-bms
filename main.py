@@ -2580,22 +2580,22 @@ def run_event(
         send_ntfy(label, movie_info, changes)
 
         # --- NEW DISCORD INSTANT PING ---
-        if DISCORD_WEBHOOK_URL:
-            ping_payload = {
-                "content": f"🚨 **TICKET ALERT:** New shows or restocks for **{movie_info['name']}**! Check the live board above."
-            }
-            ping_url = f"{DISCORD_WEBHOOK_URL}?thread_id={discord_thread_id}" if threadid else DISCORD_WEBHOOK_URL
-            try:
-                requests.post(ping_url, json=ping_payload, timeout=10)
-            except Exception:
-                pass
+        # if DISCORD_WEBHOOK_URL:
+        #     ping_payload = {
+        #         "content": f"🚨 **TICKET ALERT:** New shows or restocks for **{movie_info['name']}**! Check the live board above."
+        #     }
+        #     ping_url = f"{DISCORD_WEBHOOK_URL}?thread_id={discord_thread_id}" if threadid else DISCORD_WEBHOOK_URL
+        #     try:
+        #         requests.post(ping_url, json=ping_payload, timeout=10)
+        #     except Exception:
+        #         pass
 
     else:
         print("  ✅ No changes since last check.")
 
     # --- NEW SILENT DISCORD DASHBOARD UPDATE ---
-    if filtered:
-        update_discord_dashboard(discord_thread_id, alert_label, filtered, movie_info, state)
+    # if filtered:
+    #     update_discord_dashboard(discord_thread_id, alert_label, filtered, movie_info, state)
 
     print(
         f"\n  Current status "
@@ -3025,27 +3025,27 @@ def main():
                         print(f"\n⚠️ Error deleting Telegram forum topic: {e}")
 
                 # B. Permanently delete ALL Discord Dashboard Messages & Thread
-                if DISCORD_WEBHOOK_URL:
-                    # 1. Delete all paginated dashboard messages stored in state
-                    msg_ids_key = f"{watch_name}_discord_msg_ids"
-                    saved_msg_ids = state.get(msg_ids_key, [])
-                    if isinstance(saved_msg_ids, str):
-                        saved_msg_ids = [saved_msg_ids]
+                # if DISCORD_WEBHOOK_URL:
+                #     # 1. Delete all paginated dashboard messages stored in state
+                #     msg_ids_key = f"{watch_name}_discord_msg_ids"
+                #     saved_msg_ids = state.get(msg_ids_key, [])
+                #     if isinstance(saved_msg_ids, str):
+                #         saved_msg_ids = [saved_msg_ids]
                         
-                    for msg_id in saved_msg_ids:
-                        try:
-                            del_url = f"{DISCORD_WEBHOOK_URL}/messages/{msg_id}"
-                            if thread_id:
-                                del_url += f"?thread_id={thread_id}"
-                            requests.delete(del_url, timeout=10)
-                        except Exception:
-                            pass
-                    print(f"🗑️ Wiped {len(saved_msg_ids)} Discord dashboard message(s) for '{watch_name}'")
+                #     for msg_id in saved_msg_ids:
+                #         try:
+                #             del_url = f"{DISCORD_WEBHOOK_URL}/messages/{msg_id}"
+                #             if thread_id:
+                #                 del_url += f"?thread_id={thread_id}"
+                #             requests.delete(del_url, timeout=10)
+                #         except Exception:
+                #             pass
+                #     print(f"🗑️ Wiped {len(saved_msg_ids)} Discord dashboard message(s) for '{watch_name}'")
 
-                    # 2. Delete the entire Discord Forum thread if a bot token is configured
-                    discord_thread_id = watch.get("discord_thread_id")
-                    if discord_thread_id:
-                        delete_discord_forum_thread(discord_thread_id)
+                #     # 2. Delete the entire Discord Forum thread if a bot token is configured
+                #     discord_thread_id = watch.get("discord_thread_id")
+                #     if discord_thread_id:
+                #         delete_discord_forum_thread(discord_thread_id)
 
                 # C. Purge any residual keys from bms_state.json
                 try:
