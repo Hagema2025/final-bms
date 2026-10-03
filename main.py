@@ -1737,47 +1737,64 @@ def update_discord_dashboard(threadid, watch_name, filtered_shows, movie_info, s
     if not DISCORD_WEBHOOK_URL or not filtered_shows:
         return
 
+    # Extract base movie name and variant tag (e.g., "Dorothy [Tamil 2D]")
     movie_name = movie_info.get("name", watch_name.split('_')[0])
+    lang_fmt_match = re.search(r'\(([^)]+)\)$', str(watch_name))
+    if lang_fmt_match:
+        movie_name += f" [{lang_fmt_match.group(1)}]"
     
-    # 1. Group ALL current shows by Venue
-    nested_data = defaultdict(list)
+    # 1. Group ALL current shows by Date, then by Venue
+    nested_data = defaultdict(lambda: defaultdict(list))
     for show in filtered_shows:
-        nested_data[show.venue_name].append(show)
+        nested_data[show.date_code][show.venue_name].append(show)
 
     all_embeds = []
     
-    # 2. Build Embeds (Split theatres if >25 shows)
-    for venue, shows in nested_data.items():
-        for i in range(0, len(shows), 25):
-            chunked_shows = shows[i:i+25]
-            fields = []
-            
-            for show in chunked_shows:
-                best_cat = show.categories[0] if show.categories else None
-                if not best_cat: continue
+    # 2. Build Embeds grouped by Date and Venue
+    for date_code, venues_dict in sorted(nested_data.items()):
+        formatted_date = format_date(date_code) # Formats 20261005 to readable date
+        
+        for venue, shows in sorted(venues_dict.items(), key=lambda x: x[0].lower()):
+            for i in range(0, len(shows), 25):
+                chunked_shows = shows[i:i+25]
+                fields = []
                 
-                time_val = show.time
-                screen = show.screen_attr or "NORM"
-                status_label, status_emoji = resolve_status_info(best_cat.status)
-                
-                # Direct Deep Link
-                book_url = f"https://in.bookmyshow.com/booktickets/{show.venue_code}/{show.session_id}" if show.venue_code and show.session_id else "https://in.bookmyshow.com"
-                
-                # Clean Price
-                clean_price = f"₹{int(round(float(best_cat.price)))}" if str(best_cat.price).replace('.', '', 1).isdigit() else f"₹{best_cat.price}"
+                for show in chunked_shows:
+                    if not show.categories: 
+                        continue
+                    
+                    time_val = show.time
+                    screen = show.screen_attr or "NORM"
+                    
+                    # Direct Deep Link
+                    book_url = f"https://in.bookmyshow.com/booktickets/{show.venue_code}/{show.session_id}" if show.venue_code and show.session_id else "https://in.bookmyshow.com"
+                    
+                    # Render ALL categories for this showtime (Sorted High to Low Price)
+                    sorted_cats = sorted(
+                        show.categories,
+                        key=lambda c: (-parse_price(c.price), str(c.name).lower())
+                    )
+                    
+                    cats_parts = []
+                    for cat in sorted_cats:
+                        status_label, status_emoji = resolve_status_info(cat.status)
+                        clean_price = f"₹{int(round(float(cat.price)))}" if str(cat.price).replace('.', '', 1).isdigit() else f"₹{cat.price}"
+                        cats_parts.append(f"• **{cat.name}**: {clean_price} `{status_label} {status_emoji}`")
+                        
+                    cats_str = "\n".join(cats_parts)
 
-                fields.append({
-                    "name": f"{time_val} ({screen[:12]})",
-                    "value": f"[{clean_price}]({book_url}) • `{status_label} {status_emoji}`",
-                    "inline": True
+                    fields.append({
+                        "name": f"🕒 {time_val} ({screen[:12]})",
+                        "value": f"[Book Tickets]({book_url})\n{cats_str}",
+                        "inline": False # False allows vertical space for all price tiers
+                    })
+
+                title = f"📅 {formatted_date} | 🏢 {venue}" if i == 0 else f"📅 {formatted_date} | 🏢 {venue} (Cont.)"
+                all_embeds.append({
+                    "title": title,
+                    "color": 3447003, # Blue border
+                    "fields": fields
                 })
-
-            title = f"🏢 {venue}" if i == 0 else f"🏢 {venue} (Cont.)"
-            all_embeds.append({
-                "title": title,
-                "color": 3447003, # Blue border
-                "fields": fields
-            })
 
     # 3. Smart Payload Packer (Keep under 10 embeds & 5500 chars)
     payloads = []
@@ -1806,7 +1823,7 @@ def update_discord_dashboard(threadid, watch_name, filtered_shows, movie_info, s
             "text": f"Last Updated: {datetime.now(ZoneInfo('Asia/Kolkata')).strftime('%I:%M %p')}"
         }
 
-    # 4. Dispatch and Track Multiple Message IDs
+    # 4. Dispatch and Track Multiple Message IDs per Variant
     message_id_key = f"{watch_name}_discord_msg_ids"
     saved_msg_ids = state.get(message_id_key, [])
     if isinstance(saved_msg_ids, str): 
@@ -1852,6 +1869,7 @@ def update_discord_dashboard(threadid, watch_name, filtered_shows, movie_info, s
 
     state[message_id_key] = new_msg_ids
 
+    
 def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
     if not TELEGRAM_BOT_TOKEN or not GROUP_CHAT_ID:
         print("  ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN or GROUP_CHAT_ID not configured.")
