@@ -1869,7 +1869,7 @@ def update_discord_dashboard(threadid, watch_name, filtered_shows, movie_info, s
 
     state[message_id_key] = new_msg_ids
 
-    
+
 def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
     if not TELEGRAM_BOT_TOKEN or not GROUP_CHAT_ID:
         print("  ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN or GROUP_CHAT_ID not configured.")
@@ -3000,12 +3000,13 @@ def main():
         watch_name = watch.get("name", "Unknown")
         
         # --- 1. 14-DAY PASSIVE CLEANUP FOR CLOSED WATCHES ---
+        # --- 1. 14-DAY PASSIVE CLEANUP FOR CLOSED WATCHES ---
         if status == "closed":
             surviving_watches.append(watch) # Retain in list during the 14-day window
             
             if closed_at and (current_time - closed_at) > FOURTEEN_DAYS_SECONDS:
                 thread_id = watch.get("message_thread_id")
-                discord_thread_id = watch.get("discord_thread_id") # <--- Grab Discord Thread ID
+                watch_name = watch.get("name")
                 
                 # A. Permanently delete the topic from Telegram
                 if thread_id and GROUP_CHAT_ID and TELEGRAM_BOT_TOKEN:
@@ -3017,20 +3018,36 @@ def main():
                         }
                         res = requests.post(del_url, json=payload, timeout=10)
                         if res.status_code == 200:
-                            print(f"\n🗑️ 14-day retention expired. Purged topic ID {thread_id} for '{watch_name}'")
+                            print(f"\n🗑️ 14-day retention expired. Purged Telegram topic ID {thread_id} for '{watch_name}'")
                         else:
-                            print(f"\n⚠️ Failed to purge topic for '{watch_name}': {res.text}")
+                            print(f"\n⚠️ Failed to purge Telegram topic for '{watch_name}': {res.text}")
                     except Exception as e:
-                        print(f"\n⚠️ Error deleting forum topic: {e}")
-                # A2. Permanently delete the thread from Discord (NEW)
-                if discord_thread_id:
-                    try:
-                        delete_discord_forum_thread(discord_thread_id)
-                        print(f"\n🗑️ 14-day retention expired. Purged Discord thread ID {discord_thread_id} for '{watch_name}'")
-                    except Exception as e:
-                        print(f"\n⚠️ Error deleting Discord thread: {e}")
+                        print(f"\n⚠️ Error deleting Telegram forum topic: {e}")
 
-                # B. Purge any residual keys from state.json (bms_state.json)
+                # B. Permanently delete ALL Discord Dashboard Messages & Thread
+                if DISCORD_WEBHOOK_URL:
+                    # 1. Delete all paginated dashboard messages stored in state
+                    msg_ids_key = f"{watch_name}_discord_msg_ids"
+                    saved_msg_ids = state.get(msg_ids_key, [])
+                    if isinstance(saved_msg_ids, str):
+                        saved_msg_ids = [saved_msg_ids]
+                        
+                    for msg_id in saved_msg_ids:
+                        try:
+                            del_url = f"{DISCORD_WEBHOOK_URL}/messages/{msg_id}"
+                            if thread_id:
+                                del_url += f"?thread_id={thread_id}"
+                            requests.delete(del_url, timeout=10)
+                        except Exception:
+                            pass
+                    print(f"🗑️ Wiped {len(saved_msg_ids)} Discord dashboard message(s) for '{watch_name}'")
+
+                    # 2. Delete the entire Discord Forum thread if a bot token is configured
+                    discord_thread_id = watch.get("discord_thread_id")
+                    if discord_thread_id:
+                        delete_discord_forum_thread(discord_thread_id)
+
+                # C. Purge any residual keys from bms_state.json
                 try:
                     timestamp_match = re.search(r'_(\d{10,})', watch_name)
                     unique_id = timestamp_match.group(1) if timestamp_match else watch_name.split('_')[0]
@@ -3047,8 +3064,7 @@ def main():
                 surviving_watches.pop() # Drop it from the surviving list
                 watches_updated = True
             
-            continue  # CRITICAL: Skip all active checks and searches for closed watches!
-
+            continue  # Skip active checks for closed watches
         # --- 2. REGULAR EXPIRY CHECK FOR ACTIVE WATCHES ---
         configured_dates = watch.get("dates", [])
         
