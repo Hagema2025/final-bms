@@ -2166,6 +2166,26 @@ def run_event(
         "language": "",
     }
 
+    # 1. First, make a quick pre-flight call for the default (empty) date 
+    # to grab the live calendar status directly from BMS.
+    print(f"  🔎 [{label}] Fetching live calendar schedule...")
+    landing_data = fetch_bms(
+        event_code,
+        "",
+        region_code,
+        region_slug_resolved,
+        lat,
+        lon,
+        geohash,
+        label,
+    )
+
+    live_date_statuses = {}
+    if landing_data:
+        live_dates = parse_dates(landing_data)
+        for d in live_dates:
+            live_date_statuses[str(d.date_code)] = d.status
+
 
     # Filter out past dates before hitting the API
     today_int = int(datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%Y%m%d"))
@@ -2175,6 +2195,10 @@ def run_event(
         if not d: # Keep default empty date behavior
             valid_dates.append(d)
         elif str(d).isdigit() and int(d) >= today_int:
+            status = live_date_statuses.get(str(d))
+            if status == "NOT_OPEN":
+                print(f"  ⏭️ Skipping {d} — live calendar status is NOT_OPEN.")
+                continue
             valid_dates.append(d)
         else:
             print(f"  ⏭️ Skipping past date: {d}")
