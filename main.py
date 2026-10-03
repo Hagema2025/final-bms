@@ -2180,11 +2180,16 @@ def run_event(
         label,
     )
 
+    live_dates = parse_dates(landing_data) if landing_data else []
+    
+    if not live_dates:
+        print(f"  ⏭️ Skipping '{label}' — Bookings/calendar are not open yet (Saved all API calls).")
+        # Return gracefully, passing landing_data out so variant discovery can still check it!
+        return state, True, landing_data
+
     live_date_statuses = {}
-    if landing_data:
-        live_dates = parse_dates(landing_data)
-        for d in live_dates:
-            live_date_statuses[str(d.date_code)] = d.status
+    for d in live_dates:
+        live_date_statuses[str(d.date_code)] = d.status
 
 
     # Filter out past dates before hitting the API
