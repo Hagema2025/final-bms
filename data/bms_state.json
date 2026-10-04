@@ -98,42 +98,6 @@
   },
   "DoraemonCastleOfTheUnderseaDevil_20261003221459 (Tamil 2D)": {
     "shows": {
-      "RAKK|4407|20261004|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "02:15 PM",
-        "date": "20261004",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "0",
-        "screen": "SCREEN 5",
-        "vcode": "RAKK",
-        "sid": "4407",
-        "missing_count": 0
-      },
-      "RAKK|4407|20261004|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "02:15 PM",
-        "date": "20261004",
-        "cat": "Elite",
-        "price": "150.00",
-        "status": "2",
-        "screen": "SCREEN 5",
-        "vcode": "RAKK",
-        "sid": "4407",
-        "missing_count": 0
-      },
-      "RAKK|4407|20261004|LOUNGER": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "02:15 PM",
-        "date": "20261004",
-        "cat": "LOUNGER",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 5",
-        "vcode": "RAKK",
-        "sid": "4407",
-        "missing_count": 0
-      },
       "RAKK|4408|20261004|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "04:30 PM",
