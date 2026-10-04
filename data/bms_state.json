@@ -11,7 +11,7 @@
         "screen": "SCREEN 6",
         "vcode": "RAKK",
         "sid": "4480",
-        "missing_count": 2
+        "missing_count": 3
       },
       "RAKK|4480|20261005|Elite": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
@@ -23,7 +23,7 @@
         "screen": "SCREEN 6",
         "vcode": "RAKK",
         "sid": "4480",
-        "missing_count": 2
+        "missing_count": 3
       },
       "RAKK|4480|20261005|LOUNGER": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
@@ -35,7 +35,7 @@
         "screen": "SCREEN 6",
         "vcode": "RAKK",
         "sid": "4480",
-        "missing_count": 2
+        "missing_count": 3
       },
       "INTO|91261|20261005|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
