@@ -78,5 +78,42 @@
     ],
     "formats": [],
     "message_thread_id": 965
+  },
+  {
+    "name": "DoraemonCastleOfTheUnderseaDevil_20261005005646",
+    "url": "https://in.bookmyshow.com/movies/chennai/doraemon-castle-of-the-undersea-devil/ET00507337",
+    "dates": {
+      "20261005": [
+        "night"
+      ],
+      "20261006": [
+        "night"
+      ],
+      "20261007": [
+        "night"
+      ],
+      "20261008": [
+        "night"
+      ],
+      "20261009": [
+        "night"
+      ],
+      "20261010": [],
+      "20261011": []
+    },
+    "theatre": [
+      "AGS Cinemas OMR: Navlur",
+      "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+      "INOX: The Marina Mall, OMR",
+      "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
+      "Rakki Cinemas: OMR, Kelambakkam"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 969
   }
 ]
