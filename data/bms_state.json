@@ -204,7 +204,7 @@
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
         "sid": "47817",
-        "missing_count": 0
+        "missing_count": 1
       },
       "ACON|47817|20261004|PEARL": {
         "venue": "AGS Cinemas OMR: Navlur",
@@ -216,7 +216,7 @@
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
         "sid": "47817",
-        "missing_count": 0
+        "missing_count": 1
       }
     },
     "dates": {
