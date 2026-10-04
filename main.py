@@ -1171,8 +1171,31 @@ def detect_changes(old_state, new_state):
         if not old_show:
             continue
 
+
         old_status = str(old_show.get("status", "")).strip()
         new_status = str(new_show.get("status", "")).strip()
+
+        # 1.5 Time Change Check
+        old_time = str(old_show.get("time", "")).strip()
+        new_time = str(new_show.get("time", "")).strip()
+
+        if old_time != new_time:
+            changes.append({
+                "type": "TIME_CHANGED",
+                "icon": "⏳",
+                "venue": new_show["venue"],
+                "old_time": old_time,
+                "time": new_time,
+                "date": new_show["date"],
+                "cat": new_show["cat"],
+                "price": new_show["price"],
+                "screen": new_show.get("screen", ""),
+                "status": new_status,
+                "old_status": old_status,
+                "vcode": new_show.get("vcode", ""),
+                "sid": new_show.get("sid", "")
+            })
+            continue # Skip other checks for this category to avoid duplicate alerts
 
         # 2. Restocked check
         if is_restocked(old_status, new_status):
@@ -2028,6 +2051,10 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                         if c_type == "NEW":
                             cat_icon = "🆕"
                             detail_line = f"<b>{price}</b> [{curr_st}{curr_emoji}]"
+                        elif c_type == "TIME_CHANGED":
+                            cat_icon = "⏳"
+                            old_t = matched_change.get("old_time", "")
+                            detail_line = f"Was {old_t} ➔ <b>{price}</b> [{curr_st}{curr_emoji}]"
                         elif is_price_change and has_status_transition:
                             cat_icon = "📉🔄" if c_type == "PRICE_DROP" else "📈🔄"
                             status_part = f"[{old_st}{old_emoji}➔{curr_st}{curr_emoji}]"
@@ -2337,7 +2364,7 @@ def run_event(
         old_shows = old_watch_state["shows"]
         new_shows = new_watch_state["shows"]
 
-        MAX_MISSING_CHECKS = 3
+        MAX_MISSING_CHECKS = 2
 
         # ----------------------------------------------------------
         # Build physical-show keys from the NEW successful snapshot.
@@ -2351,7 +2378,6 @@ def run_event(
             physical_key = (
                 str(new_show.get("date", "")),
                 str(new_show.get("venue", "")),
-                str(new_show.get("time", "")),
                 str(new_show.get("vcode", "")),
                 str(new_show.get("sid", "")),
             )
@@ -2374,7 +2400,6 @@ def run_event(
             physical_key = (
                 str(old_show.get("date", "")),
                 str(old_show.get("venue", "")),
-                str(old_show.get("time", "")),
                 str(old_show.get("vcode", "")),
                 str(old_show.get("sid", "")),
             )
@@ -2427,13 +2452,18 @@ def run_event(
                     old_physical_key = (
                         str(old_category.get("date", "")),
                         str(old_category.get("venue", "")),
-                        str(old_category.get("time", "")),
                         str(old_category.get("vcode", "")),
                         str(old_category.get("sid", "")),
                     )
 
                     if old_physical_key == physical_key:
                         old_category["missing_count"] = 0
+                        # --- THE GHOST CATEGORY FIX ---
+                        # If the category vanished but the show is still playing,
+                        # force it to "Sold Out" (0) so we get a RESTOCK alert if it returns.
+                        if old_key not in new_shows:
+                            old_category["status"] = "0"
+                            new_shows[old_key] = old_category
 
                 continue
 
@@ -2462,7 +2492,6 @@ def run_event(
                 old_physical_key = (
                     str(old_category.get("date", "")),
                     str(old_category.get("venue", "")),
-                    str(old_category.get("time", "")),
                     str(old_category.get("vcode", "")),
                     str(old_category.get("sid", "")),
                 )
@@ -2507,7 +2536,6 @@ def run_event(
                     new_physical_key = (
                         str(old_category.get("date", "")),
                         str(old_category.get("venue", "")),
-                        str(old_category.get("time", "")),
                         str(old_category.get("vcode", "")),
                         str(old_category.get("sid", "")),
                     )
