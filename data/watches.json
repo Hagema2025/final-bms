@@ -26,5 +26,31 @@
     ],
     "formats": [],
     "message_thread_id": 957
+  },
+  {
+    "name": "BewareBoiuna_20261005004816",
+    "url": "https://in.bookmyshow.com/movies/chennai/beware-boiuna/ET00515208",
+    "dates": {
+      "20261009": [
+        "night"
+      ],
+      "20261010": [],
+      "20261011": []
+    },
+    "theatre": [
+      "AGS Cinemas OMR: Navlur",
+      "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+      "INOX: The Marina Mall, OMR",
+      "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
+      "Rakki Cinemas: OMR, Kelambakkam"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "English",
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 961
   }
 ]
