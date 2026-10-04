@@ -170,30 +170,6 @@
         "sid": "4408",
         "missing_count": 0
       },
-      "CBMC|13895|20261004|NORMAL": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "01:35 PM",
-        "date": "20261004",
-        "cat": "NORMAL",
-        "price": "54.35",
-        "status": "1",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13895",
-        "missing_count": 0
-      },
-      "CBMC|13895|20261004|EXECUTIVE": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "01:35 PM",
-        "date": "20261004",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13895",
-        "missing_count": 0
-      },
       "ACON|47908|20261004|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
         "time": "10:45 PM",
