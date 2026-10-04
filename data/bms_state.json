@@ -1,28 +1,40 @@
 {
   "Dorothy_20261003220312 (Tamil 2D)": {
     "shows": {
-      "CBMC|13928|20261005|NORMAL": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "10:45 PM",
+      "RAKK|4480|20261005|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:00 PM",
         "date": "20261005",
-        "cat": "NORMAL",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13928",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 6",
+        "vcode": "RAKK",
+        "sid": "4480",
         "missing_count": 0
       },
-      "CBMC|13928|20261005|EXECUTIVE": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "10:45 PM",
+      "RAKK|4480|20261005|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:00 PM",
         "date": "20261005",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
+        "cat": "Elite",
+        "price": "150.00",
         "status": "3",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "13928",
+        "screen": "SCREEN 6",
+        "vcode": "RAKK",
+        "sid": "4480",
+        "missing_count": 0
+      },
+      "RAKK|4480|20261005|LOUNGER": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:00 PM",
+        "date": "20261005",
+        "cat": "LOUNGER",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 6",
+        "vcode": "RAKK",
+        "sid": "4480",
         "missing_count": 0
       },
       "INTO|91261|20261005|CLUB": {
@@ -48,6 +60,30 @@
         "vcode": "INTO",
         "sid": "91261",
         "missing_count": 0
+      },
+      "CBMC|13928|20261005|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "10:45 PM",
+        "date": "20261005",
+        "cat": "NORMAL",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13928",
+        "missing_count": 0
+      },
+      "CBMC|13928|20261005|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "10:45 PM",
+        "date": "20261005",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "13928",
+        "missing_count": 0
       }
     },
     "dates": {
@@ -62,42 +98,6 @@
   },
   "DoraemonCastleOfTheUnderseaDevil_20261003221459 (Tamil 2D)": {
     "shows": {
-      "RAKK|4418|20261004|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "12:05 PM",
-        "date": "20261004",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "1",
-        "screen": "SCREEN 5",
-        "vcode": "RAKK",
-        "sid": "4418",
-        "missing_count": 0
-      },
-      "RAKK|4418|20261004|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "12:05 PM",
-        "date": "20261004",
-        "cat": "Elite",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 5",
-        "vcode": "RAKK",
-        "sid": "4418",
-        "missing_count": 0
-      },
-      "RAKK|4418|20261004|LOUNGER": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "12:05 PM",
-        "date": "20261004",
-        "cat": "LOUNGER",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 5",
-        "vcode": "RAKK",
-        "sid": "4418",
-        "missing_count": 0
-      },
       "RAKK|4407|20261004|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "02:15 PM",
