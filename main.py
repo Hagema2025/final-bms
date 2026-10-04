@@ -611,6 +611,12 @@ def fetch_bms(
             )
 
             if response.status_code == 200:
+                # --- CLOUDFLARE PROTECTION ---
+                # Check if BMS actually sent JSON, or if Cloudflare sent an HTML Captcha page
+                if "application/json" not in response.headers.get("Content-Type", ""):
+                    print(f"  ⚠️ Blocked by Cloudflare! Received HTML instead of JSON for {date_code or 'default'}.")
+                    # We continue the loop to trigger a retry, just in case it was a temporary block
+                    continue
                 return response.json()
                 
             # If the API explicitly says Not Found/Bad Request, it just hasn't opened yet.
