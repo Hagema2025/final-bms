@@ -1,6 +1,55 @@
 {
   "DoraemonCastleOfTheUnderseaDevil_20261005005646 (Tamil 2D)": {
-    "shows": {},
+    "shows": {
+      "CBMC|14037|20261006|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "08:20 PM",
+        "date": "20261006",
+        "cat": "NORMAL",
+        "price": "54.35",
+        "status": "2",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "14037",
+        "missing_count": 0
+      },
+      "CBMC|14037|20261006|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "08:20 PM",
+        "date": "20261006",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "14037",
+        "missing_count": 0
+      },
+      "CBMC|14036|20261007|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "08:20 PM",
+        "date": "20261007",
+        "cat": "NORMAL",
+        "price": "54.35",
+        "status": "1",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "14036",
+        "missing_count": 0
+      },
+      "CBMC|14036|20261007|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "08:20 PM",
+        "date": "20261007",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "14036",
+        "missing_count": 0
+      }
+    },
     "dates": {
       "20261005": "AVAILABLE",
       "20261006": "AVAILABLE",
