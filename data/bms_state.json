@@ -24,5 +24,150 @@
       "20261014": "NOT_OPEN",
       "20261015": "NOT_OPEN"
     }
+  },
+  "BewareBoiuna_20261005004816 (English 2D)": {
+    "shows": {},
+    "dates": {
+      "20261009": "BOOKABLE",
+      "20261010": "NOT_OPEN",
+      "20261011": "NOT_OPEN",
+      "20261012": "NOT_OPEN",
+      "20261013": "NOT_OPEN",
+      "20261014": "NOT_OPEN",
+      "20261015": "NOT_OPEN"
+    }
+  },
+  "DoraemonCastleOfTheUnderseaDevil_20261005005646 (Tamil 2D)": {
+    "shows": {
+      "RAKK|4574|20261007|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:15 PM",
+        "date": "20261007",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4574",
+        "missing_count": 0
+      },
+      "RAKK|4574|20261007|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:15 PM",
+        "date": "20261007",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4574",
+        "missing_count": 0
+      },
+      "RAKK|4574|20261007|LOUNGER": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:15 PM",
+        "date": "20261007",
+        "cat": "LOUNGER",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4574",
+        "missing_count": 0
+      },
+      "CBMC|14036|20261007|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "08:05 PM",
+        "date": "20261007",
+        "cat": "NORMAL",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "14036",
+        "missing_count": 0
+      },
+      "CBMC|14036|20261007|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "08:05 PM",
+        "date": "20261007",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "14036",
+        "missing_count": 0
+      },
+      "RAKK|4567|20261008|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:15 PM",
+        "date": "20261008",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4567",
+        "missing_count": 0
+      },
+      "RAKK|4567|20261008|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:15 PM",
+        "date": "20261008",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4567",
+        "missing_count": 0
+      },
+      "RAKK|4567|20261008|LOUNGER": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:15 PM",
+        "date": "20261008",
+        "cat": "LOUNGER",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4567",
+        "missing_count": 0
+      },
+      "CBMC|14074|20261008|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "08:20 PM",
+        "date": "20261008",
+        "cat": "NORMAL",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "14074",
+        "missing_count": 0
+      },
+      "CBMC|14074|20261008|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "08:20 PM",
+        "date": "20261008",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "14074",
+        "missing_count": 0
+      }
+    },
+    "dates": {
+      "20261007": "AVAILABLE",
+      "20261008": "AVAILABLE",
+      "20261009": "AVAILABLE",
+      "20261010": "AVAILABLE",
+      "20261011": "BOOKABLE",
+      "20261012": "NOT_OPEN",
+      "20261013": "NOT_OPEN"
+    }
   }
 }
