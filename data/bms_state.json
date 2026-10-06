@@ -25,6 +25,42 @@
         "sid": "14037",
         "missing_count": 0
       },
+      "RAKK|4574|20261007|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:15 PM",
+        "date": "20261007",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4574",
+        "missing_count": 0
+      },
+      "RAKK|4574|20261007|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:15 PM",
+        "date": "20261007",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4574",
+        "missing_count": 0
+      },
+      "RAKK|4574|20261007|LOUNGER": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:15 PM",
+        "date": "20261007",
+        "cat": "LOUNGER",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4574",
+        "missing_count": 0
+      },
       "CBMC|14036|20261007|NORMAL": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
         "time": "08:20 PM",
@@ -47,6 +83,42 @@
         "screen": "",
         "vcode": "CBMC",
         "sid": "14036",
+        "missing_count": 0
+      },
+      "RAKK|4567|20261008|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:15 PM",
+        "date": "20261008",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4567",
+        "missing_count": 0
+      },
+      "RAKK|4567|20261008|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:15 PM",
+        "date": "20261008",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4567",
+        "missing_count": 0
+      },
+      "RAKK|4567|20261008|LOUNGER": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:15 PM",
+        "date": "20261008",
+        "cat": "LOUNGER",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4567",
         "missing_count": 0
       }
     },
