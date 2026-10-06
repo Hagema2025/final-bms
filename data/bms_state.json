@@ -145,5 +145,17 @@
       "20261013": "AVAILABLE",
       "20261014": "AVAILABLE"
     }
+  },
+  "OtherMommy_20261005004930 (English 2D)": {
+    "shows": {},
+    "dates": {
+      "20261009": "BOOKABLE",
+      "20261010": "NOT_OPEN",
+      "20261011": "NOT_OPEN",
+      "20261012": "NOT_OPEN",
+      "20261013": "NOT_OPEN",
+      "20261014": "NOT_OPEN",
+      "20261015": "NOT_OPEN"
+    }
   }
 }
