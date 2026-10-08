@@ -48,5 +48,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/bms_state.json data/watches.json
+          git add data/bms_state.json data/watches.json data/bmsWatches.json
           git diff --cached --quiet || (git commit -m "chore: update state and watches [skip ci]" && git push)
