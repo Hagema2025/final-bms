@@ -18,6 +18,8 @@ import random
 
 WATCHES_FILE = "data/watches.json"
 STATE_FILE = "data/bms_state.json"
+BMS_WATCHES_FILE = "data/bmsWatches.json"
+
 
 
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
@@ -28,11 +30,11 @@ NTFY_TOPIC=os.getenv("NTFY_TOPIC", "").strip()
 NTFY_ERROR_TOPIC = os.getenv("NTFY_ERROR_TOPIC", "").strip()
 DISCORD_WEBHOOK_URL=os.getenv("DISCORD_WEBHOOK_URL", "").strip()
 
-def save_watches(watches):
-    """Saves updated watches data back to the JSON file."""
-    with open(WATCHES_FILE, "w", encoding="utf-8") as f:
-        json.dump(watches, f, indent=2, ensure_ascii=False)
-
+def save_bms_watches(watches_dict):
+    """Saves the checker's working copy WITHOUT touching watches.json."""
+    with open(BMS_WATCHES_FILE, "w", encoding="utf-8") as f:
+        json.dump(watches_dict, f, indent=2, ensure_ascii=False)
+        
 def get_notification_recipients() -> set[int]:
     raw_env = os.getenv("NOTIFICATION_USERS", "")
     recipients = {int(x.strip()) for x in raw_env.split(",") if x.strip().isdigit()}
@@ -60,7 +62,7 @@ def send_watch_expiry_alert(watch, idx):
     # 🔥 Use the UID in the callback_data
     kb = {
         "inline_keyboard": [
-            [{"text": "Close Topic", "callback_data": f"confirmstop_{uid}"}],
+            # [{"text": "Close Topic", "callback_data": f"confirmstop_{uid}"}],
             [{"text": "Delete Topic", "callback_data": f"confirmstopperm_{uid}"}]
         ]
     }
@@ -389,53 +391,67 @@ def _as_list(value):
 
     return []
 
-def load_watches():
-    """
-    Load watches from watches.json and preserve retention/status fields.
-    """
-    if not os.path.exists(WATCHES_FILE):
-        print(f"❌ {WATCHES_FILE} not found.")
-        sys.exit(1)
+def extract_watch_uid(watch_name: str) -> str:
+    match = re.search(r'_(\d{10,})', watch_name)
+    return match.group(1) if match else watch_name.split('_')[0][:20]
 
-    try:
+def load_and_sync_watches(state):
+    """
+    Reads watches.json strictly as Read-Only.
+    Only adds new UIDs or removes deleted UIDs. Preserves local discoveries.
+    """
+    primary_watches = {}
+    if os.path.exists(WATCHES_FILE):
         with open(WATCHES_FILE, "r", encoding="utf-8") as f:
-            watches = json.load(f)
-    except json.JSONDecodeError as e:
-        print(f"❌ Invalid JSON in {WATCHES_FILE}")
-        print(f"   {e}")
-        sys.exit(1)
+            data = json.load(f)
+            # Convert list to dict using timestamp UID as key
+            if isinstance(data, list):
+                for w in data:
+                    timestamp_match = re.search(r'_(\d{10,})', w.get("name", ""))
+                    uid = timestamp_match.group(1) if timestamp_match else w.get("name", "").split('_')[0][:20]
+                    primary_watches[uid] = w
+            elif isinstance(data, dict):
+                primary_watches = data
 
-    if not isinstance(watches, list):
-        print(f"❌ {WATCHES_FILE} must contain a JSON array.")
-        sys.exit(1)
+    bms_watches = {}
+    if os.path.exists(BMS_WATCHES_FILE):
+        with open(BMS_WATCHES_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            if isinstance(data, list):
+                for w in data:
+                    timestamp_match = re.search(r'_(\d{10,})', w.get("name", ""))
+                    uid = timestamp_match.group(1) if timestamp_match else w.get("name", "").split('_')[0][:20]
+                    bms_watches[uid] = w
+            elif isinstance(data, dict):
+                bms_watches = data
 
-    if not watches:
-        print(f"❌ No watches configured in {WATCHES_FILE}.")
-        sys.exit(1)
+    watches_changed = False
+    state_changed = False
 
-    validated = []
+    # 1. Detect Deleted Watches (in bmsWatches but missing from watches.json)
+    for uid in list(bms_watches.keys()):
+        if uid not in primary_watches:
+            print(f"🗑️ Sync: Watch removed by Bot. Deleting from checker: {uid}")
+            del bms_watches[uid]
+            watches_changed = True
+            
+            # Clean state memory for deleted watch
+            keys_to_delete = [k for k in state.keys() if uid in str(k)]
+            for k in keys_to_delete:
+                del state[k]
+                state_changed = True
 
-    for index, watch in enumerate(watches, start=1):
-        if not isinstance(watch, dict):
-            print(f"❌ Watch #{index} must be an object.")
-            sys.exit(1)
+    # 2. Detect New Watches (From Telegram Bot)
+    for uid, w_data in primary_watches.items():
+        if uid not in bms_watches:
+            print(f"➕ Sync: New watch detected from Bot: {w_data.get('name')}")
+            bms_watches[uid] = w_data
+            watches_changed = True
 
-        name = str(watch.get("name", "")).strip()
-        url = str(watch.get("url", "")).strip()
-
-        if not name:
-            print(f"❌ Watch #{index} is missing 'name'.")
-            sys.exit(1)
-
-        if not url:
-            print(f"❌ Watch #{index} is missing 'url'.")
-            sys.exit(1)
-
-        # --- ADVANCED DATE & TIME PARSING ---
+    # 3. Format/Validate the dictionary
+    for uid, watch in list(bms_watches.items()):
         dates_raw = watch.get("dates", [])
-        time_period_global = [tp.lower() for tp in _as_list(watch.get("time_period"))]
         date_time_map = {}
-        
         if isinstance(dates_raw, dict):
             for d_key, d_times in dates_raw.items():
                 clean_d = str(d_key).strip()
@@ -443,57 +459,19 @@ def load_watches():
                     date_time_map[clean_d] = [t.lower() for t in _as_list(d_times)]
             dates_list = list(date_time_map.keys())
         else:
-            if isinstance(dates_raw, str):
-                dates_list = [d.strip() for d in dates_raw.split(",") if d.strip()]
-            elif isinstance(dates_raw, list):
-                dates_list = [str(d).strip() for d in dates_raw if str(d).strip()]
-            else:
-                dates_list = []
+            if isinstance(dates_raw, str): dates_list = [d.strip() for d in dates_raw.split(",") if d.strip()]
+            elif isinstance(dates_raw, list): dates_list = [str(d).strip() for d in dates_raw if str(d).strip()]
+            else: dates_list = []
 
-        theatre = [t.lower() for t in _as_list(watch.get("theatre"))]
-        discover_variants = bool(watch.get("discover_variants", False))
-        languages = [lang.lower() for lang in _as_list(watch.get("languages"))]
-        formats = [fmt.lower() for fmt in _as_list(watch.get("formats"))]
-        message_thread_id = watch.get("message_thread_id", None)
-        discord_thread_id = watch.get("discord_thread_id", None)
+        watch["dates"] = dates_list
+        watch["date_time_map"] = date_time_map
+        watch["time_period"] = [tp.lower() for tp in _as_list(watch.get("time_period"))]
+        watch["theatre"] = [t.lower() for t in _as_list(watch.get("theatre"))]
+        watch["languages"] = [lang.lower() for lang in _as_list(watch.get("languages"))]
+        watch["formats"] = [fmt.lower() for fmt in _as_list(watch.get("formats"))]
+        watch["discover_variants"] = bool(watch.get("discover_variants", False))
 
-
-        # --- PRESERVE RETENTION & STATUS FIELDS ---
-        status = watch.get("status", None)
-        closed_at = watch.get("closed_at", None)
-        closed_at_formatted = watch.get("closed_at_formatted", None)
-        deletes_at_formatted = watch.get("deletes_at_formatted", None)
-        expired_notified = watch.get("expired_notified", False)
-
-        validated_watch = {
-            "name": name,
-            "url": url,
-            "dates": dates_list,
-            "date_time_map": date_time_map,
-            "theatre": theatre,
-            "time_period": time_period_global,
-            "discover_variants": discover_variants,
-            "languages": languages,
-            "formats": formats,
-            "message_thread_id": message_thread_id,
-            "expired_notified": expired_notified,
-            "discord_thread_id":discord_thread_id
-        }
-
-        # Keep status fields if they exist
-        if status:
-            validated_watch["status"] = status
-        if closed_at:
-            validated_watch["closed_at"] = closed_at
-        if closed_at_formatted:
-            validated_watch["closed_at_formatted"] = closed_at_formatted
-        if deletes_at_formatted:
-            validated_watch["deletes_at_formatted"] = deletes_at_formatted
-
-        validated.append(validated_watch)
-
-    return validated
-
+    return bms_watches, state, watches_changed, state_changed
 
 # ======================================================================
 # URL PARSER
@@ -2699,6 +2677,7 @@ def run_event(
 # RUN ONE WATCH
 # ======================================================================
 def run_watch(
+    uid,
     watch,
     state,
 ):
@@ -2706,6 +2685,7 @@ def run_watch(
     watch_name = watch["name"]
     watch_threadid=watch["message_thread_id"]
     discord_thread_id=watch["discord_thread_id"]
+    watch_mutated = False   # <--- ADD THIS
 
     print("")
     print("=" * 70)
@@ -2870,21 +2850,11 @@ def run_watch(
                     if watch_name in state:
                         state[new_watch_name] = state.pop(watch_name)
                         
-                    # Update watches.json permanently
-                    try:
-                        with open(WATCHES_FILE, "r", encoding="utf-8") as f:
-                            all_watches = json.load(f)
-                        for w in all_watches:
-                            if w.get("name") == watch_name:
-                                w["name"] = new_watch_name
-                                break
-                        with open(WATCHES_FILE, "w", encoding="utf-8") as f:
-                            json.dump(all_watches, f, indent=2, ensure_ascii=False)
-                    except Exception as e:
-                        print(f"  ⚠️ Could not save new name to watches.json: {e}")
+                    
                     
                     # Apply the new name to the active script variables
                     watch["name"] = new_watch_name
+                    watch_mutated = True
                     watch_name = new_watch_name
         
         # 2. APPLY USER'S LANGUAGE FILTERS
@@ -2954,6 +2924,7 @@ def run_watch(
                         f"  💡 Auto-updating watch URL to target variant directly: {new_url}"
                     )
                     watch["url"] = new_url
+                    watch_mutated = True
                     
                     # 🔥 FIX: Synchronize the base watch name with the new variant immediately
                     correct_tag = f"({target_variant.language} {target_variant.format})"
@@ -2977,22 +2948,10 @@ def run_watch(
                     
                     old_watch_name = watch_name
                     watch["name"] = new_watch_name
+                    watch_mutated = True
                     watch_name = new_watch_name # Update for the rest of the loop
 
-                    try:
-                        if os.path.exists(WATCHES_FILE):
-                            with open(WATCHES_FILE, "r", encoding="utf-8") as f:
-                                watches_data = json.load(f)
 
-                            for w in watches_data:
-                                if w.get("name") == old_watch_name:
-                                    w["url"] = new_url
-                                    w["name"] = new_watch_name # 🔥 Save the new name permanently!
-
-                            with open(WATCHES_FILE, "w", encoding="utf-8") as f:
-                                json.dump(watches_data, f, indent=2, ensure_ascii=False)
-                    except Exception as e:
-                        print(f"  ⚠️ Could not update {WATCHES_FILE}: {e}")
 
             for variant in selected:
 
@@ -3033,7 +2992,7 @@ def run_watch(
                     overall_success or variant_success
                 )
 
-    return state, overall_success
+    return state, overall_success, watch_mutated
 # ======================================================================
 # MAIN
 # ======================================================================
@@ -3041,131 +3000,78 @@ def main():
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(f"[{now}] BMS Ticket Checker — CI mode")
 
-    watches = load_watches()
-    print(f"📋 Loaded {len(watches)} watch(es)")
-
     state = load_state()
+    watches, state, watches_updated, state_updated = load_and_sync_watches(state)
     state = cleanup_state(state)
+    
+    if state_updated: save_state(state)
+
+    print(f"📋 Loaded {len(watches)} synchronized watch(es)")
 
     successful = 0
-    watches_updated = False
-    
-    # Get current time for 14-day cleanup comparison
     current_time = time.time()
     FOURTEEN_DAYS_SECONDS = 14 * 86400
     today_int = int(datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%Y%m%d"))
 
-    surviving_watches = []
-
-    for idx, watch in enumerate(watches):
+    for uid, watch in list(watches.items()):
         status = watch.get("status")
         closed_at = watch.get("closed_at", 0)
         watch_name = watch.get("name", "Unknown")
         
         # --- 1. 14-DAY PASSIVE CLEANUP FOR CLOSED WATCHES ---
-        # --- 1. 14-DAY PASSIVE CLEANUP FOR CLOSED WATCHES ---
         if status == "closed":
-            surviving_watches.append(watch) # Retain in list during the 14-day window
-            
             if closed_at and (current_time - closed_at) > FOURTEEN_DAYS_SECONDS:
                 thread_id = watch.get("message_thread_id")
-                watch_name = watch.get("name")
-                
-                # A. Permanently delete the topic from Telegram
                 if thread_id and GROUP_CHAT_ID and TELEGRAM_BOT_TOKEN:
                     try:
                         del_url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/deleteForumTopic"
-                        payload = {
-                            "chat_id": GROUP_CHAT_ID,
-                            "message_thread_id": thread_id
-                        }
-                        res = requests.post(del_url, json=payload, timeout=10)
+                        res = requests.post(del_url, json={"chat_id": GROUP_CHAT_ID, "message_thread_id": thread_id}, timeout=10)
                         if res.status_code == 200:
                             print(f"\n🗑️ 14-day retention expired. Purged Telegram topic ID {thread_id} for '{watch_name}'")
-                        else:
-                            print(f"\n⚠️ Failed to purge Telegram topic for '{watch_name}': {res.text}")
                     except Exception as e:
-                        print(f"\n⚠️ Error deleting Telegram forum topic: {e}")
-
-                # B. Permanently delete ALL Discord Dashboard Messages & Thread
-                # if DISCORD_WEBHOOK_URL:
-                #     # 1. Delete all paginated dashboard messages stored in state
-                #     msg_ids_key = f"{watch_name}_discord_msg_ids"
-                #     saved_msg_ids = state.get(msg_ids_key, [])
-                #     if isinstance(saved_msg_ids, str):
-                #         saved_msg_ids = [saved_msg_ids]
-                        
-                #     for msg_id in saved_msg_ids:
-                #         try:
-                #             del_url = f"{DISCORD_WEBHOOK_URL}/messages/{msg_id}"
-                #             if thread_id:
-                #                 del_url += f"?thread_id={thread_id}"
-                #             requests.delete(del_url, timeout=10)
-                #         except Exception:
-                #             pass
-                #     print(f"🗑️ Wiped {len(saved_msg_ids)} Discord dashboard message(s) for '{watch_name}'")
-
-                #     # 2. Delete the entire Discord Forum thread if a bot token is configured
-                #     discord_thread_id = watch.get("discord_thread_id")
-                #     if discord_thread_id:
-                #         delete_discord_forum_thread(discord_thread_id)
-
-                # C. Purge any residual keys from bms_state.json
+                        pass
+                
                 try:
-                    timestamp_match = re.search(r'_(\d{10,})', watch_name)
-                    unique_id = timestamp_match.group(1) if timestamp_match else watch_name.split('_')[0]
-                    
-                    keys_to_delete = [k for k in state.keys() if unique_id in str(k)]
+                    keys_to_delete = [k for k in state.keys() if uid in str(k)]
                     if keys_to_delete:
-                        for k in keys_to_delete:
-                            del state[k]
-                        print(f"🧹 Cleaned up {len(keys_to_delete)} residual state record(s) for expired watch ID {unique_id}")
+                        for k in keys_to_delete: del state[k]
                 except Exception as e:
                     print(f"⚠️ Error cleaning residual state for '{watch_name}': {e}")
                 
-                print(f"🧹 Removing closed watch '{watch_name}' permanently from watches.json.")
-                surviving_watches.pop() # Drop it from the surviving list
+                print(f"🧹 Removing closed watch '{watch_name}' permanently from memory.")
+                del watches[uid]
                 watches_updated = True
             
-            continue  # Skip active checks for closed watches
+            continue 
+
         # --- 2. REGULAR EXPIRY CHECK FOR ACTIVE WATCHES ---
         configured_dates = watch.get("dates", [])
-        
         if configured_dates and all(str(d).isdigit() and int(d) < today_int for d in configured_dates):
             if not watch.get("expired_notified"):
                 print(f"\n  ⏰ Watch '{watch['name']}' has expired. Sending notification...")
-                send_watch_expiry_alert(watch, idx)
-                watch["expired_notified"] = True
+                send_watch_expiry_alert(watch, uid)
+                watches[uid]["expired_notified"] = True
                 watches_updated = True
             else:
                 print(f"\n  ⏭️ Skipping expired watch '{watch['name']}' (Waiting for manual close).")
-            
-            surviving_watches.append(watch)
             continue
 
         # --- 3. RUN ACTIVE WATCH ---
-        surviving_watches.append(watch)
         try:
-            state, success = run_watch(watch, state)
-            if success:
-                successful += 1
-
+            state, success, mutated = run_watch(uid, watch, state)
+            if mutated: watches_updated = True
+            if success: successful += 1
         except Exception as e:
-            print("")
-            print(f"❌ Watch '{watch['name']}' failed:")
-            print(f"    {type(e).__name__}: {e}")
+            print(f"\n❌ Watch '{watch['name']}' failed: {type(e).__name__}: {e}")
             continue
 
-    # Save state and updated watches list if any changes occurred
     save_state(state)
     if watches_updated:
-        save_watches(surviving_watches)
+        save_bms_watches(watches)
 
-    print("")
-    print("=" * 70)
-    print(f"✅ Completed: {successful}/{len(surviving_watches)} active watch(es)")
-    print("=" * 70)
-
+    print(f"\n======================================================================")
+    print(f"✅ Completed: {successful}/{len(watches)} active watch(es)")
+    print(f"======================================================================")
 
 if __name__ == "__main__":
     main()
