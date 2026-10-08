@@ -1048,30 +1048,6 @@
         "sid": "14109",
         "missing_count": 0
       },
-      "INTO|91394|20261009|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "08:05 PM",
-        "date": "20261009",
-        "cat": "CLUB",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "91394",
-        "missing_count": 0
-      },
-      "INTO|91394|20261009|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "08:05 PM",
-        "date": "20261009",
-        "cat": "EXECUTIVE",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "91394",
-        "missing_count": 0
-      },
       "ACON|47918|20261009|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
         "time": "07:15 PM",
@@ -1094,6 +1070,30 @@
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
         "sid": "47918",
+        "missing_count": 0
+      },
+      "INTO|91394|20261009|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "08:05 PM",
+        "date": "20261009",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91394",
+        "missing_count": 0
+      },
+      "INTO|91394|20261009|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "08:05 PM",
+        "date": "20261009",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91394",
         "missing_count": 0
       },
       "CBMC|14152|20261010|NORMAL": {
