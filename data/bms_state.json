@@ -721,30 +721,6 @@
         "sid": "14183",
         "missing_count": 0
       },
-      "ACON|47959|20261011|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "04:30 PM",
-        "date": "20261011",
-        "cat": "DIAMOND",
-        "price": "150.00",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47959",
-        "missing_count": 0
-      },
-      "ACON|47959|20261011|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "04:30 PM",
-        "date": "20261011",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47959",
-        "missing_count": 0
-      },
       "INTO|91447|20261011|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "10:00 AM",
@@ -863,6 +839,30 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91451",
+        "missing_count": 0
+      },
+      "ACON|47959|20261011|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "04:30 PM",
+        "date": "20261011",
+        "cat": "DIAMOND",
+        "price": "150.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47959",
+        "missing_count": 0
+      },
+      "ACON|47959|20261011|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "04:30 PM",
+        "date": "20261011",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47959",
         "missing_count": 0
       }
     },
@@ -1033,6 +1033,30 @@
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
         "sid": "47971",
+        "missing_count": 0
+      },
+      "INTO|91505|20261010|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:40 AM",
+        "date": "20261010",
+        "cat": "CLUB",
+        "price": "210.98",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91505",
+        "missing_count": 0
+      },
+      "INTO|91505|20261010|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:40 AM",
+        "date": "20261010",
+        "cat": "EXECUTIVE",
+        "price": "61.74",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91505",
         "missing_count": 0
       },
       "INTO|91471|20261010|CLUB": {
