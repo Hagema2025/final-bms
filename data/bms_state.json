@@ -1,6 +1,30 @@
 {
   "Dorothy_20261005234752 (Tamil 2D)": {
     "shows": {
+      "RAKK|4599|20261009|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:15 PM",
+        "date": "20261009",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 2",
+        "vcode": "RAKK",
+        "sid": "4599",
+        "missing_count": 0
+      },
+      "RAKK|4599|20261009|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:15 PM",
+        "date": "20261009",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 2",
+        "vcode": "RAKK",
+        "sid": "4599",
+        "missing_count": 0
+      },
       "MCSK|16406|20261009|SPECIAL": {
         "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
         "time": "07:15 PM",
