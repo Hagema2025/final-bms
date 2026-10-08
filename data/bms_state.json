@@ -443,5 +443,175 @@
       "20261013": "AVAILABLE",
       "20261014": "AVAILABLE"
     }
+  },
+  "Baththa_000000 (Tamil 2D)": {
+    "shows": {
+      "RAKK|4557|20261008|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:30 PM",
+        "date": "20261008",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4557",
+        "missing_count": 0
+      },
+      "RAKK|4557|20261008|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:30 PM",
+        "date": "20261008",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SC 3 DOLBY ATMOS",
+        "vcode": "RAKK",
+        "sid": "4557",
+        "missing_count": 0
+      },
+      "CBMC|14206|20261008|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "10:30 PM",
+        "date": "20261008",
+        "cat": "NORMAL",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "14206",
+        "missing_count": 0
+      },
+      "CBMC|14206|20261008|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "10:30 PM",
+        "date": "20261008",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "1",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "14206",
+        "missing_count": 0
+      },
+      "CBMC|14072|20261008|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "10:50 PM",
+        "date": "20261008",
+        "cat": "NORMAL",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "14072",
+        "missing_count": 0
+      },
+      "CBMC|14072|20261008|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "10:50 PM",
+        "date": "20261008",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "1",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "14072",
+        "missing_count": 0
+      },
+      "MCSK|16252|20261008|SPECIAL": {
+        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
+        "time": "10:25 PM",
+        "date": "20261008",
+        "cat": "SPECIAL",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "MCSK",
+        "sid": "16252",
+        "missing_count": 0
+      },
+      "MCSK|16252|20261008|EXECUTIVE": {
+        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
+        "time": "10:25 PM",
+        "date": "20261008",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "2",
+        "screen": "",
+        "vcode": "MCSK",
+        "sid": "16252",
+        "missing_count": 0
+      },
+      "ACON|47898|20261008|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:20 PM",
+        "date": "20261008",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47898",
+        "missing_count": 0
+      },
+      "ACON|47898|20261008|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:20 PM",
+        "date": "20261008",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47898",
+        "missing_count": 0
+      },
+      "INTO|91365|20261008|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:55 PM",
+        "date": "20261008",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "2",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91365",
+        "missing_count": 0
+      },
+      "INTO|91365|20261008|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:55 PM",
+        "date": "20261008",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91365",
+        "missing_count": 0
+      }
+    },
+    "dates": {
+      "20261008": "BOOKABLE",
+      "20261009": "AVAILABLE",
+      "20261010": "AVAILABLE",
+      "20261011": "AVAILABLE",
+      "20261012": "AVAILABLE",
+      "20261013": "AVAILABLE",
+      "20261014": "AVAILABLE",
+      "20261015": "AVAILABLE"
+    }
+  },
+  "Baththa_000000 (Tamil 2D) (Tamil EPIQ)": {
+    "shows": {},
+    "dates": {
+      "20261009": "BOOKABLE",
+      "20261010": "AVAILABLE",
+      "20261011": "AVAILABLE",
+      "20261012": "NOT_OPEN",
+      "20261013": "NOT_OPEN",
+      "20261014": "NOT_OPEN",
+      "20261015": "NOT_OPEN"
+    }
   }
 }

@@ -1,10 +1,9 @@
 {
-  "20261008214911": {
-    "name": "DoraemonCastleOfTheUnderseaDevil_000000 (Tamil 2D)",
-    "url": "https://in.bookmyshow.com/movies/chennai/doraemon-castle-of-the-undersea-devil-tamil/ET00516268",
+  "20261008220437": {
+    "name": "Baththa_000000 (Tamil 2D)",
+    "url": "https://in.bookmyshow.com/movies/chennai/baththa-tamil/ET00515520",
     "dates": [
-      "20261010",
-      "20261011"
+      "20261008"
     ],
     "theatre": [
       "ags cinemas omr: navlur",
@@ -19,10 +18,11 @@
       "tamil"
     ],
     "formats": [],
-    "message_thread_id": 1048,
+    "message_thread_id": 1054,
     "date_time_map": {
-      "20261010": [],
-      "20261011": []
+      "20261008": [
+        "night"
+      ]
     }
   }
 }
