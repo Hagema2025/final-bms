@@ -446,54 +446,6 @@
   },
   "Baththa_000000 (Tamil 2D)": {
     "shows": {
-      "RAKK|4557|20261008|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "10:30 PM",
-        "date": "20261008",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "2",
-        "screen": "SC 3 DOLBY ATMOS",
-        "vcode": "RAKK",
-        "sid": "4557",
-        "missing_count": 0
-      },
-      "RAKK|4557|20261008|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "10:30 PM",
-        "date": "20261008",
-        "cat": "Elite",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SC 3 DOLBY ATMOS",
-        "vcode": "RAKK",
-        "sid": "4557",
-        "missing_count": 0
-      },
-      "CBMC|14206|20261008|NORMAL": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "10:30 PM",
-        "date": "20261008",
-        "cat": "NORMAL",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "14206",
-        "missing_count": 0
-      },
-      "CBMC|14206|20261008|EXECUTIVE": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "10:30 PM",
-        "date": "20261008",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "14206",
-        "missing_count": 0
-      },
       "CBMC|14072|20261008|NORMAL": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
         "time": "10:50 PM",
@@ -516,30 +468,6 @@
         "screen": "",
         "vcode": "CBMC",
         "sid": "14072",
-        "missing_count": 0
-      },
-      "MCSK|16252|20261008|SPECIAL": {
-        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
-        "time": "10:25 PM",
-        "date": "20261008",
-        "cat": "SPECIAL",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "MCSK",
-        "sid": "16252",
-        "missing_count": 0
-      },
-      "MCSK|16252|20261008|EXECUTIVE": {
-        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
-        "time": "10:25 PM",
-        "date": "20261008",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
-        "status": "2",
-        "screen": "",
-        "vcode": "MCSK",
-        "sid": "16252",
         "missing_count": 0
       },
       "INTO|91365|20261008|CLUB": {
