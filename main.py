@@ -2141,7 +2141,7 @@ def get_telegram_user_info(chat_id: int) -> str:
 # ======================================================================
 
 def run_event(
-        discord_thread_id,
+        # discord_thread_id,
     threadid,
     label,
     event_code,
@@ -2684,7 +2684,7 @@ def run_watch(
 
     watch_name = watch["name"]
     watch_threadid=watch["message_thread_id"]
-    discord_thread_id=watch["discord_thread_id"]
+    # discord_thread_id=watch["discord_thread_id"]
     watch_mutated = False   # <--- ADD THIS
 
     print("")
@@ -2792,7 +2792,7 @@ def run_watch(
     # --------------------------------------------------------------
 
     state, success, first_full_data = run_event(
-        discord_thread_id=discord_thread_id,
+        # discord_thread_id=discord_thread_id,
         threadid=watch_threadid,
         label=watch_name,
         event_code=event_code,
@@ -2968,7 +2968,7 @@ def run_watch(
                 )
 
                 state, variant_success, _ = run_event(
-                    discord_thread_id=discord_thread_id,
+                    # discord_thread_id=discord_thread_id,
                     threadid=watch_threadid,
                     label=variant_name,
                     event_code=variant.event_code,
