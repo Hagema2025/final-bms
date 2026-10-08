@@ -452,7 +452,7 @@
         "date": "20261008",
         "cat": "Premium",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SC 3 DOLBY ATMOS",
         "vcode": "RAKK",
         "sid": "4557",
@@ -540,30 +540,6 @@
         "screen": "",
         "vcode": "MCSK",
         "sid": "16252",
-        "missing_count": 0
-      },
-      "ACON|47898|20261008|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "10:20 PM",
-        "date": "20261008",
-        "cat": "DIAMOND",
-        "price": "183.00",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47898",
-        "missing_count": 0
-      },
-      "ACON|47898|20261008|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "10:20 PM",
-        "date": "20261008",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47898",
         "missing_count": 0
       },
       "INTO|91365|20261008|CLUB": {
