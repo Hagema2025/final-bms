@@ -19,10 +19,7 @@
     ],
     "formats": [],
     "message_thread_id": 1054,
-    "date_time_map": {
-      "20261008": [
-        "night"
-      ]
-    }
+    "date_time_map": {},
+    "expired_notified": true
   }
 }
