@@ -721,6 +721,30 @@
         "sid": "14183",
         "missing_count": 0
       },
+      "ACON|47959|20261011|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "04:30 PM",
+        "date": "20261011",
+        "cat": "DIAMOND",
+        "price": "150.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47959",
+        "missing_count": 0
+      },
+      "ACON|47959|20261011|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "04:30 PM",
+        "date": "20261011",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47959",
+        "missing_count": 0
+      },
       "INTO|91447|20261011|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "10:00 AM",
@@ -811,7 +835,7 @@
         "date": "20261011",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "INTO",
         "sid": "91450",
@@ -839,30 +863,6 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91451",
-        "missing_count": 0
-      },
-      "ACON|47959|20261011|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "04:30 PM",
-        "date": "20261011",
-        "cat": "DIAMOND",
-        "price": "150.00",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47959",
-        "missing_count": 0
-      },
-      "ACON|47959|20261011|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "04:30 PM",
-        "date": "20261011",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47959",
         "missing_count": 0
       }
     },
@@ -915,6 +915,54 @@
         "sid": "4611",
         "missing_count": 0
       },
+      "CBMC|14223|20261009|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "10:45 PM",
+        "date": "20261009",
+        "cat": "NORMAL",
+        "price": "61.74",
+        "status": "1",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "14223",
+        "missing_count": 0
+      },
+      "CBMC|14223|20261009|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "10:45 PM",
+        "date": "20261009",
+        "cat": "EXECUTIVE",
+        "price": "210.98",
+        "status": "3",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "14223",
+        "missing_count": 0
+      },
+      "ACON|47969|20261009|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:00 PM",
+        "date": "20261009",
+        "cat": "DIAMOND",
+        "price": "210.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47969",
+        "missing_count": 0
+      },
+      "ACON|47969|20261009|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:00 PM",
+        "date": "20261009",
+        "cat": "PEARL",
+        "price": "60.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "47969",
+        "missing_count": 0
+      },
       "INTO|91496|20261009|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "07:40 PM",
@@ -961,54 +1009,6 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91419",
-        "missing_count": 0
-      },
-      "CBMC|14223|20261009|NORMAL": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "10:45 PM",
-        "date": "20261009",
-        "cat": "NORMAL",
-        "price": "61.74",
-        "status": "2",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "14223",
-        "missing_count": 0
-      },
-      "CBMC|14223|20261009|EXECUTIVE": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "10:45 PM",
-        "date": "20261009",
-        "cat": "EXECUTIVE",
-        "price": "210.98",
-        "status": "3",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "14223",
-        "missing_count": 0
-      },
-      "ACON|47969|20261009|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "10:00 PM",
-        "date": "20261009",
-        "cat": "DIAMOND",
-        "price": "210.00",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47969",
-        "missing_count": 0
-      },
-      "ACON|47969|20261009|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "10:00 PM",
-        "date": "20261009",
-        "cat": "PEARL",
-        "price": "60.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "47969",
         "missing_count": 0
       },
       "INTO|91505|20261010|CLUB": {
