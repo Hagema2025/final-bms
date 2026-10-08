@@ -1048,6 +1048,42 @@
         "sid": "14074",
         "missing_count": 0
       },
+      "RAKK|4601|20261009|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:20 PM",
+        "date": "20261009",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4601",
+        "missing_count": 0
+      },
+      "RAKK|4601|20261009|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:20 PM",
+        "date": "20261009",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4601",
+        "missing_count": 0
+      },
+      "RAKK|4601|20261009|LOUNGER": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:20 PM",
+        "date": "20261009",
+        "cat": "LOUNGER",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 5",
+        "vcode": "RAKK",
+        "sid": "4601",
+        "missing_count": 0
+      },
       "CBMC|14109|20261009|NORMAL": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
         "time": "07:50 PM",
