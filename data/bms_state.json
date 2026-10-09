@@ -435,7 +435,6 @@
       }
     },
     "dates": {
-      "20261009": "AVAILABLE",
       "20261010": "AVAILABLE",
       "20261011": "BOOKABLE",
       "20261012": "AVAILABLE",
@@ -446,7 +445,6 @@
   "Baththa_000000 (Tamil 2D)": {
     "shows": {},
     "dates": {
-      "20261009": "AVAILABLE",
       "20261010": "AVAILABLE",
       "20261011": "AVAILABLE",
       "20261012": "AVAILABLE",
@@ -458,7 +456,6 @@
   "Baththa_000000 (Tamil 2D) (Tamil EPIQ)": {
     "shows": {},
     "dates": {
-      "20261009": "BOOKABLE",
       "20261010": "AVAILABLE",
       "20261011": "AVAILABLE",
       "20261012": "NOT_OPEN",
@@ -763,7 +760,7 @@
         "date": "20261015",
         "cat": "Premium",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": "SCREEN 5",
         "vcode": "RAKK",
         "sid": "4644",
@@ -919,7 +916,7 @@
         "date": "20261015",
         "cat": "Elite",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SCREEN 5",
         "vcode": "RAKK",
         "sid": "4645",
