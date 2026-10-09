@@ -1442,6 +1442,18 @@
   },
   "Jailer2_000000 (Tamil 2D) (Tamil EPIQ)": {
     "shows": {
+      "RAKK|4620|20261015|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "08:30 AM",
+        "date": "20261015",
+        "cat": "Premium",
+        "price": "300.00",
+        "status": "1",
+        "screen": "EPIQ",
+        "vcode": "RAKK",
+        "sid": "4620",
+        "missing_count": 0
+      },
       "RAKK|4621|20261015|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "12:00 PM",
