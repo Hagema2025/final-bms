@@ -3047,6 +3047,11 @@ def main():
         # --- 2. REGULAR EXPIRY CHECK FOR ACTIVE WATCHES ---
         configured_dates = watch.get("dates", [])
         if configured_dates and all(str(d).isdigit() and int(d) < today_int for d in configured_dates):
+            keys_to_delete = [k for k in state.keys() if uid in str(k)]
+            if keys_to_delete:
+                for k in keys_to_delete: 
+                    del state[k]
+                print(f"  🧹 Cleared memory state for expired watch '{watch_name}'.")
             if not watch.get("expired_notified"):
                 print(f"\n  ⏰ Watch '{watch['name']}' has expired. Sending notification...")
                 send_watch_expiry_alert(watch, uid)
