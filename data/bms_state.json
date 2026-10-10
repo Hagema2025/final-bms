@@ -1210,6 +1210,30 @@
         "sid": "4661",
         "missing_count": 0
       },
+      "RAKK|4776|20261016|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:00 AM",
+        "date": "20261016",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 2",
+        "vcode": "RAKK",
+        "sid": "4776",
+        "missing_count": 0
+      },
+      "RAKK|4776|20261016|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:00 AM",
+        "date": "20261016",
+        "cat": "Elite",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 2",
+        "vcode": "RAKK",
+        "sid": "4776",
+        "missing_count": 0
+      },
       "RAKK|4662|20261016|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "12:30 PM",
@@ -1232,6 +1256,30 @@
         "screen": "SC 3 DOLBY ATMOS",
         "vcode": "RAKK",
         "sid": "4662",
+        "missing_count": 0
+      },
+      "RAKK|4777|20261016|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "01:25 PM",
+        "date": "20261016",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 2",
+        "vcode": "RAKK",
+        "sid": "4777",
+        "missing_count": 0
+      },
+      "RAKK|4777|20261016|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "01:25 PM",
+        "date": "20261016",
+        "cat": "Elite",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 2",
+        "vcode": "RAKK",
+        "sid": "4777",
         "missing_count": 0
       },
       "RAKK|4663|20261016|Premium": {
@@ -1258,6 +1306,30 @@
         "sid": "4663",
         "missing_count": 0
       },
+      "RAKK|4778|20261016|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "04:55 PM",
+        "date": "20261016",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 2",
+        "vcode": "RAKK",
+        "sid": "4778",
+        "missing_count": 0
+      },
+      "RAKK|4778|20261016|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "04:55 PM",
+        "date": "20261016",
+        "cat": "Elite",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 2",
+        "vcode": "RAKK",
+        "sid": "4778",
+        "missing_count": 0
+      },
       "RAKK|4664|20261016|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "07:40 PM",
@@ -1282,6 +1354,30 @@
         "sid": "4664",
         "missing_count": 0
       },
+      "RAKK|4779|20261016|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "08:25 PM",
+        "date": "20261016",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 2",
+        "vcode": "RAKK",
+        "sid": "4779",
+        "missing_count": 0
+      },
+      "RAKK|4779|20261016|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "08:25 PM",
+        "date": "20261016",
+        "cat": "Elite",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 2",
+        "vcode": "RAKK",
+        "sid": "4779",
+        "missing_count": 0
+      },
       "RAKK|4665|20261016|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "11:15 PM",
@@ -1304,6 +1400,30 @@
         "screen": "SC 3 DOLBY ATMOS",
         "vcode": "RAKK",
         "sid": "4665",
+        "missing_count": 0
+      },
+      "RAKK|4780|20261016|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "11:50 PM",
+        "date": "20261016",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 2",
+        "vcode": "RAKK",
+        "sid": "4780",
+        "missing_count": 0
+      },
+      "RAKK|4780|20261016|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "11:50 PM",
+        "date": "20261016",
+        "cat": "Elite",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 2",
+        "vcode": "RAKK",
+        "sid": "4780",
         "missing_count": 0
       },
       "RAKK|4711|20261017|Premium": {
@@ -1396,7 +1516,7 @@
         "date": "20261017",
         "cat": "Elite",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SC 3 DOLBY ATMOS",
         "vcode": "RAKK",
         "sid": "4714",
@@ -1480,7 +1600,7 @@
         "date": "20261018",
         "cat": "Premium",
         "price": "190.00",
-        "status": "2",
+        "status": "1",
         "screen": "SC 3 DOLBY ATMOS",
         "vcode": "RAKK",
         "sid": "4723",
