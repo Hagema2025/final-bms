@@ -451,7 +451,11 @@ def load_and_sync_watches(state):
     # 3. Format/Validate the dictionary
     for uid, watch in list(bms_watches.items()):
         dates_raw = watch.get("dates", [])
-        date_time_map = {}
+        
+        # ✅ FIX: Actually load the date_time_map from the JSON!
+        # Do not force it to be an empty {}
+        date_time_map = watch.get("date_time_map", {}) 
+
         if isinstance(dates_raw, dict):
             for d_key, d_times in dates_raw.items():
                 clean_d = str(d_key).strip()
@@ -464,6 +468,7 @@ def load_and_sync_watches(state):
             else: dates_list = []
 
         watch["dates"] = dates_list
+        # Now it will correctly save your JSON map!
         watch["date_time_map"] = date_time_map
         watch["time_period"] = [tp.lower() for tp in _as_list(watch.get("time_period"))]
         watch["theatre"] = [t.lower() for t in _as_list(watch.get("theatre"))]
@@ -2156,6 +2161,7 @@ def run_event(
     dates_filter,
     date_time_map,   # <--- ADD THIS HERE
     state,
+    req_languages=None,  # <--- ADD THIS LINE HERE
     save_raw_prefix=None,
 ):
     """
@@ -2281,6 +2287,15 @@ def run_event(
             clean_fallback = label.split('_')[0]
             movie_info = parse_movie_info(data, fallback_name=clean_fallback)
 
+        # 🛑 NEW STRICT LANGUAGE BLOCKER 🛑
+        # If this show doesn't match your requested language, drop it silently!
+        if req_languages:
+            api_lang = str(movie_info.get("language", "")).lower()
+            if api_lang and not any(req_l in api_lang for req_l in req_languages):
+                print(f"  ⏭️ Skipping alerts for '{label}' — API language '{api_lang}' does not match your filter: {req_languages}")
+                # Return immediately! No alerts, no saving state. 
+                # But pass out first_full_data so variant discovery can still search for a Tamil version!
+                return state, True, first_full_data
         returned_dates = parse_dates(data)
         all_dates.extend(returned_dates)
         all_shows.extend(parse_shows(data))
@@ -2807,6 +2822,7 @@ def run_watch(
         dates_filter=watch.get("dates", []),
         date_time_map=watch.get("date_time_map", {}),  # <--- ADD THIS HERE
         state=state,
+        req_languages=watch.get("languages", []), # <--- ADD THIS
         save_raw_prefix=(
             f"bms_response_{watch_name}"
         ),
@@ -2858,14 +2874,14 @@ def run_watch(
                     watch_name = new_watch_name
         
         # 2. APPLY USER'S LANGUAGE FILTERS
-        if watch.get("languages"):
-            base_lang = raw_lang.lower()
-            if not any(lang in base_lang for lang in watch["languages"]):
-                print(
-                    f"  ⚠️ Skipping base watch state: language "
-                    f"('{raw_lang}') not in allowed list {watch['languages']}"
-                )
-                state.pop(watch_name, None)
+        # if watch.get("languages"):
+        #     base_lang = raw_lang.lower()
+        #     if not any(lang in base_lang for lang in watch["languages"]):
+        #         print(
+        #             f"  ⚠️ Skipping base watch state: language "
+        #             f"('{raw_lang}') not in allowed list {watch['languages']}"
+        #         )
+        #         state.pop(watch_name, None)
     # ==================================================================
 
     # --------------------------------------------------------------
@@ -2983,6 +2999,7 @@ def run_watch(
                     dates_filter=watch.get("dates", []),
                     date_time_map=watch.get("date_time_map", {}),  # <--- ADD THIS HERE
                     state=state,
+                    req_languages=watch.get("languages", []), # <--- ADD THIS
                     save_raw_prefix=(
                         f"bms_response_{variant_name}"
                     ),
