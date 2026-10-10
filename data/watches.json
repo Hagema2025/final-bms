@@ -1,1 +1,32 @@
-{}
+{
+  "20261011001701": {
+    "name": "Jailer2_20261011001701",
+    "url": "https://in.bookmyshow.com/movies/chennai/jailer-2/ET00518674",
+    "dates": {
+      "20261016": [
+        "night"
+      ],
+      "20261017": [
+        "afternoon",
+        "evening",
+        "midnight",
+        "morning",
+        "night"
+      ],
+      "20261018": []
+    },
+    "theatre": [
+      "AGS Cinemas OMR: Navlur",
+      "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+      "INOX: The Marina Mall, OMR",
+      "Miraj Cinemas: Sekaran Mall, Perrumbakkam"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1117
+  }
+}
