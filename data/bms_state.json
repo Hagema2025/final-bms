@@ -2173,6 +2173,30 @@
   },
   "Verity_000000 (English 2D)": {
     "shows": {
+      "INTO|91506|20261011|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:50 AM",
+        "date": "20261011",
+        "cat": "CLUB",
+        "price": "210.98",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91506",
+        "missing_count": 0
+      },
+      "INTO|91506|20261011|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:50 AM",
+        "date": "20261011",
+        "cat": "EXECUTIVE",
+        "price": "61.74",
+        "status": "1",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "91506",
+        "missing_count": 0
+      },
       "INTO|91485|20261011|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "10:40 PM",
