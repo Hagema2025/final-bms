@@ -1180,13 +1180,13 @@
   "Verity_20261011010618 (English 2D)": {
     "shows": {},
     "dates": {
-      "20261011": "BOOKABLE",
-      "20261012": "AVAILABLE",
+      "20261012": "BOOKABLE",
       "20261013": "AVAILABLE",
       "20261014": "AVAILABLE",
       "20261015": "NOT_OPEN",
       "20261016": "NOT_OPEN",
-      "20261017": "NOT_OPEN"
+      "20261017": "NOT_OPEN",
+      "20261018": "NOT_OPEN"
     }
   }
 }
