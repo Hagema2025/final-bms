@@ -11,7 +11,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91668",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91668|20261016|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -23,7 +23,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91668",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91673|20261016|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -35,7 +35,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91673",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91673|20261016|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -47,7 +47,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91673",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91678|20261016|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -59,7 +59,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91678",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91678|20261016|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -71,7 +71,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91678",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91683|20261016|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -83,7 +83,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91683",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91683|20261016|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -95,7 +95,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91683",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91669|20261016|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -107,7 +107,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91669",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91669|20261016|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -119,7 +119,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91669",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91674|20261016|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -127,11 +127,11 @@
         "date": "20261016",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "2",
+        "status": "3",
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91674",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91674|20261016|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -143,7 +143,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91674",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91684|20261016|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -155,7 +155,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91684",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91684|20261016|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -167,7 +167,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91684",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91679|20261016|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -179,7 +179,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91679",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91679|20261016|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -191,7 +191,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91679",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91685|20261017|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -203,7 +203,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91685",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91685|20261017|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -215,7 +215,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91685",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91715|20261017|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -227,7 +227,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91715",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91715|20261017|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -239,7 +239,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91715",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91705|20261017|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -251,7 +251,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91705",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91705|20261017|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -263,7 +263,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91705",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91695|20261017|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -275,7 +275,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91695",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91695|20261017|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -287,7 +287,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91695",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91716|20261017|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -299,7 +299,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91716",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91716|20261017|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -311,7 +311,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91716",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91686|20261017|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -323,7 +323,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91686",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91686|20261017|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -335,7 +335,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91686",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91706|20261017|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -347,7 +347,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91706",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91706|20261017|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -359,7 +359,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91706",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91696|20261017|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -371,7 +371,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91696",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91696|20261017|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -383,7 +383,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91696",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91717|20261017|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -395,7 +395,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91717",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91717|20261017|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -407,7 +407,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91717",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91707|20261017|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -419,7 +419,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91707",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91707|20261017|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -431,7 +431,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91707",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91687|20261017|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -443,7 +443,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91687",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91687|20261017|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -455,7 +455,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91687",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91697|20261017|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -467,7 +467,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91697",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91697|20261017|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -479,7 +479,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91697",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91718|20261017|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -491,7 +491,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91718",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91718|20261017|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -503,7 +503,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91718",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91708|20261017|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -515,7 +515,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91708",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91708|20261017|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -527,7 +527,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91708",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91688|20261017|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -539,7 +539,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91688",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91688|20261017|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -551,7 +551,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91688",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91698|20261017|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -563,7 +563,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91698",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91698|20261017|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -575,7 +575,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91698",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91719|20261017|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -587,7 +587,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91719",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91719|20261017|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -599,7 +599,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91719",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91709|20261017|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -611,7 +611,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91709",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91709|20261017|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -623,7 +623,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91709",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91699|20261017|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -635,7 +635,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91699",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91699|20261017|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -647,7 +647,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91699",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91689|20261017|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -659,7 +659,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91689",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91689|20261017|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -671,7 +671,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91689",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91690|20261018|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -683,7 +683,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91690",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91690|20261018|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -695,7 +695,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91690",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91720|20261018|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -707,7 +707,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91720",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91720|20261018|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -719,7 +719,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91720",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91710|20261018|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -731,7 +731,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91710",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91710|20261018|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -743,7 +743,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91710",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91700|20261018|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -755,7 +755,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91700",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91700|20261018|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -767,7 +767,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91700",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91721|20261018|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -779,7 +779,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91721",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91721|20261018|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -791,7 +791,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91721",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91691|20261018|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -803,7 +803,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91691",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91691|20261018|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -815,7 +815,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91691",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91711|20261018|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -827,7 +827,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91711",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91711|20261018|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -839,7 +839,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91711",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91701|20261018|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -851,7 +851,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91701",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91701|20261018|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -863,7 +863,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91701",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91722|20261018|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -875,7 +875,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91722",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91722|20261018|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -887,7 +887,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91722",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91712|20261018|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -895,11 +895,11 @@
         "date": "20261018",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "2",
+        "status": "3",
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91712",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91712|20261018|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -911,7 +911,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91712",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91692|20261018|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -923,7 +923,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91692",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91692|20261018|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -935,7 +935,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91692",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91702|20261018|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -943,11 +943,11 @@
         "date": "20261018",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "2",
+        "status": "3",
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91702",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91702|20261018|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -959,7 +959,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91702",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91723|20261018|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -971,7 +971,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91723",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91723|20261018|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -983,7 +983,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91723",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91713|20261018|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -995,7 +995,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91713",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91713|20261018|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -1007,7 +1007,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91713",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91693|20261018|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -1019,7 +1019,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91693",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91693|20261018|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -1031,7 +1031,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91693",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91703|20261018|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -1043,7 +1043,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91703",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91703|20261018|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -1055,7 +1055,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91703",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91724|20261018|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -1067,7 +1067,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91724",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91724|20261018|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -1079,7 +1079,7 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91724",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91714|20261018|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -1091,7 +1091,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91714",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91714|20261018|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -1103,7 +1103,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91714",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91704|20261018|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -1115,7 +1115,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91704",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91704|20261018|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -1127,7 +1127,7 @@
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91704",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91694|20261018|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -1139,7 +1139,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91694",
-        "missing_count": 1
+        "missing_count": 0
       },
       "INTO|91694|20261018|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -1151,7 +1151,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91694",
-        "missing_count": 1
+        "missing_count": 0
       }
     },
     "dates": {
