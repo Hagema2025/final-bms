@@ -115,7 +115,7 @@
         "date": "20261016",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "INTO",
         "sid": "91669",
@@ -811,7 +811,7 @@
         "date": "20261018",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91691",
@@ -1178,32 +1178,7 @@
     }
   },
   "Verity_20261011010618 (English 2D)": {
-    "shows": {
-      "INTO|91485|20261011|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "10:40 PM",
-        "date": "20261011",
-        "cat": "CLUB",
-        "price": "210.98",
-        "status": "3",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "91485",
-        "missing_count": 0
-      },
-      "INTO|91485|20261011|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "10:40 PM",
-        "date": "20261011",
-        "cat": "EXECUTIVE",
-        "price": "66.74",
-        "status": "3",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "91485",
-        "missing_count": 0
-      }
-    },
+    "shows": {},
     "dates": {
       "20261011": "BOOKABLE",
       "20261012": "AVAILABLE",
