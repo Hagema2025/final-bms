@@ -619,7 +619,7 @@
         "date": "20261017",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "3",
+        "status": "2",
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91709",
@@ -1175,18 +1175,6 @@
       "20261019": "AVAILABLE",
       "20261020": "AVAILABLE",
       "20261021": "NOT_OPEN"
-    }
-  },
-  "Verity_20261011010618 (English 2D)": {
-    "shows": {},
-    "dates": {
-      "20261012": "BOOKABLE",
-      "20261013": "AVAILABLE",
-      "20261014": "AVAILABLE",
-      "20261015": "NOT_OPEN",
-      "20261016": "NOT_OPEN",
-      "20261017": "NOT_OPEN",
-      "20261018": "NOT_OPEN"
     }
   }
 }

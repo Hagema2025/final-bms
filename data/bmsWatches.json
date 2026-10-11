@@ -50,6 +50,7 @@
         "evening",
         "night"
       ]
-    }
+    },
+    "expired_notified": true
   }
 }
