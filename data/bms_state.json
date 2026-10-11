@@ -26,30 +26,6 @@
   },
   "Verity_20261011010618 (English 2D)": {
     "shows": {
-      "CBMC|14232|20261011|NORMAL": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "08:15 PM",
-        "date": "20261011",
-        "cat": "NORMAL",
-        "price": "61.74",
-        "status": "0",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "14232",
-        "missing_count": 0
-      },
-      "CBMC|14232|20261011|EXECUTIVE": {
-        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
-        "time": "08:15 PM",
-        "date": "20261011",
-        "cat": "EXECUTIVE",
-        "price": "210.98",
-        "status": "3",
-        "screen": "",
-        "vcode": "CBMC",
-        "sid": "14232",
-        "missing_count": 0
-      },
       "INTO|91485|20261011|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "10:40 PM",
@@ -72,6 +48,30 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "91485",
+        "missing_count": 0
+      },
+      "CBMC|14232|20261011|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "08:15 PM",
+        "date": "20261011",
+        "cat": "NORMAL",
+        "price": "61.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "14232",
+        "missing_count": 0
+      },
+      "CBMC|14232|20261011|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "08:15 PM",
+        "date": "20261011",
+        "cat": "EXECUTIVE",
+        "price": "210.98",
+        "status": "3",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "14232",
         "missing_count": 0
       }
     },
