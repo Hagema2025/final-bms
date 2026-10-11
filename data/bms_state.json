@@ -1176,5 +1176,17 @@
       "20261020": "AVAILABLE",
       "20261021": "NOT_OPEN"
     }
+  },
+  "Jailer2_20261011010529 (Tamil 2D) (Tamil IMAX 2D)": {
+    "shows": {},
+    "dates": {
+      "20261015": "AVAILABLE",
+      "20261016": "AVAILABLE",
+      "20261017": "AVAILABLE",
+      "20261018": "BOOKABLE",
+      "20261019": "NOT_OPEN",
+      "20261020": "NOT_OPEN",
+      "20261021": "NOT_OPEN"
+    }
   }
 }
