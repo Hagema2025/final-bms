@@ -1,11 +1,10 @@
 {
-  "20261011010529": {
-    "name": "Jailer2_20261011010529 (Tamil 2D)",
-    "url": "https://in.bookmyshow.com/movies/chennai/jailer-2/ET00518674",
+  "20261014235738": {
+    "name": "Jailer2_20261014235738 (Tamil 2D)",
+    "url": "https://in.bookmyshow.com/movies/chennai/jailer-2-tamil/ET00518674",
     "dates": [
-      "20261016",
-      "20261017",
-      "20261018"
+      "20261019",
+      "20261020"
     ],
     "theatre": [
       "inox: the marina mall, omr"
@@ -16,41 +15,38 @@
       "tamil"
     ],
     "formats": [],
-    "message_thread_id": 1136,
+    "message_thread_id": 1261,
     "date_time_map": {
-      "20261016": [
+      "20261019": [
         "night"
       ],
-      "20261017": [],
-      "20261018": []
+      "20261020": []
     }
   },
-  "20261011010618": {
-    "name": "Verity_20261011010618 (English 2D)",
-    "url": "https://in.bookmyshow.com/movies/chennai/verity/ET00497246",
+  "20261014235956": {
+    "name": "Ranabaali_20261014235956 (Tamil 2D)",
+    "url": "https://in.bookmyshow.com/movies/chennai/ranabaali-tamil/ET00483572",
     "dates": [
-      "20261011"
+      "20261016",
+      "20261019"
     ],
     "theatre": [
-      "ags cinemas omr: navlur",
-      "cinepolis: bsr mall, omr, thoraipakkam",
-      "inox: the marina mall, omr",
-      "miraj cinemas: sekaran mall, perrumbakkam",
-      "rakki cinemas: omr, kelambakkam"
+      "inox: the marina mall, omr"
     ],
     "time_period": [],
     "discover_variants": true,
     "languages": [
-      "english"
+      "tamil"
     ],
     "formats": [],
-    "message_thread_id": 1140,
+    "message_thread_id": 1265,
     "date_time_map": {
-      "20261011": [
-        "evening",
+      "20261016": [
+        "night"
+      ],
+      "20261019": [
         "night"
       ]
-    },
-    "expired_notified": true
+    }
   }
 }
