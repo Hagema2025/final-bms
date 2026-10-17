@@ -475,7 +475,7 @@
         "date": "20261020",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "3",
+        "status": "2",
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91816",
@@ -933,9 +933,9 @@
       "20261018": "AVAILABLE",
       "20261019": "AVAILABLE",
       "20261020": "BOOKABLE",
-      "20261021": "NOT_OPEN",
-      "20261022": "NOT_OPEN",
-      "20261023": "NOT_OPEN"
+      "20261024": "AVAILABLE",
+      "20261025": "AVAILABLE",
+      "20261026": "NOT_OPEN"
     }
   },
   "Ranabaali_20261014235956 (Tamil 2D)": {
