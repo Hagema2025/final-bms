@@ -115,7 +115,7 @@
         "date": "20261019",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "91828",
@@ -928,13 +928,13 @@
   "Jailer2_20261014235738 (Tamil 2D) (Tamil EPIQ)": {
     "shows": {},
     "dates": {
-      "20261018": "AVAILABLE",
       "20261019": "AVAILABLE",
       "20261020": "BOOKABLE",
       "20261021": "AVAILABLE",
       "20261022": "AVAILABLE",
       "20261024": "AVAILABLE",
-      "20261025": "AVAILABLE"
+      "20261025": "AVAILABLE",
+      "20261026": "NOT_OPEN"
     }
   },
   "Ranabaali_20261014235956 (Tamil 2D)": {
