@@ -1,1 +1,26 @@
-{}
+{
+  "20261020024453": {
+    "name": "ClayfaceEnglish_20261020024453",
+    "url": "https://in.bookmyshow.com/movies/chennai/clayface-english/ET00496545",
+    "dates": {
+      "20261023": [
+        "night"
+      ],
+      "20261024": [],
+      "20261025": []
+    },
+    "theatre": [
+      "INOX: The Marina Mall, OMR"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "English",
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1443,
+    "summary_msg_id": 1445,
+    "status_msg_id": 1446
+  }
+}
