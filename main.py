@@ -293,11 +293,96 @@ def set_topic_name(watch, thread_id, title):
         print(f"  ⚠️ editForumTopic error: {type(e).__name__}")
     return False
 
-def get_or_create_variant_thread(watch, variant, base_thread_id,movie_title=None):
+def build_telegram_msg_link(chat_id, thread_id, msg_id=None):
     """
-    Returns (thread_id, created). Keyed by variant.event_code (stable),
-    stored in watch["variant_threads"]. Falls back to the base thread
-    if topic creation fails.
+    Builds a direct t.me/c/ deep link to a topic or specific message inside a supergroup.
+    """
+    if not chat_id:
+        return None
+    raw_chat = str(chat_id).strip()
+    if raw_chat.startswith("-100"):
+        clean_chat_id = raw_chat[4:]
+    elif raw_chat.startswith("-"):
+        clean_chat_id = raw_chat[1:]
+    else:
+        clean_chat_id = raw_chat
+
+    if thread_id and msg_id:
+        return f"https://t.me/c/{clean_chat_id}/{thread_id}/{msg_id}"
+    elif thread_id:
+        # Linking to the thread_id itself opens the topic directly in Telegram
+        return f"https://t.me/c/{clean_chat_id}/{thread_id}"
+    elif msg_id:
+        return f"https://t.me/c/{clean_chat_id}/{msg_id}"
+    return None
+
+
+def update_main_status_card(watch, base_thread_id):
+    """
+    Edits the pinned Live Status message (status_msg_id) in the base thread
+    to append clickable links to all newly created variant topics.
+    """
+    status_msg_id = watch.get("status_msg_id")
+    if not status_msg_id or not TELEGRAM_BOT_TOKEN or not GROUP_CHAT_ID:
+        return
+
+    variant_threads = watch.get("variant_threads", {})
+    topic_titles = watch.get("topic_titles", {})
+    variant_summary_ids = watch.get("variant_summary_msg_ids", {})
+
+    lines = [
+        "🟢 <b>Live Status:</b> <code>Operational (Monitoring...)</code>"
+    ]
+
+    # Collect all extra variant topics (excluding the base thread itself)
+    variant_lines = []
+    for event_code, v_tid in variant_threads.items():
+        if not v_tid or v_tid == base_thread_id:
+            continue
+
+        v_title = topic_titles.get(str(v_tid), f"Variant ({event_code})")
+        v_msg_id = variant_summary_ids.get(event_code)
+
+        # Link to the pinned header message inside the variant topic (or the topic itself)
+        v_link = build_telegram_msg_link(GROUP_CHAT_ID, v_tid, v_msg_id)
+        if v_link:
+            variant_lines.append(f'  • <a href="{v_link}"><b>{html.escape(v_title)}</b></a>')
+        else:
+            variant_lines.append(f"  • <b>{html.escape(v_title)}</b>")
+
+    if variant_lines:
+        lines.append("\n🧵 <b>Active Variant Threads:</b>")
+        lines.extend(variant_lines)
+
+    new_text = "\n".join(lines)
+
+    try:
+        res = requests.post(
+            f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/editMessageText",
+            json={
+                "chat_id": GROUP_CHAT_ID,
+                "message_id": status_msg_id,
+                "text": new_text,
+                "parse_mode": "HTML",
+                "disable_web_page_preview": True,
+            },
+            timeout=10,
+        ).json()
+
+        if res.get("ok"):
+            print(f"  📌 Updated main Live Status card ({status_msg_id}) with {len(variant_lines)} variant link(s).")
+        elif "message is not modified" not in str(res.get("description", "")).lower():
+            print(f"  ⚠️ Failed to edit status_msg_id: {res.get('description')}")
+    except Exception as e:
+        print(f"  ⚠️ Error updating status card: {e}")
+
+
+def get_or_create_variant_thread(watch, variant, base_thread_id, movie_title=None, region_slug=None):
+    """
+    Returns (thread_id, created).
+    1. Creates the new forum topic for the variant.
+    2. Sends & pins a header card in the new topic linking back to summary_msg_id.
+    3. Edits status_msg_id in the base thread to append the new variant thread link.
     """
     threads = watch.setdefault("variant_threads", {})
     key = variant.event_code
@@ -324,13 +409,67 @@ def get_or_create_variant_thread(watch, variant, base_thread_id,movie_title=None
             threads[key] = new_id
             watch.setdefault("topic_titles", {})[str(new_id)] = topic_name
             print(f"  🧵 Created topic '{topic_name}' -> thread {new_id}")
+
+            # 1. Build link back to Base Watch's summary_msg_id
+            summary_msg_id = watch.get("summary_msg_id")
+            summary_link = build_telegram_msg_link(GROUP_CHAT_ID, base_thread_id, summary_msg_id)
+
+            if summary_link:
+                origin_line = f'🔗 <b>Origin:</b> <a href="{summary_link}">View Base Watch Summary</a>\n'
+            else:
+                origin_line = f"🔗 <b>Origin:</b> <code>{html.escape(watch.get('name', 'Base Watch'))}</code>\n"
+
+            # 2. Build direct BookMyShow link for this variant
+            bms_variant_url = f"https://in.bookmyshow.com/movies/{region_slug}/buytickets/{variant.event_code}"
+            title_hyperlink = f'<a href="{bms_variant_url}"><b>{html.escape(topic_name)}</b></a>'
+
+            header_text = (
+                f"🎉 <b>Variant Tracker Auto-Created</b>\n\n"
+                f"🎬 <b>Variant:</b> {title_hyperlink}\n"
+                f"🆔 <b>Event Code:</b> <code>{html.escape(variant.event_code)}</code>\n"
+                f"{origin_line}\n"
+                f"🔔 <i>Automated alerts for this variant will appear in this topic.</i>"
+            )
+
+            # 3. Send and pin the header card inside the new variant topic
+            try:
+                msg_res = requests.post(
+                    f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage",
+                    json={
+                        "chat_id": GROUP_CHAT_ID,
+                        "message_thread_id": new_id,
+                        "text": header_text,
+                        "parse_mode": "HTML",
+                        "disable_web_page_preview": True,
+                    },
+                    timeout=10,
+                ).json()
+
+                if msg_res.get("ok"):
+                    variant_summary_id = msg_res["result"]["message_id"]
+                    watch.setdefault("variant_summary_msg_ids", {})[key] = variant_summary_id
+
+                    requests.post(
+                        f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/pinChatMessage",
+                        json={
+                            "chat_id": GROUP_CHAT_ID,
+                            "message_id": variant_summary_id,
+                            "disable_notification": True,
+                        },
+                        timeout=10,
+                    )
+            except Exception as e:
+                print(f"  ⚠️ Failed to send/pin variant header card: {e}")
+
+            # 4. 🔥 Edit the main thread's status_msg_id to append this new variant topic!
+            update_main_status_card(watch, base_thread_id)
+
             return new_id, True
         print(f"  ⚠️ createForumTopic failed: {data.get('description', res.text)}")
     except Exception as e:
         print(f"  ⚠️ createForumTopic error: {type(e).__name__}")
 
     return base_thread_id, False
-
 def is_show_in_future(date_code, time_str):
     """Checks if a given BMS date_code and time string are in the future."""
     if not date_code or not time_str:
@@ -2919,9 +3058,11 @@ def run_watch(
 
 
 
+            base_without_tag = re.sub(r'\s*\([^)]+\)\s*$', '', watch_name).strip()
             for variant in selected:
 
                 variant_tag = f"({variant.language} {variant.format})"
+                variant_name = f"{base_without_tag} {variant_tag}"
 
                 if watch_name.endswith(variant_tag):
                   variant_name = watch_name
@@ -2929,7 +3070,8 @@ def run_watch(
                   variant_name = f"{watch_name} {variant_tag}"
 
                 variant_thread, created = get_or_create_variant_thread(
-                    watch, variant, watch_threadid, movie_title
+                    watch, variant, watch_threadid, movie_title,
+                    region_slug=region_slug_resolved or region_slug or "chennai",
                 )
                 if created:
                     watch_mutated = True
