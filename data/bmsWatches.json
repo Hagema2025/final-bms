@@ -1,1 +1,60 @@
-{}
+{
+  "20261020015848": {
+    "name": "Clayface_20261020015848",
+    "url": "https://in.bookmyshow.com/movies/chennai/clayface/ET00496545",
+    "dates": [
+      "20261023",
+      "20261024",
+      "20261025"
+    ],
+    "theatre": [
+      "inox: the marina mall, omr"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "english",
+      "tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1387,
+    "summary_msg_id": 1389,
+    "status_msg_id": 1390,
+    "date_time_map": {
+      "20261023": [
+        "night"
+      ],
+      "20261024": [],
+      "20261025": []
+    }
+  },
+  "20261020020023": {
+    "name": "TomAndJerryForbiddenCompass_20261020020023",
+    "url": "https://in.bookmyshow.com/movies/chennai/tom-and-jerry-forbidden-compass/ET00518916",
+    "dates": [
+      "20261023",
+      "20261024",
+      "20261025"
+    ],
+    "theatre": [
+      "inox: the marina mall, omr"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "english",
+      "tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1393,
+    "summary_msg_id": 1395,
+    "status_msg_id": 1396,
+    "date_time_map": {
+      "20261023": [
+        "night"
+      ],
+      "20261024": [],
+      "20261025": []
+    }
+  }
+}
