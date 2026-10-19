@@ -28,7 +28,6 @@ GROUP_CHAT_ID=os.getenv("GROUP_CHAT_ID", "").strip()
 NTFY_URL=os.getenv("NTFY_URL","").strip()
 NTFY_TOPIC=os.getenv("NTFY_TOPIC", "").strip()
 NTFY_ERROR_TOPIC = os.getenv("NTFY_ERROR_TOPIC", "").strip()
-DISCORD_WEBHOOK_URL=os.getenv("DISCORD_WEBHOOK_URL", "").strip()
 
 def save_bms_watches(watches_dict):
     """Saves the checker's working copy WITHOUT touching watches.json."""
@@ -62,7 +61,6 @@ def send_watch_expiry_alert(watch, idx):
     # 🔥 Use the UID in the callback_data
     kb = {
         "inline_keyboard": [
-            # [{"text": "Close Topic", "callback_data": f"confirmstop_{uid}"}],
             [{"text": "Delete Topic", "callback_data": f"confirmstopperm_{uid}"}]
         ]
     }
@@ -96,30 +94,6 @@ def send_watch_expiry_alert(watch, idx):
     except Exception as e:
       print(f"  ⚠️ Failed to send expiry notification: {e}")
 
-def delete_discord_forum_thread(thread_id: str):
-    """Permanently deletes a Discord Forum thread using the Bot API."""
-    bot_token = os.getenv("DISCORD_BOT_TOKEN", "").strip()
-    if not bot_token or not thread_id:
-        return
-
-    # Discord API endpoint to delete a channel/thread
-    url = f"https://discord.com/api/v10/channels/{thread_id}"
-    headers = {
-        "Authorization": f"Bot {bot_token}"
-    }
-
-    try:
-        res = requests.delete(url, headers=headers, timeout=10)
-        if res.status_code in [200, 204]:
-            print(f"✅ Successfully deleted Discord thread ID: {thread_id}")
-        else:
-            print(f"⚠️ Failed to delete Discord thread {thread_id}: HTTP {res.status_code} {res.text}")
-    except Exception as e:
-        print(f"⚠ Discord API Error deleting thread: {e}")
-
-# ======================================================================
-# CONSTANTS
-# ======================================================================
 
 # ======================================================================
 # CINEMA CHAIN SESSION URL MAPPING (VCODE MATCHING)
@@ -287,6 +261,75 @@ class VariantInfo:
     event_code: str
     event_url: str
     is_current: bool
+
+def set_topic_name(watch, thread_id, title):
+    """Renames a forum topic only if the stored title differs. Returns True if changed."""
+    if not thread_id or not TELEGRAM_BOT_TOKEN or not GROUP_CHAT_ID:
+        return False
+
+    title = title.strip()[:128]
+    titles = watch.setdefault("topic_titles", {})
+    if titles.get(str(thread_id)) == title:
+        return False
+
+    try:
+        res = requests.post(
+            f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/editForumTopic",
+            json={
+                "chat_id": GROUP_CHAT_ID,
+                "message_thread_id": thread_id,
+                "name": title,
+            },
+            timeout=10,
+        )
+        data = res.json()
+        desc = str(data.get("description", ""))
+        if data.get("ok") or "TOPIC_NOT_MODIFIED" in desc:
+            titles[str(thread_id)] = title
+            print(f"  ✏️ Topic {thread_id} named '{title}'")
+            return True
+        print(f"  ⚠️ editForumTopic failed: {desc}")
+    except Exception as e:
+        print(f"  ⚠️ editForumTopic error: {type(e).__name__}")
+    return False
+
+def get_or_create_variant_thread(watch, variant, base_thread_id,movie_title=None):
+    """
+    Returns (thread_id, created). Keyed by variant.event_code (stable),
+    stored in watch["variant_threads"]. Falls back to the base thread
+    if topic creation fails.
+    """
+    threads = watch.setdefault("variant_threads", {})
+    key = variant.event_code
+
+    if key in threads:
+        return threads[key], False
+
+    if not TELEGRAM_BOT_TOKEN or not GROUP_CHAT_ID:
+        return base_thread_id, False
+
+    base_title = (movie_title or watch.get("name", "Movie").split("_")[0]).strip()
+    topic_name = f"{base_title} ({variant.language} {variant.format})"[:128]
+
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/createForumTopic"
+    try:
+        res = requests.post(
+            url,
+            json={"chat_id": GROUP_CHAT_ID, "name": topic_name},
+            timeout=10,
+        )
+        data = res.json()
+        if res.status_code == 200 and data.get("ok"):
+            new_id = data["result"]["message_thread_id"]
+            threads[key] = new_id
+            watch.setdefault("topic_titles", {})[str(new_id)] = topic_name
+            print(f"  🧵 Created topic '{topic_name}' -> thread {new_id}")
+            return new_id, True
+        print(f"  ⚠️ createForumTopic failed: {data.get('description', res.text)}")
+    except Exception as e:
+        print(f"  ⚠️ createForumTopic error: {type(e).__name__}")
+
+    return base_thread_id, False
 
 def is_show_in_future(date_code, time_str):
     """Checks if a given BMS date_code and time string are in the future."""
@@ -1745,141 +1788,6 @@ def send_removed_shows_telegram(
             f"to thread {threadid} "
             f"({len(removed_shows)} show(s))"
         )
-def update_discord_dashboard(threadid, watch_name, filtered_shows, movie_info, state):
-    if not DISCORD_WEBHOOK_URL or not filtered_shows:
-        return
-
-    # Extract base movie name and variant tag (e.g., "Dorothy [Tamil 2D]")
-    movie_name = movie_info.get("name", watch_name.split('_')[0])
-    lang_fmt_match = re.search(r'\(([^)]+)\)$', str(watch_name))
-    if lang_fmt_match:
-        movie_name += f" [{lang_fmt_match.group(1)}]"
-    
-    # 1. Group ALL current shows by Date, then by Venue
-    nested_data = defaultdict(lambda: defaultdict(list))
-    for show in filtered_shows:
-        nested_data[show.date_code][show.venue_name].append(show)
-
-    all_embeds = []
-    
-    # 2. Build Embeds grouped by Date and Venue
-    for date_code, venues_dict in sorted(nested_data.items()):
-        formatted_date = format_date(date_code) # Formats 20261005 to readable date
-        
-        for venue, shows in sorted(venues_dict.items(), key=lambda x: x[0].lower()):
-            for i in range(0, len(shows), 25):
-                chunked_shows = shows[i:i+25]
-                fields = []
-                
-                for show in chunked_shows:
-                    if not show.categories: 
-                        continue
-                    
-                    time_val = show.time
-                    screen = show.screen_attr or "NORM"
-                    
-                    # Direct Deep Link
-                    book_url = f"https://in.bookmyshow.com/booktickets/{show.venue_code}/{show.session_id}" if show.venue_code and show.session_id else "https://in.bookmyshow.com"
-                    
-                    # Render ALL categories for this showtime (Sorted High to Low Price)
-                    sorted_cats = sorted(
-                        show.categories,
-                        key=lambda c: (-parse_price(c.price), str(c.name).lower())
-                    )
-                    
-                    cats_parts = []
-                    for cat in sorted_cats:
-                        status_label, status_emoji = resolve_status_info(cat.status)
-                        clean_price = f"₹{int(round(float(cat.price)))}" if str(cat.price).replace('.', '', 1).isdigit() else f"₹{cat.price}"
-                        cats_parts.append(f"• **{cat.name}**: {clean_price} `{status_label} {status_emoji}`")
-                        
-                    cats_str = "\n".join(cats_parts)
-
-                    fields.append({
-                        "name": f"🕒 {time_val} ({screen[:12]})",
-                        "value": f"[Book Tickets]({book_url})\n{cats_str}",
-                        "inline": False # False allows vertical space for all price tiers
-                    })
-
-                title = f"📅 {formatted_date} | 🏢 {venue}" if i == 0 else f"📅 {formatted_date} | 🏢 {venue} (Cont.)"
-                all_embeds.append({
-                    "title": title,
-                    "color": 3447003, # Blue border
-                    "fields": fields
-                })
-
-    # 3. Smart Payload Packer (Keep under 10 embeds & 5500 chars)
-    payloads = []
-    current_embeds = []
-    current_chars = 0
-    
-    for embed in all_embeds:
-        embed_chars = len(embed["title"])
-        for f in embed["fields"]:
-            embed_chars += len(f["name"]) + len(f["value"])
-            
-        if len(current_embeds) >= 10 or (current_chars + embed_chars) > 5500:
-            payloads.append({"embeds": current_embeds})
-            current_embeds = []
-            current_chars = 0
-            
-        current_embeds.append(embed)
-        current_chars += embed_chars
-        
-    if current_embeds:
-        payloads.append({"embeds": current_embeds})
-        
-    if payloads:
-        payloads[0]["content"] = f"🔴 **LIVE TRACKER: {movie_name}**"
-        payloads[-1]["embeds"][-1]["footer"] = {
-            "text": f"Last Updated: {datetime.now(ZoneInfo('Asia/Kolkata')).strftime('%I:%M %p')}"
-        }
-
-    # 4. Dispatch and Track Multiple Message IDs per Variant
-    message_id_key = f"{watch_name}_discord_msg_ids"
-    saved_msg_ids = state.get(message_id_key, [])
-    if isinstance(saved_msg_ids, str): 
-        saved_msg_ids = [saved_msg_ids]
-        
-    new_msg_ids = []
-
-    for i, payload in enumerate(payloads):
-        try:
-            url_base = f"{DISCORD_WEBHOOK_URL}?wait=true"
-            if threadid:
-                url_base += f"&thread_id={threadid}"
-                
-            if i < len(saved_msg_ids):
-                msg_id = saved_msg_ids[i]
-                patch_url = f"{DISCORD_WEBHOOK_URL}/messages/{msg_id}"
-                if threadid:
-                    patch_url += f"?thread_id={threadid}"
-                    
-                res = requests.patch(patch_url, json=payload, timeout=10)
-                if res.status_code in [200, 204]:
-                    new_msg_ids.append(msg_id)
-                else:
-                    print(f"  ⚠️ Discord PATCH failed: {res.text}")
-            else:
-                res = requests.post(url_base, json=payload, timeout=10)
-                if res.status_code in [200, 204, 201]:
-                    new_msg_ids.append(res.json()["id"])
-                    
-            time.sleep(1) # Rate limit protection
-        except Exception as e:
-            print(f"  ⚠️ Discord Error: {e}")
-
-    # 5. Cleanup leftover messages if shows were removed
-    for msg_id in saved_msg_ids[len(payloads):]:
-        try:
-            del_url = f"{DISCORD_WEBHOOK_URL}/messages/{msg_id}"
-            if threadid:
-                del_url += f"?thread_id={threadid}"
-            requests.delete(del_url, timeout=10)
-        except Exception:
-            pass
-
-    state[message_id_key] = new_msg_ids
 
 
 def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
@@ -2731,7 +2639,7 @@ def run_watch(
             "event code or region."
         )
 
-        return state, False
+        return state, False,False
 
     (
         region_code,
@@ -2831,24 +2739,34 @@ def run_watch(
     overall_success = success
 
     # ==================================================================
-    # DYNAMIC API RENAMING & LANGUAGE FILTERING 
+    # LANGUAGE CHECK + DYNAMIC RENAMING
     # ==================================================================
+
+    raw_lang = ""
+    base_lang = ""
+    lang_ok = True
+    wanted_langs = watch.get("languages", [])
+    movie_title = watch_name.split('_')[0].strip()
+
     if first_full_data:
         # Pass the clean URL name to prevent "Unknown Movie" loops
         clean_fallback = watch_name.split('_')[0]
         base_info = parse_movie_info(first_full_data, fallback_name=clean_fallback)
         raw_lang = str(base_info.get("language", "")).strip()
         base_lang = raw_lang.lower()
+
+        lang_ok = (not wanted_langs) or any(l in base_lang for l in wanted_langs)
+        api_title = re.sub(r'\s*\(.*?\)\s*$', '', str(base_info.get("name", ""))).strip()
+        if api_title:
+            movie_title = api_title
+
         
-        # 1. RENAME TRACKER BASED ON TRUE API DATA
-        if "•" in raw_lang:
+        # Only rename the tracker if the base language is actually wanted
+        if "•" in raw_lang and lang_ok:
             parts = [p.strip() for p in raw_lang.split("•")]
             if len(parts) >= 2:
-                api_lang = parts[0]
-                api_fmt = parts[1]
-                correct_tag = f"({api_lang} {api_fmt})"
+                correct_tag = f"({parts[0]} {parts[1]})"
                 
-                # If the tracker name doesn't match the live API, fix it!
                 if correct_tag not in watch_name:
                     # Strip out wrong language words from the base name
                     clean_base = re.sub(r'(?i)(Telugu|Tamil|Hindi|Malayalam|English)', '', watch_name.split('_')[0])
@@ -2888,6 +2806,13 @@ def run_watch(
     # Language/format variant discovery
     # --------------------------------------------------------------
 
+        # Name the base topic after the real movie + language/format
+    if first_full_data and lang_ok and "•" in raw_lang:
+        _p = [x.strip() for x in raw_lang.split("•")]
+        if len(_p) >= 2:
+            if set_topic_name(watch, watch_threadid, f"{movie_title} ({_p[0]} {_p[1]})"):
+                watch_mutated = True
+    
     if watch.get("discover_variants") and first_full_data:
 
         variants = parse_format_selector(first_full_data)
@@ -2913,59 +2838,84 @@ def run_watch(
                 f"{len(selected)} selected to track "
                 f"(besides the base watch)."
             )
+             # ----------------------------------------------------------
+            # BASE LANGUAGE NOT WANTED -> PROMOTE BEST VARIANT TO BASE
+            # (works for 1 match or many matches)
+            # ----------------------------------------------------------
 
-            # Auto-update watch URL in watches.json maintaining full /movies/{region}/ path
-            if len(selected) == 1 and selected[0].event_code:
-             if not any(lang in base_lang for lang in watch["languages"]):
-                target_variant = selected[0]
-                v_code = target_variant.event_code
+
+
+            if not lang_ok and selected:
+
+                def _rank(v):
+                    for i, l in enumerate(wanted_langs):
+                        if l == v.language.lower():
+                            return i
+                    return len(wanted_langs)
+
+                selected.sort(key=_rank)
+                target = selected[0]
+
                 clean_region = region_slug_resolved or region_slug or "chennai"
 
-                # Extract title slug from chip path if present
                 title_slug = ""
-                if target_variant.event_url:
-                    parts = [p for p in target_variant.event_url.strip("/").split("/") if p and p != v_code and p != "movies" and p != clean_region]
-                    if parts:
-                        title_slug = parts[-1]
-
+                if target.event_url:
+                    url_parts = [
+                        p for p in target.event_url.strip("/").split("/")
+                        if p and p != target.event_code
+                        and p != "movies" and p != clean_region
+                    ]
+                    if url_parts:
+                        title_slug = url_parts[-1]
                 if not title_slug:
-                    title_slug = f"movie-{v_code}"
+                    title_slug = f"movie-{target.event_code}"
 
-                # Reconstruct standardized URL format: https://in.bookmyshow.com/movies/{region}/{title_slug}/{event_code}
-                # Reconstruct standardized URL format: https://in.bookmyshow.com/movies/{region}/{title_slug}/{event_code}
-                new_url = f"https://in.bookmyshow.com/movies/{clean_region}/{title_slug}/{v_code}"
+                new_url = (
+                    f"https://in.bookmyshow.com/movies/"
+                    f"{clean_region}/{title_slug}/{target.event_code}"
+                )
 
-                if watch["url"] != new_url:
-                    print(
-                        f"  💡 Auto-updating watch URL to target variant directly: {new_url}"
-                    )
-                    watch["url"] = new_url
+                correct_tag = f"({target.language} {target.format})"
+                clean_base = re.sub(
+                    r'(?i)(Telugu|Tamil|Hindi|Malayalam|English)',
+                    '',
+                    watch_name.split('_')[0]
+                )
+                try:
+                    timestamp_id = watch_name.split('_')[1].split(' ')[0]
+                except Exception:
+                    timestamp_id = "000000"
+
+                new_watch_name = f"{clean_base}_{timestamp_id} {correct_tag}"
+
+                if watch_name in state:
+                    state[new_watch_name] = state.pop(watch_name)
+
+                # The promoted variant REUSES the base topic (no empty thread)
+                watch.setdefault("variant_threads", {})[target.event_code] = watch_threadid
+                if set_topic_name(watch, watch_threadid, f"{movie_title} {correct_tag}"):
                     watch_mutated = True
-                    
-                    # 🔥 FIX: Synchronize the base watch name with the new variant immediately
-                    correct_tag = f"({target_variant.language} {target_variant.format})"
-                    clean_base = re.sub(r'(?i)(Telugu|Tamil|Hindi|Malayalam|English)', '', watch_name.split('_')[0])
-                    
-                    try:
-                        timestamp_id = watch_name.split('_')[1].split(' ')[0]
-                    except Exception:
-                        timestamp_id = "000000"
-                        
-                    new_watch_name = f"{clean_base}_{timestamp_id} {correct_tag}"
-                    
-                    # 🔥 STATE MIGRATION: Fix the broken state keys so we don't spam duplicate alerts!
-                    old_stacked_name = f"{watch_name} {correct_tag}"
-                    if old_stacked_name in state:
-                        state[new_watch_name] = state.pop(old_stacked_name)
-                    elif watch_name in state:
-                        state[new_watch_name] = state.pop(watch_name)
-                        
-                    print(f"  💡 Pre-emptively fixing base watch name to match variant: {new_watch_name}")
-                    
-                    old_watch_name = watch_name
-                    watch["name"] = new_watch_name
-                    watch_mutated = True
-                    watch_name = new_watch_name # Update for the rest of the loop
+
+                print(
+                    f"  💡 Base '{raw_lang}' not in {wanted_langs}. "
+                    f"Promoting {correct_tag} to base: {new_url}"
+                )
+
+                watch["url"] = new_url
+                watch["name"] = new_watch_name
+                watch_name = new_watch_name
+                watch_mutated = True
+
+            elif not lang_ok and not selected:
+                print(
+                    f"  ⏳ Base is '{raw_lang}' and no variant matching "
+                    f"{wanted_langs} exists yet. Will retry next run."
+                )
+
+            # ----------------------------------------------------------
+            # TRACK EVERY SELECTED VARIANT (each in its own topic)
+            # ----------------------------------------------------------
+
 
 
 
@@ -2978,14 +2928,20 @@ def run_watch(
                 else:
                   variant_name = f"{watch_name} {variant_tag}"
 
+                variant_thread, created = get_or_create_variant_thread(
+                    watch, variant, watch_threadid, movie_title
+                )
+                if created:
+                    watch_mutated = True
+
                 print(
                     f"\n  --- Variant: {variant_name} "
-                    f"[{variant.event_code}] ---"
+                    f"[{variant.event_code}] -> thread {variant_thread} ---"
                 )
 
                 state, variant_success, _ = run_event(
                     # discord_thread_id=discord_thread_id,
-                    threadid=watch_threadid,
+                    threadid=variant_thread,
                     label=variant_name,
                     event_code=variant.event_code,
                     region_code=region_code,
@@ -3046,6 +3002,18 @@ def main():
                         if res.status_code == 200:
                             print(f"\n🗑️ 14-day retention expired. Purged Telegram topic ID {thread_id} for '{watch_name}'")
                     except Exception as e:
+                        pass
+
+                for v_thread in set(watch.get("variant_threads", {}).values()):
+                    if v_thread == thread_id:
+                        continue  # base topic already deleted above
+                    try:
+                        requests.post(
+                            f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/deleteForumTopic",
+                            json={"chat_id": GROUP_CHAT_ID, "message_thread_id": v_thread},
+                            timeout=10,
+                        )
+                    except Exception:
                         pass
                 
                 try:
