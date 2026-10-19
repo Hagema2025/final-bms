@@ -1,37 +1,13 @@
 {
   "Jailer2_20261014235738 (Tamil 2D)": {
     "shows": {
-      "INTO|91902|20261019|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "10:50 PM",
-        "date": "20261019",
-        "cat": "CLUB",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "91902",
-        "missing_count": 0
-      },
-      "INTO|91902|20261019|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "10:50 PM",
-        "date": "20261019",
-        "cat": "EXECUTIVE",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "91902",
-        "missing_count": 0
-      },
       "INTO|91889|20261019|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "11:00 PM",
         "date": "20261019",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "INTO",
         "sid": "91889",
@@ -55,7 +31,7 @@
         "date": "20261019",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "INTO",
         "sid": "91873",
