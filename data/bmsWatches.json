@@ -85,5 +85,39 @@
       "20261024": [],
       "20261025": []
     }
+  },
+  "20261020021005": {
+    "name": "StreetFighter_20261020021005 (English 2D)",
+    "url": "https://in.bookmyshow.com/movies/chennai/street-fighter/ET00481645",
+    "dates": [
+      "20261020"
+    ],
+    "theatre": [],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "english",
+      "tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1405,
+    "summary_msg_id": 1407,
+    "status_msg_id": 1408,
+    "date_time_map": {
+      "20261020": []
+    },
+    "topic_titles": {
+      "1405": "Street Fighter (English 2D)",
+      "1413": "Street Fighter (English IMAX 2D)",
+      "1416": "Street Fighter (Tamil 2D)"
+    },
+    "variant_threads": {
+      "ET00522122": 1413,
+      "ET00521531": 1416
+    },
+    "variant_summary_msg_ids": {
+      "ET00522122": 1414,
+      "ET00521531": 1418
+    }
   }
 }
