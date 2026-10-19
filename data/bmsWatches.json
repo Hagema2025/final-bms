@@ -1,11 +1,15 @@
 {
-  "20261020024058": {
-    "name": "StreetFighter_20261020024058 (English 2D)",
-    "url": "https://in.bookmyshow.com/movies/chennai/street-fighter/ET00481645",
+  "20261020024453": {
+    "name": "ClayfaceEnglish_20261020024453",
+    "url": "https://in.bookmyshow.com/movies/chennai/clayface-english/ET00496545",
     "dates": [
-      "20261020"
+      "20261023",
+      "20261024",
+      "20261025"
     ],
-    "theatre": [],
+    "theatre": [
+      "inox: the marina mall, omr"
+    ],
     "time_period": [],
     "discover_variants": true,
     "languages": [
@@ -13,24 +17,73 @@
       "tamil"
     ],
     "formats": [],
-    "message_thread_id": 1428,
-    "summary_msg_id": 1430,
-    "status_msg_id": 1431,
+    "message_thread_id": 1443,
+    "summary_msg_id": 1445,
+    "status_msg_id": 1446,
     "date_time_map": {
-      "20261020": []
-    },
-    "topic_titles": {
-      "1428": "Street Fighter (English 2D)",
-      "1436": "Street Fighter (English IMAX 2D)",
-      "1439": "Street Fighter (Tamil 2D)"
-    },
-    "variant_threads": {
-      "ET00522122": 1436,
-      "ET00521531": 1439
-    },
-    "variant_summary_msg_ids": {
-      "ET00522122": 1437,
-      "ET00521531": 1440
+      "20261023": [
+        "night"
+      ],
+      "20261024": [],
+      "20261025": []
+    }
+  },
+  "20261020024611": {
+    "name": "TomAndJerryForbiddenCompassEnglish_20261020024611",
+    "url": "https://in.bookmyshow.com/movies/chennai/tom-and-jerry-forbidden-compass-english/ET00518916",
+    "dates": [
+      "20261023",
+      "20261024",
+      "20261025"
+    ],
+    "theatre": [
+      "inox: the marina mall, omr"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "english",
+      "tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1449,
+    "summary_msg_id": 1451,
+    "status_msg_id": 1452,
+    "date_time_map": {
+      "20261023": [
+        "night"
+      ],
+      "20261024": [],
+      "20261025": []
+    }
+  },
+  "20261020024744": {
+    "name": "StreetFighterEnglish_20261020024744",
+    "url": "https://in.bookmyshow.com/movies/chennai/street-fighter-english/ET00481645",
+    "dates": [
+      "20261023",
+      "20261024",
+      "20261025"
+    ],
+    "theatre": [
+      "inox: the marina mall, omr"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "english",
+      "tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1455,
+    "summary_msg_id": 1457,
+    "status_msg_id": 1458,
+    "date_time_map": {
+      "20261023": [
+        "night"
+      ],
+      "20261024": [],
+      "20261025": []
     }
   }
 }
