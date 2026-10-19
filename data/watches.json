@@ -1,28 +1,4 @@
 {
-  "20261020015848": {
-    "name": "Clayface_20261020015848",
-    "url": "https://in.bookmyshow.com/movies/chennai/clayface/ET00496545",
-    "dates": {
-      "20261023": [
-        "night"
-      ],
-      "20261024": [],
-      "20261025": []
-    },
-    "theatre": [
-      "INOX: The Marina Mall, OMR"
-    ],
-    "time_period": [],
-    "discover_variants": true,
-    "languages": [
-      "English",
-      "Tamil"
-    ],
-    "formats": [],
-    "message_thread_id": 1387,
-    "summary_msg_id": 1389,
-    "status_msg_id": 1390
-  },
   "20261020020023": {
     "name": "TomAndJerryForbiddenCompass_20261020020023",
     "url": "https://in.bookmyshow.com/movies/chennai/tom-and-jerry-forbidden-compass/ET00518916",
