@@ -70,5 +70,23 @@
     "message_thread_id": 1399,
     "summary_msg_id": 1401,
     "status_msg_id": 1402
+  },
+  "20261020021005": {
+    "name": "StreetFighter_20261020021005",
+    "url": "https://in.bookmyshow.com/movies/chennai/street-fighter/ET00481645",
+    "dates": {
+      "20261020": []
+    },
+    "theatre": [],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "English",
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1405,
+    "summary_msg_id": 1407,
+    "status_msg_id": 1408
   }
 }
