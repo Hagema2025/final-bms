@@ -56,5 +56,34 @@
       "20261024": [],
       "20261025": []
     }
+  },
+  "20261020020239": {
+    "name": "StreetFighter_20261020020239",
+    "url": "https://in.bookmyshow.com/movies/chennai/street-fighter/ET00481645",
+    "dates": [
+      "20261023",
+      "20261024",
+      "20261025"
+    ],
+    "theatre": [
+      "inox: the marina mall, omr"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "english",
+      "tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1399,
+    "summary_msg_id": 1401,
+    "status_msg_id": 1402,
+    "date_time_map": {
+      "20261023": [
+        "night"
+      ],
+      "20261024": [],
+      "20261025": []
+    }
   }
 }
