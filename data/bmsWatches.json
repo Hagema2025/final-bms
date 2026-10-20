@@ -85,42 +85,5 @@
       "20261024": [],
       "20261025": []
     }
-  },
-  "20261020122310": {
-    "name": "Jailer2_20261020122310 (Tamil 2D)",
-    "url": "https://in.bookmyshow.com/movies/chennai/jailer-2/ET00518674",
-    "dates": [
-      "20261020"
-    ],
-    "theatre": [
-      "ags cinemas omr: navlur",
-      "cinepolis: bsr mall, omr, thoraipakkam",
-      "inox: the marina mall, omr",
-      "miraj cinemas: sekaran mall, perrumbakkam",
-      "rakki cinemas: omr, kelambakkam"
-    ],
-    "time_period": [],
-    "discover_variants": true,
-    "languages": [
-      "english",
-      "tamil"
-    ],
-    "formats": [],
-    "message_thread_id": 1461,
-    "summary_msg_id": 1463,
-    "status_msg_id": 1464,
-    "date_time_map": {
-      "20261020": []
-    },
-    "topic_titles": {
-      "1461": "Jailer 2 (Tamil 2D)",
-      "1474": "Jailer 2 (Tamil EPIQ)"
-    },
-    "variant_threads": {
-      "ET00521160": 1474
-    },
-    "variant_summary_msg_ids": {
-      "ET00521160": 1475
-    }
   }
 }
