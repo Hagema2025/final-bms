@@ -781,6 +781,7 @@ def fetch_bms(
                 if "application/json" not in response.headers.get("Content-Type", ""):
                     print(f"  ⚠️ Blocked by Cloudflare! Received HTML instead of JSON for {date_code or 'default'}.")
                     # We continue the loop to trigger a retry, just in case it was a temporary block
+                    time.sleep(attempt * 2)
                     continue
                 return response.json()
                 
@@ -2210,6 +2211,8 @@ def run_event(
     state,
     req_languages=None,  # <--- ADD THIS LINE HERE
     save_raw_prefix=None,
+        thread_factory=None,   # <-- NEW
+
 ):
     """
     Fetch, filter, diff and (if needed) alert for one event_code.
@@ -2255,6 +2258,11 @@ def run_event(
     for d in live_dates:
         live_date_statuses[str(d.date_code)] = d.status
 
+    selected_date = next(
+        (str(d.date_code) for d in live_dates if d.status == "BOOKABLE"),
+        None,
+    )
+
 
     # Filter out past dates before hitting the API
     today_int = int(datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%Y%m%d"))
@@ -2279,16 +2287,20 @@ def run_event(
             f"{date_code or '(default)'}..."
         )
 
-        data = fetch_bms(
-            event_code,
-            date_code,
-            region_code,
-            region_slug_resolved,
-            lat,
-            lon,
-            geohash,
-            label,
-        )
+        if landing_data and (not date_code or str(date_code) == selected_date):
+            data = landing_data
+            print("  ♻️ Reusing landing response (saved 1 API call)")
+        else:
+            data = fetch_bms(
+                event_code,
+                date_code,
+                region_code,
+                region_slug_resolved,
+                lat,
+                lon,
+                geohash,
+                label,
+            )
 
         if data:
             # BMS successfully responded for this requested date.
@@ -2630,6 +2642,8 @@ def run_event(
             alert_label = f"{clean_base}_{timestamp_id} {alert_tag}"
 
     if removed_shows:
+        if threadid is None and thread_factory:
+            threadid = thread_factory()
 
         send_removed_shows_telegram(
             threadid,
@@ -2666,6 +2680,8 @@ def run_event(
         #     filtered,
         #     movie_info,
         # )
+        if threadid is None and thread_factory:
+            threadid = thread_factory()
 
         send_telegram(
             threadid,
@@ -3069,12 +3085,20 @@ def run_watch(
                 else:
                   variant_name = f"{watch_name} {variant_tag}"
 
-                variant_thread, created = get_or_create_variant_thread(
-                    watch, variant, watch_threadid, movie_title,
-                    region_slug=region_slug_resolved or region_slug or "chennai",
-                )
-                if created:
-                    watch_mutated = True
+                # Reuse the thread if it already exists, otherwise defer creation
+                variant_thread = watch.get("variant_threads", {}).get(variant.event_code)
+
+                def make_factory(v):
+                    def _factory():
+                         nonlocal watch_mutated
+                         tid, created = get_or_create_variant_thread(
+            watch, v, watch_threadid, movie_title,
+            region_slug=region_slug_resolved or region_slug or "chennai",
+        )
+                         if created:
+                           watch_mutated = True
+                         return tid
+                    return _factory
 
                 print(
                     f"\n  --- Variant: {variant_name} "
@@ -3101,6 +3125,7 @@ def run_watch(
                     save_raw_prefix=(
                         f"bms_response_{variant_name}"
                     ),
+thread_factory=make_factory(variant),
                 )
 
                 overall_success = (
