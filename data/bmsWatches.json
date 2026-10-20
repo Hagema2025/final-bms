@@ -84,5 +84,72 @@
         "night"
       ]
     }
+  },
+  "20261020231141": {
+    "name": "ClayfaceEnglish_20261020231141",
+    "url": "https://in.bookmyshow.com/movies/chennai/clayface-english/ET00496545",
+    "dates": [
+      "20261023"
+    ],
+    "theatre": [
+      "ags cinemas omr: navlur",
+      "cinepolis: bsr mall, omr, thoraipakkam",
+      "inox: the marina mall, omr",
+      "miraj cinemas: sekaran mall, perrumbakkam",
+      "rakki cinemas: omr, kelambakkam"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "english",
+      "tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1521,
+    "summary_msg_id": 1523,
+    "status_msg_id": 1524,
+    "date_time_map": {
+      "20261023": [
+        "night"
+      ]
+    }
+  },
+  "20261020231324": {
+    "name": "Jailer2_20261020231324 (Tamil 2D)",
+    "url": "https://in.bookmyshow.com/movies/chennai/jailer-2-tamil/ET00518674",
+    "dates": [
+      "20261024",
+      "20261025"
+    ],
+    "theatre": [
+      "ags cinemas omr: navlur",
+      "cinepolis: bsr mall, omr, thoraipakkam",
+      "inox: the marina mall, omr",
+      "miraj cinemas: sekaran mall, perrumbakkam",
+      "rakki cinemas: omr, kelambakkam"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1527,
+    "summary_msg_id": 1529,
+    "status_msg_id": 1530,
+    "date_time_map": {
+      "20261024": [],
+      "20261025": []
+    },
+    "topic_titles": {
+      "1527": "Jailer 2 (Tamil 2D)",
+      "1536": "Jailer 2 (Tamil EPIQ)"
+    },
+    "variant_threads": {
+      "ET00521160": 1536
+    },
+    "variant_summary_msg_ids": {
+      "ET00521160": 1537
+    }
   }
 }
