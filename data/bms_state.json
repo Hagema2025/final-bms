@@ -2690,5 +2690,42 @@
       "20261027": "NOT_OPEN",
       "20261028": "NOT_OPEN"
     }
+  },
+  "Clayface_20261020231141 (English 2D)": {
+    "shows": {
+      "INTO|92025|20261023|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:30 PM",
+        "date": "20261023",
+        "cat": "CLUB",
+        "price": "210.98",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92025",
+        "missing_count": 0
+      },
+      "INTO|92025|20261023|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:30 PM",
+        "date": "20261023",
+        "cat": "EXECUTIVE",
+        "price": "66.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92025",
+        "missing_count": 0
+      }
+    },
+    "dates": {
+      "20261022": "AVAILABLE",
+      "20261023": "BOOKABLE",
+      "20261024": "NOT_OPEN",
+      "20261025": "NOT_OPEN",
+      "20261026": "NOT_OPEN",
+      "20261027": "NOT_OPEN",
+      "20261028": "NOT_OPEN"
+    }
   }
 }

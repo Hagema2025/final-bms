@@ -86,7 +86,7 @@
     }
   },
   "20261020231141": {
-    "name": "ClayfaceEnglish_20261020231141",
+    "name": "Clayface_20261020231141 (English 2D)",
     "url": "https://in.bookmyshow.com/movies/chennai/clayface-english/ET00496545",
     "dates": [
       "20261023"
@@ -112,6 +112,9 @@
       "20261023": [
         "night"
       ]
+    },
+    "topic_titles": {
+      "1521": "ClayfaceEnglish (English 2D)"
     }
   },
   "20261020231324": {
