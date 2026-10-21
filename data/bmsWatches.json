@@ -29,7 +29,7 @@
     }
   },
   "20261020230921": {
-    "name": "StreetFighterEnglish_20261020230921",
+    "name": "StreetFighter_20261020230921 (English 2D)",
     "url": "https://in.bookmyshow.com/movies/chennai/street-fighter-english/ET00481645",
     "dates": [
       "20261023"
@@ -55,6 +55,9 @@
       "20261023": [
         "night"
       ]
+    },
+    "topic_titles": {
+      "1509": "Street Fighter (English 2D)"
     }
   },
   "20261020231031": {

@@ -2467,7 +2467,7 @@
         "date": "20261025",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "92043",
@@ -2722,6 +2722,18 @@
       "20261023": "BOOKABLE",
       "20261024": "AVAILABLE",
       "20261025": "AVAILABLE",
+      "20261026": "NOT_OPEN",
+      "20261027": "NOT_OPEN",
+      "20261028": "NOT_OPEN"
+    }
+  },
+  "StreetFighter_20261020230921 (English 2D)": {
+    "shows": {},
+    "dates": {
+      "20261022": "AVAILABLE",
+      "20261023": "BOOKABLE",
+      "20261024": "NOT_OPEN",
+      "20261025": "NOT_OPEN",
       "20261026": "NOT_OPEN",
       "20261027": "NOT_OPEN",
       "20261028": "NOT_OPEN"
