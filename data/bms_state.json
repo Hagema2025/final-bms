@@ -1183,7 +1183,7 @@
         "date": "20261025",
         "cat": "Premium",
         "price": "190.00",
-        "status": "2",
+        "status": "3",
         "screen": "SC 1 DOLBY ATMOS",
         "vcode": "RAKK",
         "sid": "5047",
@@ -2130,13 +2130,13 @@
       }
     },
     "dates": {
-      "20261021": "AVAILABLE",
       "20261022": "AVAILABLE",
       "20261023": "AVAILABLE",
       "20261024": "AVAILABLE",
       "20261025": "BOOKABLE",
       "20261026": "NOT_OPEN",
-      "20261027": "NOT_OPEN"
+      "20261027": "NOT_OPEN",
+      "20261028": "NOT_OPEN"
     }
   }
 }
