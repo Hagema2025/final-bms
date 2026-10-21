@@ -2876,8 +2876,8 @@
     "dates": {
       "20261022": "AVAILABLE",
       "20261023": "BOOKABLE",
-      "20261024": "NOT_OPEN",
-      "20261025": "NOT_OPEN",
+      "20261024": "AVAILABLE",
+      "20261025": "AVAILABLE",
       "20261026": "NOT_OPEN",
       "20261027": "NOT_OPEN",
       "20261028": "NOT_OPEN"
