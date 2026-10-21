@@ -1,7 +1,7 @@
 {
   "20261020230836": {
-    "name": "DoraemonCastleOfTheUnderseaDevilHindi_20261020230836",
-    "url": "https://in.bookmyshow.com/movies/chennai/doraemon-castle-of-the-undersea-devil-hindi/ET00507337",
+    "name": "DoraemonCastleOfTheUnderseaDevil_20261020230836 (Tamil 2D)",
+    "url": "https://in.bookmyshow.com/movies/chennai/doraemon-castle-of-the-undersea-devil-tamil/ET00516268",
     "dates": [
       "20261023"
     ],
@@ -26,6 +26,12 @@
       "20261023": [
         "night"
       ]
+    },
+    "variant_threads": {
+      "ET00516268": 1503
+    },
+    "topic_titles": {
+      "1503": "Doraemon: Castle of the Undersea Devil (Tamil 2D)"
     }
   },
   "20261020230921": {
