@@ -943,7 +943,7 @@
         "date": "20261024",
         "cat": "EXECUTIVE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "CBMC",
         "sid": "14951",
@@ -1267,7 +1267,7 @@
         "date": "20261024",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
         "sid": "48260",
@@ -1627,7 +1627,7 @@
         "date": "20261024",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "92046",
@@ -4525,6 +4525,18 @@
       "20261026": "NOT_OPEN",
       "20261027": "NOT_OPEN",
       "20261028": "NOT_OPEN"
+    }
+  },
+  "418_20261022203722 (Tamil 2D)": {
+    "shows": {},
+    "dates": {
+      "20261023": "AVAILABLE",
+      "20261024": "AVAILABLE",
+      "20261025": "BOOKABLE",
+      "20261026": "NOT_OPEN",
+      "20261027": "NOT_OPEN",
+      "20261028": "NOT_OPEN",
+      "20261029": "NOT_OPEN"
     }
   }
 }

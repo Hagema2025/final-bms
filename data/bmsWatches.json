@@ -97,12 +97,13 @@
       "ET00521160": 1537
     }
   },
-  "20261022201552": {
-    "name": "418_20261022201552 (Tamil 2D)",
+  "20261022203722": {
+    "name": "418_20261022203722 (Tamil 2D)",
     "url": "https://in.bookmyshow.com/movies/chennai/418-tamil/ET00522879",
     "dates": [
       "20261023",
-      "20261024"
+      "20261024",
+      "20261025"
     ],
     "theatre": [
       "inox: the marina mall, omr"
@@ -113,22 +114,21 @@
       "tamil"
     ],
     "formats": [],
-    "message_thread_id": 1588,
-    "summary_msg_id": 1590,
-    "status_msg_id": 1591,
+    "message_thread_id": 1598,
+    "summary_msg_id": 1600,
+    "status_msg_id": 1601,
     "date_time_map": {
       "20261023": [
         "night"
       ],
-      "20261024": [
-        "night"
-      ]
+      "20261024": [],
+      "20261025": []
     },
     "variant_threads": {
-      "ET00522879": 1588
+      "ET00522879": 1598
     },
     "topic_titles": {
-      "1588": "418 (Tamil 2D)"
+      "1598": "418 (Tamil 2D)"
     }
   }
 }
