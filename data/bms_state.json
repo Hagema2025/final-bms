@@ -1543,7 +1543,7 @@
         "date": "20261024",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91964",
@@ -3619,7 +3619,7 @@
         "date": "20261025",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "3",
+        "status": "2",
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "92106",
@@ -3739,7 +3739,7 @@
         "date": "20261025",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "1",
+        "status": "2",
         "screen": "",
         "vcode": "INTO",
         "sid": "92062",
@@ -4470,13 +4470,13 @@
       }
     },
     "dates": {
-      "20261022": "AVAILABLE",
       "20261023": "BOOKABLE",
       "20261024": "AVAILABLE",
       "20261025": "AVAILABLE",
       "20261026": "NOT_OPEN",
       "20261027": "NOT_OPEN",
-      "20261028": "NOT_OPEN"
+      "20261028": "NOT_OPEN",
+      "20261029": "NOT_OPEN"
     }
   },
   "Jailer2_20261020231324 (Tamil 2D) (Tamil IMAX 2D)": {
