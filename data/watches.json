@@ -73,28 +73,5 @@
     "message_thread_id": 1527,
     "summary_msg_id": 1529,
     "status_msg_id": 1530
-  },
-  "20261022203722": {
-    "name": "418Telugu_20261022203722",
-    "url": "https://in.bookmyshow.com/movies/chennai/418-telugu/ET00509047",
-    "dates": {
-      "20261023": [
-        "night"
-      ],
-      "20261024": [],
-      "20261025": []
-    },
-    "theatre": [
-      "INOX: The Marina Mall, OMR"
-    ],
-    "time_period": [],
-    "discover_variants": true,
-    "languages": [
-      "Tamil"
-    ],
-    "formats": [],
-    "message_thread_id": 1598,
-    "summary_msg_id": 1600,
-    "status_msg_id": 1601
   }
 }
