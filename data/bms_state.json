@@ -1717,6 +1717,30 @@
         "sid": "16666",
         "missing_count": 0
       },
+      "MCSK|16715|20261024|SPECIAL": {
+        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
+        "time": "09:00 AM",
+        "date": "20261024",
+        "cat": "SPECIAL",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "MCSK",
+        "sid": "16715",
+        "missing_count": 0
+      },
+      "MCSK|16715|20261024|EXECUTIVE": {
+        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
+        "time": "09:00 AM",
+        "date": "20261024",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "MCSK",
+        "sid": "16715",
+        "missing_count": 0
+      },
       "MCSK|16701|20261024|SPECIAL": {
         "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
         "time": "09:05 AM",
@@ -3223,7 +3247,7 @@
         "date": "20261025",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "3",
+        "status": "2",
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "92105",
