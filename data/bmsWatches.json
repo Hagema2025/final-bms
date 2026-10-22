@@ -1,71 +1,4 @@
 {
-  "20261020230836": {
-    "name": "DoraemonCastleOfTheUnderseaDevil_20261020230836 (Tamil 2D)",
-    "url": "https://in.bookmyshow.com/movies/chennai/doraemon-castle-of-the-undersea-devil-tamil/ET00516268",
-    "dates": [
-      "20261023"
-    ],
-    "theatre": [
-      "ags cinemas omr: navlur",
-      "cinepolis: bsr mall, omr, thoraipakkam",
-      "inox: the marina mall, omr",
-      "miraj cinemas: sekaran mall, perrumbakkam",
-      "rakki cinemas: omr, kelambakkam"
-    ],
-    "time_period": [],
-    "discover_variants": true,
-    "languages": [
-      "english",
-      "tamil"
-    ],
-    "formats": [],
-    "message_thread_id": 1503,
-    "summary_msg_id": 1505,
-    "status_msg_id": 1506,
-    "date_time_map": {
-      "20261023": [
-        "night"
-      ]
-    },
-    "variant_threads": {
-      "ET00516268": 1503
-    },
-    "topic_titles": {
-      "1503": "Doraemon: Castle of the Undersea Devil (Tamil 2D)"
-    }
-  },
-  "20261020230921": {
-    "name": "StreetFighter_20261020230921 (English 2D)",
-    "url": "https://in.bookmyshow.com/movies/chennai/street-fighter-english/ET00481645",
-    "dates": [
-      "20261023"
-    ],
-    "theatre": [
-      "ags cinemas omr: navlur",
-      "cinepolis: bsr mall, omr, thoraipakkam",
-      "inox: the marina mall, omr",
-      "miraj cinemas: sekaran mall, perrumbakkam",
-      "rakki cinemas: omr, kelambakkam"
-    ],
-    "time_period": [],
-    "discover_variants": true,
-    "languages": [
-      "english",
-      "tamil"
-    ],
-    "formats": [],
-    "message_thread_id": 1509,
-    "summary_msg_id": 1511,
-    "status_msg_id": 1512,
-    "date_time_map": {
-      "20261023": [
-        "night"
-      ]
-    },
-    "topic_titles": {
-      "1509": "Street Fighter (English 2D)"
-    }
-  },
   "20261020231031": {
     "name": "TitanicTamilTamil_20261020231031",
     "url": "https://in.bookmyshow.com/movies/chennai/titanic-tamil-tamil/ET00069291",
@@ -162,6 +95,40 @@
     },
     "variant_summary_msg_ids": {
       "ET00521160": 1537
+    }
+  },
+  "20261022201552": {
+    "name": "418_20261022201552 (Tamil 2D)",
+    "url": "https://in.bookmyshow.com/movies/chennai/418-tamil/ET00522879",
+    "dates": [
+      "20261023",
+      "20261024"
+    ],
+    "theatre": [
+      "inox: the marina mall, omr"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1588,
+    "summary_msg_id": 1590,
+    "status_msg_id": 1591,
+    "date_time_map": {
+      "20261023": [
+        "night"
+      ],
+      "20261024": [
+        "night"
+      ]
+    },
+    "variant_threads": {
+      "ET00522879": 1588
+    },
+    "topic_titles": {
+      "1588": "418 (Tamil 2D)"
     }
   }
 }
