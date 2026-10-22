@@ -1171,7 +1171,7 @@
         "date": "20261024",
         "cat": "DIAMOND",
         "price": "183.00",
-        "status": "3",
+        "status": "2",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
         "sid": "48260",
@@ -1903,7 +1903,7 @@
         "date": "20261024",
         "cat": "EXECUTIVE",
         "price": "183.80",
-        "status": "2",
+        "status": "3",
         "screen": "",
         "vcode": "MCSK",
         "sid": "16667",
@@ -4175,7 +4175,7 @@
         "screen": "",
         "vcode": "CBMC",
         "sid": "14964",
-        "missing_count": 1
+        "missing_count": 2
       },
       "CBMC|14964|20261024|EXECUTIVE": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
@@ -4187,7 +4187,7 @@
         "screen": "",
         "vcode": "CBMC",
         "sid": "14964",
-        "missing_count": 1
+        "missing_count": 2
       },
       "CBMC|14965|20261025|NORMAL": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
@@ -4199,7 +4199,7 @@
         "screen": "",
         "vcode": "CBMC",
         "sid": "14965",
-        "missing_count": 1
+        "missing_count": 2
       },
       "CBMC|14965|20261025|EXECUTIVE": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
@@ -4211,7 +4211,7 @@
         "screen": "",
         "vcode": "CBMC",
         "sid": "14965",
-        "missing_count": 1
+        "missing_count": 2
       },
       "CBMC|14966|20261025|NORMAL": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
@@ -4223,7 +4223,7 @@
         "screen": "",
         "vcode": "CBMC",
         "sid": "14966",
-        "missing_count": 1
+        "missing_count": 2
       },
       "CBMC|14966|20261025|EXECUTIVE": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
@@ -4235,7 +4235,7 @@
         "screen": "",
         "vcode": "CBMC",
         "sid": "14966",
-        "missing_count": 1
+        "missing_count": 2
       }
     },
     "dates": {
