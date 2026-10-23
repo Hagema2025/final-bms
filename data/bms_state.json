@@ -319,7 +319,7 @@
         "date": "20261024",
         "cat": "Elite",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SCREEN 2",
         "vcode": "RAKK",
         "sid": "5073",
@@ -2323,7 +2323,7 @@
         "date": "20261024",
         "cat": "SPECIAL",
         "price": "54.35",
-        "status": "3",
+        "status": "0",
         "screen": "",
         "vcode": "MCSK",
         "sid": "16670",
@@ -4797,7 +4797,7 @@
         "date": "20261023",
         "cat": "EXECUTIVE",
         "price": "210.98",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "CBMC",
         "sid": "14911",
@@ -4894,7 +4894,7 @@
         "date": "20261023",
         "cat": "SPECIAL",
         "price": "54.35",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "MCSK",
         "sid": "16686",
@@ -5145,10 +5145,10 @@
       "20261023": "AVAILABLE",
       "20261024": "AVAILABLE",
       "20261025": "BOOKABLE",
-      "20261026": "NOT_OPEN",
-      "20261027": "NOT_OPEN",
-      "20261028": "NOT_OPEN",
-      "20261029": "NOT_OPEN"
+      "20261027": "AVAILABLE",
+      "20261028": "AVAILABLE",
+      "20261029": "NOT_OPEN",
+      "20261030": "NOT_OPEN"
     }
   }
 }
