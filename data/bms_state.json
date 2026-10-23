@@ -505,6 +505,30 @@
         "sid": "14843",
         "missing_count": 0
       },
+      "CBMC|15108|20261024|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "09:10 AM",
+        "date": "20261024",
+        "cat": "NORMAL",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "15108",
+        "missing_count": 0
+      },
+      "CBMC|15108|20261024|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "09:10 AM",
+        "date": "20261024",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "15108",
+        "missing_count": 0
+      },
       "CBMC|14839|20261024|NORMAL": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
         "time": "09:20 AM",
@@ -955,7 +979,7 @@
         "date": "20261024",
         "cat": "EXECUTIVE",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "CBMC",
         "sid": "14859",
@@ -1435,7 +1459,7 @@
         "date": "20261024",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "0",
+        "status": "1",
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "91963",
@@ -4492,6 +4516,42 @@
   },
   "418_20261022235501 (Tamil 2D)": {
     "shows": {
+      "RAKK|5112|20261023|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "11:00 PM",
+        "date": "20261023",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 6",
+        "vcode": "RAKK",
+        "sid": "5112",
+        "missing_count": 0
+      },
+      "RAKK|5112|20261023|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "11:00 PM",
+        "date": "20261023",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 6",
+        "vcode": "RAKK",
+        "sid": "5112",
+        "missing_count": 0
+      },
+      "RAKK|5112|20261023|LOUNGER": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "11:00 PM",
+        "date": "20261023",
+        "cat": "LOUNGER",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 6",
+        "vcode": "RAKK",
+        "sid": "5112",
+        "missing_count": 0
+      },
       "MCSK|16686|20261023|SPECIAL": {
         "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
         "time": "10:20 PM",
