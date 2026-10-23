@@ -25,7 +25,8 @@
       "20261023": [
         "night"
       ]
-    }
+    },
+    "expired_notified": true
   },
   "20261020231141": {
     "name": "Clayface_20261020231141 (English 2D)",
@@ -57,7 +58,8 @@
     },
     "topic_titles": {
       "1521": "Clayface (English 2D)"
-    }
+    },
+    "expired_notified": true
   },
   "20261020231324": {
     "name": "Jailer2_20261020231324 (Tamil 2D)",
