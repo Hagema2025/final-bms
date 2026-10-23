@@ -7,7 +7,7 @@
         "date": "20261024",
         "cat": "Premium",
         "price": "190.00",
-        "status": "0",
+        "status": "1",
         "screen": "SC 3 DOLBY ATMOS",
         "vcode": "RAKK",
         "sid": "4940",
@@ -235,7 +235,7 @@
         "date": "20261024",
         "cat": "Elite",
         "price": "190.00",
-        "status": "3",
+        "status": "2",
         "screen": "SCREEN 5",
         "vcode": "RAKK",
         "sid": "4977",
@@ -4756,13 +4756,13 @@
   "Clayface_20261020231141 (English 2D)": {
     "shows": {},
     "dates": {
-      "20261023": "BOOKABLE",
-      "20261024": "AVAILABLE",
+      "20261024": "BOOKABLE",
       "20261025": "AVAILABLE",
       "20261026": "NOT_OPEN",
       "20261027": "NOT_OPEN",
       "20261028": "NOT_OPEN",
-      "20261029": "NOT_OPEN"
+      "20261029": "NOT_OPEN",
+      "20261030": "NOT_OPEN"
     }
   },
   "Jailer2_20261020231324 (Tamil 2D) (Tamil IMAX 2D)": {
