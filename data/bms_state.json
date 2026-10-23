@@ -3979,7 +3979,7 @@
         "date": "20261025",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "2",
+        "status": "1",
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "92106",
@@ -4643,7 +4643,7 @@
         "screen": "",
         "vcode": "CBMC",
         "sid": "15108",
-        "missing_count": 1
+        "missing_count": 2
       },
       "CBMC|15108|20261024|EXECUTIVE": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
@@ -4655,7 +4655,7 @@
         "screen": "",
         "vcode": "CBMC",
         "sid": "15108",
-        "missing_count": 1
+        "missing_count": 2
       },
       "CBMC|15111|20261025|NORMAL": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
@@ -4667,7 +4667,7 @@
         "screen": "",
         "vcode": "CBMC",
         "sid": "15111",
-        "missing_count": 1
+        "missing_count": 2
       },
       "CBMC|15111|20261025|EXECUTIVE": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
@@ -4679,7 +4679,7 @@
         "screen": "",
         "vcode": "CBMC",
         "sid": "15111",
-        "missing_count": 1
+        "missing_count": 2
       }
     },
     "dates": {
