@@ -32,5 +32,39 @@
     "message_thread_id": 1697,
     "summary_msg_id": 1699,
     "status_msg_id": 1700
+  },
+  "20261024105109": {
+    "name": "ClayfaceEnglish_20261024105109",
+    "url": "https://in.bookmyshow.com/movies/chennai/clayface-english/ET00496545",
+    "dates": {
+      "20261024": [
+        "night"
+      ],
+      "20261025": [
+        "afternoon",
+        "evening",
+        "night"
+      ]
+    },
+    "theatre": [
+      "AGS Cinemas OMR: Navlur",
+      "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+      "INOX: The Marina Mall, OMR",
+      "MAYAJAAL Multiplex: ECR, Chennai",
+      "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
+      "PVR: Heritage RSL ECR, Chennai",
+      "Rakki Cinemas: OMR, Kelambakkam",
+      "The Vijay Park Multiplex: Injambakkam ECR 4K Atmos"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "English",
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1703,
+    "summary_msg_id": 1705,
+    "status_msg_id": 1706
   }
 }
