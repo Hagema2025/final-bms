@@ -183,13 +183,13 @@
       }
     },
     "dates": {
-      "20261024": "AVAILABLE",
       "20261025": "BOOKABLE",
       "20261026": "AVAILABLE",
       "20261027": "AVAILABLE",
       "20261028": "AVAILABLE",
       "20261029": "AVAILABLE",
-      "20261030": "NOT_OPEN"
+      "20261030": "NOT_OPEN",
+      "20261031": "NOT_OPEN"
     }
   }
 }
