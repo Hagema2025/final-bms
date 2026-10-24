@@ -13,18 +13,6 @@
         "sid": "26141",
         "missing_count": 0
       },
-      "MAYJ|241320|20261024|FIRST CLASS": {
-        "venue": "MAYAJAAL Multiplex: ECR, Chennai",
-        "time": "08:35 PM",
-        "date": "20261024",
-        "cat": "FIRST CLASS",
-        "price": "183.80",
-        "status": "1",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "MAYJ",
-        "sid": "241320",
-        "missing_count": 0
-      },
       "MAYJ|241224|20261024|FIRST CLASS": {
         "venue": "MAYAJAAL Multiplex: ECR, Chennai",
         "time": "10:00 PM",
@@ -205,30 +193,6 @@
         "sid": "241377",
         "missing_count": 0
       },
-      "PVHR|44223|20261025|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "03:55 PM",
-        "date": "20261025",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "44223",
-        "missing_count": 0
-      },
-      "PVHR|44223|20261025|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "03:55 PM",
-        "date": "20261025",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "44223",
-        "missing_count": 0
-      },
       "MCSK|16712|20261025|SPECIAL": {
         "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
         "time": "10:30 PM",
@@ -251,6 +215,30 @@
         "screen": "",
         "vcode": "MCSK",
         "sid": "16712",
+        "missing_count": 0
+      },
+      "PVHR|44223|20261025|PRIME": {
+        "venue": "PVR: Heritage RSL ECR, Chennai",
+        "time": "03:55 PM",
+        "date": "20261025",
+        "cat": "PRIME",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "PVHR",
+        "sid": "44223",
+        "missing_count": 0
+      },
+      "PVHR|44223|20261025|CLASSIC": {
+        "venue": "PVR: Heritage RSL ECR, Chennai",
+        "time": "03:55 PM",
+        "date": "20261025",
+        "cat": "CLASSIC",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "PVHR",
+        "sid": "44223",
         "missing_count": 0
       }
     },
@@ -290,30 +278,6 @@
         "sid": "14823",
         "missing_count": 0
       },
-      "PVHR|44216|20261024|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "09:50 PM",
-        "date": "20261024",
-        "cat": "PRIME",
-        "price": "210.98",
-        "status": "3",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "44216",
-        "missing_count": 0
-      },
-      "PVHR|44216|20261024|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "09:50 PM",
-        "date": "20261024",
-        "cat": "CLASSIC",
-        "price": "61.74",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "44216",
-        "missing_count": 0
-      },
       "INTO|92078|20261024|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "10:30 PM",
@@ -336,6 +300,30 @@
         "screen": "",
         "vcode": "INTO",
         "sid": "92078",
+        "missing_count": 0
+      },
+      "PVHR|44216|20261024|PRIME": {
+        "venue": "PVR: Heritage RSL ECR, Chennai",
+        "time": "09:50 PM",
+        "date": "20261024",
+        "cat": "PRIME",
+        "price": "210.98",
+        "status": "3",
+        "screen": "",
+        "vcode": "PVHR",
+        "sid": "44216",
+        "missing_count": 0
+      },
+      "PVHR|44216|20261024|CLASSIC": {
+        "venue": "PVR: Heritage RSL ECR, Chennai",
+        "time": "09:50 PM",
+        "date": "20261024",
+        "cat": "CLASSIC",
+        "price": "61.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "PVHR",
+        "sid": "44216",
         "missing_count": 0
       },
       "RAKK|5119|20261025|Premium": {
