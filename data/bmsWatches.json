@@ -43,47 +43,6 @@
       "1697": "418 (Tamil 2D)"
     }
   },
-  "20261024105109": {
-    "name": "Clayface_20261024105109 (English 2D)",
-    "url": "https://in.bookmyshow.com/movies/chennai/clayface-english/ET00496545",
-    "dates": [
-      "20261024",
-      "20261025"
-    ],
-    "theatre": [
-      "ags cinemas omr: navlur",
-      "cinepolis: bsr mall, omr, thoraipakkam",
-      "inox: the marina mall, omr",
-      "mayajaal multiplex: ecr, chennai",
-      "miraj cinemas: sekaran mall, perrumbakkam",
-      "pvr: heritage rsl ecr, chennai",
-      "rakki cinemas: omr, kelambakkam",
-      "the vijay park multiplex: injambakkam ecr 4k atmos"
-    ],
-    "time_period": [],
-    "discover_variants": true,
-    "languages": [
-      "english",
-      "tamil"
-    ],
-    "formats": [],
-    "message_thread_id": 1703,
-    "summary_msg_id": 1705,
-    "status_msg_id": 1706,
-    "date_time_map": {
-      "20261024": [
-        "night"
-      ],
-      "20261025": [
-        "afternoon",
-        "evening",
-        "night"
-      ]
-    },
-    "topic_titles": {
-      "1703": "Clayface (English 2D)"
-    }
-  },
   "20261024134249": {
     "name": "AvengersDoomsdayEnglish_20261024134249",
     "url": "https://in.bookmyshow.com/movies/chennai/avengers-doomsday-english/ET00439706",
