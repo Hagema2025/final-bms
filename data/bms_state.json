@@ -1,6 +1,18 @@
 {
   "418_20261024104815 (Tamil 2D)": {
     "shows": {
+      "TVHP|26141|20261024|ELITE": {
+        "venue": "The Vijay Park Multiplex: Injambakkam ECR 4K Atmos",
+        "time": "11:10 PM",
+        "date": "20261024",
+        "cat": "ELITE",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY ATMOS",
+        "vcode": "TVHP",
+        "sid": "26141",
+        "missing_count": 0
+      },
       "MAYJ|241320|20261024|FIRST CLASS": {
         "venue": "MAYAJAAL Multiplex: ECR, Chennai",
         "time": "08:35 PM",
@@ -242,18 +254,6 @@
   },
   "Clayface_20261024105109 (English 2D)": {
     "shows": {
-      "TVHP|26115|20261024|ELITE": {
-        "venue": "The Vijay Park Multiplex: Injambakkam ECR 4K Atmos",
-        "time": "11:15 PM",
-        "date": "20261024",
-        "cat": "ELITE",
-        "price": "211.44",
-        "status": "3",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "TVHP",
-        "sid": "26115",
-        "missing_count": 0
-      },
       "CBMC|14823|20261024|NORMAL": {
         "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
         "time": "11:00 PM",
@@ -541,6 +541,18 @@
         "vcode": "PVHR",
         "sid": "44219",
         "missing_count": 0
+      },
+      "TVHP|26115|20261024|ELITE": {
+        "venue": "The Vijay Park Multiplex: Injambakkam ECR 4K Atmos",
+        "time": "11:15 PM",
+        "date": "20261024",
+        "cat": "ELITE",
+        "price": "211.44",
+        "status": "3",
+        "screen": "4K DOLBY ATMOS",
+        "vcode": "TVHP",
+        "sid": "26115",
+        "missing_count": 1
       }
     },
     "dates": {
