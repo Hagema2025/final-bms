@@ -1,18 +1,6 @@
 {
   "418_20261024104815 (Tamil 2D)": {
     "shows": {
-      "TVHP|26141|20261024|ELITE": {
-        "venue": "The Vijay Park Multiplex: Injambakkam ECR 4K Atmos",
-        "time": "11:10 PM",
-        "date": "20261024",
-        "cat": "ELITE",
-        "price": "183.00",
-        "status": "1",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "TVHP",
-        "sid": "26141",
-        "missing_count": 0
-      },
       "MAYJ|241374|20261024|FIRST CLASS": {
         "venue": "MAYAJAAL Multiplex: ECR, Chennai",
         "time": "11:59 PM",
