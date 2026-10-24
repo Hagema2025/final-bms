@@ -552,18 +552,6 @@
         "screen": "4K DOLBY ATMOS",
         "vcode": "TVHP",
         "sid": "26128",
-        "missing_count": 1
-      },
-      "TVHP|26115|20261024|ELITE": {
-        "venue": "The Vijay Park Multiplex: Injambakkam ECR 4K Atmos",
-        "time": "11:15 PM",
-        "date": "20261024",
-        "cat": "ELITE",
-        "price": "211.44",
-        "status": "3",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "TVHP",
-        "sid": "26115",
         "missing_count": 2
       }
     },
