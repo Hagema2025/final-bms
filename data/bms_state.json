@@ -73,18 +73,6 @@
         "sid": "5123",
         "missing_count": 0
       },
-      "TVHP|26143|20261025|ELITE": {
-        "venue": "The Vijay Park Multiplex: Injambakkam ECR 4K Atmos",
-        "time": "02:55 PM",
-        "date": "20261025",
-        "cat": "ELITE",
-        "price": "183.00",
-        "status": "3",
-        "screen": "4K DOLBY ATMOS",
-        "vcode": "TVHP",
-        "sid": "26143",
-        "missing_count": 0
-      },
       "MAYJ|241316|20261025|FIRST CLASS": {
         "venue": "MAYAJAAL Multiplex: ECR, Chennai",
         "time": "05:05 PM",
@@ -139,7 +127,7 @@
         "date": "20261025",
         "cat": "PRIME",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PVHR",
         "sid": "44223",
