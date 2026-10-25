@@ -52,5 +52,61 @@
       "20261219": [],
       "20261220": []
     }
+  },
+  "20261026002416": {
+    "name": "418_20261026002416 (Tamil 2D)",
+    "url": "https://in.bookmyshow.com/movies/chennai/418-tamil/ET00522879",
+    "dates": [
+      "20261026",
+      "20261027",
+      "20261028",
+      "20261029",
+      "20261030",
+      "20261031",
+      "20261101"
+    ],
+    "theatre": [
+      "ags cinemas omr: navlur",
+      "cinepolis: bsr mall, omr, thoraipakkam",
+      "inox: the marina mall, omr",
+      "miraj cinemas: sekaran mall, perrumbakkam",
+      "rakki cinemas: omr, kelambakkam"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "english",
+      "tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1758,
+    "summary_msg_id": 1760,
+    "status_msg_id": 1761,
+    "budget_only": true,
+    "date_time_map": {
+      "20261026": [
+        "night"
+      ],
+      "20261027": [
+        "night"
+      ],
+      "20261028": [
+        "night"
+      ],
+      "20261029": [
+        "night"
+      ],
+      "20261030": [
+        "night"
+      ],
+      "20261031": [],
+      "20261101": []
+    },
+    "variant_threads": {
+      "ET00522879": 1758
+    },
+    "topic_titles": {
+      "1758": "418 (Tamil 2D)"
+    }
   }
 }
