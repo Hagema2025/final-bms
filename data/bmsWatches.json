@@ -43,9 +43,37 @@
       "1697": "418 (Tamil 2D)"
     }
   },
-  "20261024134249": {
-    "name": "AvengersDoomsdayEnglish_20261024134249",
-    "url": "https://in.bookmyshow.com/movies/chennai/avengers-doomsday-english/ET00439706",
+  "20261025231729": {
+    "name": "AvengersDoomsday_20261025231729",
+    "url": "https://in.bookmyshow.com/movies/chennai/avengers-doomsday/ET00439706",
+    "dates": [
+      "20261218",
+      "20261219",
+      "20261220"
+    ],
+    "theatre": [
+      "inox: the marina mall, omr"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "english",
+      "tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1744,
+    "summary_msg_id": 1746,
+    "status_msg_id": 1747,
+    "budget_only": true,
+    "date_time_map": {
+      "20261218": [],
+      "20261219": [],
+      "20261220": []
+    }
+  },
+  "20261025232022": {
+    "name": "AvengersDoomsday_20261025232022",
+    "url": "https://in.bookmyshow.com/movies/chennai/avengers-doomsday/ET00439706",
     "dates": [
       "20261218",
       "20261219",
@@ -59,13 +87,12 @@
       "tamil"
     ],
     "formats": [],
-    "message_thread_id": 1719,
-    "summary_msg_id": 1721,
-    "status_msg_id": 1722,
+    "message_thread_id": 1750,
+    "summary_msg_id": 1752,
+    "status_msg_id": 1753,
+    "budget_only": false,
     "date_time_map": {
-      "20261218": [
-        "night"
-      ],
+      "20261218": [],
       "20261219": [],
       "20261220": []
     }
