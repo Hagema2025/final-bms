@@ -55,5 +55,26 @@
     "summary_msg_id": 1746,
     "status_msg_id": 1747,
     "budget_only": true
+  },
+  "20261025232022": {
+    "name": "AvengersDoomsday_20261025232022",
+    "url": "https://in.bookmyshow.com/movies/chennai/avengers-doomsday/ET00439706",
+    "dates": {
+      "20261218": [],
+      "20261219": [],
+      "20261220": []
+    },
+    "theatre": [],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "English",
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1750,
+    "summary_msg_id": 1752,
+    "status_msg_id": 1753,
+    "budget_only": false
   }
 }
