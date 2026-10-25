@@ -1,42 +1,6 @@
 {
   "418_20261024104815 (Tamil 2D)": {
     "shows": {
-      "RAKK|5123|20261025|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "10:45 PM",
-        "date": "20261025",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "1",
-        "screen": "SCREEN 6",
-        "vcode": "RAKK",
-        "sid": "5123",
-        "missing_count": 0
-      },
-      "RAKK|5123|20261025|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "10:45 PM",
-        "date": "20261025",
-        "cat": "Elite",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 6",
-        "vcode": "RAKK",
-        "sid": "5123",
-        "missing_count": 0
-      },
-      "RAKK|5123|20261025|LOUNGER": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "10:45 PM",
-        "date": "20261025",
-        "cat": "LOUNGER",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 6",
-        "vcode": "RAKK",
-        "sid": "5123",
-        "missing_count": 0
-      },
       "MAYJ|241377|20261025|FIRST CLASS": {
         "venue": "MAYAJAAL Multiplex: ECR, Chennai",
         "time": "11:59 PM",
