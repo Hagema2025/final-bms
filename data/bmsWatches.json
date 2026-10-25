@@ -1,49 +1,4 @@
 {
-  "20261024104815": {
-    "name": "418_20261024104815 (Tamil 2D)",
-    "url": "https://in.bookmyshow.com/movies/chennai/418-tamil/ET00522879",
-    "dates": [
-      "20261024",
-      "20261025"
-    ],
-    "theatre": [
-      "ags cinemas omr: navlur",
-      "cinepolis: bsr mall, omr, thoraipakkam",
-      "inox: the marina mall, omr",
-      "mayajaal multiplex: ecr, chennai",
-      "miraj cinemas: sekaran mall, perrumbakkam",
-      "pvr: heritage rsl ecr, chennai",
-      "rakki cinemas: omr, kelambakkam",
-      "the vijay park multiplex: injambakkam ecr 4k atmos"
-    ],
-    "time_period": [],
-    "discover_variants": true,
-    "languages": [
-      "english",
-      "tamil"
-    ],
-    "formats": [],
-    "message_thread_id": 1697,
-    "summary_msg_id": 1699,
-    "status_msg_id": 1700,
-    "date_time_map": {
-      "20261024": [
-        "night"
-      ],
-      "20261025": [
-        "afternoon",
-        "evening",
-        "night"
-      ]
-    },
-    "variant_threads": {
-      "ET00522879": 1697
-    },
-    "topic_titles": {
-      "1697": "418 (Tamil 2D)"
-    },
-    "expired_notified": true
-  },
   "20261025231729": {
     "name": "AvengersDoomsday_20261025231729",
     "url": "https://in.bookmyshow.com/movies/chennai/avengers-doomsday/ET00439706",
