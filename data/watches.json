@@ -32,5 +32,28 @@
     "message_thread_id": 1697,
     "summary_msg_id": 1699,
     "status_msg_id": 1700
+  },
+  "20261025231729": {
+    "name": "AvengersDoomsday_20261025231729",
+    "url": "https://in.bookmyshow.com/movies/chennai/avengers-doomsday/ET00439706",
+    "dates": {
+      "20261218": [],
+      "20261219": [],
+      "20261220": []
+    },
+    "theatre": [
+      "INOX: The Marina Mall, OMR"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "English",
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1744,
+    "summary_msg_id": 1746,
+    "status_msg_id": 1747,
+    "budget_only": true
   }
 }
