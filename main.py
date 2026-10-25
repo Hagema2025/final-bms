@@ -4,7 +4,7 @@ import sys
 import json
 from html import escape
 from datetime import datetime
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from urllib.parse import urlparse
 from collections import defaultdict
 from zoneinfo import ZoneInfo
@@ -28,6 +28,8 @@ GROUP_CHAT_ID=os.getenv("GROUP_CHAT_ID", "").strip()
 NTFY_URL=os.getenv("NTFY_URL","").strip()
 NTFY_TOPIC=os.getenv("NTFY_TOPIC", "").strip()
 NTFY_ERROR_TOPIC = os.getenv("NTFY_ERROR_TOPIC", "").strip()
+# A ticket counts as "budget" if its price is at or below this (in ₹)
+BUDGET_MAX_PRICE = float(os.getenv("BUDGET_MAX_PRICE", "110"))
 
 def save_bms_watches(watches_dict):
     """Saves the checker's working copy WITHOUT touching watches.json."""
@@ -716,7 +718,18 @@ def resolve_region(slug):
 # BMS API
 # ======================================================================
 
-def fetch_bms(
+_FETCH_CACHE = {}
+
+def fetch_bms(event_code, date_code, region_code, region_slug, lat, lon, geohash, show_name, max_retries=3):
+    key = (event_code, date_code or "", region_code)
+    if key in _FETCH_CACHE:
+        print(f"  ♻️ Cache hit for {event_code} {date_code or '(default)'} (saved 1 API call)")
+        return _FETCH_CACHE[key]
+    data = _fetch_bms_uncached(event_code, date_code, region_code, region_slug, lat, lon, geohash, show_name, max_retries)
+    _FETCH_CACHE[key] = data   # cache None too (a failed or not-open result)
+    return data
+
+def _fetch_bms_uncached(
     event_code,
     date_code,
     region_code,
@@ -1468,6 +1481,10 @@ def parse_price(price_val):
     except Exception:
         return 0.0
 
+def is_budget_price(price_val):
+    p = parse_price(price_val)
+    return 0 < p <= BUDGET_MAX_PRICE
+
 def format_date(date_str):
     try:
         dt = datetime.strptime(str(date_str), "%Y%m%d")
@@ -1586,6 +1603,7 @@ def send_removed_shows_telegram(
     watch_name,
     removed_shows,
     movie_info,
+    notify=True,
 ):
     if not TELEGRAM_BOT_TOKEN or not GROUP_CHAT_ID:
         print(
@@ -1835,8 +1853,8 @@ def send_removed_shows_telegram(
                     "text": chunk,
                     "parse_mode": "HTML",
                     "disable_web_page_preview": True,
-                    "disable_notification": False,
-                }
+                    "disable_notification": not notify,
+                                                    }
 
                 # IMPORTANT:
                 # Send to the SAME forum topic as normal alerts.
@@ -1930,7 +1948,7 @@ def send_removed_shows_telegram(
         )
 
 
-def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
+def send_telegram(threadid, watch_name, subject, changes, shows, movie_info, notify=True):
     if not TELEGRAM_BOT_TOKEN or not GROUP_CHAT_ID:
         print("  ⚠️ Telegram skipped — TELEGRAM_BOT_TOKEN or GROUP_CHAT_ID not configured.")
         return
@@ -2137,8 +2155,7 @@ def send_telegram(threadid, watch_name, subject, changes, shows, movie_info):
                     "text": chunk,
                     "parse_mode": "HTML",
                     "disable_web_page_preview": True,
-                    "disable_notification": False, 
-                }
+                    "disable_notification": not notify,                }
                 if threadid:
                     payload["message_thread_id"] = threadid
 
@@ -2210,6 +2227,7 @@ def run_event(
     date_time_map,   # <--- ADD THIS HERE
     state,
     req_languages=None,  # <--- ADD THIS LINE HERE
+        budget_only=False,
     save_raw_prefix=None,
         thread_factory=None,   # <-- NEW
 
@@ -2574,6 +2592,16 @@ def run_event(
                     f"{old_show.get('venue', 'Unknown')} "
                     f"{old_show.get('time', '')}"
                 )
+                has_budget = any(
+                    is_budget_price(c.get("price"))
+                    for c in old_shows.values()
+                    if (
+                        str(c.get("date", "")),
+                        str(c.get("venue", "")),
+                        str(c.get("vcode", "")),
+                        str(c.get("sid", "")),
+                    ) == physical_key
+                )
 
                 # One physical show only.
                 removed_shows.append({
@@ -2583,6 +2611,7 @@ def run_event(
                     "screen": old_show.get("screen", ""),
                     "vcode": old_show.get("vcode", ""),
                     "sid": old_show.get("sid", ""),
+                     "has_budget": has_budget,
                 })
 
                 # Remove ALL category entries belonging to this
@@ -2645,17 +2674,33 @@ def run_event(
         if threadid is None and thread_factory:
             threadid = thread_factory()
 
+        removed_notify = (not budget_only) or any(
+            s.get("has_budget") for s in removed_shows
+        )
+
         send_removed_shows_telegram(
             threadid,
             alert_label,
             removed_shows,
             movie_info,
+            notify=removed_notify,
+
         )
 
     changes = detect_changes(
         old_watch_state,
         new_watch_state,
     )
+
+    if budget_only:
+        # Budget ON: buzz only if a budget-priced category changed
+        notify = any(
+            is_budget_price(c.get("price")) or is_budget_price(c.get("old_price"))
+            for c in changes
+        )
+    else:
+        # Budget OFF: buzz for everything
+        notify = bool(changes)
 
     state[label] = new_watch_state
 
@@ -2694,9 +2739,12 @@ def run_event(
                         changes,
                         filtered,
                         movie_info,
+                                    notify=notify,
+
         )
 
-        send_ntfy(label, movie_info, changes)
+        if notify:
+            send_ntfy(label, movie_info, changes)
 
         # --- NEW DISCORD INSTANT PING ---
         # if DISCORD_WEBHOOK_URL:
@@ -2886,6 +2934,7 @@ def run_watch(
         date_time_map=watch.get("date_time_map", {}),  # <--- ADD THIS HERE
         state=state,
         req_languages=watch.get("languages", []), # <--- ADD THIS
+                budget_only=watch.get("budget_only", False),
         save_raw_prefix=(
             f"bms_response_{watch_name}"
         ),
@@ -3122,6 +3171,7 @@ def run_watch(
                     date_time_map=watch.get("date_time_map", {}),  # <--- ADD THIS HERE
                     state=state,
                     req_languages=watch.get("languages", []), # <--- ADD THIS
+                            budget_only=watch.get("budget_only", False),
                     save_raw_prefix=(
                         f"bms_response_{variant_name}"
                     ),
