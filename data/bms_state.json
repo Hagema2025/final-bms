@@ -133,30 +133,6 @@
         "sid": "241377",
         "missing_count": 0
       },
-      "PVHR|44223|20261025|PRIME": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "03:55 PM",
-        "date": "20261025",
-        "cat": "PRIME",
-        "price": "183.80",
-        "status": "1",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "44223",
-        "missing_count": 0
-      },
-      "PVHR|44223|20261025|CLASSIC": {
-        "venue": "PVR: Heritage RSL ECR, Chennai",
-        "time": "03:55 PM",
-        "date": "20261025",
-        "cat": "CLASSIC",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "PVHR",
-        "sid": "44223",
-        "missing_count": 0
-      },
       "MCSK|16712|20261025|SPECIAL": {
         "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
         "time": "10:30 PM",
