@@ -42,5 +42,46 @@
     "summary_msg_id": 1752,
     "status_msg_id": 1753,
     "budget_only": false
+  },
+  "20261026002416": {
+    "name": "418_20261026002416",
+    "url": "https://in.bookmyshow.com/movies/chennai/418/ET00509047",
+    "dates": {
+      "20261026": [
+        "night"
+      ],
+      "20261027": [
+        "night"
+      ],
+      "20261028": [
+        "night"
+      ],
+      "20261029": [
+        "night"
+      ],
+      "20261030": [
+        "night"
+      ],
+      "20261031": [],
+      "20261101": []
+    },
+    "theatre": [
+      "AGS Cinemas OMR: Navlur",
+      "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+      "INOX: The Marina Mall, OMR",
+      "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
+      "Rakki Cinemas: OMR, Kelambakkam"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "English",
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1758,
+    "summary_msg_id": 1760,
+    "status_msg_id": 1761,
+    "budget_only": true
   }
 }
