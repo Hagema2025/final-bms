@@ -1,66 +1,6 @@
 {
   "418_20261026002416 (Tamil 2D)": {
     "shows": {
-      "RAKK|5133|20261026|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "10:20 PM",
-        "date": "20261026",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "3",
-        "screen": "SCREEN 5",
-        "vcode": "RAKK",
-        "sid": "5133",
-        "missing_count": 0
-      },
-      "RAKK|5133|20261026|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "10:20 PM",
-        "date": "20261026",
-        "cat": "Elite",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 5",
-        "vcode": "RAKK",
-        "sid": "5133",
-        "missing_count": 0
-      },
-      "RAKK|5133|20261026|LOUNGER": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "10:20 PM",
-        "date": "20261026",
-        "cat": "LOUNGER",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 5",
-        "vcode": "RAKK",
-        "sid": "5133",
-        "missing_count": 0
-      },
-      "MCSK|16735|20261026|SPECIAL": {
-        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
-        "time": "10:20 PM",
-        "date": "20261026",
-        "cat": "SPECIAL",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "MCSK",
-        "sid": "16735",
-        "missing_count": 0
-      },
-      "MCSK|16735|20261026|EXECUTIVE": {
-        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
-        "time": "10:20 PM",
-        "date": "20261026",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "MCSK",
-        "sid": "16735",
-        "missing_count": 0
-      },
       "RAKK|5140|20261027|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "10:20 PM",
