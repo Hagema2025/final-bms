@@ -73,6 +73,30 @@
         "sid": "5148",
         "missing_count": 0
       },
+      "ACON|48398|20261028|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:45 PM",
+        "date": "20261028",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "48398",
+        "missing_count": 0
+      },
+      "ACON|48398|20261028|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:45 PM",
+        "date": "20261028",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "48398",
+        "missing_count": 0
+      },
       "MCSK|16767|20261028|SPECIAL": {
         "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
         "time": "10:20 PM",
@@ -131,6 +155,54 @@
         "screen": "SCREEN 5",
         "vcode": "RAKK",
         "sid": "5167",
+        "missing_count": 0
+      },
+      "ACON|48401|20261029|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "07:30 PM",
+        "date": "20261029",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "48401",
+        "missing_count": 0
+      },
+      "ACON|48401|20261029|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "07:30 PM",
+        "date": "20261029",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "48401",
+        "missing_count": 0
+      },
+      "ACON|48402|20261029|DIAMOND": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:45 PM",
+        "date": "20261029",
+        "cat": "DIAMOND",
+        "price": "183.00",
+        "status": "3",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "48402",
+        "missing_count": 0
+      },
+      "ACON|48402|20261029|PEARL": {
+        "venue": "AGS Cinemas OMR: Navlur",
+        "time": "10:45 PM",
+        "date": "20261029",
+        "cat": "PEARL",
+        "price": "54.00",
+        "status": "0",
+        "screen": "4K DOLBY 7.1",
+        "vcode": "ACON",
+        "sid": "48402",
         "missing_count": 0
       },
       "MCSK|16784|20261029|SPECIAL": {
