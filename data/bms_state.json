@@ -1,42 +1,6 @@
 {
   "418_20261026002416 (Tamil 2D)": {
     "shows": {
-      "RAKK|5148|20261028|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "10:20 PM",
-        "date": "20261028",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "3",
-        "screen": "SCREEN 5",
-        "vcode": "RAKK",
-        "sid": "5148",
-        "missing_count": 0
-      },
-      "RAKK|5148|20261028|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "10:20 PM",
-        "date": "20261028",
-        "cat": "Elite",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 5",
-        "vcode": "RAKK",
-        "sid": "5148",
-        "missing_count": 0
-      },
-      "RAKK|5148|20261028|LOUNGER": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "10:20 PM",
-        "date": "20261028",
-        "cat": "LOUNGER",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 5",
-        "vcode": "RAKK",
-        "sid": "5148",
-        "missing_count": 0
-      },
       "ACON|48398|20261028|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
         "time": "10:45 PM",
@@ -59,30 +23,6 @@
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
         "sid": "48398",
-        "missing_count": 0
-      },
-      "MCSK|16767|20261028|SPECIAL": {
-        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
-        "time": "10:20 PM",
-        "date": "20261028",
-        "cat": "SPECIAL",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "MCSK",
-        "sid": "16767",
-        "missing_count": 0
-      },
-      "MCSK|16767|20261028|EXECUTIVE": {
-        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
-        "time": "10:20 PM",
-        "date": "20261028",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "MCSK",
-        "sid": "16767",
         "missing_count": 0
       },
       "RAKK|5167|20261029|Premium": {
