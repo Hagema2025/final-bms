@@ -1,42 +1,6 @@
 {
   "418_20261026002416 (Tamil 2D)": {
     "shows": {
-      "RAKK|5147|20261028|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "07:00 PM",
-        "date": "20261028",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "3",
-        "screen": "SCREEN 5",
-        "vcode": "RAKK",
-        "sid": "5147",
-        "missing_count": 0
-      },
-      "RAKK|5147|20261028|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "07:00 PM",
-        "date": "20261028",
-        "cat": "Elite",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 5",
-        "vcode": "RAKK",
-        "sid": "5147",
-        "missing_count": 0
-      },
-      "RAKK|5147|20261028|LOUNGER": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "07:00 PM",
-        "date": "20261028",
-        "cat": "LOUNGER",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 5",
-        "vcode": "RAKK",
-        "sid": "5147",
-        "missing_count": 0
-      },
       "RAKK|5148|20261028|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "10:20 PM",
@@ -78,7 +42,7 @@
         "time": "10:45 PM",
         "date": "20261028",
         "cat": "DIAMOND",
-        "price": "183.00",
+        "price": "150.00",
         "status": "3",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
@@ -162,7 +126,7 @@
         "time": "07:30 PM",
         "date": "20261029",
         "cat": "DIAMOND",
-        "price": "183.00",
+        "price": "150.00",
         "status": "3",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
@@ -186,7 +150,7 @@
         "time": "10:45 PM",
         "date": "20261029",
         "cat": "DIAMOND",
-        "price": "183.00",
+        "price": "150.00",
         "status": "3",
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
