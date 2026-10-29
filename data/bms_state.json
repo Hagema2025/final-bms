@@ -1,30 +1,6 @@
 {
   "418_20261026002416 (Tamil 2D)": {
     "shows": {
-      "ACON|48402|20261029|DIAMOND": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "11:00 PM",
-        "date": "20261029",
-        "cat": "DIAMOND",
-        "price": "150.00",
-        "status": "3",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "48402",
-        "missing_count": 0
-      },
-      "ACON|48402|20261029|PEARL": {
-        "venue": "AGS Cinemas OMR: Navlur",
-        "time": "11:00 PM",
-        "date": "20261029",
-        "cat": "PEARL",
-        "price": "54.00",
-        "status": "0",
-        "screen": "4K DOLBY 7.1",
-        "vcode": "ACON",
-        "sid": "48402",
-        "missing_count": 0
-      },
       "MCSK|16793|20261030|SPECIAL": {
         "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
         "time": "10:15 PM",
