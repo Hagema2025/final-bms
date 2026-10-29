@@ -109,6 +109,30 @@
         "sid": "16784",
         "missing_count": 0
       },
+      "RAKK|5227|20261030|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:00 PM",
+        "date": "20261030",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 2",
+        "vcode": "RAKK",
+        "sid": "5227",
+        "missing_count": 0
+      },
+      "RAKK|5227|20261030|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "07:00 PM",
+        "date": "20261030",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 2",
+        "vcode": "RAKK",
+        "sid": "5227",
+        "missing_count": 0
+      },
       "MCSK|16793|20261030|SPECIAL": {
         "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
         "time": "10:15 PM",
