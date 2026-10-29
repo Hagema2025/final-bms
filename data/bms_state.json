@@ -37,6 +37,30 @@
         "sid": "5167",
         "missing_count": 0
       },
+      "MCSK|16784|20261029|SPECIAL": {
+        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
+        "time": "10:20 PM",
+        "date": "20261029",
+        "cat": "SPECIAL",
+        "price": "54.35",
+        "status": "0",
+        "screen": "",
+        "vcode": "MCSK",
+        "sid": "16784",
+        "missing_count": 0
+      },
+      "MCSK|16784|20261029|EXECUTIVE": {
+        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
+        "time": "10:20 PM",
+        "date": "20261029",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "MCSK",
+        "sid": "16784",
+        "missing_count": 0
+      },
       "ACON|48401|20261029|DIAMOND": {
         "venue": "AGS Cinemas OMR: Navlur",
         "time": "07:30 PM",
@@ -83,30 +107,6 @@
         "screen": "4K DOLBY 7.1",
         "vcode": "ACON",
         "sid": "48402",
-        "missing_count": 0
-      },
-      "MCSK|16784|20261029|SPECIAL": {
-        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
-        "time": "10:20 PM",
-        "date": "20261029",
-        "cat": "SPECIAL",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "MCSK",
-        "sid": "16784",
-        "missing_count": 0
-      },
-      "MCSK|16784|20261029|EXECUTIVE": {
-        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
-        "time": "10:20 PM",
-        "date": "20261029",
-        "cat": "EXECUTIVE",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "MCSK",
-        "sid": "16784",
         "missing_count": 0
       },
       "RAKK|5227|20261030|Premium": {
