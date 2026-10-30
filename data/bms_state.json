@@ -243,13 +243,13 @@
       }
     },
     "dates": {
-      "20261030": "AVAILABLE",
       "20261031": "AVAILABLE",
       "20261101": "BOOKABLE",
       "20261102": "AVAILABLE",
       "20261103": "NOT_OPEN",
       "20261104": "NOT_OPEN",
-      "20261105": "NOT_OPEN"
+      "20261105": "NOT_OPEN",
+      "20261106": "NOT_OPEN"
     }
   }
 }
