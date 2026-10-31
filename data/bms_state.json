@@ -155,7 +155,7 @@
         "screen": "SCREEN 5",
         "vcode": "RAKK",
         "sid": "5260",
-        "missing_count": 1
+        "missing_count": 2
       },
       "RAKK|5260|20261101|Elite": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
@@ -167,7 +167,7 @@
         "screen": "SCREEN 5",
         "vcode": "RAKK",
         "sid": "5260",
-        "missing_count": 1
+        "missing_count": 2
       },
       "RAKK|5260|20261101|LOUNGER": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
@@ -179,7 +179,7 @@
         "screen": "SCREEN 5",
         "vcode": "RAKK",
         "sid": "5260",
-        "missing_count": 1
+        "missing_count": 2
       }
     },
     "dates": {
