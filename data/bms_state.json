@@ -1,42 +1,6 @@
 {
   "418_20261026002416 (Tamil 2D)": {
     "shows": {
-      "RAKK|5238|20261031|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "12:00 PM",
-        "date": "20261031",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "3",
-        "screen": "SCREEN 6",
-        "vcode": "RAKK",
-        "sid": "5238",
-        "missing_count": 0
-      },
-      "RAKK|5238|20261031|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "12:00 PM",
-        "date": "20261031",
-        "cat": "Elite",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 6",
-        "vcode": "RAKK",
-        "sid": "5238",
-        "missing_count": 0
-      },
-      "RAKK|5238|20261031|LOUNGER": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "12:00 PM",
-        "date": "20261031",
-        "cat": "LOUNGER",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 6",
-        "vcode": "RAKK",
-        "sid": "5238",
-        "missing_count": 0
-      },
       "RAKK|5243|20261031|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "06:50 PM",
@@ -222,8 +186,8 @@
       "20261031": "AVAILABLE",
       "20261101": "BOOKABLE",
       "20261102": "AVAILABLE",
-      "20261103": "NOT_OPEN",
-      "20261104": "NOT_OPEN",
+      "20261103": "AVAILABLE",
+      "20261104": "AVAILABLE",
       "20261105": "NOT_OPEN",
       "20261106": "NOT_OPEN"
     }
