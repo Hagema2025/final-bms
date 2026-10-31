@@ -1,78 +1,6 @@
 {
   "418_20261026002416 (Tamil 2D)": {
     "shows": {
-      "RAKK|5243|20261031|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "06:50 PM",
-        "date": "20261031",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "3",
-        "screen": "SCREEN 6",
-        "vcode": "RAKK",
-        "sid": "5243",
-        "missing_count": 0
-      },
-      "RAKK|5243|20261031|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "06:50 PM",
-        "date": "20261031",
-        "cat": "Elite",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 6",
-        "vcode": "RAKK",
-        "sid": "5243",
-        "missing_count": 0
-      },
-      "RAKK|5243|20261031|LOUNGER": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "06:50 PM",
-        "date": "20261031",
-        "cat": "LOUNGER",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 6",
-        "vcode": "RAKK",
-        "sid": "5243",
-        "missing_count": 0
-      },
-      "RAKK|5255|20261031|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "10:00 PM",
-        "date": "20261031",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "3",
-        "screen": "SCREEN 6",
-        "vcode": "RAKK",
-        "sid": "5255",
-        "missing_count": 0
-      },
-      "RAKK|5255|20261031|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "10:00 PM",
-        "date": "20261031",
-        "cat": "Elite",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 6",
-        "vcode": "RAKK",
-        "sid": "5255",
-        "missing_count": 0
-      },
-      "RAKK|5255|20261031|LOUNGER": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "10:00 PM",
-        "date": "20261031",
-        "cat": "LOUNGER",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 6",
-        "vcode": "RAKK",
-        "sid": "5255",
-        "missing_count": 0
-      },
       "MCSK|16815|20261031|SPECIAL": {
         "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
         "time": "10:15 PM",
@@ -252,6 +180,78 @@
         "vcode": "MCSK",
         "sid": "16842",
         "missing_count": 0
+      },
+      "RAKK|5243|20261031|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "06:50 PM",
+        "date": "20261031",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 6",
+        "vcode": "RAKK",
+        "sid": "5243",
+        "missing_count": 1
+      },
+      "RAKK|5243|20261031|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "06:50 PM",
+        "date": "20261031",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 6",
+        "vcode": "RAKK",
+        "sid": "5243",
+        "missing_count": 1
+      },
+      "RAKK|5243|20261031|LOUNGER": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "06:50 PM",
+        "date": "20261031",
+        "cat": "LOUNGER",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 6",
+        "vcode": "RAKK",
+        "sid": "5243",
+        "missing_count": 1
+      },
+      "RAKK|5255|20261031|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:00 PM",
+        "date": "20261031",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 6",
+        "vcode": "RAKK",
+        "sid": "5255",
+        "missing_count": 1
+      },
+      "RAKK|5255|20261031|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:00 PM",
+        "date": "20261031",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 6",
+        "vcode": "RAKK",
+        "sid": "5255",
+        "missing_count": 1
+      },
+      "RAKK|5255|20261031|LOUNGER": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "10:00 PM",
+        "date": "20261031",
+        "cat": "LOUNGER",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 6",
+        "vcode": "RAKK",
+        "sid": "5255",
+        "missing_count": 1
       }
     },
     "dates": {
