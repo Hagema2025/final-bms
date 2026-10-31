@@ -1,6 +1,30 @@
 {
   "418_20261026002416 (Tamil 2D)": {
     "shows": {
+      "MCSK|16815|20261031|SPECIAL": {
+        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
+        "time": "10:15 PM",
+        "date": "20261031",
+        "cat": "SPECIAL",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "MCSK",
+        "sid": "16815",
+        "missing_count": 0
+      },
+      "MCSK|16815|20261031|EXECUTIVE": {
+        "venue": "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
+        "time": "10:15 PM",
+        "date": "20261031",
+        "cat": "EXECUTIVE",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "MCSK",
+        "sid": "16815",
+        "missing_count": 0
+      },
       "RAKK|5250|20261101|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "12:00 PM",
@@ -37,45 +61,45 @@
         "sid": "5250",
         "missing_count": 0
       },
-      "RAKK|5252|20261101|Premium": {
+      "RAKK|5260|20261101|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "06:50 PM",
+        "time": "03:00 PM",
         "date": "20261101",
         "cat": "Premium",
         "price": "190.00",
         "status": "3",
-        "screen": "SCREEN 6",
+        "screen": "SCREEN 5",
         "vcode": "RAKK",
-        "sid": "5252",
+        "sid": "5260",
         "missing_count": 0
       },
-      "RAKK|5252|20261101|Elite": {
+      "RAKK|5260|20261101|Elite": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "06:50 PM",
+        "time": "03:00 PM",
         "date": "20261101",
         "cat": "Elite",
         "price": "150.00",
         "status": "3",
-        "screen": "SCREEN 6",
+        "screen": "SCREEN 5",
         "vcode": "RAKK",
-        "sid": "5252",
+        "sid": "5260",
         "missing_count": 0
       },
-      "RAKK|5252|20261101|LOUNGER": {
+      "RAKK|5260|20261101|LOUNGER": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "06:50 PM",
+        "time": "03:00 PM",
         "date": "20261101",
         "cat": "LOUNGER",
         "price": "150.00",
         "status": "3",
-        "screen": "SCREEN 6",
+        "screen": "SCREEN 5",
         "vcode": "RAKK",
-        "sid": "5252",
+        "sid": "5260",
         "missing_count": 0
       },
       "RAKK|5256|20261101|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "10:00 PM",
+        "time": "10:15 PM",
         "date": "20261101",
         "cat": "Premium",
         "price": "190.00",
@@ -87,7 +111,7 @@
       },
       "RAKK|5256|20261101|Elite": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "10:00 PM",
+        "time": "10:15 PM",
         "date": "20261101",
         "cat": "Elite",
         "price": "150.00",
@@ -99,7 +123,7 @@
       },
       "RAKK|5256|20261101|LOUNGER": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "10:00 PM",
+        "time": "10:15 PM",
         "date": "20261101",
         "cat": "LOUNGER",
         "price": "150.00",
@@ -156,6 +180,42 @@
         "vcode": "MCSK",
         "sid": "16842",
         "missing_count": 0
+      },
+      "RAKK|5252|20261101|Premium": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "06:50 PM",
+        "date": "20261101",
+        "cat": "Premium",
+        "price": "190.00",
+        "status": "3",
+        "screen": "SCREEN 6",
+        "vcode": "RAKK",
+        "sid": "5252",
+        "missing_count": 1
+      },
+      "RAKK|5252|20261101|Elite": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "06:50 PM",
+        "date": "20261101",
+        "cat": "Elite",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 6",
+        "vcode": "RAKK",
+        "sid": "5252",
+        "missing_count": 1
+      },
+      "RAKK|5252|20261101|LOUNGER": {
+        "venue": "Rakki Cinemas: OMR, Kelambakkam",
+        "time": "06:50 PM",
+        "date": "20261101",
+        "cat": "LOUNGER",
+        "price": "150.00",
+        "status": "3",
+        "screen": "SCREEN 6",
+        "vcode": "RAKK",
+        "sid": "5252",
+        "missing_count": 1
       }
     },
     "dates": {
