@@ -83,5 +83,30 @@
     "summary_msg_id": 1760,
     "status_msg_id": 1761,
     "budget_only": true
+  },
+  "20261101045253": {
+    "name": "SceneTamil_20261101045253",
+    "url": "https://in.bookmyshow.com/movies/chennai/scene-tamil/ET00516631",
+    "dates": {
+      "20261106": [
+        "night"
+      ],
+      "20261107": [],
+      "20261108": []
+    },
+    "theatre": [
+      "INOX: The Marina Mall, OMR"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "English",
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1793,
+    "summary_msg_id": 1795,
+    "status_msg_id": 1796,
+    "budget_only": true
   }
 }
