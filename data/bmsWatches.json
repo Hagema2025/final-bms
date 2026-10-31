@@ -108,5 +108,95 @@
     "topic_titles": {
       "1758": "418 (Tamil 2D)"
     }
+  },
+  "20261101045253": {
+    "name": "SceneTamil_20261101045253",
+    "url": "https://in.bookmyshow.com/movies/chennai/scene-tamil/ET00516631",
+    "dates": [
+      "20261106",
+      "20261107",
+      "20261108"
+    ],
+    "theatre": [
+      "inox: the marina mall, omr"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "english",
+      "tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1793,
+    "summary_msg_id": 1795,
+    "status_msg_id": 1796,
+    "budget_only": true,
+    "date_time_map": {
+      "20261106": [
+        "night"
+      ],
+      "20261107": [],
+      "20261108": []
+    }
+  },
+  "20261101045416": {
+    "name": "MookuthiAmman2Tamil_20261101045416",
+    "url": "https://in.bookmyshow.com/movies/chennai/mookuthi-amman-2-tamil/ET00517348",
+    "dates": [
+      "20261106",
+      "20261107",
+      "20261108"
+    ],
+    "theatre": [
+      "inox: the marina mall, omr"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "english",
+      "tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1799,
+    "summary_msg_id": 1801,
+    "status_msg_id": 1802,
+    "budget_only": true,
+    "date_time_map": {
+      "20261106": [
+        "night"
+      ],
+      "20261107": [],
+      "20261108": []
+    }
+  },
+  "20261101045524": {
+    "name": "AppakuttyTamil_20261101045524",
+    "url": "https://in.bookmyshow.com/movies/chennai/appakutty-tamil/ET00518647",
+    "dates": [
+      "20261106",
+      "20261107",
+      "20261108"
+    ],
+    "theatre": [
+      "inox: the marina mall, omr"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "english",
+      "tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1805,
+    "summary_msg_id": 1807,
+    "status_msg_id": 1808,
+    "budget_only": true,
+    "date_time_map": {
+      "20261106": [
+        "night"
+      ],
+      "20261107": [],
+      "20261108": []
+    }
   }
 }
