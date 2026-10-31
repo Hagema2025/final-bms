@@ -108,5 +108,30 @@
     "summary_msg_id": 1795,
     "status_msg_id": 1796,
     "budget_only": true
+  },
+  "20261101045416": {
+    "name": "MookuthiAmman2Tamil_20261101045416",
+    "url": "https://in.bookmyshow.com/movies/chennai/mookuthi-amman-2-tamil/ET00517348",
+    "dates": {
+      "20261106": [
+        "night"
+      ],
+      "20261107": [],
+      "20261108": []
+    },
+    "theatre": [
+      "INOX: The Marina Mall, OMR"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "English",
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 1799,
+    "summary_msg_id": 1801,
+    "status_msg_id": 1802,
+    "budget_only": true
   }
 }
