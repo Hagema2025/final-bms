@@ -1,42 +1,6 @@
 {
   "418_20261026002416 (Tamil 2D)": {
     "shows": {
-      "RAKK|5250|20261101|Premium": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "12:00 PM",
-        "date": "20261101",
-        "cat": "Premium",
-        "price": "190.00",
-        "status": "2",
-        "screen": "SCREEN 6",
-        "vcode": "RAKK",
-        "sid": "5250",
-        "missing_count": 0
-      },
-      "RAKK|5250|20261101|Elite": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "12:00 PM",
-        "date": "20261101",
-        "cat": "Elite",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 6",
-        "vcode": "RAKK",
-        "sid": "5250",
-        "missing_count": 0
-      },
-      "RAKK|5250|20261101|LOUNGER": {
-        "venue": "Rakki Cinemas: OMR, Kelambakkam",
-        "time": "12:00 PM",
-        "date": "20261101",
-        "cat": "LOUNGER",
-        "price": "150.00",
-        "status": "3",
-        "screen": "SCREEN 6",
-        "vcode": "RAKK",
-        "sid": "5250",
-        "missing_count": 0
-      },
       "RAKK|5256|20261101|Premium": {
         "venue": "Rakki Cinemas: OMR, Kelambakkam",
         "time": "10:15 PM",
