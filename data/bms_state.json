@@ -1,6 +1,79 @@
 {
   "MookuthiAmman2_20261101045416 (Tamil 2D)": {
-    "shows": {},
+    "shows": {
+      "INTO|92593|20261107|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:35 AM",
+        "date": "20261107",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92593",
+        "missing_count": 0
+      },
+      "INTO|92593|20261107|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:35 AM",
+        "date": "20261107",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92593",
+        "missing_count": 0
+      },
+      "INTO|92595|20261107|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:30 PM",
+        "date": "20261107",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92595",
+        "missing_count": 0
+      },
+      "INTO|92595|20261107|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:30 PM",
+        "date": "20261107",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92595",
+        "missing_count": 0
+      },
+      "INTO|92597|20261107|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:50 PM",
+        "date": "20261107",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92597",
+        "missing_count": 0
+      },
+      "INTO|92597|20261107|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:50 PM",
+        "date": "20261107",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92597",
+        "missing_count": 0
+      }
+    },
     "dates": {
       "20261106": "AVAILABLE",
       "20261107": "AVAILABLE",
