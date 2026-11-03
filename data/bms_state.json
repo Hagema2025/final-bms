@@ -1,6 +1,30 @@
 {
   "MookuthiAmman2_20261101045416 (Tamil 2D)": {
     "shows": {
+      "INTO|92575|20261106|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:50 PM",
+        "date": "20261106",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92575",
+        "missing_count": 0
+      },
+      "INTO|92575|20261106|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:50 PM",
+        "date": "20261106",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92575",
+        "missing_count": 0
+      },
       "INTO|92593|20261107|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "09:35 AM",
@@ -72,6 +96,78 @@
         "vcode": "INTO",
         "sid": "92597",
         "missing_count": 0
+      },
+      "INTO|92598|20261108|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:35 AM",
+        "date": "20261108",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92598",
+        "missing_count": 0
+      },
+      "INTO|92598|20261108|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:35 AM",
+        "date": "20261108",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92598",
+        "missing_count": 0
+      },
+      "INTO|92600|20261108|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:30 PM",
+        "date": "20261108",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92600",
+        "missing_count": 0
+      },
+      "INTO|92600|20261108|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:30 PM",
+        "date": "20261108",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92600",
+        "missing_count": 0
+      },
+      "INTO|92602|20261108|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:50 PM",
+        "date": "20261108",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92602",
+        "missing_count": 0
+      },
+      "INTO|92602|20261108|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "10:50 PM",
+        "date": "20261108",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92602",
+        "missing_count": 0
       }
     },
     "dates": {
@@ -85,7 +181,56 @@
     }
   },
   "Scene_20261101045253 (Tamil 2D)": {
-    "shows": {},
+    "shows": {
+      "INTO|92608|20261107|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:45 AM",
+        "date": "20261107",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92608",
+        "missing_count": 0
+      },
+      "INTO|92608|20261107|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:45 AM",
+        "date": "20261107",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92608",
+        "missing_count": 0
+      },
+      "INTO|92613|20261108|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:45 AM",
+        "date": "20261108",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92613",
+        "missing_count": 0
+      },
+      "INTO|92613|20261108|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:45 AM",
+        "date": "20261108",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92613",
+        "missing_count": 0
+      }
+    },
     "dates": {
       "20261106": "AVAILABLE",
       "20261107": "AVAILABLE",
