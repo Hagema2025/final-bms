@@ -111,7 +111,7 @@
     "expired_notified": true
   },
   "20261101045253": {
-    "name": "SceneTamil_20261101045253",
+    "name": "Scene_20261101045253 (Tamil 2D)",
     "url": "https://in.bookmyshow.com/movies/chennai/scene-tamil/ET00516631",
     "dates": [
       "20261106",
@@ -138,6 +138,9 @@
       ],
       "20261107": [],
       "20261108": []
+    },
+    "topic_titles": {
+      "1793": "SceneTamil (Tamil 2D)"
     }
   },
   "20261101045416": {
