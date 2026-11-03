@@ -22,5 +22,17 @@
       "20261111": "AVAILABLE",
       "20261112": "AVAILABLE"
     }
+  },
+  "Scene_20261101045253 (Tamil 2D) (Tamil EPIQ)": {
+    "shows": {},
+    "dates": {
+      "20261106": "BOOKABLE",
+      "20261107": "NOT_OPEN",
+      "20261108": "NOT_OPEN",
+      "20261109": "NOT_OPEN",
+      "20261110": "NOT_OPEN",
+      "20261111": "NOT_OPEN",
+      "20261112": "NOT_OPEN"
+    }
   }
 }
