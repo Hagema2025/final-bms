@@ -566,6 +566,30 @@
         "sid": "92577",
         "missing_count": 0
       },
+      "INTO|92781|20261106|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:50 PM",
+        "date": "20261106",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92781",
+        "missing_count": 0
+      },
+      "INTO|92781|20261106|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "09:50 PM",
+        "date": "20261106",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "92781",
+        "missing_count": 0
+      },
       "INTO|92779|20261106|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "11:45 PM",
