@@ -536,7 +536,7 @@
         "date": "20261108",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "INTO",
         "sid": "92788",
@@ -799,7 +799,7 @@
       "20261107": "AVAILABLE",
       "20261108": "BOOKABLE",
       "20261109": "AVAILABLE",
-      "20261110": "NOT_OPEN",
+      "20261110": "AVAILABLE",
       "20261111": "NOT_OPEN",
       "20261112": "NOT_OPEN",
       "20261113": "NOT_OPEN"
