@@ -1,37 +1,13 @@
 {
   "MookuthiAmman2_20261101045416 (Tamil 2D)": {
     "shows": {
-      "INTO|92669|20261107|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "07:30 PM",
-        "date": "20261107",
-        "cat": "CLUB",
-        "price": "183.80",
-        "status": "1",
-        "screen": "Atmos",
-        "vcode": "INTO",
-        "sid": "92669",
-        "missing_count": 0
-      },
-      "INTO|92669|20261107|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "07:30 PM",
-        "date": "20261107",
-        "cat": "EXECUTIVE",
-        "price": "54.35",
-        "status": "1",
-        "screen": "Atmos",
-        "vcode": "INTO",
-        "sid": "92669",
-        "missing_count": 0
-      },
       "INTO|92597|20261107|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "10:50 PM",
         "date": "20261107",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "INTO",
         "sid": "92597",
@@ -247,7 +223,7 @@
         "date": "20261108",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "INTO",
         "sid": "92602",
@@ -332,7 +308,7 @@
         "date": "20261107",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "1",
+        "status": "2",
         "screen": "",
         "vcode": "INTO",
         "sid": "92625",
