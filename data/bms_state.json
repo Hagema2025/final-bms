@@ -446,30 +446,6 @@
   },
   "Scene_20261101045253 (Tamil 2D)": {
     "shows": {
-      "INTO|92699|20261107|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "06:15 AM",
-        "date": "20261107",
-        "cat": "CLUB",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "92699",
-        "missing_count": 0
-      },
-      "INTO|92699|20261107|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "06:15 AM",
-        "date": "20261107",
-        "cat": "EXECUTIVE",
-        "price": "54.35",
-        "status": "0",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "92699",
-        "missing_count": 0
-      },
       "INTO|92651|20261107|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "09:00 AM",
