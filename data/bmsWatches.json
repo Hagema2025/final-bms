@@ -175,35 +175,5 @@
     "topic_titles": {
       "1799": "MookuthiAmman2 (Tamil 2D)"
     }
-  },
-  "20261101045524": {
-    "name": "AppakuttyTamil_20261101045524",
-    "url": "https://in.bookmyshow.com/movies/chennai/appakutty-tamil/ET00518647",
-    "dates": [
-      "20261106",
-      "20261107",
-      "20261108"
-    ],
-    "theatre": [
-      "inox: the marina mall, omr"
-    ],
-    "time_period": [],
-    "discover_variants": true,
-    "languages": [
-      "english",
-      "tamil"
-    ],
-    "formats": [],
-    "message_thread_id": 1805,
-    "summary_msg_id": 1807,
-    "status_msg_id": 1808,
-    "budget_only": true,
-    "date_time_map": {
-      "20261106": [
-        "night"
-      ],
-      "20261107": [],
-      "20261108": []
-    }
   }
 }
