@@ -79,7 +79,7 @@
         "date": "20261108",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "3",
+        "status": "2",
         "screen": "Atmos",
         "vcode": "INTO",
         "sid": "92671",
@@ -404,7 +404,7 @@
         "date": "20261108",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "INTO",
         "sid": "92788",
@@ -679,8 +679,8 @@
       "20261108": "BOOKABLE",
       "20261109": "AVAILABLE",
       "20261110": "AVAILABLE",
-      "20261111": "NOT_OPEN",
-      "20261112": "NOT_OPEN",
+      "20261111": "AVAILABLE",
+      "20261112": "AVAILABLE",
       "20261113": "NOT_OPEN",
       "20261114": "NOT_OPEN"
     }
