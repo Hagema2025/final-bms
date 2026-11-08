@@ -332,7 +332,7 @@
         "date": "20261108",
         "cat": "CLUB",
         "price": "183.80",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "INTO",
         "sid": "92790",
@@ -381,8 +381,8 @@
       "20261110": "AVAILABLE",
       "20261111": "AVAILABLE",
       "20261112": "AVAILABLE",
-      "20261113": "NOT_OPEN",
-      "20261114": "NOT_OPEN"
+      "20261114": "AVAILABLE",
+      "20261115": "AVAILABLE"
     }
   },
   "Scene_20261101045253 (Tamil 2D) (Tamil EPIQ)": {
