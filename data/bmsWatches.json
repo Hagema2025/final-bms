@@ -204,47 +204,74 @@
       "2039": "OmOperationMole (Tamil 2D)"
     }
   },
-  "20261117174846": {
-    "name": "Ramayana_20261117174846 (Tamil 2D)",
-    "url": "https://in.bookmyshow.com/movies/chennai/ramayana-tamil/ET00518313",
+  "20261117201528": {
+    "name": "Appakutty_20261117201528 (Tamil 2D)",
+    "url": "https://in.bookmyshow.com/movies/chennai/appakutty/ET00518647",
     "dates": [
-      "20261119",
-      "20261120"
+      "20261120",
+      "20261121",
+      "20261122",
+      "20261123",
+      "20261124"
     ],
     "theatre": [
-      "pvr: palazzo, the nexus vijaya mall"
+      "inox: the marina mall, omr"
     ],
     "time_period": [],
     "discover_variants": true,
     "languages": [
+      "english",
       "tamil"
     ],
     "formats": [],
-    "message_thread_id": 2045,
-    "summary_msg_id": 2047,
-    "status_msg_id": 2048,
-    "budget_only": false,
+    "message_thread_id": 2066,
+    "summary_msg_id": 2068,
+    "status_msg_id": 2069,
+    "budget_only": true,
     "date_time_map": {
-      "20261119": [
-        "night"
-      ],
-      "20261120": [
-        "night"
-      ]
-    },
-    "variant_threads": {
-      "ET00518313": 2045,
-      "ET00523997": 2058,
-      "ET00523959": 2061
+      "20261120": [],
+      "20261121": [],
+      "20261122": [],
+      "20261123": [],
+      "20261124": []
     },
     "topic_titles": {
-      "2045": "Ramayana (Tamil 2D)",
-      "2058": "Ramayana (Tamil 3D)",
-      "2061": "Ramayana (Tamil IMAX 3D)"
+      "2066": "Appakutty (Tamil 2D)"
+    }
+  },
+  "20261117201711": {
+    "name": "SathyavanSavithiri_20261117201711 (Tamil 2D)",
+    "url": "https://in.bookmyshow.com/movies/chennai/sathyavan-savithiri/ET00522599",
+    "dates": [
+      "20261120",
+      "20261121",
+      "20261122",
+      "20261123",
+      "20261124"
+    ],
+    "theatre": [
+      "inox: the marina mall, omr"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "english",
+      "tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 2072,
+    "summary_msg_id": 2074,
+    "status_msg_id": 2075,
+    "budget_only": true,
+    "date_time_map": {
+      "20261120": [],
+      "20261121": [],
+      "20261122": [],
+      "20261123": [],
+      "20261124": []
     },
-    "variant_summary_msg_ids": {
-      "ET00523997": 2059,
-      "ET00523959": 2062
+    "topic_titles": {
+      "2072": "SathyavanSavithiri (Tamil 2D)"
     }
   }
 }
