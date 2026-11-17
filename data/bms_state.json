@@ -1,1 +1,123 @@
-{}
+{
+  "AvengersDoomsday_20261117174402 (English 2D)": {
+    "shows": {},
+    "dates": {
+      "20261117": "NOT_OPEN",
+      "20261118": "NOT_OPEN",
+      "20261119": "NOT_OPEN",
+      "20261120": "NOT_OPEN",
+      "20261121": "NOT_OPEN",
+      "20261122": "NOT_OPEN",
+      "20261123": "NOT_OPEN"
+    }
+  },
+  "AvengersDoomsday_20261117174402 (English 2D) (English MS - Infinity Vision)": {
+    "shows": {
+      "CBMC|16294|20261217|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "08:00 PM",
+        "date": "20261217",
+        "cat": "NORMAL",
+        "price": "61.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "16294",
+        "missing_count": 0
+      },
+      "CBMC|16294|20261217|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "08:00 PM",
+        "date": "20261217",
+        "cat": "EXECUTIVE",
+        "price": "210.98",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "16294",
+        "missing_count": 0
+      },
+      "CBMC|16295|20261217|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "11:15 PM",
+        "date": "20261217",
+        "cat": "NORMAL",
+        "price": "61.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "16295",
+        "missing_count": 0
+      },
+      "CBMC|16295|20261217|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "11:15 PM",
+        "date": "20261217",
+        "cat": "EXECUTIVE",
+        "price": "210.98",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "16295",
+        "missing_count": 0
+      }
+    },
+    "dates": {
+      "20261217": "BOOKABLE",
+      "20261218": "NOT_OPEN",
+      "20261219": "NOT_OPEN",
+      "20261220": "NOT_OPEN",
+      "20261221": "NOT_OPEN",
+      "20261222": "NOT_OPEN",
+      "20261223": "NOT_OPEN"
+    }
+  },
+  "OmOperationMole_20261117174631 (Tamil 2D)": {
+    "shows": {},
+    "dates": {
+      "20261120": "AVAILABLE",
+      "20261121": "AVAILABLE",
+      "20261122": "BOOKABLE",
+      "20261123": "NOT_OPEN",
+      "20261124": "NOT_OPEN",
+      "20261125": "NOT_OPEN",
+      "20261126": "NOT_OPEN"
+    }
+  },
+  "Ramayana_20261117174846 (Tamil 2D)": {
+    "shows": {},
+    "dates": {
+      "20261117": "AVAILABLE",
+      "20261118": "AVAILABLE",
+      "20261119": "BOOKABLE",
+      "20261120": "NOT_OPEN",
+      "20261121": "NOT_OPEN",
+      "20261122": "NOT_OPEN",
+      "20261123": "NOT_OPEN"
+    }
+  },
+  "Ramayana_20261117174846 (Tamil 2D) (Tamil 3D)": {
+    "shows": {},
+    "dates": {
+      "20261117": "AVAILABLE",
+      "20261118": "AVAILABLE",
+      "20261119": "AVAILABLE",
+      "20261120": "BOOKABLE",
+      "20261121": "AVAILABLE",
+      "20261122": "AVAILABLE",
+      "20261123": "NOT_OPEN"
+    }
+  },
+  "Ramayana_20261117174846 (Tamil 2D) (Tamil EPIQ 3D)": {
+    "shows": {},
+    "dates": {
+      "20261117": "AVAILABLE",
+      "20261118": "AVAILABLE",
+      "20261119": "BOOKABLE",
+      "20261120": "NOT_OPEN",
+      "20261121": "NOT_OPEN",
+      "20261122": "NOT_OPEN",
+      "20261123": "NOT_OPEN"
+    }
+  }
+}

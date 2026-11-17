@@ -123,5 +123,120 @@
       "1799": "MookuthiAmman2 (Tamil 2D)"
     },
     "expired_notified": true
+  },
+  "20261117174402": {
+    "name": "AvengersDoomsday_20261117174402 (English 2D)",
+    "url": "https://in.bookmyshow.com/movies/chennai/avengers-doomsday-english/ET00439706",
+    "dates": [
+      "20261217",
+      "20261218",
+      "20261219",
+      "20261220"
+    ],
+    "theatre": [
+      "ags cinemas omr: navlur",
+      "cinepolis: bsr mall, omr, thoraipakkam",
+      "inox: the marina mall, omr",
+      "miraj cinemas: sekaran mall, perrumbakkam",
+      "pvr: palazzo, the nexus vijaya mall",
+      "rakki cinemas: omr, kelambakkam"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "english",
+      "tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 2033,
+    "summary_msg_id": 2035,
+    "status_msg_id": 2036,
+    "budget_only": false,
+    "date_time_map": {
+      "20261217": [
+        "night"
+      ],
+      "20261218": [
+        "night"
+      ],
+      "20261219": [],
+      "20261220": []
+    },
+    "topic_titles": {
+      "2033": "Avengers: Doomsday (English 2D)",
+      "2052": "Avengers: Doomsday (English MS - Infinity Vision)"
+    },
+    "variant_threads": {
+      "ET00526287": 2052
+    },
+    "variant_summary_msg_ids": {
+      "ET00526287": 2053
+    }
+  },
+  "20261117174631": {
+    "name": "OmOperationMole_20261117174631 (Tamil 2D)",
+    "url": "https://in.bookmyshow.com/movies/chennai/om-operation-mole-tamil/ET00504901",
+    "dates": [
+      "20261120",
+      "20261121",
+      "20261122"
+    ],
+    "theatre": [
+      "inox: the marina mall, omr"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "english",
+      "tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 2039,
+    "summary_msg_id": 2041,
+    "status_msg_id": 2042,
+    "budget_only": false,
+    "date_time_map": {
+      "20261120": [],
+      "20261121": [],
+      "20261122": []
+    },
+    "topic_titles": {
+      "2039": "OmOperationMoleTamil (Tamil 2D)"
+    }
+  },
+  "20261117174846": {
+    "name": "Ramayana_20261117174846 (Tamil 2D)",
+    "url": "https://in.bookmyshow.com/movies/chennai/ramayana-tamil/ET00518313",
+    "dates": [
+      "20261119",
+      "20261120"
+    ],
+    "theatre": [
+      "pvr: palazzo, the nexus vijaya mall"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 2045,
+    "summary_msg_id": 2047,
+    "status_msg_id": 2048,
+    "budget_only": false,
+    "date_time_map": {
+      "20261119": [
+        "night"
+      ],
+      "20261120": [
+        "night"
+      ]
+    },
+    "variant_threads": {
+      "ET00518313": 2045
+    },
+    "topic_titles": {
+      "2045": "Ramayana (Tamil 2D)"
+    }
   }
 }
