@@ -89,5 +89,38 @@
     "summary_msg_id": 1801,
     "status_msg_id": 1802,
     "budget_only": true
+  },
+  "20261117174402": {
+    "name": "AvengersDoomsdayEnglish_20261117174402",
+    "url": "https://in.bookmyshow.com/movies/chennai/avengers-doomsday-english/ET00439706",
+    "dates": {
+      "20261217": [
+        "night"
+      ],
+      "20261218": [
+        "night"
+      ],
+      "20261219": [],
+      "20261220": []
+    },
+    "theatre": [
+      "AGS Cinemas OMR: Navlur",
+      "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+      "INOX: The Marina Mall, OMR",
+      "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
+      "PVR: Palazzo, The Nexus Vijaya Mall",
+      "Rakki Cinemas: OMR, Kelambakkam"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "English",
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 2033,
+    "summary_msg_id": 2035,
+    "status_msg_id": 2036,
+    "budget_only": false
   }
 }
