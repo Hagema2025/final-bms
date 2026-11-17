@@ -97,7 +97,32 @@
     }
   },
   "Ramayana_20261117174846 (Tamil 2D) (Tamil 3D)": {
-    "shows": {},
+    "shows": {
+      "PVPZ|41220|20261119|ELITE": {
+        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
+        "time": "10:55 PM",
+        "date": "20261119",
+        "cat": "ELITE",
+        "price": "233.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "PVPZ",
+        "sid": "41220",
+        "missing_count": 0
+      },
+      "PVPZ|41220|20261119|BUDGET": {
+        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
+        "time": "10:55 PM",
+        "date": "20261119",
+        "cat": "BUDGET",
+        "price": "104.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "PVPZ",
+        "sid": "41220",
+        "missing_count": 0
+      }
+    },
     "dates": {
       "20261117": "AVAILABLE",
       "20261118": "AVAILABLE",
@@ -110,6 +135,31 @@
   },
   "Ramayana_20261117174846 (Tamil 2D) (Tamil EPIQ 3D)": {
     "shows": {},
+    "dates": {
+      "20261117": "AVAILABLE",
+      "20261118": "AVAILABLE",
+      "20261119": "BOOKABLE",
+      "20261120": "NOT_OPEN",
+      "20261121": "NOT_OPEN",
+      "20261122": "NOT_OPEN",
+      "20261123": "NOT_OPEN"
+    }
+  },
+  "Ramayana_20261117174846 (Tamil 2D) (Tamil IMAX 3D)": {
+    "shows": {
+      "PVPZ|41208|20261119|ELITE": {
+        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
+        "time": "10:30 PM",
+        "date": "20261119",
+        "cat": "ELITE",
+        "price": "491.51",
+        "status": "3",
+        "screen": "IMAX",
+        "vcode": "PVPZ",
+        "sid": "41208",
+        "missing_count": 0
+      }
+    },
     "dates": {
       "20261117": "AVAILABLE",
       "20261118": "AVAILABLE",
