@@ -218,5 +218,39 @@
     "topic_titles": {
       "2001": "Ramayana (Tamil 2D)"
     }
+  },
+  "20261117163456": {
+    "name": "OmOperationMole_20261117163456 (Tamil 2D)",
+    "url": "https://in.bookmyshow.com/movies/chennai/om-operation-mole-tamil/ET00504901",
+    "dates": [
+      "20261120",
+      "20261121",
+      "20261122"
+    ],
+    "theatre": [
+      "ags cinemas omr: navlur",
+      "cinepolis: bsr mall, omr, thoraipakkam",
+      "inox: the marina mall, omr",
+      "miraj cinemas: sekaran mall, perrumbakkam",
+      "rakki cinemas: omr, kelambakkam"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 2011,
+    "summary_msg_id": 2013,
+    "status_msg_id": 2014,
+    "budget_only": false,
+    "date_time_map": {
+      "20261120": [],
+      "20261121": [],
+      "20261122": []
+    },
+    "topic_titles": {
+      "2011": "OmOperationMoleTamil (Tamil 2D)"
+    }
   }
 }
