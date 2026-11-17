@@ -145,5 +145,30 @@
     "summary_msg_id": 2041,
     "status_msg_id": 2042,
     "budget_only": false
+  },
+  "20261117174846": {
+    "name": "RamayanaHindi_20261117174846",
+    "url": "https://in.bookmyshow.com/movies/chennai/ramayana-hindi/ET00451914",
+    "dates": {
+      "20261119": [
+        "night"
+      ],
+      "20261120": [
+        "night"
+      ]
+    },
+    "theatre": [
+      "PVR: Palazzo, The Nexus Vijaya Mall"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 2045,
+    "summary_msg_id": 2047,
+    "status_msg_id": 2048,
+    "budget_only": false
   }
 }
