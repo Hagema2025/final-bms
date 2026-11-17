@@ -158,5 +158,31 @@
     "summary_msg_id": 2003,
     "status_msg_id": 2004,
     "budget_only": false
+  },
+  "20261117163456": {
+    "name": "OmOperationMoleTamil_20261117163456",
+    "url": "https://in.bookmyshow.com/movies/chennai/om-operation-mole-tamil/ET00504901",
+    "dates": {
+      "20261120": [],
+      "20261121": [],
+      "20261122": []
+    },
+    "theatre": [
+      "AGS Cinemas OMR: Navlur",
+      "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+      "INOX: The Marina Mall, OMR",
+      "Miraj Cinemas: Sekaran Mall, Perrumbakkam",
+      "Rakki Cinemas: OMR, Kelambakkam"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 2011,
+    "summary_msg_id": 2013,
+    "status_msg_id": 2014,
+    "budget_only": false
   }
 }
