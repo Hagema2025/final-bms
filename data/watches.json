@@ -195,5 +195,30 @@
     "summary_msg_id": 2074,
     "status_msg_id": 2075,
     "budget_only": true
+  },
+  "20261117210244": {
+    "name": "AotTamil_20261117210244",
+    "url": "https://in.bookmyshow.com/movies/chennai/aot-tamil/ET00526277",
+    "dates": {
+      "20261120": [],
+      "20261121": [],
+      "20261122": [],
+      "20261123": [],
+      "20261124": [],
+      "20261125": []
+    },
+    "theatre": [
+      "INOX: The Marina Mall, OMR"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 2080,
+    "summary_msg_id": 2082,
+    "status_msg_id": 2083,
+    "budget_only": true
   }
 }
