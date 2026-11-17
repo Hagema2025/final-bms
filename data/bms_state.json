@@ -133,10 +133,59 @@
     }
   },
   "AvengersDoomsday_20261117174402 (English 2D) (English MS-Infinity Vsn 3d)": {
-    "shows": {},
+    "shows": {
+      "PVPZ|41293|20261217|ELITE": {
+        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
+        "time": "08:30 PM",
+        "date": "20261217",
+        "cat": "ELITE",
+        "price": "260.98",
+        "status": "3",
+        "screen": "",
+        "vcode": "PVPZ",
+        "sid": "41293",
+        "missing_count": 0
+      },
+      "PVPZ|41293|20261217|BUDGET": {
+        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
+        "time": "08:30 PM",
+        "date": "20261217",
+        "cat": "BUDGET",
+        "price": "111.74",
+        "status": "3",
+        "screen": "",
+        "vcode": "PVPZ",
+        "sid": "41293",
+        "missing_count": 0
+      },
+      "PVPZ|41294|20261217|ELITE": {
+        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
+        "time": "11:55 PM",
+        "date": "20261217",
+        "cat": "ELITE",
+        "price": "260.98",
+        "status": "3",
+        "screen": "",
+        "vcode": "PVPZ",
+        "sid": "41294",
+        "missing_count": 0
+      },
+      "PVPZ|41294|20261217|BUDGET": {
+        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
+        "time": "11:55 PM",
+        "date": "20261217",
+        "cat": "BUDGET",
+        "price": "111.74",
+        "status": "3",
+        "screen": "",
+        "vcode": "PVPZ",
+        "sid": "41294",
+        "missing_count": 0
+      }
+    },
     "dates": {
-      "20261217": "BOOKABLE",
-      "20261218": "NOT_OPEN",
+      "20261217": "AVAILABLE",
+      "20261218": "BOOKABLE",
       "20261219": "NOT_OPEN",
       "20261220": "NOT_OPEN",
       "20261221": "NOT_OPEN",
