@@ -97,32 +97,7 @@
     }
   },
   "Ramayana_20261117174846 (Tamil 2D) (Tamil 3D)": {
-    "shows": {
-      "PVPZ|41220|20261119|ELITE": {
-        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
-        "time": "10:55 PM",
-        "date": "20261119",
-        "cat": "ELITE",
-        "price": "233.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "PVPZ",
-        "sid": "41220",
-        "missing_count": 2
-      },
-      "PVPZ|41220|20261119|BUDGET": {
-        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
-        "time": "10:55 PM",
-        "date": "20261119",
-        "cat": "BUDGET",
-        "price": "104.35",
-        "status": "3",
-        "screen": "",
-        "vcode": "PVPZ",
-        "sid": "41220",
-        "missing_count": 2
-      }
-    },
+    "shows": {},
     "dates": {
       "20261117": "AVAILABLE",
       "20261118": "AVAILABLE",
