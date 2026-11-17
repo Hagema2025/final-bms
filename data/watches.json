@@ -170,5 +170,30 @@
     "summary_msg_id": 2068,
     "status_msg_id": 2069,
     "budget_only": true
+  },
+  "20261117201711": {
+    "name": "SathyavanSavithiri_20261117201711",
+    "url": "https://in.bookmyshow.com/movies/chennai/sathyavan-savithiri/ET00522599",
+    "dates": {
+      "20261120": [],
+      "20261121": [],
+      "20261122": [],
+      "20261123": [],
+      "20261124": []
+    },
+    "theatre": [
+      "INOX: The Marina Mall, OMR"
+    ],
+    "time_period": [],
+    "discover_variants": true,
+    "languages": [
+      "English",
+      "Tamil"
+    ],
+    "formats": [],
+    "message_thread_id": 2072,
+    "summary_msg_id": 2074,
+    "status_msg_id": 2075,
+    "budget_only": true
   }
 }
