@@ -90,31 +90,6 @@
     "status_msg_id": 1802,
     "budget_only": true
   },
-  "20261115152407": {
-    "name": "RamayanaHindi_20261115152407",
-    "url": "https://in.bookmyshow.com/movies/chennai/ramayana-hindi/ET00451914",
-    "dates": {
-      "20261119": [
-        "night"
-      ],
-      "20261120": [
-        "night"
-      ]
-    },
-    "theatre": [
-      "PVR: Palazzo, The Nexus Vijaya Mall"
-    ],
-    "time_period": [],
-    "discover_variants": true,
-    "languages": [
-      "Tamil"
-    ],
-    "formats": [],
-    "message_thread_id": 2001,
-    "summary_msg_id": 2003,
-    "status_msg_id": 2004,
-    "budget_only": false
-  },
   "20261117163456": {
     "name": "OmOperationMoleTamil_20261117163456",
     "url": "https://in.bookmyshow.com/movies/chennai/om-operation-mole-tamil/ET00504901",
