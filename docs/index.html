@@ -172,21 +172,31 @@
         };
 
         let appState = {};
+        let currentActiveMovie = null; // Remembers the open tab during auto-refresh
 
-        // Fetch JSON data
+        // Fetch JSON data with strict cache bypassing
         async function loadData() {
             try {
-                // ADJUST THIS PATH IF YOUR JSON IS IN THE ROOT DOCS FOLDER: fetch('bms_state.json')
-                const response = await fetch('bms_state.json'); 
+                const cacheBuster = new Date().getTime();
+                
+                const response = await fetch(`bms_state.json?t=${cacheBuster}`, {
+                    cache: 'no-store', 
+                    headers: {
+                        'Cache-Control': 'no-cache',
+                        'Pragma': 'no-cache'
+                    }
+                }); 
+                
                 if (!response.ok) throw new Error("JSON file not found.");
                 appState = await response.json();
+                
                 renderSidebar();
             } catch (error) {
                 document.getElementById('movie-list').innerHTML = `<div id="error-msg">⚠️ Failed to load state.<br><small>${error.message}</small></div>`;
             }
         }
 
-        // Render Sidebar Tabs
+        // Render Sidebar Tabs (hiding empty trackers)
         function renderSidebar() {
             const list = document.getElementById('movie-list');
             list.innerHTML = '';
@@ -197,16 +207,40 @@
                 return;
             }
 
-            movies.forEach((movie, index) => {
+            let firstValidTab = null;
+
+            movies.forEach((movie) => {
+                // Skip this movie if it has no shows currently tracked
+                if (!appState[movie].shows || Object.keys(appState[movie].shows).length === 0) {
+                    return; 
+                }
+
                 const div = document.createElement('div');
                 div.className = 'movie-tab';
                 div.innerText = movie;
                 div.onclick = () => selectMovie(movie, div);
                 list.appendChild(div);
 
-                // Auto-select first
-                if (index === 0) selectMovie(movie, div);
+                // Keep track of the first valid tab for auto-selection
+                if (!firstValidTab) firstValidTab = { name: movie, el: div };
+
+                // Re-select the previously active movie
+                if (movie === currentActiveMovie) {
+                    selectMovie(movie, div);
+                }
             });
+
+            // If nothing was selected but we have valid tabs, select the first one
+            if (!currentActiveMovie && firstValidTab) {
+                selectMovie(firstValidTab.name, firstValidTab.el);
+            }
+            
+            // If everything is completely empty
+            if (!firstValidTab) {
+                list.innerHTML = '<div style="padding:20px; color:#94a3b8;">Trackers exist, but no tickets match filters yet.</div>';
+                document.getElementById('dashboard-view').innerHTML = '';
+                document.getElementById('movie-title').innerText = 'Waiting for tickets...';
+            }
         }
 
         // Format date string "20241025" -> "25 Oct 2024"
@@ -234,6 +268,8 @@
 
         // Select Movie and Render Dashboard
         function selectMovie(movieName, element) {
+            currentActiveMovie = movieName; // Save the active state
+            
             document.querySelectorAll('.movie-tab').forEach(el => el.classList.remove('active'));
             element.classList.add('active');
             
@@ -325,8 +361,9 @@
             });
         }
 
-        // Init
+        // Init and Auto-Refresh (every 60 seconds)
         loadData();
+        setInterval(loadData, 60000); 
     </script>
 </body>
 </html>
