@@ -123,29 +123,6 @@
     "status_msg_id": 2036,
     "budget_only": false
   },
-  "20261117174631": {
-    "name": "OmOperationMoleTamil_20261117174631",
-    "url": "https://in.bookmyshow.com/movies/chennai/om-operation-mole-tamil/ET00504901",
-    "dates": {
-      "20261120": [],
-      "20261121": [],
-      "20261122": []
-    },
-    "theatre": [
-      "INOX: The Marina Mall, OMR"
-    ],
-    "time_period": [],
-    "discover_variants": true,
-    "languages": [
-      "English",
-      "Tamil"
-    ],
-    "formats": [],
-    "message_thread_id": 2039,
-    "summary_msg_id": 2041,
-    "status_msg_id": 2042,
-    "budget_only": false
-  },
   "20261117201528": {
     "name": "Appakutty_20261117201528",
     "url": "https://in.bookmyshow.com/movies/chennai/appakutty/ET00518647",
