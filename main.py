@@ -17,7 +17,7 @@ import random
 # ======================================================================
 
 WATCHES_FILE = "data/watches.json"
-STATE_FILE = "data/bms_state.json"
+STATE_FILE = "docs/bms_state.json"
 BMS_WATCHES_FILE = "data/bmsWatches.json"
 
 
