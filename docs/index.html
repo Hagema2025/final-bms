@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMS Ticket Tracker Dashboard</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #3b82f6;
+            --border: #334155;
+            --available: #22c55e;
+            --fast: #eab308;
+            --few: #f97316;
+            --sold: #ef4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Sidebar */
+        #sidebar {
+            width: 300px;
+            background-color: var(--card-bg);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+        
+        .sidebar-header {
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-bottom: 1px solid var(--border);
+            background: #151e2e;
+        }
+
+        .movie-tab {
+            padding: 15px 20px;
+            cursor: pointer;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .movie-tab:hover { background-color: rgba(59, 130, 246, 0.1); }
+        .movie-tab.active {
+            background-color: rgba(59, 130, 246, 0.2);
+            border-left: 4px solid var(--accent);
+        }
+
+        /* Main Content */
+        #main-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 30px;
+        }
+
+        h1 { margin-top: 0; margin-bottom: 20px; color: var(--accent); }
+        
+        .date-section { margin-bottom: 40px; }
+        .date-header {
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 20px;
+            color: #cbd5e1;
+        }
+
+        .venue-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .venue-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #e2e8f0;
+        }
+
+        .shows-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .show-box {
+            background: #0f172a;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 15px;
+        }
+
+        .show-time {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .screen-name {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: normal;
+        }
+
+        .category-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.9rem;
+        }
+        .category-row:last-child { border-bottom: none; }
+
+        .cat-name { color: var(--text-muted); }
+        .cat-price { font-weight: bold; margin-right: 10px; }
+        
+        .badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+        
+        .status-0 { background: rgba(239, 68, 68, 0.2); color: var(--sold); }
+        .status-1 { background: rgba(249, 115, 22, 0.2); color: var(--few); }
+        .status-2 { background: rgba(234, 179, 8, 0.2); color: var(--fast); }
+        .status-3 { background: rgba(34, 197, 94, 0.2); color: var(--available); }
+
+        #error-msg { color: var(--sold); padding: 20px; }
+    </style>
+</head>
+<body>
+
+    <div id="sidebar">
+        <div class="sidebar-header">🎬 Active Trackers</div>
+        <div id="movie-list">Loading...</div>
+    </div>
+
+    <div id="main-content">
+        <h1 id="movie-title">Select a movie to view stats</h1>
+        <div id="dashboard-view"></div>
+    </div>
+
+    <script>
+        const statusMap = {
+            "0": "SOLD OUT",
+            "1": "FEW",
+            "2": "FAST",
+            "3": "AVAILABLE"
+        };
+
+        let appState = {};
+
+        // Fetch JSON data
+        async function loadData() {
+            try {
+                // ADJUST THIS PATH IF YOUR JSON IS IN THE ROOT DOCS FOLDER: fetch('bms_state.json')
+                const response = await fetch('data/bms_state.json'); 
+                if (!response.ok) throw new Error("JSON file not found.");
+                appState = await response.json();
+                renderSidebar();
+            } catch (error) {
+                document.getElementById('movie-list').innerHTML = `<div id="error-msg">⚠️ Failed to load state.<br><small>${error.message}</small></div>`;
+            }
+        }
+
+        // Render Sidebar Tabs
+        function renderSidebar() {
+            const list = document.getElementById('movie-list');
+            list.innerHTML = '';
+            
+            const movies = Object.keys(appState);
+            if (movies.length === 0) {
+                list.innerHTML = '<div style="padding:20px; color:#94a3b8;">No data available.</div>';
+                return;
+            }
+
+            movies.forEach((movie, index) => {
+                const div = document.createElement('div');
+                div.className = 'movie-tab';
+                div.innerText = movie;
+                div.onclick = () => selectMovie(movie, div);
+                list.appendChild(div);
+
+                // Auto-select first
+                if (index === 0) selectMovie(movie, div);
+            });
+        }
+
+        // Format date string "20241025" -> "25 Oct 2024"
+        function formatDate(dateCode) {
+            if (!dateCode || dateCode.length !== 8) return dateCode || "Default Date";
+            const year = dateCode.substring(0, 4);
+            const month = dateCode.substring(4, 6) - 1;
+            const day = dateCode.substring(6, 8);
+            const d = new Date(year, month, day);
+            return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+        }
+
+        // Parse Time to minutes for sorting
+        function timeToMins(tStr) {
+            if (!tStr) return 0;
+            const match = tStr.match(/(\d+):(\d+)\s*(AM|PM)/i);
+            if (!match) return 0;
+            let hrs = parseInt(match[1]);
+            const mins = parseInt(match[2]);
+            const isPM = match[3].toUpperCase() === 'PM';
+            if (isPM && hrs !== 12) hrs += 12;
+            if (!isPM && hrs === 12) hrs = 0;
+            return hrs * 60 + mins;
+        }
+
+        // Select Movie and Render Dashboard
+        function selectMovie(movieName, element) {
+            document.querySelectorAll('.movie-tab').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+            
+            document.getElementById('movie-title').innerText = movieName;
+            const data = appState[movieName].shows;
+            const dashboard = document.getElementById('dashboard-view');
+            dashboard.innerHTML = '';
+
+            // Grouping: Date -> Venue -> Time -> Categories
+            const grouped = {};
+            
+            Object.values(data).forEach(show => {
+                const d = show.date || "unknown";
+                const v = show.venue || "Unknown Venue";
+                const t = show.time || "Unknown Time";
+                
+                if (!grouped[d]) grouped[d] = {};
+                if (!grouped[d][v]) grouped[d][v] = {};
+                if (!grouped[d][v][t]) grouped[d][v][t] = { screen: show.screen || "Normal", categories: [] };
+                
+                grouped[d][v][t].categories.push({
+                    cat: show.cat,
+                    price: parseFloat(show.price || 0),
+                    status: show.status || "3"
+                });
+            });
+
+            // Sort dates
+            const sortedDates = Object.keys(grouped).sort();
+
+            sortedDates.forEach(dateStr => {
+                const dateHtml = document.createElement('div');
+                dateHtml.className = 'date-section';
+                dateHtml.innerHTML = `<div class="date-header">📅 ${formatDate(dateStr)}</div>`;
+                
+                const venues = grouped[dateStr];
+                // Sort venues alphabetically
+                const sortedVenues = Object.keys(venues).sort((a,b) => a.localeCompare(b));
+
+                sortedVenues.forEach(venueStr => {
+                    const venueCard = document.createElement('div');
+                    venueCard.className = 'venue-card';
+                    venueCard.innerHTML = `<div class="venue-name">🏢 ${venueStr}</div>`;
+                    
+                    const grid = document.createElement('div');
+                    grid.className = 'shows-grid';
+
+                    const times = venues[venueStr];
+                    // Sort times chronologically
+                    const sortedTimes = Object.keys(times).sort((a,b) => timeToMins(a) - timeToMins(b));
+
+                    sortedTimes.forEach(timeStr => {
+                        const showData = times[timeStr];
+                        
+                        // Sort categories by price descending
+                        const sortedCats = showData.categories.sort((a,b) => b.price - a.price);
+                        
+                        let catHtml = '';
+                        sortedCats.forEach(c => {
+                            const statusKey = c.status.toString();
+                            const statusName = statusMap[statusKey] || "UNKNOWN";
+                            catHtml += `
+                                <div class="category-row">
+                                    <span class="cat-name">${c.cat}</span>
+                                    <div>
+                                        <span class="cat-price">₹${c.price}</span>
+                                        <span class="badge status-${statusKey}">${statusName}</span>
+                                    </div>
+                                </div>
+                            `;
+                        });
+
+                        grid.innerHTML += `
+                            <div class="show-box">
+                                <div class="show-time">
+                                    <span>${timeStr}</span>
+                                    <span class="screen-name">${showData.screen}</span>
+                                </div>
+                                <div>${catHtml}</div>
+                            </div>
+                        `;
+                    });
+
+                    venueCard.appendChild(grid);
+                    dateHtml.appendChild(venueCard);
+                });
+
+                dashboard.appendChild(dateHtml);
+            });
+        }
+
+        // Init
+        loadData();
+    </script>
+</body>
+</html>
