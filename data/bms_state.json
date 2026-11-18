@@ -242,6 +242,30 @@
         "sid": "93174",
         "missing_count": 0
       },
+      "INTO|93184|20261121|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:30 AM",
+        "date": "20261121",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "93184",
+        "missing_count": 0
+      },
+      "INTO|93184|20261121|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "07:30 AM",
+        "date": "20261121",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "93184",
+        "missing_count": 0
+      },
       "INTO|93175|20261121|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "10:50 AM",
@@ -264,6 +288,30 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "93175",
+        "missing_count": 0
+      },
+      "INTO|93196|20261121|CLUB": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:25 PM",
+        "date": "20261121",
+        "cat": "CLUB",
+        "price": "183.80",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "93196",
+        "missing_count": 0
+      },
+      "INTO|93196|20261121|EXECUTIVE": {
+        "venue": "INOX: The Marina Mall, OMR",
+        "time": "04:25 PM",
+        "date": "20261121",
+        "cat": "EXECUTIVE",
+        "price": "54.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "INTO",
+        "sid": "93196",
         "missing_count": 0
       },
       "INTO|93177|20261121|CLUB": {
@@ -503,7 +551,7 @@
         "date": "20261217",
         "cat": "ELITE",
         "price": "260.98",
-        "status": "0",
+        "status": "1",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "41294",
@@ -515,7 +563,7 @@
         "date": "20261217",
         "cat": "BUDGET",
         "price": "111.74",
-        "status": "3",
+        "status": "2",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "41294",
@@ -671,7 +719,7 @@
         "date": "20261219",
         "cat": "ELITE",
         "price": "260.98",
-        "status": "2",
+        "status": "1",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "41305",
