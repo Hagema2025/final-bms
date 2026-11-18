@@ -177,7 +177,7 @@
         async function loadData() {
             try {
                 // ADJUST THIS PATH IF YOUR JSON IS IN THE ROOT DOCS FOLDER: fetch('bms_state.json')
-                const response = await fetch('data/bms_state.json'); 
+                const response = await fetch('bms_state.json'); 
                 if (!response.ok) throw new Error("JSON file not found.");
                 appState = await response.json();
                 renderSidebar();
