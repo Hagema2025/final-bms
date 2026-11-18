@@ -176,72 +176,6 @@
       "ET00526306": 2089
     }
   },
-  "20261117174631": {
-    "name": "OmOperationMole_20261117174631 (Tamil 2D)",
-    "url": "https://in.bookmyshow.com/movies/chennai/om-operation-mole-tamil/ET00504901",
-    "dates": [
-      "20261120",
-      "20261121",
-      "20261122"
-    ],
-    "theatre": [
-      "inox: the marina mall, omr"
-    ],
-    "time_period": [],
-    "discover_variants": true,
-    "languages": [
-      "english",
-      "tamil"
-    ],
-    "formats": [],
-    "message_thread_id": 2039,
-    "summary_msg_id": 2041,
-    "status_msg_id": 2042,
-    "budget_only": false,
-    "date_time_map": {
-      "20261120": [],
-      "20261121": [],
-      "20261122": []
-    },
-    "topic_titles": {
-      "2039": "OmOperationMole (Tamil 2D)"
-    }
-  },
-  "20261117201528": {
-    "name": "Appakutty_20261117201528 (Tamil 2D)",
-    "url": "https://in.bookmyshow.com/movies/chennai/appakutty/ET00518647",
-    "dates": [
-      "20261120",
-      "20261121",
-      "20261122",
-      "20261123",
-      "20261124"
-    ],
-    "theatre": [
-      "inox: the marina mall, omr"
-    ],
-    "time_period": [],
-    "discover_variants": true,
-    "languages": [
-      "english",
-      "tamil"
-    ],
-    "formats": [],
-    "message_thread_id": 2066,
-    "summary_msg_id": 2068,
-    "status_msg_id": 2069,
-    "budget_only": true,
-    "date_time_map": {
-      "20261120": [],
-      "20261121": [],
-      "20261122": [],
-      "20261123": [],
-      "20261124": []
-    },
-    "topic_titles": {
-      "2066": "Appakutty (Tamil 2D)"
-    }
-  },
   "20261117201711": {
     "name": "SathyavanSavithiri_20261117201711 (Tamil 2D)",
     "url": "https://in.bookmyshow.com/movies/chennai/sathyavan-savithiri/ET00522599",
@@ -275,42 +209,6 @@
     },
     "topic_titles": {
       "2072": "SathyavanSavithiri (Tamil 2D)"
-    }
-  },
-  "20261117210244": {
-    "name": "Aot_20261117210244 (Tamil 2D)",
-    "url": "https://in.bookmyshow.com/movies/chennai/aot-tamil/ET00526277",
-    "dates": [
-      "20261120",
-      "20261121",
-      "20261122",
-      "20261123",
-      "20261124",
-      "20261125"
-    ],
-    "theatre": [
-      "inox: the marina mall, omr"
-    ],
-    "time_period": [],
-    "discover_variants": true,
-    "languages": [
-      "tamil"
-    ],
-    "formats": [],
-    "message_thread_id": 2080,
-    "summary_msg_id": 2082,
-    "status_msg_id": 2083,
-    "budget_only": true,
-    "date_time_map": {
-      "20261120": [],
-      "20261121": [],
-      "20261122": [],
-      "20261123": [],
-      "20261124": [],
-      "20261125": []
-    },
-    "topic_titles": {
-      "2080": "Aot (Tamil 2D)"
     }
   }
 }
