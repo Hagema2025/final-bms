@@ -500,7 +500,7 @@
         "date": "20261122",
         "cat": "EXECUTIVE",
         "price": "54.35",
-        "status": "3",
+        "status": "1",
         "screen": "",
         "vcode": "INTO",
         "sid": "93210",
@@ -901,7 +901,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "93252",
-        "missing_count": 1
+        "missing_count": 2
       },
       "INTO|93252|20261217|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -913,7 +913,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "93252",
-        "missing_count": 1
+        "missing_count": 2
       },
       "INTO|93253|20261217|EXECUTIVE": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -925,7 +925,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "93253",
-        "missing_count": 1
+        "missing_count": 2
       },
       "INTO|93253|20261217|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
@@ -937,7 +937,7 @@
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "93253",
-        "missing_count": 1
+        "missing_count": 2
       }
     },
     "dates": {
