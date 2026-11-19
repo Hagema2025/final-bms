@@ -2,13 +2,13 @@
   "AvengersDoomsday_20261117174402 (English 2D)": {
     "shows": {},
     "dates": {
-      "20261119": "NOT_OPEN",
       "20261120": "NOT_OPEN",
       "20261121": "NOT_OPEN",
       "20261122": "NOT_OPEN",
       "20261123": "NOT_OPEN",
       "20261124": "NOT_OPEN",
-      "20261125": "NOT_OPEN"
+      "20261125": "NOT_OPEN",
+      "20261126": "NOT_OPEN"
     }
   },
   "AvengersDoomsday_20261117174402 (English 2D) (English MS - Infinity Vision)": {
@@ -585,7 +585,7 @@
         "date": "20261217",
         "cat": "CLUB",
         "price": "270.98",
-        "status": "0",
+        "status": "1",
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "93286",
@@ -597,7 +597,7 @@
         "date": "20261217",
         "cat": "EXECUTIVE",
         "price": "121.74",
-        "status": "1",
+        "status": "0",
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "93286",
@@ -609,7 +609,7 @@
         "date": "20261217",
         "cat": "CLUB",
         "price": "270.98",
-        "status": "0",
+        "status": "1",
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "93287",
@@ -981,7 +981,7 @@
         "date": "20261220",
         "cat": "BUDGET",
         "price": "111.74",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "41307",
