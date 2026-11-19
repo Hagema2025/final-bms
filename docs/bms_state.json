@@ -60,11 +60,59 @@
         "vcode": "CBMC",
         "sid": "16295",
         "missing_count": 0
+      },
+      "CBMC|16502|20261218|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "08:00 PM",
+        "date": "20261218",
+        "cat": "NORMAL",
+        "price": "61.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "16502",
+        "missing_count": 0
+      },
+      "CBMC|16502|20261218|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "08:00 PM",
+        "date": "20261218",
+        "cat": "EXECUTIVE",
+        "price": "210.98",
+        "status": "3",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "16502",
+        "missing_count": 0
+      },
+      "CBMC|16503|20261218|NORMAL": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "11:15 PM",
+        "date": "20261218",
+        "cat": "NORMAL",
+        "price": "61.74",
+        "status": "0",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "16503",
+        "missing_count": 0
+      },
+      "CBMC|16503|20261218|EXECUTIVE": {
+        "venue": "Cinepolis: BSR Mall, OMR, Thoraipakkam",
+        "time": "11:15 PM",
+        "date": "20261218",
+        "cat": "EXECUTIVE",
+        "price": "210.98",
+        "status": "3",
+        "screen": "",
+        "vcode": "CBMC",
+        "sid": "16503",
+        "missing_count": 0
       }
     },
     "dates": {
-      "20261217": "BOOKABLE",
-      "20261218": "NOT_OPEN",
+      "20261217": "AVAILABLE",
+      "20261218": "BOOKABLE",
       "20261219": "NOT_OPEN",
       "20261220": "NOT_OPEN",
       "20261221": "NOT_OPEN",
