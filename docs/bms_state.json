@@ -546,8 +546,8 @@
     "dates": {
       "20261217": "AVAILABLE",
       "20261218": "AVAILABLE",
-      "20261219": "AVAILABLE",
-      "20261220": "BOOKABLE",
+      "20261219": "BOOKABLE",
+      "20261220": "AVAILABLE",
       "20261221": "NOT_OPEN",
       "20261222": "NOT_OPEN",
       "20261223": "NOT_OPEN"
@@ -1209,7 +1209,7 @@
         "date": "20261220",
         "cat": "ELITE",
         "price": "260.98",
-        "status": "1",
+        "status": "0",
         "screen": "",
         "vcode": "PVPZ",
         "sid": "41310",
