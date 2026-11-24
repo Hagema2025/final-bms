@@ -362,30 +362,6 @@
   },
   "SathyavanSavithiri_20261117201711 (Tamil 2D)": {
     "shows": {
-      "INTO|93473|20261124|CLUB": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "10:00 AM",
-        "date": "20261124",
-        "cat": "CLUB",
-        "price": "183.80",
-        "status": "3",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "93473",
-        "missing_count": 0
-      },
-      "INTO|93473|20261124|EXECUTIVE": {
-        "venue": "INOX: The Marina Mall, OMR",
-        "time": "10:00 AM",
-        "date": "20261124",
-        "cat": "EXECUTIVE",
-        "price": "54.35",
-        "status": "2",
-        "screen": "",
-        "vcode": "INTO",
-        "sid": "93473",
-        "missing_count": 0
-      },
       "INTO|93383|20261124|CLUB": {
         "venue": "INOX: The Marina Mall, OMR",
         "time": "12:45 PM",
