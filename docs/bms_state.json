@@ -2,13 +2,13 @@
   "AvengersDoomsday_20261117174402 (English 2D)": {
     "shows": {},
     "dates": {
-      "20261124": "NOT_OPEN",
       "20261125": "NOT_OPEN",
       "20261126": "NOT_OPEN",
       "20261127": "NOT_OPEN",
       "20261128": "NOT_OPEN",
       "20261129": "NOT_OPEN",
-      "20261130": "NOT_OPEN"
+      "20261130": "NOT_OPEN",
+      "20261201": "NOT_OPEN"
     }
   },
   "AvengersDoomsday_20261117174402 (English 2D) (English MS - Infinity Vision)": {
@@ -358,18 +358,6 @@
       "20261221": "AVAILABLE",
       "20261222": "AVAILABLE",
       "20261223": "AVAILABLE"
-    }
-  },
-  "SathyavanSavithiri_20261117201711 (Tamil 2D)": {
-    "shows": {},
-    "dates": {
-      "20261124": "BOOKABLE",
-      "20261125": "AVAILABLE",
-      "20261126": "AVAILABLE",
-      "20261127": "NOT_OPEN",
-      "20261128": "NOT_OPEN",
-      "20261129": "NOT_OPEN",
-      "20261130": "NOT_OPEN"
     }
   },
   "AvengersDoomsday_20261117174402 (English 2D) (Tamil MS-Infinity Vsn 3d)": {
@@ -932,7 +920,7 @@
         "date": "20261220",
         "cat": "EXECUTIVE",
         "price": "121.74",
-        "status": "2",
+        "status": "1",
         "screen": "BIGPIX",
         "vcode": "INTO",
         "sid": "93322",
