@@ -165,15 +165,18 @@
     "topic_titles": {
       "2033": "Avengers: Doomsday (English 2D)",
       "2052": "Avengers: Doomsday (English MS - Infinity Vision)",
-      "2088": "Avengers: Doomsday (English MS-Infinity Vsn 3d)"
+      "2088": "Avengers: Doomsday (English MS-Infinity Vsn 3d)",
+      "2388": "Avengers: Doomsday (Tamil MS-Infinity Vsn 3d)"
     },
     "variant_threads": {
       "ET00526287": 2052,
-      "ET00526306": 2088
+      "ET00526306": 2088,
+      "ET00526312": 2388
     },
     "variant_summary_msg_ids": {
       "ET00526287": 2053,
-      "ET00526306": 2089
+      "ET00526306": 2089,
+      "ET00526312": 2389
     }
   },
   "20261117201711": {
