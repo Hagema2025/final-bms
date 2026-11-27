@@ -458,30 +458,6 @@
         "sid": "41785",
         "missing_count": 0
       },
-      "PVPZ|41786|20261219|ELITE": {
-        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
-        "time": "06:25 AM",
-        "date": "20261219",
-        "cat": "ELITE",
-        "price": "233.80",
-        "status": "2",
-        "screen": "",
-        "vcode": "PVPZ",
-        "sid": "41786",
-        "missing_count": 0
-      },
-      "PVPZ|41786|20261219|BUDGET": {
-        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
-        "time": "06:25 AM",
-        "date": "20261219",
-        "cat": "BUDGET",
-        "price": "104.35",
-        "status": "3",
-        "screen": "",
-        "vcode": "PVPZ",
-        "sid": "41786",
-        "missing_count": 0
-      },
       "PVPZ|41787|20261219|ELITE": {
         "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
         "time": "09:50 AM",
@@ -600,30 +576,6 @@
         "screen": "",
         "vcode": "PVPZ",
         "sid": "41791",
-        "missing_count": 0
-      },
-      "PVPZ|41792|20261220|ELITE": {
-        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
-        "time": "06:25 AM",
-        "date": "20261220",
-        "cat": "ELITE",
-        "price": "233.80",
-        "status": "2",
-        "screen": "",
-        "vcode": "PVPZ",
-        "sid": "41792",
-        "missing_count": 0
-      },
-      "PVPZ|41792|20261220|BUDGET": {
-        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
-        "time": "06:25 AM",
-        "date": "20261220",
-        "cat": "BUDGET",
-        "price": "104.35",
-        "status": "3",
-        "screen": "",
-        "vcode": "PVPZ",
-        "sid": "41792",
         "missing_count": 0
       },
       "PVPZ|41793|20261220|ELITE": {
@@ -745,6 +697,54 @@
         "vcode": "PVPZ",
         "sid": "41797",
         "missing_count": 0
+      },
+      "PVPZ|41786|20261219|ELITE": {
+        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
+        "time": "06:25 AM",
+        "date": "20261219",
+        "cat": "ELITE",
+        "price": "233.80",
+        "status": "2",
+        "screen": "",
+        "vcode": "PVPZ",
+        "sid": "41786",
+        "missing_count": 1
+      },
+      "PVPZ|41786|20261219|BUDGET": {
+        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
+        "time": "06:25 AM",
+        "date": "20261219",
+        "cat": "BUDGET",
+        "price": "104.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "PVPZ",
+        "sid": "41786",
+        "missing_count": 1
+      },
+      "PVPZ|41792|20261220|ELITE": {
+        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
+        "time": "06:25 AM",
+        "date": "20261220",
+        "cat": "ELITE",
+        "price": "233.80",
+        "status": "2",
+        "screen": "",
+        "vcode": "PVPZ",
+        "sid": "41792",
+        "missing_count": 1
+      },
+      "PVPZ|41792|20261220|BUDGET": {
+        "venue": "PVR: Palazzo, The Nexus Vijaya Mall",
+        "time": "06:25 AM",
+        "date": "20261220",
+        "cat": "BUDGET",
+        "price": "104.35",
+        "status": "3",
+        "screen": "",
+        "vcode": "PVPZ",
+        "sid": "41792",
+        "missing_count": 1
       }
     },
     "dates": {
